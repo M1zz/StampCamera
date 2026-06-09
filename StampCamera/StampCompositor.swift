@@ -23,11 +23,14 @@ enum StampCompositor {
     ///   - previewSize: size of the on-screen preview area (points)
     ///   - windowRect: on-screen stamp window rect within that preview (points)
     ///   - mirrored: true for the front camera
+    /// Returns the cropped stamp plus the crop region as a 0...1 rect in the
+    /// orientation-normalized source image — so the original photo can later be
+    /// re-cropped with a different border.
     static func makeStamp(from image: UIImage,
                           previewSize: CGSize,
                           windowRect: CGRect,
                           mirrored: Bool = false,
-                          scale: CGFloat = 3.0) -> UIImage? {
+                          scale: CGFloat = 3.0) -> (image: UIImage, cropNorm: CGRect)? {
 
         // Normalize to .up so pixel coordinates are predictable.
         let normalized = image.normalizedUp()
@@ -51,6 +54,7 @@ enum StampCompositor {
 
         if mirrored { sx = imgW - sx - sw }
         let srcRect = CGRect(x: sx, y: sy, width: sw, height: sh)
+        let cropNorm = CGRect(x: sx / imgW, y: sy / imgH, width: sw / imgW, height: sh / imgH)
 
         guard let cropped = nCG.cropping(to: srcRect) else { return nil }
 
@@ -62,7 +66,7 @@ enum StampCompositor {
         format.opaque = false
         let renderer = UIGraphicsImageRenderer(size: outSize, format: format)
 
-        return renderer.image { ctx in
+        let stampImage = renderer.image { ctx in
             let c = ctx.cgContext
             // Clip the context to the stamp perforation shape, then paint the
             // photo. The holes bite inward, so the body fills the whole window
@@ -77,6 +81,7 @@ enum StampCompositor {
             }
             UIImage(cgImage: cropped).draw(in: outRect)
         }
+        return (stampImage, cropNorm)
     }
 }
 

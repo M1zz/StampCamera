@@ -15,6 +15,7 @@ import Combine
 final class CameraManager: NSObject, ObservableObject {
 
     @Published var isAuthorized = false
+    @Published var permissionDenied = false         // true only once access is actually refused
     @Published var capturedImage: UIImage?          // raw full-frame capture
     @Published var position: AVCaptureDevice.Position = .back
 
@@ -27,8 +28,14 @@ final class CameraManager: NSObject, ObservableObject {
     // Session plumbing lives off the main actor — it is only ever touched
     // on `sessionQueue`, so it is intentionally nonisolated.
     nonisolated let session = AVCaptureSession()
-    private nonisolated let photoOutput = AVCapturePhotoOutput()
+    // We grab stills off the live video stream instead of AVCapturePhotoOutput
+    // so iOS doesn't play its mandatory system shutter "찰칵" — only the app's
+    // own punching.mp3 is heard. Slightly lower res, but fine for the small crop.
+    private nonisolated let videoOutput = AVCaptureVideoDataOutput()
+    private nonisolated let ciContext = CIContext()
     private nonisolated let sessionQueue = DispatchQueue(label: "stamp.camera.session")
+    private nonisolated let videoQueue = DispatchQueue(label: "stamp.camera.video")
+    private nonisolated(unsafe) var captureRequested = false   // touched only on videoQueue
     private nonisolated(unsafe) var currentInput: AVCaptureDeviceInput?
     // videoZoomFactor that displays as "1.0×" (2.0 on devices with an ultra-wide)
     private nonisolated(unsafe) var baseZoom: CGFloat = 1.0
@@ -39,10 +46,14 @@ final class CameraManager: NSObject, ObservableObject {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             isAuthorized = true
+            permissionDenied = false
         case .notDetermined:
-            isAuthorized = await AVCaptureDevice.requestAccess(for: .video)
+            let granted = await AVCaptureDevice.requestAccess(for: .video)
+            isAuthorized = granted
+            permissionDenied = !granted
         default:
             isAuthorized = false
+            permissionDenied = true
         }
         if isAuthorized { configure(position: position) }
     }
@@ -57,10 +68,12 @@ final class CameraManager: NSObject, ObservableObject {
 
             self.attachInput(for: position)
 
-            if self.session.canAddOutput(self.photoOutput) {
-                self.session.addOutput(self.photoOutput)
-                self.photoOutput.maxPhotoQualityPrioritization = .quality
+            if self.session.canAddOutput(self.videoOutput) {
+                self.videoOutput.alwaysDiscardsLateVideoFrames = true
+                self.videoOutput.setSampleBufferDelegate(self, queue: self.videoQueue)
+                self.session.addOutput(self.videoOutput)
             }
+            self.configureVideoConnection()
 
             self.session.commitConfiguration()
             self.session.startRunning()
@@ -148,22 +161,33 @@ final class CameraManager: NSObject, ObservableObject {
             self.session.beginConfiguration()
             self.attachInput(for: position)
             self.session.commitConfiguration()
+            self.configureVideoConnection()
         }
     }
 
     // MARK: - Capture
 
-    func capturePhoto() {
-        let settings = AVCapturePhotoSettings()
-        settings.photoQualityPrioritization = .quality
-        triggerCapture(with: settings)
+    /// Orients the video output upright (portrait) and un-mirrored, so the
+    /// grabbed frames match what AVCapturePhotoOutput used to hand back — the
+    /// front-camera flip is handled later by StampCompositor's `mirrored` flag.
+    private nonisolated func configureVideoConnection() {
+        guard let connection = videoOutput.connection(with: .video) else { return }
+        if #available(iOS 17.0, *) {
+            if connection.isVideoRotationAngleSupported(90) {
+                connection.videoRotationAngle = 90
+            }
+        } else if connection.isVideoOrientationSupported {
+            connection.videoOrientation = .portrait
+        }
+        if connection.isVideoMirroringSupported {
+            connection.automaticallyAdjustsVideoMirroring = false
+            connection.isVideoMirrored = false
+        }
     }
 
-    private nonisolated func triggerCapture(with settings: AVCapturePhotoSettings) {
-        sessionQueue.async { [weak self] in
-            guard let self else { return }
-            self.photoOutput.capturePhoto(with: settings, delegate: self)
-        }
+    /// Grabs the next live video frame as the "photo" — no system shutter sound.
+    func capturePhoto() {
+        videoQueue.async { [weak self] in self?.captureRequested = true }
     }
 
     func stop() {
@@ -171,15 +195,19 @@ final class CameraManager: NSObject, ObservableObject {
     }
 }
 
-// MARK: - AVCapturePhotoCaptureDelegate
+// MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
 
-extension CameraManager: AVCapturePhotoCaptureDelegate {
-    nonisolated func photoOutput(_ output: AVCapturePhotoOutput,
-                                 didFinishProcessingPhoto photo: AVCapturePhoto,
-                                 error: Error?) {
-        guard error == nil,
-              let data = photo.fileDataRepresentation(),
-              let image = UIImage(data: data) else { return }
+extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
+    nonisolated func captureOutput(_ output: AVCaptureOutput,
+                                   didOutput sampleBuffer: CMSampleBuffer,
+                                   from connection: AVCaptureConnection) {
+        guard captureRequested,
+              let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        captureRequested = false
+
+        let ci = CIImage(cvPixelBuffer: pixelBuffer)
+        guard let cg = ciContext.createCGImage(ci, from: ci.extent) else { return }
+        let image = UIImage(cgImage: cg)   // already upright portrait, orientation .up
         Task { @MainActor in
             self.capturedImage = image
         }

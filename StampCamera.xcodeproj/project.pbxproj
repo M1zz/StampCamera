@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */; };
+		9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79192FD651EB00B6DA22 /* punching.mp3 */; };
 		A1000011 /* StampCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001 /* StampCameraApp.swift */; };
 		A1000012 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002 /* ContentView.swift */; };
 		A1000013 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000003 /* CameraManager.swift */; };
@@ -15,10 +16,17 @@
 		A1000015 /* PuncherFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000005 /* PuncherFrameView.swift */; };
 		A1000016 /* StampShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006 /* StampShape.swift */; };
 		A1000017 /* StampCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000007 /* StampCompositor.swift */; };
+		A1000211 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000201 /* TestSupport.swift */; };
+		A1000212 /* CollectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000202 /* CollectionStoreTests.swift */; };
+		A1000213 /* ExhibitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000203 /* ExhibitionTests.swift */; };
+		A1000214 /* StampShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000204 /* StampShapeTests.swift */; };
+		A1000215 /* StampCompositorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000205 /* StampCompositorTests.swift */; };
+		A1000216 /* ColorHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000206 /* ColorHexTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C8F79192FD651EB00B6DA22 /* punching.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punching.mp3; sourceTree = "<group>"; };
 		A1000000 /* StampCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StampCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000001 /* StampCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCameraApp.swift; sourceTree = "<group>"; };
 		A1000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,10 +36,24 @@
 		A1000006 /* StampShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShape.swift; sourceTree = "<group>"; };
 		A1000007 /* StampCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositor.swift; sourceTree = "<group>"; };
 		A1000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1000200 /* StampCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StampCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000201 /* TestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
+		A1000202 /* CollectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionStoreTests.swift; sourceTree = "<group>"; };
+		A1000203 /* ExhibitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitionTests.swift; sourceTree = "<group>"; };
+		A1000204 /* StampShapeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShapeTests.swift; sourceTree = "<group>"; };
+		A1000205 /* StampCompositorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositorTests.swift; sourceTree = "<group>"; };
+		A1000206 /* ColorHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A1000020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000232 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,8 +67,22 @@
 			isa = PBXGroup;
 			children = (
 				A1000031 /* StampCamera */,
+				A1000220 /* StampCameraTests */,
 				A1000032 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		A1000220 /* StampCameraTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1000201 /* TestSupport.swift */,
+				A1000202 /* CollectionStoreTests.swift */,
+				A1000203 /* ExhibitionTests.swift */,
+				A1000204 /* StampShapeTests.swift */,
+				A1000205 /* StampCompositorTests.swift */,
+				A1000206 /* ColorHexTests.swift */,
+			);
+			path = StampCameraTests;
 			sourceTree = "<group>";
 		};
 		A1000031 /* StampCamera */ = {
@@ -59,6 +95,7 @@
 				A1000005 /* PuncherFrameView.swift */,
 				A1000006 /* StampShape.swift */,
 				A1000007 /* StampCompositor.swift */,
+				9C8F79192FD651EB00B6DA22 /* punching.mp3 */,
 				A1000008 /* Info.plist */,
 				9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */,
 			);
@@ -69,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				A1000000 /* StampCamera.app */,
+				A1000200 /* StampCameraTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +131,24 @@
 			productReference = A1000000 /* StampCamera.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A1000230 /* StampCameraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000252 /* Build configuration list for PBXNativeTarget "StampCameraTests" */;
+			buildPhases = (
+				A1000231 /* Sources */,
+				A1000232 /* Frameworks */,
+				A1000233 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1000240 /* PBXTargetDependency */,
+			);
+			name = StampCameraTests;
+			productName = StampCameraTests;
+			productReference = A1000200 /* StampCameraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -105,6 +161,10 @@
 				TargetAttributes = {
 					A1000040 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					A1000230 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A1000040;
 					};
 				};
 			};
@@ -122,16 +182,43 @@
 			projectRoot = "";
 			targets = (
 				A1000040 /* StampCamera */,
+				A1000230 /* StampCameraTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXTargetDependency section */
+		A1000240 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1000040 /* StampCamera */;
+			targetProxy = A1000241 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXContainerItemProxy section */
+		A1000241 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1000060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1000040;
+			remoteInfo = StampCamera;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A1000042 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */,
 				9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +236,19 @@
 				A1000015 /* PuncherFrameView.swift in Sources */,
 				A1000016 /* StampShape.swift in Sources */,
 				A1000017 /* StampCompositor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000211 /* TestSupport.swift in Sources */,
+				A1000212 /* CollectionStoreTests.swift in Sources */,
+				A1000213 /* ExhibitionTests.swift in Sources */,
+				A1000214 /* StampShapeTests.swift in Sources */,
+				A1000215 /* StampCompositorTests.swift in Sources */,
+				A1000216 /* ColorHexTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +337,44 @@
 			};
 			name = Release;
 		};
+		A1000250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.StampCameraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StampCamera.app/StampCamera";
+			};
+			name = Debug;
+		};
+		A1000251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.StampCameraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StampCamera.app/StampCamera";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -254,6 +392,15 @@
 			buildConfigurations = (
 				A1000070 /* Debug */,
 				A1000071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000252 /* Build configuration list for PBXNativeTarget "StampCameraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000250 /* Debug */,
+				A1000251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

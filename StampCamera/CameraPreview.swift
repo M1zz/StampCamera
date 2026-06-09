@@ -28,3 +28,17 @@ struct CameraPreview: UIViewRepresentable {
         }
     }
 }
+
+/// Frosted-glass blur of whatever is behind it. Used to soften the busy live
+/// scene outside the stamp frame without making it fully opaque.
+struct BlurView: UIViewRepresentable {
+    var style: UIBlurEffect.Style = .systemThinMaterial
+
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        UIVisualEffectView(effect: UIBlurEffect(style: style))
+    }
+
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        uiView.effect = UIBlurEffect(style: style)
+    }
+}

@@ -8,10 +8,13 @@
 //
 
 import SwiftUI
+import AVFoundation
+import CoreLocation
 
 struct ContentView: View {
     @StateObject private var camera = CameraManager()
     @StateObject private var collection = CollectionStore()
+    @StateObject private var location = LocationManager()
 
     @State private var previewSize: CGSize = .zero
     @State private var showCollection = false
@@ -19,12 +22,14 @@ struct ContentView: View {
     // fly-to-collection animation state
     @State private var flying: UIImage?
     @State private var flyStart: CGRect = .zero
-    @State private var flyToBin = false
+    @State private var fell = false             // crop has been flung off-screen
+    @State private var landSpot: CGPoint = .zero // off-screen target it flies to
+    @State private var landAngle: Double = 0     // random spin as it shoots out
     @State private var binCenter: CGPoint = .zero
     @State private var binBounce = false
-    @State private var dropped = false   // cropped piece dropped out of the frame
+    @State private var stayingStamp: UIImage?  // capture left sitting in the window
+    @State private var stayVisible = false      // fades the staying imprint out
     @State private var pressed = false
-    @State private var recoil = false    // shutter kick: frame springs + rotates out
 
     // newly-made stamp pending a caption on the parchment editor
     @State private var editTarget: EditTarget?
@@ -39,11 +44,15 @@ struct ContentView: View {
 
             if camera.isAuthorized {
                 cameraScreen
-            } else {
+            } else if camera.permissionDenied {
+                // access refused → black screen explaining the camera is needed
                 permissionScreen
             }
+            // while access is still being determined: just the black background,
+            // so the guidance never flashes for users who already granted it.
         }
         .task { await camera.requestAccess() }
+        .onAppear { location.start() }
         .onChange(of: camera.capturedImage) { _, newValue in handleCapture(newValue) }
         .alert("새 우표첩", isPresented: $showNewAlbum) {
             TextField("우표첩 이름", text: $newAlbumName)
@@ -68,8 +77,40 @@ struct ContentView: View {
                 CameraPreview(session: camera.session)
                     .ignoresSafeArea()
 
+                // full-screen frosted blur with the frame's outer silhouette
+                // punched out, so the busy live scene OUTSIDE the frame recedes
+                // (edge to edge, past the safe area) while the frame and window
+                // stay crisp. The punch is computed in geo-local coords — the
+                // same space the mask is laid out in — so it lines up exactly
+                // with the frame image (which is also centered in `geo`).
+                if let frame = StampFrameLoader.frame {
+                    let img = frame.image.size
+                    let s = min(geo.size.width / img.width, geo.size.height / img.height)
+                    let dispW = img.width * s, dispH = img.height * s
+                    let ox = (geo.size.width - dispW) / 2
+                    let oy = (geo.size.height - dispH) / 2
+                    BlurView()
+                        .ignoresSafeArea()
+                        .mask {
+                            ZStack(alignment: .topLeading) {
+                                Color.white.ignoresSafeArea()
+                                Image(uiImage: frame.interiorMask)
+                                    .resizable()
+                                    .frame(width: dispW, height: dispH)
+                                    // shrink + drop the punched hole exactly like
+                                    // the frame image when the puncher is pressed
+                                    .scaleEffect(pressed ? 0.9 : 1)
+                                    .offset(x: ox, y: oy + (pressed ? 8 : 0))
+                                    .blendMode(.destinationOut)
+                            }
+                            .compositingGroup()
+                        }
+                        .allowsHitTesting(false)
+                }
+
                 // background-removed stamp frame, centered over the camera.
-                // Tapping it presses the puncher down and fires the shutter.
+                // Holding it presses the puncher down (it shrinks); releasing
+                // springs it back up and fires the shutter.
                 if let frame = StampFrameLoader.frame {
                     Image(uiImage: frame.image)
                         .resizable()
@@ -78,30 +119,37 @@ struct ContentView: View {
                         .scaleEffect(pressed ? 0.9 : 1)
                         .offset(y: pressed ? 8 : 0)
                         .contentShape(Rectangle())
-                        .onTapGesture { pressShutter() }
+                        .gesture(
+                            DragGesture(minimumDistance: 0)
+                                .onChanged { _ in pressDown() }
+                                .onEnded { _ in releaseShutter() }
+                        )
                 }
 
-                // the captured stamp itself, travelling from the window into
-                // the collection — it stays fully visible the whole way and
-                // shrinks to the thumbnail size so it reads as one continuous
-                // object that gets absorbed into the collection.
+                // the capture stays imprinted in the window...
+                if let stayingStamp {
+                    Image(uiImage: stayingStamp)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: flyStart.width, height: flyStart.height)
+                        .position(x: flyStart.midX, y: flyStart.midY)
+                        .opacity(stayVisible ? 1 : 0)
+                        .allowsHitTesting(false)
+                }
+
+                // ...while a cropped copy is flung off the screen (팡) in a random
+                // direction, spinning as it shoots out of frame.
                 if let flying {
-                    let landing = binCenter == .zero
-                        ? CGPoint(x: 58, y: geo.size.height - 78) : binCenter
+                    let pos: CGPoint = fell ? landSpot
+                                            : CGPoint(x: flyStart.midX, y: flyStart.midY)
                     Image(uiImage: flying)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: flyToBin ? 36 : flyStart.width,
-                               height: flyToBin ? 46 : flyStart.height)
-                        .shadow(color: .black.opacity(flyToBin ? 0.25 : 0.5),
-                                radius: flyToBin ? 5 : 12, y: flyToBin ? 3 : 6)
-                        // the freshly-cut piece kicks out with a springy recoil
-                        // rotation, then settles back level before flying off
-                        .rotationEffect(.degrees(recoil ? 14 : 0))
-                        .position(flyToBin ? landing
-                                           : CGPoint(x: flyStart.midX, y: flyStart.midY))
-                        // the cut piece drops down a touch with a "톡" before flying off
-                        .offset(y: flyToBin ? 0 : (dropped ? 22 : 0))
+                        .frame(width: flyStart.width, height: flyStart.height)
+                        .scaleEffect(fell ? 1.25 : 1)   // little burst as it launches
+                        .rotationEffect(.degrees(fell ? landAngle : 0))
+                        .shadow(color: .black.opacity(0.35), radius: 8, y: 5)
+                        .position(pos)
                         .allowsHitTesting(false)
                 }
 
@@ -168,24 +216,26 @@ struct ContentView: View {
         }
     }
 
-    /// Presses the puncher down, fires the shutter at the bottom of the press,
-    /// then springs it back up.
-    private func pressShutter() {
-        guard flying == nil else { return }   // ignore taps while a stamp flies
-        withAnimation(.easeIn(duration: 0.13)) { pressed = true }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.13) {
-            // 찰칵 — take the photo at the bottom of the press
-            camera.capturePhoto()
-            // spring back up
-            withAnimation(.spring(response: 0.34, dampingFraction: 0.5)) { pressed = false }
-        }
+    /// Finger down: press the puncher down so the frame shrinks a little.
+    private func pressDown() {
+        guard flying == nil, !pressed else { return }   // ignore while a stamp flies
+        withAnimation(.easeIn(duration: 0.12)) { pressed = true }
+    }
+
+    /// Finger up: spring the frame back up and fire the shutter on release.
+    private func releaseShutter() {
+        guard pressed else { return }
+        withAnimation(.spring(response: 0.34, dampingFraction: 0.5)) { pressed = false }
+        guard flying == nil else { return }   // a stamp is already in flight
+        PunchSound.play()                     // 펀칭! — ~1s punch sound
+        camera.capturePhoto()
     }
 
     private var collectionButton: some View {
         Button { showCollection = true } label: {
             ZStack(alignment: .topTrailing) {
                 Group {
-                    if let last = collection.stamps.last?.image {
+                    if let last = collection.collectedStamps.last?.image {
                         Image(uiImage: last)
                             .resizable().scaledToFit()
                             .padding(5)
@@ -202,8 +252,8 @@ struct ContentView: View {
                                 .foregroundStyle(.white.opacity(0.7)))
                     }
                 }
-                if !collection.stamps.isEmpty {
-                    Text("\(collection.stamps.count)")
+                if !collection.collectedStamps.isEmpty {
+                    Text("\(collection.collectedStamps.count)")
                         .font(.system(size: 11, weight: .bold, design: .rounded))
                         .foregroundStyle(.white)
                         .padding(.horizontal, 6).padding(.vertical, 2)
@@ -230,44 +280,65 @@ struct ContentView: View {
               StampFrameLoader.frame != nil,
               previewSize != .zero else { return }
         let win = windowScreenRect(in: previewSize)
-        guard let stamp = StampCompositor.makeStamp(
+        let mirrored = camera.position == .front
+        guard let result = StampCompositor.makeStamp(
             from: raw,
             previewSize: previewSize,
             windowRect: win,
-            mirrored: camera.position == .front
+            mirrored: mirrored
         ) else { return }
+        let stamp = result.image
+        let cropNorm = result.cropNorm
 
-        // The cropped piece detaches and drops with a little "톡"...
+        // The capture stays imprinted in the window. A cropped copy is flung off
+        // the screen (팡) in a random direction, spinning as it shoots out.
         flyStart = win
-        flyToBin = false
-        dropped = false
-        recoil = false
+        fell = false
+        stayingStamp = stamp
+        stayVisible = true
         flying = stamp
-        withAnimation(.spring(response: 0.26, dampingFraction: 0.5)) { dropped = true }
-        // spring recoil: kick to 14° then bounce level again before it flies off
-        withAnimation(.spring(response: 0.3, dampingFraction: 0.3)) { recoil = true }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.18) {
-            withAnimation(.spring(response: 0.5, dampingFraction: 0.55)) { recoil = false }
-        }
 
-        let hold = 0.34
-        let travel = 0.55
-        // ...settles for a beat, then sweeps into the bin.
-        DispatchQueue.main.asyncAfter(deadline: .now() + hold) {
-            withAnimation(.timingCurve(0.4, 0, 0.2, 1, duration: travel)) { flyToBin = true }
-        }
-        // The instant it lands, it becomes the collection's newest thumbnail —
-        // same image, same spot — so the swap is seamless.
-        DispatchQueue.main.asyncAfter(deadline: .now() + hold + travel) {
-            let newID = collection.add(stamp)
+        // a fresh random off-screen direction + spin for this crop
+        let angle = Double.random(in: 0 ..< (2 * .pi))
+        let dist = hypot(previewSize.width, previewSize.height) * 1.3
+        landSpot = CGPoint(x: win.midX + CGFloat(cos(angle)) * dist,
+                           y: win.midY + CGFloat(sin(angle)) * dist)
+        landAngle = Double.random(in: -260 ... 260)
+
+        // 팡 — burst out fast and shoot off the screen
+        let travel = 0.4
+        withAnimation(.easeOut(duration: travel)) { fell = true }
+
+        // Once it's off-screen, file it into the collection.
+        let here = location.current
+        let mine = stamp   // identity guard against a faster follow-up shot
+        DispatchQueue.main.asyncAfter(deadline: .now() + travel) {
+            let newID = collection.add(stamp, location: here,
+                                       original: raw, cropNorm: cropNorm, mirrored: mirrored)
+            // fill in the place name once reverse-geocoding returns
+            if let here {
+                Task {
+                    if let place = await location.placeName(for: here) {
+                        collection.setPlace(place, for: newID)
+                    }
+                }
+            }
             flying = nil
-            flyToBin = false
-            dropped = false
+            fell = false
             withAnimation(.spring(response: 0.25, dampingFraction: 0.45)) { binBounce = true }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.22) {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) { binBounce = false }
-                // stamp made → open the parchment so a few words can be added
+            }
+            // The captured photo holds in the frame window for ~2s (from the
+            // shutter), then fades back to the live preview and the parchment
+            // opens for a caption.
+            DispatchQueue.main.asyncAfter(deadline: .now() + (2.0 - travel)) {
+                guard stayingStamp === mine else { return }   // a newer shot took over
+                withAnimation(.easeOut(duration: 0.4)) { stayVisible = false }
                 editTarget = EditTarget(id: newID)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    if stayingStamp === mine { stayingStamp = nil }
+                }
             }
         }
     }
@@ -287,16 +358,23 @@ struct ContentView: View {
 
     // MARK: - Permission
 
+    /// Shown only when camera access has been refused — a black screen telling
+    /// the user the camera is needed, with a shortcut into Settings. Once access
+    /// is granted this never appears again.
     private var permissionScreen: some View {
         VStack(spacing: 18) {
             Text("📮 우표 카메라")
                 .font(.system(size: 28, weight: .heavy, design: .rounded))
                 .foregroundStyle(.white)
-            Text("카메라 권한을 허용하면 우표 펀칭 프레임으로\n사진을 찍을 수 있어요.")
+            Text("우표를 펀칭하려면 카메라 권한이 필요해요.\n설정에서 카메라를 켜주세요.")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.white.opacity(0.8))
-            Button("카메라 켜기") { Task { await camera.requestAccess() } }
-                .buttonStyle(PrimaryButton())
+            Button("설정 열기") {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url)
+                }
+            }
+            .buttonStyle(PrimaryButton())
         }
         .padding(40)
     }
@@ -311,33 +389,32 @@ struct CollectionView: View {
 
     @State private var showNewAlbum = false
     @State private var newAlbumName = ""
+    @State private var showNewExhibition = false
+    @State private var newExhibitionName = ""
 
     private let columns = [GridItem(.adaptive(minimum: 150), spacing: 18)]
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 22) {
-                    ForEach(collection.albums, id: \.self) { album in
-                        NavigationLink {
-                            AlbumPageView(collection: collection, album: album)
-                        } label: {
-                            AlbumBookCover(name: album,
-                                           count: collection.count(in: album),
-                                           active: album == collection.activeAlbum,
-                                           peek: collection.stamps(in: album).suffix(3).map(\.image))
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }
-                .padding(20)
+                sectionHeader("우표첩")
+                albumShelf
+                sectionHeader("전시")
+                exhibitionWalls
             }
             .background(Color(hex: 0x141210).ignoresSafeArea())
-            .navigationTitle("우표첩")
+            .navigationTitle("모음")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button { newAlbumName = ""; showNewAlbum = true } label: {
+                    Menu {
+                        Button { newAlbumName = ""; showNewAlbum = true } label: {
+                            Label("새 우표첩…", systemImage: "book.closed")
+                        }
+                        Button { newExhibitionName = ""; showNewExhibition = true } label: {
+                            Label("새 전시…", systemImage: "photo.artframe")
+                        }
+                    } label: {
                         Image(systemName: "plus")
                     }
                 }
@@ -350,8 +427,72 @@ struct CollectionView: View {
                 Button("취소", role: .cancel) { }
                 Button("만들기") { collection.createAlbum(newAlbumName) }
             }
+            .sheet(isPresented: $showNewExhibition) {
+                NewExhibitionSheet(collection: collection)
+            }
         }
         .preferredColorScheme(.dark)
+    }
+
+    private func sectionHeader(_ title: String) -> some View {
+        HStack {
+            Text(title)
+                .font(.system(size: 18, weight: .heavy, design: .rounded))
+                .foregroundStyle(.white)
+            Spacer()
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 18)
+    }
+
+    private var albumShelf: some View {
+        LazyVGrid(columns: columns, spacing: 22) {
+            ForEach(collection.albums, id: \.self) { album in
+                NavigationLink {
+                    AlbumPageView(collection: collection, album: album)
+                } label: {
+                    AlbumBookCover(name: album,
+                                   count: collection.count(in: album),
+                                   active: album == collection.activeAlbum,
+                                   peek: collection.stamps(in: album).suffix(3).map(\.image))
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(20)
+    }
+
+    @ViewBuilder
+    private var exhibitionWalls: some View {
+        if collection.exhibitions.isEmpty {
+            VStack(spacing: 10) {
+                Image(systemName: "photo.artframe")
+                    .font(.system(size: 40))
+                    .foregroundStyle(.white.opacity(0.3))
+                Text("아직 전시가 없어요")
+                    .foregroundStyle(.white.opacity(0.7))
+                Text("우표첩에서 우표를 길게 눌러 전시에 걸어보세요")
+                    .font(.system(size: 13))
+                    .foregroundStyle(.white.opacity(0.45))
+                    .multilineTextAlignment(.center)
+            }
+            .padding(.top, 80).padding(.horizontal, 40)
+        } else {
+            LazyVGrid(columns: columns, spacing: 22) {
+                ForEach(collection.exhibitions) { ex in
+                    NavigationLink {
+                        ExhibitionWallView(collection: collection, exhibition: ex.name)
+                    } label: {
+                        ExhibitionWallCover(name: ex.name,
+                                            count: ex.stampIDs.count,
+                                            peek: collection.stampsInExhibition(ex.name).prefix(3).map(\.image),
+                                            background: ex.backgroundStyle)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(20)
+        }
     }
 }
 
@@ -420,7 +561,64 @@ struct AlbumBookCover: View {
     }
 }
 
+/// An exhibition on the wall list: a gold-framed card peeking at the stamps
+/// hung inside, with its name and how many pieces it holds.
+struct ExhibitionWallCover: View {
+    let name: String
+    let count: Int
+    let peek: [UIImage]
+    var background: BackgroundStyle = .cream
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            ZStack {
+                DiaryBackground(style: background)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                HStack(spacing: -10) {
+                    ForEach(Array(peek.enumerated()), id: \.offset) { _, img in
+                        Image(uiImage: img).resizable().scaledToFit()
+                            .frame(height: 66)
+                            .padding(3)
+                            .background(Color(hex: 0xF6EBBE))
+                            .overlay(RoundedRectangle(cornerRadius: 2)
+                                .strokeBorder(Color(hex: 0xCBB870), lineWidth: 2))
+                            .shadow(color: .black.opacity(0.4), radius: 2, y: 1)
+                    }
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .frame(height: 124)
+            .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .strokeBorder(Color(hex: 0xCBB870), lineWidth: 2))
+            .shadow(color: .black.opacity(0.35), radius: 6, y: 4)
+
+            VStack(alignment: .leading, spacing: 1) {
+                Text(name)
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .foregroundStyle(.white)
+                    .lineLimit(1)
+                Text("\(count)점")
+                    .font(.system(size: 12, weight: .medium, design: .rounded))
+                    .foregroundStyle(.white.opacity(0.5))
+            }
+        }
+    }
+}
+
 // MARK: - Album page (stamps pressed onto the book's pages)
+
+/// How the stamps on an album page are grouped into sections.
+private enum GroupMode: String, CaseIterable, Hashable {
+    case place = "장소별"
+    case period = "기간별"
+}
+
+/// One grouped section of stamps (a place, or a month).
+private struct StampSection: Identifiable {
+    let id: String
+    let title: String
+    let stamps: [CollectedStamp]
+}
 
 struct AlbumPageView: View {
     @ObservedObject var collection: CollectionStore
@@ -431,12 +629,53 @@ struct AlbumPageView: View {
     @State private var renameText = ""
     @State private var showDeleteAlbum = false
     @State private var deleteTarget: CollectedStamp?
+    @State private var groupMode: GroupMode = .place
+    @State private var showNewExhibition = false
+    @State private var newExhibitionName = ""
+    @State private var exhibitTarget: CollectedStamp?
 
-    private let columns = [GridItem(.adaptive(minimum: 92), spacing: 12)]
+    // Flow B: drag a stamp onto a chip in the bottom exhibition bar.
+    @State private var hoveredDrop: String?
+
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 4)
 
     private var stamps: [CollectedStamp] { collection.stamps(in: album) }
+    /// Everything homed in this album, including stamps currently exhibited —
+    /// what "delete album" would actually remove.
+    private var homeCount: Int { collection.stamps.lazy.filter { $0.album == album }.count }
     private var deletePresented: Binding<Bool> {
         Binding(get: { deleteTarget != nil }, set: { if !$0 { deleteTarget = nil } })
+    }
+
+    /// year*12+month sort key and a "2026년 6월" title for a date.
+    private func periodKey(_ date: Date) -> (sort: Int, title: String) {
+        let c = Calendar.current.dateComponents([.year, .month], from: date)
+        let y = c.year ?? 0, m = c.month ?? 0
+        return (y * 12 + m, "\(y)년 \(m)월")
+    }
+
+    /// The album's stamps grouped by place or by month, newest section first.
+    private var sections: [StampSection] {
+        let grouped: [StampSection]
+        switch groupMode {
+        case .place:
+            let groups = Dictionary(grouping: stamps) {
+                $0.place.isEmpty ? "위치 미상" : $0.place
+            }
+            grouped = groups.map { key, value in
+                StampSection(id: "place-\(key)", title: key,
+                             stamps: value.sorted { $0.createdAt > $1.createdAt })
+            }
+        case .period:
+            let groups = Dictionary(grouping: stamps) { periodKey($0.createdAt).sort }
+            grouped = groups.map { key, value in
+                StampSection(id: "period-\(key)", title: periodKey(value[0].createdAt).title,
+                             stamps: value.sorted { $0.createdAt > $1.createdAt })
+            }
+        }
+        return grouped.sorted {
+            ($0.stamps.first?.createdAt ?? .distantPast) > ($1.stamps.first?.createdAt ?? .distantPast)
+        }
     }
 
     var body: some View {
@@ -444,28 +683,40 @@ struct AlbumPageView: View {
             if stamps.isEmpty {
                 emptyPage
             } else {
-                LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(stamps) { stamp in
-                        NavigationLink {
-                            StampDetailView(collection: collection, stampID: stamp.id)
-                        } label: {
-                            pagePocket(stamp)
-                        }
-                        .buttonStyle(.plain)
-                        .contextMenu {
-                            moveMenu(for: stamp)
-                            Button(role: .destructive) { deleteTarget = stamp } label: {
-                                Label("삭제", systemImage: "trash")
+                LazyVStack(spacing: 16) {
+                    Picker("정렬", selection: $groupMode) {
+                        ForEach(GroupMode.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(.horizontal, 14)
+                    .padding(.top, 10)
+
+                    ForEach(sections) { section in
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack(spacing: 6) {
+                                Image(systemName: groupMode == .place
+                                      ? "mappin.and.ellipse" : "calendar")
+                                Text(section.title).lineLimit(1)
+                                Spacer()
+                                Text("\(section.stamps.count)")
                             }
+                            .font(.system(size: 14, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color(hex: 0x6B5836))
+
+                            stampGrid(section.stamps)
                         }
+                        .padding(16)
+                        .background(albumPaper)
+                        .padding(.horizontal, 14)
                     }
                 }
-                .padding(16)
-                .background(albumPaper)
-                .padding(14)
+                .padding(.bottom, 16)
             }
         }
         .background(Color(hex: 0x141210).ignoresSafeArea())
+        .safeAreaInset(edge: .bottom) {
+            if !stamps.isEmpty { exhibitionDropBar }
+        }
         .navigationTitle(album)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -497,7 +748,7 @@ struct AlbumPageView: View {
             Button("취소", role: .cancel) { }
             Button("저장") { collection.renameAlbum(album, to: renameText) }
         }
-        .confirmationDialog("우표첩 '\(album)' 과(와) 안의 우표 \(stamps.count)장을 모두 삭제할까요?",
+        .confirmationDialog("우표첩 '\(album)' 과(와) 안의 우표 \(homeCount)장을 모두 삭제할까요?",
                             isPresented: $showDeleteAlbum, titleVisibility: .visible) {
             Button("삭제", role: .destructive) { collection.deleteAlbum(album); dismiss() }
             Button("취소", role: .cancel) { }
@@ -507,26 +758,88 @@ struct AlbumPageView: View {
             Button("삭제", role: .destructive) { collection.delete(stamp.id) }
             Button("취소", role: .cancel) { }
         }
+        .sheet(isPresented: $showNewExhibition) {
+            NewExhibitionSheet(collection: collection) { name in
+                if let t = exhibitTarget { collection.placeInExhibition(t.id, into: name) }
+            }
+        }
         .preferredColorScheme(.dark)
     }
 
-    @ViewBuilder
-    private func moveMenu(for stamp: CollectedStamp) -> some View {
-        Menu {
-            ForEach(collection.albums.filter { $0 != album }, id: \.self) { a in
-                Button(a) { collection.move(stamp.id, to: a) }
+    /// The 4-up grid of stamps for one section. A quick tap opens the detail;
+    /// long-press lifts the stamp so it can be dragged down to the exhibition
+    /// bar (Flow B) — scrolling and tapping stay intact (native drag).
+    private func stampGrid(_ list: [CollectedStamp]) -> some View {
+        LazyVGrid(columns: columns, spacing: 12) {
+            ForEach(list) { stamp in
+                NavigationLink {
+                    StampDetailView(collection: collection, stampID: stamp.id)
+                } label: {
+                    pagePocket(stamp)
+                }
+                .buttonStyle(.plain)
+                .draggable(stamp.id) {
+                    pagePocket(stamp).frame(width: 90)   // lift preview
+                }
             }
-        } label: {
-            Label("다른 우표첩으로", systemImage: "arrow.right.square")
         }
     }
 
-    /// One stamp seated in a clear pocket on the album page.
+    /// A bar pinned at the bottom: drag a stamp onto an exhibition to hang it.
+    private var exhibitionDropBar: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 10) {
+                Label("전시에 걸기", systemImage: "hand.draw")
+                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .foregroundStyle(.white.opacity(0.7))
+                ForEach(collection.exhibitions) { ex in
+                    dropChip(title: ex.name, systemImage: "photo.artframe") { id in
+                        collection.placeInExhibition(id, into: ex.name)
+                    }
+                }
+                dropChip(title: "새 전시", systemImage: "plus", dashed: true) { id in
+                    exhibitTarget = collection.stamps.first { $0.id == id }
+                    newExhibitionName = ""
+                    showNewExhibition = true
+                }
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
+        }
+        .background(.ultraThinMaterial)
+    }
+
+    private func dropChip(title: String, systemImage: String, dashed: Bool = false,
+                          onDrop: @escaping (String) -> Void) -> some View {
+        HStack(spacing: 6) {
+            Image(systemName: systemImage)
+            Text(title).lineLimit(1)
+        }
+        .font(.system(size: 14, weight: .semibold, design: .rounded))
+        .foregroundStyle(.white)
+        .padding(.horizontal, 14).padding(.vertical, 10)
+        .background(Capsule().fill(Color.white.opacity(hoveredDrop == title ? 0.3 : 0.12)))
+        .overlay(Capsule().strokeBorder(Color(hex: 0xCBB870),
+                                        style: StrokeStyle(lineWidth: hoveredDrop == title ? 2.5 : 1,
+                                                           dash: dashed ? [5] : [])))
+        .scaleEffect(hoveredDrop == title ? 1.06 : 1)
+        .dropDestination(for: String.self) { ids, _ in
+            guard let id = ids.first else { return false }
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) { onDrop(id) }
+            return true
+        } isTargeted: { t in
+            withAnimation(.easeOut(duration: 0.12)) { hoveredDrop = t ? title : (hoveredDrop == title ? nil : hoveredDrop) }
+        }
+    }
+
+
+    /// One stamp seated in a clear pocket on the album page — just the stamp;
+    /// the date/place show as the section headers, not on each stamp.
     private func pagePocket(_ stamp: CollectedStamp) -> some View {
         Image(uiImage: stamp.image)
             .resizable().scaledToFit()
-            .frame(height: 96)
-            .padding(6)
+            .frame(height: 74)
+            .padding(4)
             .frame(maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 6)
@@ -570,6 +883,542 @@ struct AlbumPageView: View {
     }
 }
 
+// MARK: - Diary-insert backgrounds
+
+/// Diary / planner insert paper styles a user can pick for an exhibition wall.
+enum BackgroundStyle: String, CaseIterable, Identifiable {
+    case cream, grid, ruled, dot, kraft, parchment, cornell, graph, mint, slate
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .cream:     return "무지 크림"
+        case .grid:      return "모눈"
+        case .ruled:     return "줄노트"
+        case .dot:       return "도트"
+        case .kraft:     return "크라프트"
+        case .parchment: return "양피지"
+        case .cornell:   return "코넬"
+        case .graph:     return "그래프"
+        case .mint:      return "민트"
+        case .slate:     return "다크 그리드"
+        }
+    }
+
+    /// True for the few dark papers, so foreground text can flip to light.
+    var isDark: Bool { self == .slate }
+
+    var paper: Color {
+        switch self {
+        case .cream:     return Color(hex: 0xF6EFD9)
+        case .grid:      return Color(hex: 0xF7F1DC)
+        case .ruled:     return Color(hex: 0xFBFAF4)
+        case .dot:       return Color(hex: 0xF7F2E2)
+        case .kraft:     return Color(hex: 0xC9A983)
+        case .parchment: return Color(hex: 0xEDDCB0)
+        case .cornell:   return Color(hex: 0xFBF6EA)
+        case .graph:     return Color(hex: 0xFAFCFE)
+        case .mint:      return Color(hex: 0xDCEFE4)
+        case .slate:     return Color(hex: 0x23272E)
+        }
+    }
+}
+
+/// Renders a `BackgroundStyle` as procedurally-drawn diary paper at any size.
+struct DiaryBackground: View {
+    let style: BackgroundStyle
+
+    var body: some View {
+        Canvas { ctx, size in
+            let rect = CGRect(origin: .zero, size: size)
+            // base paper
+            if style == .parchment {
+                ctx.fill(Path(rect), with: .linearGradient(
+                    Gradient(colors: [Color(hex: 0xF3E6C4), Color(hex: 0xE6D2A0)]),
+                    startPoint: .zero, endPoint: CGPoint(x: 0, y: size.height)))
+            } else {
+                ctx.fill(Path(rect), with: .color(style.paper))
+            }
+
+            // pattern overlay
+            switch style {
+            case .grid, .graph, .slate:
+                let step: CGFloat = style == .graph ? 18 : 24
+                var p = Path()
+                stride(from: step, to: size.width, by: step).forEach {
+                    p.move(to: CGPoint(x: $0, y: 0)); p.addLine(to: CGPoint(x: $0, y: size.height))
+                }
+                stride(from: step, to: size.height, by: step).forEach {
+                    p.move(to: CGPoint(x: 0, y: $0)); p.addLine(to: CGPoint(x: size.width, y: $0))
+                }
+                ctx.stroke(p, with: .colour(style), lineWidth: 0.6)
+            case .ruled, .cornell:
+                let step: CGFloat = 28
+                var p = Path()
+                stride(from: step, to: size.height, by: step).forEach {
+                    p.move(to: CGPoint(x: 0, y: $0)); p.addLine(to: CGPoint(x: size.width, y: $0))
+                }
+                ctx.stroke(p, with: .colour(style), lineWidth: 0.7)
+                if style == .cornell {
+                    let mx = max(54, size.width * 0.18)
+                    var m = Path()
+                    m.move(to: CGPoint(x: mx, y: 0)); m.addLine(to: CGPoint(x: mx, y: size.height))
+                    ctx.stroke(m, with: .color(Color(hex: 0xD98C8C).opacity(0.6)), lineWidth: 1)
+                }
+            case .dot:
+                let step: CGFloat = 22, r: CGFloat = 1.1
+                for x in stride(from: step, to: size.width, by: step) {
+                    for y in stride(from: step, to: size.height, by: step) {
+                        ctx.fill(Path(ellipseIn: CGRect(x: x - r, y: y - r, width: 2 * r, height: 2 * r)),
+                                 with: .colour(style))
+                    }
+                }
+            case .cream, .kraft, .parchment, .mint:
+                break   // plain / gradient paper
+            }
+        }
+    }
+}
+
+private extension GraphicsContext.Shading {
+    /// The line/dot ink colour for a paper style.
+    static func colour(_ style: BackgroundStyle) -> GraphicsContext.Shading {
+        switch style {
+        case .grid:    return .color(Color(hex: 0xD7CBA6))
+        case .graph:   return .color(Color(hex: 0x8FB7D6).opacity(0.55))
+        case .slate:   return .color(.white.opacity(0.08))
+        case .ruled:   return .color(Color(hex: 0xB9C7D6))
+        case .cornell: return .color(Color(hex: 0xCBB9A0))
+        case .dot:     return .color(Color(hex: 0xCEC1A0))
+        default:       return .color(.clear)
+        }
+    }
+}
+
+/// Sheet for creating an exhibition: a name and one of the diary-paper styles.
+struct NewExhibitionSheet: View {
+    @ObservedObject var collection: CollectionStore
+    var onCreate: (String) -> Void = { _ in }
+    @Environment(\.dismiss) private var dismiss
+    @State private var name = ""
+    @State private var style: BackgroundStyle = .cream
+    private let columns = [GridItem(.adaptive(minimum: 96), spacing: 12)]
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    TextField("전시 이름", text: $name)
+                        .textFieldStyle(.roundedBorder)
+                        .padding(.horizontal, 16).padding(.top, 14)
+                    Text("배경 고르기")
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .padding(.horizontal, 16)
+                    LazyVGrid(columns: columns, spacing: 14) {
+                        ForEach(BackgroundStyle.allCases) { s in
+                            Button { style = s } label: { swatch(s) }
+                                .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+                .padding(.bottom, 24)
+            }
+            .navigationTitle("새 전시")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) { Button("취소") { dismiss() } }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("만들기") {
+                        if let n = collection.createExhibition(name, background: style) { onCreate(n) }
+                        dismiss()
+                    }
+                    .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
+                }
+            }
+        }
+    }
+
+    private func swatch(_ s: BackgroundStyle) -> some View {
+        VStack(spacing: 6) {
+            DiaryBackground(style: s)
+                .frame(height: 82)
+                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .strokeBorder(style == s ? Color(hex: 0xE8504E) : Color.black.opacity(0.12),
+                                  lineWidth: style == s ? 3 : 1))
+                .shadow(color: .black.opacity(0.12), radius: 2, y: 1)
+            Text(s.title)
+                .font(.system(size: 11, weight: style == s ? .bold : .medium, design: .rounded))
+                .foregroundStyle(style == s ? Color(hex: 0xE8504E) : .secondary)
+        }
+    }
+}
+
+// MARK: - Exhibition wall (curated stamps hung up to show off)
+
+struct ExhibitionWallView: View {
+    @ObservedObject var collection: CollectionStore
+    let exhibition: String
+    @Environment(\.dismiss) private var dismiss
+
+    @State private var showRename = false
+    @State private var renameText = ""
+    @State private var showDelete = false
+    @State private var deleteTarget: CollectedStamp?
+
+    // Flow A: a hwatu deck fanned from the user's thumb corner. Swipe in an arc
+    // around the corner to scroll the deck (wrapping); pull a card outward (away
+    // from the corner) to draw it; tap elsewhere to fold it back.
+    private enum FanDragMode { case none, scrub, draw }
+    @AppStorage("stampFanRightHanded") private var rightHanded = true
+    @State private var fanPresented = false
+    @State private var fanScroll: CGFloat = 0        // fractional index of the front card
+    @State private var fanScrubAnchor: CGFloat = 0
+    @State private var scrubStartAngle: CGFloat = 0  // finger angle (rad) when an arc-scrub began
+    @State private var drawStartRadius: CGFloat = 0  // finger distance from pivot when a draw began
+    @State private var drawCardPos: CGPoint = .zero  // the drawn card follows the finger here
+    @State private var drawStartLoc: CGPoint = .zero
+    @State private var fanDragMode: FanDragMode = .none
+    @State private var fanSpread: CGFloat = 0         // 0 = stacked at corner, 1 = fully fanned
+    private let maxFan = 3                            // peek count for the hint
+    private let fanRadius: CGFloat = 196             // arc radius from the corner
+    private let fanCardAngle: CGFloat = 0.27         // radians between cards (~15.5°)
+
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 16), count: 3)
+    private var stamps: [CollectedStamp] { collection.stampsInExhibition(exhibition) }
+    private var deletePresented: Binding<Bool> {
+        Binding(get: { deleteTarget != nil }, set: { if !$0 { deleteTarget = nil } })
+    }
+
+    var body: some View {
+        GeometryReader { geo in
+            ZStack {
+                wallScroll(viewportHeight: geo.size.height)
+                    .blur(radius: fanPresented ? 2 : 0)
+
+                // hint tucked into the thumb corner — swipe out an arc to fan
+                if !fanPresented && !collection.collectedStamps.isEmpty {
+                    fanHint
+                        .frame(maxWidth: .infinity, maxHeight: .infinity,
+                               alignment: rightHanded ? .bottomTrailing : .bottomLeading)
+                        .padding(rightHanded ? .trailing : .leading, 8)
+                        .padding(.bottom, 4)
+                        .transition(.opacity)
+                }
+
+                if fanPresented {
+                    Color.black.opacity(0.5).ignoresSafeArea()
+                        .allowsHitTesting(false)
+                    fanTray(in: geo.size)
+                        .transition(.opacity)
+                }
+            }
+        }
+        .background(DiaryBackground(style: collection.backgroundStyle(of: exhibition)).ignoresSafeArea())
+        .navigationTitle(exhibition)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Button { rightHanded.toggle() } label: {
+                        Label(rightHanded ? "왼손잡이 모드로" : "오른손잡이 모드로",
+                              systemImage: rightHanded ? "hand.point.left" : "hand.point.right")
+                    }
+                    Menu {
+                        ForEach(BackgroundStyle.allCases) { s in
+                            Button { collection.setExhibitionBackground(exhibition, to: s) } label: {
+                                Label(s.title, systemImage: collection.backgroundStyle(of: exhibition) == s
+                                      ? "checkmark" : "square.dashed")
+                            }
+                        }
+                    } label: {
+                        Label("배경 바꾸기", systemImage: "photo.on.rectangle")
+                    }
+                    Button { renameText = exhibition; showRename = true } label: {
+                        Label("이름 변경", systemImage: "pencil")
+                    }
+                    Divider()
+                    Button(role: .destructive) { showDelete = true } label: {
+                        Label("전시 삭제", systemImage: "trash")
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                }
+            }
+        }
+        .alert("이름 변경", isPresented: $showRename) {
+            TextField("전시 이름", text: $renameText)
+            Button("취소", role: .cancel) { }
+            Button("저장") { collection.renameExhibition(exhibition, to: renameText) }
+        }
+        .confirmationDialog("전시 '\(exhibition)' 을(를) 삭제할까요? 걸려 있던 우표들은 원래 우표첩으로 돌아가요.",
+                            isPresented: $showDelete, titleVisibility: .visible) {
+            Button("전시 삭제", role: .destructive) { collection.deleteExhibition(exhibition); dismiss() }
+            Button("취소", role: .cancel) { }
+        }
+        .confirmationDialog("이 우표를 삭제할까요?", isPresented: deletePresented,
+                            titleVisibility: .visible, presenting: deleteTarget) { stamp in
+            Button("삭제", role: .destructive) { collection.delete(stamp.id) }
+            Button("취소", role: .cancel) { }
+        }
+        .preferredColorScheme(.dark)
+    }
+
+    /// The wall grid, with a tappable empty backdrop that fans out the collection.
+    private func wallScroll(viewportHeight: CGFloat) -> some View {
+        ScrollView {
+            ZStack(alignment: .top) {
+                Color.clear
+                    .contentShape(Rectangle())
+                    .frame(maxWidth: .infinity, minHeight: viewportHeight)
+                    .onTapGesture {
+                        guard !collection.collectedStamps.isEmpty else { return }
+                        openFan()
+                    }
+
+                if stamps.isEmpty {
+                    emptyWall
+                } else {
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(stamps) { stamp in
+                            NavigationLink {
+                                StampDetailView(collection: collection, stampID: stamp.id)
+                            } label: {
+                                framedArt(stamp)
+                            }
+                            .buttonStyle(.plain)
+                            .contextMenu { wallMenu(for: stamp) }
+                            .draggable(stamp.id) {
+                                framedArt(stamp).frame(width: 90)   // drag preview
+                            }
+                            .dropDestination(for: String.self) { items, _ in
+                                guard let dragged = items.first,
+                                      let toIndex = stamps.firstIndex(where: { $0.id == stamp.id })
+                                else { return false }
+                                withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                                    collection.reorderExhibition(exhibition, moving: dragged, to: toIndex)
+                                }
+                                return true
+                            }
+                        }
+                    }
+                    .padding(18)
+                }
+            }
+        }
+    }
+
+    private func fanPivot(_ size: CGSize) -> CGPoint {
+        rightHanded ? CGPoint(x: size.width - 30, y: size.height - 18)
+                    : CGPoint(x: 30, y: size.height - 18)
+    }
+    /// Direction (radians) the front card points: up-left for a right thumb,
+    /// up-right for a left thumb.
+    private var fanBaseAngle: CGFloat { rightHanded ? -2.356 : -0.785 }
+    private func angleDiff(_ a: CGFloat, _ b: CGFloat) -> CGFloat {
+        var d = a - b
+        while d > .pi { d -= 2 * .pi }
+        while d < -.pi { d += 2 * .pi }
+        return d
+    }
+
+    /// A hwatu deck fanned in an arc out of the thumb corner. Swipe around the
+    /// corner to scroll the deck (wrapping); pull a card outward to draw it;
+    /// tap anywhere else to fold it back.
+    @ViewBuilder
+    private func fanTray(in size: CGSize) -> some View {
+        let all = collection.collectedStamps          // oldest → newest
+        let count = all.count
+        if count > 0 {
+            let pivot = fanPivot(size)
+            let centerIdx = Int(fanScroll.rounded())
+            let r = min(3, max(0, count / 2))
+            let baseAI = centerIdx - r
+            ZStack {
+                ForEach((centerIdx - r)...(centerIdx + r), id: \.self) { ai in
+                    let s = CGFloat(ai) - fanScroll
+                    let idx = ((ai % count) + count) % count
+                    let isFront = ai == centerIdx
+                    let drawing = isFront && fanDragMode == .draw
+                    // spread out from the corner: angle and radius scale with fanSpread
+                    let angle = fanBaseAngle + s * fanCardAngle * fanSpread
+                    let radius = fanRadius * (0.3 + 0.7 * fanSpread)
+                    let radial = CGPoint(x: pivot.x + radius * cos(angle),
+                                         y: pivot.y + radius * sin(angle))
+                    fanCard(all[idx])
+                        .scaleEffect(drawing ? 1.3 : (isFront ? 1.12 : 1))
+                        .opacity(drawing ? 1 : Double(0.4 + 0.6 * fanSpread))
+                        // straighten up as it's grabbed out of the fan
+                        .rotationEffect(.radians(drawing ? 0 : Double(angle) + .pi / 2))
+                        .shadow(color: .black.opacity(drawing ? 0.5 : 0), radius: drawing ? 12 : 0, y: 8)
+                        // drawn card follows the finger; others sit on the arc
+                        .position(drawing ? drawCardPos : radial)
+                        .zIndex(drawing ? 200 : (isFront ? 100 : Double(r) - abs(Double(s))))
+                        // 촤라라락 — each card unfurls a beat after the previous
+                        .animation(.spring(response: 0.42, dampingFraction: 0.72)
+                            .delay(Double(ai - baseAI) * 0.05), value: fanSpread)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .contentShape(Rectangle())
+            .gesture(fanGesture(pivot: pivot, count: count, all: all))
+            .onTapGesture {
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.85)) { fanPresented = false }
+            }
+            .onAppear { fanSpread = 1 }       // trigger the staggered fan-out
+            .onDisappear { fanSpread = 0 }
+        }
+    }
+
+    private func fanGesture(pivot: CGPoint, count: Int, all: [CollectedStamp]) -> some Gesture {
+        DragGesture(minimumDistance: 6)
+            .onChanged { v in
+                let curAngle = atan2(v.location.y - pivot.y, v.location.x - pivot.x)
+                let curRadius = hypot(v.location.x - pivot.x, v.location.y - pivot.y)
+                if fanDragMode == .none {
+                    let startAngle = atan2(v.startLocation.y - pivot.y, v.startLocation.x - pivot.x)
+                    let startRadius = hypot(v.startLocation.x - pivot.x, v.startLocation.y - pivot.y)
+                    let tangential = abs(angleDiff(curAngle, startAngle)) * curRadius
+                    let radial = abs(curRadius - startRadius)
+                    fanDragMode = radial > tangential ? .draw : .scrub
+                    scrubStartAngle = startAngle
+                    fanScrubAnchor = fanScroll
+                    drawStartRadius = startRadius
+                    drawStartLoc = v.startLocation
+                    drawCardPos = v.startLocation
+                }
+                if fanDragMode == .scrub {
+                    let delta = angleDiff(curAngle, scrubStartAngle)
+                    let dir: CGFloat = rightHanded ? -1 : 1     // clockwise = forward for a right thumb
+                    fanScroll = fanScrubAnchor + dir * delta / fanCardAngle
+                } else {
+                    drawCardPos = v.location          // the card follows the finger
+                }
+            }
+            .onEnded { v in
+                let moved = hypot(v.location.x - drawStartLoc.x, v.location.y - drawStartLoc.y)
+                if fanDragMode == .draw && moved > 60 {
+                    let idx = ((Int(fanScroll.rounded()) % count) + count) % count
+                    let card = all[idx]
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                        collection.placeInExhibition(card.id, into: exhibition)
+                    }
+                    fanPresented = false
+                } else if fanDragMode == .scrub {
+                    withAnimation(.spring(response: 0.4, dampingFraction: 0.82)) {
+                        fanScroll = fanScroll.rounded()
+                    }
+                }
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) { fanDragMode = .none }
+            }
+    }
+
+    private func fanCard(_ stamp: CollectedStamp) -> some View {
+        Image(uiImage: stamp.image).resizable().scaledToFit()
+            .frame(width: 60)
+            .padding(6)
+            .background(RoundedRectangle(cornerRadius: 4)
+                .fill(LinearGradient(colors: [Color(hex: 0xF6EBBE), Color(hex: 0xEBDBA0)],
+                                     startPoint: .top, endPoint: .bottom)))
+            .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(Color(hex: 0xCBB870), lineWidth: 2))
+            .shadow(color: .black.opacity(0.5), radius: 4, y: 3)
+    }
+
+    /// A round handle tucked into the thumb corner, with a few stamps peeking
+    /// out in an arc — swipe it open (or tap) to fan the whole deck out.
+    private var fanHint: some View {
+        let peek = Array(collection.collectedStamps.suffix(maxFan))
+        let n = peek.count
+        let baseDeg = rightHanded ? -128.0 : -52.0    // up-left / up-right
+        return ZStack {
+            ForEach(Array(peek.enumerated()), id: \.element.id) { pair in
+                let i = pair.offset
+                let mid = Double(n - 1) / 2
+                let a = baseDeg + (Double(i) - mid) * 15
+                fanCard(pair.element)
+                    .scaleEffect(0.6)
+                    .rotationEffect(.degrees(a + 90))
+                    .offset(x: CGFloat(cos(a * .pi / 180)) * 52,
+                            y: CGFloat(sin(a * .pi / 180)) * 52)
+            }
+            VStack(spacing: 2) {
+                Image(systemName: "hand.draw.fill")
+                    .font(.system(size: 17, weight: .bold))
+                    .symbolEffect(.bounce, options: .repeating)
+                Text("우표 걸기")
+                    .font(.system(size: 10, weight: .bold, design: .rounded))
+            }
+            .foregroundStyle(.white)
+            .frame(width: 62, height: 62)
+            .background(Circle().fill(.ultraThinMaterial))
+            .overlay(Circle().strokeBorder(.white.opacity(0.45), lineWidth: 1))
+            .shadow(color: .black.opacity(0.4), radius: 5, y: 2)
+        }
+        .frame(width: 150, height: 150)
+        .contentShape(Rectangle())
+        .gesture(DragGesture(minimumDistance: 6).onEnded { _ in openFan() })
+        .onTapGesture { openFan() }
+    }
+
+    private func openFan() {
+        let count = collection.collectedStamps.count
+        fanScroll = CGFloat(max(0, count - 1))   // start on the newest card
+        fanDragMode = .none
+        fanSpread = 0                            // collapsed → onAppear fans it out
+        withAnimation(.spring(response: 0.34, dampingFraction: 0.8)) { fanPresented = true }
+    }
+
+    @ViewBuilder
+    private func wallMenu(for stamp: CollectedStamp) -> some View {
+        Button { collection.returnToCollection(stamp.id) } label: {
+            Label("컬렉션으로 되돌리기", systemImage: "arrow.uturn.backward")
+        }
+        if collection.exhibitions.count > 1 {
+            Menu {
+                ForEach(collection.exhibitions.filter { $0.name != exhibition }) { ex in
+                    Button(ex.name) { collection.moveExhibitedStamp(stamp.id, to: ex.name) }
+                }
+            } label: {
+                Label("다른 전시로", systemImage: "arrow.right.square")
+            }
+        }
+        Divider()
+        Button(role: .destructive) { deleteTarget = stamp } label: {
+            Label("삭제", systemImage: "trash")
+        }
+    }
+
+    /// A stamp hung on the wall — just the stamp itself, no frame or mat, so its
+    /// own (soon customizable) border is what shows.
+    private func framedArt(_ stamp: CollectedStamp) -> some View {
+        Image(uiImage: stamp.image)
+            .resizable().scaledToFit()
+            .frame(maxWidth: .infinity)
+            .shadow(color: .black.opacity(0.4), radius: 5, y: 4)
+    }
+
+    private var emptyWall: some View {
+        let dark = collection.backgroundStyle(of: exhibition).isDark
+        let ink = dark ? Color.white : Color(hex: 0x6B5836)
+        return VStack(spacing: 12) {
+            Image(systemName: "photo.artframe")
+                .font(.system(size: 44))
+                .foregroundStyle(ink.opacity(0.4))
+            Text("이 전시는 비어 있어요")
+                .foregroundStyle(ink.opacity(0.8))
+            Text(collection.collectedStamps.isEmpty
+                 ? "먼저 카메라로 우표를 모아보세요"
+                 : "아래 ‘우표 걸기’에서 우표를 꺼내 걸어보세요")
+                .font(.system(size: 13))
+                .foregroundStyle(ink.opacity(0.55))
+                .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.top, 120).padding(.horizontal, 40)
+    }
+}
+
 // MARK: - Collection store (disk-backed)
 
 struct CollectedStamp: Identifiable {
@@ -577,6 +1426,23 @@ struct CollectedStamp: Identifiable {
     let image: UIImage
     var caption: String
     var album: String          // which collecting book this stamp lives in
+    let createdAt: Date        // when this stamp was made
+    var place: String          // where it was made (human-readable; may be empty)
+}
+
+/// A curated wall of stamps pulled out of the collection and hung up to show
+/// off. The stamp ids are kept in display order (drag-to-reorder writes this).
+struct Exhibition: Identifiable {
+    var id: String { name }
+    let name: String
+    let stampIDs: [String]     // ordered
+    var background: String = BackgroundStyle.cream.rawValue   // diary-paper style id
+
+    var backgroundStyle: BackgroundStyle { BackgroundStyle(rawValue: background) ?? .cream }
+    /// A copy with a new ordered id list, keeping name + background.
+    func with(stampIDs ids: [String]) -> Exhibition {
+        Exhibition(name: name, stampIDs: ids, background: background)
+    }
 }
 
 /// A disk-backed stamp collection organised into albums ("우표첩"). New photos
@@ -588,18 +1454,60 @@ final class CollectionStore: ObservableObject {
     @Published private(set) var stamps: [CollectedStamp] = []
     @Published private(set) var albums: [String] = []
     @Published private(set) var activeAlbum: String = ""
+    @Published private(set) var exhibitions: [Exhibition] = [] {
+        didSet { exhibitedIDCache = Set(exhibitions.flatMap(\.stampIDs)) }
+    }
+    private var exhibitedIDCache: Set<String> = []
 
     private let dir: URL
     private var metaURL: URL { dir.appendingPathComponent("albums.json") }
+    private var exhibitionsURL: URL { dir.appendingPathComponent("exhibitions.json") }
     private struct Meta: Codable { var albums: [String]; var active: String }
+    private struct ExhibitionRecord: Codable { var name: String; var stampIDs: [String]; var background: String? }
+    private struct ExhibitionsFile: Codable { var exhibitions: [ExhibitionRecord] }
 
-    init() {
-        dir = FileManager.default
+    /// Per-stamp sidecar: when/where it was made, plus the crop region in the
+    /// saved original photo (0...1) so it can later be re-cropped with a custom
+    /// border.
+    private struct StampMeta: Codable {
+        var createdAt: Date
+        var latitude: Double?
+        var longitude: Double?
+        var place: String?
+        var cropX: Double? = nil
+        var cropY: Double? = nil
+        var cropW: Double? = nil
+        var cropH: Double? = nil
+        var mirrored: Bool? = nil
+    }
+    private func stampMetaURL(for id: String) -> URL {
+        dir.appendingPathComponent(id).appendingPathExtension("json")
+    }
+    /// The full pre-crop photo, kept so the stamp can be re-made with a different
+    /// border later.
+    private func originalURL(for id: String) -> URL {
+        dir.appendingPathComponent("\(id).orig.jpg")
+    }
+    /// Loads the original pre-crop photo for a stamp, if saved.
+    func originalImage(for id: String) -> UIImage? {
+        UIImage(contentsOfFile: originalURL(for: id).path)
+    }
+    private func writeStampMeta(_ meta: StampMeta, for id: String) {
+        if let data = try? JSONEncoder().encode(meta) {
+            try? data.write(to: stampMetaURL(for: id))
+        }
+    }
+
+    /// `directory` lets tests point the store at an isolated temp folder; in the
+    /// app it defaults to Documents/Collection.
+    init(directory: URL? = nil) {
+        dir = directory ?? FileManager.default
             .urls(for: .documentDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("Collection", isDirectory: true)
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         loadStamps()
         loadMeta()
+        loadExhibitions()
         reconcile()
     }
 
@@ -623,8 +1531,23 @@ final class CollectionStore: ObservableObject {
                 let album = ((try? String(contentsOf: url.appendingPathExtension("grp"),
                                           encoding: .utf8)) ?? "")
                     .trimmingCharacters(in: .whitespacesAndNewlines)
+
+                // when/where, from the sidecar — falling back to the id's epoch
+                // timestamp for stamps made before this was tracked.
+                let createdAt: Date
+                let place: String
+                if let data = try? Data(contentsOf: url.appendingPathExtension("json")),
+                   let meta = try? JSONDecoder().decode(StampMeta.self, from: data) {
+                    createdAt = meta.createdAt
+                    place = meta.place ?? ""
+                } else {
+                    let ms = Double(url.deletingPathExtension().lastPathComponent) ?? 0
+                    createdAt = ms > 0 ? Date(timeIntervalSince1970: ms / 1000) : Date()
+                    place = ""
+                }
                 return CollectedStamp(id: url.lastPathComponent, image: image,
-                                      caption: caption, album: album)
+                                      caption: caption, album: album,
+                                      createdAt: createdAt, place: place)
             }
     }
 
@@ -637,6 +1560,23 @@ final class CollectionStore: ObservableObject {
     private func saveMeta() {
         if let data = try? JSONEncoder().encode(Meta(albums: albums, active: activeAlbum)) {
             try? data.write(to: metaURL)
+        }
+    }
+
+    private func loadExhibitions() {
+        guard let data = try? Data(contentsOf: exhibitionsURL),
+              let file = try? JSONDecoder().decode(ExhibitionsFile.self, from: data) else { return }
+        exhibitions = file.exhibitions.map {
+            Exhibition(name: $0.name, stampIDs: $0.stampIDs,
+                       background: $0.background ?? BackgroundStyle.cream.rawValue)
+        }
+    }
+    private func saveExhibitions() {
+        let file = ExhibitionsFile(exhibitions: exhibitions.map {
+            ExhibitionRecord(name: $0.name, stampIDs: $0.stampIDs, background: $0.background)
+        })
+        if let data = try? JSONEncoder().encode(file) {
+            try? data.write(to: exhibitionsURL, options: .atomic)
         }
     }
 
@@ -654,24 +1594,93 @@ final class CollectionStore: ObservableObject {
             try? albums[0].write(to: albumURL(for: stamps[i].id), atomically: true, encoding: .utf8)
         }
         saveMeta()
+        reconcileExhibitions()
+    }
+
+    /// Drop exhibition ids whose stamp is gone, and enforce single-membership
+    /// (an id in two exhibitions keeps only the first). Persist if anything changed.
+    private func reconcileExhibitions() {
+        guard !exhibitions.isEmpty else { return }
+        let live = Set(stamps.map(\.id))
+        var seen = Set<String>()
+        var changed = false
+        let cleaned: [Exhibition] = exhibitions.map { ex in
+            let ids = ex.stampIDs.filter { id in
+                guard live.contains(id), !seen.contains(id) else { changed = true; return false }
+                seen.insert(id); return true
+            }
+            return ex.with(stampIDs: ids)
+        }
+        if changed { exhibitions = cleaned; saveExhibitions() }
     }
 
     // MARK: - Queries
 
-    func stamps(in album: String) -> [CollectedStamp] { stamps.filter { $0.album == album } }
-    func count(in album: String) -> Int { stamps.reduce(0) { $0 + ($1.album == album ? 1 : 0) } }
+    /// Stamps still in the collection (not hung in any exhibition).
+    var collectedStamps: [CollectedStamp] { stamps.filter { !exhibitedIDCache.contains($0.id) } }
+
+    func isExhibited(_ id: String) -> Bool { exhibitedIDCache.contains(id) }
+
+    /// Stamps in a collecting album — excludes any currently hung in an exhibition.
+    func stamps(in album: String) -> [CollectedStamp] {
+        stamps.filter { $0.album == album && !exhibitedIDCache.contains($0.id) }
+    }
+    func count(in album: String) -> Int {
+        stamps.reduce(0) { $0 + ($1.album == album && !exhibitedIDCache.contains($1.id) ? 1 : 0) }
+    }
+
+    /// Stamps hung in an exhibition, in their stored display order.
+    func stampsInExhibition(_ name: String) -> [CollectedStamp] {
+        guard let ex = exhibitions.first(where: { $0.name == name }) else { return [] }
+        let byID = Dictionary(uniqueKeysWithValues: stamps.map { ($0.id, $0) })
+        return ex.stampIDs.compactMap { byID[$0] }
+    }
+    func exhibitionCount(_ name: String) -> Int {
+        exhibitions.first(where: { $0.name == name })?.stampIDs.count ?? 0
+    }
 
     // MARK: - Stamps
 
     @discardableResult
-    func add(_ image: UIImage) -> String {
-        let name = "\(Int(Date().timeIntervalSince1970 * 1000)).png"
+    func add(_ image: UIImage, location: CLLocation? = nil,
+             original: UIImage? = nil, cropNorm: CGRect? = nil, mirrored: Bool = false) -> String {
+        let now = Date()
+        let name = "\(Int(now.timeIntervalSince1970 * 1000)).png"
         let url = dir.appendingPathComponent(name)
         if let data = image.pngData() { try? data.write(to: url) }
+        // keep the full pre-crop photo so the border can be customised later
+        if let original, let data = original.jpegData(compressionQuality: 0.9) {
+            try? data.write(to: originalURL(for: name))
+        }
         let album = albums.contains(activeAlbum) ? activeAlbum : (albums.first ?? Self.defaultAlbum)
         try? album.write(to: albumURL(for: name), atomically: true, encoding: .utf8)
-        stamps.append(CollectedStamp(id: name, image: image, caption: "", album: album))
+        writeStampMeta(StampMeta(createdAt: now,
+                                 latitude: location?.coordinate.latitude,
+                                 longitude: location?.coordinate.longitude,
+                                 place: nil,
+                                 cropX: cropNorm.map { Double($0.minX) },
+                                 cropY: cropNorm.map { Double($0.minY) },
+                                 cropW: cropNorm.map { Double($0.width) },
+                                 cropH: cropNorm.map { Double($0.height) },
+                                 mirrored: original != nil ? mirrored : nil), for: name)
+        stamps.append(CollectedStamp(id: name, image: image, caption: "", album: album,
+                                     createdAt: now, place: ""))
         return name
+    }
+
+    /// Fills in the human-readable place once reverse-geocoding finishes,
+    /// preserving the stored coordinates/time.
+    func setPlace(_ place: String, for id: String) {
+        guard let idx = stamps.firstIndex(where: { $0.id == id }) else { return }
+        stamps[idx].place = place
+        var meta = StampMeta(createdAt: stamps[idx].createdAt,
+                             latitude: nil, longitude: nil, place: place)
+        if let data = try? Data(contentsOf: stampMetaURL(for: id)),
+           let existing = try? JSONDecoder().decode(StampMeta.self, from: data) {
+            meta = existing
+            meta.place = place
+        }
+        writeStampMeta(meta, for: id)
     }
 
     func setCaption(_ text: String, for id: String) {
@@ -691,7 +1700,16 @@ final class CollectionStore: ObservableObject {
         try? FileManager.default.removeItem(at: dir.appendingPathComponent(id))
         try? FileManager.default.removeItem(at: captionURL(for: id))
         try? FileManager.default.removeItem(at: albumURL(for: id))
+        try? FileManager.default.removeItem(at: stampMetaURL(for: id))
+        try? FileManager.default.removeItem(at: originalURL(for: id))
         stamps.removeAll { $0.id == id }
+        // also pull it off any exhibition wall
+        if exhibitedIDCache.contains(id) {
+            exhibitions = exhibitions.map {
+                $0.with(stampIDs: $0.stampIDs.filter { $0 != id })
+            }
+            saveExhibitions()
+        }
     }
 
     // MARK: - Albums
@@ -724,13 +1742,163 @@ final class CollectionStore: ObservableObject {
         saveMeta()
     }
 
-    /// Deletes the album and every stamp in it. Always keeps at least one album.
+    /// Deletes the album and every stamp whose home is it — including stamps
+    /// currently hung in an exhibition (delete() pulls them off the wall too).
+    /// Always keeps at least one album.
     func deleteAlbum(_ name: String) {
         guard albums.count > 1, albums.contains(name) else { return }
-        for s in stamps(in: name) { delete(s.id) }
+        for s in stamps.filter({ $0.album == name }) { delete(s.id) }
         albums.removeAll { $0 == name }
         if activeAlbum == name { activeAlbum = albums[0] }
         saveMeta()
+    }
+
+    // MARK: - Exhibitions
+
+    private func exhibitionIndex(_ name: String) -> Int? {
+        exhibitions.firstIndex(where: { $0.name == name })
+    }
+    /// Pull an id off whatever wall currently holds it (single-membership).
+    private func removeFromAnyExhibition(_ id: String) {
+        guard exhibitedIDCache.contains(id) else { return }
+        exhibitions = exhibitions.map {
+            Exhibition(name: $0.name, stampIDs: $0.stampIDs.filter { $0 != id })
+        }
+    }
+
+    @discardableResult
+    func createExhibition(_ name: String, background: BackgroundStyle = .cream) -> String? {
+        let n = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !n.isEmpty, !exhibitions.contains(where: { $0.name == n }) else {
+            return exhibitions.contains(where: { $0.name == n }) ? n : nil
+        }
+        exhibitions.append(Exhibition(name: n, stampIDs: [], background: background.rawValue))
+        saveExhibitions()
+        return n
+    }
+
+    func setExhibitionBackground(_ name: String, to style: BackgroundStyle) {
+        guard let i = exhibitionIndex(name) else { return }
+        exhibitions[i] = Exhibition(name: name, stampIDs: exhibitions[i].stampIDs,
+                                    background: style.rawValue)
+        saveExhibitions()
+    }
+    func backgroundStyle(of name: String) -> BackgroundStyle {
+        exhibitions.first(where: { $0.name == name })?.backgroundStyle ?? .cream
+    }
+
+    /// Hang a collected stamp on an exhibition wall — it leaves the collection.
+    func placeInExhibition(_ id: String, into name: String) {
+        guard stamps.contains(where: { $0.id == id }) else { return }
+        if exhibitionIndex(name) == nil { exhibitions.append(Exhibition(name: name, stampIDs: [])) }
+        removeFromAnyExhibition(id)
+        guard let i = exhibitionIndex(name) else { return }
+        var ids = exhibitions[i].stampIDs
+        ids.append(id)
+        exhibitions[i] = exhibitions[i].with(stampIDs: ids)
+        saveExhibitions()
+    }
+
+    /// Take a stamp off the wall — it returns to its home album.
+    func returnToCollection(_ id: String) {
+        guard exhibitedIDCache.contains(id) else { return }
+        removeFromAnyExhibition(id)
+        saveExhibitions()
+    }
+
+    func moveExhibitedStamp(_ id: String, to name: String) {
+        placeInExhibition(id, into: name)
+    }
+
+    /// Drag-to-reorder: move `id` to `index` within its exhibition.
+    func reorderExhibition(_ name: String, moving id: String, to index: Int) {
+        guard let i = exhibitionIndex(name) else { return }
+        var ids = exhibitions[i].stampIDs
+        guard let from = ids.firstIndex(of: id) else { return }
+        ids.remove(at: from)
+        let dest = max(0, min(index, ids.count))
+        ids.insert(id, at: dest)
+        exhibitions[i] = exhibitions[i].with(stampIDs: ids)
+        saveExhibitions()
+    }
+
+    /// List/onMove reorder fallback.
+    func reorderExhibition(_ name: String, from offsets: IndexSet, to dest: Int) {
+        guard let i = exhibitionIndex(name) else { return }
+        var ids = exhibitions[i].stampIDs
+        ids.move(fromOffsets: offsets, toOffset: dest)
+        exhibitions[i] = exhibitions[i].with(stampIDs: ids)
+        saveExhibitions()
+    }
+
+    func renameExhibition(_ old: String, to newName: String) {
+        let n = newName.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !n.isEmpty, n != old, let i = exhibitionIndex(old),
+              !exhibitions.contains(where: { $0.name == n }) else { return }
+        exhibitions[i] = Exhibition(name: n, stampIDs: exhibitions[i].stampIDs,
+                                    background: exhibitions[i].background)
+        saveExhibitions()
+    }
+
+    /// Removes the wall; its stamps return to their home albums (not deleted).
+    func deleteExhibition(_ name: String) {
+        exhibitions.removeAll { $0.name == name }
+        saveExhibitions()
+    }
+}
+
+// MARK: - Location
+
+/// Tracks the current location so each new stamp can record where it was made,
+/// and reverse-geocodes it into a short human-readable place name.
+@MainActor
+final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    private let manager = CLLocationManager()
+    private let geocoder = CLGeocoder()
+    @Published var current: CLLocation?
+
+    override init() {
+        super.init()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    }
+
+    /// Ask for permission; updates begin once access is granted.
+    func start() {
+        manager.requestWhenInUseAuthorization()
+    }
+
+    nonisolated func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse, .authorizedAlways:
+            manager.startUpdatingLocation()
+        default:
+            break
+        }
+    }
+
+    nonisolated func locationManager(_ manager: CLLocationManager,
+                                     didUpdateLocations locations: [CLLocation]) {
+        guard let loc = locations.last else { return }
+        Task { @MainActor in self.current = loc }
+    }
+
+    nonisolated func locationManager(_ manager: CLLocationManager,
+                                     didFailWithError error: Error) {}
+
+    /// A short place name like "서울특별시 종로구" for the given location.
+    func placeName(for location: CLLocation) async -> String? {
+        guard let placemarks = try? await geocoder.reverseGeocodeLocation(location),
+              let m = placemarks.first else { return nil }
+        let candidates = [m.administrativeArea,
+                          m.locality ?? m.subAdministrativeArea,
+                          m.subLocality]
+        var seen = Set<String>(), parts: [String] = []
+        for case let s? in candidates where !s.isEmpty && !seen.contains(s) {
+            seen.insert(s); parts.append(s)
+        }
+        if parts.isEmpty { return m.name ?? m.country }
+        return parts.joined(separator: " ")
     }
 }
 
@@ -741,6 +1909,35 @@ private struct BinCenterKey: PreferenceKey {
     static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {
         let next = nextValue()
         if next != .zero { value = next }
+    }
+}
+
+/// Plays the "punching.mp3" punch sound when the shutter is pressed. The clip
+/// is a few seconds long, so we only play the first ~1s and fade it out.
+enum PunchSound {
+    private static let player: AVAudioPlayer? = {
+        guard let url = Bundle.main.url(forResource: "punching", withExtension: "mp3"),
+              let p = try? AVAudioPlayer(contentsOf: url) else { return nil }
+        p.prepareToPlay()
+        return p
+    }()
+
+    static func play() {
+        // audible even alongside other audio
+        try? AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
+        try? AVAudioSession.sharedInstance().setActive(true)
+        guard let p = player else { return }
+        p.stop()
+        p.currentTime = 0
+        p.volume = 1
+        p.play()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
+            player?.setVolume(0, fadeDuration: 0.15)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            player?.stop()
+            player?.volume = 1
+        }
     }
 }
 
@@ -983,6 +2180,8 @@ struct StampDetailView: View {
     @State private var caption = ""
     @State private var newAlbumName = ""
     @State private var showNewAlbum = false
+    @State private var showNewExhibition = false
+    @State private var newExhibitionName = ""
     @State private var showDelete = false
     @FocusState private var focused: Bool
 
@@ -999,13 +2198,23 @@ struct StampDetailView: View {
                         .resizable().scaledToFit()
                         .frame(maxHeight: 190)
                         .shadow(color: .black.opacity(0.35), radius: 12, y: 8)
+
+                    // when & where this stamp was made
+                    VStack(spacing: 3) {
+                        Text(stamp.createdAt.formatted(date: .long, time: .shortened))
+                        if !stamp.place.isEmpty {
+                            Label(stamp.place, systemImage: "mappin.and.ellipse")
+                        }
+                    }
+                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                    .foregroundStyle(Color(hex: 0x8C7A52))
                 }
                 ZStack(alignment: .top) {
                     // custom placeholder so it stays a readable warm brown
                     // (the field inherits the sheet's dark scheme otherwise,
                     // which painted the prompt white = invisible on parchment)
                     if caption.isEmpty {
-                        Text("몇 마디 적어보세요…")
+                        Text("이건 무슨 순간이에요?")
                             .foregroundStyle(Color(hex: 0x9A875E))
                             .allowsHitTesting(false)
                     }
@@ -1043,6 +2252,20 @@ struct StampDetailView: View {
                 }
                 .tint(.red)
             }
+            ToolbarItem(placement: .principal) {
+                Menu {
+                    ForEach(collection.exhibitions) { ex in
+                        Button(ex.name) { collection.placeInExhibition(stampID, into: ex.name) }
+                    }
+                    Divider()
+                    Button { newExhibitionName = ""; showNewExhibition = true } label: {
+                        Label("새 전시…", systemImage: "plus")
+                    }
+                } label: {
+                    Label("전시에 걸기", systemImage: "photo.artframe")
+                        .font(.system(size: 14, weight: .semibold))
+                }
+            }
             ToolbarItem(placement: .confirmationAction) {
                 Button("완료") { save(); dismiss() }
             }
@@ -1054,6 +2277,11 @@ struct StampDetailView: View {
                 if let name = collection.createAlbum(newAlbumName) {
                     collection.move(stampID, to: name)
                 }
+            }
+        }
+        .sheet(isPresented: $showNewExhibition) {
+            NewExhibitionSheet(collection: collection) { name in
+                collection.placeInExhibition(stampID, into: name)
             }
         }
         .confirmationDialog("이 우표를 삭제할까요?", isPresented: $showDelete,
@@ -1103,6 +2331,7 @@ struct EditTarget: Identifiable {
 struct StampFrame {
     let image: UIImage          // cut-out frame (transparent bg + window)
     let windowRectNorm: CGRect  // window bounding box in 0...1 image coords
+    let interiorMask: UIImage   // white = frame body + window, clear = outside the frame
 }
 
 enum StampFrameLoader {
@@ -1165,8 +2394,31 @@ enum StampFrameLoader {
             x: CGFloat(minX) / CGFloat(w), y: CGFloat(minY) / CGFloat(h),
             width: CGFloat(bw) / CGFloat(w), height: CGFloat(bh) / CGFloat(h))
 
+        // Build a mask of the frame's interior (the outer silhouette: frame body
+        // + window) so it can be punched out of a full-screen blur — leaving the
+        // busy live scene OUTSIDE the frame softened while the frame and its
+        // window stay crisp. White = frame + window, clear = exterior.
+        let maskBuf = UnsafeMutablePointer<UInt8>.allocate(capacity: count)
+        defer { maskBuf.deallocate() }
+        for i in 0..<(w * h) {
+            let v: UInt8 = exterior[i] ? 0 : 255
+            maskBuf[i * 4 + 0] = v
+            maskBuf[i * 4 + 1] = v
+            maskBuf[i * 4 + 2] = v
+            maskBuf[i * 4 + 3] = v
+        }
+        guard let maskCtx = CGContext(
+            data: maskBuf, width: w, height: h,
+            bitsPerComponent: 8, bytesPerRow: w * 4,
+            space: CGColorSpaceCreateDeviceRGB(),
+            bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+        ), let maskCG = maskCtx.makeImage() else { return nil }
+        let interiorMask = UIImage(cgImage: maskCG, scale: source.scale,
+                                   orientation: source.imageOrientation)
+
         // The asset is already cut out, so use it as-is.
-        return StampFrame(image: source, windowRectNorm: rectNorm)
+        return StampFrame(image: source, windowRectNorm: rectNorm,
+                          interiorMask: interiorMask)
     }
 }
 
