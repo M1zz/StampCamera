@@ -22,9 +22,14 @@ struct ContentView: View {
     // fly-to-collection animation state
     @State private var flying: UIImage?
     @State private var flyStart: CGRect = .zero
-    @State private var fell = false             // crop has been flung off-screen
-    @State private var landSpot: CGPoint = .zero // off-screen target it flies to
-    @State private var landAngle: Double = 0     // random spin as it shoots out
+    // toss physics: most captures drop, bounce & slide on the floor; a rare few
+    // (< 15%) fling clean off the screen.
+    @State private var tossTrigger = 0
+    @State private var tossOffscreen = false
+    @State private var slideX: CGFloat = 0        // how far it skids along the floor
+    @State private var groundY: CGFloat = 0       // downward offset to the floor
+    @State private var tossSpin: Double = 0       // final tilt (drop) / spin (fling)
+    @State private var offscreenVec: CGSize = .zero
     @State private var binCenter: CGPoint = .zero
     @State private var binBounce = false
     @State private var stayingStamp: UIImage?  // capture left sitting in the window
@@ -137,20 +142,11 @@ struct ContentView: View {
                         .allowsHitTesting(false)
                 }
 
-                // ...while a cropped copy is flung off the screen (팡) in a random
-                // direction, spinning as it shoots out of frame.
+                // ...while a cropped copy pops out and — most of the time — drops,
+                // bounces and skids along the floor (툭, 톡톡), squashing as it goes;
+                // a rare few fling clean off the screen.
                 if let flying {
-                    let pos: CGPoint = fell ? landSpot
-                                            : CGPoint(x: flyStart.midX, y: flyStart.midY)
-                    Image(uiImage: flying)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: flyStart.width, height: flyStart.height)
-                        .scaleEffect(fell ? 1.25 : 1)   // little burst as it launches
-                        .rotationEffect(.degrees(fell ? landAngle : 0))
-                        .shadow(color: .black.opacity(0.35), radius: 8, y: 5)
-                        .position(pos)
-                        .allowsHitTesting(false)
+                    tossOverlay(flying)
                 }
 
                 albumBar
@@ -290,29 +286,41 @@ struct ContentView: View {
         let stamp = result.image
         let cropNorm = result.cropNorm
 
-        // The capture stays imprinted in the window. A cropped copy is flung off
-        // the screen (팡) in a random direction, spinning as it shoots out.
+        // The capture stays imprinted in the window. A cropped copy pops out and,
+        // most of the time, drops to the floor — bouncing and skidding (툭, 톡톡) —
+        // while a rare few (< 15%) fling clean off the screen.
         flyStart = win
-        fell = false
         stayingStamp = stamp
         stayVisible = true
         flying = stamp
 
-        // a fresh random off-screen direction + spin for this crop
-        let angle = Double.random(in: 0 ..< (2 * .pi))
-        let dist = hypot(previewSize.width, previewSize.height) * 1.3
-        landSpot = CGPoint(x: win.midX + CGFloat(cos(angle)) * dist,
-                           y: win.midY + CGFloat(sin(angle)) * dist)
-        landAngle = Double.random(in: -260 ... 260)
+        tossOffscreen = Double.random(in: 0 ..< 1) < 0.13       // under 15% fly away
+        slideX = CGFloat.random(in: 36 ... 120) * (Bool.random() ? 1 : -1)
+        groundY = max(120, (previewSize.height - 70) - win.midY) // floor near the bin
+        if tossOffscreen {
+            let angle = Double.random(in: 0 ..< (2 * .pi))
+            let dist = hypot(previewSize.width, previewSize.height) * 1.3
+            offscreenVec = CGSize(width: CGFloat(cos(angle)) * dist,
+                                  height: CGFloat(sin(angle)) * dist)
+            tossSpin = Double.random(in: -260 ... 260)
+        } else {
+            tossSpin = Double.random(in: -10 ... 10)            // a small resting tilt
+        }
+        tossTrigger += 1                                        // fire the toss keyframes
 
-        // 팡 — burst out fast and shoot off the screen
-        let travel = 0.4
-        withAnimation(.easeOut(duration: travel)) { fell = true }
-
-        // Once it's off-screen, file it into the collection.
+        let landTime = tossOffscreen ? 0.42 : 0.30
+        let settleTime = tossOffscreen ? 0.5 : 0.72
         let here = location.current
         let mine = stamp   // identity guard against a faster follow-up shot
-        DispatchQueue.main.asyncAfter(deadline: .now() + travel) {
+
+        // The lighter "톡" of the second bounce (floor drop only).
+        if !tossOffscreen {
+            DispatchQueue.main.asyncAfter(deadline: .now() + landTime + 0.16) { Haptics.bounce() }
+        }
+
+        // The moment it lands (floor impact, or leaves the frame): file it into the
+        // collection, thump the bin, and give a hearty haptic.
+        DispatchQueue.main.asyncAfter(deadline: .now() + landTime) {
             let newID = collection.add(stamp, location: here,
                                        original: raw, cropNorm: cropNorm, mirrored: mirrored)
             // fill in the place name once reverse-geocoding returns
@@ -323,16 +331,18 @@ struct ContentView: View {
                     }
                 }
             }
-            flying = nil
-            fell = false
+            Haptics.plop()
             withAnimation(.spring(response: 0.25, dampingFraction: 0.45)) { binBounce = true }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.22) {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) { binBounce = false }
             }
-            // The captured photo holds in the frame window for ~2s (from the
-            // shutter), then fades back to the live preview and the parchment
-            // opens for a caption.
-            DispatchQueue.main.asyncAfter(deadline: .now() + (2.0 - travel)) {
+            // clear the tossed copy once it has settled
+            DispatchQueue.main.asyncAfter(deadline: .now() + (settleTime - landTime)) {
+                if flying === mine { flying = nil }
+            }
+            // The captured photo holds in the frame window ~2s (from the shutter),
+            // then fades back to the live preview and opens the parchment.
+            DispatchQueue.main.asyncAfter(deadline: .now() + (2.0 - landTime)) {
                 guard stayingStamp === mine else { return }   // a newer shot took over
                 withAnimation(.easeOut(duration: 0.4)) { stayVisible = false }
                 editTarget = EditTarget(id: newID)
@@ -340,6 +350,92 @@ struct ContentView: View {
                     if stayingStamp === mine { stayingStamp = nil }
                 }
             }
+        }
+    }
+
+    /// The animated state of a tossed stamp tile.
+    private struct TossValues {
+        var x: CGFloat = 0
+        var y: CGFloat = 0
+        var rotation: Double = 0
+        var scaleX: CGFloat = 1
+        var scaleY: CGFloat = 1
+    }
+
+    /// The tossed copy of a fresh stamp. The toss kind is fixed per capture, so we
+    /// branch the view (not the keyframe builder, which can't fork track sets).
+    @ViewBuilder
+    private func tossOverlay(_ flying: UIImage) -> some View {
+        let tile = Image(uiImage: flying)
+            .resizable().scaledToFit()
+            .frame(width: flyStart.width, height: flyStart.height)
+            .shadow(color: .black.opacity(0.35), radius: 8, y: 5)
+        Group {
+            if tossOffscreen {
+                tile.keyframeAnimator(initialValue: TossValues(), trigger: tossTrigger) { view, v in
+                    view.scaleEffect(x: v.scaleX, y: v.scaleY, anchor: .bottom)
+                        .rotationEffect(.degrees(v.rotation))
+                        .offset(x: v.x, y: v.y)
+                } keyframes: { _ in flingKeyframes() }
+            } else {
+                tile.keyframeAnimator(initialValue: TossValues(), trigger: tossTrigger) { view, v in
+                    view.scaleEffect(x: v.scaleX, y: v.scaleY, anchor: .bottom)
+                        .rotationEffect(.degrees(v.rotation))
+                        .offset(x: v.x, y: v.y)
+                } keyframes: { _ in floorKeyframes() }
+            }
+        }
+        .position(x: flyStart.midX, y: flyStart.midY)
+        .allowsHitTesting(false)
+    }
+
+    /// 툭 → 톡톡 — pop, fall, bounce twice and skid along the floor while squashing.
+    @KeyframesBuilder<TossValues>
+    private func floorKeyframes() -> some Keyframes<TossValues> {
+        KeyframeTrack(\.y) {
+            CubicKeyframe(-14, duration: 0.08)
+            CubicKeyframe(groundY, duration: 0.22)
+            CubicKeyframe(groundY - 26, duration: 0.12)
+            CubicKeyframe(groundY, duration: 0.10)
+            CubicKeyframe(groundY - 8, duration: 0.08)
+            CubicKeyframe(groundY, duration: 0.12)
+        }
+        KeyframeTrack(\.x) {
+            CubicKeyframe(slideX * 0.2, duration: 0.30)
+            CubicKeyframe(slideX * 0.7, duration: 0.22)
+            CubicKeyframe(slideX, duration: 0.20)
+        }
+        KeyframeTrack(\.rotation) {
+            CubicKeyframe(tossSpin * 0.4, duration: 0.30)
+            CubicKeyframe(tossSpin, duration: 0.30)
+        }
+        KeyframeTrack(\.scaleX) {
+            CubicKeyframe(0.90, duration: 0.08)
+            CubicKeyframe(1.28, duration: 0.22)
+            CubicKeyframe(0.96, duration: 0.12)
+            CubicKeyframe(1.12, duration: 0.10)
+            CubicKeyframe(1.0, duration: 0.20)
+        }
+        KeyframeTrack(\.scaleY) {
+            CubicKeyframe(1.18, duration: 0.08)
+            CubicKeyframe(0.72, duration: 0.22)
+            CubicKeyframe(1.08, duration: 0.12)
+            CubicKeyframe(0.92, duration: 0.10)
+            CubicKeyframe(1.0, duration: 0.20)
+        }
+    }
+
+    /// The rare clean fling off the screen, spinning with a burst.
+    @KeyframesBuilder<TossValues>
+    private func flingKeyframes() -> some Keyframes<TossValues> {
+        KeyframeTrack(\.x) { SpringKeyframe(offscreenVec.width, duration: 0.5, spring: .snappy) }
+        KeyframeTrack(\.y) { SpringKeyframe(offscreenVec.height, duration: 0.5, spring: .snappy) }
+        KeyframeTrack(\.rotation) { LinearKeyframe(tossSpin, duration: 0.5) }
+        KeyframeTrack(\.scaleX) {
+            CubicKeyframe(1.25, duration: 0.12); CubicKeyframe(1.0, duration: 0.38)
+        }
+        KeyframeTrack(\.scaleY) {
+            CubicKeyframe(1.25, duration: 0.12); CubicKeyframe(1.0, duration: 0.38)
         }
     }
 
@@ -399,7 +495,7 @@ struct CollectionView: View {
             ScrollView {
                 sectionHeader("우표첩")
                 albumShelf
-                sectionHeader("전시")
+                sectionHeader("컬렉션")
                 exhibitionWalls
             }
             .background(Color(hex: 0x141210).ignoresSafeArea())
@@ -412,7 +508,7 @@ struct CollectionView: View {
                             Label("새 우표첩…", systemImage: "book.closed")
                         }
                         Button { newExhibitionName = ""; showNewExhibition = true } label: {
-                            Label("새 전시…", systemImage: "photo.artframe")
+                            Label("새 컬렉션…", systemImage: "photo.artframe")
                         }
                     } label: {
                         Image(systemName: "plus")
@@ -469,9 +565,9 @@ struct CollectionView: View {
                 Image(systemName: "photo.artframe")
                     .font(.system(size: 40))
                     .foregroundStyle(.white.opacity(0.3))
-                Text("아직 전시가 없어요")
+                Text("아직 컬렉션이 없어요")
                     .foregroundStyle(.white.opacity(0.7))
-                Text("우표첩에서 우표를 길게 눌러 전시에 걸어보세요")
+                Text("우표첩에서 우표를 길게 눌러 컬렉션에 걸어보세요")
                     .font(.system(size: 13))
                     .foregroundStyle(.white.opacity(0.45))
                     .multilineTextAlignment(.center)
@@ -577,11 +673,7 @@ struct ExhibitionWallCover: View {
                 HStack(spacing: -10) {
                     ForEach(Array(peek.enumerated()), id: \.offset) { _, img in
                         Image(uiImage: img).resizable().scaledToFit()
-                            .frame(height: 66)
-                            .padding(3)
-                            .background(Color(hex: 0xF6EBBE))
-                            .overlay(RoundedRectangle(cornerRadius: 2)
-                                .strokeBorder(Color(hex: 0xCBB870), lineWidth: 2))
+                            .frame(height: 72)
                             .shadow(color: .black.opacity(0.4), radius: 2, y: 1)
                     }
                 }
@@ -607,13 +699,7 @@ struct ExhibitionWallCover: View {
 
 // MARK: - Album page (stamps pressed onto the book's pages)
 
-/// How the stamps on an album page are grouped into sections.
-private enum GroupMode: String, CaseIterable, Hashable {
-    case place = "장소별"
-    case period = "기간별"
-}
-
-/// One grouped section of stamps (a place, or a month).
+/// One month's worth of stamps on an album page.
 private struct StampSection: Identifiable {
     let id: String
     let title: String
@@ -629,13 +715,21 @@ struct AlbumPageView: View {
     @State private var renameText = ""
     @State private var showDeleteAlbum = false
     @State private var deleteTarget: CollectedStamp?
-    @State private var groupMode: GroupMode = .place
     @State private var showNewExhibition = false
     @State private var newExhibitionName = ""
     @State private var exhibitTarget: CollectedStamp?
 
-    // Flow B: drag a stamp onto a chip in the bottom exhibition bar.
-    @State private var hoveredDrop: String?
+    // Tapping a stamp opens its detail as a modal (not a pushed page).
+    @State private var selectedStamp: CollectedStamp?
+
+    // Long-press lifts a stamp (`armed`); only once the finger actually moves does
+    // the collection tray appear and the stamp become a `dragging` ghost — so a mere
+    // hold never slams the tray up.
+    @State private var armed: CollectedStamp?
+    @State private var dragging: CollectedStamp?
+    @State private var dragPoint: CGPoint?
+    @State private var hoveredExhibition: String?
+    @State private var exhibitionFrames: [String: CGRect] = [:]
 
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 4)
 
@@ -654,48 +748,30 @@ struct AlbumPageView: View {
         return (y * 12 + m, "\(y)년 \(m)월")
     }
 
-    /// The album's stamps grouped by place or by month, newest section first.
+    /// The album's stamps grouped by month, newest section first.
     private var sections: [StampSection] {
-        let grouped: [StampSection]
-        switch groupMode {
-        case .place:
-            let groups = Dictionary(grouping: stamps) {
-                $0.place.isEmpty ? "위치 미상" : $0.place
-            }
-            grouped = groups.map { key, value in
-                StampSection(id: "place-\(key)", title: key,
-                             stamps: value.sorted { $0.createdAt > $1.createdAt })
-            }
-        case .period:
-            let groups = Dictionary(grouping: stamps) { periodKey($0.createdAt).sort }
-            grouped = groups.map { key, value in
-                StampSection(id: "period-\(key)", title: periodKey(value[0].createdAt).title,
-                             stamps: value.sorted { $0.createdAt > $1.createdAt })
-            }
+        let groups = Dictionary(grouping: stamps) { periodKey($0.createdAt).sort }
+        return groups.map { _, value in
+            StampSection(id: "period-\(periodKey(value[0].createdAt).sort)",
+                         title: periodKey(value[0].createdAt).title,
+                         stamps: value.sorted { $0.createdAt > $1.createdAt })
         }
-        return grouped.sorted {
+        .sorted {
             ($0.stamps.first?.createdAt ?? .distantPast) > ($1.stamps.first?.createdAt ?? .distantPast)
         }
     }
 
     var body: some View {
+      ZStack {
         ScrollView {
             if stamps.isEmpty {
                 emptyPage
             } else {
                 LazyVStack(spacing: 16) {
-                    Picker("정렬", selection: $groupMode) {
-                        ForEach(GroupMode.allCases, id: \.self) { Text($0.rawValue).tag($0) }
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.horizontal, 14)
-                    .padding(.top, 10)
-
                     ForEach(sections) { section in
                         VStack(alignment: .leading, spacing: 10) {
                             HStack(spacing: 6) {
-                                Image(systemName: groupMode == .place
-                                      ? "mappin.and.ellipse" : "calendar")
+                                Image(systemName: "calendar")
                                 Text(section.title).lineLimit(1)
                                 Spacer()
                                 Text("\(section.stamps.count)")
@@ -710,14 +786,22 @@ struct AlbumPageView: View {
                         .padding(.horizontal, 14)
                     }
                 }
+                .padding(.top, 10)
                 .padding(.bottom, 16)
             }
         }
+        .scrollDisabled(armed != nil || dragging != nil)
         .background(Color(hex: 0x141210).ignoresSafeArea())
-        .safeAreaInset(edge: .bottom) {
-            if !stamps.isEmpty { exhibitionDropBar }
-        }
-        .navigationTitle(album)
+
+        // The dim + card tray depends only on which stamp / card is active, so it
+        // stays put while the finger moves; the ghost is a separate, lightweight
+        // layer that alone re-renders per frame — keeping the material tray smooth.
+        if let dragging { dragTray(dragging) }
+        if let dragging, let p = dragPoint { dragGhost(dragging, at: p) }
+      }
+      .coordinateSpace(name: "album")
+      .onPreferenceChange(ExhibitionFrameKey.self) { exhibitionFrames = $0 }
+      .navigationTitle(album)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -763,91 +847,258 @@ struct AlbumPageView: View {
                 if let t = exhibitTarget { collection.placeInExhibition(t.id, into: name) }
             }
         }
+        .sheet(item: $selectedStamp, onDismiss: { Haptics.deselect() }) { stamp in
+            NavigationStack {
+                StampDetailView(collection: collection, stampID: stamp.id)
+            }
+        }
         .preferredColorScheme(.dark)
     }
 
-    /// The 4-up grid of stamps for one section. A quick tap opens the detail;
-    /// long-press lifts the stamp so it can be dragged down to the exhibition
-    /// bar (Flow B) — scrolling and tapping stay intact (native drag).
+    /// The 4-up grid of stamps for one section. A quick tap opens the detail as a
+    /// modal; a long press lifts the stamp; *moving* the lifted stamp brings up the
+    /// collection cards to drag it onto. (Scrolling stays intact — the lift only
+    /// engages after the hold, and the tray only after the finger moves.)
     private func stampGrid(_ list: [CollectedStamp]) -> some View {
         LazyVGrid(columns: columns, spacing: 12) {
-            ForEach(list) { stamp in
-                NavigationLink {
-                    StampDetailView(collection: collection, stampID: stamp.id)
-                } label: {
-                    pagePocket(stamp)
-                }
-                .buttonStyle(.plain)
-                .draggable(stamp.id) {
-                    pagePocket(stamp).frame(width: 90)   // lift preview
-                }
-            }
+            ForEach(list) { stamp in stampCell(stamp) }
         }
     }
 
-    /// A bar pinned at the bottom: drag a stamp onto an exhibition to hang it.
-    private var exhibitionDropBar: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                Label("전시에 걸기", systemImage: "hand.draw")
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
-                    .foregroundStyle(.white.opacity(0.7))
-                ForEach(collection.exhibitions) { ex in
-                    dropChip(title: ex.name, systemImage: "photo.artframe") { id in
-                        collection.placeInExhibition(id, into: ex.name)
+    private func stampCell(_ stamp: CollectedStamp) -> some View {
+        let isArmed = armed?.id == stamp.id
+        let isDragging = dragging?.id == stamp.id
+        return pagePocket(stamp)
+            .opacity(isDragging ? 0.25 : 1)
+            // a gentle lift while held, before any drag begins
+            .scaleEffect(isArmed && !isDragging ? 1.12 : 1)
+            .shadow(color: .black.opacity(isArmed && !isDragging ? 0.45 : 0),
+                    radius: isArmed && !isDragging ? 9 : 0, y: 6)
+            .zIndex(isArmed ? 1 : 0)
+            .animation(.spring(response: 0.26, dampingFraction: 0.7), value: isArmed)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                Haptics.select()
+                selectedStamp = stamp
+            }
+            .gesture(stampDragGesture(stamp))
+    }
+
+    /// Hold to lift, then drag to carry: the long press only *lifts* the stamp; the
+    /// collection tray appears only once the finger has moved enough to mean "carry
+    /// it" — so resting a finger never throws up the tray.
+    private func stampDragGesture(_ stamp: CollectedStamp) -> some Gesture {
+        LongPressGesture(minimumDuration: 0.4)
+            .sequenced(before: DragGesture(minimumDistance: 0, coordinateSpace: .named("album")))
+            .onChanged { value in
+                switch value {
+                case .first(true):
+                    armLift(stamp)
+                case .second(true, let drag):
+                    guard let drag else { return }
+                    if dragging == nil {
+                        let moved = hypot(drag.translation.width, drag.translation.height)
+                        guard moved > 14 else { return }   // wait for a real drag
+                        promoteToDrag()
+                    }
+                    updateDrag(to: drag.location)
+                default:
+                    break
+                }
+            }
+            .onEnded { value in
+                if case .second(_, let drag?) = value, dragging != nil {
+                    endDrag(at: drag.location)
+                } else {
+                    cancelLift()
+                }
+            }
+    }
+
+    // MARK: - Long-press → drag a stamp onto an exhibition card
+
+    /// Sentinel card key that opens the "new exhibition" sheet on drop.
+    private static let newExhibitionKey = "\u{1}new-exhibition"
+    /// How far above the fingertip the carried stamp rides — the drop is hit-tested
+    /// at this same lifted point so the visible stamp is what lands on a card.
+    private static let ghostLift: CGFloat = 38
+
+    /// The card the carried stamp is currently over (hit-tested at the ghost, not
+    /// the raw fingertip, so they always agree).
+    private func dropTarget(at p: CGPoint) -> String? {
+        let tip = CGPoint(x: p.x, y: p.y - Self.ghostLift)
+        return exhibitionFrames.first { $0.value.contains(tip) }?.key
+    }
+
+    /// Long press recognised — lift the stamp, but don't reveal the tray yet.
+    private func armLift(_ stamp: CollectedStamp) {
+        guard armed == nil, dragging == nil else { return }
+        armed = stamp
+        Haptics.select()                       // the stamp lifts off the page
+    }
+
+    /// The finger moved while holding — now reveal the collection tray and carry.
+    private func promoteToDrag() {
+        guard let stamp = armed else { return }
+        dragPoint = nil
+        hoveredExhibition = nil
+        withAnimation(.spring(response: 0.32, dampingFraction: 0.82)) { dragging = stamp }
+    }
+
+    /// Held and released without moving — set the stamp back down, no tray.
+    private func cancelLift() {
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.85)) {
+            armed = nil
+            dragging = nil
+        }
+        dragPoint = nil
+        hoveredExhibition = nil
+    }
+
+    private func updateDrag(to p: CGPoint) {
+        dragPoint = p
+        let hit = dropTarget(at: p)
+        if hit != hoveredExhibition {
+            hoveredExhibition = hit
+            if hit != nil { Haptics.bounce() }  // tick as it enters a card
+        }
+    }
+
+    private func endDrag(at p: CGPoint?) {
+        if let p, let stamp = dragging,
+           let name = dropTarget(at: p) {
+            if name == Self.newExhibitionKey {
+                exhibitTarget = stamp
+                newExhibitionName = ""
+                showNewExhibition = true
+            } else {
+                collection.placeInExhibition(stamp.id, into: name)
+                Haptics.placed()                // dropped into an exhibition
+            }
+        }
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.85)) {
+            dragging = nil
+            armed = nil
+        }
+        dragPoint = nil
+        hoveredExhibition = nil
+    }
+
+    /// The dim + card tray shown while a stamp is lifted. Non-interactive — the
+    /// drag is hit-tested against the cards' reported frames, so it never steals
+    /// the gesture. Depends only on `dragging`/`hoveredExhibition`, so it doesn't
+    /// re-render as the finger moves.
+    @ViewBuilder
+    private func dragTray(_ stamp: CollectedStamp) -> some View {
+        ZStack {
+            Color.black.opacity(0.5).ignoresSafeArea()
+                .transition(.opacity)
+
+            VStack {
+                Spacer(minLength: 0)
+                VStack(spacing: 12) {
+                    Text(collection.exhibitions.isEmpty ? "새 컬렉션을 만들어 옮기기" : "컬렉션으로 끌어다 옮기기")
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.white.opacity(0.85))
+                    exhibitionCardGrid
+                }
+                .padding(.vertical, 18)
+                .padding(.horizontal, 14)
+                .frame(maxWidth: .infinity)
+                .background(.ultraThinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+                .padding(.horizontal, 10)
+                .padding(.bottom, 18)
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+        }
+        .allowsHitTesting(false)
+    }
+
+    /// The lifted stamp's ghost trailing the finger — its own thin layer so only it
+    /// repaints per frame.
+    private func dragGhost(_ stamp: CollectedStamp, at p: CGPoint) -> some View {
+        pagePocket(stamp)
+            .frame(width: 86)
+            .scaleEffect(1.1)
+            .rotationEffect(.degrees(-4))
+            .shadow(color: .black.opacity(0.5), radius: 12, y: 7)
+            .position(x: p.x, y: p.y - Self.ghostLift)   // carried above the fingertip
+            .allowsHitTesting(false)
+    }
+
+    private var exhibitionCardGrid: some View {
+        let cols = [GridItem(.adaptive(minimum: 104, maximum: 150), spacing: 12)]
+        return LazyVGrid(columns: cols, spacing: 12) {
+            ForEach(collection.exhibitions) { ex in
+                exhibitionDropCard(name: ex.name,
+                                   peek: collection.stampsInExhibition(ex.name).prefix(3).map(\.image),
+                                   isNew: false)
+            }
+            exhibitionDropCard(name: Self.newExhibitionKey, peek: [], isNew: true)
+        }
+    }
+
+    private func exhibitionDropCard(name: String, peek: [UIImage], isNew: Bool) -> some View {
+        let lit = hoveredExhibition == name
+        return VStack(spacing: 8) {
+            ZStack {
+                if isNew {
+                    Image(systemName: "plus")
+                        .font(.system(size: 26, weight: .semibold))
+                        .foregroundStyle(Color(hex: 0x8C7A52))
+                } else if peek.isEmpty {
+                    Image(systemName: "photo.artframe")
+                        .font(.system(size: 24))
+                        .foregroundStyle(Color(hex: 0x8C7A52))
+                } else {
+                    ForEach(Array(peek.enumerated()), id: \.offset) { i, img in
+                        Image(uiImage: img).resizable().scaledToFit()
+                            .frame(height: 46)
+                            .rotationEffect(.degrees(Double(i - 1) * 6))
+                            .offset(x: CGFloat(i - 1) * 9)
+                            .shadow(color: .black.opacity(0.25), radius: 2, y: 1)
                     }
                 }
-                dropChip(title: "새 전시", systemImage: "plus", dashed: true) { id in
-                    exhibitTarget = collection.stamps.first { $0.id == id }
-                    newExhibitionName = ""
-                    showNewExhibition = true
-                }
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 10)
+            .frame(height: 50)
+            Text(isNew ? "새 컬렉션" : name)
+                .font(.system(size: 12, weight: .semibold, design: .rounded))
+                .foregroundStyle(Color(hex: 0x4A3D22))
+                .lineLimit(1)
         }
-        .background(.ultraThinMaterial)
+        .frame(maxWidth: .infinity)
+        .frame(height: 94)
+        .padding(8)
+        .background(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .fill(LinearGradient(colors: [Color(hex: 0xF6EBBE), Color(hex: 0xEBDBA0)],
+                                     startPoint: .top, endPoint: .bottom))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .strokeBorder(Color(hex: lit ? 0xE8504E : 0xCBB870),
+                              style: StrokeStyle(lineWidth: lit ? 3 : 1, dash: isNew ? [5] : []))
+        )
+        .scaleEffect(lit ? 1.06 : 1)
+        .animation(.easeOut(duration: 0.14), value: lit)
+        .background(
+            GeometryReader { g in
+                Color.clear.preference(key: ExhibitionFrameKey.self,
+                                       value: [name: g.frame(in: .named("album"))])
+            }
+        )
     }
 
-    private func dropChip(title: String, systemImage: String, dashed: Bool = false,
-                          onDrop: @escaping (String) -> Void) -> some View {
-        HStack(spacing: 6) {
-            Image(systemName: systemImage)
-            Text(title).lineLimit(1)
-        }
-        .font(.system(size: 14, weight: .semibold, design: .rounded))
-        .foregroundStyle(.white)
-        .padding(.horizontal, 14).padding(.vertical, 10)
-        .background(Capsule().fill(Color.white.opacity(hoveredDrop == title ? 0.3 : 0.12)))
-        .overlay(Capsule().strokeBorder(Color(hex: 0xCBB870),
-                                        style: StrokeStyle(lineWidth: hoveredDrop == title ? 2.5 : 1,
-                                                           dash: dashed ? [5] : [])))
-        .scaleEffect(hoveredDrop == title ? 1.06 : 1)
-        .dropDestination(for: String.self) { ids, _ in
-            guard let id = ids.first else { return false }
-            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) { onDrop(id) }
-            return true
-        } isTargeted: { t in
-            withAnimation(.easeOut(duration: 0.12)) { hoveredDrop = t ? title : (hoveredDrop == title ? nil : hoveredDrop) }
-        }
-    }
 
-
-    /// One stamp seated in a clear pocket on the album page — just the stamp;
-    /// the date/place show as the section headers, not on each stamp.
+    /// One stamp pressed onto the album page — just the stamp itself, its own
+    /// perforated edge showing, with a soft shadow for a little lift.
     private func pagePocket(_ stamp: CollectedStamp) -> some View {
         Image(uiImage: stamp.image)
             .resizable().scaledToFit()
-            .frame(height: 74)
-            .padding(4)
+            .frame(height: 78)
             .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 6)
-                    .fill(.white.opacity(0.35))
-                    .overlay(RoundedRectangle(cornerRadius: 6)
-                        .strokeBorder(.white.opacity(0.5), lineWidth: 0.5))
-            )
-            .shadow(color: .black.opacity(0.2), radius: 2, y: 1)
+            .shadow(color: .black.opacity(0.25), radius: 3, y: 2)
     }
 
     private var albumPaper: some View {
@@ -1008,7 +1259,7 @@ struct NewExhibitionSheet: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    TextField("전시 이름", text: $name)
+                    TextField("컬렉션 이름", text: $name)
                         .textFieldStyle(.roundedBorder)
                         .padding(.horizontal, 16).padding(.top, 14)
                     Text("배경 고르기")
@@ -1024,7 +1275,7 @@ struct NewExhibitionSheet: View {
                 }
                 .padding(.bottom, 24)
             }
-            .navigationTitle("새 전시")
+            .navigationTitle("새 컬렉션")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("취소") { dismiss() } }
@@ -1067,6 +1318,9 @@ struct ExhibitionWallView: View {
     @State private var showDelete = false
     @State private var deleteTarget: CollectedStamp?
 
+    // Tapping a hung stamp opens its detail as a modal (not a pushed page).
+    @State private var selectedStamp: CollectedStamp?
+
     // Flow A: a hwatu deck fanned from the user's thumb corner. Swipe in an arc
     // around the corner to scroll the deck (wrapping); pull a card outward (away
     // from the corner) to draw it; tap elsewhere to fold it back.
@@ -1081,12 +1335,43 @@ struct ExhibitionWallView: View {
     @State private var drawStartLoc: CGPoint = .zero
     @State private var fanDragMode: FanDragMode = .none
     @State private var fanSpread: CGFloat = 0         // 0 = stacked at corner, 1 = fully fanned
+    @State private var folding = false                // collapse runs the stagger in reverse
+    @State private var lastFanDetent = 0              // last front-card index, for scrub ticks
     private let maxFan = 3                            // peek count for the hint
     private let fanRadius: CGFloat = 196             // arc radius from the corner
     private let fanCardAngle: CGFloat = 0.27         // radians between cards (~15.5°)
 
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 16), count: 3)
+    private let perPage = 12                           // a 3×4 spread per leaf
     private var stamps: [CollectedStamp] { collection.stampsInExhibition(exhibition) }
+    /// The sparse cell layout (nil = empty cell) driving the grid.
+    private var slots: [String?] { collection.slots(in: exhibition) }
+    private func stampByID(_ id: String) -> CollectedStamp? {
+        collection.stamps.first { $0.id == id }
+    }
+    /// Pages that actually hold cells (filled or deliberately-left-empty).
+    private var filledPages: Int {
+        max(1, Int(ceil(Double(slots.count) / Double(perPage))))
+    }
+    /// One blank leaf always trails the filled pages, so swiping past the last
+    /// page turns onto a fresh page (1/1 → swipe → a new 2번째 장).
+    private var pageCount: Int { filledPages + 1 }
+    @State private var currentPage = 0
+
+    // The "우표 걸기" button hides itself so the finished wall can be enjoyed;
+    // a tap on the paper flashes it back for a few seconds.
+    @State private var fanVisible = false
+    @State private var hideFanWork: DispatchWorkItem?
+
+    // Once a stamp is drawn from the deck it becomes "in hand": the fan folds
+    // away and the wall waits for a tap on the cell where it should be hung.
+    @State private var pendingStamp: CollectedStamp?
+    @State private var heldBob = false        // gentle float on the carried stamp
+
+    /// Whether the chosen diary paper is dark — drives whether text/title read as
+    /// white or ink so nothing vanishes when the background colour changes.
+    private var isDark: Bool { collection.backgroundStyle(of: exhibition).isDark }
+
     private var deletePresented: Binding<Bool> {
         Binding(get: { deleteTarget != nil }, set: { if !$0 { deleteTarget = nil } })
     }
@@ -1094,23 +1379,37 @@ struct ExhibitionWallView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                wallScroll(viewportHeight: geo.size.height)
+                wallContent(viewportHeight: geo.size.height)
                     .blur(radius: fanPresented ? 2 : 0)
+                    .onChange(of: slots.count) { _, _ in
+                        if currentPage > pageCount - 1 { currentPage = max(0, pageCount - 1) }
+                    }
 
-                // hint tucked into the thumb corner — swipe out an arc to fan
-                if !fanPresented && !collection.collectedStamps.isEmpty {
-                    fanHint
-                        .frame(maxWidth: .infinity, maxHeight: .infinity,
-                               alignment: rightHanded ? .bottomTrailing : .bottomLeading)
-                        .padding(rightHanded ? .trailing : .leading, 8)
-                        .padding(.bottom, 4)
-                        .transition(.opacity)
+                // "우표 걸기" handle in the thumb corner. While the wall is being
+                // enjoyed it tucks down to a half-circle nub at the bottom edge;
+                // tap/drag the nub (or tap the paper) and the full handle rises
+                // back, ready to burst into the fanned deck.
+                if !fanPresented && pendingStamp == nil && !collection.collectedStamps.isEmpty {
+                    if fanVisible {
+                        fanHint
+                            .position(fanPivot(geo.size))
+                            .transition(.scale(scale: 0.4, anchor: .bottom).combined(with: .opacity))
+                    } else {
+                        fanNub
+                            .position(nubCenter(geo.size))
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
                 }
 
                 if fanPresented {
                     Color.black.opacity(0.5).ignoresSafeArea()
                         .allowsHitTesting(false)
                     fanTray(in: geo.size)
+                        .transition(.opacity)
+                }
+
+                if let p = pendingStamp {
+                    placingOverlay(p)
                         .transition(.opacity)
                 }
             }
@@ -1140,7 +1439,7 @@ struct ExhibitionWallView: View {
                     }
                     Divider()
                     Button(role: .destructive) { showDelete = true } label: {
-                        Label("전시 삭제", systemImage: "trash")
+                        Label("컬렉션 삭제", systemImage: "trash")
                     }
                 } label: {
                     Image(systemName: "ellipsis.circle")
@@ -1148,13 +1447,13 @@ struct ExhibitionWallView: View {
             }
         }
         .alert("이름 변경", isPresented: $showRename) {
-            TextField("전시 이름", text: $renameText)
+            TextField("컬렉션 이름", text: $renameText)
             Button("취소", role: .cancel) { }
             Button("저장") { collection.renameExhibition(exhibition, to: renameText) }
         }
-        .confirmationDialog("전시 '\(exhibition)' 을(를) 삭제할까요? 걸려 있던 우표들은 원래 우표첩으로 돌아가요.",
+        .confirmationDialog("컬렉션 '\(exhibition)' 을(를) 삭제할까요? 걸려 있던 우표들은 원래 우표첩으로 돌아가요.",
                             isPresented: $showDelete, titleVisibility: .visible) {
-            Button("전시 삭제", role: .destructive) { collection.deleteExhibition(exhibition); dismiss() }
+            Button("컬렉션 삭제", role: .destructive) { collection.deleteExhibition(exhibition); dismiss() }
             Button("취소", role: .cancel) { }
         }
         .confirmationDialog("이 우표를 삭제할까요?", isPresented: deletePresented,
@@ -1162,56 +1461,270 @@ struct ExhibitionWallView: View {
             Button("삭제", role: .destructive) { collection.delete(stamp.id) }
             Button("취소", role: .cancel) { }
         }
-        .preferredColorScheme(.dark)
+        .sheet(item: $selectedStamp, onDismiss: { Haptics.deselect() }) { stamp in
+            NavigationStack {
+                StampDetailView(collection: collection, stampID: stamp.id)
+            }
+        }
+        // Title + toolbar follow the paper: white on dark papers, ink on light ones,
+        // so the exhibition name never disappears into the background.
+        .toolbarColorScheme(isDark ? .dark : .light, for: .navigationBar)
+        .preferredColorScheme(isDark ? .dark : .light)
+        .onAppear { flashFanButton() }   // greet with the button, then let it fade
     }
 
-    /// The wall grid, with a tappable empty backdrop that fans out the collection.
-    private func wallScroll(viewportHeight: CGFloat) -> some View {
-        ScrollView {
-            ZStack(alignment: .top) {
-                Color.clear
-                    .contentShape(Rectangle())
-                    .frame(maxWidth: .infinity, minHeight: viewportHeight)
-                    .onTapGesture {
-                        guard !collection.collectedStamps.isEmpty else { return }
-                        openFan()
-                    }
+    /// Reveal the "우표 걸기" button and schedule it to fade away again, so the
+    /// finished wall stays uncluttered between placements.
+    private func flashFanButton() {
+        guard !collection.collectedStamps.isEmpty else { return }
+        withAnimation(.easeOut(duration: 0.2)) { fanVisible = true }
+        hideFanWork?.cancel()
+        let work = DispatchWorkItem {
+            withAnimation(.easeIn(duration: 0.4)) { fanVisible = false }
+        }
+        hideFanWork = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5, execute: work)
+    }
 
-                if stamps.isEmpty {
+    /// The first empty cell on the page currently shown, so a stamp drawn from
+    /// the deck lands on the leaf the user is looking at.
+    private func firstEmptySlotOnCurrentPage() -> Int {
+        let base = currentPage * perPage
+        let s = slots
+        for cell in 0..<perPage {
+            let idx = base + cell
+            if idx >= s.count || s[idx] == nil { return idx }
+        }
+        return base   // page full → placeInExhibition spills to the next free cell
+    }
+
+    /// Hang the in-hand stamp in the tapped cell and end placing mode. An empty
+    /// cell takes it exactly; a taken cell spills it to the next free cell.
+    private func placePending(at slot: Int) {
+        guard let p = pendingStamp else { return }
+        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+            collection.placeInExhibition(p.id, into: exhibition, at: slot)
+        }
+        if let landed = collection.slots(in: exhibition).firstIndex(where: { $0 == p.id }) {
+            currentPage = landed / perPage
+        }
+        Haptics.placed()              // 우표를 골라 둔 자리에 걸었다
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.85)) { pendingStamp = nil }
+    }
+
+    private func cancelPlacing() {
+        Haptics.deselect()
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.85)) { pendingStamp = nil }
+    }
+
+    /// While placing: a hint bar pinned to the top and the chosen stamp floating
+    /// at the bottom as if held in hand — the wall in between stays clear and
+    /// tappable so you can pick the spot. The held stamp ignores touches so taps
+    /// fall through to the cells beneath it.
+    private func placingOverlay(_ stamp: CollectedStamp) -> some View {
+        ZStack {
+            HStack(spacing: 10) {
+                Image(systemName: "hand.point.up.left.fill")
+                    .font(.system(size: 13, weight: .bold))
+                Text("원하는 칸을 탭해 내려놓기")
+                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                Spacer(minLength: 8)
+                Button { cancelPlacing() } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 22))
+                        .foregroundStyle(.white.opacity(0.85))
+                }
+                .buttonStyle(.plain)
+            }
+            .foregroundStyle(.white)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 10)
+            .background(Capsule().fill(Color.black.opacity(0.55)))
+            .overlay(Capsule().strokeBorder(.white.opacity(0.2), lineWidth: 1))
+            .shadow(color: .black.opacity(0.3), radius: 6, y: 3)
+            .padding(.horizontal, 18)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .padding(.top, 8)
+
+            Image(uiImage: stamp.image)
+                .resizable().scaledToFit()
+                .frame(width: 104)
+                .rotationEffect(.degrees(-4))
+                .shadow(color: .black.opacity(0.45), radius: 16, y: 12)
+                .offset(y: heldBob ? -8 : 0)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .padding(.bottom, 30)
+                .allowsHitTesting(false)
+                .transition(.scale(scale: 0.6).combined(with: .opacity))
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 0.95).repeatForever(autoreverses: true)) {
+                        heldBob = true
+                    }
+                }
+                .onDisappear { heldBob = false }
+        }
+    }
+
+    /// The wall: an empty backdrop you can tap to fan out the collection, or — once
+    /// stamps are hung — a book of leaves you swipe through with a real page curl.
+    @ViewBuilder
+    private func wallContent(viewportHeight: CGFloat) -> some View {
+        if stamps.isEmpty && pendingStamp == nil {
+            ScrollView {
+                ZStack(alignment: .top) {
+                    Color.clear
+                        .contentShape(Rectangle())
+                        .frame(maxWidth: .infinity, minHeight: viewportHeight)
+                        .onTapGesture {
+                            guard !collection.collectedStamps.isEmpty else { return }
+                            openFan()
+                        }
                     emptyWall
-                } else {
-                    LazyVGrid(columns: columns, spacing: 16) {
-                        ForEach(stamps) { stamp in
-                            NavigationLink {
-                                StampDetailView(collection: collection, stampID: stamp.id)
-                            } label: {
-                                framedArt(stamp)
-                            }
-                            .buttonStyle(.plain)
-                            .contextMenu { wallMenu(for: stamp) }
-                            .draggable(stamp.id) {
-                                framedArt(stamp).frame(width: 90)   // drag preview
-                            }
-                            .dropDestination(for: String.self) { items, _ in
-                                guard let dragged = items.first,
-                                      let toIndex = stamps.firstIndex(where: { $0.id == stamp.id })
-                                else { return false }
-                                withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
-                                    collection.reorderExhibition(exhibition, moving: dragged, to: toIndex)
-                                }
-                                return true
-                            }
+                }
+            }
+        } else {
+            PageCurlView(pageCount: pageCount, currentPage: $currentPage,
+                         contentKey: slots.map { $0 ?? "·" }.joined(separator: ",")
+                                     + "|" + collection.backgroundStyle(of: exhibition).rawValue) { pageIndex in
+                wallPage(pageIndex)
+            }
+            .id(exhibition)   // start a fresh book when switching exhibitions
+            .ignoresSafeArea(.container, edges: .bottom)
+        }
+    }
+
+    /// One leaf of the book: a 3×3 grid of cells on the diary paper, footed with
+    /// its page number. Each cell is either a hung stamp or an empty drop slot,
+    /// so stamps can be placed in any spot and cells left blank. Opaque so the
+    /// curl shows paper on both faces.
+    private func wallPage(_ pageIndex: Int) -> some View {
+        let pageSlots = slots
+        return ZStack {
+            DiaryBackground(style: collection.backgroundStyle(of: exhibition))
+                .ignoresSafeArea()
+                .contentShape(Rectangle())
+                .onTapGesture {                      // tap the paper → show the deck
+                    if pendingStamp == nil { flashFanButton() }
+                }
+            VStack(spacing: 0) {
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach(0..<perPage, id: \.self) { cell in
+                        let slot = pageIndex * perPage + cell
+                        let id = slot < pageSlots.count ? pageSlots[slot] : nil
+                        if let id, let stamp = stampByID(id) {
+                            wallStampCell(stamp, slot: slot)
+                        } else {
+                            emptyCell(slot: slot)
                         }
                     }
-                    .padding(18)
                 }
+                .padding(18)
+                Spacer(minLength: 8)
+                pageFooter(pageIndex)
             }
         }
     }
 
+    /// A single hung stamp: tap to open (or, while placing, to drop the in-hand
+    /// stamp here), long-press to manage, drag to another cell (the two swap; an
+    /// empty cell just receives it).
+    private func wallStampCell(_ stamp: CollectedStamp, slot: Int) -> some View {
+        Button {
+            if pendingStamp != nil {
+                placePending(at: slot)
+            } else {
+                Haptics.select()
+                selectedStamp = stamp
+            }
+        } label: {
+            framedArt(stamp)
+        }
+        .buttonStyle(.plain)
+        .contextMenu { wallMenu(for: stamp) }
+        .draggable(stamp.id) {
+            framedArt(stamp).frame(width: 90)   // drag preview
+        }
+        .dropDestination(for: String.self) { items, _ in
+            guard let dragged = items.first, dragged != stamp.id else { return false }
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                collection.moveStamp(dragged, in: exhibition, toSlot: slot)
+            }
+            Haptics.placed()
+            return true
+        }
+    }
+
+    /// A blank cell — a faint dotted spot you can drop a stamp onto. Kept quiet
+    /// so the wall still reads as "finished", but it lights up while a stamp is
+    /// in hand so the open spots are obvious.
+    private func emptyCell(slot: Int) -> some View {
+        let placing = pendingStamp != nil
+        let ink = (isDark ? Color.white : Color(hex: 0x6B5836)).opacity(placing ? 0.5 : 0.16)
+        return RoundedRectangle(cornerRadius: 8)
+            .strokeBorder(ink, style: StrokeStyle(lineWidth: placing ? 2 : 1.5, dash: [5, 5]))
+            .background(RoundedRectangle(cornerRadius: 8)
+                .fill(Color.accentColor.opacity(placing ? 0.12 : 0)))
+            .aspectRatio(1, contentMode: .fit)
+            .frame(maxWidth: .infinity)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                if pendingStamp != nil { placePending(at: slot) }
+                else { flashFanButton() }
+            }
+            .dropDestination(for: String.self) { items, _ in
+                guard let dragged = items.first else { return false }
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                    collection.moveStamp(dragged, in: exhibition, toSlot: slot)
+                }
+                Haptics.placed()
+                return true
+            }
+    }
+
+    /// The little page number printed at the foot of each leaf.
+    private func pageFooter(_ pageIndex: Int) -> some View {
+        let dark = collection.backgroundStyle(of: exhibition).isDark
+        let ink = dark ? Color.white.opacity(0.7) : Color(hex: 0x6B5836)
+        return Text("— \(pageIndex + 1) / \(pageCount) —")
+            .font(.system(size: 13, weight: .semibold, design: .serif))
+            .foregroundStyle(ink)
+            .padding(.bottom, 14)
+    }
+
+    /// The corner the deck springs from — also exactly where the "우표 걸기" button
+    /// sits, so opening bursts out of the button and folding tucks back under it.
     private func fanPivot(_ size: CGSize) -> CGPoint {
-        rightHanded ? CGPoint(x: size.width - 30, y: size.height - 18)
-                    : CGPoint(x: 30, y: size.height - 18)
+        let inset: CGFloat = 46
+        return rightHanded ? CGPoint(x: size.width - inset, y: size.height - inset)
+                           : CGPoint(x: inset, y: size.height - inset)
+    }
+
+    /// The half-circle nub left peeking from the thumb corner once the full
+    /// handle has faded — a quiet reminder that the deck is a tap away.
+    private var fanNub: some View {
+        ZStack(alignment: .top) {
+            Circle()
+                .fill(.ultraThinMaterial)
+                .overlay(Circle().strokeBorder(.white.opacity(0.4), lineWidth: 1))
+                .frame(width: 64, height: 64)
+            Image(systemName: "hand.draw.fill")
+                .font(.system(size: 15, weight: .bold))
+                .foregroundStyle(.white)
+                .padding(.top, 7)
+        }
+        .frame(width: 64, height: 34, alignment: .top)   // crop to the top dome (~half)
+        .clipped()
+        .shadow(color: .black.opacity(0.3), radius: 3, y: -1)
+        .contentShape(Rectangle())
+        .onTapGesture { flashFanButton() }
+        .gesture(DragGesture(minimumDistance: 6).onEnded { _ in flashFanButton() })
+    }
+
+    /// Centre for the peeking nub: the 34pt dome rests flush on the bottom edge,
+    /// hugging the thumb side (right for right-handers, left for lefties).
+    private func nubCenter(_ size: CGSize) -> CGPoint {
+        let x = rightHanded ? size.width - 44 : 44
+        return CGPoint(x: x, y: size.height - 17)
     }
     /// Direction (radians) the front card points: up-left for a right thumb,
     /// up-right for a left thumb.
@@ -1255,18 +1768,21 @@ struct ExhibitionWallView: View {
                         // drawn card follows the finger; others sit on the arc
                         .position(drawing ? drawCardPos : radial)
                         .zIndex(drawing ? 200 : (isFront ? 100 : Double(r) - abs(Double(s))))
-                        // 촤라라락 — each card unfurls a beat after the previous
+                        // 촤라라락 — cards unfurl one after another on the way out,
+                        // and retract in reverse order (last-out → first-in) on fold.
                         .animation(.spring(response: 0.42, dampingFraction: 0.72)
-                            .delay(Double(ai - baseAI) * 0.05), value: fanSpread)
+                            .delay(Double(folding ? (2 * r - (ai - baseAI)) : (ai - baseAI)) * 0.05),
+                            value: fanSpread)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .contentShape(Rectangle())
             .gesture(fanGesture(pivot: pivot, count: count, all: all))
             .onTapGesture {
-                withAnimation(.spring(response: 0.3, dampingFraction: 0.85)) { fanPresented = false }
+                guard fanDragMode != .draw else { return }   // not while a card is out
+                foldFan()
             }
-            .onAppear { fanSpread = 1 }       // trigger the staggered fan-out
+            .onAppear { folding = false; fanSpread = 1 }   // trigger the staggered fan-out
             .onDisappear { fanSpread = 0 }
         }
     }
@@ -1287,11 +1803,16 @@ struct ExhibitionWallView: View {
                     drawStartRadius = startRadius
                     drawStartLoc = v.startLocation
                     drawCardPos = v.startLocation
+                    lastFanDetent = Int(fanScroll.rounded())
+                    if fanDragMode == .draw { Haptics.select() }   // a card lifts out
                 }
                 if fanDragMode == .scrub {
                     let delta = angleDiff(curAngle, scrubStartAngle)
-                    let dir: CGFloat = rightHanded ? -1 : 1     // clockwise = forward for a right thumb
+                    let dir: CGFloat = -1     // same on-screen arc advances the deck for either hand
                     fanScroll = fanScrubAnchor + dir * delta / fanCardAngle
+                    // a ratchet tick each time a new card clicks to the front
+                    let detent = Int(fanScroll.rounded())
+                    if detent != lastFanDetent { lastFanDetent = detent; Haptics.bounce() }
                 } else {
                     drawCardPos = v.location          // the card follows the finger
                 }
@@ -1300,11 +1821,18 @@ struct ExhibitionWallView: View {
                 let moved = hypot(v.location.x - drawStartLoc.x, v.location.y - drawStartLoc.y)
                 if fanDragMode == .draw && moved > 60 {
                     let idx = ((Int(fanScroll.rounded()) % count) + count) % count
-                    let card = all[idx]
-                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
-                        collection.placeInExhibition(card.id, into: exhibition)
+                    // Take the card "in hand". Close the deck at once (no lingering
+                    // dim) so the whole wall is clear to deliberate over, then wait
+                    // for a tap on the cell where it should be hung.
+                    fanDragMode = .none
+                    folding = false
+                    fanSpread = 0
+                    withAnimation(.easeOut(duration: 0.22)) { fanPresented = false }
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                        pendingStamp = all[idx]
                     }
-                    fanPresented = false
+                    Haptics.select()
+                    return
                 } else if fanDragMode == .scrub {
                     withAnimation(.spring(response: 0.4, dampingFraction: 0.82)) {
                         fanScroll = fanScroll.rounded()
@@ -1315,14 +1843,11 @@ struct ExhibitionWallView: View {
     }
 
     private func fanCard(_ stamp: CollectedStamp) -> some View {
+        // Just the stamp itself — no card mat or border — so its own perforated
+        // edge shows, matching the wall and the carried stamp.
         Image(uiImage: stamp.image).resizable().scaledToFit()
-            .frame(width: 60)
-            .padding(6)
-            .background(RoundedRectangle(cornerRadius: 4)
-                .fill(LinearGradient(colors: [Color(hex: 0xF6EBBE), Color(hex: 0xEBDBA0)],
-                                     startPoint: .top, endPoint: .bottom)))
-            .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(Color(hex: 0xCBB870), lineWidth: 2))
-            .shadow(color: .black.opacity(0.5), radius: 4, y: 3)
+            .frame(width: 70)
+            .shadow(color: .black.opacity(0.45), radius: 4, y: 3)
     }
 
     /// A round handle tucked into the thumb corner, with a few stamps peeking
@@ -1355,7 +1880,7 @@ struct ExhibitionWallView: View {
             .overlay(Circle().strokeBorder(.white.opacity(0.45), lineWidth: 1))
             .shadow(color: .black.opacity(0.4), radius: 5, y: 2)
         }
-        .frame(width: 150, height: 150)
+        .frame(width: 110, height: 110)
         .contentShape(Rectangle())
         .gesture(DragGesture(minimumDistance: 6).onEnded { _ in openFan() })
         .onTapGesture { openFan() }
@@ -1365,14 +1890,28 @@ struct ExhibitionWallView: View {
         let count = collection.collectedStamps.count
         fanScroll = CGFloat(max(0, count - 1))   // start on the newest card
         fanDragMode = .none
+        folding = false
         fanSpread = 0                            // collapsed → onAppear fans it out
         withAnimation(.spring(response: 0.34, dampingFraction: 0.8)) { fanPresented = true }
+    }
+
+    /// Fold the deck back into the thumb corner — the unfurl run in reverse — then
+    /// dismiss once the last card has tucked away.
+    private func foldFan() {
+        let count = min(7, collection.collectedStamps.count)   // visible cards
+        folding = true
+        fanSpread = 0                            // staggered retract (reversed order)
+        let collapse = Double(count) * 0.05 + 0.42
+        DispatchQueue.main.asyncAfter(deadline: .now() + collapse) {
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) { fanPresented = false }
+            folding = false
+        }
     }
 
     @ViewBuilder
     private func wallMenu(for stamp: CollectedStamp) -> some View {
         Button { collection.returnToCollection(stamp.id) } label: {
-            Label("컬렉션으로 되돌리기", systemImage: "arrow.uturn.backward")
+            Label("우표첩으로 되돌리기", systemImage: "arrow.uturn.backward")
         }
         if collection.exhibitions.count > 1 {
             Menu {
@@ -1380,7 +1919,7 @@ struct ExhibitionWallView: View {
                     Button(ex.name) { collection.moveExhibitedStamp(stamp.id, to: ex.name) }
                 }
             } label: {
-                Label("다른 전시로", systemImage: "arrow.right.square")
+                Label("다른 컬렉션으로", systemImage: "arrow.right.square")
             }
         }
         Divider()
@@ -1405,11 +1944,11 @@ struct ExhibitionWallView: View {
             Image(systemName: "photo.artframe")
                 .font(.system(size: 44))
                 .foregroundStyle(ink.opacity(0.4))
-            Text("이 전시는 비어 있어요")
+            Text("이 컬렉션은 비어 있어요")
                 .foregroundStyle(ink.opacity(0.8))
             Text(collection.collectedStamps.isEmpty
                  ? "먼저 카메라로 우표를 모아보세요"
-                 : "아래 ‘우표 걸기’에서 우표를 꺼내 걸어보세요")
+                 : "화면을 탭해 ‘우표 걸기’에서 우표를 꺼내 걸어보세요")
                 .font(.system(size: 13))
                 .foregroundStyle(ink.opacity(0.55))
                 .multilineTextAlignment(.center)
@@ -1431,17 +1970,44 @@ struct CollectedStamp: Identifiable {
 }
 
 /// A curated wall of stamps pulled out of the collection and hung up to show
-/// off. The stamp ids are kept in display order (drag-to-reorder writes this).
+/// off. Stamps live in a sparse `slots` layout — index = page*perPage + cell,
+/// `nil` = an empty (droppable) cell — so a stamp can be hung in any spot and
+/// cells may be left blank. Trailing empties are trimmed so the page count
+/// stays tight.
 struct Exhibition: Identifiable {
     var id: String { name }
     let name: String
-    let stampIDs: [String]     // ordered
+    let slots: [String?]
     var background: String = BackgroundStyle.cream.rawValue   // diary-paper style id
 
+    init(name: String, slots: [String?], background: String = BackgroundStyle.cream.rawValue) {
+        self.name = name
+        self.slots = Exhibition.trimmingTrailingGaps(slots)
+        self.background = background
+    }
+    /// Build from a plain ordered id list (legacy load, append flows): no gaps.
+    init(name: String, stampIDs: [String], background: String = BackgroundStyle.cream.rawValue) {
+        self.init(name: name, slots: stampIDs.map { Optional($0) }, background: background)
+    }
+
     var backgroundStyle: BackgroundStyle { BackgroundStyle(rawValue: background) ?? .cream }
-    /// A copy with a new ordered id list, keeping name + background.
+    /// The hung stamp ids in display order, gaps removed — for counts, peeks,
+    /// and the exhibited-id cache.
+    var stampIDs: [String] { slots.compactMap { $0 } }
+
+    /// A copy with a new sparse layout, keeping name + background.
+    func with(slots newSlots: [String?]) -> Exhibition {
+        Exhibition(name: name, slots: newSlots, background: background)
+    }
+    /// A copy from a plain ordered id list (collapses gaps).
     func with(stampIDs ids: [String]) -> Exhibition {
         Exhibition(name: name, stampIDs: ids, background: background)
+    }
+
+    static func trimmingTrailingGaps(_ s: [String?]) -> [String?] {
+        var s = s
+        while s.last == .some(nil) { s.removeLast() }
+        return s
     }
 }
 
@@ -1463,7 +2029,12 @@ final class CollectionStore: ObservableObject {
     private var metaURL: URL { dir.appendingPathComponent("albums.json") }
     private var exhibitionsURL: URL { dir.appendingPathComponent("exhibitions.json") }
     private struct Meta: Codable { var albums: [String]; var active: String }
-    private struct ExhibitionRecord: Codable { var name: String; var stampIDs: [String]; var background: String? }
+    private struct ExhibitionRecord: Codable {
+        var name: String
+        var stampIDs: [String]? = nil   // legacy (pre-slots) — read only
+        var slots: [String?]? = nil     // sparse layout (nil = empty cell)
+        var background: String?
+    }
     private struct ExhibitionsFile: Codable { var exhibitions: [ExhibitionRecord] }
 
     /// Per-stamp sidecar: when/where it was made, plus the crop region in the
@@ -1566,14 +2137,15 @@ final class CollectionStore: ObservableObject {
     private func loadExhibitions() {
         guard let data = try? Data(contentsOf: exhibitionsURL),
               let file = try? JSONDecoder().decode(ExhibitionsFile.self, from: data) else { return }
-        exhibitions = file.exhibitions.map {
-            Exhibition(name: $0.name, stampIDs: $0.stampIDs,
-                       background: $0.background ?? BackgroundStyle.cream.rawValue)
+        exhibitions = file.exhibitions.map { rec in
+            let slots: [String?] = rec.slots ?? (rec.stampIDs ?? []).map { Optional($0) }
+            return Exhibition(name: rec.name, slots: slots,
+                              background: rec.background ?? BackgroundStyle.cream.rawValue)
         }
     }
     private func saveExhibitions() {
         let file = ExhibitionsFile(exhibitions: exhibitions.map {
-            ExhibitionRecord(name: $0.name, stampIDs: $0.stampIDs, background: $0.background)
+            ExhibitionRecord(name: $0.name, stampIDs: nil, slots: $0.slots, background: $0.background)
         })
         if let data = try? JSONEncoder().encode(file) {
             try? data.write(to: exhibitionsURL, options: .atomic)
@@ -1605,11 +2177,13 @@ final class CollectionStore: ObservableObject {
         var seen = Set<String>()
         var changed = false
         let cleaned: [Exhibition] = exhibitions.map { ex in
-            let ids = ex.stampIDs.filter { id in
-                guard live.contains(id), !seen.contains(id) else { changed = true; return false }
-                seen.insert(id); return true
+            // Null out dead/duplicate ids in place — keeps each stamp's chosen cell.
+            let slots: [String?] = ex.slots.map { slot in
+                guard let id = slot else { return nil }
+                guard live.contains(id), !seen.contains(id) else { changed = true; return nil }
+                seen.insert(id); return id
             }
-            return ex.with(stampIDs: ids)
+            return ex.with(slots: slots)
         }
         if changed { exhibitions = cleaned; saveExhibitions() }
     }
@@ -1703,10 +2277,13 @@ final class CollectionStore: ObservableObject {
         try? FileManager.default.removeItem(at: stampMetaURL(for: id))
         try? FileManager.default.removeItem(at: originalURL(for: id))
         stamps.removeAll { $0.id == id }
-        // also pull it off any exhibition wall
+        // also pull it off any exhibition wall, leaving its cell empty so the
+        // surrounding layout doesn't shift
         if exhibitedIDCache.contains(id) {
-            exhibitions = exhibitions.map {
-                $0.with(stampIDs: $0.stampIDs.filter { $0 != id })
+            exhibitions = exhibitions.map { ex in
+                ex.slots.contains(where: { $0 == id })
+                    ? ex.with(slots: ex.slots.map { $0 == id ? nil : $0 })
+                    : ex
             }
             saveExhibitions()
         }
@@ -1758,11 +2335,14 @@ final class CollectionStore: ObservableObject {
     private func exhibitionIndex(_ name: String) -> Int? {
         exhibitions.firstIndex(where: { $0.name == name })
     }
-    /// Pull an id off whatever wall currently holds it (single-membership).
+    /// Pull an id off whatever wall currently holds it (single-membership),
+    /// leaving an empty cell behind so the rest of the layout doesn't shift.
     private func removeFromAnyExhibition(_ id: String) {
         guard exhibitedIDCache.contains(id) else { return }
-        exhibitions = exhibitions.map {
-            Exhibition(name: $0.name, stampIDs: $0.stampIDs.filter { $0 != id })
+        exhibitions = exhibitions.map { ex in
+            ex.slots.contains(where: { $0 == id })
+                ? ex.with(slots: ex.slots.map { $0 == id ? nil : $0 })
+                : ex
         }
     }
 
@@ -1779,7 +2359,7 @@ final class CollectionStore: ObservableObject {
 
     func setExhibitionBackground(_ name: String, to style: BackgroundStyle) {
         guard let i = exhibitionIndex(name) else { return }
-        exhibitions[i] = Exhibition(name: name, stampIDs: exhibitions[i].stampIDs,
+        exhibitions[i] = Exhibition(name: name, slots: exhibitions[i].slots,
                                     background: style.rawValue)
         saveExhibitions()
     }
@@ -1788,15 +2368,57 @@ final class CollectionStore: ObservableObject {
     }
 
     /// Hang a collected stamp on an exhibition wall — it leaves the collection.
-    func placeInExhibition(_ id: String, into name: String) {
+    /// Pass `at:` to land it in a specific cell; if that cell is taken it falls
+    /// to the next empty one (or a new cell at the end). With no target it fills
+    /// the first empty cell, else appends.
+    func placeInExhibition(_ id: String, into name: String, at targetSlot: Int? = nil) {
         guard stamps.contains(where: { $0.id == id }) else { return }
-        if exhibitionIndex(name) == nil { exhibitions.append(Exhibition(name: name, stampIDs: [])) }
+        if exhibitionIndex(name) == nil { exhibitions.append(Exhibition(name: name, slots: [])) }
         removeFromAnyExhibition(id)
         guard let i = exhibitionIndex(name) else { return }
-        var ids = exhibitions[i].stampIDs
-        ids.append(id)
-        exhibitions[i] = exhibitions[i].with(stampIDs: ids)
+        var slots = exhibitions[i].slots
+        if let t = targetSlot {
+            if t >= slots.count {
+                slots.append(contentsOf: Array(repeating: nil, count: t - slots.count + 1))
+            }
+            if slots[t] == nil {
+                slots[t] = id
+            } else if let empty = (t..<slots.count).first(where: { slots[$0] == nil }) {
+                slots[empty] = id
+            } else {
+                slots.append(id)
+            }
+        } else if let empty = slots.firstIndex(where: { $0 == nil }) {
+            slots[empty] = id
+        } else {
+            slots.append(id)
+        }
+        exhibitions[i] = exhibitions[i].with(slots: slots)
         saveExhibitions()
+    }
+
+    /// Drag a hung stamp into a specific cell. Within the same wall the two
+    /// stamps swap (an empty target just receives it); a stamp dragged in from
+    /// elsewhere is hung at the target cell.
+    func moveStamp(_ id: String, in name: String, toSlot target: Int) {
+        guard let i = exhibitionIndex(name) else { return }
+        var slots = exhibitions[i].slots
+        guard let from = slots.firstIndex(where: { $0 == id }) else {
+            placeInExhibition(id, into: name, at: target)
+            return
+        }
+        if target >= slots.count {
+            slots.append(contentsOf: Array(repeating: nil, count: target - slots.count + 1))
+        }
+        slots[from] = slots[target]   // occupant (maybe nil) takes the vacated cell
+        slots[target] = id
+        exhibitions[i] = exhibitions[i].with(slots: slots)
+        saveExhibitions()
+    }
+
+    /// The sparse cell layout of an exhibition (nil = empty cell).
+    func slots(in name: String) -> [String?] {
+        exhibitions.first(where: { $0.name == name })?.slots ?? []
     }
 
     /// Take a stamp off the wall — it returns to its home album.
@@ -1810,32 +2432,14 @@ final class CollectionStore: ObservableObject {
         placeInExhibition(id, into: name)
     }
 
-    /// Drag-to-reorder: move `id` to `index` within its exhibition.
-    func reorderExhibition(_ name: String, moving id: String, to index: Int) {
-        guard let i = exhibitionIndex(name) else { return }
-        var ids = exhibitions[i].stampIDs
-        guard let from = ids.firstIndex(of: id) else { return }
-        ids.remove(at: from)
-        let dest = max(0, min(index, ids.count))
-        ids.insert(id, at: dest)
-        exhibitions[i] = exhibitions[i].with(stampIDs: ids)
-        saveExhibitions()
-    }
-
-    /// List/onMove reorder fallback.
-    func reorderExhibition(_ name: String, from offsets: IndexSet, to dest: Int) {
-        guard let i = exhibitionIndex(name) else { return }
-        var ids = exhibitions[i].stampIDs
-        ids.move(fromOffsets: offsets, toOffset: dest)
-        exhibitions[i] = exhibitions[i].with(stampIDs: ids)
-        saveExhibitions()
-    }
+    // Cell-level arranging now goes through `moveStamp(_:in:toSlot:)` so stamps
+    // can sit in any spot with gaps between them — see above.
 
     func renameExhibition(_ old: String, to newName: String) {
         let n = newName.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !n.isEmpty, n != old, let i = exhibitionIndex(old),
               !exhibitions.contains(where: { $0.name == n }) else { return }
-        exhibitions[i] = Exhibition(name: n, stampIDs: exhibitions[i].stampIDs,
+        exhibitions[i] = Exhibition(name: n, slots: exhibitions[i].slots,
                                     background: exhibitions[i].background)
         saveExhibitions()
     }
@@ -2259,10 +2863,10 @@ struct StampDetailView: View {
                     }
                     Divider()
                     Button { newExhibitionName = ""; showNewExhibition = true } label: {
-                        Label("새 전시…", systemImage: "plus")
+                        Label("새 컬렉션…", systemImage: "plus")
                     }
                 } label: {
-                    Label("전시에 걸기", systemImage: "photo.artframe")
+                    Label("컬렉션에 걸기", systemImage: "photo.artframe")
                         .font(.system(size: 14, weight: .semibold))
                 }
             }
@@ -2321,6 +2925,150 @@ struct StampDetailView: View {
 
 struct EditTarget: Identifiable {
     let id: String
+}
+
+/// Collects each exhibition drop-card's frame (in the album's coordinate space)
+/// so a lifted stamp can be hit-tested against the cards while dragging.
+struct ExhibitionFrameKey: PreferenceKey {
+    static var defaultValue: [String: CGRect] = [:]
+    static func reduce(value: inout [String: CGRect], nextValue: () -> [String: CGRect]) {
+        value.merge(nextValue()) { _, new in new }
+    }
+}
+
+/// Tiny tactile feedback for picking up / putting down a stamp. `select` is a
+/// crisp tap when a stamp opens; `deselect` is a softer one when it closes.
+enum Haptics {
+    static func select() {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+    }
+    static func deselect() {
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred(intensity: 0.7)
+    }
+    /// A confirming buzz when a stamp lands somewhere (exhibition / another book).
+    static func placed() {
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+    }
+    /// The dry little tick of a page being turned.
+    static func pageTurn() {
+        UIImpactFeedbackGenerator(style: .rigid).impactOccurred(intensity: 0.6)
+    }
+    /// The heavy "툭" of a freshly-stamped tile hitting the floor.
+    static func plop() {
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+    }
+    /// The lighter "톡" of a secondary bounce.
+    static func bounce() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred(intensity: 0.5)
+    }
+}
+
+/// A horizontally-paged container that turns pages with UIKit's real page-curl
+/// transition — the leaf lifts and curls over like a book. Pages are built lazily
+/// from `page(index)`, so the deck grows/shrinks with the data behind it.
+struct PageCurlView<Page: View>: UIViewControllerRepresentable {
+    let pageCount: Int
+    @Binding var currentPage: Int
+    /// Changes whenever the paged content changes, so the visible leaf is only
+    /// rebuilt on real data edits — not on every unrelated state tick.
+    var contentKey: String = ""
+    let page: (Int) -> Page
+
+    func makeCoordinator() -> Coordinator { Coordinator(self) }
+
+    func makeUIViewController(context: Context) -> UIPageViewController {
+        let pvc = UIPageViewController(transitionStyle: .pageCurl,
+                                      navigationOrientation: .horizontal)
+        pvc.dataSource = context.coordinator
+        pvc.delegate = context.coordinator
+        pvc.view.backgroundColor = .clear
+        pvc.isDoubleSided = false
+        if pageCount > 0 {
+            let start = min(max(0, currentPage), pageCount - 1)
+            pvc.setViewControllers([context.coordinator.controller(for: start)],
+                                   direction: .forward, animated: false)
+            context.coordinator.displayedIndex = start
+            context.coordinator.cachedPageCount = pageCount
+        }
+        context.coordinator.lastContentKey = contentKey
+        return pvc
+    }
+
+    func updateUIViewController(_ pvc: UIPageViewController, context: Context) {
+        let coord = context.coordinator
+        coord.parent = self
+        guard pageCount > 0 else { return }
+        let target = min(max(0, currentPage), pageCount - 1)
+        // Rebuild the visible leaf when the data shape changed (a stamp added /
+        // removed remakes pages) or the bound page jumped from elsewhere.
+        if coord.cachedPageCount != pageCount || coord.displayedIndex != target {
+            let dir: UIPageViewController.NavigationDirection =
+                target >= coord.displayedIndex ? .forward : .reverse
+            coord.cachedPageCount = pageCount
+            coord.displayedIndex = target
+            coord.lastContentKey = contentKey
+            pvc.setViewControllers([coord.controller(for: target)],
+                                   direction: dir, animated: false)
+            if currentPage != target {
+                DispatchQueue.main.async { self.currentPage = target }
+            }
+        } else if coord.lastContentKey != contentKey,
+                  let host = pvc.viewControllers?.first as? IndexedHostingController {
+            // Same page, but the stamps behind it changed (e.g. one was just hung).
+            // Hosting controllers snapshot their content, so refresh the visible
+            // leaf's rootView in place — otherwise the new stamp wouldn't appear
+            // until a page turn forced a rebuild.
+            coord.lastContentKey = contentKey
+            host.rootView = AnyView(page(host.pageIndex))
+        }
+    }
+
+    final class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+        var parent: PageCurlView
+        var displayedIndex = 0
+        var cachedPageCount = -1
+        var lastContentKey = ""
+
+        init(_ parent: PageCurlView) { self.parent = parent }
+
+        func controller(for index: Int) -> UIViewController {
+            let host = IndexedHostingController(rootView: AnyView(parent.page(index)))
+            host.pageIndex = index
+            host.view.backgroundColor = .clear
+            return host
+        }
+
+        private func index(of vc: UIViewController) -> Int? {
+            (vc as? IndexedHostingController)?.pageIndex
+        }
+
+        func pageViewController(_ pvc: UIPageViewController,
+                                viewControllerBefore vc: UIViewController) -> UIViewController? {
+            guard let i = index(of: vc), i > 0 else { return nil }
+            return controller(for: i - 1)
+        }
+
+        func pageViewController(_ pvc: UIPageViewController,
+                                viewControllerAfter vc: UIViewController) -> UIViewController? {
+            guard let i = index(of: vc), i < parent.pageCount - 1 else { return nil }
+            return controller(for: i + 1)
+        }
+
+        func pageViewController(_ pvc: UIPageViewController, didFinishAnimating finished: Bool,
+                                previousViewControllers: [UIViewController],
+                                transitionCompleted completed: Bool) {
+            guard completed, let vc = pvc.viewControllers?.first, let i = index(of: vc) else { return }
+            displayedIndex = i
+            Haptics.pageTurn()
+            if parent.currentPage != i {
+                DispatchQueue.main.async { self.parent.currentPage = i }
+            }
+        }
+    }
+}
+
+final class IndexedHostingController: UIHostingController<AnyView> {
+    var pageIndex = 0
 }
 
 // MARK: - Stamp frame cut-out (background removal + window mask)

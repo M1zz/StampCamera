@@ -59,21 +59,32 @@ struct ExhibitionTests {
         #expect(h.store.stampsInExhibition("B").map(\.id) == [id])
     }
 
-    @Test func reorderByMovingToIndex() {
+    @Test func draggingOntoAStampSwapsCells() {
         let h = Harness(); defer { h.cleanup() }
         let a = h.add(), b = h.add(), c = h.add()
         for id in [a, b, c] { h.store.placeInExhibition(id, into: "벽") }
-        #expect(h.store.stampsInExhibition("벽").map(\.id) == [a, b, c])
-        h.store.reorderExhibition("벽", moving: c, to: 0)
-        #expect(h.store.stampsInExhibition("벽").map(\.id) == [c, a, b])
+        #expect(h.store.slots(in: "벽") == [a, b, c])
+        h.store.moveStamp(c, in: "벽", toSlot: 0)   // c and a trade cells
+        #expect(h.store.slots(in: "벽") == [c, b, a])
     }
 
-    @Test func reorderByOffsets() {
+    @Test func placeAtSpecificCellLeavesGaps() {
         let h = Harness(); defer { h.cleanup() }
-        let a = h.add(), b = h.add(), c = h.add()
-        for id in [a, b, c] { h.store.placeInExhibition(id, into: "벽") }
-        h.store.reorderExhibition("벽", from: IndexSet(integer: 0), to: 3)  // a → end
-        #expect(h.store.stampsInExhibition("벽").map(\.id) == [b, c, a])
+        let a = h.add(), b = h.add()
+        h.store.placeInExhibition(a, into: "벽", at: 0)
+        h.store.placeInExhibition(b, into: "벽", at: 4)   // skip cells 1–3
+        #expect(h.store.slots(in: "벽") == [a, nil, nil, nil, b])
+        #expect(h.store.stampsInExhibition("벽").map(\.id) == [a, b])   // compacted view
+        #expect(h.store.exhibitionCount("벽") == 2)                     // gaps don't count
+    }
+
+    @Test func movingToAnEmptyCellLeavesTheOldOneBlank() {
+        let h = Harness(); defer { h.cleanup() }
+        let a = h.add(), b = h.add()
+        h.store.placeInExhibition(a, into: "벽", at: 0)
+        h.store.placeInExhibition(b, into: "벽", at: 1)
+        h.store.moveStamp(b, in: "벽", toSlot: 5)   // empty target → no swap, just a move
+        #expect(h.store.slots(in: "벽") == [a, nil, nil, nil, nil, b])
     }
 
     @Test func renameExhibition() {
@@ -106,16 +117,17 @@ struct ExhibitionTests {
 
     // MARK: - Persistence
 
-    @Test func exhibitionsAndOrderReloadFromDisk() {
+    @Test func slotsAndGapsReloadFromDisk() {
         let h = Harness(); defer { h.cleanup() }
         let a = h.add(), b = h.add(), c = h.add()
-        for id in [a, b, c] { h.store.placeInExhibition(id, into: "벽") }
-        h.store.reorderExhibition("벽", moving: a, to: 2)   // [b, c, a]
+        h.store.placeInExhibition(a, into: "벽", at: 0)
+        h.store.placeInExhibition(b, into: "벽", at: 2)   // gap at cell 1
+        h.store.placeInExhibition(c, into: "벽", at: 5)   // gaps at 3, 4
 
         let again = h.reopen()
         #expect(again.exhibitions.map(\.name) == ["벽"])
-        #expect(again.stampsInExhibition("벽").map(\.id) == [b, c, a])
-        #expect(again.collectedStamps.isEmpty)              // all three are exhibited
+        #expect(again.slots(in: "벽") == [a, nil, b, nil, nil, c])   // layout survives
+        #expect(again.collectedStamps.isEmpty)                       // all three are exhibited
     }
 
     @Test func backwardCompatNoExhibitionsFile() {
@@ -151,15 +163,16 @@ struct ExhibitionTests {
         #expect(h.reopen().backgroundStyle(of: "벽") == .kraft)
     }
 
-    @Test func backgroundSurvivesRenameAndReorder() {
+    @Test func backgroundSurvivesRenameAndRearrange() {
         let h = Harness(); defer { h.cleanup() }
         let a = h.add(), b = h.add()
         h.store.createExhibition("벽", background: .dot)
         h.store.placeInExhibition(a, into: "벽")
         h.store.placeInExhibition(b, into: "벽")
-        h.store.reorderExhibition("벽", moving: b, to: 0)
+        h.store.moveStamp(b, in: "벽", toSlot: 0)   // swap a and b
         h.store.renameExhibition("벽", to: "새벽")
         #expect(h.store.backgroundStyle(of: "새벽") == .dot)
+        #expect(h.store.slots(in: "새벽") == [b, a])   // arrangement carried through rename
     }
 
     @Test func legacyExhibitionsFileWithoutBackgroundDefaultsCream() throws {
