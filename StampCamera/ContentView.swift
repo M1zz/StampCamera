@@ -35,6 +35,7 @@ struct ContentView: View {
     @State private var stayingStamp: UIImage?  // capture left sitting in the window
     @State private var stayVisible = false      // fades the staying imprint out
     @State private var pressed = false
+    @State private var flipAngle: Double = 0    // selfie/back flip spin
 
     // newly-made stamp pending a caption on the parchment editor
     @State private var editTarget: EditTarget?
@@ -159,52 +160,79 @@ struct ContentView: View {
         }
     }
 
-    /// Top chip showing which book new stamps are being collected into,
-    /// with a menu to switch books or start a new one.
+    /// Top bar: the album chip centered, with the selfie flip button on the right.
     private var albumBar: some View {
         VStack {
-            Menu {
-                ForEach(collection.albums, id: \.self) { a in
-                    Button { collection.setActive(a) } label: {
-                        if a == collection.activeAlbum {
-                            Label(a, systemImage: "checkmark")
-                        } else {
-                            Text(a)
-                        }
-                    }
+            ZStack {
+                albumChip                    // centered
+                HStack {
+                    Spacer()
+                    flipButton               // top-right (selfie toggle)
                 }
-                Divider()
-                Button { newAlbumName = ""; showNewAlbum = true } label: {
-                    Label("새 우표첩…", systemImage: "plus")
-                }
-            } label: {
-                HStack(spacing: 6) {
-                    Image(systemName: "book.closed.fill")
-                    Text(collection.activeAlbum)
-                        .lineLimit(1)
-                    Image(systemName: "chevron.down").font(.system(size: 10, weight: .bold))
-                }
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
-                .foregroundStyle(.white)
-                .padding(.horizontal, 16).padding(.vertical, 9)
-                .background(Capsule().fill(.ultraThinMaterial))
-                .overlay(Capsule().strokeBorder(.white.opacity(0.25), lineWidth: 1))
             }
+            .padding(.horizontal, 16)
             .padding(.top, 8)
             Spacer()
         }
     }
 
+    /// The book-picker chip: shows which book new stamps go into, with a menu
+    /// to switch books or start a new one.
+    private var albumChip: some View {
+        Menu {
+            ForEach(collection.albums, id: \.self) { a in
+                Button { collection.setActive(a) } label: {
+                    if a == collection.activeAlbum {
+                        Label(a, systemImage: "checkmark")
+                    } else {
+                        Text(a)
+                    }
+                }
+            }
+            Divider()
+            Button { newAlbumName = ""; showNewAlbum = true } label: {
+                Label("새 우표첩…", systemImage: "plus")
+            }
+        } label: {
+            HStack(spacing: 6) {
+                Image(systemName: "book.closed.fill")
+                Text(collection.activeAlbum)
+                    .lineLimit(1)
+                Image(systemName: "chevron.down").font(.system(size: 10, weight: .bold))
+            }
+            .font(.system(size: 14, weight: .semibold, design: .rounded))
+            .foregroundStyle(.white)
+            .padding(.horizontal, 16).padding(.vertical, 9)
+            .background(Capsule().fill(.ultraThinMaterial))
+            .overlay(Capsule().strokeBorder(.white.opacity(0.25), lineWidth: 1))
+        }
+    }
+
+    /// Flips between the back and front (selfie) camera with a little spin.
+    private var flipButton: some View {
+        Button {
+            withAnimation(.spring(response: 0.45, dampingFraction: 0.6)) { flipAngle += 180 }
+            Haptics.select()
+            camera.flipCamera()
+        } label: {
+            Image(systemName: "arrow.triangle.2.circlepath.camera")
+                .font(.system(size: 19, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+                .background(Circle().fill(.ultraThinMaterial))
+                .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
+                .rotationEffect(.degrees(flipAngle))
+        }
+        .buttonStyle(.plain)
+    }
+
     private var bottomBar: some View {
         VStack {
             Spacer()
-            ZStack {
-                if camera.zoomStops.count > 1 {
-                    ZoomControl(camera: camera)   // centered, at the very bottom
-                }
-                HStack {
-                    collectionButton             // bottom-left, same row
-                    Spacer()
+            HStack(spacing: 16) {
+                collectionButton             // bottom-left (gallery)
+                if camera.maxZoom > camera.minZoom + 0.01 {
+                    ZoomSlider(camera: camera) // fills the row to the gallery's right
                 }
             }
             .padding(.horizontal, 24)
@@ -2583,179 +2611,116 @@ private struct PrimaryButton: ButtonStyle {
     }
 }
 
-// MARK: - Zoom control (Apple-style: buttons + long-press dial)
 
-struct ZoomControl: View {
+// MARK: - Zoom slider
+
+/// A clean horizontal zoom slider: a frosted track with snap-stop dots and a
+/// draggable knob that reads out the live zoom (e.g. "1.5×"). Sits to the right
+/// of the gallery button; haptics tick as it crosses each stop.
+struct ZoomSlider: View {
     @ObservedObject var camera: CameraManager
-    @GestureState private var dialing = false
-    @State private var dialBase: CGFloat?
+    @GestureState private var dragging = false
+    @State private var lastTick: CGFloat = .nan   // last snap stop we buzzed at
+
+    private let height: CGFloat = 52
+    private let knob: CGFloat = 40
+    private let trackH: CGFloat = 6
 
     var body: some View {
-        let stops = camera.zoomStops
-        HStack(spacing: 6) {
-            ForEach(stops, id: \.self) { stop in
-                let active = isActive(stop, stops: stops)
-                Button {
-                    withAnimation(.spring(response: 0.25, dampingFraction: 0.7)) {
-                        camera.setZoom(stop)
+        GeometryReader { geo in
+            let usable = max(geo.size.width - knob, 1)
+            let knobX = pos(camera.zoom) * usable
+
+            ZStack(alignment: .leading) {
+                // track
+                Capsule()
+                    .fill(.ultraThinMaterial)
+                    .frame(height: trackH)
+                    .overlay(Capsule().strokeBorder(.white.opacity(0.15), lineWidth: 0.5))
+
+                // filled portion up to the knob
+                Capsule()
+                    .fill(Color(hex: 0x4FC3F7))   // sky blue
+                    .frame(width: knobX + knob / 2, height: trackH)
+
+                // snap-stop dots (0.5 / 1 / 2 …)
+                ForEach(camera.zoomStops, id: \.self) { stop in
+                    Circle()
+                        .fill(.white.opacity(0.65))
+                        .frame(width: 4, height: 4)
+                        .offset(x: knob / 2 + pos(stop) * usable - 2)
+                }
+
+                // knob with the live zoom readout
+                ZStack {
+                    Circle().fill(.white)
+                        .shadow(color: .black.opacity(0.3), radius: 4, y: 2)
+                    Text(currentLabel)
+                        .font(.system(size: 12, weight: .heavy, design: .rounded))
+                        .foregroundStyle(.black)
+                }
+                .frame(width: knob, height: knob)
+                .scaleEffect(dragging ? 1.18 : 1)
+                .offset(x: knobX)
+            }
+            .frame(height: height)
+            .contentShape(Rectangle())
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .updating($dragging) { _, s, _ in s = true }
+                    .onChanged { v in
+                        let x = min(max(v.location.x - knob / 2, 0), usable)
+                        let z = zoom(for: x / usable)
+                        camera.setZoom(z)
+                        // tick the haptics each time we pass a snap stop
+                        if let near = camera.zoomStops.first(where: {
+                            abs(pos($0) - pos(z)) < 0.04
+                        }) {
+                            if near != lastTick { Haptics.tick(); lastTick = near }
+                        } else {
+                            lastTick = .nan
+                        }
                     }
-                } label: {
-                    Text(label(for: stop, active: active))
-                        .font(.system(size: active ? 15 : 13, weight: .semibold, design: .rounded))
-                        .foregroundStyle(active ? Color.yellow : .white)
-                        .frame(width: active ? 44 : 34, height: active ? 44 : 34)
-                        .background(Circle().fill(.black.opacity(active ? 0.55 : 0.3)))
-                }
-                .buttonStyle(.plain)
-            }
+                    .onEnded { v in
+                        let x = min(max(v.location.x - knob / 2, 0), usable)
+                        let z = zoom(for: x / usable)
+                        // snap to a nearby stop for a satisfying little click
+                        if let near = camera.zoomStops.first(where: {
+                            abs(pos($0) - pos(z)) < 0.06
+                        }) {
+                            Haptics.bounce()
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                                camera.setZoom(near)
+                            }
+                        }
+                        lastTick = .nan
+                    }
+            )
+            .animation(.spring(response: 0.3, dampingFraction: 0.55), value: dragging)
         }
-        .padding(5)
-        .background(Capsule().fill(.ultraThinMaterial))
-        .overlay(alignment: .top) {
-            if dialing {
-                ZoomDialView(zoom: camera.zoom,
-                             minZoom: camera.minZoom,
-                             maxZoom: camera.maxZoom)
-                    .offset(y: -104)
-                    .transition(.scale(scale: 0.6, anchor: .bottom).combined(with: .opacity))
-            }
-        }
-        .scaleEffect(dialing ? 1.08 : 1)
-        .animation(.easeOut(duration: 0.18), value: dialing)
-        // long-press 0.5s, then swipe to fine-tune the zoom
-        .simultaneousGesture(
-            LongPressGesture(minimumDuration: 0.5)
-                .sequenced(before: DragGesture(minimumDistance: 0))
-                .updating($dialing) { value, state, _ in
-                    if case .second = value { state = true }
-                }
-                .onChanged { value in
-                    guard case .second(_, let drag?) = value else { return }
-                    if dialBase == nil { dialBase = camera.zoom }
-                    let base = dialBase ?? camera.zoom
-                    // swipe right or up = zoom in; exponential feels natural.
-                    // smaller divisor = more sensitive (less travel per doubling)
-                    let delta = (drag.translation.width - drag.translation.height) / 80
-                    camera.setZoom(base * pow(2, delta))
-                }
-                .onEnded { _ in dialBase = nil }
-        )
+        .frame(height: height)
     }
 
-    private func isActive(_ stop: CGFloat, stops: [CGFloat]) -> Bool {
-        guard let nearest = stops.min(by: {
-            abs($0 - camera.zoom) < abs($1 - camera.zoom)
-        }) else { return false }
-        return nearest == stop
-    }
-
-    private func label(for stop: CGFloat, active: Bool) -> String {
-        if active {
-            let z = camera.zoom
-            if abs(z - z.rounded()) < 0.05 { return "\(Int(z.rounded()))×" }
-            return String(format: "%.1f×", z)
-        }
-        return stop < 1 ? "0.5" : "\(Int(stop))"
-    }
-}
-
-// MARK: - Zoom dial (iPhone-style protractor for fine zoom)
-
-/// A half-circle protractor that pops up while long-pressing the zoom pill:
-/// a tick ruler across the whole zoom range (log scale) with a needle pointing
-/// at the live zoom and the value read out at the pivot.
-struct ZoomDialView: View {
-    let zoom: CGFloat
-    let minZoom: CGFloat
-    let maxZoom: CGFloat
-
-    private let radius: CGFloat = 108
-
-    /// 0…1 position of a zoom value along the arc (log scale, like Apple's).
-    private func pos(_ z: CGFloat) -> CGFloat {
-        let lo = log(Double(max(minZoom, 0.01)))
-        let hi = log(Double(max(maxZoom, minZoom + 0.01)))
-        guard hi > lo else { return 0 }
-        let t = (log(Double(max(z, 0.01))) - lo) / (hi - lo)
-        return CGFloat(min(1, max(0, t)))
-    }
-
-    /// Point on the upper semicircle for t (left→right), inset by `depth`.
-    private func point(_ t: CGFloat, depth: CGFloat, center: CGPoint) -> CGPoint {
-        let ang = Double.pi + Double(t) * Double.pi      // 180°…360°
-        let rr = radius - depth
-        return CGPoint(x: center.x + CGFloat(cos(ang)) * rr,
-                       y: center.y + CGFloat(sin(ang)) * rr)
-    }
-
-    /// Labelled zoom stops that fall inside the device's range.
-    private var majors: [CGFloat] {
-        [0.5, 1, 2, 3, 4, 5, 6, 8].filter { $0 >= minZoom - 0.001 && $0 <= maxZoom + 0.001 }
-    }
-
-    var body: some View {
-        Canvas { ctx, size in
-            let center = CGPoint(x: size.width / 2, y: size.height - 12)
-
-            // rim
-            var rim = Path()
-            let steps = 96
-            for i in 0...steps {
-                let p = point(CGFloat(i) / CGFloat(steps), depth: 0, center: center)
-                if i == 0 { rim.move(to: p) } else { rim.addLine(to: p) }
-            }
-            ctx.stroke(rim, with: .color(.white.opacity(0.22)), lineWidth: 2)
-
-            // minor ticks
-            let minor = 48
-            for i in 0...minor {
-                let t = CGFloat(i) / CGFloat(minor)
-                var tick = Path()
-                tick.move(to: point(t, depth: 0, center: center))
-                tick.addLine(to: point(t, depth: 7, center: center))
-                ctx.stroke(tick, with: .color(.white.opacity(0.3)), lineWidth: 1)
-            }
-
-            // major ticks + labels
-            for z in majors {
-                let t = pos(z)
-                var tick = Path()
-                tick.move(to: point(t, depth: 0, center: center))
-                tick.addLine(to: point(t, depth: 14, center: center))
-                ctx.stroke(tick, with: .color(.yellow.opacity(0.9)), lineWidth: 2)
-                ctx.draw(Text(zLabel(z))
-                            .font(.system(size: 11, weight: .bold, design: .rounded))
-                            .foregroundColor(.white.opacity(0.9)),
-                         at: point(t, depth: 27, center: center))
-            }
-
-            // needle + pivot hub
-            var needle = Path()
-            needle.move(to: point(pos(zoom), depth: radius - 14, center: center))   // start above hub
-            needle.addLine(to: point(pos(zoom), depth: 4, center: center))
-            ctx.stroke(needle, with: .color(.yellow), lineWidth: 3)
-            ctx.fill(Path(ellipseIn: CGRect(x: center.x - 5, y: center.y - 5, width: 10, height: 10)),
-                     with: .color(.yellow))
-
-            // live readout near the apex, drawn last so it stays legible
-            ctx.draw(Text(zLabel(zoom))
-                        .font(.system(size: 23, weight: .heavy, design: .rounded))
-                        .foregroundColor(.yellow),
-                     at: CGPoint(x: center.x, y: center.y - radius * 0.52))
-        }
-        .frame(width: radius * 2 + 56, height: radius + 26)
-        .background(
-            Ellipse()
-                .fill(Color.black.opacity(0.3))
-                .frame(width: radius * 2, height: radius * 1.5)
-                .offset(y: 14)
-                .blur(radius: 16)
-        )
-    }
-
-    private func zLabel(_ z: CGFloat) -> String {
+    private var currentLabel: String {
+        let z = camera.zoom
         if abs(z - z.rounded()) < 0.05 { return "\(Int(z.rounded()))×" }
         return String(format: "%.1f×", z)
+    }
+
+    /// 0…1 position of a zoom value along the track (log scale, like Apple's).
+    private func pos(_ z: CGFloat) -> CGFloat {
+        let lo = log(Double(max(camera.minZoom, 0.01)))
+        let hi = log(Double(max(camera.maxZoom, camera.minZoom + 0.01)))
+        guard hi > lo else { return 0 }
+        let p = (log(Double(max(z, 0.01))) - lo) / (hi - lo)
+        return CGFloat(min(1, max(0, p)))
+    }
+
+    /// Zoom value for a 0…1 track position (inverse of `pos`).
+    private func zoom(for t: CGFloat) -> CGFloat {
+        let lo = log(Double(max(camera.minZoom, 0.01)))
+        let hi = log(Double(max(camera.maxZoom, camera.minZoom + 0.01)))
+        return CGFloat(exp(lo + Double(min(1, max(0, t))) * (hi - lo)))
     }
 }
 
@@ -2985,6 +2950,10 @@ enum Haptics {
     /// The lighter "톡" of a secondary bounce.
     static func bounce() {
         UIImpactFeedbackGenerator(style: .light).impactOccurred(intensity: 0.5)
+    }
+    /// A crisp little tick as the zoom slider passes a stop.
+    static func tick() {
+        UISelectionFeedbackGenerator().selectionChanged()
     }
 }
 
