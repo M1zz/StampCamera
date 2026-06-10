@@ -479,28 +479,66 @@ struct ContentView: View {
 
 // MARK: - Album shelf (the collecting books)
 
+/// A pushable destination inside the 모음 navigation stack.
+enum CollectionRoute: Hashable {
+    case album(String)
+    case exhibition(String)
+}
+
 struct CollectionView: View {
     @ObservedObject var collection: CollectionStore
     @Environment(\.dismiss) private var dismiss
+
+    /// Starts deep-linked to the album last opened from the camera button — back
+    /// from there lands on the 모음 overview, where 컬렉션 is one segment away.
+    @State private var path: [CollectionRoute]
+
+    init(collection: CollectionStore) {
+        _collection = ObservedObject(wrappedValue: collection)
+        let last = UserDefaults.standard.string(forKey: "lastVisitedAlbum") ?? ""
+        _path = State(initialValue: (!last.isEmpty && collection.albums.contains(last))
+                                    ? [.album(last)] : [])
+    }
 
     @State private var showNewAlbum = false
     @State private var newAlbumName = ""
     @State private var showNewExhibition = false
     @State private var newExhibitionName = ""
 
+    private enum Tab: String, CaseIterable { case albums = "우표첩", exhibitions = "컬렉션" }
+    @State private var tab: Tab = .albums
+
     private let columns = [GridItem(.adaptive(minimum: 150), spacing: 18)]
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                sectionHeader("우표첩")
-                albumShelf
-                sectionHeader("컬렉션")
-                exhibitionWalls
+        NavigationStack(path: $path) {
+            VStack(spacing: 0) {
+                Picker("", selection: $tab) {
+                    ForEach(Tab.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal, 20)
+                .padding(.top, 10)
+                .padding(.bottom, 6)
+
+                ScrollView {
+                    switch tab {
+                    case .albums: albumShelf
+                    case .exhibitions: exhibitionWalls
+                    }
+                }
             }
             .background(Color(hex: 0x141210).ignoresSafeArea())
             .navigationTitle("모음")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: CollectionRoute.self) { route in
+                switch route {
+                case .album(let name):
+                    AlbumPageView(collection: collection, album: name)
+                case .exhibition(let name):
+                    ExhibitionWallView(collection: collection, exhibition: name)
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Menu {
@@ -530,23 +568,10 @@ struct CollectionView: View {
         .preferredColorScheme(.dark)
     }
 
-    private func sectionHeader(_ title: String) -> some View {
-        HStack {
-            Text(title)
-                .font(.system(size: 18, weight: .heavy, design: .rounded))
-                .foregroundStyle(.white)
-            Spacer()
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 18)
-    }
-
     private var albumShelf: some View {
         LazyVGrid(columns: columns, spacing: 22) {
             ForEach(collection.albums, id: \.self) { album in
-                NavigationLink {
-                    AlbumPageView(collection: collection, album: album)
-                } label: {
+                NavigationLink(value: CollectionRoute.album(album)) {
                     AlbumBookCover(name: album,
                                    count: collection.count(in: album),
                                    active: album == collection.activeAlbum,
@@ -576,9 +601,7 @@ struct CollectionView: View {
         } else {
             LazyVGrid(columns: columns, spacing: 22) {
                 ForEach(collection.exhibitions) { ex in
-                    NavigationLink {
-                        ExhibitionWallView(collection: collection, exhibition: ex.name)
-                    } label: {
+                    NavigationLink(value: CollectionRoute.exhibition(ex.name)) {
                         ExhibitionWallCover(name: ex.name,
                                             count: ex.stampIDs.count,
                                             peek: collection.stampsInExhibition(ex.name).prefix(3).map(\.image),
@@ -710,6 +733,7 @@ struct AlbumPageView: View {
     @ObservedObject var collection: CollectionStore
     let album: String
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("lastVisitedAlbum") private var lastVisitedAlbum = ""
 
     @State private var showRename = false
     @State private var renameText = ""
@@ -801,6 +825,7 @@ struct AlbumPageView: View {
       }
       .coordinateSpace(name: "album")
       .onPreferenceChange(ExhibitionFrameKey.self) { exhibitionFrames = $0 }
+      .onAppear { lastVisitedAlbum = album }   // remember for the camera shortcut
       .navigationTitle(album)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
