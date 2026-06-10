@@ -59,32 +59,29 @@ struct ExhibitionTests {
         #expect(h.store.stampsInExhibition("B").map(\.id) == [id])
     }
 
-    @Test func draggingOntoAStampSwapsCells() {
-        let h = Harness(); defer { h.cleanup() }
-        let a = h.add(), b = h.add(), c = h.add()
-        for id in [a, b, c] { h.store.placeInExhibition(id, into: "벽") }
-        #expect(h.store.slots(in: "벽") == [a, b, c])
-        h.store.moveStamp(c, in: "벽", toSlot: 0)   // c and a trade cells
-        #expect(h.store.slots(in: "벽") == [c, b, a])
-    }
-
-    @Test func placeAtSpecificCellLeavesGaps() {
+    @Test func placeAtFreePosition() {
         let h = Harness(); defer { h.cleanup() }
         let a = h.add(), b = h.add()
-        h.store.placeInExhibition(a, into: "벽", at: 0)
-        h.store.placeInExhibition(b, into: "벽", at: 4)   // skip cells 1–3
-        #expect(h.store.slots(in: "벽") == [a, nil, nil, nil, b])
-        #expect(h.store.stampsInExhibition("벽").map(\.id) == [a, b])   // compacted view
-        #expect(h.store.exhibitionCount("벽") == 2)                     // gaps don't count
+        h.store.place(a, into: "벽", page: 0, x: 0.2, y: 0.3)
+        h.store.place(b, into: "벽", page: 1, x: 0.8, y: 0.7)
+        let pls = h.store.placements(in: "벽")
+        #expect(pls.count == 2)
+        #expect(pls.first { $0.id == a }?.page == 0)
+        #expect(pls.first { $0.id == b }?.page == 1)
+        #expect(abs((pls.first { $0.id == a }?.x ?? 0) - 0.2) < 0.0001)
+        #expect(h.store.exhibitionCount("벽") == 2)
     }
 
-    @Test func movingToAnEmptyCellLeavesTheOldOneBlank() {
+    @Test func placingSameStampMovesItToFront() {
         let h = Harness(); defer { h.cleanup() }
         let a = h.add(), b = h.add()
-        h.store.placeInExhibition(a, into: "벽", at: 0)
-        h.store.placeInExhibition(b, into: "벽", at: 1)
-        h.store.moveStamp(b, in: "벽", toSlot: 5)   // empty target → no swap, just a move
-        #expect(h.store.slots(in: "벽") == [a, nil, nil, nil, nil, b])
+        h.store.place(a, into: "벽", page: 0, x: 0.2, y: 0.2)
+        h.store.place(b, into: "벽", page: 0, x: 0.5, y: 0.5)
+        h.store.place(a, into: "벽", page: 1, x: 0.9, y: 0.1)   // move a
+        let pls = h.store.placements(in: "벽")
+        #expect(pls.count == 2)              // not duplicated
+        #expect(pls.last?.id == a)           // moved → drawn last (front)
+        #expect(pls.first { $0.id == a }?.page == 1)
     }
 
     @Test func renameExhibition() {
@@ -117,16 +114,18 @@ struct ExhibitionTests {
 
     // MARK: - Persistence
 
-    @Test func slotsAndGapsReloadFromDisk() {
+    @Test func placementsReloadFromDisk() {
         let h = Harness(); defer { h.cleanup() }
         let a = h.add(), b = h.add(), c = h.add()
-        h.store.placeInExhibition(a, into: "벽", at: 0)
-        h.store.placeInExhibition(b, into: "벽", at: 2)   // gap at cell 1
-        h.store.placeInExhibition(c, into: "벽", at: 5)   // gaps at 3, 4
+        h.store.place(a, into: "벽", page: 0, x: 0.25, y: 0.75)
+        h.store.place(b, into: "벽", page: 2, x: 0.6, y: 0.4)
+        h.store.place(c, into: "벽", page: 2, x: 0.1, y: 0.9)
 
         let again = h.reopen()
         #expect(again.exhibitions.map(\.name) == ["벽"])
-        #expect(again.slots(in: "벽") == [a, nil, b, nil, nil, c])   // layout survives
+        let pls = again.placements(in: "벽")
+        #expect(pls.count == 3)                                      // layout survives
+        #expect(pls.first { $0.id == b }?.page == 2)
         #expect(again.collectedStamps.isEmpty)                       // all three are exhibited
     }
 
@@ -167,12 +166,11 @@ struct ExhibitionTests {
         let h = Harness(); defer { h.cleanup() }
         let a = h.add(), b = h.add()
         h.store.createExhibition("벽", background: .dot)
-        h.store.placeInExhibition(a, into: "벽")
-        h.store.placeInExhibition(b, into: "벽")
-        h.store.moveStamp(b, in: "벽", toSlot: 0)   // swap a and b
+        h.store.place(a, into: "벽", page: 0, x: 0.3, y: 0.3)
+        h.store.place(b, into: "벽", page: 0, x: 0.6, y: 0.6)
         h.store.renameExhibition("벽", to: "새벽")
         #expect(h.store.backgroundStyle(of: "새벽") == .dot)
-        #expect(h.store.slots(in: "새벽") == [b, a])   // arrangement carried through rename
+        #expect(h.store.placements(in: "새벽").count == 2)   // arrangement carried through rename
     }
 
     @Test func legacyExhibitionsFileWithoutBackgroundDefaultsCream() throws {
