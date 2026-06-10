@@ -1752,29 +1752,20 @@ struct ExhibitionWallView: View {
 
     private func gridCell(_ stamp: CollectedStamp, globalIndex: Int, cellW: CGFloat,
                           pad: CGFloat, spacing: CGFloat, pageW: CGFloat) -> some View {
-        framedArt(stamp)
+        let cellInPage = globalIndex % perPageGrid
+        let homeCenter = CGPoint(
+            x: pad + CGFloat(cellInPage % gridCols) * (cellW + spacing) + cellW / 2,
+            y: pad + CGFloat(cellInPage / gridCols) * (cellW + spacing) + cellW / 2)
+        return framedArt(stamp)
             .frame(width: cellW, height: cellW)
             .opacity(dragging == stamp.id ? 0 : 1)   // hidden while its preview rides the finger
             .onTapGesture { Haptics.select(); selectedStamp = stamp }
-            .contextMenu { wallMenu(for: stamp) }
-            .gesture(
-                DragGesture(minimumDistance: 8, coordinateSpace: .named("leaf"))
-                    .onChanged { v in
-                        if dragging != stamp.id { dragging = stamp.id; Haptics.select() }
-                        dragPos = v.location
-                    }
-                    .onEnded { v in
-                        let page = globalIndex / perPageGrid
-                        let target = page * perPageGrid
-                            + nearestGridCell(v.location, cellW: cellW, pad: pad,
-                                              spacing: spacing, pageW: pageW)
-                        dragging = nil
-                        withAnimation(.spring(response: 0.34, dampingFraction: 0.72)) {
-                            collection.reorder(exhibition, moving: stamp.id, to: target)
-                        }
-                        Haptics.placed()
-                    }
-            )
+            .gesture(moveGesture(id: stamp.id, home: homeCenter) { p in
+                let page = globalIndex / perPageGrid
+                let target = page * perPageGrid
+                    + nearestGridCell(p, cellW: cellW, pad: pad, spacing: spacing, pageW: pageW)
+                collection.reorder(exhibition, moving: stamp.id, to: target)
+            })
     }
 
     /// Index (0…perPageGrid-1) of the grid cell nearest a point on the leaf.
@@ -1787,34 +1778,50 @@ struct ExhibitionWallView: View {
         return r * gridCols + c
     }
 
-    /// A freely-placed stamp: tap to open, long-press to manage, drag to move it.
-    /// During the drag a translucent preview (rendered at the body level) follows
-    /// the finger smoothly and shows where it'll land; the original stays put
-    /// until release (the leaf is hosted in UIKit and can't redraw mid-drag).
+    /// A freely-placed stamp: tap to open, **press & hold then drag** to move it.
+    /// During the drag the original is hidden and a preview (body level) follows
+    /// the finger smoothly, showing where it'll land.
     private func freeStamp(_ stamp: CollectedStamp, placement pl: Placement,
                            pageW: CGFloat, pageH: CGFloat, stampW: CGFloat) -> some View {
-        framedArt(stamp)
+        let home = CGPoint(x: pl.x * pageW, y: pl.y * pageH)
+        return framedArt(stamp)
             .frame(width: stampW)
-            .opacity(dragging == pl.id ? 0 : 1)   // hidden at drag start (leaf rebuilds once)
-            .position(x: pl.x * pageW, y: pl.y * pageH)
+            .opacity(dragging == pl.id ? 0 : 1)   // hidden once lifted (leaf rebuilds once)
+            .position(home)
             .onTapGesture { Haptics.select(); selectedStamp = stamp }
-            .contextMenu { wallMenu(for: stamp) }
-            .gesture(
-                DragGesture(minimumDistance: 8, coordinateSpace: .named("leaf"))
-                    .onChanged { v in
-                        if dragging != pl.id { dragging = pl.id; Haptics.select() }
-                        dragPos = v.location
+            .gesture(moveGesture(id: stamp.id, home: home) { p in
+                collection.place(stamp.id, into: exhibition, page: pl.page,
+                                 x: p.x / pageW, y: p.y / pageH)
+            })
+    }
+
+    /// Press & hold a hung stamp to lift it, then drag to move; release commits
+    /// via `place`. `home` is where the lift preview first appears. Shared by free
+    /// and grid layouts (each supplies its own `place` for the release point).
+    private func moveGesture(id: String, home: CGPoint,
+                             place: @escaping (CGPoint) -> Void) -> some Gesture {
+        LongPressGesture(minimumDuration: 0.3)
+            .sequenced(before: DragGesture(minimumDistance: 0, coordinateSpace: .named("leaf")))
+            .onChanged { value in
+                switch value {
+                case .first(true):
+                    if dragging != id { dragging = id; dragPos = home; Haptics.select() }
+                case .second(true, let drag):
+                    if dragging != id { dragging = id; dragPos = home; Haptics.select() }
+                    if let drag { dragPos = drag.location }
+                default:
+                    break
+                }
+            }
+            .onEnded { value in
+                if case .second(true, let drag?) = value {
+                    withAnimation(.spring(response: 0.34, dampingFraction: 0.72)) {
+                        place(drag.location)
                     }
-                    .onEnded { v in
-                        let p = v.location
-                        dragging = nil
-                        withAnimation(.spring(response: 0.34, dampingFraction: 0.7)) {
-                            collection.place(stamp.id, into: exhibition, page: pl.page,
-                                             x: p.x / pageW, y: p.y / pageH)
-                        }
-                        Haptics.placed()
-                    }
-            )
+                    Haptics.placed()
+                }
+                dragging = nil
+            }
     }
 
     /// The little page number printed at the foot of each leaf.
@@ -3415,6 +3422,12 @@ struct StampDetailView: View {
             }
             ToolbarItem(placement: .principal) {
                 Menu {
+                    if collection.isExhibited(stampID) {
+                        Button { collection.returnToCollection(stampID) } label: {
+                            Label("컬렉션에서 내리기", systemImage: "arrow.uturn.backward")
+                        }
+                        Divider()
+                    }
                     ForEach(collection.exhibitions) { ex in
                         Button(ex.name) { collection.placeInExhibition(stampID, into: ex.name) }
                     }
