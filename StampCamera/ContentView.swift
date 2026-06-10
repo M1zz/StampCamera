@@ -1125,12 +1125,12 @@ struct AlbumPageView: View {
         .padding(8)
         .background(
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(LinearGradient(colors: [Color(hex: 0xF6EBBE), Color(hex: 0xEBDBA0)],
+                .fill(LinearGradient(colors: [Color(hex: 0xFBFAF7), Color(hex: 0xECE8DF)],
                                      startPoint: .top, endPoint: .bottom))
         )
         .overlay(
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .strokeBorder(Color(hex: lit ? 0xE8504E : 0xCBB870),
+                .strokeBorder(Color(hex: lit ? 0xE8504E : 0xD6D0C2),
                               style: StrokeStyle(lineWidth: lit ? 3 : 1, dash: isNew ? [5] : []))
         )
         .scaleEffect(lit ? 1.06 : 1)
@@ -1156,10 +1156,10 @@ struct AlbumPageView: View {
 
     private var albumPaper: some View {
         RoundedRectangle(cornerRadius: 12, style: .continuous)
-            .fill(LinearGradient(colors: [Color(hex: 0xF6EBBE), Color(hex: 0xEBDBA0)],
+            .fill(LinearGradient(colors: [Color(hex: 0xFBFAF7), Color(hex: 0xECE8DF)],
                                  startPoint: .top, endPoint: .bottom))
             .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .strokeBorder(Color(hex: 0xCBB870), lineWidth: 1))
+                .strokeBorder(Color(hex: 0xD6D0C2), lineWidth: 1))
     }
 
     private var emptyPage: some View {
@@ -2731,16 +2731,16 @@ struct Parchment: View {
     var cornerRadius: CGFloat = 16
     var body: some View {
         RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-            .fill(LinearGradient(colors: [Color(hex: 0xF3EAD0), Color(hex: 0xE4D4AC)],
+            .fill(LinearGradient(colors: [Color(hex: 0xFBFAF7), Color(hex: 0xECE8DF)],
                                  startPoint: .topLeading, endPoint: .bottomTrailing))
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .fill(RadialGradient(colors: [.clear, Color(hex: 0x8B7B4E).opacity(0.30)],
+                    .fill(RadialGradient(colors: [.clear, Color(hex: 0x9A9484).opacity(0.10)],
                                          center: .center, startRadius: 8, endRadius: 320))
             )
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .strokeBorder(Color(hex: 0xCBB585), lineWidth: 1)
+                    .strokeBorder(Color(hex: 0xD6D0C2), lineWidth: 1)
             )
     }
 }
@@ -2785,8 +2785,9 @@ struct StampDetailView: View {
     var body: some View {
         ZStack {
             Color(hex: 0x241F18).ignoresSafeArea()
-            // Everything fits on one screen at a glance — no scrolling needed.
-            VStack(spacing: 16) {
+            // Scrolls when the keyboard is up or the note grows past the screen.
+            ScrollView {
+              VStack(spacing: 16) {
                 if let stamp {
                     Image(uiImage: stamp.image)
                         .resizable().scaledToFit()
@@ -2833,10 +2834,14 @@ struct StampDetailView: View {
                 .environment(\.colorScheme, .light)
 
                 albumPicker
+              }
+              .padding(24)
+              .background(Parchment(cornerRadius: 20))
+              .padding(.horizontal, 24)
+              .padding(.vertical, 16)
             }
-            .padding(24)
-            .background(Parchment(cornerRadius: 20))
-            .padding(.horizontal, 24)
+            .scrollBounceBehavior(.basedOnSize)
+            .scrollDismissesKeyboard(.interactively)
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

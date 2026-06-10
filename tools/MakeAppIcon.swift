@@ -1,7 +1,8 @@
 // MakeAppIcon.swift
-// Renders the StampCamera app icon at 1024×1024 by reusing the real
-// perforated-stamp geometry from StampShape.swift, set inside the pastel-blue
-// puncher frame. Run:  swift tools/MakeAppIcon.swift
+// Renders the StampCamera app icon at 1024×1024: a golden perforated stamp
+// (the app's real StampShape geometry) on warm notebook-cream paper, with a
+// simple, original line-art bear inside — echoing the reference photo without
+// copying any trademarked character. Run:  swift tools/MakeAppIcon.swift
 //
 // Output: tools/AppIcon-1024.png
 
@@ -21,6 +22,8 @@ func rgb(_ hex: UInt32, _ a: CGFloat = 1) -> CGColor {
 
 let space = CGColorSpaceCreateDeviceRGB()
 
+func rad(_ d: CGFloat) -> CGFloat { d * .pi / 180 }
+
 // The exact stamp outline from StampShape.swift, as a CGPath (top-left origin).
 func stampPath(in rect: CGRect, teethX: Int, teethY: Int, biteRatio: CGFloat) -> CGPath {
     let p = CGMutablePath()
@@ -34,10 +37,8 @@ func stampPath(in rect: CGRect, teethX: Int, teethY: Int, biteRatio: CGFloat) ->
     let gapY = (h - 2 * cr - 2 * r * CGFloat(teethY)) / CGFloat(teethY + 1)
     func holeX(_ i: Int) -> CGFloat { ox + cr + gapX + r + CGFloat(i) * (2 * r + gapX) }
     func holeY(_ j: Int) -> CGFloat { oy + cr + gapY + r + CGFloat(j) * (2 * r + gapY) }
-    func rad(_ d: CGFloat) -> CGFloat { d * .pi / 180 }
 
     p.move(to: CGPoint(x: ox + cr, y: oy))
-    // top edge
     for i in 0..<teethX {
         let cx = holeX(i)
         p.addLine(to: CGPoint(x: cx - r, y: oy))
@@ -47,7 +48,6 @@ func stampPath(in rect: CGRect, teethX: Int, teethY: Int, biteRatio: CGFloat) ->
     p.addLine(to: CGPoint(x: ox + w - cr, y: oy))
     p.addArc(center: CGPoint(x: ox + w - cr, y: oy + cr), radius: cr,
              startAngle: rad(-90), endAngle: rad(0), clockwise: false)
-    // right edge
     for j in 0..<teethY {
         let cy = holeY(j)
         p.addLine(to: CGPoint(x: ox + w, y: cy - r))
@@ -57,7 +57,6 @@ func stampPath(in rect: CGRect, teethX: Int, teethY: Int, biteRatio: CGFloat) ->
     p.addLine(to: CGPoint(x: ox + w, y: oy + h - cr))
     p.addArc(center: CGPoint(x: ox + w - cr, y: oy + h - cr), radius: cr,
              startAngle: rad(0), endAngle: rad(90), clockwise: false)
-    // bottom edge
     for i in stride(from: teethX - 1, through: 0, by: -1) {
         let cx = holeX(i)
         p.addLine(to: CGPoint(x: cx + r, y: oy + h))
@@ -67,7 +66,6 @@ func stampPath(in rect: CGRect, teethX: Int, teethY: Int, biteRatio: CGFloat) ->
     p.addLine(to: CGPoint(x: ox + cr, y: oy + h))
     p.addArc(center: CGPoint(x: ox + cr, y: oy + h - cr), radius: cr,
              startAngle: rad(90), endAngle: rad(180), clockwise: false)
-    // left edge
     for j in stride(from: teethY - 1, through: 0, by: -1) {
         let cy = holeY(j)
         p.addLine(to: CGPoint(x: ox, y: cy + r))
@@ -85,6 +83,10 @@ func roundedRectPath(_ rect: CGRect, _ radius: CGFloat) -> CGPath {
     CGPath(roundedRect: rect, cornerWidth: radius, cornerHeight: radius, transform: nil)
 }
 
+func circle(_ c: CGPoint, _ r: CGFloat) -> CGRect {
+    CGRect(x: c.x - r, y: c.y - r, width: r * 2, height: r * 2)
+}
+
 // MARK: - render
 
 let S: CGFloat = 1024
@@ -100,9 +102,9 @@ ctx.scaleBy(x: 1, y: -1)
 
 let full = CGRect(x: 0, y: 0, width: S, height: S)
 
-// 1) Pastel-blue puncher body — full-bleed diagonal gradient (the "frame").
+// 1) Warm notebook-cream paper background (soft diagonal gradient).
 if let g = CGGradient(colorsSpace: space,
-                      colors: [rgb(0xCFE3F5), rgb(0x8FB4D8)] as CFArray,
+                      colors: [rgb(0xF7EFD8), rgb(0xE9DBB8)] as CFArray,
                       locations: [0, 1]) {
     ctx.saveGState()
     ctx.addRect(full); ctx.clip()
@@ -110,76 +112,110 @@ if let g = CGGradient(colorsSpace: space,
                            end: CGPoint(x: S, y: S), options: [])
     ctx.restoreGState()
 }
-
-// 2) Brushed-metal tray — a rounded frame the stamp sits in.
-let trayRect = CGRect(x: S * 0.205, y: S * 0.205, width: S * 0.59, height: S * 0.59)
-ctx.saveGState()
-ctx.setShadow(offset: CGSize(width: 0, height: -18), blur: 36,
-              color: rgb(0x000000, 0.32))
-ctx.addPath(roundedRectPath(trayRect, S * 0.07)); ctx.clip()
+// faint warm vignette so the stamp pops
 if let g = CGGradient(colorsSpace: space,
-                      colors: [rgb(0xEDEFF2), rgb(0x9DA2A8)] as CFArray,
-                      locations: [0, 1]) {
-    ctx.drawLinearGradient(g, start: CGPoint(x: 0, y: trayRect.minY),
-                           end: CGPoint(x: 0, y: trayRect.maxY), options: [])
+                      colors: [rgb(0xFFFFFF, 0.0), rgb(0x8A7A4E, 0.18)] as CFArray,
+                      locations: [0.55, 1]) {
+    ctx.saveGState()
+    ctx.drawRadialGradient(g, startCenter: CGPoint(x: S/2, y: S/2), startRadius: S*0.2,
+                           endCenter: CGPoint(x: S/2, y: S/2), endRadius: S*0.72, options: [])
+    ctx.restoreGState()
 }
-ctx.restoreGState()
-// tray inner rim
-ctx.saveGState()
-ctx.addPath(roundedRectPath(trayRect, S * 0.07))
-ctx.setStrokeColor(rgb(0x000000, 0.18)); ctx.setLineWidth(2)
-ctx.strokePath()
-ctx.restoreGState()
 
-// 3) The white perforated stamp, centred in the tray.
-let stampRect = trayRect.insetBy(dx: S * 0.072, dy: S * 0.072)
+// Everything from here is the stamp + art, tilted a touch for a playful feel.
+let center = CGPoint(x: S/2, y: S/2)
+ctx.saveGState()
+ctx.translateBy(x: center.x, y: center.y)
+ctx.rotate(by: rad(-6))
+ctx.translateBy(x: -center.x, y: -center.y)
+
+// 2) Golden perforated stamp.
+let side = S * 0.64
+let stampRect = CGRect(x: center.x - side/2, y: center.y - side/2, width: side, height: side)
 let stamp = stampPath(in: stampRect, teethX: 7, teethY: 7, biteRatio: 0.196)
+
 ctx.saveGState()
-ctx.setShadow(offset: CGSize(width: 0, height: -8), blur: 16,
-              color: rgb(0x244055, 0.35))
-ctx.addPath(stamp)
-ctx.setFillColor(rgb(0xFFFFFF))
-ctx.fillPath()
+ctx.setShadow(offset: CGSize(width: 0, height: -14), blur: 30, color: rgb(0x4A3A10, 0.35))
+ctx.addPath(stamp); ctx.clip()
+if let g = CGGradient(colorsSpace: space,
+                      colors: [rgb(0xF2D079), rgb(0xCDA049)] as CFArray,
+                      locations: [0, 1]) {
+    ctx.drawLinearGradient(g, start: CGPoint(x: stampRect.minX, y: stampRect.minY),
+                           end: CGPoint(x: stampRect.maxX, y: stampRect.maxY), options: [])
+}
 ctx.restoreGState()
-// faint inner keyline on the stamp
+// gold keyline
 ctx.saveGState()
 ctx.addPath(stamp)
-ctx.setStrokeColor(rgb(0xBFD3E6, 0.9)); ctx.setLineWidth(3)
+ctx.setStrokeColor(rgb(0xB98C36, 0.9)); ctx.setLineWidth(4)
 ctx.strokePath()
 ctx.restoreGState()
 
-// 4) Camera lens in the stamp centre — ties "stamp" to "camera".
-let lensR = S * 0.108
-let lensC = CGPoint(x: stampRect.midX, y: stampRect.midY)
-let lensRect = CGRect(x: lensC.x - lensR, y: lensC.y - lensR,
-                      width: lensR * 2, height: lensR * 2)
-// outer metal ring
+// 3) White inner paper panel where the drawing sits (leaves a gold perf border).
+let panel = stampRect.insetBy(dx: side * 0.115, dy: side * 0.115)
 ctx.saveGState()
-ctx.addEllipse(in: lensRect.insetBy(dx: -S * 0.012, dy: -S * 0.012)); ctx.clip()
-if let g = CGGradient(colorsSpace: space,
-                      colors: [rgb(0xCBCFD4), rgb(0x7E848B)] as CFArray,
-                      locations: [0, 1]) {
-    ctx.drawLinearGradient(g, start: CGPoint(x: 0, y: lensRect.minY),
-                           end: CGPoint(x: 0, y: lensRect.maxY), options: [])
+ctx.setShadow(offset: CGSize(width: 0, height: -4), blur: 10, color: rgb(0x7A5E18, 0.28))
+ctx.addPath(roundedRectPath(panel, side * 0.04))
+ctx.setFillColor(rgb(0xFFFDF6)); ctx.fillPath()
+ctx.restoreGState()
+
+// 4) Original cute line-art bear (no trademarked character).
+let line = rgb(0x2E2820)
+let LW: CGFloat = side * 0.017
+ctx.setLineCap(.round); ctx.setLineJoin(.round)
+
+let C = CGPoint(x: panel.midX, y: panel.midY - panel.height * 0.06)
+let R = panel.width * 0.235          // head radius
+let earR = R * 0.46
+
+func fillStroke(_ path: CGPath, fill: CGColor, lw: CGFloat = LW) {
+    ctx.addPath(path); ctx.setFillColor(fill); ctx.fillPath()
+    ctx.addPath(path); ctx.setStrokeColor(line); ctx.setLineWidth(lw); ctx.strokePath()
 }
-ctx.restoreGState()
-// glass
-ctx.saveGState()
-ctx.addEllipse(in: lensRect); ctx.clip()
-if let g = CGGradient(colorsSpace: space,
-                      colors: [rgb(0x5A6068), rgb(0x111418)] as CFArray,
-                      locations: [0, 1]) {
-    ctx.drawRadialGradient(g, startCenter: lensC, startRadius: 1,
-                           endCenter: lensC, endRadius: lensR, options: [])
+
+// ears (with inner pads), drawn before the head so the head overlaps cleanly
+let earL = CGPoint(x: C.x - R * 0.78, y: C.y - R * 0.82)
+let earRt = CGPoint(x: C.x + R * 0.78, y: C.y - R * 0.82)
+for e in [earL, earRt] {
+    fillStroke(CGPath(ellipseIn: circle(e, earR), transform: nil), fill: rgb(0xFFFDF6))
+    ctx.addPath(CGPath(ellipseIn: circle(e, earR * 0.5), transform: nil))
+    ctx.setFillColor(rgb(0xE7C49A)); ctx.fillPath()
 }
-ctx.restoreGState()
-// aperture glint
-ctx.saveGState()
-let glint = CGRect(x: lensC.x - lensR * 0.42, y: lensC.y - lensR * 0.58,
-                   width: lensR * 0.5, height: lensR * 0.38)
-ctx.addEllipse(in: glint)
-ctx.setFillColor(rgb(0xFFFFFF, 0.32)); ctx.fillPath()
-ctx.restoreGState()
+
+// head
+fillStroke(CGPath(ellipseIn: circle(C, R), transform: nil), fill: rgb(0xFFFDF6))
+
+// closed, content eyes (gentle ⌒ arcs)
+ctx.setStrokeColor(line); ctx.setLineWidth(LW)
+for sx in [-1.0, 1.0] as [CGFloat] {
+    let ec = CGPoint(x: C.x + sx * R * 0.40, y: C.y - R * 0.06)
+    let e = CGMutablePath()
+    e.addArc(center: ec, radius: R * 0.24, startAngle: rad(202), endAngle: rad(338),
+             clockwise: false, transform: .identity)
+    ctx.addPath(e); ctx.strokePath()
+}
+
+// muzzle
+let muzzle = CGRect(x: C.x - R * 0.5, y: C.y + R * 0.12, width: R, height: R * 0.74)
+fillStroke(CGPath(ellipseIn: muzzle, transform: nil), fill: rgb(0xF6E9D2), lw: LW * 0.9)
+
+// nose
+let nose = CGRect(x: C.x - R * 0.16, y: C.y + R * 0.26, width: R * 0.32, height: R * 0.24)
+ctx.addPath(roundedRectPath(nose, R * 0.1)); ctx.setFillColor(line); ctx.fillPath()
+
+// mouth: a stem down from the nose, then two little curves
+ctx.setStrokeColor(line); ctx.setLineWidth(LW * 0.9)
+let m = CGMutablePath()
+let mTop = CGPoint(x: C.x, y: C.y + R * 0.5)
+m.move(to: mTop); m.addLine(to: CGPoint(x: C.x, y: C.y + R * 0.62))
+m.addArc(center: CGPoint(x: C.x - R * 0.16, y: C.y + R * 0.62), radius: R * 0.16,
+         startAngle: rad(0), endAngle: rad(110), clockwise: false, transform: .identity)
+m.move(to: CGPoint(x: C.x, y: C.y + R * 0.62))
+m.addArc(center: CGPoint(x: C.x + R * 0.16, y: C.y + R * 0.62), radius: R * 0.16,
+         startAngle: rad(180), endAngle: rad(70), clockwise: true, transform: .identity)
+ctx.addPath(m); ctx.strokePath()
+
+ctx.restoreGState()   // end tilt
 
 // MARK: - write PNG
 
