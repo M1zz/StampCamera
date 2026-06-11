@@ -17,6 +17,10 @@ final class CameraManager: NSObject, ObservableObject {
     @Published var isAuthorized = false
     @Published var permissionDenied = false         // true only once access is actually refused
     @Published var capturedImage: UIImage?          // raw full-frame capture
+    /// "Live stamp" burst: ~1.2s of downscaled frames following the shutter,
+    /// grabbed off the same silent video stream (no AVCapturePhotoOutput, so no
+    /// mandatory system shutter sound). Delivered after `capturedImage`.
+    @Published var capturedLiveFrames: [UIImage]?
     @Published var position: AVCaptureDevice.Position = .back
 
     // Zoom expressed the way Apple's camera shows it (1.0 = wide, 0.5 = ultra-wide)
@@ -36,6 +40,12 @@ final class CameraManager: NSObject, ObservableObject {
     private nonisolated let sessionQueue = DispatchQueue(label: "stamp.camera.session")
     private nonisolated let videoQueue = DispatchQueue(label: "stamp.camera.video")
     private nonisolated(unsafe) var captureRequested = false   // touched only on videoQueue
+    // live-burst state — touched only on videoQueue
+    private nonisolated(unsafe) var liveRequested = false
+    private nonisolated(unsafe) var liveFrames: [UIImage] = []
+    private nonisolated(unsafe) var liveTick = 0
+    private nonisolated let liveFrameCount = 12     // ≈1.2s at every-3rd-frame (30fps)
+    private nonisolated let liveFrameStride = 3
     private nonisolated(unsafe) var currentInput: AVCaptureDeviceInput?
     // videoZoomFactor that displays as "1.0×" (2.0 on devices with an ultra-wide)
     private nonisolated(unsafe) var baseZoom: CGFloat = 1.0
@@ -186,8 +196,18 @@ final class CameraManager: NSObject, ObservableObject {
     }
 
     /// Grabs the next live video frame as the "photo" — no system shutter sound.
-    func capturePhoto() {
-        videoQueue.async { [weak self] in self?.captureRequested = true }
+    /// With `live`, also records a short downscaled burst after the shutter so
+    /// the stamp can move like a Live Photo.
+    func capturePhoto(live: Bool = false) {
+        videoQueue.async { [weak self] in
+            guard let self else { return }
+            self.captureRequested = true
+            if live {
+                self.liveFrames = []
+                self.liveTick = 0
+                self.liveRequested = true
+            }
+        }
     }
 
     func stop() {
@@ -201,15 +221,34 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     nonisolated func captureOutput(_ output: AVCaptureOutput,
                                    didOutput sampleBuffer: CMSampleBuffer,
                                    from connection: AVCaptureConnection) {
-        guard captureRequested,
+        guard captureRequested || liveRequested,
               let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        captureRequested = false
 
-        let ci = CIImage(cvPixelBuffer: pixelBuffer)
-        guard let cg = ciContext.createCGImage(ci, from: ci.extent) else { return }
-        let image = UIImage(cgImage: cg)   // already upright portrait, orientation .up
-        Task { @MainActor in
-            self.capturedImage = image
+        if captureRequested {
+            captureRequested = false
+            let ci = CIImage(cvPixelBuffer: pixelBuffer)
+            if let cg = ciContext.createCGImage(ci, from: ci.extent) {
+                let image = UIImage(cgImage: cg)   // already upright portrait, .up
+                Task { @MainActor in self.capturedImage = image }
+            }
+        }
+
+        // the live burst: every Nth frame, downscaled, until the clip is full
+        if liveRequested {
+            liveTick += 1
+            guard liveTick % liveFrameStride == 1 else { return }
+            let ci = CIImage(cvPixelBuffer: pixelBuffer)
+            let scale = min(1, 720 / max(ci.extent.width, ci.extent.height))
+            let small = ci.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
+            if let cg = ciContext.createCGImage(small, from: small.extent) {
+                liveFrames.append(UIImage(cgImage: cg))
+            }
+            if liveFrames.count >= liveFrameCount {
+                liveRequested = false
+                let frames = liveFrames
+                liveFrames = []
+                Task { @MainActor in self.capturedLiveFrames = frames }
+            }
         }
     }
 }

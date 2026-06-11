@@ -13,7 +13,7 @@ private let appGroupID = "group.com.devkoan.StampCamera"
 
 class MessagesViewController: MSMessagesAppViewController {
 
-    private let browser = StampStickerBrowserViewController(stickerSize: .regular)
+    private let browser = StampStickerBrowserViewController(stickerSize: .small)   // three per row
 
     override func viewDidLoad() {
         super.viewDidLoad()
