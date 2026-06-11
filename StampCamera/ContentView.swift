@@ -11,6 +11,7 @@ import SwiftUI
 import AVFoundation
 import CoreImage
 import CoreLocation
+import Vision
 
 struct ContentView: View {
     @StateObject private var camera = CameraManager()
@@ -47,6 +48,8 @@ struct ContentView: View {
     @State private var cavityVisible = false    // the black punch-hole revealed as the stamp ejects
     @State private var pressed = false
     @State private var flipAngle: Double = 0    // selfie/back flip spin
+    // stamp shape: false = perforated punch, true = Apple subject cutout sticker
+    @AppStorage("stampCutout") private var stampCutout = false
 
     // newly-made stamp pending a caption on the parchment editor
     @State private var editTarget: EditTarget?
@@ -239,6 +242,7 @@ struct ContentView: View {
             ZStack {
                 albumChip                    // centered
                 HStack {
+                    shapeButton              // top-left (stamp shape)
                     Spacer()
                     flipButton               // top-right (selfie toggle)
                 }
@@ -247,6 +251,23 @@ struct ContentView: View {
             .padding(.top, 8)
             Spacer()
         }
+    }
+
+    /// Switches the stamp shape between the perforated punch and an Apple-style
+    /// subject cutout sticker (background lifted away).
+    private var shapeButton: some View {
+        Button {
+            Haptics.select()
+            stampCutout.toggle()
+        } label: {
+            Image(systemName: stampCutout ? "scissors" : "square.dashed")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+                .background(Circle().fill(.ultraThinMaterial))
+                .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
     }
 
     /// The book-picker chip: shows which book new stamps go into, with a menu
@@ -380,15 +401,36 @@ struct ContentView: View {
               previewSize != .zero else { return }
         let win = windowScreenRect(in: previewSize)
         let mirrored = camera.position == .front
-        guard let result = StampCompositor.makeStamp(
-            from: raw,
-            previewSize: previewSize,
-            windowRect: win,
-            mirrored: mirrored
-        ) else { return }
-        let stamp = result.image
-        let cropNorm = result.cropNorm
 
+        if stampCutout {
+            // "오려내기" — crop the framed region, then lift the subject off the
+            // main thread (Vision). Falls back to the perforated stamp if no
+            // subject is found.
+            guard let base = StampCompositor.makeStamp(from: raw, previewSize: previewSize,
+                                                       windowRect: win, mirrored: mirrored,
+                                                       clipToShape: false) else { return }
+            DispatchQueue.global(qos: .userInitiated).async {
+                let lifted = SubjectLift.cutout(from: base.image)
+                DispatchQueue.main.async {
+                    let stamp = lifted
+                        ?? StampCompositor.makeStamp(from: raw, previewSize: previewSize,
+                                                     windowRect: win, mirrored: mirrored)?.image
+                        ?? base.image
+                    finishCapture(stamp: stamp, raw: raw, cropNorm: base.cropNorm,
+                                  mirrored: mirrored, win: win)
+                }
+            }
+        } else {
+            guard let result = StampCompositor.makeStamp(from: raw, previewSize: previewSize,
+                                                         windowRect: win, mirrored: mirrored) else { return }
+            finishCapture(stamp: result.image, raw: raw, cropNorm: result.cropNorm,
+                          mirrored: mirrored, win: win)
+        }
+    }
+
+    /// Runs the toss + file-into-collection sequence for a finished stamp image.
+    private func finishCapture(stamp: UIImage, raw: UIImage, cropNorm: CGRect,
+                               mirrored: Bool, win: CGRect) {
         // The cut stamp ejects up out of the slot, revealing a black punch-hole
         // beneath, then tosses onto the frame and fades.
         flyStart = win
@@ -853,6 +895,10 @@ struct AlbumPageView: View {
     @State private var dragPoint: CGPoint?
     @State private var hoveredExhibition: String?
     @State private var exhibitionFrames: [String: CGRect] = [:]
+    // global-space drag (the leaf is hosted in a page-curl controller, so the
+    // carry uses .global coords; this is the body's global top for the ghost).
+    @State private var bodyTop: CGFloat = 0
+    @State private var lastTouch: CGPoint = .zero   // finger pos (global) for the lift
 
     private let perPage = 12          // 3×4 pockets per leaf, like the collections
 
@@ -881,13 +927,11 @@ struct AlbumPageView: View {
                 // the book: leaves of 12, flipped with a horizontal swipe —
                 // no vertical scrolling anywhere. (collectorHeader is parked
                 // for now — bring it back when the tally earns its place.)
-                TabView(selection: $currentPage) {
-                    ForEach(0..<pageCount, id: \.self) { pageIndex in
-                        albumLeaf(pageIndex).tag(pageIndex)
-                    }
+                PageCurlView(pageCount: pageCount, currentPage: $currentPage,
+                             contentKey: stamps.map(\.id).joined(separator: ","),
+                             interactive: armed == nil && dragging == nil) { pageIndex in
+                    albumLeaf(pageIndex)
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .scrollDisabled(armed != nil || dragging != nil)
                 .onChange(of: stamps.count) { _, _ in
                     if currentPage > pageCount - 1 { currentPage = max(0, pageCount - 1) }
                 }
@@ -902,9 +946,15 @@ struct AlbumPageView: View {
         // stays put while the finger moves; the ghost is a separate, lightweight
         // layer that alone re-renders per frame — keeping the material tray smooth.
         if let dragging { dragTray(dragging) }
-        if let dragging, let p = dragPoint { dragGhost(dragging, at: p) }
+        if let dragging, let p = dragPoint {
+            dragGhost(dragging, at: CGPoint(x: p.x, y: p.y - bodyTop))   // global → body-local
+        }
       }
       .coordinateSpace(name: "album")
+      .background(GeometryReader { g in
+          Color.clear.onAppear { bodyTop = g.frame(in: .global).minY }
+              .onChange(of: g.frame(in: .global).minY) { _, v in bodyTop = v }
+      })
       .onPreferenceChange(ExhibitionFrameKey.self) { exhibitionFrames = $0 }
       .onAppear { lastVisitedAlbum = album }   // remember for the camera shortcut
       .navigationTitle(album)
@@ -1137,23 +1187,14 @@ struct AlbumPageView: View {
     /// it. The tray appears only once the finger has moved enough to mean
     /// "carry it" — so resting a finger never throws up the tray.
     private func carryGesture(_ stamp: CollectedStamp) -> some Gesture {
-        DragGesture(minimumDistance: 0, coordinateSpace: .named("album"))
+        DragGesture(minimumDistance: 0, coordinateSpace: .global)
             .onChanged { drag in
-                guard armed?.id == stamp.id else { return }
-                if dragging == nil {
-                    let moved = hypot(drag.translation.width, drag.translation.height)
-                    guard moved > 14 else { return }   // wait for a real drag
-                    promoteToDrag()
-                }
+                lastTouch = drag.location          // track the finger for the lift
                 guard dragging?.id == stamp.id else { return }
                 updateDrag(to: drag.location)
             }
             .onEnded { drag in
-                if dragging?.id == stamp.id {
-                    endDrag(at: drag.location)
-                } else if armed?.id == stamp.id {
-                    cancelLift()
-                }
+                if dragging?.id == stamp.id { endDrag(at: drag.location) }
             }
     }
 
@@ -1172,11 +1213,15 @@ struct AlbumPageView: View {
         return exhibitionFrames.first { $0.value.contains(tip) }?.key
     }
 
-    /// Long press recognised — lift the stamp, but don't reveal the tray yet.
+    /// Long press recognised — lift the stamp AND raise the collection tray right
+    /// away (with the ghost already at the finger), so a hold alone is enough.
     private func armLift(_ stamp: CollectedStamp) {
         guard armed == nil, dragging == nil else { return }
         armed = stamp
+        dragPoint = lastTouch
+        hoveredExhibition = dropTarget(at: lastTouch)
         Haptics.select()                       // the stamp lifts off the page
+        withAnimation(.spring(response: 0.32, dampingFraction: 0.82)) { dragging = stamp }
     }
 
     /// The finger moved while holding — now reveal the collection tray and carry.
@@ -1327,7 +1372,7 @@ struct AlbumPageView: View {
         .background(
             GeometryReader { g in
                 Color.clear.preference(key: ExhibitionFrameKey.self,
-                                       value: [name: g.frame(in: .named("album"))])
+                                       value: [name: g.frame(in: .global)])
             }
         )
     }
@@ -2997,6 +3042,32 @@ final class CollectionStore: ObservableObject {
     }
 }
 
+// MARK: - Subject lift (Apple's "lift the subject" sticker cutout)
+
+/// Wraps Vision's foreground-subject mask to cut the subject out of a photo with
+/// a transparent background — the same "make sticker" effect as iOS Photos.
+enum SubjectLift {
+    /// Returns a transparent cutout of the photo's main subject, or nil if the
+    /// OS is too old or no subject is found (caller falls back to the crop).
+    static func cutout(from image: UIImage) -> UIImage? {
+        guard #available(iOS 17.0, *), let cg = image.normalizedUp().cgImage else { return nil }
+        let request = VNGenerateForegroundInstanceMaskRequest()
+        let handler = VNImageRequestHandler(cgImage: cg)
+        do {
+            try handler.perform([request])
+            guard let result = request.results?.first else { return nil }
+            let buffer = try result.generateMaskedImage(ofInstances: result.allInstances,
+                                                         from: handler,
+                                                         croppedToInstancesExtent: true)
+            let ci = CIImage(cvPixelBuffer: buffer)
+            guard let out = CIContext().createCGImage(ci, from: ci.extent) else { return nil }
+            return UIImage(cgImage: out)
+        } catch {
+            return nil
+        }
+    }
+}
+
 // MARK: - Sticker sheet export (print-ready PDF)
 
 /// Wraps share items (a PDF URL, an image + caption, …) to drive `.sheet(item:)`.
@@ -4030,6 +4101,9 @@ struct StampRevealView: View {
     @State private var settled = false
     @State private var showControls = false
     @State private var editing = false
+    @State private var stampOnly = false   // toggle to view just the cut stamp
+    @State private var userInteracted = false
+    @AppStorage("stampRevealAnimate") private var animate = true
 
     private var stamp: CollectedStamp? { collection.stamps.first { $0.id == stampID } }
 
@@ -4052,10 +4126,25 @@ struct StampRevealView: View {
                     }
                 }
 
+                // "우표만 보기" — the cut stamp alone, large and centered
+                if settled, stampOnly, let stamp {
+                    Color.black.opacity(0.92).ignoresSafeArea()
+                        .transition(.opacity)
+                    Image(uiImage: stamp.image)
+                        .resizable().scaledToFit()
+                        .frame(width: min(geo.size.width, geo.size.height) * 0.74)
+                        .shadow(color: .black.opacity(0.6), radius: 24, y: 14)
+                        .position(x: geo.size.width / 2, y: geo.size.height / 2)
+                        .transition(.scale(scale: 0.85).combined(with: .opacity))
+                }
+
                 if showControls { controls }
             }
             .contentShape(Rectangle())
-            .onTapGesture { if settled { dismiss() } }
+            .onTapGesture {
+                if stampOnly { withAnimation(.spring(response: 0.4, dampingFraction: 0.82)) { stampOnly = false } }
+                else if settled { dismiss() }
+            }
             .onAppear { start(hasPuzzle: original != nil && info != nil) }
             .sheet(isPresented: $editing) {
                 NavigationStack { StampDetailView(collection: collection, stampID: stampID) }
@@ -4115,12 +4204,29 @@ struct StampRevealView: View {
                         .foregroundStyle(.white.opacity(0.85))
                 }
                 Spacer()
+                Button {
+                    userInteracted = true
+                    withAnimation(.spring(response: 0.45, dampingFraction: 0.82)) { stampOnly.toggle() }
+                } label: {
+                    Label(stampOnly ? "전체사진" : "우표만", systemImage: stampOnly ? "photo" : "seal")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 14).padding(.vertical, 8)
+                        .background(Capsule().fill(Color.white.opacity(0.18)))
+                }
                 Button { editing = true } label: {
                     Label("편집", systemImage: "pencil")
                         .font(.system(size: 15, weight: .semibold))
                         .foregroundStyle(.white)
                         .padding(.horizontal, 14).padding(.vertical, 8)
                         .background(Capsule().fill(Color.white.opacity(0.18)))
+                }
+                Menu {
+                    Toggle("전환 애니메이션", isOn: $animate)
+                } label: {
+                    Image(systemName: "ellipsis.circle.fill")
+                        .font(.system(size: 24))
+                        .foregroundStyle(.white.opacity(0.85))
                 }
             }
             .padding(.horizontal, 18)
@@ -4131,9 +4237,11 @@ struct StampRevealView: View {
     }
 
     private func start(hasPuzzle: Bool) {
-        guard hasPuzzle else {
+        // animation off, or no original to puzzle from → straight to the stamp itself
+        guard animate, hasPuzzle else {
             settled = true
-            withAnimation(.easeIn(duration: 0.3)) { showControls = true }
+            stampOnly = true
+            showControls = true
             return
         }
         withAnimation(.easeOut(duration: 0.35)) { showPhoto = true }
@@ -4141,6 +4249,11 @@ struct StampRevealView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.95) { Haptics.placed() }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
             withAnimation(.easeIn(duration: 0.3)) { showControls = true }
+        }
+        // show the whole photo for a beat, then ease into the stamp on its own
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            guard !userInteracted else { return }
+            withAnimation(.spring(response: 0.5, dampingFraction: 0.82)) { stampOnly = true }
         }
     }
 }
@@ -4194,6 +4307,7 @@ struct StampDetailView: View {
     @State private var showFullImage = false
     @State private var finish: StampInk = .original
     @State private var inkPreviews: [String: UIImage] = [:]
+    @State private var sharePayload: SharePayload?
     @FocusState private var focused: Bool
 
     private var stamp: CollectedStamp? { collection.stamps.first { $0.id == stampID } }
@@ -4221,6 +4335,12 @@ struct StampDetailView: View {
                             .font(.system(size: 11, weight: .medium, design: .rounded))
                             .foregroundStyle(Color(hex: 0x8C7A52))
                     }
+                    Button { exportSticker() } label: {
+                        Label("스티커로 저장", systemImage: "square.and.arrow.up")
+                            .font(.system(size: 12, weight: .semibold, design: .rounded))
+                            .foregroundStyle(Color(hex: 0xB89A5E))
+                    }
+                    .padding(.top, 2)
 
                     // when & where this stamp was made
                     VStack(spacing: 3) {
@@ -4353,6 +4473,19 @@ struct StampDetailView: View {
                 .onTapGesture { showFullImage = false }
             }
         }
+        .sheet(item: $sharePayload) { payload in
+            ShareSheet(items: payload.items)
+        }
+    }
+
+    /// Writes the stamp as a transparent PNG and offers it to share/save — a
+    /// sticker you can drop into Files, Photos, or Messages stickers.
+    private func exportSticker() {
+        guard let stamp, let data = stamp.image.pngData() else { return }
+        let url = FileManager.default.temporaryDirectory
+            .appendingPathComponent("StampSticker-\(stampID).png")
+        do { try data.write(to: url) } catch { return }
+        sharePayload = SharePayload(items: [url])
     }
 
     /// 꾸미기: a row of finishes, each chip a live mini preview of this stamp
@@ -4520,6 +4653,8 @@ struct PageCurlView<Page: View>: UIViewControllerRepresentable {
     /// Changes whenever the paged content changes, so the visible leaf is only
     /// rebuilt on real data edits — not on every unrelated state tick.
     var contentKey: String = ""
+    /// When false the page-turn swipe is disabled (e.g. while dragging a stamp).
+    var interactive: Bool = true
     let page: (Int) -> Page
 
     func makeCoordinator() -> Coordinator { Coordinator(self) }
@@ -4527,7 +4662,7 @@ struct PageCurlView<Page: View>: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIPageViewController {
         let pvc = UIPageViewController(transitionStyle: .pageCurl,
                                       navigationOrientation: .horizontal)
-        pvc.dataSource = context.coordinator
+        pvc.dataSource = interactive ? context.coordinator : nil
         pvc.delegate = context.coordinator
         pvc.view.backgroundColor = .clear
         pvc.isDoubleSided = false
@@ -4545,6 +4680,9 @@ struct PageCurlView<Page: View>: UIViewControllerRepresentable {
     func updateUIViewController(_ pvc: UIPageViewController, context: Context) {
         let coord = context.coordinator
         coord.parent = self
+        // toggle the swipe-to-turn gesture (off while a stamp is being dragged)
+        let wantSource = interactive ? coord : nil
+        if (pvc.dataSource == nil) == interactive { pvc.dataSource = wantSource }
         guard pageCount > 0 else { return }
         let target = min(max(0, currentPage), pageCount - 1)
         // Rebuild the visible leaf when the data shape changed (a stamp added /

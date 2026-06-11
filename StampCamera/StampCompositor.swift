@@ -30,6 +30,7 @@ enum StampCompositor {
                           previewSize: CGSize,
                           windowRect: CGRect,
                           mirrored: Bool = false,
+                          clipToShape: Bool = true,
                           scale: CGFloat = 3.0) -> (image: UIImage, cropNorm: CGRect)? {
 
         // Normalize to .up so pixel coordinates are predictable.
@@ -73,8 +74,10 @@ enum StampCompositor {
             // — no inset needed. Clipping is reliable regardless of blend-mode
             // quirks of UIImage.draw(in:) — which silently ignored the
             // .sourceIn stencil and dumped the whole rectangle.
-            c.addPath(stampBezierPath(in: outRect).cgPath)
-            c.clip()
+            if clipToShape {
+                c.addPath(stampBezierPath(in: outRect).cgPath)
+                c.clip()
+            }
             if mirrored {
                 c.translateBy(x: outSize.width, y: 0)
                 c.scaleBy(x: -1, y: 1)
