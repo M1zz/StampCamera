@@ -2627,6 +2627,33 @@ final class CollectionStore: ObservableObject {
         loadMeta()
         loadExhibitions()
         reconcile()
+        syncStickers()
+    }
+
+    /// App Group shared with the iMessage sticker extension, so collected stamps
+    /// show up as real iMessage stickers. (No-op until the App Group is enabled.)
+    static let stickerGroupID = "group.com.devkoan.StampCamera"
+    func syncStickers() {
+        guard let base = FileManager.default
+                .containerURL(forSecurityApplicationGroupIdentifier: Self.stickerGroupID) else { return }
+        let snapshot = stamps.map { ($0.id, $0.image) }
+        DispatchQueue.global(qos: .utility).async {
+            let dir = base.appendingPathComponent("Stickers", isDirectory: true)
+            try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+            let wanted = Set(snapshot.map { "\($0.0).png" })
+            for (id, image) in snapshot {
+                let url = dir.appendingPathComponent("\(id).png")
+                if !FileManager.default.fileExists(atPath: url.path),
+                   let data = image.pngData() {
+                    try? data.write(to: url)
+                }
+            }
+            // drop stickers whose stamp is gone
+            for f in (try? FileManager.default.contentsOfDirectory(at: dir,
+                        includingPropertiesForKeys: nil)) ?? [] where !wanted.contains(f.lastPathComponent) {
+                try? FileManager.default.removeItem(at: f)
+            }
+        }
     }
 
     private func captionURL(for id: String) -> URL {
@@ -2809,6 +2836,7 @@ final class CollectionStore: ObservableObject {
                                  mirrored: original != nil ? mirrored : nil), for: name)
         stamps.append(CollectedStamp(id: name, image: image, caption: "", album: album,
                                      createdAt: now, place: ""))
+        syncStickers()
         return name
     }
 
@@ -2884,6 +2912,7 @@ final class CollectionStore: ObservableObject {
             }
             saveExhibitions()
         }
+        syncStickers()
     }
 
     // MARK: - Albums
