@@ -65,6 +65,7 @@
 - [x] 메시지 스티커 이름·크기 — 익스텐션 표시명/스티커 설명 "우표"→"컬렉션"; 작게 보이던 원인=Messages가 픽셀÷3로 렌더하는데 경량 인코더가 190~300px까지 축소(63~100pt): 크기 우선 사다리(480·408px×6f → 360×5 → 320·280×4, 프레임을 희생)로 교체해 보통 136~160pt로 표시, .v3-bigstickers 마커로 기존 스티커 일괄 재생성
 - [x] 브랜딩 "펀치(PUNCH)" — 홈 화면 앱 이름(CFBundleDisplayName=펀치), 권한 화면 "📮 펀치", SNS 카드 로고 PUNCH(tracking 4), 우표 뒷면 레터링 PUNCH, 공유 해시태그 #펀치, README 타이틀+태그라인("세상에서 갖고 싶은 순간을 뜯어 모은다")
 - [x] 지원·개인정보 페이지 — GitHub Pages HTML(docs/index·support·privacy.html, 스탬프 디자인: 크림 종이+점선 톱니+금색), Pages 활성화(dev /docs → m1zz.github.io/StampCamera), README는 라이브 URL로 링크; main 머지 후 Pages 소스를 main으로 전환 필요
+- [x] 리브랜딩 펀치→꾹(KKUK) — App Store 충돌로 교체(Stample 계열은 검색 결과 밀집 구역이라 배제), 앱 이름·권한 화면·레터링 KKUK·#꾹·태그라인("갖고 싶은 순간을 꾹 눌러, 세상을 뜯어 모은다")·README·Pages 일괄 갱신, 커밋 a511cc9 푸시
 
 - [x] 우표첩 다중 선택 삭제 — '선택' 모드: 탭으로 체크(금색 배지, 미선택 흐림), 하단 머티리얼 바에 n장 카운트+삭제, 확인 다이얼로그 후 일괄 삭제
 
