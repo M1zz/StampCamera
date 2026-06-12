@@ -720,7 +720,7 @@ struct ContentView: View {
     /// is granted this never appears again.
     private var permissionScreen: some View {
         VStack(spacing: 18) {
-            Text("📮 펀치")
+            Text("📮 꾹")
                 .font(.system(size: 28, weight: .heavy, design: .rounded))
                 .foregroundStyle(.white)
             Text("우표를 펀칭하려면 카메라 권한이 필요해요.\n설정에서 카메라를 켜주세요.")
@@ -2342,7 +2342,7 @@ struct ExhibitionWallView: View {
         let renderer = ImageRenderer(content: card)
         renderer.scale = 1   // the card view is already laid out at 1080pt
         guard let image = renderer.uiImage else { return }
-        let caption = "내 우표 컬렉션 ‘\(exhibition)’ 📮 #펀치"
+        let caption = "내 우표 컬렉션 ‘\(exhibition)’ 📮 #꾹"
         sharePayload = SharePayload(items: [image, caption])
     }
 
@@ -4105,7 +4105,7 @@ struct CollectionCardView: View {
                 HStack(spacing: 10) {
                     Image(systemName: "mail.stack.fill")
                         .font(.system(size: 30))
-                    Text("PUNCH")
+                    Text("KKUK")
                         .font(.system(size: 30, weight: .heavy, design: .rounded))
                         .tracking(4)
                 }
@@ -4655,7 +4655,7 @@ struct CaptureRevealView: View {
             .foregroundStyle(Color(hex: 0xF1EBDD))
             .overlay {
                 VStack(spacing: 12) {
-                    Text("PUNCH")
+                    Text("KKUK")
                         .font(.system(size: 9.5, weight: .heavy, design: .rounded))
                         .tracking(3.2)
                         .foregroundStyle(ink.opacity(0.5))
