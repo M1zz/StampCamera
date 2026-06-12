@@ -19,13 +19,14 @@ struct ExhibitionTests {
         #expect(h.store.createExhibition("   ") == nil)   // blank rejected
     }
 
-    @Test func placeMovesStampOutOfCollection() {
+    @Test func placeKeepsStampInCollection() {
         let h = Harness(); defer { h.cleanup() }
         let id = h.add()
         h.store.placeInExhibition(id, into: "벽1")
         #expect(h.store.isExhibited(id))
-        #expect(h.store.collectedStamps.isEmpty)                                  // left the collection
-        #expect(h.store.count(in: CollectionStore.defaultAlbum) == 0)             // album count drops
+        // 컬렉션은 참조(플레이리스트) — 수집함에서는 빠지지 않는다
+        #expect(h.store.collectedStamps.map(\.id) == [id])
+        #expect(h.store.count(in: CollectionStore.defaultAlbum) == 1)
         #expect(h.store.stampsInExhibition("벽1").map(\.id) == [id])
         #expect(h.store.exhibitionCount("벽1") == 1)
     }
@@ -126,7 +127,7 @@ struct ExhibitionTests {
         let pls = again.placements(in: "벽")
         #expect(pls.count == 3)                                      // layout survives
         #expect(pls.first { $0.id == b }?.page == 2)
-        #expect(again.collectedStamps.isEmpty)                       // all three are exhibited
+        #expect(again.collectedStamps.count == 3)                    // 걸어도 수집함엔 그대로
     }
 
     @Test func backwardCompatNoExhibitionsFile() {

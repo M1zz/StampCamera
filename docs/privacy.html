@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 — 펀치 (PUNCH)</title>
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                 "Noto Sans KR", sans-serif;
+    background: #141210; color: var(--ink); padding: 32px 16px;
+    display: flex; justify-content: center;
+  }
+  .stamp {
+    max-width: 640px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 44px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .back { font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; }
+  h1 { font-size: 28px; font-weight: 900; margin: 14px 0 4px; }
+  .date { font-size: 13px; color: var(--sub); margin-bottom: 22px; }
+  .pledge {
+    background: rgba(242, 178, 59, .14); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 28px;
+    font-size: 15px; line-height: 1.7; font-weight: 600;
+  }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: .25em; color: var(--sub);
+    text-transform: uppercase; margin: 30px 0 12px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 8px;
+  }
+  p, li, td, th { font-size: 15px; line-height: 1.75; }
+  ul { padding-left: 22px; margin: 6px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; color: var(--sub); }
+  a { color: #9B6A1E; font-weight: 600; }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <a class="back" href="./index.html">← 펀치</a>
+    <h1>개인정보 처리방침</h1>
+    <p class="date">시행일: 2026년 6월 12일</p>
+
+    <div class="pledge">
+      요약: 펀치는 어떤 데이터도 외부로 보내지 않습니다.
+      계정도, 서버도, 광고도, 분석 도구도 없습니다. 사진과 위치를 포함한
+      모든 데이터는 사용자의 기기 안에만 저장됩니다.
+    </div>
+
+    <h2>1. 수집·저장하는 정보</h2>
+    <table>
+      <tr><th>정보</th><th>용도</th><th>저장 위치</th></tr>
+      <tr><td>촬영한 사진<br>(우표·원본·움직임 프레임)</td><td>우표 만들기, 모습 변경, 인쇄·스티커 내보내기</td><td>기기 내</td></tr>
+      <tr><td>위치 (선택)</td><td>우표에 장소 이름 기록</td><td>기기 내 (좌표→장소 변환은 Apple 시스템 지오코딩)</td></tr>
+      <tr><td>캡션·수집함/컬렉션 구성</td><td>수집물 정리</td><td>기기 내</td></tr>
+      <tr><td>설정 값</td><td>앱 동작 기억</td><td>기기 내</td></tr>
+    </table>
+    <p>앱은 위 정보를 <strong>개발자나 제3자의 서버로 전송하지 않습니다.</strong></p>
+
+    <h2>2. 권한 사용</h2>
+    <ul>
+      <li><strong>카메라</strong> — 우표를 찍는 핵심 기능에 필요합니다. 카메라 화면이 떠 있는 동안에만 사용하며, iOS의 초록 표시등으로 항상 확인할 수 있습니다.</li>
+      <li><strong>위치 (선택)</strong> — 허용하면 우표에 장소 이름이 기록됩니다. 거부해도 모든 기능을 쓸 수 있습니다.</li>
+    </ul>
+
+    <h2>3. iMessage 스티커 (App Group)</h2>
+    <p>모은 우표는 iMessage 익스텐션("컬렉션")이 읽을 수 있도록 <strong>기기 내</strong>
+    App Group 공유 폴더에 복사됩니다. 이 역시 기기를 벗어나지 않습니다.
+    사용자가 메시지로 스티커를 보내는 행위는 Apple iMessage를 통해 이루어지며,
+    해당 전송에는 Apple의 약관이 적용됩니다.</p>
+
+    <h2>4. 공유·내보내기</h2>
+    <p>이미지 공유, 인쇄용 PDF, 우표 PNG 내보내기는 <strong>사용자가 직접 실행할
+    때만</strong> 이루어지며, 공유 대상은 사용자가 시스템 공유 시트에서 선택합니다.</p>
+
+    <h2>5. 데이터 삭제</h2>
+    <ul>
+      <li>우표를 삭제하면 우표·원본 사진·움직임 데이터·스티커 사본이 기기에서 즉시, 영구적으로 삭제됩니다.</li>
+      <li>앱을 삭제하면 모든 데이터가 함께 삭제됩니다. (외부 백업은 사용자의 iCloud/기기 백업 설정을 따릅니다.)</li>
+    </ul>
+
+    <h2>6. 아동 개인정보</h2>
+    <p>펀치는 연령과 무관하게 어떤 개인정보도 수집·전송하지 않습니다.</p>
+
+    <h2>7. 방침 변경</h2>
+    <p>방침이 바뀌면 이 페이지를 갱신하고 시행일을 수정합니다.</p>
+
+    <h2>8. 문의</h2>
+    <p>📮 <strong>mizzking75@gmail.com</strong> · <a href="./support.html">지원 페이지</a></p>
+  </main>
+</body>
+</html>

@@ -2,8 +2,10 @@
 //  MessagesViewController.swift
 //  sticker — StampCamera's iMessage sticker tray
 //
-//  Shows the stamps collected in the main app (written into the shared App Group
-//  container) as real iMessage stickers you can peel onto messages.
+//  Shows the stamps collected in the main app (written into the shared App
+//  Group container) as real iMessage stickers you can peel onto messages.
+//  A chip bar up top filters by the user's curated collections, so each
+//  컬렉션 doubles as a sticker pack.
 //
 
 import UIKit
@@ -11,42 +13,153 @@ import Messages
 
 private let appGroupID = "group.com.devkoan.StampCamera"
 
+/// One curated collection exported by the main app (Stickers/collections.json).
+private struct StickerPack: Decodable {
+    let name: String
+    let files: [String]
+}
+private struct PackManifest: Decodable {
+    let collections: [StickerPack]
+}
+
 class MessagesViewController: MSMessagesAppViewController {
 
-    private let browser = StampStickerBrowserViewController(stickerSize: .small)   // three per row
+    private let browser = StampStickerBrowserViewController(stickerSize: .small)
+    private let chipBar = UIScrollView()
+    private let chipStack = UIStackView()
+    private var packs: [StickerPack] = []
+    private var selectedPack: Int = -1   // -1 = 전체
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        chipBar.showsHorizontalScrollIndicator = false
+        chipBar.translatesAutoresizingMaskIntoConstraints = false
+        chipStack.axis = .horizontal
+        chipStack.spacing = 8
+        chipStack.translatesAutoresizingMaskIntoConstraints = false
+        chipBar.addSubview(chipStack)
+        view.addSubview(chipBar)
+
         addChild(browser)
         browser.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(browser.view)
+        browser.didMove(toParent: self)
+
         NSLayoutConstraint.activate([
+            chipBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 6),
+            chipBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            chipBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            chipBar.heightAnchor.constraint(equalToConstant: 36),
+
+            chipStack.topAnchor.constraint(equalTo: chipBar.contentLayoutGuide.topAnchor),
+            chipStack.bottomAnchor.constraint(equalTo: chipBar.contentLayoutGuide.bottomAnchor),
+            chipStack.leadingAnchor.constraint(equalTo: chipBar.contentLayoutGuide.leadingAnchor, constant: 12),
+            chipStack.trailingAnchor.constraint(equalTo: chipBar.contentLayoutGuide.trailingAnchor, constant: -12),
+            chipStack.heightAnchor.constraint(equalTo: chipBar.frameLayoutGuide.heightAnchor),
+
+            browser.view.topAnchor.constraint(equalTo: chipBar.bottomAnchor, constant: 2),
             browser.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             browser.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            browser.view.topAnchor.constraint(equalTo: view.topAnchor),
             browser.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-        browser.didMove(toParent: self)
     }
 
     override func willBecomeActive(with conversation: MSConversation) {
         super.willBecomeActive(with: conversation)
-        browser.reload()   // pick up any newly collected stamps
+        reloadEverything()
+    }
+
+    private func reloadEverything() {
+        packs = Self.loadPacks()
+        if selectedPack >= packs.count { selectedPack = -1 }
+        rebuildChips()
+        browser.reload()
+        applySelection()
+    }
+
+    private static func loadPacks() -> [StickerPack] {
+        guard let base = FileManager.default
+                .containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else { return [] }
+        let url = base.appendingPathComponent("Stickers/collections.json")
+        guard let data = try? Data(contentsOf: url),
+              let manifest = try? JSONDecoder().decode(PackManifest.self, from: data) else { return [] }
+        return manifest.collections
+    }
+
+    // MARK: - Chips
+
+    private func rebuildChips() {
+        chipStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        chipBar.isHidden = packs.isEmpty
+        guard !packs.isEmpty else { return }
+        addChip(title: "전체", tag: -1)
+        for (i, pack) in packs.enumerated() { addChip(title: pack.name, tag: i) }
+        styleChips()
+    }
+
+    private func addChip(title: String, tag: Int) {
+        var config = UIButton.Configuration.filled()
+        config.title = title
+        config.cornerStyle = .capsule
+        config.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 12, bottom: 5, trailing: 12)
+        let button = UIButton(configuration: config)
+        button.tag = tag
+        button.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
+        button.addTarget(self, action: #selector(chipTapped(_:)), for: .touchUpInside)
+        chipStack.addArrangedSubview(button)
+    }
+
+    @objc private func chipTapped(_ sender: UIButton) {
+        selectedPack = sender.tag
+        styleChips()
+        applySelection()
+    }
+
+    private func styleChips() {
+        for case let button as UIButton in chipStack.arrangedSubviews {
+            let on = button.tag == selectedPack
+            button.configuration?.baseBackgroundColor = on
+                ? UIColor(red: 0.95, green: 0.70, blue: 0.23, alpha: 1)
+                : UIColor.secondarySystemFill
+            button.configuration?.baseForegroundColor = on ? .black : .label
+        }
+    }
+
+    private func applySelection() {
+        browser.filterFiles = selectedPack >= 0 ? packs[selectedPack].files : nil
     }
 }
 
-/// Loads the stamp PNGs from the shared App Group folder, newest first.
+/// Loads the stamp PNGs from the shared App Group folder; `filterFiles`
+/// narrows the tray to one collection (in its curated order).
 final class StampStickerBrowserViewController: MSStickerBrowserViewController {
+    private var all: [MSSticker] = []
     private var stickers: [MSSticker] = []
 
+    var filterFiles: [String]? {
+        didSet { applyFilter() }
+    }
+
     func reload() {
-        stickers = Self.loadStickers()
-        stickerBrowserView.reloadData()
+        all = Self.loadStickers()
+        applyFilter()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reload()
+    }
+
+    private func applyFilter() {
+        if let files = filterFiles {
+            let byName = Dictionary(all.map { ($0.imageFileURL.lastPathComponent, $0) },
+                                    uniquingKeysWith: { a, _ in a })
+            stickers = files.compactMap { byName[$0] }
+        } else {
+            stickers = all
+        }
+        stickerBrowserView.reloadData()
     }
 
     private static func loadStickers() -> [MSSticker] {
@@ -61,7 +174,7 @@ final class StampStickerBrowserViewController: MSStickerBrowserViewController {
                 let b = (try? $1.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast
                 return a > b   // newest first
             }
-        return pngs.compactMap { try? MSSticker(contentsOfFileURL: $0, localizedDescription: "우표") }
+        return pngs.compactMap { try? MSSticker(contentsOfFileURL: $0, localizedDescription: "컬렉션") }
     }
 
     override func numberOfStickers(in stickerBrowserView: MSStickerBrowserView) -> Int {

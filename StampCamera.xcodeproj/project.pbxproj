@@ -24,6 +24,7 @@
 		A1000214 /* StampShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000204 /* StampShapeTests.swift */; };
 		A1000215 /* StampCompositorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000205 /* StampCompositorTests.swift */; };
 		A1000216 /* ColorHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000206 /* ColorHexTests.swift */; };
+		A1000217 /* LiveStampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000207 /* LiveStampTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		A1000204 /* StampShapeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShapeTests.swift; sourceTree = "<group>"; };
 		A1000205 /* StampCompositorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositorTests.swift; sourceTree = "<group>"; };
 		A1000206 /* ColorHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexTests.swift; sourceTree = "<group>"; };
+		A1000207 /* LiveStampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStampTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -181,6 +183,7 @@
 				A1000204 /* StampShapeTests.swift */,
 				A1000205 /* StampCompositorTests.swift */,
 				A1000206 /* ColorHexTests.swift */,
+				A1000207 /* LiveStampTests.swift */,
 			);
 			path = StampCameraTests;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				A1000214 /* StampShapeTests.swift in Sources */,
 				A1000215 /* StampCompositorTests.swift in Sources */,
 				A1000216 /* ColorHexTests.swift in Sources */,
+				A1000217 /* LiveStampTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +422,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = sticker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "우표";
+				INFOPLIST_KEY_CFBundleDisplayName = "컬렉션";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -491,7 +495,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = sticker/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "우표";
+				INFOPLIST_KEY_CFBundleDisplayName = "컬렉션";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (

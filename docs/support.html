@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지원 — 펀치 (PUNCH)</title>
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                 "Noto Sans KR", sans-serif;
+    background: #141210; color: var(--ink); padding: 32px 16px;
+    display: flex; justify-content: center;
+  }
+  .stamp {
+    max-width: 640px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 44px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .back { font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; }
+  h1 { font-size: 30px; font-weight: 900; margin: 14px 0 6px; }
+  .tagline { font-size: 15px; color: var(--sub); margin-bottom: 28px; }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: .25em; color: var(--sub);
+    text-transform: uppercase; margin: 34px 0 12px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 8px;
+  }
+  h3 { font-size: 16px; font-weight: 800; margin: 22px 0 6px; }
+  p, li { font-size: 15px; line-height: 1.75; }
+  ol, ul { padding-left: 22px; margin: 6px 0; }
+  .card {
+    background: rgba(255,255,255,.45); border: 1px solid var(--line);
+    border-radius: 14px; padding: 16px 18px; margin: 8px 0;
+  }
+  a { color: #9B6A1E; font-weight: 600; }
+  .contact { font-size: 16px; font-weight: 700; }
+  .note { font-size: 13px; color: var(--sub); margin-top: 6px; }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <a class="back" href="./index.html">← 펀치</a>
+    <h1>지원</h1>
+    <p class="tagline">막히는 곳이 있다면 도와드릴게요.</p>
+
+    <h2>문의</h2>
+    <div class="card">
+      <p class="contact">📮 mizzking75@gmail.com</p>
+      <p class="note">버그 신고와 기능 제안은
+        <a href="https://github.com/M1zz/StampCamera/issues">GitHub Issues</a>로도 받습니다.
+        답변은 보통 2~3일 안에 드려요.</p>
+    </div>
+
+    <h2>자주 묻는 질문</h2>
+
+    <h3>우표가 움직이지 않아요</h3>
+    <ol>
+      <li>카메라 <strong>좌측 상단 모습 버튼</strong>이 ◉ 라이브 우표 또는 ✨ 라이브 스티커인지 확인하세요. ▢ 우표 / ✂️ 스티커(정지 모습)로 찍으면 정지 상태로 보입니다(움직임은 보관돼요).</li>
+      <li>모음 화면 ⚙️ 설정에서 <strong>움직임 자동 재생</strong>이 켜져 있는지 확인하세요.</li>
+      <li>이미 찍은 우표는 상세 페이지의 <strong>모습</strong> 섹션에서 언제든 라이브로 바꿀 수 있어요.</li>
+    </ol>
+
+    <h3>메시지 앱에서 스티커가 안 보여요</h3>
+    <p>메시지 앱 하단 앱 서랍에서 <strong>컬렉션</strong>을 활성화해주세요
+    (서랍 끝 ⋯ 더보기 → 편집). 펀치에서 우표를 한 장 이상 모은 뒤에 나타납니다.</p>
+
+    <h3>진짜 스티커로 인쇄하고 싶어요</h3>
+    <p>모음 화면 🖨 버튼의 <strong>인쇄 가이드</strong>를 따라가세요. 컬렉션 단위로
+    300dpi 인쇄용 PDF(우표 모양 칼선 포함)를 만들 수 있고, 집 프린터의 스티커
+    용지나 인쇄소에 바로 쓸 수 있습니다.</p>
+
+    <h3>상태바에 초록불이 떠요</h3>
+    <p>iOS의 <strong>카메라 사용 표시등</strong>입니다. 카메라 화면이 떠 있는 동안만
+    켜지며, 모음 화면을 여는 동안에는 카메라를 멈춰 불이 꺼집니다.</p>
+
+    <h3>우표를 삭제하면 어떻게 되나요</h3>
+    <p>우표·원본 사진·움직임 데이터가 기기에서 영구 삭제되고, 메시지 스티커
+    서랍에서도 사라집니다. 복구는 불가능하니 신중히!</p>
+
+    <h2>개인정보</h2>
+    <p>펀치는 모든 데이터를 <strong>기기 안에만</strong> 저장합니다.
+    자세한 내용은 <a href="./privacy.html">개인정보 처리방침</a>을 확인하세요.</p>
+  </main>
+</body>
+</html>

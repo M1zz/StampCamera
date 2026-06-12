@@ -50,10 +50,15 @@ struct ContentView: View {
     @State private var pressed = false
     @State private var flipAngle: Double = 0    // selfie/back flip spin
     // stamp shape: false = perforated punch, true = Apple subject cutout sticker
-    @AppStorage("stampCutout") private var stampCutout = false
     // "live stamp": record a short burst after the shutter so the stamp moves
     // like a Live Photo (and the iMessage sticker animates too)
     @AppStorage("liveStamps") private var liveStamps = true
+    // 찍기 전에 고르는 모습 (좌측 상단 버튼) — 찍은 뒤에도 상세에서 변경 가능
+    @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveStamp.rawValue
+    private var captureStyle: StampStyle { StampStyle(rawValue: captureStyleRaw) ?? .liveStamp }
+    @State private var liveCaptureStyle: StampStyle = .liveStamp   // snapshot at shutter
+    // 모아둔 라이브 우표를 화면 곳곳에서 움직이게 재생할지 (LiveArt가 읽는 값)
+    @AppStorage("liveAutoPlay") private var liveAutoPlay = true
 
     // newly-made stamp pending a caption on the parchment editor
     @State private var editTarget: EditTarget?
@@ -63,6 +68,12 @@ struct ContentView: View {
     @State private var liveStampID: String?
     @State private var liveWin: CGRect = .zero
     @State private var liveMirrored = false
+    // a finished clip waiting for its stamp to be filed (burst won the race)
+    @State private var pendingLive: (data: Data, sticker: Data?)?
+    // decoded frames likewise waiting, so the reveal moves the moment it can
+    @State private var pendingHotFrames: (frames: [UIImage], delay: Double)?
+    // the raw master frames likewise waiting (style changes re-derive from these)
+    @State private var pendingMaster: (frames: [UIImage], delay: Double)?
     // freshly-cut stamp celebrated in the full-screen holo reveal
     @State private var revealID: String?
 
@@ -113,10 +124,15 @@ struct ContentView: View {
         .onAppear { location.start() }
         .onChange(of: camera.capturedImage) { _, newValue in handleCapture(newValue) }
         .onChange(of: camera.capturedLiveFrames) { _, frames in handleLiveFrames(frames) }
-        .alert("새 우표첩", isPresented: $showNewAlbum) {
-            TextField("우표첩 이름", text: $newAlbumName)
+        .alert("새 수집함", isPresented: $showNewAlbum) {
+            TextField("수집함 이름", text: $newAlbumName)
             Button("취소", role: .cancel) { }
             Button("만들기") { collection.createAlbum(newAlbumName) }
+        }
+        // 모음을 구경하는 동안엔 카메라를 쉬게 한다 — 초록불(카메라 사용
+        // 표시등)도 꺼지고 배터리도 아낀다; 닫으면 즉시 재가동
+        .onChange(of: showCollection) { _, open in
+            if open { camera.stop() } else { camera.start() }
         }
         .sheet(isPresented: $showCollection) {
             CollectionView(collection: collection)
@@ -253,8 +269,7 @@ struct ContentView: View {
             ZStack {
                 albumChip                    // centered
                 HStack(spacing: 10) {
-                    shapeButton              // top-left (stamp shape)
-                    settingsButton           // capture options (live stamp …)
+                    styleButton              // top-left: 어떤 모습으로 뜯을지
                     Spacer()
                     flipButton               // top-right (selfie toggle)
                 }
@@ -263,23 +278,6 @@ struct ContentView: View {
             .padding(.top, 8)
             Spacer()
         }
-    }
-
-    /// Switches the stamp shape between the perforated punch and an Apple-style
-    /// subject cutout sticker (background lifted away).
-    private var shapeButton: some View {
-        Button {
-            Haptics.select()
-            stampCutout.toggle()
-        } label: {
-            Image(systemName: stampCutout ? "scissors" : "square.dashed")
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(.white)
-                .frame(width: 44, height: 44)
-                .background(Circle().fill(.ultraThinMaterial))
-                .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
-        }
-        .buttonStyle(.plain)
     }
 
     /// The book-picker chip: shows which book new stamps go into, with a menu
@@ -297,7 +295,7 @@ struct ContentView: View {
             }
             Divider()
             Button { newAlbumName = ""; showNewAlbum = true } label: {
-                Label("새 우표첩…", systemImage: "plus")
+                Label("새 수집함…", systemImage: "plus")
             }
         } label: {
             HStack(spacing: 6) {
@@ -314,17 +312,24 @@ struct ContentView: View {
         }
     }
 
-    /// Capture options: 라이브 우표(움직이는 우표/스티커) on/off.
-    private var settingsButton: some View {
+    /// 찍기 전에 모습을 고르는 버튼: 우표 / 라이브 우표 / 스티커 / 라이브
+    /// 스티커. 셔터는 이 모습 그대로 뜯어낸다 (나중에 상세에서 변경 가능).
+    private var styleButton: some View {
         Menu {
-            Toggle(isOn: $liveStamps) {
-                Label("라이브 우표", systemImage: "livephoto")
+            ForEach(StampStyle.allCases) { s in
+                Button {
+                    captureStyleRaw = s.rawValue
+                    Haptics.tick()
+                } label: {
+                    Label(s.title, systemImage: s == captureStyle ? "checkmark" : s.icon)
+                }
             }
-            Text("켜면 찍은 순간의 움직임이 우표와\n메시지 스티커에 함께 담겨요")
+            Divider()
+            Text("찍는 순간의 모습이에요 — 찍은 뒤에도\n상세 페이지에서 언제든 바꿀 수 있어요")
         } label: {
-            Image(systemName: liveStamps ? "livephoto" : "livephoto.slash")
+            Image(systemName: captureStyle.icon)
                 .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(liveStamps ? Color(hex: 0xFFD60A) : .white)
+                .foregroundStyle(Color(hex: 0xFFD60A))
                 .frame(width: 44, height: 44)
                 .background(Circle().fill(.ultraThinMaterial))
                 .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
@@ -377,7 +382,18 @@ struct ContentView: View {
         guard flying == nil else { return }   // a stamp is already in flight
         PunchSound.play()                     // 펀칭! — ~1s punch sound
         Haptics.ratchet()                     // 드르륵 — the punch biting through
-        camera.capturePhoto(live: liveStamps && !stampCutout)
+        // Prime the live-burst geometry NOW: the full-quality photo can take
+        // a moment to develop, and the burst must not depend on it arriving.
+        liveStampID = nil
+        pendingLive = nil
+        pendingHotFrames = nil
+        pendingMaster = nil
+        liveWin = windowScreenRect(in: previewSize)
+        liveMirrored = camera.position == .front
+        liveCaptureStyle = captureStyle
+        // 라이브 모습은 무조건 움직임을 기록한다 — 설정 토글은 정지 모습으로
+        // 찍을 때도 (나중에 바꿀 수 있게) 마스터를 보관할지만 정한다
+        camera.capturePhoto(live: captureStyle.needsMotion || liveStamps)
     }
 
     private var collectionButton: some View {
@@ -432,10 +448,8 @@ struct ContentView: View {
         let win = windowScreenRect(in: previewSize)
         let mirrored = camera.position == .front
 
-        if stampCutout {
-            // "오려내기" — crop the framed region, then lift the subject off the
-            // main thread (Vision). Falls back to the perforated stamp if no
-            // subject is found.
+        if liveCaptureStyle == .sticker || liveCaptureStyle == .liveSticker {
+            // 스티커 모습: 창을 자른 뒤 피사체만 들어올린다 (실패 시 우표 폴백)
             guard let base = StampCompositor.makeStamp(from: raw, previewSize: previewSize,
                                                        windowRect: win, mirrored: mirrored,
                                                        clipToShape: false) else { return }
@@ -451,6 +465,7 @@ struct ContentView: View {
                 }
             }
         } else {
+            // 우표 모습: 톱니로 뜯어낸다
             guard let result = StampCompositor.makeStamp(from: raw, previewSize: previewSize,
                                                          windowRect: win, mirrored: mirrored) else { return }
             finishCapture(stamp: result.image, raw: raw, cropNorm: result.cropNorm,
@@ -461,10 +476,6 @@ struct ContentView: View {
     /// Runs the toss + file-into-collection sequence for a finished stamp image.
     private func finishCapture(stamp: UIImage, raw: UIImage, cropNorm: CGRect,
                                mirrored: Bool, win: CGRect) {
-        // remember the geometry for the live burst that's still rolling in
-        liveStampID = nil
-        liveWin = win
-        liveMirrored = mirrored
         // The cut stamp ejects up out of the slot, revealing a black punch-hole
         // beneath, then tosses onto the frame and fades.
         flyStart = win
@@ -492,6 +503,21 @@ struct ContentView: View {
             let newID = collection.add(stamp, location: here,
                                        original: raw, cropNorm: cropNorm, mirrored: mirrored)
             liveStampID = newID   // the live burst (if any) attaches to this stamp
+            collection.recordStyle(liveCaptureStyle, for: newID)
+            // the burst beat us here (the photo took its time developing) —
+            // attach what's already done now
+            if let master = pendingMaster {
+                pendingMaster = nil
+                collection.setMotionMaster(master.frames, delay: master.delay, for: newID)
+            }
+            if let hot = pendingHotFrames {
+                pendingHotFrames = nil
+                collection.setHotClip(hot.frames, delay: hot.delay, for: newID)
+            }
+            if let pending = pendingLive {
+                pendingLive = nil
+                collection.setLive(pending.data, sticker: pending.sticker, for: newID)
+            }
             // fill in the place name once reverse-geocoding returns
             if let here {
                 Task {
@@ -529,17 +555,60 @@ struct ContentView: View {
         let win = liveWin, mirrored = liveMirrored, size = previewSize
         guard win != .zero, size != .zero else { return }
         let targetID = liveStampID
-        DispatchQueue.global(qos: .utility).async {
-            let cropped = frames.compactMap {
+        let style = liveCaptureStyle
+        // per-frame delay that keeps the clip at its real-time speed
+        let delay = max(0.06, camera.capturedLiveSeconds / Double(max(frames.count - 1, 1)))
+        // userInitiated: this feeds the reveal card the user is looking at
+        DispatchQueue.global(qos: .userInitiated).async {
+            // the master material: plain window crops, no shape and no cutout —
+            // every style (우표/스티커, 정지/움직임) is re-derived from these,
+            // so the look can be changed at any time without loss
+            let master = frames.compactMap {
                 StampCompositor.makeStamp(from: $0, previewSize: size, windowRect: win,
-                                          mirrored: mirrored, scale: 1.0)?.image
+                                          mirrored: mirrored, clipToShape: false,
+                                          scale: 1.0)?.image
             }
-            guard cropped.count > 1, let data = APNG.encode(cropped, delay: 0.12) else { return }
+            guard master.count > 1 else { return }
+
+            // the chosen look's clip (still looks keep the master only, so
+            // they can start moving later with one tap in the detail page)
+            var cropped: [UIImage] = []
+            var frameDelay = delay
+            if style == .liveStamp {
+                cropped = master.map { CollectionStore.stampShaped($0) }
+            } else if style == .liveSticker {
+                let step = max(1, Int((Double(master.count) / 10.0).rounded(.up)))
+                cropped = stride(from: 0, to: master.count, by: step)
+                    .compactMap { SubjectLift.cutout(from: master[$0]) }
+                frameDelay = delay * Double(step)
+            }
+
+            // 1) hand the decoded frames straight to the UI — the card starts
+            //    moving NOW, not after the slow APNG encode below
+            let shown = cropped
             DispatchQueue.main.async {
-                // the id is set when the stamp is filed (≈0.6s) — frames land later,
-                // but guard anyway in case a faster follow-up shot reset it
-                guard let id = targetID ?? liveStampID else { return }
-                collection.setLive(data, for: id)
+                if let id = targetID ?? liveStampID {
+                    collection.setMotionMaster(master, delay: delay, for: id)
+                    if shown.count > 1 { collection.setHotClip(shown, delay: frameDelay, for: id) }
+                } else {
+                    pendingMaster = (master, delay)       // stamp not filed yet —
+                    if shown.count > 1 { pendingHotFrames = (shown, frameDelay) }   // attach on land
+                }
+            }
+            guard cropped.count > 1 else { return }
+
+            // 2) the durable copies: APNG for the app, a lean one for Messages
+            guard let data = APNG.encode(cropped, delay: frameDelay) else { return }
+            let sticker = APNG.encodeForMessages(cropped, delay: frameDelay)
+            DispatchQueue.main.async {
+                if let id = targetID ?? liveStampID {
+                    collection.setLive(data, sticker: sticker, for: id)
+                } else {
+                    // the stamp isn't filed yet (the full-quality photo is
+                    // still developing) — hold the clip; it attaches the
+                    // moment the stamp lands in the collection
+                    pendingLive = (data, sticker)
+                }
             }
         }
     }
@@ -651,7 +720,7 @@ struct ContentView: View {
     /// is granted this never appears again.
     private var permissionScreen: some View {
         VStack(spacing: 18) {
-            Text("📮 우표 카메라")
+            Text("📮 펀치")
                 .font(.system(size: 28, weight: .heavy, design: .rounded))
                 .foregroundStyle(.white)
             Text("우표를 펀칭하려면 카메라 권한이 필요해요.\n설정에서 카메라를 켜주세요.")
@@ -697,9 +766,12 @@ struct CollectionView: View {
     @State private var showNewExhibition = false
     @State private var newExhibitionName = ""
 
-    private enum Tab: String, CaseIterable { case albums = "우표첩", exhibitions = "컬렉션" }
+    private enum Tab: String, CaseIterable { case albums = "수집함", exhibitions = "컬렉션" }
     @State private var tab: Tab = .albums
     @State private var showPrintGuide = false
+    // 설정 (기어 메뉴): 카메라가 읽는 값과 같은 저장소
+    @AppStorage("liveStamps") private var liveStamps = true
+    @AppStorage("liveAutoPlay") private var liveAutoPlay = true
 
     private let columns = [GridItem(.adaptive(minimum: 150), spacing: 18)]
 
@@ -736,7 +808,7 @@ struct CollectionView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     Menu {
                         Button { newAlbumName = ""; showNewAlbum = true } label: {
-                            Label("새 우표첩…", systemImage: "book.closed")
+                            Label("새 수집함…", systemImage: "book.closed")
                         }
                         Button { newExhibitionName = ""; showNewExhibition = true } label: {
                             Label("새 컬렉션…", systemImage: "photo.artframe")
@@ -750,12 +822,27 @@ struct CollectionView: View {
                         Image(systemName: "printer")
                     }
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu {
+                        Toggle(isOn: $liveStamps) {
+                            Label("움직임 항상 보관", systemImage: "livephoto")
+                        }
+                        Text("정지 모습(우표·스티커)으로 찍어도 움직임을\n보관해 나중에 라이브로 바꿀 수 있어요")
+                        Divider()
+                        Toggle(isOn: $liveAutoPlay) {
+                            Label("움직임 자동 재생", systemImage: "play.circle")
+                        }
+                        Text("끄면 모아둔 라이브 우표가 어디서나\n정지 이미지로 보여요")
+                    } label: {
+                        Image(systemName: "gearshape")
+                    }
+                }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("닫기") { dismiss() }
                 }
             }
-            .alert("새 우표첩", isPresented: $showNewAlbum) {
-                TextField("우표첩 이름", text: $newAlbumName)
+            .alert("새 수집함", isPresented: $showNewAlbum) {
+                TextField("수집함 이름", text: $newAlbumName)
                 Button("취소", role: .cancel) { }
                 Button("만들기") { collection.createAlbum(newAlbumName) }
             }
@@ -793,7 +880,7 @@ struct CollectionView: View {
                     .foregroundStyle(.white.opacity(0.3))
                 Text("아직 컬렉션이 없어요")
                     .foregroundStyle(.white.opacity(0.7))
-                Text("우표첩에서 우표를 길게 눌러 컬렉션에 걸어보세요")
+                Text("수집함에서 우표를 길게 눌러 컬렉션에 걸어보세요")
                     .font(.system(size: 13))
                     .foregroundStyle(.white.opacity(0.45))
                     .multilineTextAlignment(.center)
@@ -940,6 +1027,35 @@ struct AlbumPageView: View {
     // Tapping a stamp opens its detail as a modal (not a pushed page).
     @State private var selectedStamp: CollectedStamp?
 
+    // 움직임 자동 재생이 꺼져 있으면 라이브 심볼도 숨긴다 (안 움직이는
+    // 이미지에 라이브 표식이 붙는 거짓말 방지)
+    @AppStorage("liveAutoPlay") private var liveAutoPlay = true
+
+    /// 모아보기 필터 — 저장한 우표들을 모습/상태별로 추려 본다.
+    private enum PocketFilter: String, CaseIterable, Identifiable {
+        case all, moving, stampLook, stickerLook, exhibited
+        var id: String { rawValue }
+        var title: String {
+            switch self {
+            case .all: return "전체"
+            case .moving: return "움직이는 우표"
+            case .stampLook: return "우표 모습"
+            case .stickerLook: return "스티커 모습"
+            case .exhibited: return "컬렉션에 건 우표"
+            }
+        }
+        var icon: String {
+            switch self {
+            case .all: return "square.grid.3x3"
+            case .moving: return "livephoto"
+            case .stampLook: return "square.dashed"
+            case .stickerLook: return "scissors"
+            case .exhibited: return "photo.artframe"
+            }
+        }
+    }
+    @State private var filter: PocketFilter = .all
+
     // Multi-select mode: tap stamps to tick them, then delete in one go.
     @State private var selecting = false
     @State private var selectedIDs = Set<String>()
@@ -960,12 +1076,40 @@ struct AlbumPageView: View {
 
     private let perPage = 12          // 3×4 pockets per leaf, like the collections
 
-    private var stamps: [CollectedStamp] { collection.stamps(in: album) }
+    private var stamps: [CollectedStamp] {
+        let base = collection.stamps(in: album)
+        switch filter {
+        case .all: return base
+        case .moving: return base.filter { collection.isPlayablyLive($0.id) }
+        case .stampLook:
+            return base.filter {
+                let s = collection.style(for: $0.id)
+                return s == .stamp || s == .liveStamp
+            }
+        case .stickerLook:
+            return base.filter {
+                let s = collection.style(for: $0.id)
+                return s == .sticker || s == .liveSticker
+            }
+        case .exhibited: return base.filter { collection.isExhibited($0.id) }
+        }
+    }
     /// Everything homed in this album, including stamps currently exhibited —
     /// what "delete album" would actually remove.
     private var homeCount: Int { collection.stamps.lazy.filter { $0.album == album }.count }
     private var deletePresented: Binding<Bool> {
         Binding(get: { deleteTarget != nil }, set: { if !$0 { deleteTarget = nil } })
+    }
+
+    /// Everything the curled leaves render from — when any of it changes the
+    /// visible page must be rebuilt (ids, selection, badges, looks).
+    private var leafContentKey: String {
+        let ids: String = stamps.map(\.id).joined(separator: ",")
+        let fresh: Int = stamps.filter { collection.isFresh($0) }.count
+        let live: Int = stamps.filter { collection.isPlayablyLive($0.id) }.count
+        let rev: Int = collection.liveRev.values.reduce(0, +)
+        return ids + "|sel:\(selecting)|ticks:\(selectedIDs.count)-\(selectedIDs.hashValue)"
+            + "|fresh:\(fresh)|live:\(live)|rev:\(rev)|auto:\(liveAutoPlay)|f:\(filter.rawValue)"
     }
 
     /// Oldest first, so the book fills from page 1 like a real album — new
@@ -979,14 +1123,27 @@ struct AlbumPageView: View {
       ZStack {
         VStack(spacing: 0) {
             if stamps.isEmpty {
-                emptyPage
+                if filter == .all {
+                    emptyPage
+                } else {
+                    VStack(spacing: 10) {
+                        Image(systemName: filter.icon)
+                            .font(.system(size: 38))
+                            .foregroundStyle(.white.opacity(0.3))
+                        Text("\(filter.title)에 해당하는 우표가 아직 없어요")
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
+                            .foregroundStyle(.white.opacity(0.6))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 140)
+                }
                 Spacer()
             } else {
                 // the book: leaves of 12, flipped with a horizontal swipe —
                 // no vertical scrolling anywhere. (collectorHeader is parked
                 // for now — bring it back when the tally earns its place.)
                 PageCurlView(pageCount: pageCount, currentPage: $currentPage,
-                             contentKey: stamps.map(\.id).joined(separator: ","),
+                             contentKey: leafContentKey,
                              interactive: armed == nil && dragging == nil) { pageIndex in
                     albumLeaf(pageIndex)
                 }
@@ -1019,6 +1176,23 @@ struct AlbumPageView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    ForEach(PocketFilter.allCases) { f in
+                        Button {
+                            filter = f
+                            currentPage = 0
+                            Haptics.tick()
+                        } label: {
+                            Label(f.title, systemImage: f == filter ? "checkmark" : f.icon)
+                        }
+                    }
+                } label: {
+                    Image(systemName: filter == .all
+                          ? "line.3.horizontal.decrease.circle"
+                          : "line.3.horizontal.decrease.circle.fill")
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
                 if !stamps.isEmpty {
                     Button(selecting ? "취소" : "선택") {
                         withAnimation(.easeOut(duration: 0.18)) {
@@ -1044,7 +1218,7 @@ struct AlbumPageView: View {
                     if collection.albums.count > 1 {
                         Divider()
                         Button(role: .destructive) { showDeleteAlbum = true } label: {
-                            Label("우표첩 삭제", systemImage: "trash")
+                            Label("수집함 삭제", systemImage: "trash")
                         }
                     }
                 } label: {
@@ -1055,7 +1229,16 @@ struct AlbumPageView: View {
         // multi-select: a tally + delete bar slides up over the bottom edge
         .safeAreaInset(edge: .bottom) {
             if selecting {
-                HStack {
+                let allIDs = Set(stamps.map(\.id))
+                let allPicked = !allIDs.isEmpty && selectedIDs.isSuperset(of: allIDs)
+                HStack(spacing: 16) {
+                    Button(allPicked ? "모두 해제" : "모두 선택") {
+                        Haptics.tick()
+                        selectedIDs = allPicked ? [] : allIDs
+                    }
+                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .tint(.white)
+                    Spacer()
                     Text(selectedIDs.isEmpty ? "우표를 골라주세요"
                                              : "\(selectedIDs.count)장 선택됨")
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
@@ -1086,11 +1269,11 @@ struct AlbumPageView: View {
             Button("취소", role: .cancel) { }
         }
         .alert("이름 변경", isPresented: $showRename) {
-            TextField("우표첩 이름", text: $renameText)
+            TextField("수집함 이름", text: $renameText)
             Button("취소", role: .cancel) { }
             Button("저장") { collection.renameAlbum(album, to: renameText) }
         }
-        .confirmationDialog("우표첩 '\(album)' 과(와) 안의 우표 \(homeCount)장을 모두 삭제할까요?",
+        .confirmationDialog("수집함 '\(album)' 과(와) 안의 우표 \(homeCount)장을 모두 삭제할까요?",
                             isPresented: $showDeleteAlbum, titleVisibility: .visible) {
             Button("삭제", role: .destructive) { collection.deleteAlbum(album); dismiss() }
             Button("취소", role: .cancel) { }
@@ -1127,7 +1310,7 @@ struct AlbumPageView: View {
             let start = pageIndex * perPage
             let slice = Array(stamps.dropFirst(start).prefix(perPage))
             let showEmptySlots = pageIndex == pageCount - 1
-                && collection.activeAlbum == album && !selecting
+                && collection.activeAlbum == album && !selecting && filter == .all
             let columns = Array(repeating: GridItem(.fixed(cellW), spacing: spacing), count: 3)
             ZStack {
                 LinearGradient(colors: [Color(hex: 0xFBFAF7), Color(hex: 0xECE8DF)],
@@ -1180,7 +1363,8 @@ struct AlbumPageView: View {
         let isArmed = armed?.id == stamp.id
         let isDragging = dragging?.id == stamp.id
         let isTicked = selectedIDs.contains(stamp.id)
-        let isNew = Date().timeIntervalSince(stamp.createdAt) < 86_400
+        let isNew = collection.isFresh(stamp)
+        let moves = liveAutoPlay && collection.isPlayablyLive(stamp.id)
         return pagePocket(stamp, gold: gold.contains(stamp.id), height: cell)
             .overlay(alignment: .topLeading) {
                 if isNew && !selecting {
@@ -1199,6 +1383,17 @@ struct AlbumPageView: View {
                         .foregroundStyle(.white, Color(hex: 0x4D6A9C))
                         .background(Circle().fill(.white).padding(1))
                         .offset(x: 4, y: 4)
+                }
+            }
+            // 살아 움직이는 우표의 표식
+            .overlay(alignment: .bottomLeading) {
+                if moves && !selecting {
+                    Image(systemName: "livephoto")
+                        .font(.system(size: 9, weight: .bold))
+                        .foregroundStyle(Color(hex: 0xFFD60A))
+                        .padding(3)
+                        .background(Circle().fill(.black.opacity(0.55)))
+                        .offset(x: -2, y: 3)
                 }
             }
             .opacity(isDragging ? 0.25 : (selecting && !isTicked ? 0.55 : 1))
@@ -1226,6 +1421,7 @@ struct AlbumPageView: View {
                     else { selectedIDs.insert(stamp.id) }
                 } else {
                     Haptics.select()
+                    collection.markSeen(stamp.id)   // NEW 배지는 한 번 보면 끝
                     selectedStamp = stamp
                 }
             }
@@ -1440,8 +1636,7 @@ struct AlbumPageView: View {
     /// perforated edge showing, with a soft shadow for a little lift.
     private func pagePocket(_ stamp: CollectedStamp, gold: Bool = false,
                             height: CGFloat = 78) -> some View {
-        Image(uiImage: stamp.image)
-            .resizable().scaledToFit()
+        LiveArt(collection: collection, stamp: stamp, maxPixel: 280)
             .frame(height: height)
             .frame(maxWidth: .infinity)
             .padding(gold ? 4 : 0)
@@ -1558,10 +1753,10 @@ struct AlbumPageView: View {
             Image(systemName: "book.closed")
                 .font(.system(size: 44))
                 .foregroundStyle(.white.opacity(0.35))
-            Text("아직 비어 있는 우표첩이에요")
+            Text("아직 비어 있는 수집함이에요")
                 .foregroundStyle(.white.opacity(0.7))
             if collection.activeAlbum == album {
-                Text("이 우표첩에 모으는 중 — 사진을 찍어 채워보세요")
+                Text("이 수집함에 모으는 중 — 사진을 찍어 채워보세요")
                     .font(.system(size: 13))
                     .foregroundStyle(.white.opacity(0.45))
             } else {
@@ -1575,6 +1770,114 @@ struct AlbumPageView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.top, 120)
+    }
+}
+
+/// "모습" — how this capture presents itself: 우표/라이브 우표/스티커/라이브
+/// 스티커. One tap re-dresses the stamp from its kept materials, anytime.
+struct StampStylePicker: View {
+    @ObservedObject var collection: CollectionStore
+    let stampID: String
+    /// dark = over the reveal's dimmed glass; light = on parchment.
+    var dark = true
+
+    var body: some View {
+        let current = collection.style(for: stampID)
+        let canMove = collection.canMove(stampID)
+        HStack(spacing: 8) {
+            ForEach(StampStyle.allCases) { style in
+                let selected = style == current
+                let enabled = !style.needsMotion || canMove
+                Button {
+                    guard !selected else { return }
+                    Haptics.tick()
+                    collection.applyStyle(style, for: stampID)
+                } label: {
+                    VStack(spacing: 4) {
+                        Image(systemName: style.icon)
+                            .font(.system(size: 15, weight: .semibold))
+                        Text(style.title)
+                            .font(.system(size: 9.5, weight: .semibold, design: .rounded))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                    }
+                    .foregroundStyle(chipInk(selected: selected))
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+                    .background(RoundedRectangle(cornerRadius: 11, style: .continuous)
+                        .fill(chipFill(selected: selected)))
+                    .overlay(RoundedRectangle(cornerRadius: 11, style: .continuous)
+                        .strokeBorder(chipStroke(selected: selected), lineWidth: selected ? 1.5 : 1))
+                }
+                .buttonStyle(.plain)
+                .disabled(!enabled)
+                .opacity(enabled ? 1 : 0.35)
+            }
+        }
+    }
+
+    private func chipInk(selected: Bool) -> Color {
+        if dark { return selected ? Color(hex: 0x3A2C12) : .white.opacity(0.75) }
+        return Color(hex: selected ? 0x42331E : 0x9A875E)
+    }
+    private func chipFill(selected: Bool) -> Color {
+        if dark { return selected ? Color(hex: 0xFFD966) : .white.opacity(0.10) }
+        return Color.white.opacity(selected ? 0.55 : 0.25)
+    }
+    private func chipStroke(selected: Bool) -> Color {
+        if dark { return selected ? Color(hex: 0xFFD966) : .white.opacity(0.22) }
+        return selected ? Color(hex: 0xB0863E) : Color(hex: 0xCBB585).opacity(0.6)
+    }
+}
+
+/// A stamp's artwork wherever it's shown: live stamps loop their clip (decoded
+/// once, optionally thumbnail-sized so a full grid of them stays light),
+/// stills stay still — and the "움직임 자동 재생" setting freezes them all.
+struct LiveArt: View {
+    let collection: CollectionStore
+    let stamp: CollectedStamp
+    var maxPixel: CGFloat? = 280
+    @AppStorage("liveAutoPlay") private var liveAutoPlay = true
+    @State private var clip: (frames: [UIImage], delay: Double)?
+    @State private var loadedRev = -1
+
+    var body: some View {
+        Group {
+            if liveAutoPlay, let clip {
+                LiveStampView(frames: clip.frames, delay: clip.delay)
+                    .aspectRatio(stamp.image.size.width / max(stamp.image.size.height, 1),
+                                 contentMode: .fit)
+            } else {
+                Image(uiImage: stamp.image)
+                    .resizable().scaledToFit()
+            }
+        }
+        .task(id: stamp.id) { await load() }
+        // a clip can finish encoding (or the stamp can change its look) while
+        // we're on screen — the store pings; reload when the revision moved
+        .onReceive(collection.objectWillChange) { _ in
+            Task { await load() }
+        }
+    }
+
+    private func load() async {
+        guard liveAutoPlay else { return }
+        let rev = collection.liveRev[stamp.id] ?? 0
+        guard clip == nil || rev != loadedRev else { return }
+        loadedRev = rev
+        // a just-captured clip is already decoded in memory — play it instantly
+        if let hot = collection.hotClips[stamp.id] {
+            clip = hot
+            return
+        }
+        guard collection.hasLive(stamp.id) else {
+            clip = nil   // this look doesn't move (or the clip was stripped)
+            return
+        }
+        let id = stamp.id, px = maxPixel, store = collection
+        clip = await Task.detached(priority: .utility) {
+            store.liveClip(for: id, maxPixel: px)
+        }.value
     }
 }
 
@@ -1936,16 +2239,20 @@ struct ExhibitionWallView: View {
                         Label("이름 변경", systemImage: "pencil")
                     }
                     Divider()
-                    Button { exportCard() } label: {
-                        Label("이미지로 공유", systemImage: "square.and.arrow.up")
-                    }
-                    .disabled(stamps.isEmpty)
-                    Button { exportStickers() } label: {
-                        Label("스티커로 만들기", systemImage: "square.on.square")
-                    }
-                    .disabled(stamps.isEmpty)
-                    Button { showPrintGuide = true } label: {
-                        Label("인쇄 가이드", systemImage: "printer")
+                    // 우표는 모으는 본체, 스티커는 우표를 "쓰는" 형태 — 모든
+                    // 출구는 이 한 지붕 아래에 모인다.
+                    Section("우표 쓰기") {
+                        Button { exportCard() } label: {
+                            Label("이미지로 공유", systemImage: "square.and.arrow.up")
+                        }
+                        .disabled(stamps.isEmpty)
+                        Button { exportStickers() } label: {
+                            Label("인쇄용 스티커 시트 (PDF)", systemImage: "printer")
+                        }
+                        .disabled(stamps.isEmpty)
+                        Button { showPrintGuide = true } label: {
+                            Label("인쇄 가이드", systemImage: "questionmark.circle")
+                        }
                     }
                     Divider()
                     Button(role: .destructive) { showDelete = true } label: {
@@ -1961,7 +2268,7 @@ struct ExhibitionWallView: View {
             Button("취소", role: .cancel) { }
             Button("저장") { collection.renameExhibition(exhibition, to: renameText) }
         }
-        .confirmationDialog("컬렉션 '\(exhibition)' 을(를) 삭제할까요? 걸려 있던 우표들은 원래 우표첩으로 돌아가요.",
+        .confirmationDialog("컬렉션 '\(exhibition)' 을(를) 삭제할까요? 걸려 있던 우표들은 원래 수집함으로 돌아가요.",
                             isPresented: $showDelete, titleVisibility: .visible) {
             Button("컬렉션 삭제", role: .destructive) { collection.deleteExhibition(exhibition); dismiss() }
             Button("취소", role: .cancel) { }
@@ -2035,7 +2342,7 @@ struct ExhibitionWallView: View {
         let renderer = ImageRenderer(content: card)
         renderer.scale = 1   // the card view is already laid out at 1080pt
         guard let image = renderer.uiImage else { return }
-        let caption = "내 우표 컬렉션 ‘\(exhibition)’ 📮 #StampCamera"
+        let caption = "내 우표 컬렉션 ‘\(exhibition)’ 📮 #펀치"
         sharePayload = SharePayload(items: [image, caption])
     }
 
@@ -2470,7 +2777,7 @@ struct ExhibitionWallView: View {
     @ViewBuilder
     private func wallMenu(for stamp: CollectedStamp) -> some View {
         Button { collection.returnToCollection(stamp.id) } label: {
-            Label("우표첩으로 되돌리기", systemImage: "arrow.uturn.backward")
+            Label("수집함으로 되돌리기", systemImage: "arrow.uturn.backward")
         }
         if collection.exhibitions.count > 1 {
             Menu {
@@ -2490,8 +2797,7 @@ struct ExhibitionWallView: View {
     /// A stamp hung on the wall — just the stamp itself, no frame or mat, so its
     /// own (soon customizable) border is what shows.
     private func framedArt(_ stamp: CollectedStamp) -> some View {
-        Image(uiImage: stamp.image)
-            .resizable().scaledToFit()
+        LiveArt(collection: collection, stamp: stamp, maxPixel: 360)
             .frame(maxWidth: .infinity)
             .shadow(color: .black.opacity(0.4), radius: 5, y: 4)
     }
@@ -2568,11 +2874,11 @@ struct Exhibition: Identifiable {
     }
 }
 
-/// A disk-backed stamp collection organised into albums ("우표첩"). New photos
+/// A disk-backed stamp collection organised into albums ("수집함"). New photos
 /// are filed into the *active* album, the way you'd press fresh stamps into the
 /// page of a collecting book.
 final class CollectionStore: ObservableObject {
-    static let defaultAlbum = "내 우표첩"
+    static let defaultAlbum = "내 수집함"
 
     @Published private(set) var stamps: [CollectedStamp] = []
     @Published private(set) var albums: [String] = []
@@ -2610,6 +2916,8 @@ final class CollectionStore: ObservableObject {
         var cropH: Double? = nil
         var mirrored: Bool? = nil
         var filter: String? = nil   // applied finish (StampInk raw value)
+        var clipDelay: Double? = nil   // per-frame delay of the motion master
+        var style: String? = nil       // chosen look (StampStyle raw value)
     }
     private func stampMetaURL(for id: String) -> URL {
         dir.appendingPathComponent(id).appendingPathExtension("json")
@@ -2624,6 +2932,218 @@ final class CollectionStore: ObservableObject {
         UIImage(contentsOfFile: originalURL(for: id).path)
     }
 
+    // MARK: - NEW badge (seen tracking)
+
+    /// Stamps the user has tapped in the book — their NEW badge is spent.
+    @Published private(set) var seenIDs: Set<String> =
+        Set(UserDefaults.standard.stringArray(forKey: "seenStampIDs") ?? [])
+
+    func markSeen(_ id: String) {
+        guard !seenIDs.contains(id) else { return }
+        seenIDs.insert(id)
+        // keep the list tiny: drop ids whose stamps are gone
+        seenIDs.formIntersection(Set(stamps.map(\.id)))
+        UserDefaults.standard.set(Array(seenIDs), forKey: "seenStampIDs")
+    }
+
+    /// NEW = younger than a day AND not yet tapped in the book.
+    func isFresh(_ stamp: CollectedStamp) -> Bool {
+        Date().timeIntervalSince(stamp.createdAt) < 86_400 && !seenIDs.contains(stamp.id)
+    }
+
+    // MARK: - Stamp styles (모습)
+
+    /// Clip revision per stamp — bumped whenever a stamp's look changes, so
+    /// every LiveArt on screen knows to reload its frames.
+    private(set) var liveRev: [String: Int] = [:]
+    private func bumpLiveRev(_ id: String) { liveRev[id, default: 0] += 1 }
+
+    func style(for id: String) -> StampStyle {
+        if let raw = existingMeta(for: id).style, let style = StampStyle(rawValue: raw) {
+            return style
+        }
+        return hasLive(id) ? .liveStamp : .stamp
+    }
+
+    /// Records the look a stamp was born with — capture already produced the
+    /// matching still/clip, so nothing needs re-deriving.
+    func recordStyle(_ style: StampStyle, for id: String) {
+        var meta = existingMeta(for: id)
+        meta.style = style.rawValue
+        writeStampMeta(meta, for: id)
+    }
+
+    /// Re-dresses a stamp in a new style, re-deriving the still and the clip
+    /// from the kept original photo and motion master. Heavy parts (Vision)
+    /// run off-main; the choice itself is recorded immediately.
+    func applyStyle(_ style: StampStyle, for id: String) {
+        guard stamps.contains(where: { $0.id == id }) else { return }
+        var meta = existingMeta(for: id)
+        meta.style = style.rawValue
+        writeStampMeta(meta, for: id)
+        objectWillChange.send()   // pickers highlight the choice right away
+
+        Task.detached(priority: .userInitiated) { [weak self] in
+            guard let self else { return }
+            // RESCUE FIRST: stamps from before the master system only carry
+            // their motion inside the live clip — back it up as the master
+            // before anything below could delete it, so motion is never lost
+            let material = self.motionMaterial(for: id)
+            // --- the still ---
+            let still: UIImage?
+            switch style {
+            case .stamp, .liveStamp:
+                still = self.printStamp(for: id, longSidePx: 900)
+            case .sticker, .liveSticker:
+                still = self.printStamp(for: id, longSidePx: 900, clipToShape: false)
+                    .flatMap { SubjectLift.cutout(from: $0) }
+            }
+            // --- the clip ---
+            var apng: Data?
+            var lean: Data?
+            var hot: (frames: [UIImage], delay: Double)?
+            if style.needsMotion, let master = material {
+                let styled: [UIImage]
+                var delay = master.delay
+                if style == .liveStamp {
+                    styled = master.frames.map { Self.stampShaped($0) }
+                } else {
+                    // Vision per frame is pricey — thin to ~10 and keep tempo
+                    let step = max(1, Int((Double(master.frames.count) / 10.0).rounded(.up)))
+                    styled = stride(from: 0, to: master.frames.count, by: step)
+                        .compactMap { SubjectLift.cutout(from: master.frames[$0]) }
+                    delay *= Double(step)
+                }
+                if styled.count > 1 {
+                    hot = (styled, delay)
+                    apng = APNG.encode(styled, delay: delay)
+                    lean = APNG.encodeForMessages(styled, delay: delay)
+                }
+            }
+            let newStill = still
+            let newAPNG = apng, newLean = lean, newHot = hot
+            await MainActor.run {
+                if let newStill { self.updateImage(newStill, for: id) }
+                if let newAPNG {
+                    self.setLive(newAPNG, sticker: newLean, for: id)
+                    if let newHot { self.setHotClip(newHot.frames, delay: newHot.delay, for: id) }
+                } else {
+                    self.removeLive(for: id)
+                }
+                self.bumpLiveRev(id)
+                self.objectWillChange.send()
+            }
+        }
+    }
+
+    private func existingMeta(for id: String) -> StampMeta {
+        if let data = try? Data(contentsOf: stampMetaURL(for: id)),
+           let meta = try? JSONDecoder().decode(StampMeta.self, from: data) {
+            return meta
+        }
+        let created = stamps.first { $0.id == id }?.createdAt ?? Date()
+        return StampMeta(createdAt: created, latitude: nil, longitude: nil, place: nil)
+    }
+
+    /// An image clipped to the perforated stamp outline (in its own rect).
+    static func stampShaped(_ image: UIImage) -> UIImage {
+        let size = image.size
+        let fmt = UIGraphicsImageRendererFormat()
+        fmt.scale = 1
+        fmt.opaque = false
+        return UIGraphicsImageRenderer(size: size, format: fmt).image { ctx in
+            ctx.cgContext.addPath(
+                stampBezierPath(in: CGRect(origin: .zero, size: size)).cgPath)
+            ctx.cgContext.clip()
+            image.draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
+
+    // MARK: - Motion master (style-agnostic raw frames)
+
+    private func framesDir(for id: String) -> URL {
+        dir.appendingPathComponent("\(id).frames", isDirectory: true)
+    }
+    func hasMotionMaster(_ id: String) -> Bool {
+        FileManager.default.fileExists(atPath: framesDir(for: id).path)
+    }
+
+    /// Keeps the plain window-cropped frames forever, so any style can be
+    /// derived later. JPEG ~85%: a clip costs roughly a megabyte.
+    func setMotionMaster(_ frames: [UIImage], delay: Double, for id: String) {
+        guard frames.count > 1 else { return }
+        let d = framesDir(for: id)
+        try? FileManager.default.createDirectory(at: d, withIntermediateDirectories: true)
+        for (i, f) in frames.enumerated() {
+            if let data = f.jpegData(compressionQuality: 0.85) {
+                try? data.write(to: d.appendingPathComponent(String(format: "%02d.jpg", i)))
+            }
+        }
+        var meta = existingMeta(for: id)
+        meta.clipDelay = delay
+        writeStampMeta(meta, for: id)
+    }
+
+    func motionMaster(for id: String) -> (frames: [UIImage], delay: Double)? {
+        let d = framesDir(for: id)
+        guard let names = try? FileManager.default.contentsOfDirectory(atPath: d.path),
+              !names.isEmpty else { return nil }
+        let frames = names.sorted()
+            .compactMap { UIImage(contentsOfFile: d.appendingPathComponent($0).path) }
+        guard frames.count > 1 else { return nil }
+        let delay = existingMeta(for: id).clipDelay ?? 0.12
+        return (frames, delay)
+    }
+
+    /// Motion material for re-styling: the kept master, or — for stamps from
+    /// before the master system — the decoded live clip, which is immediately
+    /// backed up AS the master so it can never be lost to a style switch.
+    private func motionMaterial(for id: String) -> (frames: [UIImage], delay: Double)? {
+        if let master = motionMaster(for: id) { return master }
+        guard let clip = liveClip(for: id) else { return nil }
+        setMotionMaster(clip.frames, delay: clip.delay, for: id)
+        return clip
+    }
+
+    /// Whether this stamp has any motion source at all (master or clip) —
+    /// i.e. whether the live looks are available to it.
+    func canMove(_ id: String) -> Bool {
+        hasMotionMaster(id) || hasLive(id) || hotClips[id] != nil
+    }
+
+    // cheap per-stamp validity cache, keyed by the clip revision
+    private var playableCache: [String: (rev: Int, ok: Bool)] = [:]
+
+    /// Whether the current look ACTUALLY animates: a live file must exist and
+    /// hold 2+ frames — a corrupt or single-frame clip is just a still wearing
+    /// a costume, and badges must not lie about it. Header-only parse, cached.
+    func isPlayablyLive(_ id: String) -> Bool {
+        if let hot = hotClips[id] { return hot.frames.count > 1 }
+        let rev = liveRev[id] ?? 0
+        if let cached = playableCache[id], cached.rev == rev { return cached.ok }
+        var ok = false
+        if let data = try? Data(contentsOf: liveURL(for: id)),
+           let src = CGImageSourceCreateWithData(data as CFData, nil) {
+            ok = CGImageSourceGetCount(src) > 1
+        }
+        playableCache[id] = (rev, ok)
+        return ok
+    }
+
+    /// Strips the moving look: the in-app clip and hot frames go away and the
+    /// shared sticker falls back to the (high-res) still.
+    func removeLive(for id: String) {
+        try? FileManager.default.removeItem(at: liveURL(for: id))
+        hotClips.removeValue(forKey: id)
+        bumpLiveRev(id)
+        if let base = FileManager.default
+                .containerURL(forSecurityApplicationGroupIdentifier: Self.stickerGroupID),
+           let still = stamps.first(where: { $0.id == id })?.image,
+           let data = stickerStillData(id: id, fallback: still) {
+            try? data.write(to: base.appendingPathComponent("Stickers/\(id).png"))
+        }
+    }
+
     // MARK: - Live stamps (a short APNG clip that makes the stamp move)
 
     private func liveURL(for id: String) -> URL {
@@ -2632,20 +3152,35 @@ final class CollectionStore: ObservableObject {
     func hasLive(_ id: String) -> Bool {
         FileManager.default.fileExists(atPath: liveURL(for: id).path)
     }
-    /// Attach the animated clip to a stamp and push it to the sticker folder so
-    /// the iMessage sticker animates too.
-    func setLive(_ apng: Data, for id: String) {
+    /// The freshest clip's decoded frames, published the instant the burst is
+    /// cropped — before the APNG has even finished encoding — so the reveal
+    /// card starts moving right away. Holds only the latest capture; disk is
+    /// the durable copy everyone else reads.
+    private(set) var hotClips: [String: (frames: [UIImage], delay: Double)] = [:]
+    func setHotClip(_ frames: [UIImage], delay: Double, for id: String) {
+        hotClips = [id: (frames, delay)]
+        objectWillChange.send()
+    }
+
+    /// Attach the animated clip to a stamp; `sticker` is the lean (≤500 KB)
+    /// re-encode for the iMessage tray — Messages animates it in place of the
+    /// still. When nil (couldn't fit the budget), the still sticker stays.
+    func setLive(_ apng: Data, sticker: Data?, for id: String) {
         guard stamps.contains(where: { $0.id == id }) else { return }
         try? apng.write(to: liveURL(for: id))
-        if let base = FileManager.default
+        bumpLiveRev(id)
+        if let sticker,
+           let base = FileManager.default
                 .containerURL(forSecurityApplicationGroupIdentifier: Self.stickerGroupID) {
             let dst = base.appendingPathComponent("Stickers/\(id).png")
-            try? apng.write(to: dst)   // overwrite the still — APNG animates in Messages
+            try? sticker.write(to: dst)
         }
         objectWillChange.send()
     }
     /// Decoded frames (with per-frame delay) for in-app playback, or nil.
-    func liveClip(for id: String) -> (frames: [UIImage], delay: Double)? {
+    /// `maxPixel` decodes thumbnail-sized frames — use it anywhere many clips
+    /// play at once (the album grid) so memory stays sane.
+    func liveClip(for id: String, maxPixel: CGFloat? = nil) -> (frames: [UIImage], delay: Double)? {
         guard let data = try? Data(contentsOf: liveURL(for: id)),
               let src = CGImageSourceCreateWithData(data as CFData, nil) else { return nil }
         let n = CGImageSourceGetCount(src)
@@ -2653,6 +3188,8 @@ final class CollectionStore: ObservableObject {
         var frames: [UIImage] = []
         var delay = 0.12
         for i in 0..<n {
+            // decode the full frame, then downscale by hand — the thumbnail
+            // API can't be trusted to honour the frame index on animated PNGs
             guard let cg = CGImageSourceCreateImageAtIndex(src, i, nil) else { continue }
             if i == 0,
                let props = CGImageSourceCopyPropertiesAtIndex(src, 0, nil) as? [CFString: Any],
@@ -2660,7 +3197,21 @@ final class CollectionStore: ObservableObject {
                let d = png[kCGImagePropertyAPNGDelayTime] as? Double, d > 0 {
                 delay = d
             }
-            frames.append(UIImage(cgImage: cg))
+            let full = UIImage(cgImage: cg)
+            if let maxPixel,
+               max(full.size.width, full.size.height) > maxPixel {
+                let s = maxPixel / max(full.size.width, full.size.height)
+                let size = CGSize(width: (full.size.width * s).rounded(),
+                                  height: (full.size.height * s).rounded())
+                let fmt = UIGraphicsImageRendererFormat()
+                fmt.scale = 1
+                fmt.opaque = false
+                frames.append(UIGraphicsImageRenderer(size: size, format: fmt).image { _ in
+                    full.draw(in: CGRect(origin: .zero, size: size))
+                })
+            } else {
+                frames.append(full)
+            }
         }
         return frames.count > 1 ? (frames, delay) : nil
     }
@@ -2678,7 +3229,8 @@ final class CollectionStore: ObservableObject {
     /// A print-resolution copy of a stamp, re-cropped from the full original
     /// photo and clipped to the perforation shape (`longSidePx` on the long
     /// edge). Falls back to the stored screen-size PNG when no original was kept.
-    func printStamp(for id: String, longSidePx: CGFloat) -> UIImage? {
+    func printStamp(for id: String, longSidePx: CGFloat,
+                    clipToShape: Bool = true) -> UIImage? {
         guard let original = originalImage(for: id),
               let info = cropInfo(for: id),
               let cg = original.normalizedUp().cgImage else {
@@ -2700,8 +3252,10 @@ final class CollectionStore: ObservableObject {
         return UIGraphicsImageRenderer(size: outSize, format: fmt).image { ctx in
             let c = ctx.cgContext
             let r = CGRect(origin: .zero, size: outSize)
-            c.addPath(stampBezierPath(in: r).cgPath)
-            c.clip()
+            if clipToShape {
+                c.addPath(stampBezierPath(in: r).cgPath)
+                c.clip()
+            }
             if info.mirrored {
                 c.translateBy(x: outSize.width, y: 0)
                 c.scaleBy(x: -1, y: 1)
@@ -2736,24 +3290,75 @@ final class CollectionStore: ObservableObject {
         guard let base = FileManager.default
                 .containerURL(forSecurityApplicationGroupIdentifier: Self.stickerGroupID) else { return }
         let snapshot = stamps.map { ($0.id, $0.image, liveURL(for: $0.id)) }
-        DispatchQueue.global(qos: .utility).async {
+        // 컬렉션 → 스티커 팩: 이름과 파일 목록을 함께 내보내 메시지 서랍이
+        // 컬렉션별로 보여줄 수 있게 한다
+        let packs: [[String: Any]] = exhibitions.compactMap { ex in
+            let files = stampsInExhibition(ex.name).map { "\($0.id).png" }
+            return files.isEmpty ? nil : ["name": ex.name, "files": files]
+        }
+        DispatchQueue.global(qos: .utility).async { [weak self] in
+            guard let self else { return }
             let dir = base.appendingPathComponent("Stickers", isDirectory: true)
             try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+            if let data = try? JSONSerialization.data(withJSONObject: ["collections": packs]) {
+                try? data.write(to: dir.appendingPathComponent("collections.json"))
+            }
+
+            // one-time migration: stickers used to be written at screen size;
+            // wipe once so everything regenerates at high resolution below
+            let marker = dir.appendingPathComponent(".v3-bigstickers")
+            if !FileManager.default.fileExists(atPath: marker.path) {
+                for f in (try? FileManager.default.contentsOfDirectory(at: dir,
+                            includingPropertiesForKeys: nil)) ?? []
+                    where f.pathExtension.lowercased() == "png" {
+                    try? FileManager.default.removeItem(at: f)
+                }
+                FileManager.default.createFile(atPath: marker.path, contents: nil)
+            }
+
             let wanted = Set(snapshot.map { "\($0.0).png" })
             for (id, image, live) in snapshot {
                 let url = dir.appendingPathComponent("\(id).png")
                 guard !FileManager.default.fileExists(atPath: url.path) else { continue }
-                // prefer the animated clip (the sticker moves in Messages)
-                if let data = (try? Data(contentsOf: live)) ?? image.pngData() {
+                // prefer the animated clip (the sticker moves in Messages) —
+                // but never ship one over Messages' ~500 KB cap, or it
+                // silently vanishes from the tray
+                if let liveData = try? Data(contentsOf: live) {
+                    if liveData.count <= 480_000 {
+                        try? liveData.write(to: url)
+                        continue
+                    }
+                    if let clip = self.liveClip(for: id),
+                       let lean = APNG.encodeForMessages(clip.frames, delay: clip.delay) {
+                        try? lean.write(to: url)
+                        continue
+                    }
+                }
+                if let data = self.stickerStillData(id: id, fallback: image) {
                     try? data.write(to: url)
                 }
             }
-            // drop stickers whose stamp is gone
+            // drop stickers whose stamp is gone (PNGs only — keep the marker)
             for f in (try? FileManager.default.contentsOfDirectory(at: dir,
-                        includingPropertiesForKeys: nil)) ?? [] where !wanted.contains(f.lastPathComponent) {
+                        includingPropertiesForKeys: nil)) ?? []
+                where f.pathExtension.lowercased() == "png"
+                    && !wanted.contains(f.lastPathComponent) {
                 try? FileManager.default.removeItem(at: f)
             }
         }
+    }
+
+    /// A still sticker at the largest size that fits Messages' ~500 KB cap:
+    /// re-rendered from the kept original (≈2× the screen-size stamp),
+    /// stepping down until the budget fits.
+    private func stickerStillData(id: String, fallback: UIImage) -> Data? {
+        for px: CGFloat in [1024, 800, 640] {
+            if let hi = printStamp(for: id, longSidePx: px),
+               let data = hi.pngData(), data.count <= 480_000 {
+                return data
+            }
+        }
+        return fallback.pngData()
     }
 
     private func captionURL(for id: String) -> URL {
@@ -2826,6 +3431,7 @@ final class CollectionStore: ObservableObject {
         }
     }
     private func saveExhibitions() {
+        defer { syncStickers() }   // keep the Messages pack manifest in step
         let file = ExhibitionsFile(exhibitions: exhibitions.map {
             ExhibitionRecord(name: $0.name, stampIDs: nil, slots: nil,
                              placements: $0.placements, background: $0.background, grid: $0.grid)
@@ -2888,16 +3494,18 @@ final class CollectionStore: ObservableObject {
     // MARK: - Queries
 
     /// Stamps still in the collection (not hung in any exhibition).
-    var collectedStamps: [CollectedStamp] { stamps.filter { !exhibitedIDCache.contains($0.id) } }
+    /// 컬렉션은 큐레이션(참조)일 뿐 — 우표는 항상 수집함에 그대로 남는다.
+    var collectedStamps: [CollectedStamp] { stamps }
 
     func isExhibited(_ id: String) -> Bool { exhibitedIDCache.contains(id) }
 
-    /// Stamps in a collecting album — excludes any currently hung in an exhibition.
+    /// Stamps in a collecting album. Hanging one in a collection does NOT
+    /// remove it here — a collection is a playlist, not a new home.
     func stamps(in album: String) -> [CollectedStamp] {
-        stamps.filter { $0.album == album && !exhibitedIDCache.contains($0.id) }
+        stamps.filter { $0.album == album }
     }
     func count(in album: String) -> Int {
-        stamps.reduce(0) { $0 + ($1.album == album && !exhibitedIDCache.contains($1.id) ? 1 : 0) }
+        stamps.reduce(0) { $0 + ($1.album == album ? 1 : 0) }
     }
 
     /// Stamps hung in an exhibition, in their stored display order.
@@ -3002,6 +3610,9 @@ final class CollectionStore: ObservableObject {
         try? FileManager.default.removeItem(at: albumURL(for: id))
         try? FileManager.default.removeItem(at: stampMetaURL(for: id))
         try? FileManager.default.removeItem(at: originalURL(for: id))
+        try? FileManager.default.removeItem(at: liveURL(for: id))
+        try? FileManager.default.removeItem(at: framesDir(for: id))
+        hotClips.removeValue(forKey: id)
         try? FileManager.default.removeItem(at: liveURL(for: id))
         stamps.removeAll { $0.id == id }
         // also pull it off any exhibition wall
@@ -3191,29 +3802,70 @@ enum APNG {
         }
         return CGImageDestinationFinalize(dest) ? data as Data : nil
     }
+
+    /// A lean variant for iMessage: Messages rejects sticker files over
+    /// ~500 KB (an oversized one doesn't just stay still — it vanishes from
+    /// the tray), AND it renders stickers at pixels÷3 — so shrinking pixels
+    /// makes thumbnail-tiny stickers. Spend the budget on SIZE first and give
+    /// up frames instead; nil means "keep the still sticker".
+    static func encodeForMessages(_ frames: [UIImage], delay: Double) -> Data? {
+        let attempts: [(px: CGFloat, maxFrames: Int)] = [
+            (480, 6), (408, 6), (408, 5), (360, 5), (320, 4), (280, 4),
+        ]
+        for attempt in attempts {
+            let kept = thin(frames, to: attempt.maxFrames)
+            guard kept.count > 1 else { continue }
+            // stretch the per-frame delay so the clip keeps its real-time span
+            let keptDelay = delay * Double(frames.count) / Double(kept.count)
+            let small = kept.map { shrunk($0, maxPixel: attempt.px) }
+            if let data = encode(small, delay: keptDelay), data.count <= 480_000 {
+                return data
+            }
+        }
+        return nil
+    }
+
+    /// Evenly samples `frames` down to at most `maxCount`.
+    private static func thin(_ frames: [UIImage], to maxCount: Int) -> [UIImage] {
+        guard frames.count > maxCount else { return frames }
+        let step = Double(frames.count) / Double(maxCount)
+        return (0..<maxCount).map { frames[Int(Double($0) * step)] }
+    }
+
+    private static func shrunk(_ img: UIImage, maxPixel: CGFloat) -> UIImage {
+        let s = min(1, maxPixel / max(img.size.width, img.size.height))
+        guard s < 1 else { return img }
+        let size = CGSize(width: (img.size.width * s).rounded(),
+                          height: (img.size.height * s).rounded())
+        let fmt = UIGraphicsImageRendererFormat()
+        fmt.scale = 1
+        fmt.opaque = false
+        return UIGraphicsImageRenderer(size: size, format: fmt).image { _ in
+            img.draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
 }
 
-/// Plays a live stamp's frames in a loop (UIImageView does the timing).
-struct LiveStampView: UIViewRepresentable {
+/// Plays a live stamp's frames in a loop. Driven by TimelineView, so playback
+/// is plain SwiftUI state — UIImageView's animation can silently stall when
+/// re-hosted inside masks/animated containers; this can't.
+struct LiveStampView: View {
     let frames: [UIImage]
     let delay: Double
 
-    func makeUIView(context: Context) -> UIImageView {
-        let v = UIImageView()
-        v.contentMode = .scaleAspectFit
-        v.animationImages = frames
-        v.animationDuration = delay * Double(frames.count)
-        v.startAnimating()
-        v.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        v.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
-        return v
-    }
-    func updateUIView(_ v: UIImageView, context: Context) {
-        if v.animationImages?.count != frames.count {
-            v.animationImages = frames
-            v.animationDuration = delay * Double(frames.count)
-            v.startAnimating()
+    var body: some View {
+        TimelineView(.animation(minimumInterval: max(delay, 1.0 / 30))) { tl in
+            let t = tl.date.timeIntervalSinceReferenceDate
+            Image(uiImage: frames[frameIndex(at: t)])
+                .resizable()
+                .scaledToFit()
         }
+    }
+
+    /// Which frame is on show at time `t` — pure math, unit-testable.
+    func frameIndex(at t: TimeInterval) -> Int {
+        guard !frames.isEmpty else { return 0 }
+        return Int(t / max(delay, 0.01)) % frames.count
     }
 }
 
@@ -3453,8 +4105,9 @@ struct CollectionCardView: View {
                 HStack(spacing: 10) {
                     Image(systemName: "mail.stack.fill")
                         .font(.system(size: 30))
-                    Text("StampCamera")
+                    Text("PUNCH")
                         .font(.system(size: 30, weight: .heavy, design: .rounded))
+                        .tracking(4)
                 }
                 .foregroundStyle(ink.opacity(0.65))
             }
@@ -3495,9 +4148,9 @@ struct PrintGuideView: View {
                     step(2, "꾸미기", "paintbrush.pointed.fill",
                          "갓 나온 우표 카드에 한 마디를 적고, ‘자세히 꾸미기’에서 세피아·흑백 같은 잉크를 입혀보세요. 잉크는 언제든 바꿔도 화질이 상하지 않아요.")
                     step(3, "컬렉션에 걸기", "photo.artframe",
-                         "우표첩에서 우표를 길게 눌러 들어올린 뒤 컬렉션에 걸어요. 스티커 시트는 컬렉션 단위로 만들어져요 — 인쇄하고 싶은 우표들로 컬렉션을 꾸리면 준비 끝.")
-                    step(4, "스티커 PDF 만들기", "square.on.square",
-                         "컬렉션 벽 오른쪽 위 ⋯ 메뉴 → ‘스티커로 만들기’. 인쇄소에 바로 건넬 수 있는 300dpi PDF가 만들어져요. ‘파일에 저장’으로 보관하거나 AirDrop·메일로 보내세요.")
+                         "수집함에서 우표를 길게 눌러 들어올린 뒤 컬렉션에 걸어요. 스티커 시트는 컬렉션 단위로 만들어져요 — 인쇄하고 싶은 우표들로 컬렉션을 꾸리면 준비 끝.")
+                    step(4, "인쇄용 시트 만들기", "square.on.square",
+                         "컬렉션 벽 오른쪽 위 ⋯ 메뉴 → ‘우표 쓰기’ → ‘인쇄용 스티커 시트 (PDF)’. 인쇄소에 바로 건넬 수 있는 300dpi PDF가 만들어져요. ‘파일에 저장’으로 보관하거나 AirDrop·메일로 보내세요.")
                     step(5, "인쇄하기", "printer.fill",
                          "집에서: A4·레터 라벨/스티커 용지(무광 추천)에 ‘실제 크기(100%)’로 인쇄하세요 — ‘용지에 맞춤’은 꼭 끄기.\n인쇄소·스티커 업체: PDF를 그대로 전달하면 돼요. 마젠타 점선이 칼선(kiss-cut), 모서리 표시가 재단 기준이에요.")
                     step(6, "오려서 붙이기", "scissors",
@@ -3564,6 +4217,7 @@ struct PrintGuideView: View {
             VStack(alignment: .leading, spacing: 6) {
                 Text("• 칼선이 우표 톱니 모양 그대로라, 떼어내면 진짜 우표처럼 생긴 스티커가 돼요(약 5cm, 한 페이지 12장).")
                 Text("• 원본 사진을 간직한 우표는 인쇄 때 300dpi로 새로 구워져 또렷하게 나와요.")
+                Text("• 종이 말고 디지털로도: 모든 우표는 자동으로 iMessage 스티커가 돼요 — 메시지 앱 스티커 서랍에서 바로 붙이고, 라이브 우표는 움직이며 붙어요.")
                 Text("• 진짜 우편요금 우표는 아니에요 — 편지 장식은 마음껏, 우표 자리는 진짜 우표에게 양보!")
             }
             .font(.system(size: 13, weight: .regular, design: .rounded))
@@ -3898,6 +4552,13 @@ struct CaptureRevealView: View {
                         .opacity(flipped ? 0 : 1)
                         .animation(.easeOut(duration: 0.3), value: flipped)
                         .chromeReveal(entered: entered, leaving: leaving || discarding, delay: 0.32)
+
+                    #if DEBUG
+                    // 진단용 (디버그 빌드 전용): 클립이 어디까지 왔는지
+                    Text(debugMotionStatus)
+                        .font(.system(size: 10, weight: .semibold, design: .monospaced))
+                        .foregroundStyle(.yellow.opacity(0.8))
+                    #endif
                     captionPill
                         .chromeReveal(entered: entered, leaving: leaving || discarding, delay: 0.40)
 
@@ -3918,14 +4579,18 @@ struct CaptureRevealView: View {
         }
     }
 
-    /// The stamp as a hovering, spinnable card: horizontal drags spin it right
-    /// round (past 90° the postmarked paper back shows), vertical drags tilt
-    /// it, and a holographic sheen loops across the front while it idles.
+    /// The stamp as a spinnable card: horizontal drags spin it right round
+    /// (past 90° the postmarked paper back shows), vertical drags tilt it,
+    /// and a holographic sheen loops across the front while it idles. A
+    /// still stamp hovers gently; a live stamp sits rock-still and lets its
+    /// own captured motion do the moving.
     private func holoCard(center: CGPoint, exit: CGPoint) -> some View {
-        TimelineView(.animation(minimumInterval: 1.0 / 50)) { tl in
+        let hasMotion = collection.hotClips[stampID] != nil || collection.hasLive(stampID)
+        return TimelineView(.animation(minimumInterval: 1.0 / 50)) { tl in
             let t = tl.date.timeIntervalSinceReferenceDate
-            // idle: a slow hover, and a sheen streak sweeping across every ~3.4s
-            let hover: CGFloat = entered && !dragging && !leaving ? sin(t * 1.7) * 5 : 0
+            // idle: a slow hover (stills only), and a sheen streak every ~3.4s
+            let hover: CGFloat = entered && !dragging && !leaving && !hasMotion
+                ? sin(t * 1.7) * 5 : 0
             let phase = t.truncatingRemainder(dividingBy: 3.4) / 3.4
             let idleBand: CGFloat = phase < 0.4 ? CGFloat(phase / 0.4) * 2.4 - 1.2 : 1.8
             let band: CGFloat = dragging ? drag.width / 70 : idleBand
@@ -3961,12 +4626,23 @@ struct CaptureRevealView: View {
         .gesture(tilt)
     }
 
-    /// The face of the stamp with its holographic film.
+    /// The face of the stamp with its holographic film. A live stamp starts
+    /// moving the moment its clip finishes encoding (a beat into the reveal).
+    /// Only the SHINE is masked to the still's silhouette — the art carries
+    /// its own alpha, and a moving cutout subject must not be clipped by the
+    /// frozen pose of the still.
     private func cardFront(_ img: UIImage, band: CGFloat) -> some View {
-        Image(uiImage: img)
-            .resizable().scaledToFit()
-            .overlay { shine(band: band) }
-            .mask { Image(uiImage: img).resizable().scaledToFit() }
+        Group {
+            if let stamp {
+                LiveArt(collection: collection, stamp: stamp, maxPixel: 700)
+            } else {
+                Image(uiImage: img).resizable().scaledToFit()
+            }
+        }
+        .overlay {
+            shine(band: band)
+                .mask { Image(uiImage: img).resizable().scaledToFit() }
+        }
     }
 
     /// The back of the stamp: bare paper in the same perforated silhouette,
@@ -3979,9 +4655,9 @@ struct CaptureRevealView: View {
             .foregroundStyle(Color(hex: 0xF1EBDD))
             .overlay {
                 VStack(spacing: 12) {
-                    Text("STAMP CAMERA")
+                    Text("PUNCH")
                         .font(.system(size: 9.5, weight: .heavy, design: .rounded))
-                        .tracking(2.6)
+                        .tracking(3.2)
                         .foregroundStyle(ink.opacity(0.5))
                     postmark(ink: ink)
                     if let stamp, !stamp.place.isEmpty {
@@ -4090,7 +4766,7 @@ struct CaptureRevealView: View {
     private var actions: some View {
         VStack(spacing: 10) {
             Button(action: tuckAway) {
-                Text("우표첩에 담기")
+                Text("수집함에 담기")
                     .font(.system(size: 17, weight: .heavy, design: .rounded))
                     .foregroundStyle(Color(hex: 0x3A2C12))
                     .frame(maxWidth: .infinity)
@@ -4118,6 +4794,16 @@ struct CaptureRevealView: View {
             .labelStyle(.titleAndIcon)
         }
     }
+
+    #if DEBUG
+    /// Where the live clip is in its journey — pinpoints capture vs playback
+    /// failures on device without a console.
+    private var debugMotionStatus: String {
+        if let hot = collection.hotClips[stampID] { return "clip: hot \(hot.frames.count)f" }
+        if collection.hasLive(stampID) { return "clip: disk" }
+        return "clip: none"
+    }
+    #endif
 
     /// Save the caption, fling the card into the bin, then hand off.
     private func tuckAway() {
@@ -4306,15 +4992,9 @@ struct StampRevealView: View {
                 if settled, stampOnly, let stamp {
                     Color.black.opacity(0.92).ignoresSafeArea()
                         .transition(.opacity)
-                    Group {
-                        if let clip = collection.liveClip(for: stampID) {
-                            LiveStampView(frames: clip.frames, delay: clip.delay)
-                        } else {
-                            Image(uiImage: stamp.image).resizable().scaledToFit()
-                        }
-                    }
-                    .frame(width: min(geo.size.width, geo.size.height) * 0.74,
-                           height: min(geo.size.width, geo.size.height) * 0.74)
+                    LiveArt(collection: collection, stamp: stamp, maxPixel: nil)
+                        .frame(width: min(geo.size.width, geo.size.height) * 0.74,
+                               height: min(geo.size.width, geo.size.height) * 0.74)
                     .shadow(color: .black.opacity(0.6), radius: 24, y: 14)
                     .position(x: geo.size.width / 2, y: geo.size.height / 2)
                     .transition(.scale(scale: 0.85).combined(with: .opacity))
@@ -4440,6 +5120,34 @@ struct StampRevealView: View {
     }
 }
 
+/// 한 장의 캡처가 입을 수 있는 네 가지 모습. 원본 사진과 모션 마스터를
+/// 영구 보관하므로 언제든 무손실로 갈아입을 수 있다.
+enum StampStyle: String, CaseIterable, Identifiable {
+    case stamp        // 우표 (정지, 톱니)
+    case liveStamp    // 움직이는 우표
+    case sticker      // 스티커 (배경 없음, 정지)
+    case liveSticker  // 움직이는 스티커 (배경 없음)
+
+    var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .stamp: return "우표"
+        case .liveStamp: return "라이브 우표"
+        case .sticker: return "스티커"
+        case .liveSticker: return "라이브 스티커"
+        }
+    }
+    var icon: String {
+        switch self {
+        case .stamp: return "square.dashed"
+        case .liveStamp: return "livephoto"
+        case .sticker: return "scissors"
+        case .liveSticker: return "wand.and.stars"
+        }
+    }
+    var needsMotion: Bool { self == .liveStamp || self == .liveSticker }
+}
+
 /// The decorating finishes ("inks") a stamp can take — each is applied to a
 /// fresh re-render of the original photo, so switching is always lossless.
 enum StampInk: String, CaseIterable, Identifiable {
@@ -4502,8 +5210,7 @@ struct StampDetailView: View {
             ScrollView {
               VStack(spacing: 16) {
                 if let stamp {
-                    Image(uiImage: stamp.image)
-                        .resizable().scaledToFit()
+                    LiveArt(collection: collection, stamp: stamp, maxPixel: nil)
                         .frame(maxHeight: 190)
                         .shadow(color: .black.opacity(0.35), radius: 12, y: 8)
                         // press & hold to see the whole photo this stamp was cut from
@@ -4518,7 +5225,7 @@ struct StampDetailView: View {
                             .foregroundStyle(Color(hex: 0x8C7A52))
                     }
                     Button { exportSticker() } label: {
-                        Label("스티커로 저장", systemImage: "square.and.arrow.up")
+                        Label("우표 내보내기 (PNG)", systemImage: "square.and.arrow.up")
                             .font(.system(size: 12, weight: .semibold, design: .rounded))
                             .foregroundStyle(Color(hex: 0xB89A5E))
                     }
@@ -4563,6 +5270,7 @@ struct StampDetailView: View {
                 .onTapGesture { focused = true }
                 .environment(\.colorScheme, .light)
 
+                styleSection
                 inkSection
                 albumPicker
               }
@@ -4606,8 +5314,8 @@ struct StampDetailView: View {
                 Button("완료") { save(); dismiss() }
             }
         }
-        .alert("새 우표첩", isPresented: $showNewAlbum) {
-            TextField("우표첩 이름", text: $newAlbumName)
+        .alert("새 수집함", isPresented: $showNewAlbum) {
+            TextField("수집함 이름", text: $newAlbumName)
             Button("취소", role: .cancel) { }
             Button("만들기") {
                 if let name = collection.createAlbum(newAlbumName) {
@@ -4668,6 +5376,17 @@ struct StampDetailView: View {
             .appendingPathComponent("StampSticker-\(stampID).png")
         do { try data.write(to: url) } catch { return }
         sharePayload = SharePayload(items: [url])
+    }
+
+    /// 모습: 우표/라이브 우표/스티커/라이브 스티커 — 언제든 갈아입기.
+    private var styleSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("모습")
+                .font(.system(size: 12, weight: .bold, design: .rounded))
+                .foregroundStyle(Color(hex: 0x8C7A52))
+            StampStylePicker(collection: collection, stampID: stampID, dark: false)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     /// 꾸미기: a row of finishes, each chip a live mini preview of this stamp
@@ -4753,7 +5472,7 @@ struct StampDetailView: View {
                 Button(a) { collection.move(stampID, to: a) }
             }
             Divider()
-            Button("새 우표첩…") { newAlbumName = ""; showNewAlbum = true }
+            Button("새 수집함…") { newAlbumName = ""; showNewAlbum = true }
         } label: {
             HStack(spacing: 6) {
                 Image(systemName: "book.closed")
