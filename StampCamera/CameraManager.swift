@@ -322,7 +322,9 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         preTick += 1
         guard preTick % liveFrameStride == 0 else { return }
         let ci = CIImage(cvPixelBuffer: pixelBuffer)
-        let scale = min(1, 720 / max(ci.extent.width, ci.extent.height))
+        // 1080 keeps the window crop ≈700px wide — big enough that the live
+        // stamp stays sharp blown up on the reveal card
+        let scale = min(1, 1080 / max(ci.extent.width, ci.extent.height))
         let small = ci.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
         guard let cg = ciContext.createCGImage(small, from: small.extent) else { return }
         let frame = UIImage(cgImage: cg)

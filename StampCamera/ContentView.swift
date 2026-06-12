@@ -563,10 +563,12 @@ struct ContentView: View {
             // the master material: plain window crops, no shape and no cutout —
             // every style (우표/스티커, 정지/움직임) is re-derived from these,
             // so the look can be changed at any time without loss
+            // scale 2 ≈ a 680px canvas — matches the 1080p burst's crop, so the
+            // moving stamp isn't a thumbnail blown up on the reveal card
             let master = frames.compactMap {
                 StampCompositor.makeStamp(from: $0, previewSize: size, windowRect: win,
                                           mirrored: mirrored, clipToShape: false,
-                                          scale: 1.0)?.image
+                                          scale: 2.0)?.image
             }
             guard master.count > 1 else { return }
 
@@ -5370,12 +5372,31 @@ struct StampDetailView: View {
 
     /// Writes the stamp as a transparent PNG and offers it to share/save — a
     /// sticker you can drop into Files, Photos, or Messages stickers.
+    /// Re-composited from the full-resolution original (≈2048px), in the
+    /// stamp's current look, instead of the small on-screen render.
     private func exportSticker() {
-        guard let stamp, let data = stamp.image.pngData() else { return }
-        let url = FileManager.default.temporaryDirectory
-            .appendingPathComponent("StampSticker-\(stampID).png")
-        do { try data.write(to: url) } catch { return }
-        sharePayload = SharePayload(items: [url])
+        guard let stamp else { return }
+        let style = collection.style(for: stampID)
+        DispatchQueue.global(qos: .userInitiated).async {
+            // perforated looks re-crop at print size; sticker looks lift the
+            // subject from that same high-res crop
+            var image = collection.printStamp(
+                for: stampID, longSidePx: 2048,
+                clipToShape: style == .stamp || style == .liveStamp)
+            if style == .sticker || style == .liveSticker,
+               let base = collection.printStamp(for: stampID, longSidePx: 2048,
+                                                clipToShape: false),
+               let cut = SubjectLift.cutout(from: base) {
+                image = cut
+            }
+            guard let data = (image ?? stamp.image).pngData() else { return }
+            let url = FileManager.default.temporaryDirectory
+                .appendingPathComponent("StampSticker-\(stampID).png")
+            do { try data.write(to: url) } catch { return }
+            DispatchQueue.main.async {
+                sharePayload = SharePayload(items: [url])
+            }
+        }
     }
 
     /// 모습: 우표/라이브 우표/스티커/라이브 스티커 — 언제든 갈아입기.
