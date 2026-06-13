@@ -205,12 +205,15 @@ final class StampStickerBrowserViewController: MSStickerBrowserViewController {
         let dir = base.appendingPathComponent("Stickers", isDirectory: true)
         let urls = (try? FileManager.default.contentsOfDirectory(
             at: dir, includingPropertiesForKeys: [.contentModificationDateKey])) ?? []
+        // Match the app's order: stamps are filed by creation time, encoded as
+        // the leading millisecond timestamp in the filename ("<ms>.png.s6.png").
+        // (Sorting by file modification date instead put them in regeneration
+        // order, which didn't match the album.)
+        func ms(_ u: URL) -> Double {
+            Double(u.lastPathComponent.prefix { $0.isNumber }) ?? 0
+        }
         let pngs = urls.filter { $0.pathExtension.lowercased() == "png" }
-            .sorted {
-                let a = (try? $0.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast
-                let b = (try? $1.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast
-                return a > b   // newest first
-            }
+            .sorted { ms($0) > ms($1) }   // newest → oldest (most recent first)
         return pngs.compactMap { try? MSSticker(contentsOfFileURL: $0, localizedDescription: "컬렉션") }
     }
 

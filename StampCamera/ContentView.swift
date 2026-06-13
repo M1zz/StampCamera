@@ -3739,14 +3739,18 @@ final class CollectionStore: ObservableObject {
     /// App Group shared with the iMessage sticker extension, so collected stamps
     /// show up as real iMessage stickers. (No-op until the App Group is enabled.)
     static let stickerGroupID = "group.com.devkoan.StampCamera"
+    /// Bumped whenever the sticker LOOK changes — it's part of every sticker's
+    /// filename, so Messages never serves a stale cached image at the same URL.
+    static let stickerScheme = "s6"
     func syncStickers() {
         guard let base = FileManager.default
                 .containerURL(forSecurityApplicationGroupIdentifier: Self.stickerGroupID) else { return }
         let snapshot = stamps.map { ($0.id, $0.image, liveURL(for: $0.id)) }
+        let suffix = ".\(Self.stickerScheme).png"
         // 컬렉션 → 스티커 팩: 이름과 파일 목록을 함께 내보내 메시지 서랍이
         // 컬렉션별로 보여줄 수 있게 한다
         let packs: [[String: Any]] = exhibitions.compactMap { ex in
-            let files = stampsInExhibition(ex.name).map { "\($0.id).png" }
+            let files = stampsInExhibition(ex.name).map { "\($0.id)\(suffix)" }
             return files.isEmpty ? nil : ["name": ex.name, "files": files]
         }
         DispatchQueue.global(qos: .utility).async { [weak self] in
@@ -3770,9 +3774,9 @@ final class CollectionStore: ObservableObject {
                 FileManager.default.createFile(atPath: marker.path, contents: nil)
             }
 
-            let wanted = Set(snapshot.map { "\($0.0).png" })
+            let wanted = Set(snapshot.map { "\($0.0)\(suffix)" })
             for (id, image, _) in snapshot {
-                let url = dir.appendingPathComponent("\(id).png")
+                let url = dir.appendingPathComponent("\(id)\(suffix)")
                 guard !FileManager.default.fileExists(atPath: url.path) else { continue }
                 // Every sticker is composited onto a uniform WHITE square so it
                 // ALWAYS meets MSSticker's 100–618pt size (tight cut-outs were
