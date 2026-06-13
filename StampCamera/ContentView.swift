@@ -48,6 +48,10 @@ struct ContentView: View {
     @State private var collectPulse = 0        // fires the "+1"/ring reward at the bin
     @State private var cavityVisible = false    // the black punch-hole revealed as the stamp ejects
     @State private var pressed = false
+    // pinch-to-zoom: a second finger cancels the shutter press and scrubs the
+    // zoom continuously; a small ×HUD shows while pinching
+    @State private var pinching = false
+    @State private var pinchStartZoom: CGFloat?
     @State private var flipAngle: Double = 0    // selfie/back flip spin
     // stamp shape: false = perforated punch, true = Apple subject cutout sticker
     // "live stamp": record a short burst after the shutter so the stamp moves
@@ -255,8 +259,46 @@ struct ContentView: View {
 
                 albumBar
                 bottomBar
+
+                // ×HUD while pinching — fades out with the gesture
+                if pinching {
+                    Text(String(format: camera.zoom < 1 ? "%.1f×" : "%.1f×", camera.zoom))
+                        .font(.system(size: 17, weight: .bold, design: .rounded))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 14).padding(.vertical, 7)
+                        .background(Capsule().fill(.black.opacity(0.45)))
+                        .position(x: geo.size.width / 2, y: geo.size.height * 0.18)
+                        .allowsHitTesting(false)
+                        .transition(.opacity)
+                }
             }
             .coordinateSpace(name: "cam")
+            // two fingers anywhere = continuous zoom (the press is cancelled,
+            // so a pinch over the frame never fires the shutter)
+            .simultaneousGesture(
+                MagnifyGesture(minimumScaleDelta: 0.02)
+                    .onChanged { v in
+                        if pinchStartZoom == nil {
+                            pinchStartZoom = camera.zoom
+                            withAnimation(.easeOut(duration: 0.12)) {
+                                pinching = true
+                                pressed = false           // cancel the punch press
+                            }
+                        }
+                        if let base = pinchStartZoom {
+                            camera.setZoom(base * v.magnification)
+                        }
+                    }
+                    .onEnded { _ in
+                        pinchStartZoom = nil
+                        // linger long enough for the press-drag's onEnded to see
+                        // the flag and skip the shutter, then fade the HUD
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                            guard pinchStartZoom == nil else { return }
+                            withAnimation(.easeOut(duration: 0.25)) { pinching = false }
+                        }
+                    }
+            )
             .onPreferenceChange(BinCenterKey.self) { binCenter = $0 }
             .onAppear { previewSize = geo.size }
             .onChange(of: geo.size) { _, s in previewSize = s }
@@ -269,7 +311,7 @@ struct ContentView: View {
             ZStack {
                 albumChip                    // centered
                 HStack(spacing: 10) {
-                    styleButton              // top-left: 어떤 모습으로 뜯을지
+                    styleButton              // top-left: 선택된 모습 (저장됨)
                     Spacer()
                     flipButton               // top-right (selfie toggle)
                 }
@@ -278,6 +320,31 @@ struct ContentView: View {
             .padding(.top, 8)
             Spacer()
         }
+    }
+
+    /// Shows the currently-chosen capture style (persisted) as a single symbol;
+    /// tap to pick another from the four. The next punch tears off in this look.
+    private var styleButton: some View {
+        Menu {
+            ForEach(StampStyle.allCases) { s in
+                Button {
+                    captureStyleRaw = s.rawValue
+                    Haptics.tick()
+                } label: {
+                    Label(s.title, systemImage: s == captureStyle ? "checkmark" : s.icon)
+                }
+            }
+            Divider()
+            Text("찍는 순간의 모습이에요 — 찍은 뒤에도\n상세 페이지에서 언제든 바꿀 수 있어요")
+        } label: {
+            Image(systemName: captureStyle.icon)
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(Color(hex: 0xFFD60A))
+                .frame(width: 44, height: 44)
+                .background(Circle().fill(.ultraThinMaterial))
+                .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
     }
 
     /// The book-picker chip: shows which book new stamps go into, with a menu
@@ -313,30 +380,6 @@ struct ContentView: View {
     }
 
     /// 찍기 전에 모습을 고르는 버튼: 우표 / 라이브 우표 / 스티커 / 라이브
-    /// 스티커. 셔터는 이 모습 그대로 뜯어낸다 (나중에 상세에서 변경 가능).
-    private var styleButton: some View {
-        Menu {
-            ForEach(StampStyle.allCases) { s in
-                Button {
-                    captureStyleRaw = s.rawValue
-                    Haptics.tick()
-                } label: {
-                    Label(s.title, systemImage: s == captureStyle ? "checkmark" : s.icon)
-                }
-            }
-            Divider()
-            Text("찍는 순간의 모습이에요 — 찍은 뒤에도\n상세 페이지에서 언제든 바꿀 수 있어요")
-        } label: {
-            Image(systemName: captureStyle.icon)
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(Color(hex: 0xFFD60A))
-                .frame(width: 44, height: 44)
-                .background(Circle().fill(.ultraThinMaterial))
-                .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
-        }
-        .buttonStyle(.plain)
-    }
-
     /// Flips between the back and front (selfie) camera with a little spin.
     private var flipButton: some View {
         Button {
@@ -371,12 +414,16 @@ struct ContentView: View {
 
     /// Finger down: press the puncher down so the frame shrinks a little.
     private func pressDown() {
-        guard flying == nil, !pressed else { return }   // ignore while a stamp flies
+        guard flying == nil, !pressed, !pinching else { return }   // not mid-flight / mid-pinch
         withAnimation(.easeIn(duration: 0.12)) { pressed = true }
     }
 
     /// Finger up: spring the frame back up and fire the shutter on release.
     private func releaseShutter() {
+        if pinching {                         // the lift that ends a pinch — no shutter
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) { pressed = false }
+            return
+        }
         guard pressed else { return }
         withAnimation(.spring(response: 0.34, dampingFraction: 0.5)) { pressed = false }
         guard flying == nil else { return }   // a stamp is already in flight
@@ -416,15 +463,6 @@ struct ContentView: View {
                             .overlay(Image(systemName: "square.stack.3d.up")
                                 .foregroundStyle(.white.opacity(0.7)))
                     }
-                }
-                if !collection.collectedStamps.isEmpty {
-                    Text("\(collection.collectedStamps.count)")
-                        .font(.system(size: 11, weight: .bold, design: .rounded))
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 6).padding(.vertical, 2)
-                        .background(Capsule().fill(Color(hex: 0xE8504E)))
-                        .scaleEffect(binBounce ? 1.35 : 1)
-                        .offset(x: 10, y: -8)
                 }
             }
             .frame(width: 56, height: 56)
@@ -575,14 +613,22 @@ struct ContentView: View {
             // the chosen look's clip (still looks keep the master only, so
             // they can start moving later with one tap in the detail page)
             var cropped: [UIImage] = []
-            var frameDelay = delay
+            let frameDelay = delay
             if style == .liveStamp {
                 cropped = master.map { CollectionStore.stampShaped($0) }
             } else if style == .liveSticker {
-                let step = max(1, Int((Double(master.count) / 10.0).rounded(.up)))
-                cropped = stride(from: 0, to: master.count, by: step)
-                    .compactMap { SubjectLift.cutout(from: master[$0]) }
-                frameDelay = delay * Double(step)
+                // one mask for the whole clip → every frame is the same size and
+                // none get dropped, so the sticker actually moves (per-frame
+                // Vision used to silently drop frames and freeze the clip)
+                if let mask = SubjectLift.subjectMask(from: master[master.count / 2]) {
+                    cropped = master.compactMap { SubjectLift.apply(mask: mask, to: $0) }
+                }
+            }
+            // a moving style must never end up frozen: if the look couldn't be
+            // built (e.g. Vision found no subject), fall back to the raw moving
+            // crops so it still animates.
+            if style.needsMotion && cropped.count <= 1 {
+                cropped = master
             }
 
             // 1) hand the decoded frames straight to the UI — the card starts
@@ -1035,23 +1081,25 @@ struct AlbumPageView: View {
 
     /// 모아보기 필터 — 저장한 우표들을 모습/상태별로 추려 본다.
     private enum PocketFilter: String, CaseIterable, Identifiable {
-        case all, moving, stampLook, stickerLook, exhibited
+        case all, stampLook, moving, stickerLook, movingSticker, exhibited
         var id: String { rawValue }
         var title: String {
             switch self {
             case .all: return "전체"
-            case .moving: return "움직이는 우표"
             case .stampLook: return "우표 모습"
+            case .moving: return "움직이는 우표"
             case .stickerLook: return "스티커 모습"
+            case .movingSticker: return "움직이는 스티커"
             case .exhibited: return "컬렉션에 건 우표"
             }
         }
         var icon: String {
             switch self {
             case .all: return "square.grid.3x3"
-            case .moving: return "livephoto"
             case .stampLook: return "square.dashed"
+            case .moving: return "livephoto"
             case .stickerLook: return "scissors"
+            case .movingSticker: return "wand.and.stars"
             case .exhibited: return "photo.artframe"
             }
         }
@@ -1082,7 +1130,10 @@ struct AlbumPageView: View {
         let base = collection.stamps(in: album)
         switch filter {
         case .all: return base
-        case .moving: return base.filter { collection.isPlayablyLive($0.id) }
+        case .moving:
+            return base.filter { collection.style(for: $0.id) == .liveStamp }
+        case .movingSticker:
+            return base.filter { collection.style(for: $0.id) == .liveSticker }
         case .stampLook:
             return base.filter {
                 let s = collection.style(for: $0.id)
@@ -3005,17 +3056,22 @@ final class CollectionStore: ObservableObject {
             var lean: Data?
             var hot: (frames: [UIImage], delay: Double)?
             if style.needsMotion, let master = material {
-                let styled: [UIImage]
-                var delay = master.delay
+                var styled: [UIImage]
+                let delay = master.delay
                 if style == .liveStamp {
                     styled = master.frames.map { Self.stampShaped($0) }
                 } else {
-                    // Vision per frame is pricey — thin to ~10 and keep tempo
-                    let step = max(1, Int((Double(master.frames.count) / 10.0).rounded(.up)))
-                    styled = stride(from: 0, to: master.frames.count, by: step)
-                        .compactMap { SubjectLift.cutout(from: master.frames[$0]) }
-                    delay *= Double(step)
+                    // one mask for the whole clip → uniform size, no dropped
+                    // frames, no per-frame Vision (the old way silently froze it)
+                    if let mask = SubjectLift.subjectMask(from: master.frames[master.frames.count / 2]) {
+                        styled = master.frames.compactMap { SubjectLift.apply(mask: mask, to: $0) }
+                    } else {
+                        styled = []
+                    }
                 }
+                // a moving style must never freeze: fall back to the raw moving
+                // frames if the chosen look couldn't be built
+                if styled.count <= 1 { styled = master.frames }
                 if styled.count > 1 {
                     hot = (styled, delay)
                     apng = APNG.encode(styled, delay: delay)
@@ -3895,6 +3951,42 @@ enum SubjectLift {
             return nil
         }
     }
+
+    private static let ciCtx = CIContext()
+
+    /// The subject's foreground mask (full-frame, NOT cropped to the subject) —
+    /// computed once and reused across a clip's frames so the cutout silhouette
+    /// stays put while the photo inside it moves (no per-frame Vision, no jitter,
+    /// no dropped frames).
+    static func subjectMask(from image: UIImage) -> CIImage? {
+        guard #available(iOS 17.0, *), let cg = image.normalizedUp().cgImage else { return nil }
+        let request = VNGenerateForegroundInstanceMaskRequest()
+        let handler = VNImageRequestHandler(cgImage: cg)
+        do {
+            try handler.perform([request])
+            guard let result = request.results?.first else { return nil }
+            let buffer = try result.generateScaledMaskForImage(forInstances: result.allInstances,
+                                                                from: handler)
+            return CIImage(cvPixelBuffer: buffer)
+        } catch {
+            return nil
+        }
+    }
+
+    /// Cut an image to a previously-computed mask (same look, every frame).
+    static func apply(mask: CIImage, to image: UIImage) -> UIImage? {
+        guard let cg = image.normalizedUp().cgImage else { return nil }
+        let src = CIImage(cgImage: cg)
+        let m = mask.transformed(by: CGAffineTransform(scaleX: src.extent.width / mask.extent.width,
+                                                       y: src.extent.height / mask.extent.height))
+        guard let filter = CIFilter(name: "CIBlendWithMask") else { return nil }
+        filter.setValue(src, forKey: kCIInputImageKey)
+        filter.setValue(CIImage.empty(), forKey: kCIInputBackgroundImageKey)
+        filter.setValue(m, forKey: kCIInputMaskImageKey)
+        guard let out = filter.outputImage,
+              let cgOut = ciCtx.createCGImage(out, from: src.extent) else { return nil }
+        return UIImage(cgImage: cgOut)
+    }
 }
 
 // MARK: - Sticker sheet export (print-ready PDF)
@@ -4555,12 +4647,6 @@ struct CaptureRevealView: View {
                         .animation(.easeOut(duration: 0.3), value: flipped)
                         .chromeReveal(entered: entered, leaving: leaving || discarding, delay: 0.32)
 
-                    #if DEBUG
-                    // 진단용 (디버그 빌드 전용): 클립이 어디까지 왔는지
-                    Text(debugMotionStatus)
-                        .font(.system(size: 10, weight: .semibold, design: .monospaced))
-                        .foregroundStyle(.yellow.opacity(0.8))
-                    #endif
                     captionPill
                         .chromeReveal(entered: entered, leaving: leaving || discarding, delay: 0.40)
 
@@ -4796,16 +4882,6 @@ struct CaptureRevealView: View {
             .labelStyle(.titleAndIcon)
         }
     }
-
-    #if DEBUG
-    /// Where the live clip is in its journey — pinpoints capture vs playback
-    /// failures on device without a console.
-    private var debugMotionStatus: String {
-        if let hot = collection.hotClips[stampID] { return "clip: hot \(hot.frames.count)f" }
-        if collection.hasLive(stampID) { return "clip: disk" }
-        return "clip: none"
-    }
-    #endif
 
     /// Save the caption, fling the card into the bin, then hand off.
     private func tuckAway() {
