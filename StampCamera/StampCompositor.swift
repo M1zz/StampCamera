@@ -86,6 +86,39 @@ enum StampCompositor {
         }
         return (stampImage, cropNorm)
     }
+
+    /// Center-crops an existing photo (from the Photos library) to `aspect`
+    /// (width / height) — the stamp window's proportions — and returns the
+    /// plain rectangular crop plus its 0...1 region in the orientation-
+    /// normalized photo, so the original can be re-cropped later just like a
+    /// captured shot. No shape and no cutout: the caller derives the look
+    /// through `CollectionStore.stillLook`.
+    static func centerCrop(_ image: UIImage,
+                           aspect: CGFloat,
+                           longSidePx: CGFloat = 1080) -> (image: UIImage, cropNorm: CGRect)? {
+        let normalized = image.normalizedUp()
+        guard let cg = normalized.cgImage, aspect > 0 else { return nil }
+        let imgW = CGFloat(cg.width), imgH = CGFloat(cg.height)
+
+        // largest aspect-correct rectangle centered in the photo
+        var cw = imgW, ch = cw / aspect
+        if ch > imgH { ch = imgH; cw = ch * aspect }
+        let sx = ((imgW - cw) / 2).rounded()
+        let sy = ((imgH - ch) / 2).rounded()
+        let srcRect = CGRect(x: sx, y: sy, width: cw.rounded(), height: ch.rounded())
+        let cropNorm = CGRect(x: sx / imgW, y: sy / imgH, width: cw / imgW, height: ch / imgH)
+        guard let cropped = cg.cropping(to: srcRect) else { return nil }
+
+        let s = longSidePx / max(cw, ch)
+        let outSize = CGSize(width: (cw * s).rounded(), height: (ch * s).rounded())
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        format.opaque = false
+        let out = UIGraphicsImageRenderer(size: outSize, format: format).image { _ in
+            UIImage(cgImage: cropped).draw(in: CGRect(origin: .zero, size: outSize))
+        }
+        return (out, cropNorm)
+    }
 }
 
 extension UIImage {

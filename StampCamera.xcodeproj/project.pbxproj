@@ -25,6 +25,7 @@
 		A1000215 /* StampCompositorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000205 /* StampCompositorTests.swift */; };
 		A1000216 /* ColorHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000206 /* ColorHexTests.swift */; };
 		A1000217 /* LiveStampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000207 /* LiveStampTests.swift */; };
+		A1000218 /* StyleCorrectnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000208 /* StyleCorrectnessTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		A1000205 /* StampCompositorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositorTests.swift; sourceTree = "<group>"; };
 		A1000206 /* ColorHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexTests.swift; sourceTree = "<group>"; };
 		A1000207 /* LiveStampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStampTests.swift; sourceTree = "<group>"; };
+		A1000208 /* StyleCorrectnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCorrectnessTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -184,6 +186,7 @@
 				A1000205 /* StampCompositorTests.swift */,
 				A1000206 /* ColorHexTests.swift */,
 				A1000207 /* LiveStampTests.swift */,
+				A1000208 /* StyleCorrectnessTests.swift */,
 			);
 			path = StampCameraTests;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				A1000215 /* StampCompositorTests.swift in Sources */,
 				A1000216 /* ColorHexTests.swift in Sources */,
 				A1000217 /* LiveStampTests.swift in Sources */,
+				A1000218 /* StyleCorrectnessTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

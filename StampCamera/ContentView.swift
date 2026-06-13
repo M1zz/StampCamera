@@ -12,6 +12,7 @@ import AVFoundation
 import CoreImage
 import CoreLocation
 import ImageIO
+import PhotosUI
 import Vision
 
 struct ContentView: View {
@@ -61,6 +62,9 @@ struct ContentView: View {
     @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveStamp.rawValue
     private var captureStyle: StampStyle { StampStyle(rawValue: captureStyleRaw) ?? .liveStamp }
     @State private var liveCaptureStyle: StampStyle = .liveStamp   // snapshot at shutter
+    // 사용자가 고른 펀칭 프레임 (StampFrame / StampFrame2 …) — 바뀌면 미리보기·
+    // 캡처가 즉시 새 프레임으로 다시 그려진다 (StampFrameLoader가 같은 키를 읽음)
+    @AppStorage(StampFrameLoader.selectionKey) private var stampFrameName = "StampFrame"   // validated against names at read time
     // 모아둔 라이브 우표를 화면 곳곳에서 움직이게 재생할지 (LiveArt가 읽는 값)
     @AppStorage("liveAutoPlay") private var liveAutoPlay = true
 
@@ -138,7 +142,7 @@ struct ContentView: View {
         .onChange(of: showCollection) { _, open in
             if open { camera.stop() } else { camera.start() }
         }
-        .sheet(isPresented: $showCollection) {
+        .fullScreenCover(isPresented: $showCollection) {
             CollectionView(collection: collection)
         }
         .sheet(item: $editTarget) { target in
@@ -195,31 +199,9 @@ struct ContentView: View {
                         .allowsHitTesting(false)
                 }
 
-                // background-removed stamp frame, centered over the camera.
-                // Holding it presses the puncher down (it shrinks); releasing
-                // springs it back up and fires the shutter.
-                if let frame = StampFrameLoader.frame {
-                    Image(uiImage: frame.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        // the body is what presses down (the die above stays
-                        // fixed; the blur punch below stays fixed too, so no
-                        // frosted band leaks into the window)
-                        .scaleEffect((pressed ? 0.94 : 1) * frameDisplayScale)
-                        .offset(y: pressed ? 8 : 0)
-                        .contentShape(Rectangle())
-                        .gesture(
-                            DragGesture(minimumDistance: 0)
-                                .onChanged { _ in pressDown() }
-                                .onEnded { _ in releaseShutter() }
-                        )
-                }
-
-                // a fixed mount on top of the pressable body — it never scales
-                // or moves, so the press reads as the body sinking beneath it.
-                // Centered over the stamp frame's displayed box; tune size and
-                // offset here (the asset has a different aspect, so it can't
+                // a fixed mount BELOW the pressable body — it never scales or
+                // moves. Centered over the stamp frame's displayed box; tune size
+                // and offset here (the asset has a different aspect, so it can't
                 // auto-register).
                 if let staticImg = StampFrameLoader.staticImage {
                     let r = stampFrameDisplayRect(in: geo.size)
@@ -230,6 +212,26 @@ struct ContentView: View {
                         .position(x: r.midX + r.width * staticFrameOffset.width,
                                   y: r.midY + r.height * staticFrameOffset.height)
                         .allowsHitTesting(false)
+                }
+
+                // background-removed stamp frame, centered over the camera, drawn
+                // ON TOP of the fixed mount. Holding it presses the puncher down
+                // (it shrinks); releasing springs it back up and fires the shutter.
+                if let frame = StampFrameLoader.frame {
+                    Image(uiImage: frame.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        // the body is what presses down (the blur punch below
+                        // stays fixed, so no frosted band leaks into the window)
+                        .scaleEffect((pressed ? 0.94 : 1) * frameDisplayScale)
+                        .offset(y: pressed ? 8 : 0)
+                        .contentShape(Rectangle())
+                        .gesture(
+                            DragGesture(minimumDistance: 0)
+                                .onChanged { _ in pressDown() }
+                                .onEnded { _ in releaseShutter() }
+                        )
                 }
 
                 // the black punch-hole left behind in the window as the stamp is
@@ -438,9 +440,10 @@ struct ContentView: View {
         liveWin = windowScreenRect(in: previewSize)
         liveMirrored = camera.position == .front
         liveCaptureStyle = captureStyle
-        // 라이브 모습은 무조건 움직임을 기록한다 — 설정 토글은 정지 모습으로
-        // 찍을 때도 (나중에 바꿀 수 있게) 마스터를 보관할지만 정한다
-        camera.capturePhoto(live: captureStyle.needsMotion || liveStamps)
+        // 항상 라이브로 찍어 "마스터"(움직임 + 원본)를 무조건 보관한다.
+        // 보이는 모습(정지/우표/스티커/라이브)은 전부 이 마스터에서 후가공으로
+        // 파생되므로, 찍은 뒤 어느 모습으로도 무손실 전환할 수 있다.
+        camera.capturePhoto(live: true)
     }
 
     private var collectionButton: some View {
@@ -486,28 +489,25 @@ struct ContentView: View {
         let win = windowScreenRect(in: previewSize)
         let mirrored = camera.position == .front
 
-        if liveCaptureStyle == .sticker || liveCaptureStyle == .liveSticker {
-            // 스티커 모습: 창을 자른 뒤 피사체만 들어올린다 (실패 시 우표 폴백)
-            guard let base = StampCompositor.makeStamp(from: raw, previewSize: previewSize,
-                                                       windowRect: win, mirrored: mirrored,
-                                                       clipToShape: false) else { return }
+        // always start from the plain rectangular crop, then derive the chosen
+        // look through the ONE canonical path — so the result can't disagree
+        // with the selected style.
+        guard let base = StampCompositor.makeStamp(from: raw, previewSize: previewSize,
+                                                   windowRect: win, mirrored: mirrored,
+                                                   clipToShape: false) else { return }
+        let style = liveCaptureStyle
+        if style.cutout {
+            // background removal (Vision) is slow → off the main thread
             DispatchQueue.global(qos: .userInitiated).async {
-                let lifted = SubjectLift.cutout(from: base.image)
+                let still = CollectionStore.stillLook(base.image, style: style)
                 DispatchQueue.main.async {
-                    let stamp = lifted
-                        ?? StampCompositor.makeStamp(from: raw, previewSize: previewSize,
-                                                     windowRect: win, mirrored: mirrored)?.image
-                        ?? base.image
-                    finishCapture(stamp: stamp, raw: raw, cropNorm: base.cropNorm,
+                    finishCapture(stamp: still, raw: raw, cropNorm: base.cropNorm,
                                   mirrored: mirrored, win: win)
                 }
             }
         } else {
-            // 우표 모습: 톱니로 뜯어낸다
-            guard let result = StampCompositor.makeStamp(from: raw, previewSize: previewSize,
-                                                         windowRect: win, mirrored: mirrored) else { return }
-            finishCapture(stamp: result.image, raw: raw, cropNorm: result.cropNorm,
-                          mirrored: mirrored, win: win)
+            finishCapture(stamp: CollectionStore.stillLook(base.image, style: style),
+                          raw: raw, cropNorm: base.cropNorm, mirrored: mirrored, win: win)
         }
     }
 
@@ -612,24 +612,10 @@ struct ContentView: View {
 
             // the chosen look's clip (still looks keep the master only, so
             // they can start moving later with one tap in the detail page)
-            var cropped: [UIImage] = []
+            // only moving looks get a clip; the canonical builder guarantees the
+            // shape axis and that it's never frozen.
             let frameDelay = delay
-            if style == .liveStamp {
-                cropped = master.map { CollectionStore.stampShaped($0) }
-            } else if style == .liveSticker {
-                // one mask for the whole clip → every frame is the same size and
-                // none get dropped, so the sticker actually moves (per-frame
-                // Vision used to silently drop frames and freeze the clip)
-                if let mask = SubjectLift.subjectMask(from: master[master.count / 2]) {
-                    cropped = master.compactMap { SubjectLift.apply(mask: mask, to: $0) }
-                }
-            }
-            // a moving style must never end up frozen: if the look couldn't be
-            // built (e.g. Vision found no subject), fall back to the raw moving
-            // crops so it still animates.
-            if style.needsMotion && cropped.count <= 1 {
-                cropped = master
-            }
+            let cropped = style.moving ? CollectionStore.clipLook(master, style: style) : []
 
             // 1) hand the decoded frames straight to the UI — the card starts
             //    moving NOW, not after the slow APNG encode below
@@ -814,12 +800,18 @@ struct CollectionView: View {
     @State private var showNewExhibition = false
     @State private var newExhibitionName = ""
 
-    private enum Tab: String, CaseIterable { case albums = "수집함", exhibitions = "컬렉션" }
-    @State private var tab: Tab = .albums
+    private enum Tab: String, CaseIterable { case exhibitions = "컬렉션", albums = "수집함" }
+    @State private var tab: Tab = .exhibitions
     @State private var showPrintGuide = false
+    // 사진 앱에서 가져오기 — 활성 수집함에 정지 우표/스티커로 담는다
+    @State private var photoItem: PhotosPickerItem?
+    @State private var importedPhoto: UIImage?
+    @State private var showImportShape = false
     // 설정 (기어 메뉴): 카메라가 읽는 값과 같은 저장소
     @AppStorage("liveStamps") private var liveStamps = true
     @AppStorage("liveAutoPlay") private var liveAutoPlay = true
+    // 펀칭 프레임 선택 — 카메라와 같은 키를 공유하므로 여기서 바꾸면 카메라에 반영
+    @AppStorage(StampFrameLoader.selectionKey) private var stampFrameName = "StampFrame"   // validated against names at read time
 
     private let columns = [GridItem(.adaptive(minimum: 150), spacing: 18)]
 
@@ -847,46 +839,66 @@ struct CollectionView: View {
             .navigationDestination(for: CollectionRoute.self) { route in
                 switch route {
                 case .album(let name):
-                    AlbumPageView(collection: collection, album: name)
+                    AlbumPageView(collection: collection, album: name,
+                                  exitToCamera: { dismiss() },
+                                  goToCollections: { path.removeAll(); tab = .exhibitions })
                 case .exhibition(let name):
                     ExhibitionWallView(collection: collection, exhibition: name)
                 }
             }
             .toolbar {
+                // 사진 앱처럼 — 왼쪽 위 뒤로가기로 카메라로 돌아간다
                 ToolbarItem(placement: .topBarLeading) {
-                    Menu {
-                        Button { newAlbumName = ""; showNewAlbum = true } label: {
-                            Label("새 수집함…", systemImage: "book.closed")
-                        }
-                        Button { newExhibitionName = ""; showNewExhibition = true } label: {
-                            Label("새 컬렉션…", systemImage: "photo.artframe")
-                        }
-                    } label: {
-                        Image(systemName: "plus")
+                    Button { dismiss() } label: {
+                        Label("카메라", systemImage: "chevron.backward")
                     }
+                    .font(.system(size: 15, weight: .semibold))
                 }
-                ToolbarItem(placement: .topBarLeading) {
-                    Button { showPrintGuide = true } label: {
-                        Image(systemName: "printer")
-                    }
-                }
-                ToolbarItem(placement: .topBarLeading) {
-                    Menu {
-                        Toggle(isOn: $liveStamps) {
-                            Label("움직임 항상 보관", systemImage: "livephoto")
+                // 세 동작을 한 항목 안에 나란히 둬서 시스템이 '...'로 접지
+                // 않고 항상 펼쳐 보이게 한다: 새로 만들기 · 사진 가져오기 · 설정
+                ToolbarItem(placement: .topBarTrailing) {
+                    HStack(spacing: 18) {
+                        Menu {
+                            Button { newAlbumName = ""; showNewAlbum = true } label: {
+                                Label("새 수집함…", systemImage: "book.closed")
+                            }
+                            Button { newExhibitionName = ""; showNewExhibition = true } label: {
+                                Label("새 컬렉션…", systemImage: "photo.artframe")
+                            }
+                        } label: {
+                            Image(systemName: "plus")
                         }
-                        Text("정지 모습(우표·스티커)으로 찍어도 움직임을\n보관해 나중에 라이브로 바꿀 수 있어요")
-                        Divider()
-                        Toggle(isOn: $liveAutoPlay) {
-                            Label("움직임 자동 재생", systemImage: "play.circle")
+                        // 사진 앱에서 가져오기 — 활성 수집함에 담긴다
+                        PhotosPicker(selection: $photoItem, matching: .images, photoLibrary: .shared()) {
+                            Image(systemName: "photo.badge.plus")
                         }
-                        Text("끄면 모아둔 라이브 우표가 어디서나\n정지 이미지로 보여요")
-                    } label: {
-                        Image(systemName: "gearshape")
+                        Menu {
+                            Toggle(isOn: $liveAutoPlay) {
+                                Label("움직임 자동 재생", systemImage: "play.circle")
+                            }
+                            if StampFrameLoader.names.count > 1 {
+                                Menu {
+                                    ForEach(Array(StampFrameLoader.names.enumerated()), id: \.element) { idx, name in
+                                        Button {
+                                            stampFrameName = name
+                                            Haptics.select()
+                                        } label: {
+                                            Label("프레임 \(idx + 1)",
+                                                  systemImage: name == stampFrameName ? "checkmark" : "square.on.square.dashed")
+                                        }
+                                    }
+                                } label: {
+                                    Label("펀칭 프레임", systemImage: "square.on.square.dashed")
+                                }
+                            }
+                            Button { showPrintGuide = true } label: {
+                                Label("인쇄 가이드", systemImage: "printer")
+                            }
+                            Text("모든 우표는 움직임을 머금고 있어요.\n끄면 어디서나 정지 이미지로 보여요")
+                        } label: {
+                            Image(systemName: "gearshape")
+                        }
                     }
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("닫기") { dismiss() }
                 }
             }
             .alert("새 수집함", isPresented: $showNewAlbum) {
@@ -900,8 +912,55 @@ struct CollectionView: View {
             .sheet(isPresented: $showPrintGuide) {
                 PrintGuideView()
             }
+            .onChange(of: photoItem) { _, item in loadImportedPhoto(item) }
+            .confirmationDialog("어떤 모양으로 만들까요?", isPresented: $showImportShape,
+                                titleVisibility: .visible) {
+                Button("우표 (톱니 테두리)") { makeFromLibrary(cutout: false) }
+                Button("스티커 (배경 제거)") { makeFromLibrary(cutout: true) }
+                Button("취소", role: .cancel) { importedPhoto = nil }
+            } message: {
+                Text("'\(collection.activeAlbum)' 수집함에 담겨요.\n가져온 사진은 한 장이라 움직이지 않아요.")
+            }
         }
         .preferredColorScheme(.dark)
+    }
+
+    /// Loads the chosen library photo, then asks which shape to make.
+    private func loadImportedPhoto(_ item: PhotosPickerItem?) {
+        guard let item else { return }
+        Task {
+            guard let data = try? await item.loadTransferable(type: Data.self),
+                  let img = UIImage(data: data) else { return }
+            await MainActor.run {
+                importedPhoto = img
+                showImportShape = true
+                photoItem = nil
+            }
+        }
+    }
+
+    /// Turns the imported photo into a still stamp/sticker in the active album,
+    /// derived through the ONE canonical path so the result matches the choice,
+    /// then jumps to that album so the new piece is visible.
+    private func makeFromLibrary(cutout: Bool) {
+        guard let photo = importedPhoto else { return }
+        importedPhoto = nil
+        let style: StampStyle = cutout ? .sticker : .stamp   // single photo → never moving
+        guard let base = StampCompositor.centerCrop(photo, aspect: StampFrameLoader.windowAspect)
+        else { return }
+        let file: () -> Void = {
+            let still = CollectionStore.stillLook(base.image, style: style)
+            DispatchQueue.main.async {
+                let newID = collection.add(still, original: photo, cropNorm: base.cropNorm)
+                collection.recordStyle(style, for: newID)
+                Haptics.bounce()
+                tab = .albums
+                path = [.album(collection.activeAlbum)]
+            }
+        }
+        // background removal (sticker) is slow → off the main thread
+        if style.cutout { DispatchQueue.global(qos: .userInitiated).async(execute: file) }
+        else { file() }
     }
 
     private var albumShelf: some View {
@@ -1061,6 +1120,10 @@ struct ExhibitionWallCover: View {
 struct AlbumPageView: View {
     @ObservedObject var collection: CollectionStore
     let album: String
+    /// Leaves the whole browser and returns to the camera (modal dismiss).
+    var exitToCamera: () -> Void = {}
+    /// Jumps to the 컬렉션 overview, so albums and collections are cross-reachable.
+    var goToCollections: () -> Void = {}
     @Environment(\.dismiss) private var dismiss
     @AppStorage("lastVisitedAlbum") private var lastVisitedAlbum = ""
 
@@ -1227,24 +1290,16 @@ struct AlbumPageView: View {
       .onAppear { lastVisitedAlbum = album }   // remember for the camera shortcut
       .navigationTitle(album)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    ForEach(PocketFilter.allCases) { f in
-                        Button {
-                            filter = f
-                            currentPage = 0
-                            Haptics.tick()
-                        } label: {
-                            Label(f.title, systemImage: f == filter ? "checkmark" : f.icon)
-                        }
-                    }
-                } label: {
-                    Image(systemName: filter == .all
-                          ? "line.3.horizontal.decrease.circle"
-                          : "line.3.horizontal.decrease.circle.fill")
+            // 사진 앱처럼 — 뒤로가기는 카메라로 바로 돌아간다 (모음 단계를 건너뜀)
+            ToolbarItem(placement: .topBarLeading) {
+                Button { exitToCamera() } label: {
+                    Label("카메라", systemImage: "chevron.backward")
                 }
+                .font(.system(size: 15, weight: .semibold))
             }
+            // 선택은 그대로 우측 상단에
             ToolbarItem(placement: .topBarTrailing) {
                 if !stamps.isEmpty {
                     Button(selecting ? "취소" : "선택") {
@@ -1277,6 +1332,28 @@ struct AlbumPageView: View {
                 } label: {
                     Image(systemName: "ellipsis.circle")
                 }
+            }
+            // 필터 · 컬렉션 보기 → 왼쪽 하단 툴바
+            ToolbarItemGroup(placement: .bottomBar) {
+                Menu {
+                    ForEach(PocketFilter.allCases) { f in
+                        Button {
+                            filter = f
+                            currentPage = 0
+                            Haptics.tick()
+                        } label: {
+                            Label(f.title, systemImage: f == filter ? "checkmark" : f.icon)
+                        }
+                    }
+                } label: {
+                    Image(systemName: filter == .all
+                          ? "line.3.horizontal.decrease.circle"
+                          : "line.3.horizontal.decrease.circle.fill")
+                }
+                Button { goToCollections() } label: {
+                    Image(systemName: "photo.artframe")
+                }
+                Spacer()
             }
         }
         // multi-select: a tally + delete bar slides up over the bottom edge
@@ -1837,36 +1914,65 @@ struct StampStylePicker: View {
     var body: some View {
         let current = collection.style(for: stampID)
         let canMove = collection.canMove(stampID)
-        HStack(spacing: 8) {
-            ForEach(StampStyle.allCases) { style in
-                let selected = style == current
-                let enabled = !style.needsMotion || canMove
-                Button {
-                    guard !selected else { return }
-                    Haptics.tick()
-                    collection.applyStyle(style, for: stampID)
-                } label: {
-                    VStack(spacing: 4) {
-                        Image(systemName: style.icon)
-                            .font(.system(size: 15, weight: .semibold))
-                        Text(style.title)
-                            .font(.system(size: 9.5, weight: .semibold, design: .rounded))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.8)
-                    }
-                    .foregroundStyle(chipInk(selected: selected))
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-                    .background(RoundedRectangle(cornerRadius: 11, style: .continuous)
-                        .fill(chipFill(selected: selected)))
-                    .overlay(RoundedRectangle(cornerRadius: 11, style: .continuous)
-                        .strokeBorder(chipStroke(selected: selected), lineWidth: selected ? 1.5 : 1))
-                }
-                .buttonStyle(.plain)
-                .disabled(!enabled)
-                .opacity(enabled ? 1 : 0.35)
+        VStack(spacing: 9) {
+            // 모양 축: 우표(톱니) ↔ 스티커(배경 제거)
+            axis(title: "모양",
+                 a: ("우표", "square.dashed"), b: ("스티커", "scissors"),
+                 onB: current.cutout, bEnabled: true) { wantCutout in
+                set(moving: current.moving, cutout: wantCutout)
+            }
+            // 움직임 축: 정지 ↔ 움직임
+            axis(title: "움직임",
+                 a: ("정지", "stop.circle"), b: ("움직임", "livephoto"),
+                 onB: current.moving, bEnabled: canMove) { wantMoving in
+                set(moving: wantMoving, cutout: current.cutout)
             }
         }
+    }
+
+    private func set(moving: Bool, cutout: Bool) {
+        let s = StampStyle.make(moving: moving, cutout: cutout)
+        guard s != collection.style(for: stampID) else { return }
+        Haptics.tick()
+        collection.applyStyle(s, for: stampID)
+    }
+
+    /// One axis as a two-segment pill: tapping the off side flips just that axis.
+    @ViewBuilder
+    private func axis(title: String, a: (String, String), b: (String, String),
+                      onB: Bool, bEnabled: Bool, pick: @escaping (Bool) -> Void) -> some View {
+        HStack(spacing: 10) {
+            Text(title)
+                .font(.system(size: 12, weight: .bold, design: .rounded))
+                .foregroundStyle(chipInk(selected: false))
+                .frame(width: 38, alignment: .leading)
+            HStack(spacing: 4) {
+                segment(a.0, a.1, selected: !onB, enabled: true) { pick(false) }
+                segment(b.0, b.1, selected: onB, enabled: bEnabled) { pick(true) }
+            }
+            .padding(3)
+            .background(Capsule().fill(dark ? Color.white.opacity(0.08) : Color.white.opacity(0.20)))
+        }
+    }
+
+    @ViewBuilder
+    private func segment(_ title: String, _ icon: String, selected: Bool,
+                         enabled: Bool, tap: @escaping () -> Void) -> some View {
+        Button { if enabled { tap() } } label: {
+            HStack(spacing: 5) {
+                Image(systemName: icon).font(.system(size: 13, weight: .semibold))
+                Text(title).font(.system(size: 13, weight: .semibold, design: .rounded))
+            }
+            .foregroundStyle(chipInk(selected: selected))
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 7)
+            .background {
+                if selected { Capsule().fill(chipFill(selected: true)) }
+            }
+        }
+        .buttonStyle(.plain)
+        .disabled(!enabled)
+        .opacity(enabled ? 1 : 0.3)
     }
 
     private func chipInk(selected: Bool) -> Color {
@@ -3042,40 +3148,19 @@ final class CollectionStore: ObservableObject {
             // their motion inside the live clip — back it up as the master
             // before anything below could delete it, so motion is never lost
             let material = self.motionMaterial(for: id)
-            // --- the still ---
-            let still: UIImage?
-            switch style {
-            case .stamp, .liveStamp:
-                still = self.printStamp(for: id, longSidePx: 900)
-            case .sticker, .liveSticker:
-                still = self.printStamp(for: id, longSidePx: 900, clipToShape: false)
-                    .flatMap { SubjectLift.cutout(from: $0) }
-            }
-            // --- the clip ---
+            // --- the still --- (one canonical path: shape axis can't flip)
+            let still: UIImage? = self.printStamp(for: id, longSidePx: 900, clipToShape: false)
+                .map { Self.stillLook($0, style: style) }
+            // --- the clip --- (only moving looks; never frozen, never wrong shape)
             var apng: Data?
             var lean: Data?
             var hot: (frames: [UIImage], delay: Double)?
-            if style.needsMotion, let master = material {
-                var styled: [UIImage]
-                let delay = master.delay
-                if style == .liveStamp {
-                    styled = master.frames.map { Self.stampShaped($0) }
-                } else {
-                    // one mask for the whole clip → uniform size, no dropped
-                    // frames, no per-frame Vision (the old way silently froze it)
-                    if let mask = SubjectLift.subjectMask(from: master.frames[master.frames.count / 2]) {
-                        styled = master.frames.compactMap { SubjectLift.apply(mask: mask, to: $0) }
-                    } else {
-                        styled = []
-                    }
-                }
-                // a moving style must never freeze: fall back to the raw moving
-                // frames if the chosen look couldn't be built
-                if styled.count <= 1 { styled = master.frames }
+            if style.moving, let master = material {
+                let styled = Self.clipLook(master.frames, style: style)
                 if styled.count > 1 {
-                    hot = (styled, delay)
-                    apng = APNG.encode(styled, delay: delay)
-                    lean = APNG.encodeForMessages(styled, delay: delay)
+                    hot = (styled, master.delay)
+                    apng = APNG.encode(styled, delay: master.delay)
+                    lean = APNG.encodeForMessages(styled, delay: master.delay)
                 }
             }
             let newStill = still
@@ -3115,6 +3200,39 @@ final class CollectionStore: ObservableObject {
             ctx.cgContext.clip()
             image.draw(in: CGRect(origin: .zero, size: size))
         }
+    }
+
+    // MARK: - Canonical look derivation (the ONLY place a look is built)
+    //
+    // Both axes are honoured no matter what, so the result can never disagree
+    // with the chosen style:
+    //   • shape   — `.cutout` styles are background-removed (a sticker) and NEVER
+    //     get the perforation; non-cutout styles ALWAYS get the perforation.
+    //     A sticker with no detectable subject falls back to the plain crop
+    //     (still no teeth) — it stays a sticker, it never becomes a stamp.
+    //   • motion  — a moving look's clip is always ≥2 frames (falls back to the
+    //     raw frames), so a "moving" style is never delivered frozen.
+
+    /// The still image for `style`, derived from a plain rectangular crop.
+    static func stillLook(_ rectCrop: UIImage, style: StampStyle) -> UIImage {
+        if style.cutout {
+            return SubjectLift.cutout(from: rectCrop) ?? rectCrop   // sticker: never perforated
+        }
+        return stampShaped(rectCrop)                                 // stamp: always perforated
+    }
+
+    /// The clip frames for a moving `style`, from plain rectangular frames.
+    /// Returns frames unchanged for a still style (caller shouldn't store them).
+    static func clipLook(_ rectFrames: [UIImage], style: StampStyle) -> [UIImage] {
+        guard rectFrames.count > 1 else { return rectFrames }
+        if style.cutout {
+            if let mask = SubjectLift.subjectMask(from: rectFrames[rectFrames.count / 2]) {
+                let cut = rectFrames.compactMap { SubjectLift.apply(mask: mask, to: $0) }
+                return cut.count > 1 ? cut : rectFrames     // sticker: cutout, never perforated
+            }
+            return rectFrames                                // no subject → moving rect, still no teeth
+        }
+        return rectFrames.map { stampShaped($0) }            // stamp: every frame perforated
     }
 
     // MARK: - Motion master (style-agnostic raw frames)
@@ -3330,9 +3448,12 @@ final class CollectionStore: ObservableObject {
     /// `directory` lets tests point the store at an isolated temp folder; in the
     /// app it defaults to Documents/Collection.
     init(directory: URL? = nil) {
-        dir = directory ?? FileManager.default
-            .urls(for: .documentDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("Collection", isDirectory: true)
+        // `.first ?? temporaryDirectory` — never force-index [0]: in the Xcode
+        // Preview/build sandbox the documents-directory list can be empty, and
+        // a trap there surfaces as "invalid reuse after initialization failure".
+        let base = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+            ?? FileManager.default.temporaryDirectory
+        dir = directory ?? base.appendingPathComponent("Collection", isDirectory: true)
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         loadStamps()
         loadMeta()
@@ -4601,6 +4722,9 @@ struct CaptureRevealView: View {
 
     private var stamp: CollectedStamp? { collection.stamps.first { $0.id == stampID } }
 
+    /// 만든 것이 스티커(배경 제거)인지 우표(톱니)인지 — 도착 안내 문구를 가른다.
+    private var noun: String { collection.style(for: stampID).cutout ? "스티커" : "우표" }
+
     var body: some View {
         GeometryReader { geo in
             let center = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
@@ -4630,7 +4754,7 @@ struct CaptureRevealView: View {
                             .foregroundStyle(Color(hex: 0x3A2C12))
                             .padding(.horizontal, 10).padding(.vertical, 4)
                             .background(Capsule().fill(Color(hex: 0xFFD966)))
-                        Text("우표가 도착했어요!")
+                        Text("\(noun)가 도착했어요!")
                             .font(.system(size: 25, weight: .heavy, design: .rounded))
                             .foregroundStyle(.white)
                     }
@@ -4640,7 +4764,7 @@ struct CaptureRevealView: View {
                         .frame(maxWidth: 250, maxHeight: 330)
 
                     // a quiet nudge until the back has been found once
-                    Text("우표를 빙글 돌려보세요")
+                    Text("\(noun)를 빙글 돌려보세요")
                         .font(.system(size: 12, weight: .medium, design: .rounded))
                         .foregroundStyle(.white.opacity(0.45))
                         .opacity(flipped ? 0 : 1)
@@ -5224,6 +5348,18 @@ enum StampStyle: String, CaseIterable, Identifiable {
         }
     }
     var needsMotion: Bool { self == .liveStamp || self == .liveSticker }
+
+    // The two independent axes a look is composed from.
+    var moving: Bool { self == .liveStamp || self == .liveSticker }   // 정지 ↔ 움직임
+    var cutout: Bool { self == .sticker || self == .liveSticker }     // 우표(톱니) ↔ 스티커(배경 제거)
+    static func make(moving: Bool, cutout: Bool) -> StampStyle {
+        switch (moving, cutout) {
+        case (false, false): return .stamp
+        case (true,  false): return .liveStamp
+        case (false, true):  return .sticker
+        case (true,  true):  return .liveSticker
+        }
+    }
 }
 
 /// The decorating finishes ("inks") a stamp can take — each is applied to a
@@ -5767,13 +5903,57 @@ struct StampFrame {
 }
 
 enum StampFrameLoader {
-    static let frame: StampFrame? = make()
+    /// Asset names of every built-in frame, in pick order. Only frames that
+    /// actually ship AND process into a usable cut-out (a detectable window) are
+    /// offered — a malformed asset is skipped rather than blanking the camera.
+    /// Adding "StampFrame3" later just works once the asset exists.
+    static let names: [String] = ["StampFrame", "StampFrame2"]
+        .filter { UIImage(named: $0) != nil }   // cheap existence check; heavy
+                                                // processing stays lazy in frame(named:)
+
+    /// Falls back to the first available asset (or the original name).
+    static var defaultName: String { names.first ?? "StampFrame" }
+
+    static let selectionKey = "stampFrameName"
+
+    /// The asset name of the frame the user has chosen (persisted). Invalid /
+    /// missing selections fall back to the default so a removed asset can't
+    /// leave the camera frameless.
+    static var selectedName: String {
+        let n = UserDefaults.standard.string(forKey: selectionKey) ?? defaultName
+        return names.contains(n) ? n : defaultName
+    }
+
+    /// Processing each frame (flood-fill + mask) is expensive, so keep the
+    /// result per asset name.
+    private static var cache: [String: StampFrame] = [:]
+
+    /// The processed frame for a given asset name (cached).
+    static func frame(named name: String) -> StampFrame? {
+        if let cached = cache[name] { return cached }
+        guard let made = make(named: name) else { return nil }
+        cache[name] = made
+        return made
+    }
+
+    /// The currently-selected processed frame.
+    static var frame: StampFrame? { frame(named: selectedName) }
+
+    /// Aspect ratio (w / h) of the stamp window — used to center-crop an
+    /// imported photo into the same proportions a capture would have.
+    static var windowAspect: CGFloat {
+        guard let frame else { return 1 }
+        let img = frame.image.size
+        let n = frame.windowRectNorm
+        let h = n.height * img.height
+        return h > 0 ? (n.width * img.width) / h : 1
+    }
     /// A fixed mount drawn on top of the (pressable) stamp frame — it never
     /// scales or moves, so only the inner frame presses. Optional asset.
     static let staticImage: UIImage? = UIImage(named: "staticFrame")
 
-    private static func make() -> StampFrame? {
-        guard let source = UIImage(named: "StampFrame"),
+    private static func make(named name: String) -> StampFrame? {
+        guard let source = UIImage(named: name),
               let cg = source.cgImage else { return nil }
 
         let w = cg.width, h = cg.height
@@ -5790,14 +5970,36 @@ enum StampFrameLoader {
         ) else { return nil }
         ctx.draw(cg, in: CGRect(x: 0, y: 0, width: w, height: h))
 
-        // The asset is already a clean cut-out PNG: transparent around the
-        // frame AND transparent through the stamp window. We only need to find
-        // that inner window — the transparent region that is NOT connected to
-        // the image border (the outer transparent background is).
+        // A frame can arrive two ways:
+        //   • a clean cut-out PNG — transparent around the frame AND through the
+        //     window (the original StampFrame); "clear" = low alpha.
+        //   • an opaque frame on a light background, with a light (white) window
+        //     (StampFrame2); there's no alpha to read, so "clear" = near-white.
+        // We detect which by checking whether the border is actually transparent.
         let alphaThreshold: UInt8 = 20
-        func isClear(_ p: Int) -> Bool { buffer[p * 4 + 3] < alphaThreshold }
+        func alphaOf(_ p: Int) -> UInt8 { buffer[p * 4 + 3] }
+        var borderClear = 0
+        for x in 0..<w {
+            if alphaOf(x) < alphaThreshold { borderClear += 1 }
+            if alphaOf((h - 1) * w + x) < alphaThreshold { borderClear += 1 }
+        }
+        let usesAlpha = borderClear > w / 4   // a genuine transparent background
 
-        // flood the exterior transparent background inward from every border pixel
+        // For an opaque frame the "empty" areas (the outer background AND the
+        // window) are one flat light colour, while the frame body is a distinct
+        // colour. So "clear" = a pixel close to the corner background colour —
+        // not absolute white, so a cream/pink frame works as well as a white one.
+        let bgR = Int(buffer[0]), bgG = Int(buffer[1]), bgB = Int(buffer[2])
+        let colorTol2 = 48 * 48
+        func isClear(_ p: Int) -> Bool {
+            if usesAlpha { return alphaOf(p) < alphaThreshold }
+            let dr = Int(buffer[p * 4]) - bgR
+            let dg = Int(buffer[p * 4 + 1]) - bgG
+            let db = Int(buffer[p * 4 + 2]) - bgB
+            return dr * dr + dg * dg + db * db < colorTol2
+        }
+
+        // flood the exterior background inward from every border pixel
         var exterior = [Bool](repeating: false, count: w * h)
         var stack = [Int]()
         func seed(_ p: Int) { if isClear(p) && !exterior[p] { exterior[p] = true; stack.append(p) } }
@@ -5811,22 +6013,44 @@ enum StampFrameLoader {
             if y < h - 1 { seed(p + w) }
         }
 
-        // interior transparent pixels = the stamp window; take its bounding box
-        var minX = w, minY = h, maxX = -1, maxY = -1
-        for y in 0..<h {
-            for x in 0..<w {
-                let p = y * w + x
-                if isClear(p) && !exterior[p] {
-                    if x < minX { minX = x }; if x > maxX { maxX = x }
-                    if y < minY { minY = y }; if y > maxY { maxY = y }
+        // The window is the LARGEST enclosed clear region (not connected to the
+        // border) — taking the largest component ignores stray light specks in
+        // the frame's decoration, which would otherwise blow up the bounding box.
+        var visited = [Bool](repeating: false, count: w * h)
+        var bestMinX = 0, bestMinY = 0, bestMaxX = -1, bestMaxY = -1
+        var bestComp = [Int]()
+        var comp = [Int]()
+        for start in 0..<(w * h) where isClear(start) && !exterior[start] && !visited[start] {
+            comp.removeAll(keepingCapacity: true)
+            visited[start] = true
+            var qi = 0
+            comp.append(start)
+            var cMinX = w, cMinY = h, cMaxX = -1, cMaxY = -1
+            while qi < comp.count {
+                let p = comp[qi]; qi += 1
+                let x = p % w, y = p / w
+                if x < cMinX { cMinX = x }; if x > cMaxX { cMaxX = x }
+                if y < cMinY { cMinY = y }; if y > cMaxY { cMaxY = y }
+                func grow(_ q: Int) {
+                    if isClear(q) && !exterior[q] && !visited[q] { visited[q] = true; comp.append(q) }
                 }
+                if x > 0 { grow(p - 1) }
+                if x < w - 1 { grow(p + 1) }
+                if y > 0 { grow(p - w) }
+                if y < h - 1 { grow(p + w) }
+            }
+            if comp.count > bestComp.count {
+                bestComp = comp
+                bestMinX = cMinX; bestMinY = cMinY; bestMaxX = cMaxX; bestMaxY = cMaxY
             }
         }
-        guard maxX >= minX, maxY >= minY else { return nil }
-        let bw = maxX - minX + 1, bh = maxY - minY + 1
+        var windowMask = [Bool](repeating: false, count: w * h)
+        for q in bestComp { windowMask[q] = true }
+        guard bestMaxX >= bestMinX, bestMaxY >= bestMinY else { return nil }
+        let bw = bestMaxX - bestMinX + 1, bh = bestMaxY - bestMinY + 1
 
         let rectNorm = CGRect(
-            x: CGFloat(minX) / CGFloat(w), y: CGFloat(minY) / CGFloat(h),
+            x: CGFloat(bestMinX) / CGFloat(w), y: CGFloat(bestMinY) / CGFloat(h),
             width: CGFloat(bw) / CGFloat(w), height: CGFloat(bh) / CGFloat(h))
 
         // Build a mask of the frame's interior (the outer silhouette: frame body
@@ -5851,8 +6075,38 @@ enum StampFrameLoader {
         let interiorMask = UIImage(cgImage: maskCG, scale: source.scale,
                                    orientation: source.imageOrientation)
 
-        // The asset is already cut out, so use it as-is.
-        return StampFrame(image: source, windowRectNorm: rectNorm,
+        // A cut-out PNG is already see-through, so use it as-is. An opaque frame
+        // has to be punched: make the exterior background AND the window
+        // transparent so the live camera shows through, while keeping the frame
+        // body intact (stray light specks in the decoration stay opaque).
+        let frameImage: UIImage
+        if usesAlpha {
+            frameImage = source
+        } else {
+            let outBuf = UnsafeMutablePointer<UInt8>.allocate(capacity: count)
+            defer { outBuf.deallocate() }
+            for i in 0..<(w * h) {
+                if exterior[i] || windowMask[i] {
+                    outBuf[i * 4 + 0] = 0; outBuf[i * 4 + 1] = 0
+                    outBuf[i * 4 + 2] = 0; outBuf[i * 4 + 3] = 0
+                } else {
+                    outBuf[i * 4 + 0] = buffer[i * 4 + 0]
+                    outBuf[i * 4 + 1] = buffer[i * 4 + 1]
+                    outBuf[i * 4 + 2] = buffer[i * 4 + 2]
+                    outBuf[i * 4 + 3] = 255
+                }
+            }
+            guard let outCtx = CGContext(
+                data: outBuf, width: w, height: h,
+                bitsPerComponent: 8, bytesPerRow: w * 4,
+                space: CGColorSpaceCreateDeviceRGB(),
+                bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+            ), let outCG = outCtx.makeImage() else { return nil }
+            frameImage = UIImage(cgImage: outCG, scale: source.scale,
+                                 orientation: source.imageOrientation)
+        }
+
+        return StampFrame(image: frameImage, windowRectNorm: rectNorm,
                           interiorMask: interiorMask)
     }
 }
