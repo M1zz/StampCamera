@@ -5624,6 +5624,7 @@ struct StampDetailView: View {
     @State private var finish: StampInk = .original
     @State private var inkPreviews: [String: UIImage] = [:]
     @State private var sharePayload: SharePayload?
+    @State private var justCopied = false
     @FocusState private var focused: Bool
 
     private var stamp: CollectedStamp? { collection.stamps.first { $0.id == stampID } }
@@ -5650,11 +5651,19 @@ struct StampDetailView: View {
                             .font(.system(size: 11, weight: .medium, design: .rounded))
                             .foregroundStyle(Color(hex: 0x8C7A52))
                     }
-                    Button { exportSticker() } label: {
-                        Label("우표 내보내기 (PNG)", systemImage: "square.and.arrow.up")
-                            .font(.system(size: 12, weight: .semibold, design: .rounded))
-                            .foregroundStyle(Color(hex: 0xB89A5E))
+                    // copy to the clipboard or share — both export a high-res
+                    // transparent PNG (perforated 우표 or background-removed 스티커).
+                    HStack(spacing: 20) {
+                        Button { copySticker() } label: {
+                            Label(justCopied ? "복사됨!" : "복사",
+                                  systemImage: justCopied ? "checkmark" : "doc.on.doc")
+                        }
+                        Button { exportSticker() } label: {
+                            Label("공유", systemImage: "square.and.arrow.up")
+                        }
                     }
+                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .foregroundStyle(Color(hex: 0xB89A5E))
                     .padding(.top, 2)
 
                     // when & where this stamp was made
@@ -5798,8 +5807,12 @@ struct StampDetailView: View {
     /// sticker you can drop into Files, Photos, or Messages stickers.
     /// Re-composited from the full-resolution original (≈2048px), in the
     /// stamp's current look, instead of the small on-screen render.
-    private func exportSticker() {
-        guard let stamp else { return }
+    /// Renders the stamp at print resolution as a transparent PNG (perforated
+    /// 우표 or background-removed 스티커, matching the chosen style) and hands
+    /// back both the raw data (for the clipboard) and a temp file URL (for the
+    /// share sheet). Heavy work runs off-main.
+    private func makeStickerPNG(_ done: @escaping (Data?, URL?) -> Void) {
+        guard let stamp else { done(nil, nil); return }
         let style = collection.style(for: stampID)
         DispatchQueue.global(qos: .userInitiated).async {
             // perforated looks re-crop at print size; sticker looks lift the
@@ -5813,12 +5826,33 @@ struct StampDetailView: View {
                let cut = SubjectLift.cutout(from: base) {
                 image = cut
             }
-            guard let data = (image ?? stamp.image).pngData() else { return }
-            let url = FileManager.default.temporaryDirectory
-                .appendingPathComponent("StampSticker-\(stampID).png")
-            do { try data.write(to: url) } catch { return }
-            DispatchQueue.main.async {
-                sharePayload = SharePayload(items: [url])
+            let data = (image ?? stamp.image).pngData()
+            var url: URL?
+            if let data {
+                let u = FileManager.default.temporaryDirectory
+                    .appendingPathComponent("Stamp-\(stampID).png")
+                if (try? data.write(to: u)) != nil { url = u }
+            }
+            DispatchQueue.main.async { done(data, url) }
+        }
+    }
+
+    private func exportSticker() {
+        makeStickerPNG { _, url in
+            if let url { sharePayload = SharePayload(items: [url]) }
+        }
+    }
+
+    /// Copies the stamp to the clipboard as a transparent PNG, so it pastes into
+    /// Messages, Notes, etc. with its holes / cut-out intact.
+    private func copySticker() {
+        makeStickerPNG { data, _ in
+            guard let data else { return }
+            UIPasteboard.general.setData(data, forPasteboardType: "public.png")
+            Haptics.placed()
+            withAnimation(.easeOut(duration: 0.15)) { justCopied = true }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+                withAnimation(.easeOut(duration: 0.2)) { justCopied = false }
             }
         }
     }
