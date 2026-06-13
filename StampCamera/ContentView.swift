@@ -13,7 +13,29 @@ import CoreImage
 import CoreLocation
 import ImageIO
 import PhotosUI
+import TipKit
 import Vision
+
+// MARK: - Tips (TipKit)
+
+/// Explains the capture-style toggle: the two axes a punch can take.
+struct CaptureStyleTip: Tip {
+    var title: Text { Text("모습을 골라 찍어요") }
+    var message: Text? {
+        Text("우표(톱니)·스티커(배경 제거), 정지·움직임을 고를 수 있어요. 찍은 뒤 상세에서 언제든 바꿀 수 있어요.")
+    }
+    var image: Image? { Image(systemName: "square.on.square.dashed") }
+}
+
+/// Explains that motion is always kept, and where to turn auto-play off.
+/// (Replaces the old inline blurb in the settings menu.)
+struct LiveAutoPlayTip: Tip {
+    var title: Text { Text("움직임은 언제나 보관돼요") }
+    var message: Text? {
+        Text("모든 우표는 움직임을 머금고 있어요. ‘움직임 자동 재생’을 끄면 어디서나 정지 이미지로 보여요.")
+    }
+    var image: Image? { Image(systemName: "play.circle") }
+}
 
 struct ContentView: View {
     @StateObject private var camera = CameraManager()
@@ -121,6 +143,9 @@ struct ContentView: View {
     // active-album switching from the camera screen
     @State private var showNewAlbum = false
     @State private var newAlbumName = ""
+
+    // TipKit: a one-time hint over the capture-style button
+    private let captureStyleTip = CaptureStyleTip()
 
     var body: some View {
         ZStack {
@@ -382,8 +407,6 @@ struct ContentView: View {
                     Label(s.title, systemImage: s == captureStyle ? "checkmark" : s.icon)
                 }
             }
-            Divider()
-            Text("찍는 순간의 모습이에요 — 찍은 뒤에도\n상세 페이지에서 언제든 바꿀 수 있어요")
         } label: {
             Image(systemName: captureStyle.icon)
                 .font(.system(size: 18, weight: .semibold))
@@ -393,6 +416,7 @@ struct ContentView: View {
                 .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
         }
         .buttonStyle(.plain)
+        .popoverTip(captureStyleTip, arrowEdge: .top)
     }
 
     /// The book-picker chip: shows which book new stamps go into, with a menu
@@ -896,6 +920,7 @@ struct CollectionView: View {
     @State private var tab: Tab = .exhibitions
     @State private var showPrintGuide = false
     @State private var showCheckup = false   // "스티커 점검": 안 맞게 만들어진 항목 바로잡기
+    private let liveAutoPlayTip = LiveAutoPlayTip()   // TipKit hint on the settings gear
     // 사진 앱에서 가져오기 — 활성 수집함에 정지 우표/스티커로 담는다
     @State private var photoItem: PhotosPickerItem?
     @State private var importedPhoto: UIImage?
@@ -999,6 +1024,7 @@ struct CollectionView: View {
                         } label: {
                             Image(systemName: "gearshape")
                         }
+                        .popoverTip(liveAutoPlayTip, arrowEdge: .top)
                     }
                 }
             }
@@ -1591,21 +1617,15 @@ struct AlbumPageView: View {
             let firstPlaces = firstPlaceIDs
             let start = pageIndex * perPage
             let slice = Array(stamps.dropFirst(start).prefix(perPage))
-            let showEmptySlots = pageIndex == pageCount - 1
-                && collection.activeAlbum == album && !selecting && filter == .all
             let columns = Array(repeating: GridItem(.fixed(cellW), spacing: spacing), count: 3)
             // transparent leaf — the cream paper is the page's full-screen
             // background; here we just lay out the grid and anchor a page dot.
+            // (No empty "+" placeholder slots — the user doesn't want the holes.)
             VStack(spacing: 0) {
                 LazyVGrid(columns: columns, spacing: spacing) {
                     ForEach(Array(slice.enumerated()), id: \.element.id) { i, stamp in
                         PocketAppear(index: i) {
                             stampCell(stamp, gold: gold, firstPlaces: firstPlaces, cell: cellW)
-                        }
-                    }
-                    if showEmptySlots {
-                        ForEach(0..<(perPage - slice.count), id: \.self) { _ in
-                            emptyPocket(cellW)
                         }
                     }
                 }
@@ -1951,20 +1971,27 @@ struct AlbumPageView: View {
     /// perforated edge showing, with a soft shadow for a little lift.
     private func pagePocket(_ stamp: CollectedStamp, gold: Bool = false,
                             height: CGFloat = 78) -> some View {
-        LiveArt(collection: collection, stamp: stamp, maxPixel: 280)
+        // every stamp/sticker sits on its own WHITE tile — the cut-out's
+        // transparent areas (and a stamp's perforations) read as clean white
+        // instead of letting the page/shadow show through as a "hole".
+        return LiveArt(collection: collection, stamp: stamp, maxPixel: 280)
             .frame(height: height)
             .frame(maxWidth: .infinity)
-            .padding(gold ? 4 : 0)
+            .padding(8)
             .background {
-                // gold edition: mounted on a little foil mat with a crown
                 if gold {
-                    RoundedRectangle(cornerRadius: 7, style: .continuous)
+                    // gold edition: a foil mat instead of plain white
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
                         .fill(LinearGradient(
                             colors: [Color(hex: 0xF6DE9A), Color(hex: 0xD9A93C),
                                      Color(hex: 0xF2CF74), Color(hex: 0xB8842B)],
                             startPoint: .topLeading, endPoint: .bottomTrailing))
+                } else {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(.white)
                 }
             }
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             .overlay(alignment: .top) {
                 if gold {
                     Image(systemName: "crown.fill")
@@ -1975,24 +2002,8 @@ struct AlbumPageView: View {
                         .offset(y: -9)
                 }
             }
-            .shadow(color: gold ? Color(hex: 0xD9A93C).opacity(0.55) : .black.opacity(0.25),
-                    radius: gold ? 6 : 3, y: 2)
-    }
-
-    /// A dotted, waiting pocket on the last leaf — the next stamp's home.
-    private func emptyPocket(_ height: CGFloat) -> some View {
-        RoundedRectangle(cornerRadius: 8, style: .continuous)
-            .strokeBorder(Color(hex: 0xC9BFA9),
-                          style: StrokeStyle(lineWidth: 1.2, dash: [5, 4]))
-            .background(RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .fill(Color(hex: 0xC9BFA9).opacity(0.08)))
-            .frame(height: height)
-            .frame(maxWidth: .infinity)
-            .overlay {
-                Image(systemName: "plus")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundStyle(Color(hex: 0xC9BFA9))
-            }
+            // a soft RECTANGULAR tile shadow (not the silhouette) for a little lift
+            .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
     }
 
     /// The collector's plaque at the top of the book: the running tally, how
@@ -3309,6 +3320,10 @@ final class CollectionStore: ObservableObject {
     func originalImage(for id: String) -> UIImage? {
         UIImage(contentsOfFile: originalURL(for: id).path)
     }
+    /// Cheap check (no decode) for whether the full original photo was kept.
+    func hasOriginal(_ id: String) -> Bool {
+        FileManager.default.fileExists(atPath: originalURL(for: id).path)
+    }
 
     // MARK: - NEW badge (seen tracking)
 
@@ -3445,11 +3460,16 @@ final class CollectionStore: ObservableObject {
     static func clipLook(_ rectFrames: [UIImage], style: StampStyle) -> [UIImage] {
         guard rectFrames.count > 1 else { return rectFrames }
         if style.cutout {
-            if let mask = SubjectLift.subjectMask(from: rectFrames[rectFrames.count / 2]) {
-                let cut = rectFrames.compactMap { SubjectLift.apply(mask: mask, to: $0) }
-                return cut.count > 1 ? cut : rectFrames     // sticker: cutout, never perforated
+            // PER-FRAME masks: one shared mask (from the middle frame) ghosts —
+            // when the subject moves, the stale silhouette keeps the background
+            // where the subject used to be, covering it. Cutting each frame with
+            // its own mask keeps the cutout aligned. `apply` returns full-extent
+            // frames, so they stay the same size (no dropped/jittering frames).
+            let cut = rectFrames.compactMap { frame -> UIImage? in
+                guard let m = SubjectLift.subjectMask(from: frame) else { return nil }
+                return SubjectLift.apply(mask: m, to: frame)
             }
-            return rectFrames                                // no subject → moving rect, still no teeth
+            return cut.count > 1 ? cut : rectFrames     // sticker: cutout, never perforated
         }
         return rectFrames.map { stampShaped($0) }            // stamp: every frame perforated
     }
@@ -3702,6 +3722,18 @@ final class CollectionStore: ObservableObject {
         loadExhibitions()
         reconcile()
         syncStickers()
+        refreshCutoutsOnce()
+    }
+
+    /// One-time: re-derive existing sticker cutouts so they pick up the new
+    /// crisp, halo-free edge (older builds baked a pale matte outline). Skipped
+    /// for good after it runs once.
+    private func refreshCutoutsOnce() {
+        let key = "cutoutCrispV2"   // v2: crisp edges + per-frame clip masks (no ghost)
+        guard !UserDefaults.standard.bool(forKey: key) else { return }
+        UserDefaults.standard.set(true, forKey: key)
+        let cutoutIDs = stamps.filter { style(for: $0.id).cutout }.map(\.id)
+        for id in cutoutIDs { applyStyle(style(for: id), for: id) }   // re-derives off-main
     }
 
     /// App Group shared with the iMessage sticker extension, so collected stamps
@@ -3725,9 +3757,10 @@ final class CollectionStore: ObservableObject {
                 try? data.write(to: dir.appendingPathComponent("collections.json"))
             }
 
-            // one-time migration: stickers used to be written at screen size;
-            // wipe once so everything regenerates at high resolution below
-            let marker = dir.appendingPathComponent(".v3-bigstickers")
+            // one-time migration: older builds wrote stickers larger than
+            // Messages' 618pt limit (so MSSticker rejected them and the tray
+            // came up empty) — wipe once so everything regenerates within size.
+            let marker = dir.appendingPathComponent(".v6-whitecanvas")
             if !FileManager.default.fileExists(atPath: marker.path) {
                 for f in (try? FileManager.default.contentsOfDirectory(at: dir,
                             includingPropertiesForKeys: nil)) ?? []
@@ -3738,19 +3771,16 @@ final class CollectionStore: ObservableObject {
             }
 
             let wanted = Set(snapshot.map { "\($0.0).png" })
-            for (id, image, live) in snapshot {
+            for (id, image, _) in snapshot {
                 let url = dir.appendingPathComponent("\(id).png")
                 guard !FileManager.default.fileExists(atPath: url.path) else { continue }
-                // prefer the animated clip (the sticker moves in Messages) —
-                // but never ship one over Messages' ~500 KB cap, or it
-                // silently vanishes from the tray
-                if let liveData = try? Data(contentsOf: live) {
-                    if liveData.count <= 480_000 {
-                        try? liveData.write(to: url)
-                        continue
-                    }
-                    if let clip = self.liveClip(for: id),
-                       let lean = APNG.encodeForMessages(clip.frames, delay: clip.delay) {
+                // Every sticker is composited onto a uniform WHITE square so it
+                // ALWAYS meets MSSticker's 100–618pt size (tight cut-outs were
+                // being rejected and vanishing from the tray) and matches the
+                // in-app white-card look.
+                if let clip = self.liveClip(for: id) {
+                    let framesOnWhite = clip.frames.map { Self.stickerCanvas($0, side: 512) }
+                    if let lean = APNG.encodeForMessages(framesOnWhite, delay: clip.delay) {
                         try? lean.write(to: url)
                         continue
                     }
@@ -3769,17 +3799,32 @@ final class CollectionStore: ObservableObject {
         }
     }
 
-    /// A still sticker at the largest size that fits Messages' ~500 KB cap:
-    /// re-rendered from the kept original (≈2× the screen-size stamp),
-    /// stepping down until the budget fits.
+    /// A still sticker for Messages: the style-correct art (스티커=cut-out,
+    /// 우표=perforated) composited onto a uniform white square — so it always
+    /// fits MSSticker's 100–618pt size and shows up in the tray.
     private func stickerStillData(id: String, fallback: UIImage) -> Data? {
-        for px: CGFloat in [1024, 800, 640] {
-            if let hi = printStamp(for: id, longSidePx: px),
-               let data = hi.pngData(), data.count <= 480_000 {
+        let art = exportImage(for: id, longSidePx: 1024) ?? fallback
+        for side: CGFloat in [512, 408, 320] {
+            if let data = Self.stickerCanvas(art, side: side).pngData(), data.count <= 480_000 {
                 return data
             }
         }
-        return fallback.pngData()
+        return Self.stickerCanvas(art, side: 320).pngData()
+    }
+
+    /// Centers `art` (with a small inset) on an opaque white `side`×`side`
+    /// canvas — a clean, uniformly-sized sticker base.
+    static func stickerCanvas(_ art: UIImage, side: CGFloat) -> UIImage {
+        let fmt = UIGraphicsImageRendererFormat(); fmt.scale = 1; fmt.opaque = true
+        return UIGraphicsImageRenderer(size: CGSize(width: side, height: side), format: fmt).image { _ in
+            UIColor.white.setFill()
+            UIRectFill(CGRect(x: 0, y: 0, width: side, height: side))
+            let inset = side * 0.08
+            let box = CGRect(x: inset, y: inset, width: side - 2 * inset, height: side - 2 * inset)
+            let s = min(box.width / max(art.size.width, 1), box.height / max(art.size.height, 1))
+            let w = art.size.width * s, h = art.size.height * s
+            art.draw(in: CGRect(x: box.midX - w / 2, y: box.midY - h / 2, width: w, height: h))
+        }
     }
 
     private func captionURL(for id: String) -> URL {
@@ -4307,12 +4352,48 @@ enum SubjectLift {
             let buffer = try result.generateMaskedImage(ofInstances: result.allInstances,
                                                          from: handler,
                                                          croppedToInstancesExtent: true)
-            let ci = CIImage(cvPixelBuffer: buffer)
-            guard let out = CIContext().createCGImage(ci, from: ci.extent) else { return nil }
-            return UIImage(cgImage: out)
+            // The masked image keeps a soft, semi-transparent matte at the
+            // silhouette — against a dark background it reads as a pale outline.
+            // Pull the alpha into a grayscale mask, ERODE it a couple of pixels
+            // (so the boundary's background-tinted pixels are dropped), then
+            // threshold it crisp — leaving a clean, halo-free transparent edge.
+            let masked = CIImage(cvPixelBuffer: buffer)
+            let mask = SubjectLift.crispEdgeMask(fromAlphaOf: masked)
+            guard let blend = CIFilter(name: "CIBlendWithMask") else { return nil }
+            blend.setValue(masked, forKey: kCIInputImageKey)
+            blend.setValue(CIImage.empty(), forKey: kCIInputBackgroundImageKey)
+            blend.setValue(mask, forKey: kCIInputMaskImageKey)
+            guard let out = blend.outputImage,
+                  let cgOut = ciCtx.createCGImage(out, from: masked.extent) else { return nil }
+            return UIImage(cgImage: cgOut)
         } catch {
             return nil
         }
+    }
+
+    /// Erodes (~2px) + hard-thresholds a soft matte into a crisp silhouette mask,
+    /// so a cutout has no translucent halo. `fromAlphaOf` first lifts the source
+    /// image's alpha channel into grayscale; pass `alphaIsGrayscale: true` for a
+    /// mask that's already grayscale (Vision's scaled mask).
+    static func crispEdgeMask(fromAlphaOf image: CIImage, alphaIsGrayscale: Bool = false) -> CIImage {
+        let gray: CIImage = alphaIsGrayscale ? image : image.applyingFilter("CIColorMatrix", parameters: [
+            "inputRVector": CIVector(x: 0, y: 0, z: 0, w: 1),
+            "inputGVector": CIVector(x: 0, y: 0, z: 0, w: 1),
+            "inputBVector": CIVector(x: 0, y: 0, z: 0, w: 1),
+            "inputAVector": CIVector(x: 0, y: 0, z: 0, w: 0),
+            "inputBiasVector": CIVector(x: 0, y: 0, z: 0, w: 1),
+        ])
+        return gray
+            .applyingFilter("CIMorphologyMinimum", parameters: [kCIInputRadiusKey: 2.0])
+            .applyingFilter("CIColorMatrix", parameters: [   // threshold ALL channels at ~0.5
+                "inputRVector": CIVector(x: 16, y: 0, z: 0, w: 0),
+                "inputGVector": CIVector(x: 16, y: 0, z: 0, w: 0),
+                "inputBVector": CIVector(x: 16, y: 0, z: 0, w: 0),
+                "inputAVector": CIVector(x: 16, y: 0, z: 0, w: 0),
+                "inputBiasVector": CIVector(x: -8, y: -8, z: -8, w: -8),
+            ])
+            .applyingFilter("CIColorClamp")
+            .cropped(to: image.extent)
     }
 
     private static let ciCtx = CIContext()
@@ -4340,8 +4421,11 @@ enum SubjectLift {
     static func apply(mask: CIImage, to image: UIImage) -> UIImage? {
         guard let cg = image.normalizedUp().cgImage else { return nil }
         let src = CIImage(cgImage: cg)
-        let m = mask.transformed(by: CGAffineTransform(scaleX: src.extent.width / mask.extent.width,
-                                                       y: src.extent.height / mask.extent.height))
+        let scaled = mask.transformed(by: CGAffineTransform(scaleX: src.extent.width / mask.extent.width,
+                                                            y: src.extent.height / mask.extent.height))
+        // erode + hard-threshold the soft mask → a crisp silhouette with no
+        // translucent matte halo (the pale outline the user sees).
+        let m = crispEdgeMask(fromAlphaOf: scaled, alphaIsGrayscale: true)
         guard let filter = CIFilter(name: "CIBlendWithMask") else { return nil }
         filter.setValue(src, forKey: kCIInputImageKey)
         filter.setValue(CIImage.empty(), forKey: kCIInputBackgroundImageKey)
@@ -5533,58 +5617,57 @@ struct StampRevealView: View {
     let stampID: String
     @Environment(\.dismiss) private var dismiss
 
-    @State private var showPhoto = false
-    @State private var settled = false
     @State private var showControls = false
     @State private var editing = false
-    @State private var stampOnly = false   // toggle to view just the cut stamp
-    @State private var userInteracted = false
+    @State private var stampOnly = true    // open on the stamp/sticker itself
+    @State private var hasPhoto = false    // an original photo was kept → offer 전체사진
     @State private var sharePayload: SharePayload?
     @State private var justCopied = false
-    @AppStorage("stampRevealAnimate") private var animate = true
 
     private var stamp: CollectedStamp? { collection.stamps.first { $0.id == stampID } }
 
     var body: some View {
         GeometryReader { geo in
-            let original = collection.originalImage(for: stampID)?.normalizedUp()
-            let info = collection.cropInfo(for: stampID)
             ZStack {
                 Color.black.ignoresSafeArea()
 
                 if let stamp {
-                    if let original, let info {
-                        puzzle(stamp: stamp, original: original, info: info, geo: geo.size)
-                    } else {
-                        // no original kept → just present the stamp, centered
-                        Image(uiImage: stamp.image)
+                    if !stampOnly,
+                       let original = collection.originalImage(for: stampID)?.normalizedUp() {
+                        // 전체사진 — the plain original photo, no slot, no hole
+                        Image(uiImage: original)
                             .resizable().scaledToFit()
-                            .frame(width: min(geo.size.width, geo.size.height) * 0.7)
+                            .scaleEffect(x: collection.cropInfo(for: stampID)?.mirrored == true ? -1 : 1)
+                            .ignoresSafeArea()
+                            .transition(.opacity)
+                    } else {
+                        // the stamp / sticker pasted on a WHITE card — a positive
+                        // sticker on white, not a shape punched out of a photo.
+                        // (Transparent areas read as clean white, no "hole".)
+                        let side = min(geo.size.width, geo.size.height) * 0.82
+                        LiveArt(collection: collection, stamp: stamp, maxPixel: nil)
+                            .padding(22)
+                            .frame(width: side, height: side)
+                            .background(RoundedRectangle(cornerRadius: 28, style: .continuous)
+                                .fill(.white))
+                            .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
+                            .shadow(color: .black.opacity(0.45), radius: 24, y: 12)
                             .position(x: geo.size.width / 2, y: geo.size.height / 2)
+                            .transition(.opacity)
                     }
-                }
-
-                // "우표만 보기" — the cut stamp alone, large and centered;
-                // a live stamp plays its clip here (it moves, like a Live Photo)
-                if settled, stampOnly, let stamp {
-                    Color.black.opacity(0.92).ignoresSafeArea()
-                        .transition(.opacity)
-                    LiveArt(collection: collection, stamp: stamp, maxPixel: nil)
-                        .frame(width: min(geo.size.width, geo.size.height) * 0.74,
-                               height: min(geo.size.width, geo.size.height) * 0.74)
-                    .shadow(color: .black.opacity(0.6), radius: 24, y: 14)
-                    .position(x: geo.size.width / 2, y: geo.size.height / 2)
-                    .transition(.scale(scale: 0.85).combined(with: .opacity))
                 }
 
                 if showControls { controls }
             }
             .contentShape(Rectangle())
             .onTapGesture {
-                if stampOnly { withAnimation(.spring(response: 0.4, dampingFraction: 0.82)) { stampOnly = false } }
-                else if settled { dismiss() }
+                if !stampOnly { withAnimation(.easeOut(duration: 0.22)) { stampOnly = true } }
+                else { dismiss() }
             }
-            .onAppear { start(hasPuzzle: original != nil && info != nil) }
+            .onAppear {
+                hasPhoto = collection.hasOriginal(stampID)
+                withAnimation(.easeIn(duration: 0.25)) { showControls = true }
+            }
             .sheet(isPresented: $editing) {
                 NavigationStack { StampDetailView(collection: collection, stampID: stampID) }
             }
@@ -5592,49 +5675,6 @@ struct StampRevealView: View {
                 ShareSheet(items: payload.items)
             }
         }
-    }
-
-    @ViewBuilder
-    private func puzzle(stamp: CollectedStamp, original: UIImage,
-                        info: (rect: CGRect, mirrored: Bool), geo: CGSize) -> some View {
-        let imgW = original.size.width, imgH = original.size.height
-        let fit = min(geo.width / imgW, geo.height / imgH)
-        let dispW = imgW * fit, dispH = imgH * fit
-        let dispX = (geo.width - dispW) / 2, dispY = (geo.height - dispH) / 2
-        // when the stamp was mirrored (front camera) the piece is flipped, so
-        // mirror the whole photo to match and flip the slot's x.
-        let cropX = info.mirrored ? (1 - info.rect.maxX) : info.rect.minX
-        let hole = CGRect(x: dispX + cropX * dispW,
-                          y: dispY + info.rect.minY * dispH,
-                          width: info.rect.width * dispW,
-                          height: info.rect.height * dispH)
-        let bigW = min(geo.width, geo.height) * 0.62
-        let bigH = bigW * (stamp.image.size.height / max(1, stamp.image.size.width))
-
-        // the full scene
-        Image(uiImage: original)
-            .resizable().scaledToFit()
-            .scaleEffect(x: info.mirrored ? -1 : 1)
-            .frame(width: dispW, height: dispH)
-            .position(x: geo.width / 2, y: geo.height / 2)
-            .opacity(showPhoto ? 1 : 0)
-
-        // the empty slot, darkened until the piece lands
-        Rectangle()
-            .fill(Color.black.opacity(showPhoto && !settled ? 0.5 : 0))
-            .frame(width: hole.width, height: hole.height)
-            .position(x: hole.midX, y: hole.midY)
-            .allowsHitTesting(false)
-
-        // the stamp piece flying into its slot
-        Image(uiImage: stamp.image)
-            .resizable().scaledToFit()
-            .frame(width: settled ? hole.width : bigW,
-                   height: settled ? hole.height : bigH)
-            .rotationEffect(.degrees(settled ? 0 : -7))
-            .shadow(color: .black.opacity(settled ? 0 : 0.6), radius: settled ? 0 : 18, y: 10)
-            .position(settled ? CGPoint(x: hole.midX, y: hole.midY)
-                              : CGPoint(x: geo.width / 2, y: geo.height / 2))
     }
 
     private var controls: some View {
@@ -5646,15 +5686,16 @@ struct StampRevealView: View {
                         .foregroundStyle(.white.opacity(0.85))
                 }
                 Spacer()
-                Button {
-                    userInteracted = true
-                    withAnimation(.spring(response: 0.45, dampingFraction: 0.82)) { stampOnly.toggle() }
-                } label: {
-                    Label(stampOnly ? "전체사진" : "우표만", systemImage: stampOnly ? "photo" : "seal")
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 14).padding(.vertical, 8)
-                        .background(Capsule().fill(Color.white.opacity(0.18)))
+                if hasPhoto {
+                    Button {
+                        withAnimation(.easeOut(duration: 0.22)) { stampOnly.toggle() }
+                    } label: {
+                        Label(stampOnly ? "전체사진" : "우표만", systemImage: stampOnly ? "photo" : "seal")
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 14).padding(.vertical, 8)
+                            .background(Capsule().fill(Color.white.opacity(0.18)))
+                    }
                 }
                 Button { editing = true } label: {
                     Label("편집", systemImage: "pencil")
@@ -5662,13 +5703,6 @@ struct StampRevealView: View {
                         .foregroundStyle(.white)
                         .padding(.horizontal, 14).padding(.vertical, 8)
                         .background(Capsule().fill(Color.white.opacity(0.18)))
-                }
-                Menu {
-                    Toggle("전환 애니메이션", isOn: $animate)
-                } label: {
-                    Image(systemName: "ellipsis.circle.fill")
-                        .font(.system(size: 24))
-                        .foregroundStyle(.white.opacity(0.85))
                 }
             }
             .padding(.horizontal, 18)
@@ -5725,26 +5759,6 @@ struct StampRevealView: View {
         }
     }
 
-    private func start(hasPuzzle: Bool) {
-        // animation off, or no original to puzzle from → straight to the stamp itself
-        guard animate, hasPuzzle else {
-            settled = true
-            stampOnly = true
-            showControls = true
-            return
-        }
-        withAnimation(.easeOut(duration: 0.35)) { showPhoto = true }
-        withAnimation(.spring(response: 0.6, dampingFraction: 0.72).delay(0.35)) { settled = true }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.95) { Haptics.placed() }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
-            withAnimation(.easeIn(duration: 0.3)) { showControls = true }
-        }
-        // show the whole photo for a beat, then ease into the stamp on its own
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            guard !userInteracted else { return }
-            withAnimation(.spring(response: 0.5, dampingFraction: 0.82)) { stampOnly = true }
-        }
-    }
 }
 
 /// 한 장의 캡처가 입을 수 있는 네 가지 모습. 원본 사진과 모션 마스터를
@@ -5845,7 +5859,10 @@ struct StampDetailView: View {
 
     var body: some View {
         ZStack {
-            Color(hex: 0x241F18).ignoresSafeArea()
+            // one seamless cream sheet — no dark frame, no card outline
+            LinearGradient(colors: [Color(hex: 0xFBFAF7), Color(hex: 0xECE8DF)],
+                           startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
             // Scrolls when the keyboard is up or the note grows past the screen.
             ScrollView {
               VStack(spacing: 16) {
@@ -5924,9 +5941,6 @@ struct StampDetailView: View {
                 albumPicker
               }
               .padding(24)
-              .background(Parchment(cornerRadius: 20))
-              .padding(.horizontal, 24)
-              .padding(.vertical, 16)
             }
             .scrollBounceBehavior(.basedOnSize)
             .scrollDismissesKeyboard(.interactively)
@@ -5987,7 +6001,9 @@ struct StampDetailView: View {
             finish = StampInk(rawValue: collection.finish(for: stampID) ?? "") ?? .original
         }
         .onDisappear(perform: save)
-        .preferredColorScheme(.dark)
+        // the sheet is now a light cream sheet → light nav bar (dark, readable
+        // toolbar items) instead of the old dark frame
+        .preferredColorScheme(.light)
         .fullScreenCover(isPresented: $showFullImage) {
             if let original = collection.originalImage(for: stampID) {
                 ZStack {

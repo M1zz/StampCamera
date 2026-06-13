@@ -27,6 +27,7 @@ class MessagesViewController: MSMessagesAppViewController {
     private let browser = StampStickerBrowserViewController(stickerSize: .small)
     private let chipBar = UIScrollView()
     private let chipStack = UIStackView()
+    private let emptyLabel = UILabel()
     private var packs: [StickerPack] = []
     private var selectedPack: Int = -1   // -1 = 전체
 
@@ -45,6 +46,21 @@ class MessagesViewController: MSMessagesAppViewController {
         browser.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(browser.view)
         browser.didMove(toParent: self)
+
+        emptyLabel.numberOfLines = 0
+        emptyLabel.textAlignment = .center
+        emptyLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        emptyLabel.textColor = .secondaryLabel
+        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptyLabel.isHidden = true
+        view.addSubview(emptyLabel)
+
+        NSLayoutConstraint.activate([
+            emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            emptyLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 24),
+            emptyLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -24),
+        ])
 
         NSLayoutConstraint.activate([
             chipBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 6),
@@ -76,6 +92,24 @@ class MessagesViewController: MSMessagesAppViewController {
         rebuildChips()
         browser.reload()
         applySelection()
+        updateEmptyState()
+    }
+
+    /// Tells the user WHY the tray is empty: a missing App Group (the shared
+    /// folder couldn't be reached — a signing/provisioning issue) vs. simply
+    /// having made no stamps yet.
+    private func updateEmptyState() {
+        let hasContainer = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: appGroupID) != nil
+        if !hasContainer {
+            emptyLabel.text = "스티커를 공유하려면 ‘App Group’ 설정이 필요해요.\n(앱·확장 프로그램 서명 설정 확인)"
+            emptyLabel.isHidden = false
+        } else if browser.stickerCount == 0 {
+            emptyLabel.text = "앱에서 우표·스티커를 만들면\n여기에 나타나요."
+            emptyLabel.isHidden = false
+        } else {
+            emptyLabel.isHidden = true
+        }
     }
 
     private static func loadPacks() -> [StickerPack] {
@@ -136,6 +170,9 @@ class MessagesViewController: MSMessagesAppViewController {
 final class StampStickerBrowserViewController: MSStickerBrowserViewController {
     private var all: [MSSticker] = []
     private var stickers: [MSSticker] = []
+
+    /// How many stickers are currently shown (for the host's empty-state hint).
+    var stickerCount: Int { stickers.count }
 
     var filterFiles: [String]? {
         didSet { applyFilter() }
