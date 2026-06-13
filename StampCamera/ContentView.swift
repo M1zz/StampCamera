@@ -85,6 +85,39 @@ struct ContentView: View {
     // freshly-cut stamp celebrated in the full-screen holo reveal
     @State private var revealID: String?
 
+    // Exactly one stamp/sticker per shutter:
+    //  • captureInFlight — locks the shutter from press until the stamp is filed
+    //    (covers the window where the full-res photo is still developing).
+    //  • awaitingImage — gates handleCapture to the FIRST capturedImage per
+    //    shutter, so a duplicate publish (error-fallback race) can't double-file.
+    //  • captureToken — lets the watchdog timeout clear a stuck lock without
+    //    clobbering a newer capture.
+    @State private var captureInFlight = false
+    @State private var awaitingImage = false
+    @State private var captureToken = 0
+    // Raised when the produced look can't match the request (a sticker whose
+    // subject couldn't be lifted, or a "moving" look with no playable clip).
+    @State private var captureIssue: CaptureIssue?
+
+    /// A mismatch between the requested style and what could actually be made.
+    private struct CaptureIssue: Identifiable {
+        enum Kind { case cutout, motion }
+        let id: String      // the stamp's id
+        let kind: Kind
+        var title: String {
+            switch kind {
+            case .cutout: return "스티커를 만들지 못했어요"
+            case .motion: return "움직임을 담지 못했어요"
+            }
+        }
+        var message: String {
+            switch kind {
+            case .cutout: return "사진에서 배경을 분리할 대상을 찾지 못했어요. 다시 찍어볼까요?"
+            case .motion: return "움직이는 장면을 충분히 담지 못했어요. 다시 찍어볼까요?"
+            }
+        }
+    }
+
     // active-album switching from the camera screen
     @State private var showNewAlbum = false
     @State private var newAlbumName = ""
@@ -149,6 +182,19 @@ struct ContentView: View {
             NavigationStack {
                 StampDetailView(collection: collection, stampID: target.id)
             }
+        }
+        // result didn't match the request → offer to re-shoot or keep it
+        .alert(captureIssue?.title ?? "", isPresented: Binding(
+            get: { captureIssue != nil },
+            set: { if !$0 { captureIssue = nil } }
+        ), presenting: captureIssue) { issue in
+            Button("다시 찍기", role: .destructive) {
+                collection.delete(issue.id)            // drop the mismatched piece
+                if revealID == issue.id { revealID = nil }
+            }
+            Button("그대로 두기", role: .cancel) { }
+        } message: { issue in
+            Text(issue.message)
         }
     }
 
@@ -428,7 +474,19 @@ struct ContentView: View {
         }
         guard pressed else { return }
         withAnimation(.spring(response: 0.34, dampingFraction: 0.5)) { pressed = false }
-        guard flying == nil else { return }   // a stamp is already in flight
+        // one shutter at a time: `captureInFlight` covers press→filed (incl. the
+        // develop window), `flying` covers filed→landed. Together they stop a
+        // rapid second tap from making a second stamp.
+        guard !captureInFlight, flying == nil else { return }
+        captureInFlight = true
+        awaitingImage = true
+        captureToken += 1
+        let token = captureToken
+        // watchdog: if no photo ever arrives (a hard pipeline failure), release
+        // the lock so the shutter isn't stuck.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            if captureToken == token { captureInFlight = false; awaitingImage = false }
+        }
         PunchSound.play()                     // 펀칭! — ~1s punch sound
         Haptics.ratchet()                     // 드르륵 — the punch biting through
         // Prime the live-burst geometry NOW: the full-quality photo can take
@@ -483,9 +541,13 @@ struct ContentView: View {
     // MARK: - Capture → crop → fly into collection
 
     private func handleCapture(_ newValue: UIImage?) {
+        // only the FIRST capturedImage per shutter creates a stamp — a duplicate
+        // publish (e.g. the photo + the error-fallback video frame) is ignored.
+        guard awaitingImage else { return }
+        awaitingImage = false
         guard let raw = newValue,
               StampFrameLoader.frame != nil,
-              previewSize != .zero else { return }
+              previewSize != .zero else { captureInFlight = false; return }
         let win = windowScreenRect(in: previewSize)
         let mirrored = camera.position == .front
 
@@ -494,15 +556,18 @@ struct ContentView: View {
         // with the selected style.
         guard let base = StampCompositor.makeStamp(from: raw, previewSize: previewSize,
                                                    windowRect: win, mirrored: mirrored,
-                                                   clipToShape: false) else { return }
+                                                   clipToShape: false) else { captureInFlight = false; return }
         let style = liveCaptureStyle
         if style.cutout {
-            // background removal (Vision) is slow → off the main thread
+            // background removal (Vision) is slow → off the main thread. Lifting
+            // the subject here once lets us BOTH build the still and know whether
+            // the cutout actually succeeded (nil → no subject → soft failure).
             DispatchQueue.global(qos: .userInitiated).async {
-                let still = CollectionStore.stillLook(base.image, style: style)
+                let cut = SubjectLift.cutout(from: base.image)
+                let still = cut ?? base.image     // sticker fallback: plain crop, never a stamp
                 DispatchQueue.main.async {
                     finishCapture(stamp: still, raw: raw, cropNorm: base.cropNorm,
-                                  mirrored: mirrored, win: win)
+                                  mirrored: mirrored, win: win, cutoutFailed: cut == nil)
                 }
             }
         } else {
@@ -513,11 +578,12 @@ struct ContentView: View {
 
     /// Runs the toss + file-into-collection sequence for a finished stamp image.
     private func finishCapture(stamp: UIImage, raw: UIImage, cropNorm: CGRect,
-                               mirrored: Bool, win: CGRect) {
+                               mirrored: Bool, win: CGRect, cutoutFailed: Bool = false) {
         // The cut stamp ejects up out of the slot, revealing a black punch-hole
         // beneath, then tosses onto the frame and fades.
         flyStart = win
         flying = stamp
+        captureInFlight = false   // `flying` now guards re-fire; release the lock
         withAnimation(.easeOut(duration: 0.12)) { cavityVisible = true }
 
         // pick a landing spot somewhere on the stamp frame (inset so it stays on
@@ -571,6 +637,7 @@ struct ContentView: View {
                 flying = nil
                 withAnimation(.easeOut(duration: 0.2)) { cavityVisible = false }
                 withAnimation(.spring(response: 0.4, dampingFraction: 0.85)) { revealID = newID }
+                verifyResult(newID, cutoutFailed: cutoutFailed)   // did we get what was asked?
             }
         }
 
@@ -582,6 +649,31 @@ struct ContentView: View {
         // clear the tossed piece once it has rested and faded
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             if flying === mine { flying = nil }
+        }
+    }
+
+    /// Confirms the freshly-made stamp actually matches the requested style, and
+    /// raises a `captureIssue` (→ alert with 다시 찍기 / 그대로 두기) if not. The
+    /// shape axis (우표 톱니 / 스티커 배경제거) and motion axis are guaranteed by
+    /// the canonical builders, so the only honest failures are soft ones:
+    ///   • a sticker whose subject Vision couldn't find (fell back to a plain crop)
+    ///   • a "moving" look whose burst didn't yield a playable clip
+    private func verifyResult(_ id: String, cutoutFailed: Bool) {
+        let style = liveCaptureStyle
+        if style.cutout && cutoutFailed {
+            captureIssue = CaptureIssue(id: id, kind: .cutout)
+            return
+        }
+        if style.moving {
+            // the burst lands ~1.2s after the shutter and encodes async — check a
+            // beat later, once it's had time to attach.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                guard captureIssue == nil,
+                      collection.stamps.contains(where: { $0.id == id }) else { return }
+                if !collection.isPlayablyLive(id) {
+                    captureIssue = CaptureIssue(id: id, kind: .motion)
+                }
+            }
         }
     }
 
@@ -812,6 +904,8 @@ struct CollectionView: View {
     @AppStorage("liveAutoPlay") private var liveAutoPlay = true
     // 펀칭 프레임 선택 — 카메라와 같은 키를 공유하므로 여기서 바꾸면 카메라에 반영
     @AppStorage(StampFrameLoader.selectionKey) private var stampFrameName = "StampFrame"   // validated against names at read time
+    // 페이지 넘김 연출: 꺼짐(기본)=점 인디케이터, 켜짐=책처럼 종이 넘기기
+    @AppStorage("pageCurl") private var pageCurl = false
 
     private let columns = [GridItem(.adaptive(minimum: 150), spacing: 18)]
 
@@ -875,6 +969,9 @@ struct CollectionView: View {
                         Menu {
                             Toggle(isOn: $liveAutoPlay) {
                                 Label("움직임 자동 재생", systemImage: "play.circle")
+                            }
+                            Toggle(isOn: $pageCurl) {
+                                Label("책처럼 넘기기", systemImage: "book")
                             }
                             if StampFrameLoader.names.count > 1 {
                                 Menu {
@@ -1141,6 +1238,8 @@ struct AlbumPageView: View {
     // 움직임 자동 재생이 꺼져 있으면 라이브 심볼도 숨긴다 (안 움직이는
     // 이미지에 라이브 표식이 붙는 거짓말 방지)
     @AppStorage("liveAutoPlay") private var liveAutoPlay = true
+    // 책처럼 넘기기(설정) — 켜면 종이 넘김, 끄면 점 인디케이터
+    @AppStorage("pageCurl") private var pageCurl = false
 
     /// 모아보기 필터 — 저장한 우표들을 모습/상태별로 추려 본다.
     private enum PocketFilter: String, CaseIterable, Identifiable {
@@ -1235,6 +1334,44 @@ struct AlbumPageView: View {
     }
     @State private var currentPage = 0
 
+    /// The booklet of leaves — a plain paged indicator by default, or the paper
+    /// page-curl when "책처럼 넘기기" is on. Extracted from `body` so the type
+    /// checker doesn't choke on the large expression.
+    @ViewBuilder private var pagedBook: some View {
+        if pageCurl {
+            PageCurlView(pageCount: pageCount, currentPage: $currentPage,
+                         contentKey: leafContentKey,
+                         interactive: armed == nil && dragging == nil) { pageIndex in
+                albumLeaf(pageIndex)
+            }
+        } else {
+            // a horizontal paging ScrollView (not TabView): the stamp drag-to-lift
+            // is a simultaneous min-distance-0 drag designed to coexist with a
+            // scroll pan, which TabView's own paging gesture fights — so swipes
+            // got swallowed. Scrolling freezes only while a stamp is lifted.
+            GeometryReader { geo in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: 0) {
+                        ForEach(0..<pageCount, id: \.self) { pageIndex in
+                            albumLeaf(pageIndex)
+                                .frame(width: geo.size.width, height: geo.size.height)
+                        }
+                    }
+                    .scrollTargetLayout()
+                }
+                .scrollTargetBehavior(.paging)
+                .scrollPosition(id: scrollPageBinding)
+                .scrollDisabled(armed != nil || dragging != nil)
+            }
+        }
+    }
+
+    /// Bridges the `Int?` scroll position to the `Int` currentPage, so the same
+    /// page state drives both the ScrollView and the page-curl.
+    private var scrollPageBinding: Binding<Int?> {
+        Binding(get: { currentPage }, set: { currentPage = $0 ?? currentPage })
+    }
+
     var body: some View {
       ZStack {
         VStack(spacing: 0) {
@@ -1255,23 +1392,31 @@ struct AlbumPageView: View {
                 }
                 Spacer()
             } else {
-                // the book: leaves of 12, flipped with a horizontal swipe —
-                // no vertical scrolling anywhere. (collectorHeader is parked
-                // for now — bring it back when the tally earns its place.)
-                PageCurlView(pageCount: pageCount, currentPage: $currentPage,
-                             contentKey: leafContentKey,
-                             interactive: armed == nil && dragging == nil) { pageIndex in
-                    albumLeaf(pageIndex)
-                }
+                // leaves of 12, flipped with a horizontal swipe — no vertical
+                // scrolling anywhere. Default is a plain paged indicator (dots);
+                // "책처럼 넘기기"(설정) switches to the paper page-curl.
+                pagedBook
                 .onChange(of: stamps.count) { _, _ in
                     if currentPage > pageCount - 1 { currentPage = max(0, pageCount - 1) }
                 }
                 .onAppear { currentPage = pageCount - 1 }   // open at the working page
-                .ignoresSafeArea(.container, edges: .bottom)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(hex: 0x141210).ignoresSafeArea())
+        // the cream "paper" fills edge-to-edge as the backdrop, so each leaf can
+        // sit inside the safe area (no clipping under the bar) and still look
+        // like one continuous page.
+        .background {
+            Group {
+                if stamps.isEmpty {
+                    Color(hex: 0x141210)
+                } else {
+                    LinearGradient(colors: [Color(hex: 0xFBFAF7), Color(hex: 0xECE8DF)],
+                                   startPoint: .top, endPoint: .bottom)
+                }
+            }
+            .ignoresSafeArea()
+        }
 
         // The dim + card tray depends only on which stamp / card is active, so it
         // stays put while the finger moves; the ghost is a separate, lightweight
@@ -1442,31 +1587,29 @@ struct AlbumPageView: View {
             let showEmptySlots = pageIndex == pageCount - 1
                 && collection.activeAlbum == album && !selecting && filter == .all
             let columns = Array(repeating: GridItem(.fixed(cellW), spacing: spacing), count: 3)
-            ZStack {
-                LinearGradient(colors: [Color(hex: 0xFBFAF7), Color(hex: 0xECE8DF)],
-                               startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
-                VStack(spacing: 0) {
-                    LazyVGrid(columns: columns, spacing: spacing) {
-                        ForEach(Array(slice.enumerated()), id: \.element.id) { i, stamp in
-                            PocketAppear(index: i) {
-                                stampCell(stamp, gold: gold, firstPlaces: firstPlaces, cell: cellW)
-                            }
-                        }
-                        if showEmptySlots {
-                            ForEach(0..<(perPage - slice.count), id: \.self) { _ in
-                                emptyPocket(cellW)
-                            }
+            // transparent leaf — the cream paper is the page's full-screen
+            // background; here we just lay out the grid and anchor a page dot.
+            VStack(spacing: 0) {
+                LazyVGrid(columns: columns, spacing: spacing) {
+                    ForEach(Array(slice.enumerated()), id: \.element.id) { i, stamp in
+                        PocketAppear(index: i) {
+                            stampCell(stamp, gold: gold, firstPlaces: firstPlaces, cell: cellW)
                         }
                     }
-                    .padding(pad)
-                    Spacer(minLength: 0)
-                    Text("— \(pageIndex + 1) / \(pageCount) —")
-                        .font(.system(size: 13, weight: .semibold, design: .serif))
-                        .foregroundStyle(Color(hex: 0x8C7A52))
-                        .padding(.bottom, 14)
+                    if showEmptySlots {
+                        ForEach(0..<(perPage - slice.count), id: \.self) { _ in
+                            emptyPocket(cellW)
+                        }
+                    }
+                }
+                .padding(pad)
+                Spacer(minLength: 0)
+                if pageCount > 1 {
+                    PageDots(count: pageCount, current: pageIndex)
+                        .padding(.bottom, 12)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 
@@ -1555,21 +1698,53 @@ struct AlbumPageView: View {
                     selectedStamp = stamp
                 }
             }
-            // hold-to-lift rides on the system long press (it loses cleanly to
-            // the scroll pan, unlike a sequenced LongPress+Drag, which claims
-            // the touch outright and freezes the page)
-            .onLongPressGesture(minimumDuration: 0.4, maximumDistance: 12) {
-                guard !selecting else { return }
-                armLift(stamp)
+            // "걸기" via a system long-press context menu — unlike a drag/long-
+            // press *gesture*, the context menu is scroll-friendly, so swiping
+            // over the grid still turns the page. (A drag gesture here claimed
+            // the touch and froze paging.)
+            .contextMenu {
+                if collection.exhibitions.isEmpty {
+                    Button {
+                        exhibitTarget = stamp; newExhibitionName = ""; showNewExhibition = true
+                    } label: { Label("새 컬렉션에 걸기…", systemImage: "photo.artframe") }
+                } else {
+                    Section("컬렉션에 걸기") {
+                        ForEach(collection.exhibitions) { ex in
+                            Button {
+                                collection.placeInExhibition(stamp.id, into: ex.name)
+                                Haptics.placed()
+                            } label: { Label(ex.name, systemImage: "photo.artframe") }
+                        }
+                    }
+                    Button {
+                        exhibitTarget = stamp; newExhibitionName = ""; showNewExhibition = true
+                    } label: { Label("새 컬렉션…", systemImage: "plus") }
+                }
             }
-            .simultaneousGesture(carryGesture(stamp))
     }
 
-    /// Carries a lifted stamp. Attached `simultaneous` so the ScrollView keeps
-    /// scrolling until the long press has armed a lift (which also disables
-    /// scrolling); until then this gesture only watches the finger and ignores
-    /// it. The tray appears only once the finger has moved enough to mean
-    /// "carry it" — so resting a finger never throws up the tray.
+    /// Hold (0.4s) to lift a stamp, then carry it with the same touch. Returns
+    /// the touch to the ScrollView for quick swipes (the long press fails on
+    /// movement), so paging works even over the grid.
+    private func liftAndCarry(_ stamp: CollectedStamp) -> some Gesture {
+        LongPressGesture(minimumDuration: 0.4, maximumDistance: 12)
+            .sequenced(before: DragGesture(minimumDistance: 0, coordinateSpace: .global))
+            .onChanged { value in
+                guard !selecting, case .second(true, let drag) = value else { return }
+                if armed == nil { armLift(stamp, at: drag?.location) }   // hold → lift
+                if let loc = drag?.location {
+                    lastTouch = loc
+                    if dragging?.id == stamp.id { updateDrag(to: loc) }
+                }
+            }
+            .onEnded { value in
+                if case .second(_, let drag) = value, dragging?.id == stamp.id {
+                    endDrag(at: drag?.location ?? lastTouch)
+                }
+            }
+    }
+
+    /// (legacy, kept for reference) Carries a lifted stamp via a simultaneous drag.
     private func carryGesture(_ stamp: CollectedStamp) -> some Gesture {
         DragGesture(minimumDistance: 0, coordinateSpace: .global)
             .onChanged { drag in
@@ -1599,11 +1774,14 @@ struct AlbumPageView: View {
 
     /// Long press recognised — lift the stamp AND raise the collection tray right
     /// away (with the ghost already at the finger), so a hold alone is enough.
-    private func armLift(_ stamp: CollectedStamp) {
+    private func armLift(_ stamp: CollectedStamp, at location: CGPoint?) {
         guard armed == nil, dragging == nil else { return }
         armed = stamp
-        dragPoint = lastTouch
-        hoveredExhibition = dropTarget(at: lastTouch)
+        if let location {
+            lastTouch = location
+            dragPoint = location
+            hoveredExhibition = dropTarget(at: location)
+        }
         Haptics.select()                       // the stamp lifts off the page
         withAnimation(.spring(response: 0.32, dampingFraction: 0.82)) { dragging = stamp }
     }
@@ -2238,6 +2416,8 @@ struct ExhibitionWallView: View {
     @ObservedObject var collection: CollectionStore
     let exhibition: String
     @Environment(\.dismiss) private var dismiss
+    // 책처럼 넘기기(설정) — 켜면 종이 넘김, 끄면 점 인디케이터
+    @AppStorage("pageCurl") private var pageCurl = false
 
     @State private var showRename = false
     @State private var renameText = ""
@@ -2270,6 +2450,10 @@ struct ExhibitionWallView: View {
     private var stamps: [CollectedStamp] { collection.stampsInExhibition(exhibition) }
     /// Free (page, x, y) placements driving the wall.
     private var placements: [Placement] { collection.placements(in: exhibition) }
+    /// Bridges the `Int?` scroll position to the `Int` currentPage.
+    private var scrollPageBinding: Binding<Int?> {
+        Binding(get: { currentPage }, set: { currentPage = $0 ?? currentPage })
+    }
     private func stampByID(_ id: String) -> CollectedStamp? {
         collection.stamps.first { $0.id == id }
     }
@@ -2526,15 +2710,43 @@ struct ExhibitionWallView: View {
                 }
             }
         } else {
-            TabView(selection: $currentPage) {
-                ForEach(0..<pageCount, id: \.self) { pageIndex in
-                    wallPage(pageIndex).tag(pageIndex)
+            // ZStack so the dots sit in the safe area (above the home indicator)
+            // while the pages fill edge-to-edge — no clipping.
+            ZStack(alignment: .bottom) {
+                Group {
+                    if pageCurl {
+                        PageCurlView(pageCount: pageCount, currentPage: $currentPage,
+                                     contentKey: "\(pageCount)-\(placements.count)",
+                                     interactive: dragging == nil) { pageIndex in
+                            wallPage(pageIndex)
+                        }
+                    } else {
+                        // paging ScrollView (not TabView) so the stamp carry-drag
+                        // coexists with swiping; frozen while carrying a stamp.
+                        GeometryReader { geo in
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(spacing: 0) {
+                                    ForEach(0..<pageCount, id: \.self) { pageIndex in
+                                        wallPage(pageIndex)
+                                            .frame(width: geo.size.width, height: geo.size.height)
+                                    }
+                                }
+                                .scrollTargetLayout()
+                            }
+                            .scrollTargetBehavior(.paging)
+                            .scrollPosition(id: scrollPageBinding)
+                            .scrollDisabled(dragging != nil)   // hold the page while carrying a stamp
+                        }
+                    }
+                }
+                .id(exhibition)   // start a fresh book when switching exhibitions
+                .ignoresSafeArea(.container, edges: .bottom)
+
+                if pageCount > 1 && dragging == nil {
+                    PageDots(count: pageCount, current: currentPage)
+                        .padding(.bottom, 10)
                 }
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .scrollDisabled(dragging != nil)   // hold the page while carrying a stamp
-            .id(exhibition)   // start a fresh book when switching exhibitions
-            .ignoresSafeArea(.container, edges: .bottom)
         }
     }
 
@@ -5775,6 +5987,34 @@ enum Haptics {
                 gen.impactOccurred(intensity: 0.55 + 0.05 * Double(i % 3))
             }
         }
+    }
+}
+
+/// A compact page indicator on a frosted pill: dots for a handful of pages,
+/// "n / total" once there are too many for dots to read cleanly.
+struct PageDots: View {
+    let count: Int
+    let current: Int
+    var body: some View {
+        Group {
+            if count > 8 {
+                Text("\(min(current, count - 1) + 1) / \(count)")
+                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .foregroundStyle(.white)
+                    .monospacedDigit()
+            } else {
+                HStack(spacing: 6) {
+                    ForEach(0..<max(count, 1), id: \.self) { i in
+                        Circle()
+                            .fill(i == current ? Color.white : Color.white.opacity(0.32))
+                            .frame(width: 6, height: 6)
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, 12).padding(.vertical, 7)
+        .background(Capsule().fill(.ultraThinMaterial))
+        .overlay(Capsule().strokeBorder(.white.opacity(0.12), lineWidth: 1))
     }
 }
 

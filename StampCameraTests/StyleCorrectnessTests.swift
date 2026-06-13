@@ -164,4 +164,32 @@ struct StyleCorrectnessTests {
         // 좌우 여백이 같다 → 중심 정렬
         #expect(abs(out.cropNorm.minX - (1 - out.cropNorm.maxX)) < 0.01)
     }
+
+    // MARK: - Result verification (촬영 후 "요청한 모습이 맞는지" 판정)
+
+    /// 카메라의 `verifyResult`가 쓰는 움직임 불일치 판정과 동일한 술어
+    /// (`style.moving && !isPlayablyLive`)가 실제로 맞고 틀림을 가른다.
+    @Test func 움직임_요청에_클립이_없으면_불일치로_감지된다() throws {
+        let h = Harness(); defer { h.cleanup() }
+        let id = h.add()
+        h.store.recordStyle(.liveStamp, for: id)
+        #expect(h.store.style(for: id).moving)
+        // 클립 없음 → 재생 가능 라이브 아님 → 불일치(다시 찍기 알림 대상)
+        #expect(!h.store.isPlayablyLive(id))
+
+        // 진짜 움직이는 클립을 붙이면 → 일치(알림 없음)
+        let clip = try #require(APNG.encode(movingFrames(count: 5), delay: 0.1))
+        h.store.setLive(clip, sticker: nil, for: id)
+        #expect(h.store.isPlayablyLive(id))
+    }
+
+    /// 정지 스타일은 클립이 없어도 불일치가 아니다 (움직임 축을 검사하지 않음).
+    @Test func 정지_스타일은_클립이_없어도_불일치가_아니다() {
+        let h = Harness(); defer { h.cleanup() }
+        for s in [StampStyle.stamp, .sticker] {
+            let id = h.add()
+            h.store.recordStyle(s, for: id)
+            #expect(!h.store.style(for: id).moving)   // 움직임 검사 대상 아님
+        }
+    }
 }
