@@ -895,6 +895,7 @@ struct CollectionView: View {
     private enum Tab: String, CaseIterable { case exhibitions = "컬렉션", albums = "수집함" }
     @State private var tab: Tab = .exhibitions
     @State private var showPrintGuide = false
+    @State private var showCheckup = false   // "스티커 점검": 안 맞게 만들어진 항목 바로잡기
     // 사진 앱에서 가져오기 — 활성 수집함에 정지 우표/스티커로 담는다
     @State private var photoItem: PhotosPickerItem?
     @State private var importedPhoto: UIImage?
@@ -991,7 +992,10 @@ struct CollectionView: View {
                             Button { showPrintGuide = true } label: {
                                 Label("인쇄 가이드", systemImage: "printer")
                             }
-                            Text("모든 우표는 움직임을 머금고 있어요.\n끄면 어디서나 정지 이미지로 보여요")
+                            Divider()
+                            Button { showCheckup = true } label: {
+                                Label("스티커 점검", systemImage: "checkmark.seal")
+                            }
                         } label: {
                             Image(systemName: "gearshape")
                         }
@@ -1008,6 +1012,9 @@ struct CollectionView: View {
             }
             .sheet(isPresented: $showPrintGuide) {
                 PrintGuideView()
+            }
+            .sheet(isPresented: $showCheckup) {
+                StampCheckupView(collection: collection)
             }
             .onChange(of: photoItem) { _, item in loadImportedPhoto(item) }
             .confirmationDialog("어떤 모양으로 만들까요?", isPresented: $showImportShape,
@@ -3499,6 +3506,14 @@ final class CollectionStore: ObservableObject {
         hasMotionMaster(id) || hasLive(id) || hotClips[id] != nil
     }
 
+    /// Stamps whose recorded style claims motion (라이브 우표/스티커) but have no
+    /// playable clip — i.e. "moving" that doesn't actually move. The checkup tool
+    /// lists these so the user can fix each: rebuild the motion (if a master
+    /// exists) or switch it to the matching still style.
+    func brokenMovingStamps() -> [CollectedStamp] {
+        stamps.filter { style(for: $0.id).moving && !isPlayablyLive($0.id) }
+    }
+
     // cheap per-stamp validity cache, keyed by the clip revision
     private var playableCache: [String: (rev: Int, ok: Bool)] = [:]
 
@@ -3617,6 +3632,21 @@ final class CollectionStore: ObservableObject {
     /// A print-resolution copy of a stamp, re-cropped from the full original
     /// photo and clipped to the perforation shape (`longSidePx` on the long
     /// edge). Falls back to the stored screen-size PNG when no original was kept.
+    /// High-res render for export / copy / share: a perforated 우표 or a
+    /// background-removed 스티커, matching the stamp's chosen style. Heavy
+    /// (re-crops the original, runs Vision for cutouts) — call off the main thread.
+    func exportImage(for id: String, longSidePx: CGFloat = 2048) -> UIImage? {
+        let style = self.style(for: id)
+        var image = printStamp(for: id, longSidePx: longSidePx,
+                               clipToShape: style == .stamp || style == .liveStamp)
+        if style == .sticker || style == .liveSticker,
+           let base = printStamp(for: id, longSidePx: longSidePx, clipToShape: false),
+           let cut = SubjectLift.cutout(from: base) {
+            image = cut
+        }
+        return image ?? stamps.first { $0.id == id }?.image
+    }
+
     func printStamp(for id: String, longSidePx: CGFloat,
                     clipToShape: Bool = true) -> UIImage? {
         guard let original = originalImage(for: id),
@@ -4792,6 +4822,33 @@ private struct PrimaryButton: ButtonStyle {
     }
 }
 
+/// A full-width frosted chip for the reveal viewer's 복사 / 공유 (on black).
+private struct RevealActionChip: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 15, weight: .semibold, design: .rounded))
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+            .background(Capsule().fill(.white.opacity(0.18)))
+            .opacity(configuration.isPressed ? 0.6 : 1)
+    }
+}
+
+/// A full-width warm chip used for the stamp detail's 복사 / 공유 actions.
+private struct StampActionChip: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 14, weight: .semibold, design: .rounded))
+            .foregroundStyle(Color(hex: 0xE9D9AE))
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 11)
+            .background(Capsule().fill(Color(hex: 0x3A2F22)))
+            .overlay(Capsule().strokeBorder(Color(hex: 0xB89A5E).opacity(0.4), lineWidth: 1))
+            .opacity(configuration.isPressed ? 0.7 : 1)
+    }
+}
+
 
 // MARK: - Zoom slider
 
@@ -5364,6 +5421,110 @@ struct ParchmentCard: View {
     }
 }
 
+/// "스티커 점검" — finds stamps whose recorded style claims motion but don't
+/// actually move, and guides the user to fix each (rebuild the motion if a
+/// master exists, or switch it to the matching still style). Nothing is deleted.
+struct StampCheckupView: View {
+    @ObservedObject var collection: CollectionStore
+    @Environment(\.dismiss) private var dismiss
+
+    private var broken: [CollectedStamp] { collection.brokenMovingStamps() }
+
+    var body: some View {
+        NavigationStack {
+            Group {
+                if broken.isEmpty {
+                    VStack(spacing: 12) {
+                        Image(systemName: "checkmark.seal.fill")
+                            .font(.system(size: 44))
+                            .foregroundStyle(Color(hex: 0x7BC67E))
+                        Text("바로잡을 스티커가 없어요")
+                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .foregroundStyle(.white)
+                        Text("움직이도록 설정된 우표·스티커가 모두\n실제로 잘 움직이고 있어요.")
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
+                            .foregroundStyle(.white.opacity(0.6))
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    List {
+                        Section {
+                            Text("‘움직임’으로 설정됐지만 실제로 움직이지 않는 항목이에요. 각 항목을 바로잡아 주세요 — 아무것도 삭제되지 않아요.")
+                                .font(.system(size: 13, weight: .medium, design: .rounded))
+                                .foregroundStyle(.white.opacity(0.7))
+                                .listRowBackground(Color.clear)
+                        }
+                        ForEach(broken) { stamp in
+                            checkupRow(stamp)
+                                .listRowBackground(Color.white.opacity(0.06))
+                        }
+                    }
+                    .listStyle(.insetGrouped)
+                    .scrollContentBackground(.hidden)
+                }
+            }
+            .background(Color(hex: 0x141210).ignoresSafeArea())
+            .navigationTitle("스티커 점검")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("완료") { dismiss() }
+                }
+            }
+        }
+        .preferredColorScheme(.dark)
+    }
+
+    @ViewBuilder
+    private func checkupRow(_ stamp: CollectedStamp) -> some View {
+        let style = collection.style(for: stamp.id)
+        let rebuildable = collection.canMove(stamp.id)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 12) {
+                Image(uiImage: stamp.image)
+                    .resizable().scaledToFit()
+                    .frame(width: 44, height: 56)
+                    .background(.white.opacity(0.08))
+                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(style.title)
+                        .font(.system(size: 15, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.white)
+                    Text(rebuildable ? "움직임을 다시 만들 수 있어요"
+                                     : "이 사진엔 움직임이 없어요")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .foregroundStyle(.white.opacity(0.55))
+                }
+                Spacer()
+            }
+            HStack(spacing: 10) {
+                if rebuildable {
+                    Button {
+                        collection.applyStyle(style, for: stamp.id)   // re-derive the clip from the master
+                        Haptics.placed()
+                    } label: {
+                        Label("움직임 복구", systemImage: "arrow.clockwise")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(RevealActionChip())
+                }
+                Button {
+                    // honest fix: switch to the matching STILL style (정지 우표/스티커)
+                    collection.applyStyle(StampStyle.make(moving: false, cutout: style.cutout),
+                                          for: stamp.id)
+                    Haptics.select()
+                } label: {
+                    Label(style.cutout ? "정지 스티커로" : "정지 우표로", systemImage: "pause.circle")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(RevealActionChip())
+            }
+        }
+        .padding(.vertical, 6)
+    }
+}
+
 /// Tapping a stamp opens this: the full photo it was cut from, with the stamp
 /// piece flying back into its exact spot — the puzzle clicking into place.
 /// Falls back to just showing the stamp if no original photo was kept.
@@ -5378,6 +5539,8 @@ struct StampRevealView: View {
     @State private var editing = false
     @State private var stampOnly = false   // toggle to view just the cut stamp
     @State private var userInteracted = false
+    @State private var sharePayload: SharePayload?
+    @State private var justCopied = false
     @AppStorage("stampRevealAnimate") private var animate = true
 
     private var stamp: CollectedStamp? { collection.stamps.first { $0.id == stampID } }
@@ -5424,6 +5587,9 @@ struct StampRevealView: View {
             .onAppear { start(hasPuzzle: original != nil && info != nil) }
             .sheet(isPresented: $editing) {
                 NavigationStack { StampDetailView(collection: collection, stampID: stampID) }
+            }
+            .sheet(item: $sharePayload) { payload in
+                ShareSheet(items: payload.items)
             }
         }
     }
@@ -5508,8 +5674,55 @@ struct StampRevealView: View {
             .padding(.horizontal, 18)
             .padding(.top, 8)
             Spacer()
+            // copy / share, always visible at the bottom of the viewer
+            HStack(spacing: 12) {
+                Button { copyStamp() } label: {
+                    Label(justCopied ? "복사됨!" : "복사",
+                          systemImage: justCopied ? "checkmark" : "doc.on.doc")
+                        .frame(maxWidth: .infinity)
+                }
+                Button { shareStamp() } label: {
+                    Label("공유", systemImage: "square.and.arrow.up")
+                        .frame(maxWidth: .infinity)
+                }
+            }
+            .buttonStyle(RevealActionChip())
+            .padding(.horizontal, 28)
+            .padding(.bottom, 28)
         }
         .transition(.opacity)
+    }
+
+    private func makeStampPNG(_ done: @escaping (Data?, URL?) -> Void) {
+        guard stamp != nil else { done(nil, nil); return }
+        DispatchQueue.global(qos: .userInitiated).async {
+            let data = collection.exportImage(for: stampID)?.pngData()
+            var url: URL?
+            if let data {
+                let u = FileManager.default.temporaryDirectory
+                    .appendingPathComponent("Stamp-\(stampID).png")
+                if (try? data.write(to: u)) != nil { url = u }
+            }
+            DispatchQueue.main.async { done(data, url) }
+        }
+    }
+
+    private func copyStamp() {
+        makeStampPNG { data, _ in
+            guard let data else { return }
+            UIPasteboard.general.setData(data, forPasteboardType: "public.png")
+            Haptics.placed()
+            withAnimation(.easeOut(duration: 0.15)) { justCopied = true }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+                withAnimation(.easeOut(duration: 0.2)) { justCopied = false }
+            }
+        }
+    }
+
+    private func shareStamp() {
+        makeStampPNG { _, url in
+            if let url { sharePayload = SharePayload(items: [url]) }
+        }
     }
 
     private func start(hasPuzzle: Bool) {
@@ -5653,7 +5866,8 @@ struct StampDetailView: View {
                     }
                     // copy to the clipboard or share — both export a high-res
                     // transparent PNG (perforated 우표 or background-removed 스티커).
-                    HStack(spacing: 20) {
+                    // Two clear chips so they're obvious at a glance.
+                    HStack(spacing: 12) {
                         Button { copySticker() } label: {
                             Label(justCopied ? "복사됨!" : "복사",
                                   systemImage: justCopied ? "checkmark" : "doc.on.doc")
@@ -5662,9 +5876,9 @@ struct StampDetailView: View {
                             Label("공유", systemImage: "square.and.arrow.up")
                         }
                     }
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
-                    .foregroundStyle(Color(hex: 0xB89A5E))
-                    .padding(.top, 2)
+                    .buttonStyle(StampActionChip())
+                    .padding(.horizontal, 24)
+                    .padding(.top, 4)
 
                     // when & where this stamp was made
                     VStack(spacing: 3) {
@@ -5812,21 +6026,10 @@ struct StampDetailView: View {
     /// back both the raw data (for the clipboard) and a temp file URL (for the
     /// share sheet). Heavy work runs off-main.
     private func makeStickerPNG(_ done: @escaping (Data?, URL?) -> Void) {
-        guard let stamp else { done(nil, nil); return }
-        let style = collection.style(for: stampID)
+        guard stamp != nil else { done(nil, nil); return }
         DispatchQueue.global(qos: .userInitiated).async {
-            // perforated looks re-crop at print size; sticker looks lift the
-            // subject from that same high-res crop
-            var image = collection.printStamp(
-                for: stampID, longSidePx: 2048,
-                clipToShape: style == .stamp || style == .liveStamp)
-            if style == .sticker || style == .liveSticker,
-               let base = collection.printStamp(for: stampID, longSidePx: 2048,
-                                                clipToShape: false),
-               let cut = SubjectLift.cutout(from: base) {
-                image = cut
-            }
-            let data = (image ?? stamp.image).pngData()
+            let image = collection.exportImage(for: stampID)
+            let data = image?.pngData()
             var url: URL?
             if let data {
                 let u = FileManager.default.temporaryDirectory

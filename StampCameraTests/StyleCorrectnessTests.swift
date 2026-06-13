@@ -192,4 +192,32 @@ struct StyleCorrectnessTests {
             #expect(!h.store.style(for: id).moving)   // 움직임 검사 대상 아님
         }
     }
+
+    // MARK: - 스티커 점검 (안 맞게 만들어진 항목 찾기)
+
+    @Test func 점검은_움직임설정인데_안움직이는_것만_골라낸다() throws {
+        let h = Harness(); defer { h.cleanup() }
+        let frozen = h.add()          // 움직임 설정 + 클립 없음 → 점검 대상
+        h.store.recordStyle(.liveStamp, for: frozen)
+        let still = h.add()           // 정지 → 대상 아님
+        h.store.recordStyle(.stamp, for: still)
+        let moving = h.add()          // 움직임 설정 + 진짜 클립 → 대상 아님
+        h.store.recordStyle(.liveSticker, for: moving)
+        let clip = try #require(APNG.encode(movingFrames(count: 5), delay: 0.1))
+        h.store.setLive(clip, sticker: nil, for: moving)
+
+        let broken = h.store.brokenMovingStamps().map(\.id)
+        #expect(broken == [frozen])
+    }
+
+    @Test func 정지로_바꾸면_점검대상에서_빠진다() {
+        let h = Harness(); defer { h.cleanup() }
+        let id = h.add()
+        h.store.recordStyle(.liveSticker, for: id)
+        #expect(h.store.brokenMovingStamps().map(\.id) == [id])
+        // 안내에 따라 정지 스티커로 바로잡으면 → 더는 불일치가 아니다
+        h.store.applyStyle(StampStyle.make(moving: false, cutout: true), for: id)
+        #expect(h.store.style(for: id) == .sticker)
+        #expect(h.store.brokenMovingStamps().isEmpty)
+    }
 }
