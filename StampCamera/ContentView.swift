@@ -870,7 +870,7 @@ struct ContentView: View {
     /// is granted this never appears again.
     private var permissionScreen: some View {
         VStack(spacing: 18) {
-            Text("📮 꾹")
+            Text("📮 펀칭")
                 .font(.system(size: 28, weight: .heavy, design: .rounded))
                 .foregroundStyle(.white)
             Text("우표를 펀칭하려면 카메라 권한이 필요해요.\n설정에서 카메라를 켜주세요.")
@@ -2703,7 +2703,7 @@ struct ExhibitionWallView: View {
         let renderer = ImageRenderer(content: card)
         renderer.scale = 1   // the card view is already laid out at 1080pt
         guard let image = renderer.uiImage else { return }
-        let caption = "내 우표 컬렉션 ‘\(exhibition)’ 📮 #꾹"
+        let caption = "내 우표 컬렉션 ‘\(exhibition)’ 📮 #펀칭"
         sharePayload = SharePayload(items: [image, caption])
     }
 
@@ -3559,11 +3559,25 @@ final class CollectionStore: ObservableObject {
         try? FileManager.default.removeItem(at: liveURL(for: id))
         hotClips.removeValue(forKey: id)
         bumpLiveRev(id)
-        if let base = FileManager.default
-                .containerURL(forSecurityApplicationGroupIdentifier: Self.stickerGroupID),
-           let still = stamps.first(where: { $0.id == id })?.image,
-           let data = stickerStillData(id: id, fallback: still) {
-            try? data.write(to: base.appendingPathComponent("Stickers/\(id).png"))
+        // Drop the canonical Messages sticker so syncStickers re-exports it as a
+        // still in place of the (now-removed) animated clip.
+        invalidateSharedSticker(for: id)
+        syncStickers()
+    }
+
+    /// Deletes the canonical Messages sticker file (`<id>.<scheme>.png` in the
+    /// App Group) so the next syncStickers() re-exports it — picking up a clip
+    /// that was just attached or removed. Without this, syncStickers's
+    /// fileExists guard keeps serving whatever was written first (typically the
+    /// still that landed before the async clip finished encoding).
+    private func invalidateSharedSticker(for id: String) {
+        guard let base = FileManager.default
+                .containerURL(forSecurityApplicationGroupIdentifier: Self.stickerGroupID) else { return }
+        // Remove both possible formats — a stamp may have just flipped between
+        // still (.png) and moving (.gif), so clear whichever is on disk.
+        for ext in ["png", "gif"] {
+            let url = base.appendingPathComponent("Stickers/\(id).\(Self.stickerScheme).\(ext)")
+            try? FileManager.default.removeItem(at: url)
         }
     }
 
@@ -3592,12 +3606,16 @@ final class CollectionStore: ObservableObject {
         guard stamps.contains(where: { $0.id == id }) else { return }
         try? apng.write(to: liveURL(for: id))
         bumpLiveRev(id)
-        if let sticker,
-           let base = FileManager.default
-                .containerURL(forSecurityApplicationGroupIdentifier: Self.stickerGroupID) {
-            let dst = base.appendingPathComponent("Stickers/\(id).png")
-            try? sticker.write(to: dst)
-        }
+        // The Messages sticker for this stamp was almost always written as a
+        // STILL when it was filed (add() syncs immediately, but the clip is
+        // encoded ~1.2s later and only attaches here). Drop that stale file and
+        // re-sync so the tray regenerates it from the now-attached clip as an
+        // animated APNG — otherwise it never moves in Messages. `sticker` (the
+        // pre-encoded lean clip) is intentionally not written directly: the
+        // canonical export wraps frames on a uniform canvas for MSSticker's
+        // size requirement, so we let syncStickers produce that version.
+        invalidateSharedSticker(for: id)
+        syncStickers()
         objectWillChange.send()
     }
     /// Decoded frames (with per-frame delay) for in-app playback, or nil.
@@ -3739,21 +3757,35 @@ final class CollectionStore: ObservableObject {
     /// App Group shared with the iMessage sticker extension, so collected stamps
     /// show up as real iMessage stickers. (No-op until the App Group is enabled.)
     static let stickerGroupID = "group.com.devkoan.StampCamera"
-    /// Bumped whenever the sticker LOOK changes — it's part of every sticker's
-    /// filename, so Messages never serves a stale cached image at the same URL.
-    static let stickerScheme = "s6"
+    /// Bumped whenever the sticker LOOK or FORMAT changes — it's part of every
+    /// sticker's filename, so Messages never serves a stale cached image at the
+    /// same URL. (s9: moving stickers ship as GIF — see syncStickers.)
+    static let stickerScheme = "s9"
+    /// Serial queue so rapid syncs (capture → setLive → applyStyle …) run to
+    /// completion one at a time. On a concurrent queue their write/cleanup
+    /// passes interleave and can leave a stale still next to a fresh clip.
+    private static let stickerSyncQueue = DispatchQueue(label: "com.devkoan.StampCamera.stickerSync", qos: .utility)
+    /// Messages-tray sticker file for a stamp. Moving stickers are GIF, stills
+    /// are PNG — see `syncStickers` for why.
+    private func stickerFilename(for id: String) -> String {
+        "\(id).\(Self.stickerScheme).\(isPlayablyLive(id) ? "gif" : "png")"
+    }
     func syncStickers() {
         guard let base = FileManager.default
                 .containerURL(forSecurityApplicationGroupIdentifier: Self.stickerGroupID) else { return }
-        let snapshot = stamps.map { ($0.id, $0.image, liveURL(for: $0.id)) }
-        let suffix = ".\(Self.stickerScheme).png"
+        // Decide each stamp's format up front (cheap header-only liveness check)
+        // so the manifest filenames match the files we actually write below.
+        let snapshot: [(id: String, image: UIImage, live: Bool)] =
+            stamps.map { ($0.id, $0.image, isPlayablyLive($0.id)) }
+        let nameByID = Dictionary(uniqueKeysWithValues:
+            snapshot.map { ($0.id, "\($0.id).\(Self.stickerScheme).\($0.live ? "gif" : "png")") })
         // 컬렉션 → 스티커 팩: 이름과 파일 목록을 함께 내보내 메시지 서랍이
         // 컬렉션별로 보여줄 수 있게 한다
         let packs: [[String: Any]] = exhibitions.compactMap { ex in
-            let files = stampsInExhibition(ex.name).map { "\($0.id)\(suffix)" }
+            let files = stampsInExhibition(ex.name).compactMap { nameByID[$0.id] }
             return files.isEmpty ? nil : ["name": ex.name, "files": files]
         }
-        DispatchQueue.global(qos: .utility).async { [weak self] in
+        Self.stickerSyncQueue.async { [weak self] in
             guard let self else { return }
             let dir = base.appendingPathComponent("Stickers", isDirectory: true)
             try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
@@ -3761,42 +3793,57 @@ final class CollectionStore: ObservableObject {
                 try? data.write(to: dir.appendingPathComponent("collections.json"))
             }
 
-            // one-time migration: older builds wrote stickers larger than
-            // Messages' 618pt limit (so MSSticker rejected them and the tray
-            // came up empty) — wipe once so everything regenerates within size.
-            let marker = dir.appendingPathComponent(".v6-whitecanvas")
+            // one-time migration: earlier builds composited stickers onto a
+            // WHITE square (it showed as a box in dark mode) — wipe once so
+            // everything regenerates onto a transparent canvas.
+            let marker = dir.appendingPathComponent(".v7-clearcanvas")
             if !FileManager.default.fileExists(atPath: marker.path) {
                 for f in (try? FileManager.default.contentsOfDirectory(at: dir,
                             includingPropertiesForKeys: nil)) ?? []
-                    where f.pathExtension.lowercased() == "png" {
+                    where ["png", "gif"].contains(f.pathExtension.lowercased()) {
                     try? FileManager.default.removeItem(at: f)
                 }
                 FileManager.default.createFile(atPath: marker.path, contents: nil)
             }
 
-            let wanted = Set(snapshot.map { "\($0.0)\(suffix)" })
-            for (id, image, _) in snapshot {
-                let url = dir.appendingPathComponent("\(id)\(suffix)")
+            let wanted = Set(snapshot.map { "\($0.id).\(Self.stickerScheme).\($0.live ? "gif" : "png")" })
+            for item in snapshot {
+                let url = dir.appendingPathComponent("\(item.id).\(Self.stickerScheme).\(item.live ? "gif" : "png")")
                 guard !FileManager.default.fileExists(atPath: url.path) else { continue }
-                // Every sticker is composited onto a uniform WHITE square so it
-                // ALWAYS meets MSSticker's 100–618pt size (tight cut-outs were
-                // being rejected and vanishing from the tray) and matches the
-                // in-app white-card look.
-                if let clip = self.liveClip(for: id) {
-                    let framesOnWhite = clip.frames.map { Self.stickerCanvas($0, side: 512) }
-                    if let lean = APNG.encodeForMessages(framesOnWhite, delay: clip.delay) {
-                        try? lean.write(to: url)
+                // Every sticker is composited onto a uniform TRANSPARENT square
+                // so it ALWAYS meets MSSticker's 100–618pt size (tight cut-outs
+                // were being rejected and vanishing from the tray) while keeping
+                // its background clear in both light and dark mode.
+                //
+                // Moving stickers ship as animated GIF, NOT APNG: iMessage only
+                // animates a dynamically-loaded sticker in the conversation
+                // transcript when it's a GIF — an APNG animates in the tray but
+                // freezes to its first frame once peeled/sent. Stills stay PNG
+                // (full 8-bit alpha, sharper edges than GIF's 1-bit key).
+                if item.live, let clip = self.liveClip(for: item.id) {
+                    let framesOnCanvas = clip.frames.map { Self.stickerCanvas($0, side: 512) }
+                    if let gif = AnimatedGIF.encodeForMessages(framesOnCanvas, delay: clip.delay) {
+                        try? gif.write(to: url)
                         continue
                     }
+                    // GIF couldn't be built — fall back to a still so the stamp
+                    // still appears. Write it under the same (.gif) URL the
+                    // manifest points at: MSSticker sniffs content, so a PNG
+                    // there shows static but survives the cleanup pass.
+                    if let data = self.stickerStillData(id: item.id, fallback: item.image) {
+                        try? data.write(to: url)
+                    }
+                    continue
                 }
-                if let data = self.stickerStillData(id: id, fallback: image) {
+                if let data = self.stickerStillData(id: item.id, fallback: item.image) {
                     try? data.write(to: url)
                 }
             }
-            // drop stickers whose stamp is gone (PNGs only — keep the marker)
+            // drop stickers whose stamp is gone, plus any stale format/scheme
+            // (e.g. a stamp that switched still↔moving) — keep the marker.
             for f in (try? FileManager.default.contentsOfDirectory(at: dir,
                         includingPropertiesForKeys: nil)) ?? []
-                where f.pathExtension.lowercased() == "png"
+                where ["png", "gif"].contains(f.pathExtension.lowercased())
                     && !wanted.contains(f.lastPathComponent) {
                 try? FileManager.default.removeItem(at: f)
             }
@@ -3804,8 +3851,8 @@ final class CollectionStore: ObservableObject {
     }
 
     /// A still sticker for Messages: the style-correct art (스티커=cut-out,
-    /// 우표=perforated) composited onto a uniform white square — so it always
-    /// fits MSSticker's 100–618pt size and shows up in the tray.
+    /// 우표=perforated) composited onto a uniform transparent square — so it
+    /// always fits MSSticker's 100–618pt size and shows up in the tray.
     private func stickerStillData(id: String, fallback: UIImage) -> Data? {
         let art = exportImage(for: id, longSidePx: 1024) ?? fallback
         for side: CGFloat in [512, 408, 320] {
@@ -3816,13 +3863,13 @@ final class CollectionStore: ObservableObject {
         return Self.stickerCanvas(art, side: 320).pngData()
     }
 
-    /// Centers `art` (with a small inset) on an opaque white `side`×`side`
-    /// canvas — a clean, uniformly-sized sticker base.
+    /// Centers `art` (with a small inset) on a TRANSPARENT `side`×`side`
+    /// canvas — a clean, uniformly-sized sticker base that meets MSSticker's
+    /// 100–618pt size requirement while keeping the cut-out background clear
+    /// (so it never shows a white box, in light or dark mode).
     static func stickerCanvas(_ art: UIImage, side: CGFloat) -> UIImage {
-        let fmt = UIGraphicsImageRendererFormat(); fmt.scale = 1; fmt.opaque = true
+        let fmt = UIGraphicsImageRendererFormat(); fmt.scale = 1; fmt.opaque = false
         return UIGraphicsImageRenderer(size: CGSize(width: side, height: side), format: fmt).image { _ in
-            UIColor.white.setFill()
-            UIRectFill(CGRect(x: 0, y: 0, width: side, height: side))
             let inset = side * 0.08
             let box = CGRect(x: inset, y: inset, width: side - 2 * inset, height: side - 2 * inset)
             let s = min(box.width / max(art.size.width, 1), box.height / max(art.size.height, 1))
@@ -3842,7 +3889,10 @@ final class CollectionStore: ObservableObject {
         let urls = (try? FileManager.default.contentsOfDirectory(
             at: dir, includingPropertiesForKeys: nil)) ?? []
         stamps = urls
-            .filter { $0.pathExtension == "png" }
+            // Real stamps are "<ms>.png"; the live clip is filed alongside as
+            // "<ms>.png.live.png" (also a .png). Exclude that sidecar, or it
+            // gets read as a phantom second (still) stamp next to the real one.
+            .filter { $0.pathExtension == "png" && !$0.lastPathComponent.hasSuffix(".live.png") }
             .sorted { $0.lastPathComponent < $1.lastPathComponent }
             .compactMap { url in
                 guard let image = UIImage(contentsOfFile: url.path) else { return nil }
@@ -4046,6 +4096,11 @@ final class CollectionStore: ObservableObject {
               let data = image.pngData() else { return }
         try? data.write(to: dir.appendingPathComponent(id))
         stamps[idx].image = image
+        // The stamp's rendered art changed (finish/ink, border, restyle) — drop
+        // the stale Messages sticker and re-export it, or the tray keeps the old
+        // look (syncStickers's fileExists guard never overwrites otherwise).
+        invalidateSharedSticker(for: id)
+        syncStickers()
     }
 
     /// The decorating finish currently on a stamp (StampInk raw value), if any.
@@ -4296,13 +4351,13 @@ enum APNG {
     }
 
     /// Evenly samples `frames` down to at most `maxCount`.
-    private static func thin(_ frames: [UIImage], to maxCount: Int) -> [UIImage] {
+    static func thin(_ frames: [UIImage], to maxCount: Int) -> [UIImage] {
         guard frames.count > maxCount else { return frames }
         let step = Double(frames.count) / Double(maxCount)
         return (0..<maxCount).map { frames[Int(Double($0) * step)] }
     }
 
-    private static func shrunk(_ img: UIImage, maxPixel: CGFloat) -> UIImage {
+    static func shrunk(_ img: UIImage, maxPixel: CGFloat) -> UIImage {
         let s = min(1, maxPixel / max(img.size.width, img.size.height))
         guard s < 1 else { return img }
         let size = CGSize(width: (img.size.width * s).rounded(),
@@ -4313,6 +4368,48 @@ enum APNG {
         return UIGraphicsImageRenderer(size: size, format: fmt).image { _ in
             img.draw(in: CGRect(origin: .zero, size: size))
         }
+    }
+}
+
+/// Encodes frames into an animated GIF. Unlike APNG, a dynamically-loaded GIF
+/// sticker actually keeps animating once it's peeled/sent into an iMessage
+/// conversation (APNG freezes to its first frame there), so moving stickers
+/// ship in this format. GIF is 256-color with 1-bit transparency — fine for a
+/// small tray sticker, and it usually compresses smaller than the APNG.
+enum AnimatedGIF {
+    static func encode(_ frames: [UIImage], delay: Double) -> Data? {
+        let data = NSMutableData()
+        guard let dest = CGImageDestinationCreateWithData(
+            data, "com.compuserve.gif" as CFString, frames.count, nil) else { return nil }
+        CGImageDestinationSetProperties(dest,
+            [kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFLoopCount: 0]] as CFDictionary)
+        let frameProps = [kCGImagePropertyGIFDictionary:
+                            [kCGImagePropertyGIFDelayTime: delay,
+                             kCGImagePropertyGIFUnclampedDelayTime: delay]] as CFDictionary
+        for f in frames {
+            guard let cg = f.cgImage else { continue }
+            CGImageDestinationAddImage(dest, cg, frameProps)
+        }
+        return CGImageDestinationFinalize(dest) ? data as Data : nil
+    }
+
+    /// Lean variant for iMessage: same SIZE-first budget ladder as the APNG one
+    /// (Messages renders stickers at pixels÷3 and drops files over ~500 KB), but
+    /// GIF's indexed palette lets us keep more frames before hitting the cap.
+    static func encodeForMessages(_ frames: [UIImage], delay: Double) -> Data? {
+        let attempts: [(px: CGFloat, maxFrames: Int)] = [
+            (480, 12), (480, 8), (408, 8), (360, 6), (320, 5), (280, 4),
+        ]
+        for attempt in attempts {
+            let kept = APNG.thin(frames, to: attempt.maxFrames)
+            guard kept.count > 1 else { continue }
+            let keptDelay = delay * Double(frames.count) / Double(kept.count)
+            let small = kept.map { APNG.shrunk($0, maxPixel: attempt.px) }
+            if let data = encode(small, delay: keptDelay), data.count <= 480_000 {
+                return data
+            }
+        }
+        return nil
     }
 }
 
@@ -4650,7 +4747,7 @@ struct CollectionCardView: View {
                 HStack(spacing: 10) {
                     Image(systemName: "mail.stack.fill")
                         .font(.system(size: 30))
-                    Text("KKUK")
+                    Text("PUNCHING")
                         .font(.system(size: 30, weight: .heavy, design: .rounded))
                         .tracking(4)
                 }
@@ -5224,7 +5321,7 @@ struct CaptureRevealView: View {
             .foregroundStyle(Color(hex: 0xF1EBDD))
             .overlay {
                 VStack(spacing: 12) {
-                    Text("KKUK")
+                    Text("PUNCHING")
                         .font(.system(size: 9.5, weight: .heavy, design: .rounded))
                         .tracking(3.2)
                         .foregroundStyle(ink.opacity(0.5))

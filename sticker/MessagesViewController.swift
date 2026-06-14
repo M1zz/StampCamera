@@ -212,9 +212,9 @@ final class StampStickerBrowserViewController: MSStickerBrowserViewController {
         func ms(_ u: URL) -> Double {
             Double(u.lastPathComponent.prefix { $0.isNumber }) ?? 0
         }
-        let pngs = urls.filter { $0.pathExtension.lowercased() == "png" }
+        let imgs = urls.filter { ["png", "gif"].contains($0.pathExtension.lowercased()) }
             .sorted { ms($0) > ms($1) }   // newest → oldest (most recent first)
-        return pngs.compactMap { try? MSSticker(contentsOfFileURL: $0, localizedDescription: "컬렉션") }
+        return imgs.compactMap { try? MSSticker(contentsOfFileURL: $0, localizedDescription: "컬렉션") }
     }
 
     override func numberOfStickers(in stickerBrowserView: MSStickerBrowserView) -> Int {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		586C02A22FDB11C400D2A003 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C02A12FDB11C300D2A003 /* Messages.framework */; };
 		586C02AE2FDB11C400D2A003 /* sticker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 586C029F2FDB11C300D2A003 /* sticker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		58EB64DA2FDECDA0006D84DF /* keyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 58EB64D32FDECDA0006D84DF /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */; };
 		9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79192FD651EB00B6DA22 /* punching.mp3 */; };
 		A1000011 /* StampCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001 /* StampCameraApp.swift */; };
@@ -36,6 +37,13 @@
 			remoteGlobalIDString = 586C029E2FDB11C300D2A003;
 			remoteInfo = sticker;
 		};
+		58EB64D82FDECDA0006D84DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1000060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58EB64D22FDECDA0006D84DF;
+			remoteInfo = keyboard;
+		};
 		A1000241 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A1000060 /* Project object */;
@@ -53,6 +61,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				586C02AE2FDB11C400D2A003 /* sticker.appex in Embed Foundation Extensions */,
+				58EB64DA2FDECDA0006D84DF /* keyboard.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +73,7 @@
 		586C029F2FDB11C300D2A003 /* sticker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = sticker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		586C02A12FDB11C300D2A003 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		586C02C22FDB11D600D2A003 /* StampCamera.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StampCamera.entitlements; sourceTree = "<group>"; };
+		58EB64D32FDECDA0006D84DF /* keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C8F79192FD651EB00B6DA22 /* punching.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punching.mp3; sourceTree = "<group>"; };
 		A1000000 /* StampCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StampCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,11 +104,19 @@
 			);
 			target = 586C029E2FDB11C300D2A003 /* sticker */;
 		};
+		58EB64DD2FDECDA0006D84DF /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 58EB64D22FDECDA0006D84DF /* keyboard */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		586C027C2FDB116900D2A003 /* sticker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = sticker; sourceTree = "<group>"; };
 		586C02A32FDB11C400D2A003 /* sticker */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (586C02AF2FDB11C400D2A003 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = sticker; sourceTree = "<group>"; };
+		58EB64D42FDECDA0006D84DF /* keyboard */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (58EB64DD2FDECDA0006D84DF /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = keyboard; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +125,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				586C02A22FDB11C400D2A003 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58EB64D02FDECDA0006D84DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +168,7 @@
 				A1000220 /* StampCameraTests */,
 				586C027C2FDB116900D2A003 /* sticker */,
 				586C02A32FDB11C400D2A003 /* sticker */,
+				58EB64D42FDECDA0006D84DF /* keyboard */,
 				586C02A02FDB11C300D2A003 /* Frameworks */,
 				A1000032 /* Products */,
 			);
@@ -172,6 +198,7 @@
 				A1000000 /* StampCamera.app */,
 				A1000200 /* StampCameraTests.xctest */,
 				586C029F2FDB11C300D2A003 /* sticker.appex */,
+				58EB64D32FDECDA0006D84DF /* keyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +243,28 @@
 			productReference = 586C029F2FDB11C300D2A003 /* sticker.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
 		};
+		58EB64D22FDECDA0006D84DF /* keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58EB64DE2FDECDA0006D84DF /* Build configuration list for PBXNativeTarget "keyboard" */;
+			buildPhases = (
+				58EB64CF2FDECDA0006D84DF /* Sources */,
+				58EB64D02FDECDA0006D84DF /* Frameworks */,
+				58EB64D12FDECDA0006D84DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				58EB64D42FDECDA0006D84DF /* keyboard */,
+			);
+			name = keyboard;
+			packageProductDependencies = (
+			);
+			productName = keyboard;
+			productReference = 58EB64D32FDECDA0006D84DF /* keyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		A1000040 /* StampCamera */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1000050 /* Build configuration list for PBXNativeTarget "StampCamera" */;
@@ -229,6 +278,7 @@
 			);
 			dependencies = (
 				586C02AD2FDB11C400D2A003 /* PBXTargetDependency */,
+				58EB64D92FDECDA0006D84DF /* PBXTargetDependency */,
 			);
 			name = StampCamera;
 			productName = StampCamera;
@@ -266,6 +316,9 @@
 					586C029E2FDB11C300D2A003 = {
 						CreatedOnToolsVersion = 26.3;
 					};
+					58EB64D22FDECDA0006D84DF = {
+						CreatedOnToolsVersion = 26.3;
+					};
 					A1000040 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -291,12 +344,20 @@
 				A1000040 /* StampCamera */,
 				586C029E2FDB11C300D2A003 /* sticker */,
 				A1000230 /* StampCameraTests */,
+				58EB64D22FDECDA0006D84DF /* keyboard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		586C029D2FDB11C300D2A003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58EB64D12FDECDA0006D84DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,6 +384,13 @@
 
 /* Begin PBXSourcesBuildPhase section */
 		586C029B2FDB11C300D2A003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58EB64CF2FDECDA0006D84DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -365,6 +433,11 @@
 			isa = PBXTargetDependency;
 			target = 586C029E2FDB11C300D2A003 /* sticker */;
 			targetProxy = 586C02AC2FDB11C400D2A003 /* PBXContainerItemProxy */;
+		};
+		58EB64D92FDECDA0006D84DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58EB64D22FDECDA0006D84DF /* keyboard */;
+			targetProxy = 58EB64D82FDECDA0006D84DF /* PBXContainerItemProxy */;
 		};
 		A1000240 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -527,6 +600,153 @@
 			};
 			name = Release;
 		};
+		58EB64DB2FDECDA0006D84DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = keyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "펀칭 스티커";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.StampCamera.keyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58EB64DC2FDECDA0006D84DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = keyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "펀칭 스티커";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.StampCamera.keyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A1000070 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -665,6 +885,15 @@
 			buildConfigurations = (
 				586C02B12FDB11C400D2A003 /* Debug */,
 				586C02B22FDB11C400D2A003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58EB64DE2FDECDA0006D84DF /* Build configuration list for PBXNativeTarget "keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58EB64DB2FDECDA0006D84DF /* Debug */,
+				58EB64DC2FDECDA0006D84DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
