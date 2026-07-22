@@ -44,6 +44,7 @@ struct ContentView: View {
 
     @State private var previewSize: CGSize = .zero
     @State private var showCollection = false
+    @State private var showSupport = false
 
     // Static-frame overlay placement (tune to your asset): width as a fraction of
     // the stamp frame's displayed width, and a center offset as fractions of it.
@@ -202,6 +203,9 @@ struct ContentView: View {
         }
         .fullScreenCover(isPresented: $showCollection) {
             CollectionView(collection: collection)
+        }
+        .sheet(isPresented: $showSupport) {
+            StampCameraSupportView()
         }
         .sheet(item: $editTarget) { target in
             NavigationStack {
@@ -386,6 +390,7 @@ struct ContentView: View {
                 HStack(spacing: 10) {
                     styleButton              // top-left: 선택된 모습 (저장됨)
                     Spacer()
+                    supportButton            // top-right: 설정/지원
                     flipButton               // top-right (selfie toggle)
                 }
             }
@@ -449,6 +454,22 @@ struct ContentView: View {
             .background(Capsule().fill(.ultraThinMaterial))
             .overlay(Capsule().strokeBorder(.white.opacity(0.25), lineWidth: 1))
         }
+    }
+
+    /// 설정/지원 화면을 여는 톱니바퀴 버튼.
+    private var supportButton: some View {
+        Button {
+            Haptics.tick()
+            showSupport = true
+        } label: {
+            Image(systemName: "gearshape")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+                .background(Circle().fill(.ultraThinMaterial))
+                .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
     }
 
     /// 찍기 전에 모습을 고르는 버튼: 우표 / 라이브 우표 / 스티커 / 라이브

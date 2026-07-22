@@ -29,6 +29,7 @@
 		A1000217 /* LiveStampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000207 /* LiveStampTests.swift */; };
 		A1000218 /* StyleCorrectnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000208 /* StyleCorrectnessTests.swift */; };
 		E26DD5523414B795831B7FB6 /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF79C59A8F8F63491030AD61 /* LeeoKit */; };
+		F73CBCCDCA180CAC44AEE8CC /* StampCameraSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		A1000207 /* LiveStampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStampTests.swift; sourceTree = "<group>"; };
 		A1000208 /* StyleCorrectnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCorrectnessTests.swift; sourceTree = "<group>"; };
 		ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSpec.swift; sourceTree = "<group>"; };
+		E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSupportView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -225,6 +227,7 @@
 				A1000008 /* Info.plist */,
 				9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */,
 				ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */,
+				E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */,
 			);
 			path = StampCamera;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				A1000016 /* StampShape.swift in Sources */,
 				A1000017 /* StampCompositor.swift in Sources */,
 				936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */,
+				F73CBCCDCA180CAC44AEE8CC /* StampCameraSupportView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
