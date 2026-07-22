@@ -10,6 +10,7 @@
 		586C02A22FDB11C400D2A003 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C02A12FDB11C300D2A003 /* Messages.framework */; };
 		586C02AE2FDB11C400D2A003 /* sticker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 586C029F2FDB11C300D2A003 /* sticker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		58EB64DA2FDECDA0006D84DF /* keyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 58EB64D32FDECDA0006D84DF /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */; };
 		9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */; };
 		9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79192FD651EB00B6DA22 /* punching.mp3 */; };
 		A1000011 /* StampCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001 /* StampCameraApp.swift */; };
@@ -27,6 +28,7 @@
 		A1000216 /* ColorHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000206 /* ColorHexTests.swift */; };
 		A1000217 /* LiveStampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000207 /* LiveStampTests.swift */; };
 		A1000218 /* StyleCorrectnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000208 /* StyleCorrectnessTests.swift */; };
+		E26DD5523414B795831B7FB6 /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF79C59A8F8F63491030AD61 /* LeeoKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,17 +96,18 @@
 		A1000206 /* ColorHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexTests.swift; sourceTree = "<group>"; };
 		A1000207 /* LiveStampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStampTests.swift; sourceTree = "<group>"; };
 		A1000208 /* StyleCorrectnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCorrectnessTests.swift; sourceTree = "<group>"; };
+		ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		586C02AF2FDB11C400D2A003 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		586C02AF2FDB11C400D2A003 /* Exceptions for "sticker" folder in "sticker" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = 586C029E2FDB11C300D2A003 /* sticker */;
 		};
-		58EB64DD2FDECDA0006D84DF /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		58EB64DD2FDECDA0006D84DF /* Exceptions for "keyboard" folder in "keyboard" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -114,9 +117,41 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		586C027C2FDB116900D2A003 /* sticker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = sticker; sourceTree = "<group>"; };
-		586C02A32FDB11C400D2A003 /* sticker */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (586C02AF2FDB11C400D2A003 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = sticker; sourceTree = "<group>"; };
-		58EB64D42FDECDA0006D84DF /* keyboard */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (58EB64DD2FDECDA0006D84DF /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = keyboard; sourceTree = "<group>"; };
+		586C027C2FDB116900D2A003 /* sticker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = sticker;
+			sourceTree = "<group>";
+		};
+		586C02A32FDB11C400D2A003 /* sticker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				586C02AF2FDB11C400D2A003 /* Exceptions for "sticker" folder in "sticker" target */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = sticker;
+			sourceTree = "<group>";
+		};
+		58EB64D42FDECDA0006D84DF /* keyboard */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				58EB64DD2FDECDA0006D84DF /* Exceptions for "keyboard" folder in "keyboard" target */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = keyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26DD5523414B795831B7FB6 /* LeeoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +224,7 @@
 				9C8F79192FD651EB00B6DA22 /* punching.mp3 */,
 				A1000008 /* Info.plist */,
 				9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */,
+				ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */,
 			);
 			path = StampCamera;
 			sourceTree = "<group>";
@@ -237,8 +274,6 @@
 				586C02A32FDB11C400D2A003 /* sticker */,
 			);
 			name = sticker;
-			packageProductDependencies = (
-			);
 			productName = sticker;
 			productReference = 586C029F2FDB11C300D2A003 /* sticker.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
@@ -259,8 +294,6 @@
 				58EB64D42FDECDA0006D84DF /* keyboard */,
 			);
 			name = keyboard;
-			packageProductDependencies = (
-			);
 			productName = keyboard;
 			productReference = 58EB64D32FDECDA0006D84DF /* keyboard.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -281,6 +314,9 @@
 				58EB64D92FDECDA0006D84DF /* PBXTargetDependency */,
 			);
 			name = StampCamera;
+			packageProductDependencies = (
+				BF79C59A8F8F63491030AD61 /* LeeoKit */,
+			);
 			productName = StampCamera;
 			productReference = A1000000 /* StampCamera.app */;
 			productType = "com.apple.product-type.application";
@@ -337,6 +373,9 @@
 				Base,
 			);
 			mainGroup = A1000030;
+			packageReferences = (
+				51BF9F799386C329E6E35820 /* XCLocalSwiftPackageReference "LeeoKit" */,
+			);
 			productRefGroup = A1000032 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -408,6 +447,7 @@
 				A1000015 /* PuncherFrameView.swift in Sources */,
 				A1000016 /* StampShape.swift in Sources */,
 				A1000017 /* StampCompositor.swift in Sources */,
+				936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,6 +966,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		51BF9F799386C329E6E35820 /* XCLocalSwiftPackageReference "LeeoKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../LeeoKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF79C59A8F8F63491030AD61 /* LeeoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51BF9F799386C329E6E35820 /* XCLocalSwiftPackageReference "LeeoKit" */;
+			productName = LeeoKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A1000060 /* Project object */;
 }

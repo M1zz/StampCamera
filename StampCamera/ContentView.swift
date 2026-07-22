@@ -1021,6 +1021,18 @@ struct CollectionView: View {
                             Button { showCheckup = true } label: {
                                 Label("스티커 점검", systemImage: "checkmark.seal")
                             }
+                            Divider()
+                            // 개발자에게 문의 — 버그 제보와 기능 제안 창구
+                            Menu {
+                                Link(destination: URL(string: "mailto:leeo@kakao.com")!) {
+                                    Label("이메일로 문의하기", systemImage: "envelope")
+                                }
+                                Link(destination: URL(string: "https://instagram.com/lee25_ios")!) {
+                                    Label("인스타그램 DM (@lee25_ios)", systemImage: "paperplane")
+                                }
+                            } label: {
+                                Label("개발자에게 문의", systemImage: "questionmark.bubble")
+                            }
                         } label: {
                             Image(systemName: "gearshape")
                         }

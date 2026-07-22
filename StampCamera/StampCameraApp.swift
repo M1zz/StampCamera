@@ -5,6 +5,7 @@
 
 import SwiftUI
 import TipKit
+import LeeoKit
 
 @main
 struct StampCameraApp: App {
@@ -15,12 +16,14 @@ struct StampCameraApp: App {
             .displayFrequency(.immediate),
             .datastoreLocation(.applicationDefault),
         ])
+        LeeoEngagement.shared.registerLaunch()
     }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .preferredColorScheme(.dark)
+                .leeoSatisfactionCheck(StampCameraSpec.self)
         }
     }
 }
