@@ -71,6 +71,7 @@
 
 - [x] 카메라 "쫀득함" 개선 — (1) AVCapturePhotoOutput에 responsive/fast-capture + zero-shutter-lag 활성화로 셔터 지연 감소(찍는 순간 = 화면에 보이는 순간), (2) 라이브 영역 탭 투 포커스/노출(focusAndExpose, 프리뷰 레이어가 디바이스 포인트 변환) + 스톡 카메라식 노란 포커스 링(FocusReticle); 셔터는 중앙 프레임이 계속 차지
 - [x] 잠금화면·제어센터 카메라 버튼(앱 쪽) — 배포 타깃 iOS 18로 상향, 딥링크 `kkuk://camera` + CameraLaunchRouter(열려 있던 시트/모음 닫고 카메라로), OpenKkukCameraIntent(openAppWhenRun) + KkukAppShortcuts로 Shortcuts·제어센터·잠금화면에 "꾹 카메라 열기" 노출(타깃 추가 없이 사용 가능); 빌드 통과
+- [x] 카메라 상단바 겹침 해소 — 모습(스타일) 버튼을 카메라 화면에서 빼고 설정 시트의 '찍기 ▸ 기본 모습' 피커로 이동(@AppStorage "captureStyle" 동일 키라 기존 선택 유지), 상단바를 ZStack 겹침에서 HStack으로 바꾸고 수집함(저장 위치) 칩을 좌상단으로 이동 — 톱니/셀피 버튼 밑으로 파고들지 않고 말줄임되게(Spacer minLength 12); 앵커가 사라진 CaptureStyleTip 제거
 
 ## 확인 필요 (실기기)
 - [ ] 제어센터 전용 컨트롤 위젯(KkukControls 익스텐션 타깃) — KkukControls/KkukControlWidget.swift + SETUP.md 작성됨, Xcode에서 Widget Extension 타깃 추가 + OpenKkukCameraIntent 멤버십 체크 필요(코드사인/프로비저닝 때문에 GUI로)
@@ -79,6 +80,7 @@
 - [ ] 라이브 우표: 메시지 스티커 서랍에서 실제로 움직이는지 + 대화에 붙였을 때 애니메이션 확인
 - [ ] 실제 기기에서 촬영 시 창 위치/크롭 정합성 미세 조정 (teethX/Y, 윈도우 rect)
 - [ ] 전면 카메라 미러링 결과 확인
+- [ ] 상단바 겹침 수정 실기기 확인 — 시뮬레이터는 카메라 권한 알럿을 넘기지 못해(simctl privacy grant 미적용) 카메라 화면 스크린샷 확인 불가, 빌드만 검증됨
 
 ## 향후 아이디어
 - [ ] 우표 종이 질감/세피아 필터

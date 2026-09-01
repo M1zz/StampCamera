@@ -18,15 +18,6 @@ import Vision
 
 // MARK: - Tips (TipKit)
 
-/// Explains the capture-style toggle: the two axes a punch can take.
-struct CaptureStyleTip: Tip {
-    var title: Text { Text("모습을 골라 찍어요") }
-    var message: Text? {
-        Text("우표(톱니)·스티커(배경 제거), 정지·움직임을 고를 수 있어요. 찍은 뒤 상세에서 언제든 바꿀 수 있어요.")
-    }
-    var image: Image? { Image(systemName: "square.on.square.dashed") }
-}
-
 /// Explains that motion is always kept, and where to turn auto-play off.
 /// (Replaces the old inline blurb in the settings menu.)
 struct LiveAutoPlayTip: Tip {
@@ -145,9 +136,6 @@ struct ContentView: View {
     // active-album switching from the camera screen
     @State private var showNewAlbum = false
     @State private var newAlbumName = ""
-
-    // TipKit: a one-time hint over the capture-style button
-    private let captureStyleTip = CaptureStyleTip()
 
     // tap-to-focus reticle: where the last tap landed (preview coords) + an id
     // that re-fires the snap/pulse animation on each new tap
@@ -412,46 +400,22 @@ struct ContentView: View {
         }
     }
 
-    /// Top bar: the album chip centered, with the selfie flip button on the right.
+    /// Top bar: the album chip (where punches get filed) on the left, with the
+    /// settings and selfie-flip buttons on the right.
     private var albumBar: some View {
         VStack {
-            ZStack {
-                albumChip                    // centered
-                HStack(spacing: 10) {
-                    styleButton              // top-left: 선택된 모습 (저장됨)
-                    Spacer()
-                    supportButton            // top-right: 설정/지원
-                    flipButton               // top-right (selfie toggle)
-                }
+            HStack(spacing: 10) {
+                albumChip                    // top-left: 담길 수집함
+                // the gap never closes past this, so a long book name truncates
+                // instead of sliding under the buttons on the right
+                Spacer(minLength: 12)
+                supportButton                // top-right: 설정/지원
+                flipButton                   // top-right (selfie toggle)
             }
             .padding(.horizontal, 16)
             .padding(.top, 8)
             Spacer()
         }
-    }
-
-    /// Shows the currently-chosen capture style (persisted) as a single symbol;
-    /// tap to pick another from the four. The next punch tears off in this look.
-    private var styleButton: some View {
-        Menu {
-            ForEach(StampStyle.allCases) { s in
-                Button {
-                    captureStyleRaw = s.rawValue
-                    Haptics.tick()
-                } label: {
-                    Label(s.title, systemImage: s == captureStyle ? "checkmark" : s.icon)
-                }
-            }
-        } label: {
-            Image(systemName: captureStyle.icon)
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(Color(hex: 0xFFD60A))
-                .frame(width: 44, height: 44)
-                .background(Circle().fill(.ultraThinMaterial))
-                .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
-        }
-        .buttonStyle(.plain)
-        .popoverTip(captureStyleTip, arrowEdge: .top)
     }
 
     /// The book-picker chip: shows which book new stamps go into, with a menu
@@ -502,7 +466,6 @@ struct ContentView: View {
         .buttonStyle(.plain)
     }
 
-    /// 찍기 전에 모습을 고르는 버튼: 우표 / 라이브 우표 / 스티커 / 라이브
     /// Flips between the back and front (selfie) camera with a little spin.
     private var flipButton: some View {
         Button {
