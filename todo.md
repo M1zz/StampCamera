@@ -69,7 +69,13 @@
 
 - [x] 우표첩 다중 선택 삭제 — '선택' 모드: 탭으로 체크(금색 배지, 미선택 흐림), 하단 머티리얼 바에 n장 카운트+삭제, 확인 다이얼로그 후 일괄 삭제
 
+- [x] 카메라 "쫀득함" 개선 — (1) AVCapturePhotoOutput에 responsive/fast-capture + zero-shutter-lag 활성화로 셔터 지연 감소(찍는 순간 = 화면에 보이는 순간), (2) 라이브 영역 탭 투 포커스/노출(focusAndExpose, 프리뷰 레이어가 디바이스 포인트 변환) + 스톡 카메라식 노란 포커스 링(FocusReticle); 셔터는 중앙 프레임이 계속 차지
+- [x] 잠금화면·제어센터 카메라 버튼(앱 쪽) — 배포 타깃 iOS 18로 상향, 딥링크 `kkuk://camera` + CameraLaunchRouter(열려 있던 시트/모음 닫고 카메라로), OpenKkukCameraIntent(openAppWhenRun) + KkukAppShortcuts로 Shortcuts·제어센터·잠금화면에 "꾹 카메라 열기" 노출(타깃 추가 없이 사용 가능); 빌드 통과
+
 ## 확인 필요 (실기기)
+- [ ] 제어센터 전용 컨트롤 위젯(KkukControls 익스텐션 타깃) — KkukControls/KkukControlWidget.swift + SETUP.md 작성됨, Xcode에서 Widget Extension 타깃 추가 + OpenKkukCameraIntent 멤버십 체크 필요(코드사인/프로비저닝 때문에 GUI로)
+- [ ] (선택) 잠금 해제 없이 잠금화면에서 바로 촬영 — LockedCameraCaptureExtension 별도 타깃(엔타이틀먼트+App Group) 스캐폴딩 필요
+- [ ] 탭 투 포커스/포커스 링 실기기 체감 확인, ZSL 셔터 타이밍 확인
 - [ ] 라이브 우표: 메시지 스티커 서랍에서 실제로 움직이는지 + 대화에 붙였을 때 애니메이션 확인
 - [ ] 실제 기기에서 촬영 시 창 위치/크롭 정합성 미세 조정 (teethX/Y, 윈도우 rect)
 - [ ] 전면 카메라 미러링 결과 확인

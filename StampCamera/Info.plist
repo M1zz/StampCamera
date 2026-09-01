@@ -22,6 +22,17 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.devkoan.StampCamera.camera</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kkuk</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>우표 펀칭 프레임으로 사진을 찍기 위해 카메라를 사용해요.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

@@ -20,6 +20,8 @@
 		A1000015 /* PuncherFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000005 /* PuncherFrameView.swift */; };
 		A1000016 /* StampShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006 /* StampShape.swift */; };
 		A1000017 /* StampCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000007 /* StampCompositor.swift */; };
+		A1000018 /* CameraLaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000009 /* CameraLaunchRouter.swift */; };
+		A1000019 /* OpenKkukCameraIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000A /* OpenKkukCameraIntent.swift */; };
 		A1000211 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000201 /* TestSupport.swift */; };
 		A1000212 /* CollectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000202 /* CollectionStoreTests.swift */; };
 		A1000213 /* ExhibitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000203 /* ExhibitionTests.swift */; };
@@ -87,6 +89,8 @@
 		A1000005 /* PuncherFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuncherFrameView.swift; sourceTree = "<group>"; };
 		A1000006 /* StampShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShape.swift; sourceTree = "<group>"; };
 		A1000007 /* StampCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositor.swift; sourceTree = "<group>"; };
+		A1000009 /* CameraLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLaunchRouter.swift; sourceTree = "<group>"; };
+		A100000A /* OpenKkukCameraIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenKkukCameraIntent.swift; sourceTree = "<group>"; };
 		A1000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1000200 /* StampCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StampCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000201 /* TestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				A1000005 /* PuncherFrameView.swift */,
 				A1000006 /* StampShape.swift */,
 				A1000007 /* StampCompositor.swift */,
+				A1000009 /* CameraLaunchRouter.swift */,
+				A100000A /* OpenKkukCameraIntent.swift */,
 				9C8F79192FD651EB00B6DA22 /* punching.mp3 */,
 				A1000008 /* Info.plist */,
 				9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */,
@@ -452,6 +458,8 @@
 				A1000017 /* StampCompositor.swift in Sources */,
 				936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */,
 				F73CBCCDCA180CAC44AEE8CC /* StampCameraSupportView.swift in Sources */,
+				A1000018 /* CameraLaunchRouter.swift in Sources */,
+				A1000019 /* OpenKkukCameraIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +553,7 @@
 				INFOPLIST_FILE = sticker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "펀칭";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,7 +628,7 @@
 				INFOPLIST_FILE = sticker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "펀칭";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -801,7 +809,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -817,7 +825,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -838,7 +846,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = StampCamera/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "펀칭";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -867,7 +875,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = StampCamera/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "펀칭";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -891,7 +899,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.StampCameraTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -910,7 +918,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devkoan.StampCameraTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -41,6 +41,7 @@ struct ContentView: View {
     @StateObject private var camera = CameraManager()
     @StateObject private var collection = CollectionStore()
     @StateObject private var location = LocationManager()
+    @EnvironmentObject private var router: CameraLaunchRouter
 
     @State private var previewSize: CGSize = .zero
     @State private var showCollection = false
@@ -148,6 +149,11 @@ struct ContentView: View {
     // TipKit: a one-time hint over the capture-style button
     private let captureStyleTip = CaptureStyleTip()
 
+    // tap-to-focus reticle: where the last tap landed (preview coords) + an id
+    // that re-fires the snap/pulse animation on each new tap
+    @State private var focusPoint: CGPoint?
+    @State private var focusTapID = 0
+
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
@@ -191,6 +197,14 @@ struct ContentView: View {
         .onAppear { location.start() }
         .onChange(of: camera.capturedImage) { _, newValue in handleCapture(newValue) }
         .onChange(of: camera.capturedLiveFrames) { _, frames in handleLiveFrames(frames) }
+        // Control Center / Lock Screen tapped "꾹 카메라 열기": drop whatever is
+        // open and return to the live camera.
+        .onChange(of: router.cameraRequestID) { _, _ in
+            showCollection = false
+            editTarget = nil
+            showNewAlbum = false
+            withAnimation(.easeOut(duration: 0.15)) { revealID = nil }
+        }
         .alert("새 수집함", isPresented: $showNewAlbum) {
             TextField("수집함 이름", text: $newAlbumName)
             Button("취소", role: .cancel) { }
@@ -232,8 +246,16 @@ struct ContentView: View {
     private var cameraScreen: some View {
         GeometryReader { geo in
             ZStack {
-                CameraPreview(session: camera.session)
-                    .ignoresSafeArea()
+                CameraPreview(session: camera.session) { devicePoint, viewPoint in
+                    // tapping the live area focuses + meters there, stock-camera
+                    // style. The stamp frame sits on top, so its press/shutter
+                    // still wins in the centre.
+                    camera.focusAndExpose(atDevicePoint: devicePoint)
+                    Haptics.tick()
+                    focusPoint = viewPoint
+                    focusTapID += 1
+                }
+                .ignoresSafeArea()
 
                 // full-screen frosted blur with the frame's outer silhouette
                 // punched out, so the busy live scene OUTSIDE the frame recedes
@@ -331,6 +353,14 @@ struct ContentView: View {
                 if collectPulse > 0 {
                     CollectFX(at: binCenter)
                         .id(collectPulse)
+                        .allowsHitTesting(false)
+                }
+
+                // tap-to-focus reticle, redrawn (snap + pulse) on every tap
+                if let focusPoint {
+                    FocusReticle()
+                        .id(focusTapID)
+                        .position(focusPoint)
                         .allowsHitTesting(false)
                 }
 

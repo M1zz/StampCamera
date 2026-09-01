@@ -96,6 +96,19 @@ final class CameraManager: NSObject, ObservableObject {
             if self.session.canAddOutput(self.photoOutput) {
                 self.session.addOutput(self.photoOutput)
                 self.photoOutput.maxPhotoQualityPrioritization = .quality
+                // Snappier shutter: let the next shot begin before the previous
+                // one finishes developing, prioritise fast capture over peak
+                // quality under rapid taps, and grab the zero-shutter-lag frame
+                // from the moment of the press (not ~after it).
+                if self.photoOutput.isResponsiveCaptureSupported {
+                    self.photoOutput.isResponsiveCaptureEnabled = true
+                }
+                if self.photoOutput.isFastCapturePrioritizationSupported {
+                    self.photoOutput.isFastCapturePrioritizationEnabled = true
+                }
+                if self.photoOutput.isZeroShutterLagSupported {
+                    self.photoOutput.isZeroShutterLagEnabled = true
+                }
             }
             if self.session.canAddOutput(self.videoOutput) {
                 self.videoOutput.alwaysDiscardsLateVideoFrames = true
@@ -177,6 +190,32 @@ final class CameraManager: NSObject, ObservableObject {
                 device.videoZoomFactor = factor
                 device.unlockForConfiguration()
             }
+        }
+    }
+
+    /// Tap-to-focus + tap-to-expose, like the stock Camera app. `point` is an
+    /// AVFoundation device point (0...1, already converted from the on-screen
+    /// tap by the preview layer). Locks focus/exposure onto that spot and
+    /// resumes continuous auto so the scene stays sharp as it moves.
+    func focusAndExpose(atDevicePoint point: CGPoint) {
+        sessionQueue.async { [weak self] in
+            guard let self, let device = self.currentInput?.device else { return }
+            guard (try? device.lockForConfiguration()) != nil else { return }
+            if device.isFocusPointOfInterestSupported {
+                device.focusPointOfInterest = point
+                if device.isFocusModeSupported(.continuousAutoFocus) {
+                    device.focusMode = .continuousAutoFocus
+                } else if device.isFocusModeSupported(.autoFocus) {
+                    device.focusMode = .autoFocus
+                }
+            }
+            if device.isExposurePointOfInterestSupported {
+                device.exposurePointOfInterest = point
+                if device.isExposureModeSupported(.continuousAutoExposure) {
+                    device.exposureMode = .continuousAutoExposure
+                }
+            }
+            device.unlockForConfiguration()
         }
     }
 
