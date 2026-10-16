@@ -27,4 +27,7 @@ enum StampCameraSpec: LeeoAppSpec {
 
     /// 결제 없음 — 앱 안에 StoreKit·페이월 코드가 존재하지 않는다.
     static let monetization = LeeoMonetization.free
+
+    /// 익명 사용 통계 → FeedbackHub. 없으면 bootstrap 이 스냅샷·app_open 을 건너뛴다.
+    static let analytics: any LeeoAnalytics = LeeoUsageAnalytics(spec: StampCameraSpec.self)
 }

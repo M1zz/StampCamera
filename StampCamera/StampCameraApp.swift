@@ -18,7 +18,8 @@ struct StampCameraApp: App {
             .displayFrequency(.immediate),
             .datastoreLocation(.applicationDefault),
         ])
-        LeeoEngagement.shared.registerLaunch()
+        // 실행 기록 + 익명 사용 통계·크래시 진단(FeedbackHub)을 한 번에 켠다.
+        LeeoKit.bootstrap(StampCameraSpec.self)
     }
 
     var body: some Scene {

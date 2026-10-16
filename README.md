@@ -48,6 +48,6 @@
 ## 지원 · 개인정보
 
 - [지원 페이지](https://m1zz.github.io/StampCamera/support.html) — 문의, 자주 묻는 질문
-- [개인정보 처리방침](https://m1zz.github.io/StampCamera/privacy.html) — 모든 데이터는 기기 안에만 저장됩니다
+- [개인정보 처리방침](https://m1zz.github.io/StampCamera/privacy.html) — 사진·우표는 기기 안에만 저장됩니다 (익명 사용 통계·오류 보고만 iCloud로 전송)
 
 (소스: [`docs/`](docs/) — GitHub Pages로 서빙)
