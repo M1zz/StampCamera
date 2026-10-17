@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40E58A169ED943D1A55796C3 /* StampCameraRoadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */; };
 		586C02A22FDB11C400D2A003 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C02A12FDB11C300D2A003 /* Messages.framework */; };
 		586C02AE2FDB11C400D2A003 /* sticker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 586C029F2FDB11C300D2A003 /* sticker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		58EB64DA2FDECDA0006D84DF /* keyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 58EB64D32FDECDA0006D84DF /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */; };
-		40E58A169ED943D1A55796C3 /* StampCameraRoadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */; };
 		9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */; };
 		9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79192FD651EB00B6DA22 /* punching.mp3 */; };
 		A1000011 /* StampCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001 /* StampCameraApp.swift */; };
@@ -31,6 +31,7 @@
 		A1000216 /* ColorHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000206 /* ColorHexTests.swift */; };
 		A1000217 /* LiveStampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000207 /* LiveStampTests.swift */; };
 		A1000218 /* StyleCorrectnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000208 /* StyleCorrectnessTests.swift */; };
+		CD9D810A072EC833DCCDAA1B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */; };
 		E26DD5523414B795831B7FB6 /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF79C59A8F8F63491030AD61 /* LeeoKit */; };
 		F73CBCCDCA180CAC44AEE8CC /* StampCameraSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */; };
 /* End PBXBuildFile section */
@@ -90,9 +91,9 @@
 		A1000005 /* PuncherFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuncherFrameView.swift; sourceTree = "<group>"; };
 		A1000006 /* StampShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShape.swift; sourceTree = "<group>"; };
 		A1000007 /* StampCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositor.swift; sourceTree = "<group>"; };
+		A1000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1000009 /* CameraLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLaunchRouter.swift; sourceTree = "<group>"; };
 		A100000A /* OpenKkukCameraIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenKkukCameraIntent.swift; sourceTree = "<group>"; };
-		A1000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1000200 /* StampCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StampCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000201 /* TestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
 		A1000202 /* CollectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionStoreTests.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSpec.swift; sourceTree = "<group>"; };
 		B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraRoadmap.swift; sourceTree = "<group>"; };
 		E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSupportView.swift; sourceTree = "<group>"; };
+		FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -237,6 +239,7 @@
 				ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */,
 				B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */,
 				E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */,
+				FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */,
 			);
 			path = StampCamera;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = A1000030;
 			packageReferences = (
@@ -421,6 +425,7 @@
 			files = (
 				9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */,
 				9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */,
+				CD9D810A072EC833DCCDAA1B /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

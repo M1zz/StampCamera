@@ -1,0 +1,516 @@
+{
+  "sourceLanguage" : "ko",
+  "strings" : {
+    "Face ID 잠금" : {
+      "comment" : "Roadmap item: Face ID lock",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID lock"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID 잠금"
+          }
+        }
+      }
+    },
+    "Face ID로 앱을 잠가 내 우표 모음을 지켜요." : {
+      "comment" : "Roadmap item detail: Face ID lock",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock the app with Face ID to keep your collection private."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID로 앱을 잠가 내 우표 모음을 지켜요."
+          }
+        }
+      }
+    },
+    "VoiceOver로 더 편하게" : {
+      "comment" : "Roadmap item: better VoiceOver support",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Better VoiceOver support"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver로 더 편하게"
+          }
+        }
+      }
+    },
+    "글자 크기를 키워도 잘리지 않고 보기 좋게 다시 배치돼요." : {
+      "comment" : "Roadmap item detail: Dynamic Type layouts",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Screens rearrange neatly instead of getting cut off when you enlarge text."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "글자 크기를 키워도 잘리지 않고 보기 좋게 다시 배치돼요."
+          }
+        }
+      }
+    },
+    "기기 간 동기화" : {
+      "comment" : "Roadmap item: iCloud sync",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync across devices"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기기 간 동기화"
+          }
+        }
+      }
+    },
+    "대비를 높이거나 색을 구별하기 어려워도 내용을 알아볼 수 있어요." : {
+      "comment" : "Roadmap item detail: contrast and color",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Everything stays readable, even with Increase Contrast on or if colors are hard to tell apart."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "대비를 높이거나 색을 구별하기 어려워도 내용을 알아볼 수 있어요."
+          }
+        }
+      }
+    },
+    "더 많은 나라 말로 앱을 쓸 수 있게 해요." : {
+      "comment" : "Roadmap item detail: more languages",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the app in more languages."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "더 많은 나라 말로 앱을 쓸 수 있게 해요."
+          }
+        }
+      }
+    },
+    "더 많은 언어" : {
+      "comment" : "Roadmap item: more languages",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More languages"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "더 많은 언어"
+          }
+        }
+      }
+    },
+    "모은 우표를 파일로 저장하고 다시 불러올 수 있어요." : {
+      "comment" : "Roadmap item detail: backup and export",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save your stamp collection to a file and bring it back later."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모은 우표를 파일로 저장하고 다시 불러올 수 있어요."
+          }
+        }
+      }
+    },
+    "보기 편한 색과 대비" : {
+      "comment" : "Roadmap item: contrast and color",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Easier colors and contrast"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "보기 편한 색과 대비"
+          }
+        }
+      }
+    },
+    "새 아이폰으로 바꿔도 모은 우표가 iCloud로 그대로 이어져요." : {
+      "comment" : "Roadmap item detail: iCloud sync",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch to a new iPhone and your stamp collection carries over through iCloud."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 아이폰으로 바꿔도 모은 우표가 iCloud로 그대로 이어져요."
+          }
+        }
+      }
+    },
+    "앱을 영어로도 쓸 수 있어요." : {
+      "comment" : "Roadmap item detail: English",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the whole app in English."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱을 영어로도 쓸 수 있어요."
+          }
+        }
+      }
+    },
+    "업데이트 뒤 처음 열 때 무엇이 새로 생겼는지 알려 줘요." : {
+      "comment" : "Roadmap item detail: what's new",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The first time you open the app after an update, see what’s new."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "업데이트 뒤 처음 열 때 무엇이 새로 생겼는지 알려 줘요."
+          }
+        }
+      }
+    },
+    "업데이트 소식" : {
+      "comment" : "Roadmap item: what's new",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What’s new"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "업데이트 소식"
+          }
+        }
+      }
+    },
+    "영어 지원" : {
+      "comment" : "Roadmap item: English",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full English support"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "영어 지원"
+          }
+        }
+      }
+    },
+    "우표 백업과 내보내기" : {
+      "comment" : "Roadmap item: backup and export",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back up and export stamps"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "우표 백업과 내보내기"
+          }
+        }
+      }
+    },
+    "우표 한 번에 지우기" : {
+      "comment" : "Roadmap item: delete all data",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete all stamps"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "우표 한 번에 지우기"
+          }
+        }
+      }
+    },
+    "움직임 줄이기" : {
+      "comment" : "Roadmap item: reduce motion",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reduce Motion"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "움직임 줄이기"
+          }
+        }
+      }
+    },
+    "움직임 줄이기를 켜면 화면 효과가 차분해져요." : {
+      "comment" : "Roadmap item detail: reduce motion",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With Reduce Motion on, screen effects calm down."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "움직임 줄이기를 켜면 화면 효과가 차분해져요."
+          }
+        }
+      }
+    },
+    "원하면 앱 안에서 모은 우표를 모두 지울 수 있어요." : {
+      "comment" : "Roadmap item detail: delete all data",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erase your whole stamp collection from within the app whenever you like."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "원하면 앱 안에서 모은 우표를 모두 지울 수 있어요."
+          }
+        }
+      }
+    },
+    "작년 오늘 찍은 우표를 알림으로 다시 꺼내 보여 줘요." : {
+      "comment" : "Roadmap item detail: notifications",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get a notification with the stamps you made on this day last year."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "작년 오늘 찍은 우표를 알림으로 다시 꺼내 보여 줘요."
+          }
+        }
+      }
+    },
+    "전시를 꾸미다가 앱이 꺼져도 하던 내용이 남아 있어요." : {
+      "comment" : "Roadmap item detail: keep unsaved work",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your exhibit stays just as you left it, even if the app closes mid-way."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전시를 꾸미다가 앱이 꺼져도 하던 내용이 남아 있어요."
+          }
+        }
+      }
+    },
+    "지난 우표 알림" : {
+      "comment" : "Roadmap item: notifications",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On this day"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지난 우표 알림"
+          }
+        }
+      }
+    },
+    "처음 쓰는 분을 위한 안내" : {
+      "comment" : "Roadmap item: onboarding",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A quick tour for new users"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "처음 쓰는 분을 위한 안내"
+          }
+        }
+      }
+    },
+    "처음 열었을 때 우표를 찍고 모으는 법을 짧게 보여 줘요." : {
+      "comment" : "Roadmap item detail: onboarding",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A short intro to snapping and collecting stamps, the first time you open the app."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "처음 열었을 때 우표를 찍고 모으는 법을 짧게 보여 줘요."
+          }
+        }
+      }
+    },
+    "큰 글씨에 맞춘 화면" : {
+      "comment" : "Roadmap item: Dynamic Type layouts",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layouts for larger text"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "큰 글씨에 맞춘 화면"
+          }
+        }
+      }
+    },
+    "펼치는 아이폰 화면" : {
+      "comment" : "Roadmap item: foldable iPhone layout",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foldable iPhone layout"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펼치는 아이폰 화면"
+          }
+        }
+      }
+    },
+    "펼치는 아이폰에서 넓은 화면을 두 쪽으로 나눠 써요." : {
+      "comment" : "Roadmap item detail: foldable iPhone layout",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the wide screen of a foldable iPhone as two side-by-side panes."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펼치는 아이폰에서 넓은 화면을 두 쪽으로 나눠 써요."
+          }
+        }
+      }
+    },
+    "하던 일 이어서 하기" : {
+      "comment" : "Roadmap item: keep unsaved work",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick up where you left off"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "하던 일 이어서 하기"
+          }
+        }
+      }
+    },
+    "화면 읽기 기능이 단추와 우표를 빠짐없이, 알맞은 순서로 읽어 줘요." : {
+      "comment" : "Roadmap item detail: better VoiceOver support",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver reads every button and stamp, in the right order."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "화면 읽기 기능이 단추와 우표를 빠짐없이, 알맞은 순서로 읽어 줘요."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
