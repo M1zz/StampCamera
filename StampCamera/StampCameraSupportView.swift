@@ -29,6 +29,7 @@ struct StampCameraSupportView: View {
 
                 Section {
                     LeeoSupportSection<StampCameraSpec>()
+                    NavigationLink(LeeoRoadmapText.entry) { RoadmapScreen() }
                 } header: {
                     Text("지원")
                 }
