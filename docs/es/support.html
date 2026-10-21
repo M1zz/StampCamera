@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayuda — Punching</title>
+<link rel="canonical" href="https://m1zz.github.io/StampCamera/es/support.html">
+<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/support.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/support.html">
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: #141210; color: var(--ink); padding: 32px 16px;
+    display: flex; justify-content: center;
+  }
+  .stamp {
+    max-width: 640px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 44px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .back { font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; }
+  h1 { font-size: 30px; font-weight: 900; margin: 14px 0 6px; }
+  .tagline { font-size: 15px; color: var(--sub); margin-bottom: 28px; }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: .25em; color: var(--sub);
+    text-transform: uppercase; margin: 34px 0 12px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 8px;
+  }
+  h3 { font-size: 16px; font-weight: 800; margin: 22px 0 6px; }
+  p, li { font-size: 15px; line-height: 1.75; }
+  ol, ul { padding-left: 22px; margin: 6px 0; }
+  .card {
+    background: rgba(255,255,255,.45); border: 1px solid var(--line);
+    border-radius: 14px; padding: 16px 18px; margin: 8px 0;
+  }
+  a { color: #9B6A1E; font-weight: 600; }
+  .contact { font-size: 16px; font-weight: 700; }
+  .note { font-size: 13px; color: var(--sub); margin-top: 6px; }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <a class="back" href="./index.html">← Punching</a>
+    <h1>Ayuda</h1>
+    <p class="tagline">Si algo se te atasca, te echamos una mano.</p>
+
+    <h2>Contacto</h2>
+    <div class="card">
+      <p class="contact">📮 leeo@kakao.com</p>
+      <p class="note">También recibimos avisos de errores y sugerencias de funciones en
+        <a href="https://github.com/M1zz/StampCamera/issues">GitHub Issues</a>.
+        Solemos responder en 2 o 3 días.</p>
+    </div>
+
+    <h2>Preguntas frecuentes</h2>
+
+    <h3>Mi sticker no se mueve</h3>
+    <ol>
+      <li>En la cámara, toca ⚙️ Ajustes arriba a la derecha ▸ Vista y comprueba que <strong>Reproducir movimiento automáticamente</strong> esté activado.</li>
+      <li>Toca el sticker y, en <strong>Forma</strong>, comprueba que <strong>Movimiento</strong> esté activado. El movimiento siempre se guarda, así que puedes activarlo cuando quieras.</li>
+      <li>Las fotos importadas de Fotos son una sola imagen, por eso no se mueven.</li>
+    </ol>
+
+    <h3>Sale con forma de sello en vez de recortado</h3>
+    <p>Las escenas sin nada que recortar, como un paisaje, se arrancan automáticamente con <strong>forma de sello</strong>.
+    Puedes cambiarlo cuando quieras tocando el sticker y eligiendo en <strong>Forma</strong>. Si prefieres que desde el principio
+    se arranquen con forma de sello, cambia ⚙️ Ajustes ▸ Arrancar ▸ <strong>Forma predeterminada</strong>.</p>
+
+    <h3>No veo los stickers en Mensajes</h3>
+    <p>En Mensajes, toca el botón ＋ junto al campo de texto ▸ Stickers y busca <strong>Punching Stickers</strong>.
+    Aparecen después de arrancar al menos un sticker en Punching y, si tienes más de un álbum, puedes elegir por álbum.
+    Encontrarás los pasos detallados en ⚙️ Ajustes ▸ Usar ▸ <strong>Usar en Mensajes y el teclado</strong>.</p>
+
+    <h3>Quiero imprimirlos como stickers de verdad</h3>
+    <p>En el álbum, toca ⋯ arriba a la derecha ▸ Usar ▸ <strong>Hoja de stickers para imprimir (PDF)</strong>. Se crea por álbum
+    un PDF para imprimir a 300dpi (con línea de corte en forma de sello) que puedes usar directamente con papel adhesivo
+    en tu impresora o en una imprenta. Los pasos detallados están en la <strong>Guía de impresión</strong> del mismo menú.</p>
+
+    <h3>¿Dónde están las colecciones que hice antes?</h3>
+    <p>Desde la 1.0.1, la forma de agrupar stickers es solo el <strong>álbum</strong>. Las colecciones pasaron a ser álbumes
+    con el mismo nombre, y los stickers que tenían, junto con el fondo y el orden, se trasladaron tal cual. Si el nombre ya existía,
+    se añade «(colección)» al final.</p>
+
+    <h3>Aparece una luz verde en la barra de estado</h3>
+    <p>Es el <strong>indicador de uso de la cámara</strong> de iOS. Solo se enciende mientras
+    la pantalla de la cámara está abierta; al abrir un álbum, la cámara se detiene y la luz se apaga.</p>
+
+    <h3>¿Qué pasa si elimino un sticker?</h3>
+    <p>El sticker, la foto original y los datos de movimiento se borran del dispositivo de forma permanente
+    y también desaparecen del cajón de stickers de Mensajes. No se puede recuperar, así que piénsalo bien.</p>
+
+    <h2>Privacidad</h2>
+    <p>Punching guarda todos los datos <strong>solo en tu dispositivo</strong>.
+    Consulta los detalles en la <a href="./privacy.html">política de privacidad</a>.</p>
+  </main>
+</body>
+</html>

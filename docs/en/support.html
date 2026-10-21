@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Punching</title>
+<link rel="canonical" href="https://m1zz.github.io/StampCamera/en/support.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/support.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/support.html">
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+                 "Segoe UI", Roboto, sans-serif;
+    background: #141210; color: var(--ink); padding: 32px 16px;
+    display: flex; justify-content: center;
+  }
+  .stamp {
+    max-width: 640px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 44px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .back { font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; }
+  h1 { font-size: 30px; font-weight: 900; margin: 14px 0 6px; }
+  .tagline { font-size: 15px; color: var(--sub); margin-bottom: 28px; }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: .25em; color: var(--sub);
+    text-transform: uppercase; margin: 34px 0 12px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 8px;
+  }
+  h3 { font-size: 16px; font-weight: 800; margin: 22px 0 6px; }
+  p, li { font-size: 15px; line-height: 1.75; }
+  ol, ul { padding-left: 22px; margin: 6px 0; }
+  .card {
+    background: rgba(255,255,255,.45); border: 1px solid var(--line);
+    border-radius: 14px; padding: 16px 18px; margin: 8px 0;
+  }
+  a { color: #9B6A1E; font-weight: 600; }
+  .contact { font-size: 16px; font-weight: 700; }
+  .note { font-size: 13px; color: var(--sub); margin-top: 6px; }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <a class="back" href="./index.html">← Punching</a>
+    <h1>Support</h1>
+    <p class="tagline">If you get stuck, we’re happy to help.</p>
+
+    <h2>Contact</h2>
+    <div class="card">
+      <p class="contact">📮 leeo@kakao.com</p>
+      <p class="note">You can also report bugs and suggest features on
+        <a href="https://github.com/M1zz/StampCamera/issues">GitHub Issues</a>.
+        We usually reply within 2–3 days.</p>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>My sticker doesn’t move</h3>
+    <ol>
+      <li>At the top right of the camera, go to ⚙️ Settings ▸ View and check that <strong>Autoplay Motion</strong> is on.</li>
+      <li>Tap the sticker and, under <strong>Shape</strong>, check that <strong>Motion</strong> is on. Motion is always captured with it, so you can turn it on any time.</li>
+      <li>Photos imported from the Photos app are a single frame, so they don’t move.</li>
+    </ol>
+
+    <h3>I got a stamp instead of a cut-out sticker</h3>
+    <p>Scenes with nothing to cut out, like a landscape, are automatically torn off as a <strong>stamp</strong>.
+    You can change this any time under <strong>Shape</strong> after tapping the sticker, and if you
+    want to start with stamps from the beginning, change ⚙️ Settings ▸ Punch Out ▸ <strong>Default Shape</strong>.</p>
+
+    <h3>I can’t see my stickers in Messages</h3>
+    <p>In Messages, tap the ＋ button next to the text field ▸ Stickers and look for <strong>Punching Stickers</strong>.
+    It appears once you have punched at least one sticker in Punching, and if you have more than one book you can browse them book by book.
+    You’ll find detailed steps in ⚙️ Settings ▸ Use ▸ <strong>Use in Messages and Keyboard</strong>.</p>
+
+    <h3>I want to print real stickers</h3>
+    <p>Tap ⋯ at the top right of a book ▸ Use ▸ <strong>Printable Sticker Sheet (PDF)</strong>. A
+    300dpi printable PDF (with stamp-shaped cut lines) is made for the whole book, ready to use with sticker
+    paper on a home printer or at a print shop. For step-by-step instructions, see the <strong>Printing Guide</strong> in the same menu.</p>
+
+    <h3>Where did my old collections go?</h3>
+    <p>Since 1.0.1, the way stickers are grouped has become a single thing: <strong>books</strong>. Each collection
+    became a book with the same name, and the stickers, backgrounds and order in it were carried over as they were.
+    If a name was already taken, “(Collection)” was added to the end.</p>
+
+    <h3>There’s a green light in the status bar</h3>
+    <p>That’s the iOS <strong>camera indicator</strong>. It stays on only while the camera screen is
+    showing, and the camera stops, and the light goes off, while you have a book open.</p>
+
+    <h3>What happens when I delete a sticker?</h3>
+    <p>The sticker, its original photo and its motion data are permanently deleted from your device, and it disappears from
+    the sticker drawer in Messages too. It can’t be recovered, so be careful!</p>
+
+    <h2>Privacy</h2>
+    <p>Punching stores all of its data <strong>only on your device</strong>.
+    For details, see the <a href="./privacy.html">Privacy Policy</a>.</p>
+  </main>
+</body>
+</html>

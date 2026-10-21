@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad — Punching</title>
+<link rel="canonical" href="https://m1zz.github.io/StampCamera/es/privacy.html">
+<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/privacy.html">
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: #141210; color: var(--ink); padding: 32px 16px;
+    display: flex; justify-content: center;
+  }
+  .stamp {
+    max-width: 640px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 44px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .back { font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; }
+  h1 { font-size: 28px; font-weight: 900; margin: 14px 0 4px; }
+  .date { font-size: 13px; color: var(--sub); margin-bottom: 22px; }
+  .pledge {
+    background: rgba(242, 178, 59, .14); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 28px;
+    font-size: 15px; line-height: 1.7; font-weight: 600;
+  }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: .25em; color: var(--sub);
+    text-transform: uppercase; margin: 30px 0 12px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 8px;
+  }
+  p, li, td, th { font-size: 15px; line-height: 1.75; }
+  ul { padding-left: 22px; margin: 6px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; color: var(--sub); }
+  a { color: #9B6A1E; font-weight: 600; }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <a class="back" href="./index.html">← Punching</a>
+    <h1>Política de privacidad</h1>
+    <p class="date">Vigente desde: 16 de octubre de 2026</p>
+
+    <div class="pledge">
+      Resumen: Punching guarda tus datos, como fotos, ubicación y notas, solo en tu dispositivo.
+      No hay cuentas, ni servidor propio, ni publicidad, ni herramientas de análisis de terceros. Lo único
+      que sale del dispositivo son las estadísticas de uso anónimas y los informes de errores (apartado 7)
+      y los comentarios que envías tú mismo con «Enviar comentarios».
+    </div>
+
+    <h2>1. Información que se recopila y se guarda</h2>
+    <table>
+      <tr><th>Información</th><th>Uso</th><th>Dónde se guarda</th></tr>
+      <tr><td>Fotos tomadas<br>(stickers, originales, fotogramas de movimiento)</td><td>Crear stickers, cambiar su forma, imprimir y exportar stickers</td><td>En el dispositivo</td></tr>
+      <tr><td>Ubicación (opcional)</td><td>Anotar el nombre del lugar en el sticker</td><td>En el dispositivo (la conversión de coordenadas a lugar la hace el geocodificador del sistema de Apple)</td></tr>
+      <tr><td>Notas y organización de los álbumes (hojas, orden)</td><td>Ordenar tu colección</td><td>En el dispositivo</td></tr>
+      <tr><td>Ajustes</td><td>Recordar cómo funciona la app</td><td>En el dispositivo</td></tr>
+    </table>
+    <p>La app <strong>no envía esta información a servidores del desarrollador ni de terceros.</strong> (Las estadísticas de uso anónimas se explican en el apartado 7 y los comentarios que envías tú mismo, en el apartado 6.)</p>
+
+    <h2>2. Uso de permisos</h2>
+    <ul>
+      <li><strong>Cámara</strong>: es necesaria para la función principal de arrancar stickers. Solo se usa mientras la pantalla de la cámara está abierta, y siempre puedes comprobarlo con el indicador verde de iOS.</li>
+      <li><strong>Añadir a la fototeca (opcional)</strong>: solo se usa cuando guardas un sticker terminado en la app Fotos. No se lee ninguna otra foto de tus álbumes.</li>
+      <li><strong>Ubicación (opcional)</strong>: si la permites, el sticker guarda el nombre del lugar. Si la rechazas, puedes usar todas las funciones.</li>
+    </ul>
+
+    <h2>3. Stickers de iMessage (App Group)</h2>
+    <p>Para que la extensión de Mensajes («Punching Stickers») pueda leer tus stickers, se copian a una carpeta compartida del
+    App Group <strong>en el dispositivo</strong>. Tampoco salen del dispositivo.
+    Cuando envías un sticker por Mensajes, el envío se hace a través de Apple iMessage
+    y se rige por las condiciones de Apple.</p>
+
+    <h2>4. Teclado de stickers (Permitir acceso completo)</h2>
+    <p>El teclado Punching Stickers muestra los stickers que la app ha preparado en la carpeta del App Group del dispositivo
+    y copia al portapapeles el que tocas para que puedas pegarlo en otra app. Para ello necesita
+    «Permitir acceso completo» de iOS, pero el teclado <strong>no lee ni guarda lo que escribes
+    y no se conecta a internet.</strong></p>
+
+    <h2>5. Compartir y exportar</h2>
+    <p>Compartir imágenes, el PDF para imprimir y la exportación de stickers en PNG o GIF solo se realizan
+    <strong>cuando tú lo decides</strong>, y eliges el destino en la hoja de compartir del sistema.</p>
+
+    <h2>6. Enviar comentarios</h2>
+    <p>Si envías comentarios con «Enviar comentarios» en la pantalla de ayuda, lo que escribas (tipo de comentario, mensaje, captura de pantalla adjunta,
+    nombre y correo que dejes para la respuesta), junto con la versión de la app, el tipo de dispositivo, la versión del SO y el idioma,
+    llega al desarrollador a través del almacenamiento de Apple iCloud (CloudKit). Solo se usa para responderte y mejorar la app;
+    si no lo envías, no se transmite nada. Si quieres que se elimine un comentario que enviaste, avísanos en el contacto de abajo.</p>
+
+    <h2>7. Estadísticas de uso anónimas e informes de errores</h2>
+    <p>Para saber cuántas personas usan la app y corregir errores, Punching envía las siguientes estadísticas anónimas
+    al almacenamiento de Apple iCloud (CloudKit), que solo el desarrollador puede leer.</p>
+    <ul>
+      <li>Un identificador aleatorio que se crea al instalar la app (no se vincula a ti, a tu dispositivo, a tu Apple ID ni a otras apps, y cambia si vuelves a instalarla)</li>
+      <li>Versión de la app, versión de iOS, región e idioma</li>
+      <li>Número de veces que abres la app, fechas en que la abres y fecha de instalación (días transcurridos desde la instalación)</li>
+      <li>Informes de diagnóstico cuando la app se cierra inesperadamente o se bloquea (versión de la app, versión de iOS, tipo de dispositivo e información técnica del error)</li>
+    </ul>
+    <p>No se incluyen nombre, datos de contacto ni ubicación, ni nada de lo que creas, como fotos, stickers o notas.
+    Las estadísticas solo se envían si el dispositivo tiene la sesión de iCloud iniciada.</p>
+
+    <h2>8. Eliminación de datos</h2>
+    <ul>
+      <li>Al eliminar un sticker, el sticker, la foto original, los datos de movimiento y la copia para Mensajes se borran del dispositivo de inmediato y de forma permanente.</li>
+      <li>Al eliminar la app se borran también todos sus datos. (Las copias de seguridad externas dependen de tu configuración de iCloud o de copia del dispositivo.)</li>
+    </ul>
+
+    <h2>9. Privacidad de menores</h2>
+    <p>Punching, sin importar la edad, no recopila ni transmite por sí misma información que permita identificar a una persona. Al enviar comentarios no es necesario escribir tu nombre ni tu correo.</p>
+
+    <h2>10. Cambios en la política</h2>
+    <p>Si la política cambia, actualizaremos esta página y la fecha de entrada en vigor.</p>
+
+    <h2>11. Contacto</h2>
+    <p>📮 <strong>leeo@kakao.com</strong> · <a href="./support.html">Página de ayuda</a></p>
+  </main>
+</body>
+</html>
