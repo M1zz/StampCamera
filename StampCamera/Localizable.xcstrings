@@ -188,6 +188,23 @@
         }
       }
     },
+    "수집함 페이지에 마음대로 붙이기" : {
+      "comment" : "Roadmap item: free placement on album pages",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stick anywhere on a page"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수집함 페이지에 마음대로 붙이기"
+          }
+        }
+      }
+    },
     "수집함을 꾸미다가 앱이 꺼져도 하던 내용이 남아 있어요." : {
       "comment" : "Roadmap item detail: keep unsaved work",
       "localizations" : {
@@ -307,6 +324,23 @@
         }
       }
     },
+    "오려낸 모양 그대로 인쇄" : {
+      "comment" : "Roadmap item: print cut-out stickers in their own shape",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print cut-outs in their own shape"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오려낸 모양 그대로 인쇄"
+          }
+        }
+      }
+    },
     "움직임 줄이기" : {
       "comment" : "Roadmap item: reduce motion",
       "localizations" : {
@@ -354,6 +388,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "원하면 앱 안에서 모은 스티커를 모두 지울 수 있어요."
+          }
+        }
+      }
+    },
+    "인쇄용 스티커 시트에서 오려낸 스티커는 우표 모양이 아니라 오려낸 윤곽 그대로 칼선이 들어가요." : {
+      "comment" : "Roadmap item detail: print cut-out stickers in their own shape",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On the printable sticker sheet, cut-out stickers get a cut line that follows their own outline, not the stamp shape."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "인쇄용 스티커 시트에서 오려낸 스티커는 우표 모양이 아니라 오려낸 윤곽 그대로 칼선이 들어가요."
           }
         }
       }
@@ -422,6 +473,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "처음 열었을 때 스티커를 뜯고 쓰는 법을 짧게 보여 줘요."
+          }
+        }
+      }
+    },
+    "칸에 맞추지 않고, 속지 위 원하는 자리에 스티커를 비스듬히 붙여 꾸밀 수 있어요." : {
+      "comment" : "Roadmap item detail: free placement on album pages",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Place stickers anywhere on the page, at any angle, instead of in a tidy grid."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "칸에 맞추지 않고, 속지 위 원하는 자리에 스티커를 비스듬히 붙여 꾸밀 수 있어요."
           }
         }
       }

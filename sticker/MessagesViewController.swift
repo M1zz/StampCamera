@@ -4,8 +4,8 @@
 //
 //  Shows the stamps collected in the main app (written into the shared App
 //  Group container) as real iMessage stickers you can peel onto messages.
-//  A chip bar up top filters by the user's curated collections, so each
-//  컬렉션 doubles as a sticker pack.
+//  A chip bar up top filters by the user's albums, so each 수집함
+//  doubles as a sticker pack.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ import Messages
 
 private let appGroupID = "group.com.devkoan.StampCamera"
 
-/// One curated collection exported by the main app (Stickers/collections.json).
+/// One album (수집함) exported by the main app (Stickers/collections.json).
 private struct StickerPack: Decodable {
     let name: String
     let files: [String]
@@ -125,8 +125,9 @@ class MessagesViewController: MSMessagesAppViewController {
 
     private func rebuildChips() {
         chipStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        chipBar.isHidden = packs.isEmpty
-        guard !packs.isEmpty else { return }
+        // one album = the same stickers as 전체, so chips only from two up
+        chipBar.isHidden = packs.count < 2
+        guard packs.count >= 2 else { selectedPack = -1; return }
         addChip(title: "전체", tag: -1)
         for (i, pack) in packs.enumerated() { addChip(title: pack.name, tag: i) }
         styleChips()
@@ -166,7 +167,7 @@ class MessagesViewController: MSMessagesAppViewController {
 }
 
 /// Loads the stamp PNGs from the shared App Group folder; `filterFiles`
-/// narrows the tray to one collection (in its curated order).
+/// narrows the tray to one album (in its arranged order).
 final class StampStickerBrowserViewController: MSStickerBrowserViewController {
     private var all: [MSSticker] = []
     private var stickers: [MSSticker] = []

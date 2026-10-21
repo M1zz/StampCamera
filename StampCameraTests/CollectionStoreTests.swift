@@ -19,8 +19,7 @@ struct CollectionStoreTests {
         #expect(h.store.albums == [CollectionStore.defaultAlbum])
         #expect(h.store.activeAlbum == CollectionStore.defaultAlbum)
         #expect(h.store.stamps.isEmpty)
-        #expect(h.store.exhibitions.isEmpty)
-        #expect(h.store.collectedStamps.isEmpty)
+        #expect(h.store.decor.isEmpty)
     }
 
     // MARK: - Add
@@ -43,7 +42,6 @@ struct CollectionStoreTests {
         #expect(Set([a, b, c]).count == 3)
         #expect(h.store.stamps.count == 3)
         #expect(h.store.count(in: CollectionStore.defaultAlbum) == 3)
-        #expect(h.store.collectedStamps.count == 3)
     }
 
     @Test func addGoesIntoActiveAlbum() {

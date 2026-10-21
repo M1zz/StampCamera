@@ -18,7 +18,7 @@ import UniformTypeIdentifiers
 
 private let appGroupID = "group.com.devkoan.StampCamera"
 
-/// One curated collection exported by the main app (Stickers/collections.json).
+/// One album (수집함) exported by the main app (Stickers/collections.json).
 private struct StickerPack: Decodable {
     let name: String
     let files: [String]
@@ -37,7 +37,7 @@ class KeyboardViewController: UIInputViewController {
     private let emptyLabel = UILabel()
     private var heightConstraint: NSLayoutConstraint?
 
-    /// All sticker file URLs (newest first) and the curated packs.
+    /// All sticker file URLs (newest first) and the per-album packs.
     private var allURLs: [URL] = []
     private var packs: [StickerPack] = []
     private var selectedPack = -1          // -1 = 전체
@@ -231,8 +231,9 @@ class KeyboardViewController: UIInputViewController {
 
     private func rebuildChips() {
         chipStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        chipBar.isHidden = packs.isEmpty
-        guard !packs.isEmpty else { return }
+        // one album = the same stickers as 전체, so chips only from two up
+        chipBar.isHidden = packs.count < 2
+        guard packs.count >= 2 else { selectedPack = -1; return }
         addChip(title: "전체", tag: -1)
         for (i, pack) in packs.enumerated() { addChip(title: pack.name, tag: i) }
         styleChips()

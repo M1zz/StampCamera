@@ -1,6 +1,6 @@
 # StampCamera — 기능 명세 (Feature Specification)
 
-우표 펀칭 카메라 앱. 사진을 우표(천공 테두리) 모양으로 크롭해 **모으고(컬렉션)**, 골라서 **전시(액자 벽)**한다.
+움직이는 스티커 카메라. 펀칭기로 꾹 눌러 순간을 스티커(오려낸 모양 또는 우표 모양)로 **뜯고**, 수집함에 **담고**, 메시지·키보드·인쇄로 **쓴다**.
 
 이 문서는 현재 구현된 기능을 명세하며, `StampCameraTests`의 테스트 대상과 1:1로 대응한다.
 
@@ -27,48 +27,47 @@
   - `mirrored`면 `cropNorm.minX`가 좌우 반전(`1 − (minX + width)`).
 - `UIImage.normalizedUp()`: 방향을 픽셀에 구워 `.up`으로 만든 복사본.
 
-## 3. 컬렉션 저장소 — `CollectionStore` (ContentView.swift)
+## 3. 수집함 저장소 — `CollectionStore` (ContentView.swift)
 디스크 백업 `ObservableObject`. `init(directory:)`로 테스트 격리 가능(기본 `Documents/Collection`).
+스티커를 묶는 방법은 **수집함 하나뿐**이다 (IDENTITY.md). 수집함 하나가 메시지·키보드의 스티커 팩 하나다.
 
 ### 모델
 - `CollectedStamp { id, image, caption, album, createdAt, place }`.
-- `Exhibition { name, stampIDs(순서) }`.
+- `AlbumDecor { background?, order? }` — 수집함의 속지와 직접 정한 순서(자유롭게 꾸미기).
 
-### 디스크 레이아웃 (우표 id = `<epoch_ms>.png`)
+### 디스크 레이아웃 (스티커 id = `<epoch_ms>.png`)
 | 파일 | 내용 |
 |---|---|
-| `{id}` (png) | 우표 이미지 |
-| `{id}.txt` | 캡션 |
-| `{id}.grp` | 소속 우표첩 이름 |
-| `{id}.json` | 메타(createdAt, lat/lon, place, cropX/Y/W/H, mirrored) |
+| `{id}` (png) | 스티커 이미지 |
+| `{id}.txt` | 한 마디 |
+| `{id}.grp` | 소속 수집함 이름 |
+| `{id}.json` | 메타(createdAt, lat/lon, place, cropX/Y/W/H, mirrored, filter, style) |
 | `{id}.orig.jpg` | 크롭 전 원본 사진 |
-| `albums.json` | `{albums, active}` |
-| `exhibitions.json` | `[{name, stampIDs}]` |
+| `albums.json` | `{albums, active, decor?}` |
+| `exhibitions.migrated.json` | 옛 컬렉션 파일(이전 후 이름만 바꿔 보관) |
 
-### 우표
-- `add(image, location:, original:, cropNorm:, mirrored:) -> id`: 활성 우표첩에 추가, png/메타/원본 저장, 배열에 append.
+### 스티커
+- `add(image, location:, original:, cropNorm:, mirrored:) -> id`: 활성 수집함에 추가, png/메타/원본 저장, 배열에 append.
 - `setCaption(_:for:)`, `setPlace(_:for:)`(메타의 좌표/시간 보존), `move(_:to album:)`.
-- `delete(_:)`: 모든 사이드카(png/txt/grp/json/orig.jpg) 제거 + 배열/전시에서 제거.
+- `delete(_:)`: 모든 사이드카(png/txt/grp/json/orig.jpg/클립) 제거.
 - `originalImage(for:)`: 원본 사진 로드(없으면 nil).
+- `makeExport(for:done:)`: 복사·공유용 — 움직이면 GIF, 아니면 고해상도 투명 PNG.
+- `repairBrokenMotion()`: '움직임'인데 안 움직이는 스티커를 열 때 자동으로 바로잡음(다시 만들거나 같은 모양의 멈춤으로). 지우지 않음.
 
-### 우표첩(albums)
-- 기본 우표첩 `"내 우표첩"`. `reconcile()`로 최소 1개 보장, 고아 보정.
-- `createAlbum`(생성+활성화), `setActive`, `renameAlbum`(우표 이동 포함), `deleteAlbum`(우표까지 삭제, 최소 1개 유지).
-- `stamps(in:)`/`count(in:)`은 **전시 중인 우표 제외**.
+### 수집함(albums)
+- 기본 수집함 `"내 수집함"`. `reconcile()`로 최소 1개 보장, 고아 보정.
+- `createAlbum`(생성+활성화), `setActive`, `renameAlbum`(스티커·꾸미기 함께 이동), `deleteAlbum`(스티커까지 삭제, 최소 1개 유지).
+- `stamps(in:)`: 직접 정한 순서가 있으면 그 순서가 먼저, 나머지는 오래된 순(새로 뜯은 것은 끝에).
+- **자유롭게 꾸미기**: `reorder(in:moving:to:)`, `isArranged`, `resetOrder`(찍은 순서로), `setBackground(_:for:)` / `backgroundStyle(of:)`.
+  속지는 `BackgroundStyle` 10종(크림/모눈/줄/도트/크라프트/양피지/코넬/그래프/민트/다크그리드), `DiaryBackground`가 Canvas로 절차 렌더.
+- 스티커 팩: `saveMeta()`마다 `syncStickers()` → `Stickers/collections.json`에 수집함별 `{name, files}`(수집함 순서).
 
-### 전시(exhibitions) — 모으기/전시 분리
-- 전시 멤버십 = 전시의 정렬된 id 목록(단일 진실). 우표의 `album`(원래 집)은 보존.
-- `placeInExhibition(id, into:)`: 컬렉션에서 빠지고 전시에 추가(다른 전시에서 먼저 제거 = 단일 멤버십).
-- `returnToCollection(id)`: 전시에서 빼고 원래 우표첩 복귀.
-- `moveExhibitedStamp(id, to:)`, `reorderExhibition(name, moving:to:)` / `(from:to:)`.
-- `renameExhibition`, `deleteExhibition`(우표는 원래 우표첩으로 복귀, 삭제 아님).
-- `collectedStamps`(전시 제외), `isExhibited`, `stampsInExhibition`(순서대로), `exhibitionCount`.
-- **배경**: 각 전시는 다이어리 속지 스타일(`BackgroundStyle` 10종: 크림/모눈/줄/도트/크라프트/양피지/코넬/그래프/민트/다크그리드)을 가짐. `createExhibition(_:background:)`, `setExhibitionBackground`, `backgroundStyle(of:)`. `DiaryBackground`가 Canvas로 절차 렌더. 전시 생성 시 `NewExhibitionSheet`에서 선택.
-- `reconcileExhibitions()`: 존재하지 않는 우표 id 제거, 중복 멤버십 정리.
-- 하위호환: `exhibitions.json` 없으면 빈 전시, 모든 우표는 우표첩에 그대로.
+### 컬렉션 → 수집함 이전 (한 번)
+- `exhibitions.json`이 있으면 컬렉션마다 같은 이름의 수집함을 만들고 스티커를 **옮긴다**(이름이 겹치면 `이름 (컬렉션)`).
+- 배경과 순서는 꾸미기로 옮기고, 파일은 `exhibitions.migrated.json`으로 이름만 바꾼다. 다시 열어도 다시 돌지 않는다.
 
 ### 영속성
-- 모든 변경은 즉시 사이드카/JSON에 기록(atomic). 새 `CollectionStore(directory:)`로 재오픈 시 우표·우표첩·전시·순서가 복원.
+- 모든 변경은 즉시 사이드카/JSON에 기록(atomic). 새 `CollectionStore(directory:)`로 재오픈 시 스티커·수집함·꾸미기·순서가 복원.
 
 ## 4. 색상 — `Color(hex:)` (PuncherFrameView.swift)
 - `UInt32` RGB(0xRRGGBB)를 sRGB Color로. 예) `0xFF0000`→빨강.
@@ -79,9 +78,11 @@
 - 촬영 연출: 크롭 우표가 화면 밖으로 팡 날아가고, 원본 자국이 윈도우에 ~2초 머묾.
 - 위치: `LocationManager`로 촬영 장소 역지오코딩 → 우표에 장소 기록.
 
-## 6. 전시 UI 제스처 (UI, 테스트 범위 외)
-- 컬렉션 시트: 우표첩 + 전시 두 구역, 우표를 하단 전시 바로 드래그해 걸기.
-- 전시 벽: 손잡이 모서리(왼/오 선택) 기준 **화투패 라디얼 부채** — 아크 스와이프로 무한 스크롤, 카드를 끌어내 드롭, 다른 곳 탭하면 접힘.
+## 6. 수집함 UI 제스처 (UI, 테스트 범위 외)
+- 3×4 책장, 가로로 넘김(설정 ▸ 책처럼 넘기기로 종이 넘김).
+- 탭 = 스티커 보기, 꾹 = 복사 · 보내기 · 다른 수집함으로 · 삭제(시스템 컨텍스트 메뉴라 넘김을 막지 않음).
+- 선택 모드: 여러 장 옮기기 · 삭제.
+- ⋯ ▸ 자유롭게 꾸미기: 아래에 속지 고르기, 스티커를 꾹 눌러 들어 올려 같은 손가락으로 원하는 칸에 놓기.
 
 ---
 
