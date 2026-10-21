@@ -105,7 +105,7 @@ class MessagesViewController: MSMessagesAppViewController {
             emptyLabel.text = "스티커를 공유하려면 ‘App Group’ 설정이 필요해요.\n(앱·확장 프로그램 서명 설정 확인)"
             emptyLabel.isHidden = false
         } else if browser.stickerCount == 0 {
-            emptyLabel.text = "앱에서 우표·스티커를 만들면\n여기에 나타나요."
+            emptyLabel.text = "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요."
             emptyLabel.isHidden = false
         } else {
             emptyLabel.isHidden = true
@@ -214,7 +214,7 @@ final class StampStickerBrowserViewController: MSStickerBrowserViewController {
         }
         let imgs = urls.filter { ["png", "gif"].contains($0.pathExtension.lowercased()) }
             .sorted { ms($0) > ms($1) }   // newest → oldest (most recent first)
-        return imgs.compactMap { try? MSSticker(contentsOfFileURL: $0, localizedDescription: "컬렉션") }
+        return imgs.compactMap { try? MSSticker(contentsOfFileURL: $0, localizedDescription: "펀칭 스티커") }
     }
 
     override func numberOfStickers(in stickerBrowserView: MSStickerBrowserView) -> Int {

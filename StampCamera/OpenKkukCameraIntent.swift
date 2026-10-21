@@ -13,8 +13,8 @@
 import AppIntents
 
 struct OpenKkukCameraIntent: AppIntent {
-    static let title: LocalizedStringResource = "꾹 카메라 열기"
-    static let description = IntentDescription("꾹 카메라를 바로 엽니다.")
+    static let title: LocalizedStringResource = "펀칭 카메라 열기"
+    static let description = IntentDescription("펀칭 카메라를 바로 엽니다.")
 
     // Foreground the app when the control is tapped; `perform()` then runs in
     // the app process, where the router lives.
@@ -27,7 +27,7 @@ struct OpenKkukCameraIntent: AppIntent {
     }
 }
 
-/// Surfaces "꾹 카메라 열기" as a system App Shortcut. This alone lets the user
+/// Surfaces "펀칭 카메라 열기" as a system App Shortcut. This alone lets the user
 /// add a camera button to Control Center and the Lock Screen via the Shortcuts
 /// app today — the dedicated ControlWidget (KkukControls) is the polished
 /// one-tap version on top of the same intent.

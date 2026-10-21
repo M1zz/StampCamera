@@ -23,7 +23,7 @@ import Vision
 struct LiveAutoPlayTip: Tip {
     var title: Text { Text("움직임은 언제나 보관돼요") }
     var message: Text? {
-        Text("모든 우표는 움직임을 머금고 있어요. ‘움직임 자동 재생’을 끄면 어디서나 정지 이미지로 보여요.")
+        Text("모든 스티커는 움직임을 머금고 있어요. ‘움직임 자동 재생’을 끄면 어디서나 정지 이미지로 보여요.")
     }
     var image: Image? { Image(systemName: "play.circle") }
 }
@@ -185,7 +185,7 @@ struct ContentView: View {
         .onAppear { location.start() }
         .onChange(of: camera.capturedImage) { _, newValue in handleCapture(newValue) }
         .onChange(of: camera.capturedLiveFrames) { _, frames in handleLiveFrames(frames) }
-        // Control Center / Lock Screen tapped "꾹 카메라 열기": drop whatever is
+        // Control Center / Lock Screen tapped "펀칭 카메라 열기": drop whatever is
         // open and return to the live camera.
         .onChange(of: router.cameraRequestID) { _, _ in
             showCollection = false
@@ -887,7 +887,7 @@ struct ContentView: View {
             Text("📮 펀칭")
                 .font(.system(size: 28, weight: .heavy, design: .rounded))
                 .foregroundStyle(.white)
-            Text("우표를 펀칭하려면 카메라 권한이 필요해요.\n설정에서 카메라를 켜주세요.")
+            Text("순간을 스티커로 뜯으려면 카메라 권한이 필요해요.\n설정에서 카메라를 켜주세요.")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.white.opacity(0.8))
             Button("설정 열기") {
@@ -1442,7 +1442,7 @@ struct AlbumPageView: View {
                         Image(systemName: filter.icon)
                             .font(.system(size: 38))
                             .foregroundStyle(.white.opacity(0.3))
-                        Text("\(filter.title)에 해당하는 우표가 아직 없어요")
+                        Text("\(filter.title)에 해당하는 스티커가 아직 없어요")
                             .font(.system(size: 14, weight: .medium, design: .rounded))
                             .foregroundStyle(.white.opacity(0.6))
                     }
@@ -1573,7 +1573,7 @@ struct AlbumPageView: View {
                     .font(.system(size: 14, weight: .semibold, design: .rounded))
                     .tint(.white)
                     Spacer()
-                    Text(selectedIDs.isEmpty ? "우표를 골라주세요"
+                    Text(selectedIDs.isEmpty ? "스티커를 골라주세요"
                                              : "\(selectedIDs.count)장 선택됨")
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
                         .foregroundStyle(.white.opacity(0.75))
@@ -1590,7 +1590,7 @@ struct AlbumPageView: View {
                 .transition(.move(edge: .bottom).combined(with: .opacity))
             }
         }
-        .confirmationDialog("선택한 우표 \(selectedIDs.count)장을 삭제할까요?",
+        .confirmationDialog("선택한 스티커 \(selectedIDs.count)장을 삭제할까요?",
                             isPresented: $showDeleteSelected, titleVisibility: .visible) {
             Button("삭제", role: .destructive) {
                 for id in selectedIDs { collection.delete(id) }
@@ -1607,12 +1607,12 @@ struct AlbumPageView: View {
             Button("취소", role: .cancel) { }
             Button("저장") { collection.renameAlbum(album, to: renameText) }
         }
-        .confirmationDialog("수집함 '\(album)' 과(와) 안의 우표 \(homeCount)장을 모두 삭제할까요?",
+        .confirmationDialog("수집함 '\(album)' 과(와) 안의 스티커 \(homeCount)장을 모두 삭제할까요?",
                             isPresented: $showDeleteAlbum, titleVisibility: .visible) {
             Button("삭제", role: .destructive) { collection.deleteAlbum(album); dismiss() }
             Button("취소", role: .cancel) { }
         }
-        .confirmationDialog("이 우표를 삭제할까요?", isPresented: deletePresented,
+        .confirmationDialog("이 스티커를 삭제할까요?", isPresented: deletePresented,
                             titleVisibility: .visible, presenting: deleteTarget) { stamp in
             Button("삭제", role: .destructive) { collection.delete(stamp.id) }
             Button("취소", role: .cancel) { }
@@ -2660,7 +2660,7 @@ struct ExhibitionWallView: View {
             Button("컬렉션 삭제", role: .destructive) { collection.deleteExhibition(exhibition); dismiss() }
             Button("취소", role: .cancel) { }
         }
-        .confirmationDialog("이 우표를 삭제할까요?", isPresented: deletePresented,
+        .confirmationDialog("이 스티커를 삭제할까요?", isPresented: deletePresented,
                             titleVisibility: .visible, presenting: deleteTarget) { stamp in
             Button("삭제", role: .destructive) { collection.delete(stamp.id) }
             Button("취소", role: .cancel) { }
@@ -4812,7 +4812,7 @@ struct PrintGuideView: View {
                     header
 
                     step(1, "우표 찍기", "camera.fill",
-                         "카메라에서 스탬프 기기를 꾹 눌렀다 놓으면 찰칵! 창에 보이던 장면이 그대로 우표로 펀칭돼요.")
+                         "카메라에서 펀칭기를 꾹 눌렀다 놓으면 찰칵! 창에 보이던 장면이 그대로 스티커로 뜯겨요.")
                     step(2, "꾸미기", "paintbrush.pointed.fill",
                          "갓 나온 우표 카드에 한 마디를 적고, ‘자세히 꾸미기’에서 세피아·흑백 같은 잉크를 입혀보세요. 잉크는 언제든 바꿔도 화질이 상하지 않아요.")
                     step(3, "컬렉션에 걸기", "photo.artframe",
@@ -5652,7 +5652,7 @@ struct StampCheckupView: View {
                         Text("바로잡을 스티커가 없어요")
                             .font(.system(size: 17, weight: .bold, design: .rounded))
                             .foregroundStyle(.white)
-                        Text("움직이도록 설정된 우표·스티커가 모두\n실제로 잘 움직이고 있어요.")
+                        Text("움직이도록 설정된 스티커가 모두\n실제로 잘 움직이고 있어요.")
                             .font(.system(size: 13, weight: .medium, design: .rounded))
                             .foregroundStyle(.white.opacity(0.6))
                             .multilineTextAlignment(.center)
@@ -6118,7 +6118,7 @@ struct StampDetailView: View {
                 collection.placeInExhibition(stampID, into: name)
             }
         }
-        .confirmationDialog("이 우표를 삭제할까요?", isPresented: $showDelete,
+        .confirmationDialog("이 스티커를 삭제할까요?", isPresented: $showDelete,
                             titleVisibility: .visible) {
             Button("삭제", role: .destructive) { collection.delete(stampID); dismiss() }
             Button("취소", role: .cancel) { }

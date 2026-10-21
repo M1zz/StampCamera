@@ -221,7 +221,7 @@ class KeyboardViewController: UIInputViewController {
             shown = allURLs
         }
         if shown.isEmpty {
-            emptyLabel.text = "앱에서 우표·스티커를 만들면\n여기에 나타나요."
+            emptyLabel.text = "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요."
         }
         emptyLabel.isHidden = !shown.isEmpty
         collectionView.reloadData()
