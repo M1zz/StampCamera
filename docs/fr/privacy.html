@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — Punching</title>
+<link rel="canonical" href="https://m1zz.github.io/StampCamera/fr/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/privacy.html">
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+                 Roboto, Arial, sans-serif;
+    background: #141210; color: var(--ink); padding: 32px 16px;
+    display: flex; justify-content: center;
+  }
+  .stamp {
+    max-width: 640px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 44px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .back { font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; }
+  h1 { font-size: 28px; font-weight: 900; margin: 14px 0 4px; }
+  .date { font-size: 13px; color: var(--sub); margin-bottom: 22px; }
+  .pledge {
+    background: rgba(242, 178, 59, .14); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 28px;
+    font-size: 15px; line-height: 1.7; font-weight: 600;
+  }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: .25em; color: var(--sub);
+    text-transform: uppercase; margin: 30px 0 12px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 8px;
+  }
+  p, li, td, th { font-size: 15px; line-height: 1.75; }
+  ul { padding-left: 22px; margin: 6px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; color: var(--sub); }
+  a { color: #9B6A1E; font-weight: 600; }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <a class="back" href="./index.html">← Punching</a>
+    <h1>Politique de confidentialité</h1>
+    <p class="date">En vigueur depuis le 16 octobre 2026</p>
+
+    <div class="pledge">
+      En bref : Punching conserve vos données (photos, position, légendes) uniquement sur votre appareil.
+      Pas de compte, pas de serveur propre, pas de publicité, pas d’outil d’analyse tiers. Seuls sortent de l’appareil
+      des statistiques d’utilisation anonymes et des rapports d’erreur (section 7), ainsi que les commentaires que vous envoyez vous-même via « Envoyer un commentaire ».
+    </div>
+
+    <h2>1. Informations collectées et stockées</h2>
+    <table>
+      <tr><th>Information</th><th>Usage</th><th>Où elle est stockée</th></tr>
+      <tr><td>Photos prises<br>(autocollant, original, images du mouvement)</td><td>Créer des autocollants, changer leur forme, les imprimer ou les exporter</td><td>Sur l’appareil</td></tr>
+      <tr><td>Position (facultatif)</td><td>Enregistrer le nom du lieu sur l’autocollant</td><td>Sur l’appareil (la conversion coordonnées → lieu passe par le géocodage système d’Apple)</td></tr>
+      <tr><td>Petits mots et organisation des classeurs (pages, ordre)</td><td>Ranger votre collection</td><td>Sur l’appareil</td></tr>
+      <tr><td>Réglages</td><td>Mémoriser le comportement de l’app</td><td>Sur l’appareil</td></tr>
+    </table>
+    <p>L’app <strong>n’envoie ces informations ni au développeur ni à aucun serveur tiers.</strong> (Statistiques anonymes : section 7 ; commentaires envoyés volontairement : section 6.)</p>
+
+    <h2>2. Autorisations</h2>
+    <ul>
+      <li><strong>Appareil photo</strong> — indispensable à la fonction principale, qui consiste à détacher des autocollants. Il n’est utilisé que lorsque l’écran de l’appareil photo est affiché, et vous pouvez toujours le vérifier grâce au voyant vert d’iOS.</li>
+      <li><strong>Ajout à la photothèque (facultatif)</strong> — uniquement pour enregistrer un autocollant terminé dans l’app Photos. Les autres photos de votre photothèque ne sont pas lues.</li>
+      <li><strong>Position (facultatif)</strong> — si vous l’autorisez, le nom du lieu est enregistré sur l’autocollant. Toutes les fonctions restent disponibles si vous refusez.</li>
+    </ul>
+
+    <h2>3. Autocollants iMessage (App Group)</h2>
+    <p>Pour que l’extension Messages (« Punching Autocollants ») puisse lire vos autocollants, ils sont copiés <strong>sur l’appareil</strong>,
+    dans un dossier partagé App Group. Ils ne quittent pas l’appareil non plus.
+    L’envoi d’un autocollant dans Messages passe par Apple iMessage,
+    et cet envoi est soumis aux conditions d’Apple.</p>
+
+    <h2>4. Clavier d’autocollants (accès complet)</h2>
+    <p>Le clavier Punching Autocollants affiche les autocollants que l’app a placés dans le dossier App Group de l’appareil
+    et copie dans le presse-papiers celui que vous touchez, pour que vous puissiez le coller dans une autre app. Pour cela, l’option iOS
+    « Autoriser l’accès complet » est nécessaire, mais le clavier <strong>ne lit ni n’enregistre ce que vous tapez
+    et ne se connecte pas à Internet.</strong></p>
+
+    <h2>5. Partage et exportation</h2>
+    <p>Le partage d’images, le PDF à imprimer et l’exportation d’autocollants en PNG ou GIF ne se font <strong>que
+    lorsque vous les lancez vous-même</strong>, et vous choisissez la destination dans la feuille de partage du système.</p>
+
+    <h2>6. Envoyer un commentaire</h2>
+    <p>Lorsque vous envoyez un commentaire depuis l’écran d’assistance (« Envoyer un commentaire »), ce que vous avez écrit (type de commentaire, message, capture d’écran jointe,
+    nom et e-mail laissés pour la réponse), ainsi que la version de l’app, le modèle d’appareil, la version d’iOS et la langue du système sont transmis au développeur
+    via le stockage Apple iCloud (CloudKit). Ces données servent uniquement à vous répondre et à améliorer l’app ; si vous n’envoyez rien, rien n’est transmis.
+    Pour faire supprimer un commentaire envoyé, écrivez-nous à l’adresse de contact ci-dessous.</p>
+
+    <h2>7. Statistiques d’utilisation anonymes et rapports d’erreur</h2>
+    <p>Pour savoir combien de personnes utilisent l’app et pour corriger les erreurs, Punching envoie les statistiques anonymes ci-dessous
+    vers le stockage Apple iCloud (CloudKit), lisible uniquement par le développeur.</p>
+    <ul>
+      <li>Un identifiant aléatoire créé à l’installation de l’app (il n’est lié ni à vous, ni à votre appareil, ni à votre identifiant Apple, ni à d’autres apps, et change si vous réinstallez l’app)</li>
+      <li>La version de l’app, la version d’iOS, la région et la langue du système</li>
+      <li>Le nombre d’ouvertures de l’app et les dates d’ouverture, ainsi que la date d’installation (exprimée en nombre de jours écoulés depuis l’installation)</li>
+      <li>Les rapports de diagnostic en cas de fermeture inattendue ou de blocage de l’app (version de l’app, version d’iOS, modèle d’appareil, informations techniques sur l’erreur)</li>
+    </ul>
+    <p>Ces données n’incluent ni nom, ni coordonnées, ni position, ni contenu que vous avez créé, comme vos photos, autocollants ou petits mots.
+    Les statistiques ne sont envoyées que si l’appareil est connecté à iCloud.</p>
+
+    <h2>8. Suppression des données</h2>
+    <ul>
+      <li>Lorsque vous supprimez un autocollant, celui-ci, sa photo d’origine, ses données de mouvement et sa copie pour Messages sont immédiatement et définitivement supprimés de l’appareil.</li>
+      <li>Si vous supprimez l’app, toutes ses données sont supprimées avec elle. (Les sauvegardes externes dépendent de vos réglages de sauvegarde iCloud ou de l’appareil.)</li>
+    </ul>
+
+    <h2>9. Données personnelles des enfants</h2>
+    <p>Quel que soit l’âge de l’utilisateur, Punching ne collecte ni ne transmet de lui-même aucune information permettant d’identifier une personne. Lorsque vous envoyez un commentaire, vous n’êtes pas obligé d’indiquer votre nom ni votre e-mail.</p>
+
+    <h2>10. Modifications de la politique</h2>
+    <p>Si cette politique change, nous mettrons cette page à jour et modifierons la date d’entrée en vigueur.</p>
+
+    <h2>11. Contact</h2>
+    <p>📮 <strong>leeo@kakao.com</strong> · <a href="./support.html">Page d’assistance</a></p>
+  </main>
+</body>
+</html>
