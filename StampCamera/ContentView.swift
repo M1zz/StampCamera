@@ -108,12 +108,12 @@ struct ContentView: View {
         let kind: Kind
         var title: String {
             switch kind {
-            case .motion: return "움직임을 담지 못했어요"
+            case .motion: return String(localized: "움직임을 담지 못했어요")
             }
         }
         var message: String {
             switch kind {
-            case .motion: return "움직이는 장면을 충분히 담지 못했어요. 다시 찍어볼까요?"
+            case .motion: return String(localized: "움직이는 장면을 충분히 담지 못했어요. 다시 찍어볼까요?")
             }
         }
     }
@@ -719,7 +719,7 @@ struct ContentView: View {
     private func verifyResult(_ id: String, cutoutFailed: Bool) {
         let style = liveCaptureStyle
         if cutoutFailed {
-            showCaptureNote("오려낼 대상이 없어 우표 모양으로 뜯었어요")
+            showCaptureNote(String(localized: "오려낼 대상이 없어 우표 모양으로 뜯었어요"))
         }
         if style.moving {
             // the burst lands ~1.2s after the shutter and encodes async — check a
@@ -1146,10 +1146,10 @@ struct AlbumPageView: View {
         var id: String { rawValue }
         var title: String {
             switch self {
-            case .all: return "전체"
-            case .moving: return "움직이는 것"
-            case .cutout: return "오려낸 모양"
-            case .stampShape: return "우표 모양"
+            case .all: return String(localized: "전체")
+            case .moving: return String(localized: "움직이는 것")
+            case .cutout: return String(localized: "오려낸 모양")
+            case .stampShape: return String(localized: "우표 모양")
             }
         }
         var icon: String {
@@ -1302,7 +1302,7 @@ struct AlbumPageView: View {
                 // 선택은 그대로 우측 상단에
                 ToolbarItem(placement: .topBarTrailing) {
                     if !stamps.isEmpty {
-                        Button(selecting ? "취소" : "선택") {
+                        Button(selecting ? String(localized: "취소") : String(localized: "선택")) {
                             withAnimation(.easeOut(duration: 0.18)) {
                                 selecting.toggle()
                                 selectedIDs.removeAll()
@@ -1438,15 +1438,15 @@ struct AlbumPageView: View {
         let allIDs = Set(stamps.map(\.id))
         let allPicked = !allIDs.isEmpty && selectedIDs.isSuperset(of: allIDs)
         return HStack(spacing: 14) {
-            Button(allPicked ? "모두 해제" : "모두 선택") {
+            Button(allPicked ? String(localized: "모두 해제") : String(localized: "모두 선택")) {
                 Haptics.tick()
                 selectedIDs = allPicked ? [] : allIDs
             }
             .font(.system(size: 14, weight: .semibold, design: .rounded))
             .tint(.white)
             Spacer()
-            Text(selectedIDs.isEmpty ? "스티커를 골라주세요"
-                                     : "\(selectedIDs.count)장 선택됨")
+            Text(selectedIDs.isEmpty ? String(localized: "스티커를 골라주세요")
+                                     : String(localized: "\(selectedIDs.count)장 선택됨"))
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .foregroundStyle(.white.opacity(0.75))
             Spacer()
@@ -1830,7 +1830,7 @@ struct AlbumPageView: View {
         let renderer = ImageRenderer(content: card)
         renderer.scale = 1   // the card view is already laid out at 1080pt
         guard let image = renderer.uiImage else { return }
-        let caption = "내 스티커 수집함 ‘\(album)’ #펀칭"
+        let caption = String(localized: "내 스티커 수집함 ‘\(album)’ #펀칭")
         sharePayload = SharePayload(items: [image, caption])
     }
 
@@ -1895,7 +1895,7 @@ struct StampStylePicker: View {
 
     /// One axis as a two-segment pill: tapping the off side flips just that axis.
     @ViewBuilder
-    private func axis(title: String, a: (String, String), b: (String, String),
+    private func axis(title: LocalizedStringKey, a: (LocalizedStringKey, String), b: (LocalizedStringKey, String),
                       onB: Bool, bEnabled: Bool, pick: @escaping (Bool) -> Void) -> some View {
         HStack(spacing: 10) {
             Text(title)
@@ -1912,7 +1912,7 @@ struct StampStylePicker: View {
     }
 
     @ViewBuilder
-    private func segment(_ title: String, _ icon: String, selected: Bool,
+    private func segment(_ title: LocalizedStringKey, _ icon: String, selected: Bool,
                          enabled: Bool, tap: @escaping () -> Void) -> some View {
         Button { if enabled { tap() } } label: {
             HStack(spacing: 5) {
@@ -2025,16 +2025,16 @@ enum BackgroundStyle: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .cream:     return "무지 크림"
-        case .grid:      return "모눈"
-        case .ruled:     return "줄노트"
-        case .dot:       return "도트"
-        case .kraft:     return "크라프트"
-        case .parchment: return "양피지"
-        case .cornell:   return "코넬"
-        case .graph:     return "그래프"
-        case .mint:      return "민트"
-        case .slate:     return "다크 그리드"
+        case .cream:     return String(localized: "무지 크림")
+        case .grid:      return String(localized: "모눈")
+        case .ruled:     return String(localized: "줄노트")
+        case .dot:       return String(localized: "도트")
+        case .kraft:     return String(localized: "크라프트")
+        case .parchment: return String(localized: "양피지")
+        case .cornell:   return String(localized: "코넬")
+        case .graph:     return String(localized: "그래프")
+        case .mint:      return String(localized: "민트")
+        case .slate:     return String(localized: "다크 그리드")
         }
     }
 
@@ -3652,7 +3652,7 @@ struct PrintGuideView: View {
         .padding(.bottom, 6)
     }
 
-    private func step(_ n: Int, _ title: String, _ icon: String, _ body: String) -> some View {
+    private func step(_ n: Int, _ title: LocalizedStringKey, _ icon: String, _ body: LocalizedStringKey) -> some View {
         HStack(alignment: .top, spacing: 14) {
             ZStack {
                 Circle().fill(gold.opacity(0.18))
@@ -4526,7 +4526,7 @@ struct StampRevealView: View {
                     Button {
                         withAnimation(.easeOut(duration: 0.22)) { stampOnly.toggle() }
                     } label: {
-                        Label(stampOnly ? "전체사진" : "우표만", systemImage: stampOnly ? "photo" : "seal")
+                        Label(stampOnly ? String(localized: "전체사진") : String(localized: "우표만"), systemImage: stampOnly ? "photo" : "seal")
                             .font(.system(size: 15, weight: .semibold))
                             .foregroundStyle(.white)
                             .padding(.horizontal, 14).padding(.vertical, 8)
@@ -4547,7 +4547,7 @@ struct StampRevealView: View {
             // copy / share, always visible at the bottom of the viewer
             HStack(spacing: 12) {
                 Button { copyStamp() } label: {
-                    Label(justCopied ? "복사됨!" : "복사",
+                    Label(justCopied ? String(localized: "복사됨!") : String(localized: "복사"),
                           systemImage: justCopied ? "checkmark" : "doc.on.doc")
                         .frame(maxWidth: .infinity)
                 }
@@ -4594,10 +4594,10 @@ enum StampStyle: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var title: String {
         switch self {
-        case .stamp: return "우표 모양"
-        case .liveStamp: return "움직이는 우표 모양"
-        case .sticker: return "오려낸 스티커"
-        case .liveSticker: return "움직이는 오려낸 스티커"
+        case .stamp: return String(localized: "우표 모양")
+        case .liveStamp: return String(localized: "움직이는 우표 모양")
+        case .sticker: return String(localized: "오려낸 스티커")
+        case .liveSticker: return String(localized: "움직이는 오려낸 스티커")
         }
     }
     var icon: String {
@@ -4705,7 +4705,7 @@ struct StampDetailView: View {
                     // high-res transparent PNG in its current shape.
                     HStack(spacing: 12) {
                         Button { copySticker() } label: {
-                            Label(justCopied ? "복사됨!" : "복사",
+                            Label(justCopied ? String(localized: "복사됨!") : String(localized: "복사"),
                                   systemImage: justCopied ? "checkmark" : "doc.on.doc")
                         }
                         Button { exportSticker() } label: {
@@ -4893,7 +4893,7 @@ struct StampDetailView: View {
                     }
                 }
                 .frame(width: 52, height: 62)
-                Text(ink.rawValue)
+                Text(LocalizedStringKey(ink.rawValue))
                     .font(.system(size: 11, weight: .semibold, design: .rounded))
                     .foregroundStyle(Color(hex: selected ? 0x42331E : 0x9A875E))
             }

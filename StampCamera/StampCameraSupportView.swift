@@ -137,7 +137,7 @@ private struct StickerUseGuide: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    private func step(_ n: Int, _ text: String) -> some View {
+    private func step(_ n: Int, _ text: LocalizedStringKey) -> some View {
         HStack(alignment: .firstTextBaseline, spacing: 10) {
             Text("\(n)")
                 .font(.system(size: 13, weight: .bold, design: .rounded))

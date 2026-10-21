@@ -21,7 +21,10 @@ OUT = ROOT / "docs" / "screenshots" / "creative"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 # 앱 언어 코드 → App Store Connect 로케일 (make_marketing_screenshots.py 와 같다)
-STORE = {"ko": "ko"}
+STORE = {c: c for c in (
+    "ko", "en", "en-GB", "zh-Hans", "zh-Hant", "ja", "ru", "es", "de", "fr", "it", "pt-BR",
+    "th", "vi", "cs", "da", "el", "fi", "id", "nb", "nl", "pl", "sv", "tr",
+)}
 
 # (가로, 세로, 안전 영역 left, top, right, bottom)
 SPEC = {
@@ -34,6 +37,29 @@ SPEC = {
 # 눈썹글은 그 나라 검색어다.
 SEARCH = {
     "ko": ("우표 카메라", "꾹 누르면<br>우표가 돼요", "찍은 순간을 톱니 우표로 뜯어 모아요"),
+    "en": ("Sticker Camera", "Hold to turn<br>it into a stamp", "Tear every moment off as a perforated stamp"),
+    "en-GB": ("Sticker Camera", "Press and hold<br>to make a stamp", "Tear each moment off as a perforated stamp"),
+    "zh-Hans": ("贴纸相机", "长按一下<br>变成邮票", "把拍下的瞬间撕成齿孔邮票收藏"),
+    "zh-Hant": ("貼紙相機", "長按一下<br>變成郵票", "把拍下的瞬間撕成齒孔郵票收藏"),
+    "ja": ("ステッカーカメラ", "長押しで<br>切手になる", "撮った瞬間をギザギザの切手にして集めよう"),
+    "ru": ("Камера стикеров", "Удерживайте —<br>и это марка", "Отрывайте кадры зубчатыми марками и копите"),
+    "es": ("Cámara de stickers", "Mantén pulsado<br>y será un sello", "Despega cada momento como un sello dentado"),
+    "de": ("Sticker-Kamera", "Gedrückt halten,<br>schon ist's Briefmarke", "Reiß jeden Moment als gezackte Marke ab"),
+    "fr": ("Appareil photo sticker", "Appuyez longtemps,<br>ça devient un timbre", "Détachez vos instants en timbres dentelés"),
+    "it": ("Fotocamera sticker", "Tieni premuto<br>e diventa francobollo", "Stacca ogni momento come un francobollo dentellato"),
+    "pt-BR": ("Câmera de figurinhas", "Segure e vira<br>um selo", "Destaque cada momento em selos serrilhados"),
+    "th": ("กล้องสติกเกอร์", "กดค้างไว้<br>กลายเป็นแสตมป์", "ฉีกทุกช่วงเวลาเป็นแสตมป์ฟันปลา"),
+    "vi": ("Camera sticker", "Nhấn giữ<br>là thành tem", "Xé khoảnh khắc thành tem răng cưa để sưu tầm"),
+    "cs": ("Fotoaparát na nálepky", "Podrž a z toho<br>bude známka", "Odtrhni každý okamžik jako zoubkovanou známku"),
+    "da": ("Klistermærke-kamera", "Hold nede,<br>så bliver det et frimærke", "Riv hvert øjeblik af som et takket frimærke"),
+    "el": ("Κάμερα αυτοκόλλητων", "Πάτα παρατεταμένα<br>και γίνεται γραμματόσημο", "Σκίσε κάθε στιγμή σε οδοντωτό γραμματόσημο"),
+    "fi": ("Tarrakamera", "Pidä painettuna,<br>niin siitä tulee postimerkki", "Repäise hetket rei'itetyiksi postimerkeiksi"),
+    "id": ("Kamera Stiker", "Tahan lama,<br>jadi prangko", "Sobek tiap momen jadi prangko bergerigi"),
+    "nb": ("Klistremerkekamera", "Hold inne,<br>så blir det et frimerke", "Riv av hvert øyeblikk som et tagget frimerke"),
+    "nl": ("Stickercamera", "Houd ingedrukt,<br>en het is een postzegel", "Scheur elk moment af als getande postzegel"),
+    "pl": ("Aparat do naklejek", "Przytrzymaj,<br>a będzie znaczek", "Odrywaj chwile jako ząbkowane znaczki"),
+    "sv": ("Klistermärkeskamera", "Håll inne,<br>så blir det ett frimärke", "Riv loss varje stund som ett tandat frimärke"),
+    "tr": ("Çıkartma Kamerası", "Basılı tut,<br>pula dönüşsün", "Her anı dişli pul gibi koparıp biriktir"),
 }
 
 # 헤더는 처음 온 사람에게 **한 가지 약속**만 한다(Apple: 단일한 생각, 빽빽하지 않게).
@@ -41,6 +67,29 @@ SEARCH = {
 # ⚠️ 기계번역하지 않는다. 각 언어에서 짧게 읽히는 말로 따로 쓴다. 높임은 그 언어 스크린샷과 맞춘다.
 HEADER = {
     "ko": ("우표 카메라", "갖고 싶은 순간을<br>꾹 눌러 모아요"),
+    "en": ("Stamp Camera", "Hold to collect<br>the moments you love"),
+    "en-GB": ("Stamp Camera", "Press and hold<br>to keep your moments"),
+    "zh-Hans": ("邮票相机", "长按一下<br>收藏心动瞬间"),
+    "zh-Hant": ("郵票相機", "長按一下<br>收藏心動瞬間"),
+    "ja": ("切手カメラ", "気に入った瞬間を<br>長押しで集めよう"),
+    "ru": ("Камера-марка", "Удерживайте —<br>и копите моменты"),
+    "es": ("Cámara de sellos", "Mantén pulsado<br>y guarda tus momentos"),
+    "de": ("Briefmarken-Kamera", "Gedrückt halten,<br>Momente sammeln"),
+    "fr": ("Appareil à timbres", "Appuyez longtemps,<br>gardez vos instants"),
+    "it": ("Fotocamera francobolli", "Tieni premuto<br>e raccogli i momenti"),
+    "pt-BR": ("Câmera de selos", "Segure para<br>guardar seus momentos"),
+    "th": ("กล้องแสตมป์", "กดค้างไว้<br>เก็บช่วงเวลาที่ชอบ"),
+    "vi": ("Camera tem", "Nhấn giữ<br>để sưu tầm khoảnh khắc"),
+    "cs": ("Fotoaparát se známkami", "Podrž a sbírej<br>své okamžiky"),
+    "da": ("Frimærkekamera", "Hold nede og<br>saml dine øjeblikke"),
+    "el": ("Κάμερα γραμματοσήμων", "Πάτα παρατεταμένα<br>και μάζεψε στιγμές"),
+    "fi": ("Postimerkkikamera", "Pidä painettuna<br>ja kerää hetkesi"),
+    "id": ("Kamera Prangko", "Tahan lama untuk<br>mengoleksi momen"),
+    "nb": ("Frimerkekamera", "Hold inne og<br>samle øyeblikkene"),
+    "nl": ("Postzegelcamera", "Houd ingedrukt<br>en verzamel momenten"),
+    "pl": ("Aparat ze znaczkami", "Przytrzymaj<br>i zbieraj chwile"),
+    "sv": ("Frimärkskamera", "Håll inne och<br>samla ögonblick"),
+    "tr": ("Pul Kamerası", "Basılı tut,<br>anları biriktir"),
 }
 
 # ⚠️ 바탕 · 글자색은 기존 스크린샷(make_marketing_screenshots.py)과 같다. 다르면 페이지에서
