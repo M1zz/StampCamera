@@ -1,11 +1,13 @@
 # 📮 펀칭 (PUNCHING)
 
-> 갖고 싶은 순간을 꾹 눌러, 세상을 뜯어 모은다.
+> 꾹 눌러 뜯은 순간을 움직이는 스티커로.
 
-우표 펀칭기 컨셉의 iOS 카메라 앱(프로젝트명 StampCamera). 카메라 프리뷰 위에 파스텔 블루
-펀칭 프레임이 올라가고, 촬영하면 프레임 안쪽이 우표 모양(톱니 perforation)으로 잘려서
-저장됩니다. 라이브로 찍은 우표는 움직이고, iMessage 스티커·인쇄용 스티커 시트로 꺼내
-쓸 수 있습니다.
+펀칭기 컨셉의 움직이는 스티커 카메라(프로젝트명 StampCamera). 카메라 프리뷰 위에 펀칭
+프레임이 올라가고, 꾹 누르면 프레임 안쪽이 움직이는 스티커로 뜯겨 나옵니다 — 대상만
+오려 내거나(배경 제거), 대상이 없으면 우표 모양(톱니 perforation)으로. 스티커는 수집함에
+모이고, 메시지 스티커·키보드·인쇄용 스티커 시트로 꺼내 씁니다.
+
+정체성 · 용어 · 화면 구조의 기준은 [`IDENTITY.md`](IDENTITY.md), 구현 명세는 [`SPEC.md`](SPEC.md).
 
 ## 실행 방법
 
@@ -48,6 +50,6 @@
 ## 지원 · 개인정보
 
 - [지원 페이지](https://m1zz.github.io/StampCamera/support.html) — 문의, 자주 묻는 질문
-- [개인정보 처리방침](https://m1zz.github.io/StampCamera/privacy.html) — 사진·우표는 기기 안에만 저장됩니다 (익명 사용 통계·오류 보고만 iCloud로 전송)
+- [개인정보 처리방침](https://m1zz.github.io/StampCamera/privacy.html) — 사진·스티커는 기기 안에만 저장됩니다 (익명 사용 통계·오류 보고만 iCloud로 전송)
 
 (소스: [`docs/`](docs/) — GitHub Pages로 서빙)
