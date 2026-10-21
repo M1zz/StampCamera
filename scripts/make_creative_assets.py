@@ -33,14 +33,14 @@ SPEC = {
 # (검색에서 본 말이 페이지에서도 이어져야 한다, docs/marketing/ASO_2026-10.md).
 # 눈썹글은 그 나라 검색어다.
 SEARCH = {
-    "ko": ("우표 카메라", "꾹 누르면<br>우표가 돼요", "찍은 순간을 톱니 우표로 뜯어 모아요"),
+    "ko": ("스티커 만들기", "꾹 누르면<br>움직이는 스티커", "찍는 순간 대상만 쏙 오려 내요"),
 }
 
 # 헤더는 처음 온 사람에게 **한 가지 약속**만 한다(Apple: 단일한 생각, 빽빽하지 않게).
 # 앱이 무엇을 해 주는지를 한 문장으로: 한 번 써 두면 그다음은 누르기만 한다.
 # ⚠️ 기계번역하지 않는다. 각 언어에서 짧게 읽히는 말로 따로 쓴다. 높임은 그 언어 스크린샷과 맞춘다.
 HEADER = {
-    "ko": ("우표 카메라", "갖고 싶은 순간을<br>꾹 눌러 모아요"),
+    "ko": ("스티커 카메라", "꾹 눌러 뜯은 순간을<br>대화에 붙여요"),
 }
 
 # ⚠️ 바탕 · 글자색은 기존 스크린샷(make_marketing_screenshots.py)과 같다. 다르면 페이지에서
@@ -48,20 +48,20 @@ HEADER = {
 BASE_CSS = """
 * { margin:0; padding:0; box-sizing:border-box; }
 html,body { width:%(W)dpx; height:%(H)dpx; overflow:hidden; }
-body { background:#EAF1F8; position:relative;
+body { background:linear-gradient(180deg,#FFF6E8 0%%,#FFE6CF 100%%); position:relative;
   font-family:-apple-system, "SF Pro Display", "Apple SD Gothic Neo", "Hiragino Sans", "PingFang SC", "Thonburi", sans-serif; }
 .glow { position:absolute; border-radius:50%%; filter:blur(160px); pointer-events:none; }
 .text { position:absolute; display:flex; flex-direction:column; justify-content:center; }
-.eyebrow { font-weight:700; color:#4A86C5; letter-spacing:-0.01em; line-height:1.15; }
-.headline { font-weight:800; color:#1E2A3A; letter-spacing:-0.03em; line-height:1.12; text-wrap:balance; }
-.sub { font-weight:500; color:#6F7E90; letter-spacing:-0.01em; line-height:1.35; text-wrap:balance; }
+.eyebrow { font-weight:700; color:#F2703F; letter-spacing:-0.01em; line-height:1.15; }
+.headline { font-weight:800; color:#2B2138; letter-spacing:-0.03em; line-height:1.12; text-wrap:balance; }
+.sub { font-weight:500; color:#9A7B66; letter-spacing:-0.01em; line-height:1.35; text-wrap:balance; }
 :lang(th) .headline, :lang(th) .eyebrow, :lang(th) .sub,
 :lang(ja) .headline, :lang(zh) .headline { letter-spacing:0; }
 :lang(th) .headline { line-height:1.3; }
 /* 한국어는 낱말 중간에서 끊지 않는다("키 / 보드"). */
 :lang(ko) .headline, :lang(ko) .sub, :lang(ko) .eyebrow { word-break:keep-all; }
 .phone { position:absolute; background:#17171a; border:6px solid #3a3a3e; padding:40px; border-radius:190px;
-  box-shadow: 0 60px 160px rgba(30,42,58,.35), 0 0 0 2px #232327 inset; }
+  box-shadow: 0 60px 160px rgba(90,40,20,.30), 0 0 0 2px #232327 inset; }
 .phone img { width:100%%; display:block; border-radius:152px; }
 .key { position:absolute; filter:invert(1); mix-blend-mode:screen; opacity:.16; }
 """
@@ -108,10 +108,10 @@ def search_html(lang):
     # 기기는 안전 영역 오른쪽 몫에 서서, 위아래로 넘쳐 화면 밖까지 이어진다(기기 그림은 잘려도 된다).
     ph_w = 1040
     ph_left = l + col + int(sw * 0.04)
-    img = (RAW / lang / "01-camera.png").as_uri()
+    img = (RAW / lang / "01-reveal.png").as_uri()
     return f"""
-<div class="glow" style="left:{ph_left - 300}px;top:500px;width:1700px;height:1700px;background:rgba(120,170,220,.20)"></div>
-<div class="glow" style="left:{l - 700}px;top:{t - 500}px;width:1400px;height:1000px;background:rgba(120,170,220,.07)"></div>
+<div class="glow" style="left:{ph_left - 300}px;top:500px;width:1700px;height:1700px;background:rgba(255,160,90,.20)"></div>
+<div class="glow" style="left:{l - 700}px;top:{t - 500}px;width:1400px;height:1000px;background:rgba(255,160,90,.07)"></div>
 {phone(img, ph_left, t - 360, ph_w, 0)}
 <div class="text" style="left:{l}px;top:{t}px;width:{col}px;height:{sh}px">
   <div class="eyebrow" style="font-size:96px">{eyebrow}</div>
@@ -124,10 +124,10 @@ def header_html(lang):
     W, H, (l, t, r, b) = SPEC["header"]
     eyebrow, headline = HEADER[lang]
     sw, sh = r - l, b - t
-    left_img = (RAW / lang / "05-collection.png").as_uri()
-    right_img = (RAW / lang / "01-camera.png").as_uri()
+    left_img = (RAW / lang / "02-album.png").as_uri()
+    right_img = (RAW / lang / "06-chat.png").as_uri()
     return f"""
-<div class="glow" style="left:{l - 200}px;top:{t - 400}px;width:{sw + 400}px;height:{sh + 800}px;background:rgba(120,170,220,.16)"></div>
+<div class="glow" style="left:{l - 200}px;top:{t - 400}px;width:{sw + 400}px;height:{sh + 800}px;background:rgba(255,160,90,.16)"></div>
 {phone(left_img, 300, 360, 640, -9)}
 {phone(right_img, 2900, 360, 640, 9)}
 <div class="text" style="left:{l}px;top:{t}px;width:{sw}px;height:{sh}px;align-items:center;text-align:center">

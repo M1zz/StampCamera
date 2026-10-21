@@ -10,8 +10,9 @@
 """
 import subprocess, sys, pathlib
 
-# 펀칭 — 원본: docs/screenshots/raw/ko (iPhone 18 Pro Max 시뮬레이터 1320x2868)
-# 01-camera.png 는 시뮬레이터에 카메라가 없어 펀칭 창 안(검은 프리뷰)에 사진 한 장을 합성한 것이다.
+# 펀칭 — 원본: docs/screenshots/raw/ko (펀칭 전용 iPhone 18 Pro Max 시뮬레이터 1320x2868)
+# 01~05 는 scripts/capture_screenshots.sh(앱의 DEBUG 스크린샷 장면)로, 06-chat 은
+# scripts/make_chat_scene.py 로 만든다. 바탕·글자색은 앱 아이콘(노랑→주황, 남색 렌즈)에서 왔다.
 import tempfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "docs" / "screenshots" / "raw" / "ko"
@@ -21,19 +22,20 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 W, H = 1242, 2688   # 이 계정의 iPhone 제출 규격
 
 SHOTS = [
-    ("01-camera.png",     "hero-bleed",  "꾹 누르면<br>우표가 돼요", "펀칭기로 찍듯, 갖고 싶은 순간을 뜯어 모아요"),
-    ("02-album.png",      "left-text",   "찍은 순간이<br>톱니 우표로", "수집함에 차곡차곡 모여요"),
-    ("03-detail.png",     "dark",        "한 장 한 장<br>내 손으로 만든 우표", "복사해서 메시지에 바로 붙여요"),
-    ("04-edit.png",       "text-bottom", "한 줄 기록과<br>빈티지 필터", "세피아, 흑백, 빛바램으로 분위기를 바꿔요"),
-    ("05-collection.png", "flat-rotate", "여행별로 걸어 두는<br>나만의 컬렉션", "크라프트, 모눈, 양피지 배경에 꾸며요"),
+    ("01-reveal.png",  "hero-bleed",  "꾹 누르면<br>움직이는 스티커", "찍는 순간 대상만 쏙 오려 내요"),
+    ("06-chat.png",    "left-text",   "대화에<br>바로 붙여요", "메시지와 키보드에서 꺼내 써요"),
+    ("02-album.png",   "text-bottom", "수집함마다<br>나만의 스티커 팩", "모은 스티커가 묶음으로 따라와요"),
+    ("03-detail.png",  "flat-rotate", "오려낸 모양도<br>우표 모양도", "뜯은 뒤에도 모양과 색감을 바꿔요"),
+    ("04-arrange.png", "left-text",   "속지 고르고<br>순서도 마음대로", "크라프트, 모눈, 양피지 속지 10가지"),
+    ("05-camera.png",  "dark",        "펀칭기로<br>꾹 눌러 뜯어요", "창 안에 보이는 순간 그대로"),
 ]
 
 BASE_CSS = f"""
 * {{ margin:0; padding:0; box-sizing:border-box; }}
 html,body {{ width:{W}px; height:{H}px; overflow:hidden; }}
-body {{ background:#EAF1F8; font-family:-apple-system, "Apple SD Gothic Neo", sans-serif; position:relative; }}
-.headline {{ font-size:100px; font-weight:800; color:#1E2A3A; letter-spacing:-2px; line-height:1.2; word-break:keep-all; }}
-.sub {{ font-size:52px; font-weight:500; color:#6F7E90; letter-spacing:-1px; word-break:keep-all; }}
+body {{ background:linear-gradient(180deg,#FFF6E8 0%,#FFE6CF 100%); font-family:-apple-system, "Apple SD Gothic Neo", sans-serif; position:relative; }}
+.headline {{ font-size:100px; font-weight:800; color:#2B2138; letter-spacing:-2px; line-height:1.2; word-break:keep-all; }}
+.sub {{ font-size:52px; font-weight:500; color:#9A7B66; letter-spacing:-1px; word-break:keep-all; }}
 .phone {{ background:#17171a; border-radius:116px; border:3px solid #3a3a3e; padding:25px;
   box-shadow: 60px 90px 120px rgba(0,0,0,.28), 20px 30px 50px rgba(0,0,0,.18); }}
 .phone img {{ width:100%; display:block; border-radius:92px; }}
@@ -70,12 +72,12 @@ LAYOUTS = {
 """,
     # 5) 다크 배경 반전 + 정면
     "dark": """
-body { background:#131316; }
+body { background:linear-gradient(180deg,#2B2138 0%,#1A1424 100%); }
 .headline { color:#f5f5f7; text-align:center; margin-top:290px; padding:0 70px; }
-.sub { color:#77777d; text-align:center; margin-top:52px; }
+.sub { color:#C9A98F; text-align:center; margin-top:52px; }
 .wrap { display:flex; justify-content:center; margin-top:150px; }
 .phone { width:930px; border-color:#48484e;
-  box-shadow: 0 0 160px rgba(80,140,255,.22), 40px 70px 110px rgba(0,0,0,.55); }
+  box-shadow: 0 0 160px rgba(255,150,80,.28), 40px 70px 110px rgba(0,0,0,.55); }
 """,
 }
 
@@ -89,14 +91,15 @@ HTML = """<!doctype html><html><head><meta charset="utf-8"><style>
 
 def main(only=None):
     OUT.mkdir(parents=True, exist_ok=True)
-    for fname, layout, headline, sub in SHOTS:
+    for n, (fname, layout, headline, sub) in enumerate(SHOTS, 1):
         if only and fname != only:
             continue
         body_tpl = BODY_PHONE_FIRST if layout == "text-bottom" else BODY_TEXT_FIRST
         body = body_tpl.format(headline=headline, sub=sub, img=(SRC / fname).as_uri())
         html_path = WORK / (fname.replace(".png", ".html"))
         html_path.write_text(HTML.format(base=BASE_CSS, layout=LAYOUTS[layout], body=body), encoding="utf-8")
-        out_png = OUT / fname
+        # 파일 이름 순서 = 스토어 순서 → 원본 이름이 아니라 슬라이드 순서로 번호를 붙인다
+        out_png = OUT / f"{n:02d}-{fname.split('-', 1)[1]}"
         # Chrome 은 다른 창과 겹치면 가끔 실패한다 — 따로 쓰는 프로필로 세 번까지
         for _ in range(3):
             try:

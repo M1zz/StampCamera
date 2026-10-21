@@ -181,7 +181,18 @@ struct ContentView: View {
             // while access is still being determined: just the black background,
             // so the guidance never flashes for users who already granted it.
         }
-        .task { await camera.requestAccess() }
+        .task {
+            #if DEBUG
+            // 스크린샷 장면: 시뮬레이터의 빈 캡처 세션은 메인 스레드를 붙잡으므로
+            // 카메라는 아예 켜지 않고 화면만 연다
+            if ScreenshotScene.isActive {
+                camera.isAuthorized = true
+                await openScreenshotScene()
+                return
+            }
+            #endif
+            await camera.requestAccess()
+        }
         // 움직임이 깨진 스티커는 열 때 조용히 바로잡는다 (예전 '스티커 점검')
         .task { collection.repairBrokenMotion() }
         .onAppear { location.start() }
@@ -203,6 +214,7 @@ struct ContentView: View {
         // 모음을 구경하는 동안엔 카메라를 쉬게 한다 — 초록불(카메라 사용
         // 표시등)도 꺼지고 배터리도 아낀다; 닫으면 즉시 재가동
         .onChange(of: showCollection) { _, open in
+            guard !screenshotMode else { return }
             if open { camera.stop() } else { camera.start() }
         }
         .fullScreenCover(isPresented: $showCollection) {
@@ -236,6 +248,7 @@ struct ContentView: View {
     private var cameraScreen: some View {
         GeometryReader { geo in
             ZStack {
+                if !screenshotMode {
                 CameraPreview(session: camera.session) { devicePoint, viewPoint in
                     // tapping the live area focuses + meters there, stock-camera
                     // style. The stamp frame sits on top, so its press/shutter
@@ -246,6 +259,17 @@ struct ContentView: View {
                     focusTapID += 1
                 }
                 .ignoresSafeArea()
+                }
+                #if DEBUG
+                // 스크린샷 장면: 시뮬레이터엔 카메라가 없어 사진 한 장을 비춘다
+                if let backdrop = ScreenshotScene.cameraBackdrop {
+                    Color.clear
+                        .ignoresSafeArea()
+                        .overlay { Image(uiImage: backdrop).resizable().scaledToFill() }
+                        .clipped()
+                        .allowsHitTesting(false)
+                }
+                #endif
 
                 // full-screen frosted blur with the frame's outer silhouette
                 // punched out, so the busy live scene OUTSIDE the frame recedes
@@ -499,6 +523,30 @@ struct ContentView: View {
             .padding(.bottom, 28)
         }
     }
+
+    private var screenshotMode: Bool {
+        #if DEBUG
+        ScreenshotScene.isActive
+        #else
+        false
+        #endif
+    }
+
+    #if DEBUG
+    /// -ScreenshotScene: seed the photos, then open the asked-for screen.
+    private func openScreenshotScene() async {
+        guard let scene = ScreenshotScene.scene else { return }
+        let ids = await ScreenshotScene.seed(collection)
+        guard let first = ids.first else { return }
+        switch scene {
+        case "reveal": revealID = first
+        case "detail": editTarget = EditTarget(id: first)
+        case "album", "arrange": showCollection = true
+        case "settings": showSupport = true
+        default: break
+        }
+    }
+    #endif
 
     /// Shows `text` over the camera for a moment, then fades it.
     private func showCaptureNote(_ text: String) {
@@ -993,7 +1041,14 @@ struct CollectionView: View {
             }
             .onChange(of: photoItem) { _, item in loadImportedPhoto(item) }
         }
-        .preferredColorScheme(.dark)
+        // the list is dark; an open album follows its paper (status bar too —
+        // a pushed page's own preference loses to this one, so decide it here)
+        .preferredColorScheme(topIsLightPaper ? .light : .dark)
+    }
+
+    private var topIsLightPaper: Bool {
+        guard let album = path.last else { return false }
+        return collection.count(in: album) > 0 && !collection.backgroundStyle(of: album).isDark
     }
 
     /// Loads the chosen library photo and files it straight away.
@@ -1290,7 +1345,12 @@ struct AlbumPageView: View {
             }
             .ignoresSafeArea()
         }
-        .onAppear { lastVisitedAlbum = album }   // remember for the camera shortcut
+        .onAppear {
+            lastVisitedAlbum = album   // remember for the camera shortcut
+            #if DEBUG
+            if ScreenshotScene.scene == "arrange" { startArranging() }
+            #endif
+        }
         .navigationTitle(album)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -1337,13 +1397,16 @@ struct AlbumPageView: View {
         .navigationBarBackButtonHidden(arranging)
         .toolbar(arranging ? .hidden : .automatic, for: .bottomBar)
         .safeAreaInset(edge: .bottom) {
-            if arranging {
-                arrangeBar
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
-            } else if selecting {
-                selectionBar
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            Group {
+                if arranging {
+                    arrangeBar
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                } else if selecting {
+                    selectionBar
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                }
             }
+            .environment(\.colorScheme, .dark)   // white-on-glass, whatever the paper
         }
         .confirmationDialog("선택한 스티커 \(selectedIDs.count)장을 삭제할까요?",
                             isPresented: $showDeleteSelected, titleVisibility: .visible) {
@@ -1388,8 +1451,13 @@ struct AlbumPageView: View {
                 }
             }
         }
-        .preferredColorScheme(.dark)
+        // title · status bar · toolbar follow the paper: ink on light papers,
+        // white on dark ones (and on the dark empty page), so nothing vanishes
+        // (the status bar follows it too — CollectionView decides that one)
+        .toolbarColorScheme(onLightPaper ? .light : .dark, for: .navigationBar)
     }
+
+    private var onLightPaper: Bool { !(stamps.isEmpty && !arranging) && !background.isDark }
 
     // MARK: - Menus & bars
 
@@ -1582,6 +1650,7 @@ struct AlbumPageView: View {
                     Spacer(minLength: 0)
                     if pageCount > 1 {
                         PageDots(count: pageCount, current: pageIndex)
+                            .environment(\.colorScheme, .dark)
                             .padding(.bottom, 12)
                     }
                 }
@@ -4853,10 +4922,8 @@ struct StampDetailView: View {
 
     /// 모양(오려낸/우표) × 움직임(멈춤/움직임) — 언제든 갈아입기.
     private var styleSection: some View {
+        // the picker labels its own two rows (모양 · 움직임)
         VStack(alignment: .leading, spacing: 8) {
-            Text("모양")
-                .font(.system(size: 12, weight: .bold, design: .rounded))
-                .foregroundStyle(Color(hex: 0x8C7A52))
             StampStylePicker(collection: collection, stampID: stampID, dark: false)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

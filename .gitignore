@@ -24,3 +24,4 @@ Carthage/Build/
 # Fastlane
 fastlane/report.xml
 fastlane/screenshots/**/*.png
+docs/screenshots/seed/crop/

@@ -34,6 +34,7 @@
 		CD9D810A072EC833DCCDAA1B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */; };
 		E26DD5523414B795831B7FB6 /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF79C59A8F8F63491030AD61 /* LeeoKit */; };
 		F73CBCCDCA180CAC44AEE8CC /* StampCameraSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */; };
+		5C5C0A11D3B04E6F9A1B2C01 /* ScreenshotScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSpec.swift; sourceTree = "<group>"; };
 		B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraRoadmap.swift; sourceTree = "<group>"; };
 		E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSupportView.swift; sourceTree = "<group>"; };
+		5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScreenshotScene.swift; sourceTree = "<group>"; };
 		FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +241,7 @@
 				ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */,
 				B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */,
 				E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */,
+				5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */,
 				FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */,
 			);
 			path = StampCamera;
@@ -467,6 +470,7 @@
 				936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */,
 				40E58A169ED943D1A55796C3 /* StampCameraRoadmap.swift in Sources */,
 				F73CBCCDCA180CAC44AEE8CC /* StampCameraSupportView.swift in Sources */,
+				5C5C0A11D3B04E6F9A1B2C01 /* ScreenshotScene.swift in Sources */,
 				A1000018 /* CameraLaunchRouter.swift in Sources */,
 				A1000019 /* OpenKkukCameraIntent.swift in Sources */,
 			);
