@@ -13,20 +13,7 @@ import CoreImage
 import CoreLocation
 import ImageIO
 import PhotosUI
-import TipKit
 import Vision
-
-// MARK: - Tips (TipKit)
-
-/// Explains that motion is always kept, and where to turn auto-play off.
-/// (Replaces the old inline blurb in the settings menu.)
-struct LiveAutoPlayTip: Tip {
-    var title: Text { Text("움직임은 언제나 보관돼요") }
-    var message: Text? {
-        Text("모든 스티커는 움직임을 머금고 있어요. ‘움직임 자동 재생’을 끄면 어디서나 정지 이미지로 보여요.")
-    }
-    var image: Image? { Image(systemName: "play.circle") }
-}
 
 struct ContentView: View {
     @StateObject private var camera = CameraManager()
@@ -69,10 +56,6 @@ struct ContentView: View {
     @State private var pinching = false
     @State private var pinchStartZoom: CGFloat?
     @State private var flipAngle: Double = 0    // selfie/back flip spin
-    // stamp shape: false = perforated punch, true = Apple subject cutout sticker
-    // "live stamp": record a short burst after the shutter so the stamp moves
-    // like a Live Photo (and the iMessage sticker animates too)
-    @AppStorage("liveStamps") private var liveStamps = true
     // 찍기 전에 고르는 모습 (좌측 상단 버튼) — 찍은 뒤에도 상세에서 변경 가능
     @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveStamp.rawValue
     private var captureStyle: StampStyle { StampStyle(rawValue: captureStyleRaw) ?? .liveStamp }
@@ -182,6 +165,8 @@ struct ContentView: View {
             // so the guidance never flashes for users who already granted it.
         }
         .task { await camera.requestAccess() }
+        // 움직임이 깨진 스티커는 열 때 조용히 바로잡는다 (예전 '스티커 점검')
+        .task { collection.repairBrokenMotion() }
         .onAppear { location.start() }
         .onChange(of: camera.capturedImage) { _, newValue in handleCapture(newValue) }
         .onChange(of: camera.capturedLiveFrames) { _, frames in handleLiveFrames(frames) }
@@ -932,20 +917,10 @@ struct CollectionView: View {
 
     private enum Tab: String, CaseIterable { case exhibitions = "컬렉션", albums = "수집함" }
     @State private var tab: Tab = .exhibitions
-    @State private var showPrintGuide = false
-    @State private var showCheckup = false   // "스티커 점검": 안 맞게 만들어진 항목 바로잡기
-    private let liveAutoPlayTip = LiveAutoPlayTip()   // TipKit hint on the settings gear
     // 사진 앱에서 가져오기 — 활성 수집함에 정지 우표/스티커로 담는다
     @State private var photoItem: PhotosPickerItem?
     @State private var importedPhoto: UIImage?
     @State private var showImportShape = false
-    // 설정 (기어 메뉴): 카메라가 읽는 값과 같은 저장소
-    @AppStorage("liveStamps") private var liveStamps = true
-    @AppStorage("liveAutoPlay") private var liveAutoPlay = true
-    // 펀칭 프레임 선택 — 카메라와 같은 키를 공유하므로 여기서 바꾸면 카메라에 반영
-    @AppStorage(StampFrameLoader.selectionKey) private var stampFrameName = "StampFrame"   // validated against names at read time
-    // 페이지 넘김 연출: 꺼짐(기본)=점 인디케이터, 켜짐=책처럼 종이 넘기기
-    @AppStorage("pageCurl") private var pageCurl = false
 
     private let columns = [GridItem(.adaptive(minimum: 150), spacing: 18)]
 
@@ -988,8 +963,8 @@ struct CollectionView: View {
                     }
                     .font(.system(size: 15, weight: .semibold))
                 }
-                // 세 동작을 한 항목 안에 나란히 둬서 시스템이 '...'로 접지
-                // 않고 항상 펼쳐 보이게 한다: 새로 만들기 · 사진 가져오기 · 설정
+                // 두 동작을 한 항목 안에 나란히 둬서 시스템이 '...'로 접지
+                // 않고 항상 펼쳐 보이게 한다: 새로 만들기 · 사진 가져오기
                 ToolbarItem(placement: .topBarTrailing) {
                     HStack(spacing: 18) {
                         Menu {
@@ -1006,51 +981,6 @@ struct CollectionView: View {
                         PhotosPicker(selection: $photoItem, matching: .images, photoLibrary: .shared()) {
                             Image(systemName: "photo.badge.plus")
                         }
-                        Menu {
-                            Toggle(isOn: $liveAutoPlay) {
-                                Label("움직임 자동 재생", systemImage: "play.circle")
-                            }
-                            Toggle(isOn: $pageCurl) {
-                                Label("책처럼 넘기기", systemImage: "book")
-                            }
-                            if StampFrameLoader.names.count > 1 {
-                                Menu {
-                                    ForEach(Array(StampFrameLoader.names.enumerated()), id: \.element) { idx, name in
-                                        Button {
-                                            stampFrameName = name
-                                            Haptics.select()
-                                        } label: {
-                                            Label("프레임 \(idx + 1)",
-                                                  systemImage: name == stampFrameName ? "checkmark" : "square.on.square.dashed")
-                                        }
-                                    }
-                                } label: {
-                                    Label("펀칭 프레임", systemImage: "square.on.square.dashed")
-                                }
-                            }
-                            Button { showPrintGuide = true } label: {
-                                Label("인쇄 가이드", systemImage: "printer")
-                            }
-                            Divider()
-                            Button { showCheckup = true } label: {
-                                Label("스티커 점검", systemImage: "checkmark.seal")
-                            }
-                            Divider()
-                            // 개발자에게 문의 — 버그 제보와 기능 제안 창구
-                            Menu {
-                                Link(destination: URL(string: "mailto:leeo@kakao.com")!) {
-                                    Label("이메일로 문의하기", systemImage: "envelope")
-                                }
-                                Link(destination: URL(string: "https://instagram.com/lee25_ios")!) {
-                                    Label("인스타그램 DM (@lee25_ios)", systemImage: "paperplane")
-                                }
-                            } label: {
-                                Label("개발자에게 문의", systemImage: "questionmark.bubble")
-                            }
-                        } label: {
-                            Image(systemName: "gearshape")
-                        }
-                        .popoverTip(liveAutoPlayTip, arrowEdge: .top)
                     }
                 }
             }
@@ -1061,12 +991,6 @@ struct CollectionView: View {
             }
             .sheet(isPresented: $showNewExhibition) {
                 NewExhibitionSheet(collection: collection)
-            }
-            .sheet(isPresented: $showPrintGuide) {
-                PrintGuideView()
-            }
-            .sheet(isPresented: $showCheckup) {
-                StampCheckupView(collection: collection)
             }
             .onChange(of: photoItem) { _, item in loadImportedPhoto(item) }
             .confirmationDialog("어떤 모양으로 만들까요?", isPresented: $showImportShape,
@@ -3560,6 +3484,18 @@ final class CollectionStore: ObservableObject {
         stamps.filter { style(for: $0.id).moving && !isPlayablyLive($0.id) }
     }
 
+    /// Fixes every "moving" stamp that doesn't actually move, without asking:
+    /// rebuild the clip when motion was kept, otherwise switch it honestly to
+    /// the matching still look. Nothing is deleted. Run once at launch — not
+    /// mid-capture, when a fresh clip may still be encoding.
+    func repairBrokenMotion() {
+        for stamp in brokenMovingStamps() {
+            let style = style(for: stamp.id)
+            applyStyle(canMove(stamp.id) ? style : StampStyle.make(moving: false, cutout: style.cutout),
+                       for: stamp.id)
+        }
+    }
+
     // cheap per-stamp validity cache, keyed by the clip revision
     private var playableCache: [String: (rev: Int, ok: Bool)] = [:]
 
@@ -5629,110 +5565,6 @@ struct ParchmentCard: View {
         .padding(14)
         .frame(maxWidth: .infinity)
         .background(Parchment())
-    }
-}
-
-/// "스티커 점검" — finds stamps whose recorded style claims motion but don't
-/// actually move, and guides the user to fix each (rebuild the motion if a
-/// master exists, or switch it to the matching still style). Nothing is deleted.
-struct StampCheckupView: View {
-    @ObservedObject var collection: CollectionStore
-    @Environment(\.dismiss) private var dismiss
-
-    private var broken: [CollectedStamp] { collection.brokenMovingStamps() }
-
-    var body: some View {
-        NavigationStack {
-            Group {
-                if broken.isEmpty {
-                    VStack(spacing: 12) {
-                        Image(systemName: "checkmark.seal.fill")
-                            .font(.system(size: 44))
-                            .foregroundStyle(Color(hex: 0x7BC67E))
-                        Text("바로잡을 스티커가 없어요")
-                            .font(.system(size: 17, weight: .bold, design: .rounded))
-                            .foregroundStyle(.white)
-                        Text("움직이도록 설정된 스티커가 모두\n실제로 잘 움직이고 있어요.")
-                            .font(.system(size: 13, weight: .medium, design: .rounded))
-                            .foregroundStyle(.white.opacity(0.6))
-                            .multilineTextAlignment(.center)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    List {
-                        Section {
-                            Text("‘움직임’으로 설정됐지만 실제로 움직이지 않는 항목이에요. 각 항목을 바로잡아 주세요 — 아무것도 삭제되지 않아요.")
-                                .font(.system(size: 13, weight: .medium, design: .rounded))
-                                .foregroundStyle(.white.opacity(0.7))
-                                .listRowBackground(Color.clear)
-                        }
-                        ForEach(broken) { stamp in
-                            checkupRow(stamp)
-                                .listRowBackground(Color.white.opacity(0.06))
-                        }
-                    }
-                    .listStyle(.insetGrouped)
-                    .scrollContentBackground(.hidden)
-                }
-            }
-            .background(Color(hex: 0x141210).ignoresSafeArea())
-            .navigationTitle("스티커 점검")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("완료") { dismiss() }
-                }
-            }
-        }
-        .preferredColorScheme(.dark)
-    }
-
-    @ViewBuilder
-    private func checkupRow(_ stamp: CollectedStamp) -> some View {
-        let style = collection.style(for: stamp.id)
-        let rebuildable = collection.canMove(stamp.id)
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(spacing: 12) {
-                Image(uiImage: stamp.image)
-                    .resizable().scaledToFit()
-                    .frame(width: 44, height: 56)
-                    .background(.white.opacity(0.08))
-                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(style.title)
-                        .font(.system(size: 15, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.white)
-                    Text(rebuildable ? "움직임을 다시 만들 수 있어요"
-                                     : "이 사진엔 움직임이 없어요")
-                        .font(.system(size: 12, weight: .medium, design: .rounded))
-                        .foregroundStyle(.white.opacity(0.55))
-                }
-                Spacer()
-            }
-            HStack(spacing: 10) {
-                if rebuildable {
-                    Button {
-                        collection.applyStyle(style, for: stamp.id)   // re-derive the clip from the master
-                        Haptics.placed()
-                    } label: {
-                        Label("움직임 복구", systemImage: "arrow.clockwise")
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(RevealActionChip())
-                }
-                Button {
-                    // honest fix: switch to the matching STILL style (정지 우표/스티커)
-                    collection.applyStyle(StampStyle.make(moving: false, cutout: style.cutout),
-                                          for: stamp.id)
-                    Haptics.select()
-                } label: {
-                    Label(style.cutout ? "정지 스티커로" : "정지 우표로", systemImage: "pause.circle")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(RevealActionChip())
-            }
-        }
-        .padding(.vertical, 6)
     }
 }
 

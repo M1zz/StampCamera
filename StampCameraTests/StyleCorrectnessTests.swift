@@ -193,7 +193,7 @@ struct StyleCorrectnessTests {
         }
     }
 
-    // MARK: - 스티커 점검 (안 맞게 만들어진 항목 찾기)
+    // MARK: - 움직임 자동 바로잡기 (안 맞게 만들어진 항목 찾기 · 고치기)
 
     @Test func 점검은_움직임설정인데_안움직이는_것만_골라낸다() throws {
         let h = Harness(); defer { h.cleanup() }
@@ -219,5 +219,23 @@ struct StyleCorrectnessTests {
         h.store.applyStyle(StampStyle.make(moving: false, cutout: true), for: id)
         #expect(h.store.style(for: id) == .sticker)
         #expect(h.store.brokenMovingStamps().isEmpty)
+    }
+
+    @Test func 자동_바로잡기는_움직임_없는_것을_같은_모양의_정지로_돌린다() {
+        let h = Harness(); defer { h.cleanup() }
+        let sticker = h.add()         // 움직임 원천 없음 → 정지 스티커로
+        h.store.recordStyle(.liveSticker, for: sticker)
+        let stamp = h.add()           // 움직임 원천 없음 → 정지 우표로
+        h.store.recordStyle(.liveStamp, for: stamp)
+        let still = h.add()           // 이미 정지 → 그대로
+        h.store.recordStyle(.stamp, for: still)
+
+        h.store.repairBrokenMotion()
+
+        #expect(h.store.style(for: sticker) == .sticker)
+        #expect(h.store.style(for: stamp) == .stamp)
+        #expect(h.store.style(for: still) == .stamp)
+        #expect(h.store.brokenMovingStamps().isEmpty)
+        #expect(h.store.stamps.count == 3)   // 아무것도 지우지 않는다
     }
 }
