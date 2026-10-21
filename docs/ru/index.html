@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Punching — зажмите, и момент станет живым стикером</title>
+<link rel="canonical" href="https://m1zz.github.io/StampCamera/ru/">
+<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #141210; color: var(--ink);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 32px 16px;
+  }
+  .stamp {
+    max-width: 560px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 48px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .mark {
+    font-size: 13px; font-weight: 800; letter-spacing: .35em;
+    color: var(--sub); text-transform: uppercase;
+  }
+  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
+  h1 .emoji { margin-right: 8px; }
+  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
+  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
+  .links { display: flex; gap: 12px; flex-wrap: wrap; }
+  a.btn {
+    display: inline-block; padding: 13px 22px; border-radius: 999px;
+    font-size: 15px; font-weight: 700; text-decoration: none;
+  }
+  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
+  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
+  .postmark {
+    margin-top: 40px; font-size: 12px; color: var(--sub);
+    border-top: 1px dashed var(--line); padding-top: 16px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+  .postmark a { color: var(--sub); }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <div class="mark">Stamp Camera</div>
+    <h1><span class="emoji">📮</span>Punching</h1>
+    <p class="tagline">Зажмите — и момент станет живым стикером.</p>
+    <p class="desc">
+      Punching — камера для iOS, которая отрывает увиденное живым стикером: зажмите окно дырокола.
+      Можно вырезать только нужный объект или оторвать кадр зубчатой маркой, собирать стикеры в альбомы,
+      отправлять через «Сообщения» и клавиатуру или распечатать как настоящие наклейки.
+    </p>
+    <div class="links">
+      <a class="btn primary" href="./support.html">Поддержка</a>
+      <a class="btn ghost" href="./privacy.html">Политика конфиденциальности</a>
+    </div>
+    <div class="postmark">
+      <span>© 2026 penguinlab · leeo@kakao.com</span>
+      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
+    </div>
+  </main>
+</body>
+</html>

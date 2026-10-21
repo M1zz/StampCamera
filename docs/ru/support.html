@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Поддержка — Punching</title>
+<link rel="canonical" href="https://m1zz.github.io/StampCamera/ru/support.html">
+<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/support.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/support.html">
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #141210; color: var(--ink); padding: 32px 16px;
+    display: flex; justify-content: center;
+  }
+  .stamp {
+    max-width: 640px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 44px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .back { font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; }
+  h1 { font-size: 30px; font-weight: 900; margin: 14px 0 6px; }
+  .tagline { font-size: 15px; color: var(--sub); margin-bottom: 28px; }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: .25em; color: var(--sub);
+    text-transform: uppercase; margin: 34px 0 12px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 8px;
+  }
+  h3 { font-size: 16px; font-weight: 800; margin: 22px 0 6px; }
+  p, li { font-size: 15px; line-height: 1.75; }
+  ol, ul { padding-left: 22px; margin: 6px 0; }
+  .card {
+    background: rgba(255,255,255,.45); border: 1px solid var(--line);
+    border-radius: 14px; padding: 16px 18px; margin: 8px 0;
+  }
+  a { color: #9B6A1E; font-weight: 600; }
+  .contact { font-size: 16px; font-weight: 700; }
+  .note { font-size: 13px; color: var(--sub); margin-top: 6px; }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <a class="back" href="./index.html">← Punching</a>
+    <h1>Поддержка</h1>
+    <p class="tagline">Если что-то не получается, мы поможем.</p>
+
+    <h2>Связаться с нами</h2>
+    <div class="card">
+      <p class="contact">📮 leeo@kakao.com</p>
+      <p class="note">О найденных ошибках и пожеланиях к функциям можно написать и в
+        <a href="https://github.com/M1zz/StampCamera/issues">GitHub Issues</a>.
+        Обычно мы отвечаем в течение 2–3 дней.</p>
+    </div>
+
+    <h2>Частые вопросы</h2>
+
+    <h3>Стикер не двигается</h3>
+    <ol>
+      <li>Нажмите ⚙️ вверху справа на экране камеры ▸ «Настройки» ▸ «Вид» и проверьте, что включено <strong>Автовоспроизведение движения</strong>.</li>
+      <li>Нажмите на стикер и под пунктом <strong>Форма</strong> проверьте, что включено <strong>Движение</strong>. Движение записывается всегда, так что включить его можно в любой момент.</li>
+      <li>Фото, импортированное из приложения «Фото», — это один кадр, поэтому оно не двигается.</li>
+    </ol>
+
+    <h3>Вместо вырезанного стикера получилась марка</h3>
+    <p>Если вырезать нечего, например на пейзаже, кадр автоматически отрывается в форме <strong>марки</strong>.
+    Форму можно в любой момент изменить: нажмите на стикер и выберите <strong>Форма</strong>. А чтобы стикеры
+    сразу получались марками, измените ⚙️ Настройки ▸ Отрыв ▸ <strong>Форма по умолчанию</strong>.</p>
+
+    <h3>Стикеров не видно в «Сообщениях»</h3>
+    <p>В «Сообщениях» нажмите ＋ рядом с полем ввода ▸ «Стикеры» и найдите там <strong>Стикеры Punching</strong>.
+    Они появляются после того, как вы оторвёте в Punching хотя бы один стикер, а если альбомов несколько, их можно выбирать по альбомам.
+    Подробности — в ⚙️ Настройки ▸ Использовать ▸ <strong>Использование в «Сообщениях» и на клавиатуре</strong>.</p>
+
+    <h3>Как распечатать настоящие наклейки</h3>
+    <p>В альбоме нажмите ⋯ вверху справа ▸ «Использовать» ▸ <strong>Лист стикеров для печати (PDF)</strong>. Для альбома
+    создаётся PDF в 300dpi (с линией реза в форме марок), который можно сразу печатать на бумаге для наклеек
+    на домашнем принтере или отдать в типографию. Подробный порядок действий — в пункте <strong>Руководство по печати</strong> того же меню.</p>
+
+    <h3>Куда делись прежние коллекции</h3>
+    <p>Начиная с версии 1.0.1 стикеры объединяются одним способом — в <strong>альбом</strong>. Коллекции стали альбомами с теми же названиями,
+    а их стикеры, фон и порядок перенеслись без изменений. Если название повторяется,
+    в конце добавляется «(коллекция)».</p>
+
+    <h3>В строке состояния горит зелёный индикатор</h3>
+    <p>Это <strong>индикатор использования камеры</strong> в iOS. Он горит, только пока открыт экран камеры;
+    когда вы открываете альбом, камера останавливается и индикатор гаснет.</p>
+
+    <h3>Что произойдёт, если удалить стикер</h3>
+    <p>Стикер, оригинал фото и данные движения безвозвратно удаляются с устройства,
+    а также пропадают из панели стикеров «Сообщений». Восстановить их нельзя, так что будьте внимательны!</p>
+
+    <h2>Конфиденциальность</h2>
+    <p>Punching хранит все данные <strong>только на устройстве</strong>.
+    Подробности — в <a href="./privacy.html">политике конфиденциальности</a>.</p>
+  </main>
+</body>
+</html>
