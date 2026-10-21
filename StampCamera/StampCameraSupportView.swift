@@ -13,7 +13,7 @@ struct StampCameraSupportView: View {
     @Environment(\.dismiss) private var dismiss
 
     /// 새로 뜯는 스티커의 기본 모양. 카메라와 같은 키를 쓴다.
-    @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveStamp.rawValue
+    @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveSticker.rawValue
     /// 펀칭 프레임 — 카메라와 같은 키라 여기서 바꾸면 바로 반영된다.
     @AppStorage(StampFrameLoader.selectionKey) private var stampFrameName = "StampFrame"
     /// 모아둔 움직이는 스티커를 화면 곳곳에서 재생할지 (LiveArt 가 읽는 값)
@@ -23,15 +23,24 @@ struct StampCameraSupportView: View {
 
     @State private var showPrintGuide = false
 
+    /// 모양 축만 고른다 — 움직임 축은 그대로 둔다 (움직임은 언제나 기록되고,
+    /// 멈춤/움직임은 뜯은 뒤 스티커마다 바꾼다).
+    private var cutoutDefault: Binding<Bool> {
+        Binding {
+            (StampStyle(rawValue: captureStyleRaw) ?? .liveSticker).cutout
+        } set: { cutout in
+            let moving = (StampStyle(rawValue: captureStyleRaw) ?? .liveSticker).moving
+            captureStyleRaw = StampStyle.make(moving: moving, cutout: cutout).rawValue
+        }
+    }
+
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    Picker("기본 모습", selection: $captureStyleRaw) {
-                        ForEach(StampStyle.allCases) { style in
-                            Label(style.title, systemImage: style.icon)
-                                .tag(style.rawValue)
-                        }
+                    Picker("기본 모양", selection: cutoutDefault) {
+                        Label("오려낸 스티커", systemImage: "scissors").tag(true)
+                        Label("우표 모양", systemImage: "square.dashed").tag(false)
                     }
                     if StampFrameLoader.names.count > 1 {
                         Picker("펀칭 프레임", selection: $stampFrameName) {
@@ -43,7 +52,7 @@ struct StampCameraSupportView: View {
                 } header: {
                     Text("뜯기")
                 } footer: {
-                    Text("움직임은 언제나 함께 보관되니, 뜯은 뒤 스티커 화면에서 언제든 바꿀 수 있어요.")
+                    Text("오려낼 대상이 없으면 우표 모양으로 뜯어요. 움직임은 언제나 함께 담기니, 뜯은 뒤 스티커마다 모양과 움직임을 바꿀 수 있어요.")
                 }
 
                 Section {

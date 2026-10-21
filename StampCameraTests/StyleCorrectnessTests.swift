@@ -238,4 +238,37 @@ struct StyleCorrectnessTests {
         #expect(h.store.brokenMovingStamps().isEmpty)
         #expect(h.store.stamps.count == 3)   // 아무것도 지우지 않는다
     }
+
+    // MARK: - 내보내기 (복사 · 공유)
+
+    private func export(_ store: CollectionStore, _ id: String) async -> StickerExport? {
+        await withCheckedContinuation { c in store.makeExport(for: id) { c.resume(returning: $0) } }
+    }
+
+    @Test func 움직이는_스티커는_GIF로_멈춘_것은_PNG로_나간다() async throws {
+        let h = Harness(); defer { h.cleanup() }
+        let moving = h.add()
+        h.store.recordStyle(.liveSticker, for: moving)
+        let clip = try #require(APNG.encode(movingFrames(count: 5), delay: 0.1))
+        h.store.setLive(clip, sticker: nil, for: moving)
+        let still = h.add()
+        h.store.recordStyle(.stamp, for: still)
+
+        let gif = try #require(await export(h.store, moving))
+        #expect(gif.pasteboardType == "com.compuserve.gif")
+        #expect(gif.data.starts(with: Array("GIF8".utf8)))
+        #expect(gif.url?.pathExtension == "gif")
+
+        let png = try #require(await export(h.store, still))
+        #expect(png.pasteboardType == "public.png")
+        #expect(png.data.starts(with: [0x89, 0x50, 0x4E, 0x47]))
+    }
+
+    @Test func 움직임으로_설정돼도_클립이_없으면_PNG로_나간다() async throws {
+        let h = Harness(); defer { h.cleanup() }
+        let id = h.add()
+        h.store.recordStyle(.liveSticker, for: id)   // 움직임 설정 + 클립 없음
+        let out = try #require(await export(h.store, id))
+        #expect(out.pasteboardType == "public.png")
+    }
 }
