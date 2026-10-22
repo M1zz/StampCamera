@@ -1,0 +1,602 @@
+{
+  "sourceLanguage" : "ko",
+  "strings" : {
+    "전체" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전체"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tous"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutti"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tümü"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tất cả"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όλα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaikki"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ทั้งหมด"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vše"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alla"
+          }
+        }
+      }
+    },
+    "스티커를 쓰려면 ‘전체 접근 허용’을 켜주세요.\n설정 ▸ 일반 ▸ 키보드 ▸ 펀칭 스티커 ▸ 전체 접근 허용" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커를 쓰려면 ‘전체 접근 허용’을 켜주세요.\n설정 ▸ 일반 ▸ 키보드 ▸ 펀칭 스티커 ▸ 전체 접근 허용"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To use stickers, turn on “Allow Full Access”.\nSettings ▸ General ▸ Keyboard ▸ Punching Stickers ▸ Allow Full Access"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To use stickers, turn on “Allow Full Access”.\nSettings ▸ General ▸ Keyboard ▸ Punching Stickers ▸ Allow Full Access"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーを使うには「フルアクセスを許可」をオンにしてください。\n設定 ▸ 一般 ▸ キーボード ▸ Punching ステッカー ▸ フルアクセスを許可"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要使用贴纸，请开启“允许完全访问”。\n设置 ▸ 通用 ▸ 键盘 ▸ Punching 贴纸 ▸ 允许完全访问"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要使用貼圖，請開啟「允許完整取用」。\n設定 ▸ 一般 ▸ 鍵盤 ▸ Punching 貼圖 ▸ 允許完整取用"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чтобы пользоваться стикерами, включите «Разрешить полный доступ».\nНастройки ▸ Основные ▸ Клавиатура ▸ Стикеры Punching ▸ Разрешить полный доступ"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para usar los stickers, activa «Permitir acceso completo».\nAjustes ▸ General ▸ Teclado ▸ Punching Stickers ▸ Permitir acceso completo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um Sticker zu verwenden, aktiviere „Vollen Zugriff erlauben“.\nEinstellungen ▸ Allgemein ▸ Tastatur ▸ Punching Sticker ▸ Vollen Zugriff erlauben"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour utiliser les autocollants, activez « Autoriser l’accès complet ».\nRéglages ▸ Général ▸ Clavier ▸ Punching Autocollants ▸ Autoriser l’accès complet"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per usare gli adesivi, attiva «Consenti accesso completo».\nImpostazioni ▸ Generali ▸ Tastiera ▸ Punching Adesivi ▸ Consenti accesso completo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para usar os adesivos, ative “Permitir acesso total”.\nAjustes ▸ Geral ▸ Teclado ▸ Punching Adesivos ▸ Permitir acesso total"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zet ‘Volledige toegang toestaan’ aan om stickers te gebruiken.\nInstellingen ▸ Algemeen ▸ Toetsenbord ▸ Punching Stickers ▸ Volledige toegang toestaan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aby używać naklejek, włącz „Zezwalaj na pełny dostęp”.\nUstawienia ▸ Ogólne ▸ Klawiatura ▸ Naklejki Punching ▸ Zezwalaj na pełny dostęp"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartmaları kullanmak için “Tam Erişime İzin Ver”i aç.\nAyarlar ▸ Genel ▸ Klavye ▸ Punching Çıkartmaları ▸ Tam Erişime İzin Ver"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Để dùng nhãn dán, hãy bật “Cho phép truy cập đầy đủ”.\nCài đặt ▸ Cài đặt chung ▸ Bàn phím ▸ Nhãn dán Punching ▸ Cho phép truy cập đầy đủ"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Για να χρησιμοποιήσεις τα αυτοκόλλητα, ενεργοποίησε το «Να επιτρέπεται η πλήρης πρόσβαση».\nΡυθμίσεις ▸ Γενικά ▸ Πληκτρολόγιο ▸ Αυτοκόλλητα Punching ▸ Να επιτρέπεται η πλήρης πρόσβαση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jos haluat käyttää tarroja, ota käyttöön ”Salli täysi pääsy”.\nAsetukset ▸ Yleiset ▸ Näppäimistö ▸ Punching-tarrat ▸ Salli täysi pääsy"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หากต้องการใช้สติกเกอร์ ให้เปิด “อนุญาตการเข้าถึงทั้งหมด”\nการตั้งค่า ▸ ทั่วไป ▸ คีย์บอร์ด ▸ สติกเกอร์ Punching ▸ อนุญาตการเข้าถึงทั้งหมด"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chceš-li používat nálepky, zapni „Povolit úplný přístup“.\nNastavení ▸ Obecné ▸ Klávesnice ▸ Nálepky Punching ▸ Povolit úplný přístup"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For at bruge klistermærker skal du slå “Tillad fuld adgang” til.\nIndstillinger ▸ Generelt ▸ Tastatur ▸ Punching-klistermærker ▸ Tillad fuld adgang"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untuk memakai stiker, aktifkan “Izinkan Akses Penuh”.\nPengaturan ▸ Umum ▸ Keyboard ▸ Stiker Punching ▸ Izinkan Akses Penuh"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For å bruke klistremerker må du slå på «Tillat full tilgang».\nInnstillinger ▸ Generelt ▸ Tastatur ▸ Punching-klistremerker ▸ Tillat full tilgang"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "För att använda klistermärken, slå på ”Tillåt full åtkomst”.\nInställningar ▸ Allmänt ▸ Tangentbord ▸ Punching-klistermärken ▸ Tillåt full åtkomst"
+          }
+        }
+      }
+    },
+    "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punch out stickers in Punching\nand they’ll show up here."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punch out stickers in Punching\nand they’ll show up here."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching でステッカーをはがすと、\nここに表示されます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Punching 里撕下贴纸后，\n会显示在这里。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Punching 裡撕下貼圖後，\n會顯示在這裡。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оторвите стикеры в Punching —\nи они появятся здесь."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arranca stickers en Punching\ny aparecerán aquí."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trenne in Punching Sticker ab,\ndann erscheinen sie hier."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détachez des autocollants dans Punching\net ils apparaîtront ici."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stacca adesivi in Punching\ne compariranno qui."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destaque adesivos no Punching\ne eles aparecerão aqui."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scheur stickers af in Punching\nen ze verschijnen hier."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oderwij naklejki w Punching,\na pojawią się tutaj."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching’de çıkartma kopar,\nburada görünsün."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy bấm nhãn dán trong Punching\nvà chúng sẽ hiện ở đây."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Απόσπασε αυτοκόλλητα στο Punching\nκαι θα εμφανιστούν εδώ."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Irrota tarroja Punchingissa,\nniin ne ilmestyvät tänne."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ฉีกสติกเกอร์ใน Punching\nแล้วจะแสดงที่นี่"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odtrhni nálepky v Punching\na objeví se tady."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv klistermærker af i Punching,\nså dukker de op her."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobek stiker di Punching\ndan stiker akan muncul di sini."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv av klistremerker i Punching,\nså dukker de opp her."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv loss klistermärken i Punching,\nså dyker de upp här."
+          }
+        }
+      }
+    },
+    "복사됨 — 붙여넣기 하세요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "복사됨 — 붙여넣기 하세요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copied — now paste it"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copied — now paste it"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コピーしました — 貼り付けてください"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已拷贝 — 请粘贴"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已拷貝 — 請貼上"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скопировано — теперь вставьте"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiado: ahora pégalo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiert – jetzt einsetzen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copié : collez-le maintenant"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiato: ora incollalo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiado: agora é só colar"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gekopieerd, plak nu"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skopiowano — teraz wklej"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopyalandı — şimdi yapıştır"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã sao chép — giờ hãy dán"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αντιγράφηκε — τώρα επικόλλησέ το"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopioitu – liitä nyt"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คัดลอกแล้ว — วางได้เลย"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zkopírováno — teď vlož"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieret — indsæt nu"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tersalin — sekarang tempel"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiert – lim inn nå"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopierat – klistra in nu"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

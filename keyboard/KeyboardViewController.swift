@@ -181,7 +181,7 @@ class KeyboardViewController: UIInputViewController {
             allURLs = []; packs = []; shown = []
             chipBar.isHidden = true
             collectionView.reloadData()
-            emptyLabel.text = "스티커를 쓰려면 ‘전체 접근 허용’을 켜주세요.\n설정 ▸ 일반 ▸ 키보드 ▸ 펀칭 스티커 ▸ 전체 접근 허용"
+            emptyLabel.text = String(localized: "스티커를 쓰려면 ‘전체 접근 허용’을 켜주세요.\n설정 ▸ 일반 ▸ 키보드 ▸ 펀칭 스티커 ▸ 전체 접근 허용")
             emptyLabel.isHidden = false
             return
         }
@@ -221,7 +221,7 @@ class KeyboardViewController: UIInputViewController {
             shown = allURLs
         }
         if shown.isEmpty {
-            emptyLabel.text = "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요."
+            emptyLabel.text = String(localized: "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요.")
         }
         emptyLabel.isHidden = !shown.isEmpty
         collectionView.reloadData()
@@ -234,7 +234,7 @@ class KeyboardViewController: UIInputViewController {
         // one album = the same stickers as 전체, so chips only from two up
         chipBar.isHidden = packs.count < 2
         guard packs.count >= 2 else { selectedPack = -1; return }
-        addChip(title: "전체", tag: -1)
+        addChip(title: String(localized: "전체"), tag: -1)
         for (i, pack) in packs.enumerated() { addChip(title: pack.name, tag: i) }
         styleChips()
     }
@@ -286,7 +286,7 @@ class KeyboardViewController: UIInputViewController {
     }
 
     private func flashToast() {
-        toast.text = "  복사됨 — 붙여넣기 하세요  "
+        toast.text = "  " + String(localized: "복사됨 — 붙여넣기 하세요") + "  "
         toast.layer.removeAllAnimations()
         UIView.animate(withDuration: 0.15) { self.toast.alpha = 1 }
         UIView.animate(withDuration: 0.3, delay: 1.1) { self.toast.alpha = 0 }

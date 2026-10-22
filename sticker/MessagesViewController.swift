@@ -102,10 +102,10 @@ class MessagesViewController: MSMessagesAppViewController {
         let hasContainer = FileManager.default
             .containerURL(forSecurityApplicationGroupIdentifier: appGroupID) != nil
         if !hasContainer {
-            emptyLabel.text = "스티커를 공유하려면 ‘App Group’ 설정이 필요해요.\n(앱·확장 프로그램 서명 설정 확인)"
+            emptyLabel.text = String(localized: "스티커를 공유하려면 ‘App Group’ 설정이 필요해요.\n(앱·확장 프로그램 서명 설정 확인)")
             emptyLabel.isHidden = false
         } else if browser.stickerCount == 0 {
-            emptyLabel.text = "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요."
+            emptyLabel.text = String(localized: "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요.")
             emptyLabel.isHidden = false
         } else {
             emptyLabel.isHidden = true
@@ -128,7 +128,7 @@ class MessagesViewController: MSMessagesAppViewController {
         // one album = the same stickers as 전체, so chips only from two up
         chipBar.isHidden = packs.count < 2
         guard packs.count >= 2 else { selectedPack = -1; return }
-        addChip(title: "전체", tag: -1)
+        addChip(title: String(localized: "전체"), tag: -1)
         for (i, pack) in packs.enumerated() { addChip(title: pack.name, tag: i) }
         styleChips()
     }
@@ -215,7 +215,7 @@ final class StampStickerBrowserViewController: MSStickerBrowserViewController {
         }
         let imgs = urls.filter { ["png", "gif"].contains($0.pathExtension.lowercased()) }
             .sorted { ms($0) > ms($1) }   // newest → oldest (most recent first)
-        return imgs.compactMap { try? MSSticker(contentsOfFileURL: $0, localizedDescription: "펀칭 스티커") }
+        return imgs.compactMap { try? MSSticker(contentsOfFileURL: $0, localizedDescription: String(localized: "펀칭 스티커")) }
     }
 
     override func numberOfStickers(in stickerBrowserView: MSStickerBrowserView) -> Int {

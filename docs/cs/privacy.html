@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zásady ochrany soukromí — Punching</title>
+<link rel="canonical" href="https://m1zz.github.io/StampCamera/cs/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/privacy.html">
+<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/privacy.html">
+<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/privacy.html">
+<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/privacy.html">
+<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/privacy.html">
+<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/privacy.html">
+<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/privacy.html">
+<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/privacy.html">
+<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/privacy.html">
+<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/privacy.html">
+<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/privacy.html">
+<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/privacy.html">
+<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/privacy.html">
+<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/privacy.html">
+<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/privacy.html">
+<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/privacy.html">
+<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/privacy.html">
+<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/privacy.html">
+<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/privacy.html">
+<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/privacy.html">
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+                 "Segoe UI", Roboto, sans-serif;
+    background: #141210; color: var(--ink); padding: 32px 16px;
+    display: flex; justify-content: center;
+  }
+  .stamp {
+    max-width: 640px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 44px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .back { font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; }
+  h1 { font-size: 28px; font-weight: 900; margin: 14px 0 4px; }
+  .date { font-size: 13px; color: var(--sub); margin-bottom: 22px; }
+  .pledge {
+    background: rgba(242, 178, 59, .14); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 16px 18px; margin-bottom: 28px;
+    font-size: 15px; line-height: 1.7; font-weight: 600;
+  }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: .25em; color: var(--sub);
+    text-transform: uppercase; margin: 30px 0 12px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 8px;
+  }
+  p, li, td, th { font-size: 15px; line-height: 1.75; }
+  ul { padding-left: 22px; margin: 6px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; color: var(--sub); }
+  a { color: #9B6A1E; font-weight: 600; }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <a class="back" href="./index.html">← Punching</a>
+    <h1>Zásady ochrany soukromí</h1>
+    <p class="date">Účinné od: 16. října 2026</p>
+
+    <div class="pledge">
+      Stručně: Punching ukládá tvá data, jako jsou fotky, poloha a popisky, jen do tvého zařízení. Není tu žádný účet, žádný vlastní server, žádné reklamy ani analytika třetích stran. Zařízení opouštějí jen anonymní statistiky používání a hlášení chyb (část 7) a zpětná vazba, kterou sám(sama) odešleš přes „Odeslat zpětnou vazbu“.
+    </div>
+
+    <h2>1. Jaké informace shromažďujeme a ukládáme</h2>
+    <table>
+      <tr><th>Informace</th><th>Účel</th><th>Kde se ukládá</th></tr>
+      <tr><td>Fotky, které pořídíš<br>(nálepky, originály, snímky pohybu)</td><td>Vytváření nálepek, změna jejich tvaru, tisk a export nálepek</td><td>V tvém zařízení</td></tr>
+      <tr><td>Poloha (volitelné)</td><td>Zaznamenání názvu místa na nálepku</td><td>V tvém zařízení (převod souřadnic na název místa využívá systémové geokódování Applu)</td></tr>
+      <tr><td>Popisky a nastavení alb (papír, pořadí)</td><td>Uspořádání tvé sbírky</td><td>V tvém zařízení</td></tr>
+      <tr><td>Nastavení</td><td>Zapamatování, jak se aplikace chová</td><td>V tvém zařízení</td></tr>
+    </table>
+    <p>Aplikace <strong>neodesílá výše uvedené informace vývojáři ani žádnému serveru třetí strany.</strong> (Anonymní statistiky používání jsou popsány v části 7 a zpětná vazba, kterou odešleš sám(sama), v části 6.)</p>
+
+    <h2>2. Jak se využívají oprávnění</h2>
+    <ul>
+      <li><strong>Fotoaparát</strong> — Potřebný pro hlavní funkci, odtrhávání nálepek. Používá se jen během zobrazení obrazovky fotoaparátu a můžeš to vždy ověřit podle zelené kontrolky v iOS.</li>
+      <li><strong>Přidání do Fotek (volitelné)</strong> — Používá se jen při ukládání hotové nálepky do aplikace Fotky. Ostatní fotky v knihovně se nečtou.</li>
+      <li><strong>Poloha (volitelné)</strong> — Pokud ji povolíš, zaznamená se na nálepky název místa. Všechny funkce fungují, i když ji odmítneš.</li>
+    </ul>
+
+    <h2>3. Nálepky iMessage (App Group)</h2>
+    <p>Aby rozšíření Zpráv („Nálepky Punching“) mohlo číst nálepky, které sis nasbíral(a), kopírují se do sdílené složky App Group <strong>ve tvém zařízení</strong>. Ani to nikdy neopustí tvé zařízení. Když nálepku odešleš ve Zprávách, putuje přes Apple iMessage a pro tento přenos platí podmínky Applu.</p>
+
+    <h2>4. Klávesnice s nálepkami (Povolit úplný přístup)</h2>
+    <p>Klávesnice Nálepky Punching zobrazuje nálepky, které aplikace uložila do složky App Group v zařízení, a nálepku, na kterou klepneš, zkopíruje do schránky, abys ji mohl(a) vložit do jiných aplikací. To vyžaduje „Povolit úplný přístup“ v iOS, ale klávesnice <strong>nečte ani neukládá, co píšeš, a nepřipojuje se k internetu.</strong></p>
+
+    <h2>5. Sdílení a export</h2>
+    <p>Sdílení obrázků, PDF k tisku a export nálepek ve formátu PNG a GIF probíhá <strong>jen tehdy, když to sám(sama) spustíš</strong>, a cíl vybíráš v systémovém listu sdílení.</p>
+
+    <h2>6. Odeslání zpětné vazby</h2>
+    <p>Pokud odešleš zpětnou vazbu přes „Odeslat zpětnou vazbu“ na obrazovce Podpora, to, co napíšeš (typ zpětné vazby, zpráva, případně přiložený snímek obrazovky a jméno s e-mailem, které zanecháš pro odpověď), spolu s verzí aplikace, modelem zařízení, verzí systému a nastavením jazyka se k vývojáři dostane přes úložiště Apple iCloud (CloudKit). Používá se jen k odpovědi a ke zlepšování aplikace a pokud nic neodešleš, nic se nepřenáší. Pokud chceš odeslanou zpětnou vazbu smazat, napiš nám na kontakt níže.</p>
+
+    <h2>7. Anonymní statistiky používání a hlášení chyb</h2>
+    <p>Abychom věděli, kolik lidí aplikaci používá, a mohli opravovat chyby, posílá Punching níže uvedené anonymní statistiky do úložiště Apple iCloud (CloudKit), které může číst jen vývojář.</p>
+    <ul>
+      <li>Náhodný identifikátor vytvořený při instalaci aplikace (není spojen s tebou, tvým zařízením, tvým Apple ID ani jinými aplikacemi a po přeinstalaci se změní)</li>
+      <li>Verze aplikace, verze iOS a nastavení regionu a jazyka</li>
+      <li>Kolikrát jsi aplikaci otevřel(a), data otevření a datum instalace (jako počet dnů od instalace)</li>
+      <li>Diagnostická hlášení při pádu nebo zamrznutí aplikace (verze aplikace, verze iOS, model zařízení a technické informace o chybě)</li>
+    </ul>
+    <p>Jména, kontaktní údaje, poloha ani nic z toho, co vytvoříš, například fotky, nálepky a popisky, se nezahrnují. Statistiky se odesílají jen tehdy, když je zařízení přihlášeno k iCloudu.</p>
+
+    <h2>8. Mazání dat</h2>
+    <ul>
+      <li>Když nálepku smažeš, nálepka, její původní fotka, data pohybu i její kopie pro Zprávy se z tvého zařízení okamžitě trvale smažou.</li>
+      <li>Když aplikaci smažeš, smažou se s ní všechna její data. (Externí zálohy se řídí nastavením zálohování iCloudu nebo zařízení.)</li>
+    </ul>
+
+    <h2>9. Soukromí dětí</h2>
+    <p>Bez ohledu na věk Punching sám o sobě neshromažďuje ani neodesílá osobní údaje. Při odesílání zpětné vazby nemusíš zadávat jméno ani e-mail.</p>
+
+    <h2>10. Změny těchto zásad</h2>
+    <p>Pokud se zásady změní, tuto stránku aktualizujeme a upravíme datum účinnosti.</p>
+
+    <h2>11. Kontakt</h2>
+    <p>📮 <strong>leeo@kakao.com</strong> · <a href="./support.html">Stránka podpory</a></p>
+  </main>
+</body>
+</html>
