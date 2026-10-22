@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brukerstøtte — Punching</title>
+<link rel="canonical" href="https://m1zz.github.io/StampCamera/nb/support.html">
+<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/support.html">
+<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/support.html">
+<style>
+  :root {
+    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
+    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+                 "Segoe UI", Roboto, sans-serif;
+    background: #141210; color: var(--ink); padding: 32px 16px;
+    display: flex; justify-content: center;
+  }
+  .stamp {
+    max-width: 640px; width: 100%;
+    background: linear-gradient(var(--paper), var(--paper2));
+    border-radius: 18px; padding: 44px 36px;
+    border: 2px dashed var(--line);
+    outline: 10px solid rgba(251, 250, 247, .06);
+  }
+  .back { font-size: 14px; font-weight: 700; color: var(--sub); text-decoration: none; }
+  h1 { font-size: 30px; font-weight: 900; margin: 14px 0 6px; }
+  .tagline { font-size: 15px; color: var(--sub); margin-bottom: 28px; }
+  h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: .25em; color: var(--sub);
+    text-transform: uppercase; margin: 34px 0 12px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 8px;
+  }
+  h3 { font-size: 16px; font-weight: 800; margin: 22px 0 6px; }
+  p, li { font-size: 15px; line-height: 1.75; }
+  ol, ul { padding-left: 22px; margin: 6px 0; }
+  .card {
+    background: rgba(255,255,255,.45); border: 1px solid var(--line);
+    border-radius: 14px; padding: 16px 18px; margin: 8px 0;
+  }
+  a { color: #9B6A1E; font-weight: 600; }
+  .contact { font-size: 16px; font-weight: 700; }
+  .note { font-size: 13px; color: var(--sub); margin-top: 6px; }
+</style>
+</head>
+<body>
+  <main class="stamp">
+    <a class="back" href="./index.html">← Punching</a>
+    <h1>Brukerstøtte</h1>
+    <p class="tagline">Hvis du står fast, hjelper vi deg gjerne.</p>
+
+    <h2>Kontakt</h2>
+    <div class="card">
+      <p class="contact">📮 leeo@kakao.com</p>
+      <p class="note">Du kan også melde fra om feil og foreslå funksjoner på <a href="https://github.com/M1zz/StampCamera/issues">GitHub Issues</a>. Vi svarer vanligvis innen 2–3 dager.</p>
+    </div>
+
+    <h2>Vanlige spørsmål</h2>
+
+    <h3>Klistremerket mitt beveger seg ikke</h3>
+    <ol>
+      <li>Øverst til høyre i kameraet går du til ⚙️ Innstillinger ▸ Visning og sjekker at <strong>Spill av bevegelse automatisk</strong> er slått på.</li>
+      <li>Trykk på klistremerket, og sjekk under <strong>Form</strong> at <strong>Bevegelse</strong> er slått på. Bevegelsen tas alltid opp, så du kan slå den på når som helst.</li>
+      <li>Bilder som er importert fra Bilder-appen, er ett enkelt bilde, så de beveger seg ikke.</li>
+    </ol>
+
+    <h3>Jeg fikk et frimerke i stedet for et utklippet klistremerke</h3>
+    <p>Scener uten noe å klippe ut, som et landskap, rives automatisk av som et <strong>frimerke</strong>. Du kan endre det når som helst under <strong>Form</strong> etter at du har trykket på klistremerket, og hvis du vil starte med frimerker fra begynnelsen, endrer du ⚙️ Innstillinger ▸ Riv av ▸ <strong>Standardform</strong>.</p>
+
+    <h3>Jeg ser ikke klistremerkene mine i Meldinger</h3>
+    <p>I Meldinger trykker du på ＋-knappen ved siden av tekstfeltet ▸ Klistremerker og leter etter <strong>Punching-klistremerker</strong>. De dukker opp når du har revet av minst ett klistremerke i Punching, og hvis du har flere album, kan du bla album for album. Du finner detaljerte trinn i ⚙️ Innstillinger ▸ Bruk ▸ <strong>Bruk i Meldinger og på tastaturet</strong>.</p>
+
+    <h3>Jeg vil skrive ut ekte klistremerker</h3>
+    <p>Trykk på ⋯ øverst til høyre i et album ▸ Bruk ▸ <strong>Klistremerkeark til utskrift (PDF)</strong>. Det lages en PDF på 300 dpi (med skjærelinjer i frimerkeform) for hele albumet, klar til bruk med klistremerkepapir i en skriver hjemme eller hos et trykkeri. Trinn for trinn finner du i <strong>Utskriftsveiledning</strong> i samme meny.</p>
+
+    <h3>Hvor ble de gamle samlingene mine av?</h3>
+    <p>Fra og med 1.0.1 grupperes klistremerker på bare én måte: i <strong>album</strong>. Hver samling ble til et album med samme navn, og klistremerkene, bakgrunnene og rekkefølgen i det ble tatt med som de var. Hvis navnet allerede var tatt, ble «(Samling)» lagt til på slutten.</p>
+
+    <h3>Det er et grønt lys i statuslinjen</h3>
+    <p>Det er iOS’ <strong>kameraindikator</strong>. Den lyser bare mens kameraskjermen vises, og når du har et album åpent, stopper kameraet og lyset slukkes.</p>
+
+    <h3>Hva skjer når jeg sletter et klistremerke?</h3>
+    <p>Klistremerket, originalbildet og bevegelsesdataene slettes permanent fra enheten din, og det forsvinner også fra klistremerkeskuffen i Meldinger. Det kan ikke gjenopprettes, så vær forsiktig!</p>
+
+    <h2>Personvern</h2>
+    <p>Punching lagrer alle dataene sine <strong>bare på enheten din</strong>. Se <a href="./privacy.html">Personvernerklæringen</a> for detaljer.</p>
+  </main>
+</body>
+</html>

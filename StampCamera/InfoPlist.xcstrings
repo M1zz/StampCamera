@@ -136,6 +136,12 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -273,6 +279,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching memakai kamera untuk mengubah momen menjadi stiker."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching bruker kameraet til å gjøre øyeblikk om til klistremerker."
           }
         }
       }
@@ -412,6 +424,12 @@
             "state" : "translated",
             "value" : "Dipakai untuk menyimpan stiker yang sudah jadi ke Foto."
           }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brukes til å lagre ferdige klistremerker i Bilder."
+          }
         }
       }
     },
@@ -549,6 +567,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dipakai untuk mencatat tempat stiker disobek."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brukes til å registrere hvor et klistremerke ble revet av."
           }
         }
       }

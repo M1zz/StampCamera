@@ -180,3 +180,11 @@ Kirim stiker bergerak tetap bergerak.
 Hias halaman dan urutan tiap album.
 Koleksi pindah ke album bernama sama.
 Pengaturan kini ada di satu tempat.
+
+### 앱스토어 (nb)
+
+Avrevne øyeblikk blir bevegelige.
+Send bevegelige merker i bevegelse.
+Pynt albumsider og rekkefølge.
+Samlinger er flyttet til album.
+Innstillinger er samlet på ett sted.

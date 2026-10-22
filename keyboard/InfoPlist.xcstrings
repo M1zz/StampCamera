@@ -136,6 +136,12 @@
             "state" : "translated",
             "value" : "Stiker Punching"
           }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-klistremerker"
+          }
         }
       }
     }

@@ -135,6 +135,12 @@
             "state" : "translated",
             "value" : "Semua"
           }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
         }
       }
     },
@@ -271,6 +277,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Untuk memakai stiker, aktifkan “Izinkan Akses Penuh”.\nPengaturan ▸ Umum ▸ Keyboard ▸ Stiker Punching ▸ Izinkan Akses Penuh"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For å bruke klistremerker må du slå på «Tillat full tilgang».\nInnstillinger ▸ Generelt ▸ Tastatur ▸ Punching-klistremerker ▸ Tillat full tilgang"
           }
         }
       }
@@ -409,6 +421,12 @@
             "state" : "translated",
             "value" : "Sobek stiker di Punching\ndan stiker akan muncul di sini."
           }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv av klistremerker i Punching,\nså dukker de opp her."
+          }
         }
       }
     },
@@ -545,6 +563,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tersalin — sekarang tempel"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiert – lim inn nå"
           }
         }
       }

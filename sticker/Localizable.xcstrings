@@ -135,6 +135,12 @@
             "state" : "translated",
             "value" : "Semua"
           }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
         }
       }
     },
@@ -271,6 +277,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sobek stiker di Punching\ndan stiker akan muncul di sini."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv av klistremerker i Punching,\nså dukker de opp her."
           }
         }
       }
@@ -409,6 +421,12 @@
             "state" : "translated",
             "value" : "Berbagi stiker memerlukan pengaturan “App Group”.\n(Periksa pengaturan penandatanganan aplikasi dan ekstensi)"
           }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deling av klistremerker krever «App Group»-oppsett.\n(Sjekk signeringsinnstillingene for appen og utvidelsen)"
+          }
         }
       }
     },
@@ -545,6 +563,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stiker Punching"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-klistremerker"
           }
         }
       }

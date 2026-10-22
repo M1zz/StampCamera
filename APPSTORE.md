@@ -1363,3 +1363,65 @@ Impor dari Foto
 Ubah foto yang kamu ambil sebelumnya menjadi stiker dan tambahkan ke album.
 
 Semua stiker dan fotomu hanya disimpan di perangkatmu.
+
+## nb
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/nb/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/nb/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/nb/
+
+### 이름
+
+Punching: klistremerkekamera
+
+### 부제
+
+Hold inne og riv av øyeblikket
+
+### 키워드
+
+utklipp,gif,frimerke,scrapbook,dagbok,collage,vintage,retro,polaroid,postkort,bakgrunn,meldinger
+
+### 프로모션 텍스트
+
+Hold inne, så blir øyeblikket du river av, til et bevegelig klistremerke. Klipp ut bare motivet eller riv av et takket frimerke, og send det fra Meldinger.
+
+### 설명
+
+Øyeblikket du holder fast, blir til et bevegelig klistremerke.
+Punching er en kamera-app som river av alt du ser gjennom linsen som et klistremerke.
+
+Still inn scenen i hullemaskinens vindu midt på skjermen, og hold inne. Du får et klistremerke som også inneholder den korte bevegelsen rett før og etter trykket. Hvis det er et motiv å klippe ut, som et menneske, et kjæledyr eller en gjenstand, klippes bare det ut; hvis ikke, som i et landskap, rives det av som et frimerke med takket kant.
+
+Dette kan du gjøre
+
+Send fra Meldinger og tastaturet
+Avrevne klistremerker dukker opp i klistremerkeskuffen i Meldinger, og når du slår på Punching-tastaturet, kan du også velge og lime dem inn i andre apper. Bevegelige klistremerker sendes i bevegelse.
+
+Kopier og send med ett trykk
+Trykk på Send rett etter avrivingen, eller hold inne et klistremerke for å kopiere det og lime det inn hvor som helst.
+
+Endre form og bevegelse når som helst
+Selv etter avrivingen kan du bytte mellom utklippet form og frimerke, og mellom bevegelse og stillbilde. Originalbildet ditt beholdes som det var.
+
+Et uttrykk og noen ord
+Velg et uttrykk blant Original, Sepia, Svart-hvitt, Falmet, Livlig og Cyan, og legg igjen et kort notat på hvert klistremerke. Dato og sted for avrivingen lagres også.
+
+Ett album for hvert tema
+Lag album etter tema, og velg klistremerker album for album i Meldinger og på tastaturet. Velg sider som kraft, rutete, linjert eller pergament, og ordne rekkefølgen som du vil.
+
+Skriv ut ekte klistremerker
+Gjør et album om til en PDF til utskrift med skjærelinjer i frimerkeform, og skriv den ut rett på klistremerkepapir.
+
+Importer fra Bilder
+Gjør bilder du har tatt tidligere, om til klistremerker, og legg dem til i et album.
+
+Alle klistremerkene og bildene dine lagres bare på enheten din.
