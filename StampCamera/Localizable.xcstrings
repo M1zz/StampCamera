@@ -15,6 +15,18 @@
             "state" : "translated",
             "value" : "Face ID 잠금"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID lock"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face IDロック"
+          }
         }
       }
     },
@@ -31,6 +43,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Face ID로 앱을 잠가 내 수집함을 지켜요."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock the app with Face ID to keep your stickers private."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face IDでアプリをロックして、ブックを守ります。"
           }
         }
       }
@@ -49,6 +73,18 @@
             "state" : "translated",
             "value" : "VoiceOver로 더 편하게"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Better VoiceOver support"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOverでもっと使いやすく"
+          }
         }
       }
     },
@@ -65,6 +101,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "글자 크기를 키워도 잘리지 않고 보기 좋게 다시 배치돼요."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Screens rearrange neatly instead of getting cut off when you enlarge text."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文字サイズを大きくしても、見切れずに見やすく配置し直されます。"
           }
         }
       }
@@ -83,6 +131,18 @@
             "state" : "translated",
             "value" : "기기 간 동기화"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync across devices"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバイス間の同期"
+          }
         }
       }
     },
@@ -99,6 +159,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "대비를 높이거나 색을 구별하기 어려워도 내용을 알아볼 수 있어요."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Everything stays readable, even with Increase Contrast on or if colours are hard to tell apart."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コントラストを上げたり、色の区別がつきにくくても内容が分かります。"
           }
         }
       }
@@ -117,6 +189,18 @@
             "state" : "translated",
             "value" : "더 많은 나라 말로 앱을 쓸 수 있게 해요."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the app in more languages."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "もっと多くの言語でアプリを使えるようにします。"
+          }
         }
       }
     },
@@ -133,6 +217,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "더 많은 언어"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More languages"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "さらに多くの言語"
           }
         }
       }
@@ -151,6 +247,18 @@
             "state" : "translated",
             "value" : "모은 스티커를 파일로 저장하고 다시 불러올 수 있어요."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save your stickers to a file and bring them back later."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "集めたステッカーをファイルに保存して、あとから読み込めます。"
+          }
         }
       }
     },
@@ -167,6 +275,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "보기 편한 색과 대비"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Easier colours and contrast"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "見やすい色とコントラスト"
           }
         }
       }
@@ -185,6 +305,18 @@
             "state" : "translated",
             "value" : "새 아이폰으로 바꿔도 모은 스티커가 iCloud로 그대로 이어져요."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch to a new iPhone and your stickers carry over through iCloud."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいiPhoneに替えても、集めたステッカーがiCloudでそのまま引き継がれます。"
+          }
         }
       }
     },
@@ -201,6 +333,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "수집함 페이지에 마음대로 붙이기"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stick anywhere on a page"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブックのページに自由に貼る"
           }
         }
       }
@@ -219,6 +363,18 @@
             "state" : "translated",
             "value" : "수집함을 꾸미다가 앱이 꺼져도 하던 내용이 남아 있어요."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your sticker book stays just as you left it, even if the app closes mid-way."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブックをデコっている途中でアプリが終了しても、作業内容が残っています。"
+          }
         }
       }
     },
@@ -235,6 +391,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "스티커 백업과 내보내기"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back up and export stickers"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーのバックアップと書き出し"
           }
         }
       }
@@ -253,6 +421,18 @@
             "state" : "translated",
             "value" : "스티커 한 번에 지우기"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete all stickers"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーをまとめて削除"
+          }
         }
       }
     },
@@ -269,6 +449,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "앱을 영어로도 쓸 수 있어요."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the whole app in English."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリを英語でも使えます。"
           }
         }
       }
@@ -287,6 +479,18 @@
             "state" : "translated",
             "value" : "업데이트 뒤 처음 열 때 무엇이 새로 생겼는지 알려 줘요."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The first time you open the app after an update, see what’s new."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデート後に初めて開いたとき、新しくなった点をお知らせします。"
+          }
         }
       }
     },
@@ -303,6 +507,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "업데이트 소식"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What’s new"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデート情報"
           }
         }
       }
@@ -321,6 +537,18 @@
             "state" : "translated",
             "value" : "영어 지원"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full English support"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英語に対応"
+          }
         }
       }
     },
@@ -337,6 +565,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오려낸 모양 그대로 인쇄"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print cut-outs in their own shape"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切り抜いた形のまま印刷"
           }
         }
       }
@@ -355,6 +595,18 @@
             "state" : "translated",
             "value" : "움직임 줄이기"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reduce Motion"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "視差効果を減らす"
+          }
         }
       }
     },
@@ -371,6 +623,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "움직임 줄이기를 켜면 화면 효과가 차분해져요."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With Reduce Motion on, screen effects calm down."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "視差効果を減らすをオンにすると、画面の動きがおだやかになります。"
           }
         }
       }
@@ -389,6 +653,18 @@
             "state" : "translated",
             "value" : "원하면 앱 안에서 모은 스티커를 모두 지울 수 있어요."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erase all your stickers from within the app whenever you like."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お望みなら、アプリ内で集めたステッカーをすべて削除できます。"
+          }
         }
       }
     },
@@ -405,6 +681,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "인쇄용 스티커 시트에서 오려낸 스티커는 우표 모양이 아니라 오려낸 윤곽 그대로 칼선이 들어가요."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On the printable sticker sheet, cut-out stickers get a cut line that follows their own outline, not the stamp shape."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印刷用シートでは、切り抜きステッカーに切手の形ではなく切り抜いた輪郭に沿ったカットラインが入ります。"
           }
         }
       }
@@ -423,6 +711,18 @@
             "state" : "translated",
             "value" : "작년 오늘 뜯은 스티커를 알림으로 다시 꺼내 보여 줘요."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get a notification with the stickers you made on this day last year."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "去年の今日はがしたステッカーを通知でもう一度見せてくれます。"
+          }
         }
       }
     },
@@ -439,6 +739,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "지난 스티커 알림"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On this day"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "過去のステッカー通知"
           }
         }
       }
@@ -457,6 +769,18 @@
             "state" : "translated",
             "value" : "처음 쓰는 분을 위한 안내"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A quick tour for new users"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "はじめての方へのガイド"
+          }
         }
       }
     },
@@ -473,6 +797,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "처음 열었을 때 스티커를 뜯고 쓰는 법을 짧게 보여 줘요."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A short intro to punching out and using stickers, the first time you open the app."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "初めて開いたときに、ステッカーのはがし方と使い方を短く紹介します。"
           }
         }
       }
@@ -491,6 +827,18 @@
             "state" : "translated",
             "value" : "칸에 맞추지 않고, 속지 위 원하는 자리에 스티커를 비스듬히 붙여 꾸밀 수 있어요."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Place stickers anywhere on the page, at any angle, instead of in a tidy grid."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マス目に合わせず、台紙の好きな場所にステッカーを斜めにも貼ってデコれます。"
+          }
         }
       }
     },
@@ -507,6 +855,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "큰 글씨에 맞춘 화면"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layouts for larger text"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きな文字に合わせた画面"
           }
         }
       }
@@ -525,6 +885,18 @@
             "state" : "translated",
             "value" : "펼치는 아이폰 화면"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foldable iPhone layout"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "折りたたみiPhone対応"
+          }
         }
       }
     },
@@ -541,6 +913,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "펼치는 아이폰에서 넓은 화면을 두 쪽으로 나눠 써요."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the wide screen of a foldable iPhone as two side-by-side panes."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "折りたたみiPhoneの広い画面を2つに分けて使えます。"
           }
         }
       }
@@ -559,6 +943,18 @@
             "state" : "translated",
             "value" : "하던 일 이어서 하기"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick up where you left off"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "続きから再開"
+          }
         }
       }
     },
@@ -575,6 +971,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "화면 읽기 기능이 단추와 스티커를 빠짐없이, 알맞은 순서로 읽어 줘요."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver reads every button and sticker, in the right order."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画面読み上げが、ボタンやステッカーをもれなく正しい順番で読み上げます。"
           }
         }
       }
@@ -593,6 +1001,18 @@
             "state" : "translated",
             "value" : "Open Punching Camera"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Punching Camera"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching カメラを開く"
+          }
         }
       }
     },
@@ -609,6 +1029,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Opens the Punching camera right away."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens the Punching camera right away."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching のカメラをすぐに開きます。"
           }
         }
       }
@@ -627,6 +1059,18 @@
             "state" : "translated",
             "value" : "Open Camera"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Camera"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラを開く"
+          }
         }
       }
     },
@@ -643,6 +1087,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Default Shape"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default Shape"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "基本の形"
           }
         }
       }
@@ -661,6 +1117,18 @@
             "state" : "translated",
             "value" : "Cut-out Sticker"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut-out Sticker"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切り抜きステッカー"
+          }
         }
       }
     },
@@ -677,6 +1145,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stamp"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stamp"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切手"
           }
         }
       }
@@ -695,6 +1175,18 @@
             "state" : "translated",
             "value" : "Punching Frame"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Frame"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching のフレーム"
+          }
         }
       }
     },
@@ -711,6 +1203,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Frame %lld"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frame %lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フレーム %lld"
           }
         }
       }
@@ -729,6 +1233,18 @@
             "state" : "translated",
             "value" : "Punch Out"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punch Out"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "はがす"
+          }
         }
       }
     },
@@ -745,6 +1261,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "If there’s nothing to cut out, it’s punched out as a stamp. Motion is always captured too, so after punching you can change each sticker’s shape and motion."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If there’s nothing to cut out, it’s punched out as a stamp. Motion is always captured too, so after punching you can change each sticker’s shape and motion."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切り抜く対象がないときは切手の形ではがします。動きはいつも一緒に記録されるので、はがしたあとでステッカーごとに形と動きを変えられます。"
           }
         }
       }
@@ -763,6 +1291,18 @@
             "state" : "translated",
             "value" : "Autoplay Motion"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autoplay Motion"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動きを自動再生"
+          }
         }
       }
     },
@@ -779,6 +1319,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Page-Turn Effect"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page-Turn Effect"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ページをめくる演出"
           }
         }
       }
@@ -797,6 +1349,18 @@
             "state" : "translated",
             "value" : "View"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示"
+          }
         }
       }
     },
@@ -813,6 +1377,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "With autoplay off, stickers show as still images everywhere. Motion is never erased."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With autoplay off, stickers show as still images everywhere. Motion is never erased."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動再生をオフにすると、どこでも止まった状態で表示されます。動きが消えることはありません。"
           }
         }
       }
@@ -831,6 +1407,18 @@
             "state" : "translated",
             "value" : "Use in Messages and Keyboard"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use in Messages and Keyboard"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メッセージとキーボードで使う"
+          }
         }
       }
     },
@@ -847,6 +1435,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Print on Paper Stickers"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print on Paper Stickers"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "紙のステッカーに印刷する"
           }
         }
       }
@@ -865,6 +1465,18 @@
             "state" : "translated",
             "value" : "Use"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使う"
+          }
         }
       }
     },
@@ -881,6 +1493,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Support"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サポート"
           }
         }
       }
@@ -899,6 +1523,18 @@
             "state" : "translated",
             "value" : "Settings"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
         }
       }
     },
@@ -915,6 +1551,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Done"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
           }
         }
       }
@@ -933,6 +1581,18 @@
             "state" : "translated",
             "value" : "Open a conversation in Messages."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open a conversation in Messages."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メッセージアプリで会話を開きます。"
+          }
         }
       }
     },
@@ -949,6 +1609,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tap the ＋ button next to the text field, then pick a Punching sticker under “Stickers”."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap the ＋ button next to the text field, then pick a Punching sticker under “Stickers”."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入力欄の横の＋ボタンをタップし、「ステッカー」からPunching のステッカーを選びます。"
           }
         }
       }
@@ -967,6 +1639,18 @@
             "state" : "translated",
             "value" : "Touch and hold to place it anywhere on the conversation. Moving stickers move as they land."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touch and hold to place it anywhere on the conversation. Moving stickers move as they land."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長押しして、会話の好きな場所に貼ります。動くステッカーは動いたまま貼れます。"
+          }
         }
       }
     },
@@ -983,6 +1667,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Messages"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Messages"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メッセージ"
           }
         }
       }
@@ -1001,6 +1697,18 @@
             "state" : "translated",
             "value" : "Each book appears as its own sticker pack."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Each book appears as its own sticker pack."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブックごとに別々のステッカーパックとして表示されます。"
+          }
         }
       }
     },
@@ -1017,6 +1725,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tap “Open Settings” below ▸ Keyboards ▸ turn on Punching Stickers."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap “Open Settings” below ▸ Keyboards ▸ turn on Punching Stickers."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下の「設定を開く」▸ キーボード ▸ Punching ステッカーをオンにします。"
           }
         }
       }
@@ -1035,6 +1755,18 @@
             "state" : "translated",
             "value" : "In the same place, turn on “Allow Full Access” too. It’s needed to copy and paste stickers."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the same place, turn on “Allow Full Access” too. It’s needed to copy and paste stickers."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同じ画面で「フルアクセスを許可」もオンにします。ステッカーのコピーと貼り付けに必要です。"
+          }
         }
       }
     },
@@ -1051,6 +1783,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "In any app, tap the globe button on the keyboard to switch to Punching Stickers."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In any app, tap the globe button on the keyboard to switch to Punching Stickers."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "どのアプリでも、キーボードの地球儀ボタンをタップしてPunching ステッカーに切り替えます。"
           }
         }
       }
@@ -1069,6 +1813,18 @@
             "state" : "translated",
             "value" : "Open Settings"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定を開く"
+          }
         }
       }
     },
@@ -1085,6 +1841,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keyboard"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キーボード"
           }
         }
       }
@@ -1103,6 +1871,18 @@
             "state" : "translated",
             "value" : "Stickers only travel within your device. The keyboard never reads or sends what you type."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stickers only travel within your device. The keyboard never reads or sends what you type."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーはデバイスの中だけでやり取りされます。キーボードが入力した文字を読み取ったり送信したりすることはありません。"
+          }
         }
       }
     },
@@ -1119,6 +1899,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Couldn’t capture motion"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn’t capture motion"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動きを記録できませんでした"
           }
         }
       }
@@ -1137,6 +1929,18 @@
             "state" : "translated",
             "value" : "Not enough movement was captured. Want to try again?"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not enough movement was captured. Want to try again?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十分な動きを記録できませんでした。もう一度撮りますか？"
+          }
         }
       }
     },
@@ -1153,6 +1957,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "New Book"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Book"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいブック"
           }
         }
       }
@@ -1171,6 +1987,18 @@
             "state" : "translated",
             "value" : "Book name"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Book name"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブック名"
+          }
         }
       }
     },
@@ -1187,6 +2015,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
           }
         }
       }
@@ -1205,6 +2045,18 @@
             "state" : "translated",
             "value" : "Create"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成"
+          }
         }
       }
     },
@@ -1221,6 +2073,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Retake"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retake"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撮り直す"
           }
         }
       }
@@ -1239,6 +2103,18 @@
             "state" : "translated",
             "value" : "Keep It"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep It"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このままにする"
+          }
         }
       }
     },
@@ -1255,6 +2131,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "New Book…"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Book…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいブック…"
           }
         }
       }
@@ -1273,6 +2161,18 @@
             "state" : "translated",
             "value" : "Nothing to cut out, so it was punched out as a stamp"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nothing to cut out, so it was punched out as a stamp"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切り抜く対象がないため、切手の形ではがしました"
+          }
         }
       }
     },
@@ -1289,6 +2189,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching needs camera access to turn moments into stickers.\nPlease turn on the camera in Settings."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching needs camera access to turn moments into stickers.\nPlease turn on the camera in Settings."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ひとときをステッカーにするには、カメラへのアクセスが必要です。\n設定でカメラをオンにしてください。"
           }
         }
       }
@@ -1307,6 +2219,18 @@
             "state" : "translated",
             "value" : "Books"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Books"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブック"
+          }
         }
       }
     },
@@ -1323,6 +2247,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Camera"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラ"
           }
         }
       }
@@ -1341,6 +2277,18 @@
             "state" : "translated",
             "value" : "Import from Photos"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import from Photos"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "写真から読み込む"
+          }
         }
       }
     },
@@ -1357,6 +2305,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Collecting"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecting"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "集めています"
           }
         }
       }
@@ -1375,6 +2335,18 @@
             "state" : "translated",
             "value" : "%lld"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld枚"
+          }
         }
       }
     },
@@ -1391,6 +2363,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "All"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて"
           }
         }
       }
@@ -1409,6 +2393,18 @@
             "state" : "translated",
             "value" : "Moving"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moving"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動くもの"
+          }
         }
       }
     },
@@ -1425,6 +2421,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cut-out"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut-out"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切り抜き"
           }
         }
       }
@@ -1443,6 +2451,18 @@
             "state" : "translated",
             "value" : "No %@ stickers yet"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No %@ stickers yet"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@のステッカーはまだありません"
+          }
         }
       }
     },
@@ -1459,6 +2479,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Select"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択"
           }
         }
       }
@@ -1477,6 +2509,18 @@
             "state" : "translated",
             "value" : "Browse All"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browse All"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて表示"
+          }
         }
       }
     },
@@ -1493,6 +2537,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete the %lld selected stickers?"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete the %lld selected stickers?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択した%lld枚のステッカーを削除しますか？"
           }
         }
       }
@@ -1511,6 +2567,18 @@
             "state" : "translated",
             "value" : "Delete"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
         }
       }
     },
@@ -1527,6 +2595,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rename"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rename"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前を変更"
           }
         }
       }
@@ -1545,6 +2625,18 @@
             "state" : "translated",
             "value" : "Save"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
         }
       }
     },
@@ -1561,6 +2653,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete the book “%@” and its %lld stickers?"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete the book “%@” and its %lld stickers?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブック「%@」と中の%lld枚のステッカーをすべて削除しますか？"
           }
         }
       }
@@ -1579,6 +2683,18 @@
             "state" : "translated",
             "value" : "Delete this sticker?"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete this sticker?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このステッカーを削除しますか？"
+          }
         }
       }
     },
@@ -1595,6 +2711,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Making sticker sheet…"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Making sticker sheet…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーシートを作成中…"
           }
         }
       }
@@ -1613,6 +2741,18 @@
             "state" : "translated",
             "value" : "Collect here"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collect here"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここに入れる"
+          }
         }
       }
     },
@@ -1629,6 +2769,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Collecting here"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecting here"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここに入れています"
           }
         }
       }
@@ -1647,6 +2799,18 @@
             "state" : "translated",
             "value" : "Decorate Freely"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decorate Freely"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自由にデコる"
+          }
         }
       }
     },
@@ -1663,6 +2827,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Share as Image"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share as Image"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画像として共有"
           }
         }
       }
@@ -1681,6 +2857,18 @@
             "state" : "translated",
             "value" : "Printable Sticker Sheet (PDF)"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printable Sticker Sheet (PDF)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印刷用ステッカーシート（PDF）"
+          }
         }
       }
     },
@@ -1697,6 +2885,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Printing Guide"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printing Guide"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印刷ガイド"
           }
         }
       }
@@ -1715,6 +2915,18 @@
             "state" : "translated",
             "value" : "Delete Book"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Book"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブックを削除"
+          }
         }
       }
     },
@@ -1731,6 +2943,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Deselect All"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deselect All"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて選択解除"
           }
         }
       }
@@ -1749,6 +2973,18 @@
             "state" : "translated",
             "value" : "Select All"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select All"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて選択"
+          }
         }
       }
     },
@@ -1765,6 +3001,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choose stickers"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose stickers"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーを選んでください"
           }
         }
       }
@@ -1783,6 +3031,18 @@
             "state" : "translated",
             "value" : "%lld selected"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld selected"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld枚を選択中"
+          }
         }
       }
     },
@@ -1799,6 +3059,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Move"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移動"
           }
         }
       }
@@ -1817,6 +3089,18 @@
             "state" : "translated",
             "value" : "%@ background"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ background"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@の背景"
+          }
         }
       }
     },
@@ -1833,6 +3117,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Touch and hold a sticker to move it where you like"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touch and hold a sticker to move it where you like"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーを長押しして、好きな場所に動かせます"
           }
         }
       }
@@ -1851,6 +3147,18 @@
             "state" : "translated",
             "value" : "In order taken"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In order taken"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撮った順"
+          }
         }
       }
     },
@@ -1867,6 +3175,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copy"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コピー"
           }
         }
       }
@@ -1885,6 +3205,18 @@
             "state" : "translated",
             "value" : "Send"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "送る"
+          }
         }
       }
     },
@@ -1901,6 +3233,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To Another Book"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To Another Book"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別のブックへ"
           }
         }
       }
@@ -1919,6 +3263,18 @@
             "state" : "translated",
             "value" : "My sticker book “%@” #Punching"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My sticker book “%@” #Punching"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "わたしのステッカーブック「%@」 #Punching"
+          }
         }
       }
     },
@@ -1935,6 +3291,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This book is still empty"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This book is still empty"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このブックはまだ空です"
           }
         }
       }
@@ -1953,6 +3321,18 @@
             "state" : "translated",
             "value" : "Collecting here — punch out stickers with the camera to fill it"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecting here — punch out stickers with the camera to fill it"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここに入れています — カメラでステッカーをはがして増やしましょう"
+          }
         }
       }
     },
@@ -1969,6 +3349,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Shape"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shape"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "形"
           }
         }
       }
@@ -1987,6 +3379,18 @@
             "state" : "translated",
             "value" : "Cut-out"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut-out"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切り抜き"
+          }
         }
       }
     },
@@ -2003,6 +3407,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stamp"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stamp"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切手"
           }
         }
       }
@@ -2021,6 +3437,18 @@
             "state" : "translated",
             "value" : "Motion"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motion"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動き"
+          }
         }
       }
     },
@@ -2037,6 +3465,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Still"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Still"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "静止"
           }
         }
       }
@@ -2055,6 +3495,18 @@
             "state" : "translated",
             "value" : "Plain Cream"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plain Cream"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無地クリーム"
+          }
         }
       }
     },
@@ -2071,6 +3523,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Grid"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grid"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "方眼"
           }
         }
       }
@@ -2089,6 +3553,18 @@
             "state" : "translated",
             "value" : "Lined"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lined"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "罫線"
+          }
         }
       }
     },
@@ -2105,6 +3581,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dots"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dots"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ドット"
           }
         }
       }
@@ -2123,6 +3611,18 @@
             "state" : "translated",
             "value" : "Kraft"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クラフト"
+          }
         }
       }
     },
@@ -2139,6 +3639,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Parchment"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parchment"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "羊皮紙"
           }
         }
       }
@@ -2157,6 +3669,18 @@
             "state" : "translated",
             "value" : "Cornell"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コーネル"
+          }
         }
       }
     },
@@ -2173,6 +3697,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Graph"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graph"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グラフ"
           }
         }
       }
@@ -2191,6 +3727,18 @@
             "state" : "translated",
             "value" : "Mint"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mint"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ミント"
+          }
         }
       }
     },
@@ -2207,6 +3755,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dark Grid"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark Grid"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダークグリッド"
           }
         }
       }
@@ -2225,6 +3785,18 @@
             "state" : "translated",
             "value" : "Press and hold the puncher in the camera, then let go. Click! Whatever was in the window is punched out as a sticker."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press and hold the puncher in the camera, then let go. Click! Whatever was in the window is punched out as a sticker."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カメラでパンチを長押しして、離すとカシャッ！ 窓に映っていた場面がそのままステッカーになります。"
+          }
         }
       }
     },
@@ -2241,6 +3813,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pick a Look"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick a Look"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色合いを選ぶ"
           }
         }
       }
@@ -2259,6 +3843,18 @@
             "state" : "translated",
             "value" : "Write a few words on your fresh sticker card, then tap “More” to add a look like sepia or black and white. You can change the look any time without losing quality."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write a few words on your fresh sticker card, then tap “More” to add a look like sepia or black and white. You can change the look any time without losing quality."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "できたてのステッカーカードにひとことを書き、「詳細」でセピアやモノクロなどの色合いを付けてみましょう。色合いはいつでも変えられ、画質も落ちません。"
+          }
         }
       }
     },
@@ -2275,6 +3871,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Collect in a Book"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collect in a Book"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブックに集める"
           }
         }
       }
@@ -2293,6 +3901,18 @@
             "state" : "translated",
             "value" : "Sticker sheets are made one book at a time. Gather the stickers you want to print in one book — in the book, tap “Select”, then “Move” to move many at once."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker sheets are made one book at a time. Gather the stickers you want to print in one book — in the book, tap “Select”, then “Move” to move many at once."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーシートはブック単位で作られます。印刷したいステッカーを1つのブックに集めましょう。ブックで「選択」してから「移動」を押すと、まとめて移せます。"
+          }
         }
       }
     },
@@ -2309,6 +3929,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Make a Printable Sheet"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Make a Printable Sheet"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印刷用シートを作る"
           }
         }
       }
@@ -2327,6 +3959,18 @@
             "state" : "translated",
             "value" : "In the book’s ⋯ menu at the top right ▸ “Use” ▸ “Printable Sticker Sheet (PDF)”. You get a 300 dpi PDF you can hand straight to a print shop. Save it with “Save to Files”, or send it by AirDrop or email."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the book’s ⋯ menu at the top right ▸ “Use” ▸ “Printable Sticker Sheet (PDF)”. You get a 300 dpi PDF you can hand straight to a print shop. Save it with “Save to Files”, or send it by AirDrop or email."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブック右上の⋯メニュー →「使う」→「印刷用ステッカーシート（PDF）」。印刷店にそのまま渡せる300dpiのPDFができます。「ファイルに保存」で保管したり、AirDropやメールで送ったりできます。"
+          }
         }
       }
     },
@@ -2343,6 +3987,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Print"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "印刷する"
           }
         }
       }
@@ -2361,6 +4017,18 @@
             "state" : "translated",
             "value" : "At home: print on A4 or Letter label/sticker paper (matte recommended) at “Actual Size (100%)” — make sure “Fit to Page” is off.\nPrint shops and sticker makers: just hand over the PDF. The magenta dashed line is the kiss-cut line, and the corner marks are the trim guides."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "At home: print on A4 label/sticker paper (matte recommended) at “Actual Size (100%)” — make sure “Fit to Page” is off.\nPrint shops and sticker makers: just hand over the PDF. The magenta dashed line is the kiss-cut line, and the corner marks are the trim guides."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自宅で：A4またはレターサイズのラベル・ステッカー用紙（マット推奨）に「実際のサイズ（100%）」で印刷してください。「用紙に合わせる」は必ずオフに。\n印刷店・ステッカー業者：PDFをそのまま渡せばOKです。マゼンタの点線がカットライン（ハーフカット）、角のマークが断裁の基準です。"
+          }
         }
       }
     },
@@ -2377,6 +4045,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cut and Stick"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut and Stick"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切り取って貼る"
           }
         }
       }
@@ -2395,6 +4075,18 @@
             "state" : "translated",
             "value" : "Cut along the dotted line with scissors or a cutting machine and you’re done! Stick them on envelopes, planners, laptops… anywhere."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut along the dotted line with scissors or a cutting machine and you’re done! Stick them on envelopes, planners, laptops… anywhere."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "点線に沿ってハサミやカッティングマシンで切れば完成！ 封筒、手帳、ノートパソコン…どこにでも貼ってみてください。"
+          }
         }
       }
     },
@@ -2411,6 +4103,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "📮 From punched-out moment to sticker in your hand"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 From punched-out moment to sticker in your hand"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 はがした瞬間を、手に取れるステッカーに"
           }
         }
       }
@@ -2429,6 +4133,18 @@
             "state" : "translated",
             "value" : "Six steps turn a sticker on your phone into a sticker on your desk."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Six steps turn a sticker on your phone into a sticker on your desk."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6ステップで、スマホの中のステッカーが机の上のステッカーになります。"
+          }
         }
       }
     },
@@ -2445,6 +4161,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Good to Know"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Good to Know"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "知っておくと便利です"
           }
         }
       }
@@ -2463,6 +4191,18 @@
             "state" : "translated",
             "value" : "• Printable sheets are always stamp-shaped. The cut lines keep the perforated edge, so peeled-off stickers look like real stamps (about 5 cm, 12 per page)."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Printable sheets are always stamp-shaped. The cut lines keep the perforated edge, so peeled-off stickers look like real stamps (about 5 cm, 12 per page)."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 印刷用シートはすべて切手の形で出力されます。カットラインがギザギザのままなので、はがすと本物の切手のようなステッカーになります（約5cm、1ページ12枚）。"
+          }
         }
       }
     },
@@ -2479,6 +4219,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Stickers that keep their original photo are re-rendered at 300 dpi when printed, so they come out crisp."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Stickers that keep their original photo are re-rendered at 300 dpi when printed, so they come out crisp."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 元の写真を保持しているステッカーは、印刷時に300dpiで新しく描き直されるので、くっきり仕上がります。"
           }
         }
       }
@@ -2497,6 +4249,18 @@
             "state" : "translated",
             "value" : "• Digital works too: every sticker automatically becomes a Messages sticker — place it straight from the Messages sticker drawer, and moving stickers move as they land."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Digital works too: every sticker automatically becomes a Messages sticker — place it straight from the Messages sticker drawer, and moving stickers move as they land."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 紙だけでなくデジタルでも：すべてのステッカーは自動でメッセージのステッカーになります。メッセージアプリのステッカーパネルからそのまま貼れて、動くステッカーは動いたまま貼れます。"
+          }
         }
       }
     },
@@ -2513,6 +4277,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• These aren’t real postage stamps — decorate your letters all you like, but leave the stamp corner to the real thing!"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• These aren’t real postage stamps — decorate your letters all you like, but leave the stamp corner to the real thing!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 本物の郵便切手ではありません。手紙のデコはご自由に、切手の場所は本物にお任せを！"
           }
         }
       }
@@ -2531,6 +4307,18 @@
             "state" : "translated",
             "value" : "Your sticker has arrived!"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your sticker has arrived!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーが届きました！"
+          }
         }
       }
     },
@@ -2547,6 +4335,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Give the sticker a spin"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Give the sticker a spin"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーをくるっと回してみよう"
           }
         }
       }
@@ -2565,6 +4365,18 @@
             "state" : "translated",
             "value" : "A few words about this moment…"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A few words about this moment…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このひとときにひとこと…"
+          }
         }
       }
     },
@@ -2581,6 +4393,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Add to Book"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to Book"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブックに入れる"
           }
         }
       }
@@ -2599,6 +4423,18 @@
             "state" : "translated",
             "value" : "Discard"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discard"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "捨てる"
+          }
         }
       }
     },
@@ -2615,6 +4451,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "More"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "詳細"
           }
         }
       }
@@ -2633,6 +4481,18 @@
             "state" : "translated",
             "value" : "Full Photo"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full Photo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全体の写真"
+          }
         }
       }
     },
@@ -2649,6 +4509,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stamp Only"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stamp Only"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切手のみ"
           }
         }
       }
@@ -2667,6 +4539,18 @@
             "state" : "translated",
             "value" : "Edit"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編集"
+          }
         }
       }
     },
@@ -2683,6 +4567,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copied!"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copied!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コピーしました！"
           }
         }
       }
@@ -2701,6 +4597,18 @@
             "state" : "translated",
             "value" : "Share"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共有"
+          }
         }
       }
     },
@@ -2717,6 +4625,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Moving Stamp"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moving Stamp"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動く切手"
           }
         }
       }
@@ -2735,6 +4655,18 @@
             "state" : "translated",
             "value" : "Moving Cut-out Sticker"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moving Cut-out Sticker"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動く切り抜きステッカー"
+          }
         }
       }
     },
@@ -2751,6 +4683,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Original"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オリジナル"
           }
         }
       }
@@ -2769,6 +4713,18 @@
             "state" : "translated",
             "value" : "Sepia"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "セピア"
+          }
         }
       }
     },
@@ -2785,6 +4741,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Black & White"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Black & White"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モノクロ"
           }
         }
       }
@@ -2803,6 +4771,18 @@
             "state" : "translated",
             "value" : "Faded"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faded"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色あせ"
+          }
         }
       }
     },
@@ -2819,6 +4799,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vivid"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vivid"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ビビッド"
           }
         }
       }
@@ -2837,6 +4829,18 @@
             "state" : "translated",
             "value" : "Cyan"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyan"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シアン"
+          }
         }
       }
     },
@@ -2853,6 +4857,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Press and hold to see the full photo"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press and hold to see the full photo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長押しで全体の写真を表示"
           }
         }
       }
@@ -2871,6 +4887,18 @@
             "state" : "translated",
             "value" : "What moment is this?"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What moment is this?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "これはどんなひととき？"
+          }
         }
       }
     },
@@ -2888,6 +4916,18 @@
             "state" : "translated",
             "value" : "Delete This Sticker"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete This Sticker"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このステッカーを削除"
+          }
         }
       }
     },
@@ -2904,6 +4944,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Look"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色合い"
           }
         }
       }

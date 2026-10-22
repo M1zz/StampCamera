@@ -15,6 +15,18 @@
             "state" : "translated",
             "value" : "All"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて"
+          }
         }
       }
     },
@@ -31,6 +43,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punch out stickers in Punching\nand they’ll show up here."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punch out stickers in Punching\nand they’ll show up here."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching でステッカーをはがすと、\nここに表示されます。"
           }
         }
       }
@@ -49,6 +73,18 @@
             "state" : "translated",
             "value" : "Sharing stickers requires the “App Group” setup.\n(Check the app and extension signing settings)"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sharing stickers requires the “App Group” setup.\n(Check the app and extension signing settings)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーを共有するには「App Group」の設定が必要です。\n（アプリと拡張機能の署名設定を確認してください）"
+          }
         }
       }
     },
@@ -65,6 +101,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching Stickers"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Stickers"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching ステッカー"
           }
         }
       }

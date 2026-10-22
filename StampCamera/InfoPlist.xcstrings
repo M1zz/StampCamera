@@ -16,6 +16,18 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -33,6 +45,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching uses the camera to turn moments into stickers with the puncher."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching uses the camera to turn moments into stickers with the puncher."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching は、ひとときをステッカーにはがすためにカメラを使用します。"
           }
         }
       }
@@ -52,6 +76,18 @@
             "state" : "translated",
             "value" : "Used to save finished stickers to your Photos."
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Used to save finished stickers to your Photos."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成したステッカーを「写真」に保存するために使用します。"
+          }
         }
       }
     },
@@ -69,6 +105,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Used to record where a sticker was punched out."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Used to record where a sticker was punched out."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ステッカーにはがした場所を記録するために位置情報を使用します。"
           }
         }
       }

@@ -16,6 +16,18 @@
             "state" : "translated",
             "value" : "Punching Stickers"
           }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Stickers"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching ステッカー"
+          }
         }
       }
     }
