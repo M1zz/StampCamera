@@ -49,16 +49,16 @@ SEARCH = {
     "it": ("Crea adesivi", "Tieni premuto:<br>adesivo animato", "Ritaglia solo il soggetto mentre scatti"),
     "pt-BR": ("Criar adesivos", "Segure e pronto:<br>adesivo animado", "Recorta só o que importa na hora"),
     "th": ("ทำสติกเกอร์", "กดค้างไว้<br>ได้สติกเกอร์ขยับได้", "ตัดเฉพาะตัวแบบออกมาทันทีที่ถ่าย"),
-    "vi": ("Tạo nhãn dán", "Nhấn giữ là có<br>nhãn dán chuyển động", "Tự tách chủ thể ngay khi chụp"),
+    "vi": ("Tạo nhãn dán", "Nhấn giữ là có<br>nhãn dán động", "Tự tách chủ thể ngay khi chụp"),
     "cs": ("Tvorba nálepek", "Podrž a máš<br>pohyblivou nálepku", "Vystřihne jen to hlavní hned při focení"),
     "da": ("Lav klistermærker", "Hold nede for et<br>bevægeligt mærke", "Klipper motivet fri, mens du fotograferer"),
-    "el": ("Αυτοκόλλητα", "Κράτα πατημένο για<br>ζωντανό αυτοκόλλητο", "Κόβει μόνο το θέμα τη στιγμή της λήψης"),
-    "fi": ("Tarrojen teko", "Pidä painettuna,<br>saat liikkuvan tarran", "Rajaa kohteen irti heti kuvatessa"),
+    "el": ("Αυτοκόλλητα", "Κράτησέ το<br>και ζωντανεύει", "Κόβει το θέμα με τη λήψη"),
+    "fi": ("Tarrojen teko", "Pidä painettuna:<br>liikkuva tarra", "Rajaa kohteen irti heti kuvatessa"),
     "id": ("Pembuat Stiker", "Tahan untuk bikin<br>stiker bergerak", "Langsung memotong objek saat memotret"),
-    "nb": ("Lag klistremerker", "Hold inne for et<br>levende klistremerke", "Klipper ut motivet idet du tar bildet"),
-    "nl": ("Stickers maken", "Houd ingedrukt voor<br>een bewegende sticker", "Knipt je onderwerp meteen uit"),
+    "nb": ("Lag klistremerker", "Hold inne for<br>levende merker", "Klipper ut motivet idet du tar bildet"),
+    "nl": ("Stickers maken", "Houd vast:<br>bewegende sticker", "Knipt je onderwerp meteen uit"),
     "pl": ("Kreator naklejek", "Przytrzymaj,<br>a naklejka ożyje", "Wycina sam obiekt już przy zdjęciu"),
-    "sv": ("Skapa klistermärken", "Håll inne för ett<br>rörligt klistermärke", "Klipper ut motivet direkt när du fotar"),
+    "sv": ("Skapa klistermärken", "Håll inne för<br>rörliga märken", "Klipper ut motivet direkt när du fotar"),
     "tr": ("Çıkartma yap", "Basılı tut,<br>hareketli çıkartma", "Çektiğin an konuyu kesip çıkarır"),
 }
 
@@ -82,7 +82,7 @@ HEADER = {
     "vi": ("Camera nhãn dán", "Bấm giữ khoảnh khắc<br>dán ngay vào trò chuyện"),
     "cs": ("Fotoaparát na nálepky", "Odtrhni okamžik<br>a vlep ho do chatu"),
     "da": ("Klistermærke-kamera", "Riv øjeblikket af<br>og sæt det i chatten"),
-    "el": ("Κάμερα αυτοκόλλητων", "Απόσπασε τη στιγμή<br>και κόλλησέ τη στη συζήτηση"),
+    "el": ("Κάμερα αυτοκόλλητων", "Απόσπασε τη στιγμή<br>και στείλ' τη αμέσως"),
     "fi": ("Tarrakamera", "Irrota hetki<br>ja liimaa se chattiin"),
     "id": ("Kamera Stiker", "Sobek momennya,<br>tempel di obrolan"),
     "nb": ("Klistremerkekamera", "Riv av øyeblikket<br>og lim det i chatten"),
@@ -130,6 +130,12 @@ function fit(box, el, max, min) {
   while (size > min && (box.scrollHeight > box.clientHeight + 1 || box.scrollWidth > box.clientWidth + 1 ||
          lines(el) > want)) {
     size -= 4; el.style.fontSize = size + 'px';
+  }
+  // 헤드라인을 최소까지 줄여도 넘치면 보조 문장을 줄인다(긴 언어: el, nl, fi …).
+  const sub = box.querySelector('.sub');
+  let subSize = sub ? parseFloat(getComputedStyle(sub).fontSize) : 0;
+  while (sub && subSize > 60 && (box.scrollHeight > box.clientHeight + 1 || box.scrollWidth > box.clientWidth + 1)) {
+    subSize -= 4; sub.style.fontSize = subSize + 'px';
   }
   if (box.scrollHeight > box.clientHeight + 1 || box.scrollWidth > box.clientWidth + 1 || lines(el) > want)
     document.body.dataset.overflow = '1';
@@ -197,9 +203,17 @@ def render(lang, kind):
     html_path = pathlib.Path(tempfile.gettempdir()) / f"punching-creative-{lang}-{kind}.html"
     html_path.write_text(page, encoding="utf-8")
     # 글이 끝까지 안 맞으면 그림을 만들지 않는다(잘린 글이 스토어에 올라가는 것보다 낫다).
-    dom = subprocess.run([CHROME, "--headless=new", "--dump-dom", f"--window-size={W},{H}",
-                          "--force-device-scale-factor=1", "--disable-gpu", "--virtual-time-budget=3000",
-                          html_path.as_uri()], capture_output=True, text=True, timeout=90).stdout
+    # 기계가 바쁘면 Chrome 이 뜨는 데만 몇 분 걸린다 — 넉넉히 기다리고 세 번까지 한다.
+    dom = ""
+    for _ in range(3):
+        try:
+            dom = subprocess.run([CHROME, "--headless=new", "--dump-dom", f"--window-size={W},{H}",
+                                  "--force-device-scale-factor=1", "--disable-gpu", "--virtual-time-budget=3000",
+                                  html_path.as_uri()], capture_output=True, text=True, timeout=400).stdout
+        except subprocess.TimeoutExpired:
+            continue
+        if 'data-done="1"' in dom:
+            break
     if 'data-done="1"' not in dom:
         raise SystemExit(f"글 맞추기가 끝나지 않았다: {lang} {kind}")
     if 'data-overflow="1"' in dom:
@@ -207,17 +221,19 @@ def render(lang, kind):
     out_dir = OUT / STORE.get(lang, lang)
     out_dir.mkdir(parents=True, exist_ok=True)
     out_png = out_dir / f"{kind}.png"
-    # ⚠️ Chrome 은 가끔 아무것도 안 그리고 끝나거나 멈춘다. 세 번까지 한다.
+    # ⚠️ Chrome 은 가끔 아무것도 안 그리고 끝나거나 멈춘다. 다섯 번까지 한다.
+    #    그림을 다 쓴 뒤 정리하다 죽기도 해서(종료 코드 ≠ 0) 파일이 새로 생겼는지로도 판단한다.
+    out_png.unlink(missing_ok=True)
     for _ in range(5):
         try:
             r = subprocess.run([CHROME, "--headless=new", f"--screenshot={out_png}",
                                 f"--window-size={W},{H}", "--force-device-scale-factor=1",
                                 "--hide-scrollbars", "--disable-gpu", "--virtual-time-budget=3000",
                                 "--allow-file-access-from-files", html_path.as_uri()],
-                               capture_output=True, timeout=180)
+                               capture_output=True, timeout=400)
         except subprocess.TimeoutExpired:
             continue
-        if r.returncode == 0:
+        if r.returncode == 0 or (out_png.exists() and out_png.stat().st_size > 0):
             break
     else:
         raise SystemExit(f"Chrome 이 그리지 못했다: {out_png}")

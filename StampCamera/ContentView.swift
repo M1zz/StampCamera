@@ -1939,7 +1939,8 @@ struct StampStylePicker: View {
     var body: some View {
         let current = collection.style(for: stampID)
         let canMove = collection.canMove(stampID)
-        VStack(spacing: 9) {
+        // 이름 칸은 두 줄 중 긴 이름에 맞춘다 — 고정 폭이면 "Motio/n", "Bewegu/ng" 처럼 끊긴다.
+        Grid(alignment: .leading, horizontalSpacing: 10, verticalSpacing: 9) {
             // 모양 축: 오려낸(배경 제거) ↔ 우표(톱니) — 스티커가 먼저
             axis(title: "모양",
                  a: ("오려낸", "scissors"), b: ("우표", "square.dashed"),
@@ -1966,11 +1967,13 @@ struct StampStylePicker: View {
     @ViewBuilder
     private func axis(title: LocalizedStringKey, a: (LocalizedStringKey, String), b: (LocalizedStringKey, String),
                       onB: Bool, bEnabled: Bool, pick: @escaping (Bool) -> Void) -> some View {
-        HStack(spacing: 10) {
+        GridRow {
             Text(title)
                 .font(.system(size: 12, weight: .bold, design: .rounded))
                 .foregroundStyle(chipInk(selected: false))
-                .frame(width: 38, alignment: .leading)
+                .lineLimit(1)
+                .fixedSize()
+                .frame(minWidth: 38, alignment: .leading)
             HStack(spacing: 4) {
                 segment(a.0, a.1, selected: !onB, enabled: true) { pick(false) }
                 segment(b.0, b.1, selected: onB, enabled: bEnabled) { pick(true) }

@@ -3,6 +3,152 @@
 App Store 의 "이 버전의 새로운 기능" 에 그대로 올라가는 글이다.
 평문만 쓴다. 한 줄에 한 문장, 3~5줄, 한 줄 40자 이내.
 
+## 1.0.2
+
+### 앱스토어 (한국어)
+
+이제 24개 언어로 펀칭을 쓸 수 있어요.
+기기 언어에 맞춰 화면이 바로 바뀌어요.
+키보드와 메시지 스티커도 같은 언어로 보여요.
+
+### 앱스토어 (en)
+
+Punching now speaks 24 languages.
+The app follows your device language.
+The keyboard and stickers do too.
+
+### 앱스토어 (en-GB)
+
+Punching now speaks 24 languages.
+The app follows your device's language.
+The keyboard and stickers do too.
+
+### 앱스토어 (ja)
+
+24の言語に対応しました。
+端末の言語に合わせて表示されます。
+キーボードとメッセージのステッカーも対応。
+
+### 앱스토어 (zh-Hans)
+
+现已支持24种语言。
+界面会跟随设备语言显示。
+键盘和信息里的贴纸也一样。
+
+### 앱스토어 (zh-Hant)
+
+現在支援24種語言。
+介面會跟著裝置語言顯示。
+鍵盤和訊息裡的貼圖也一樣。
+
+### 앱스토어 (러시아어)
+
+Punching теперь на 24 языках.
+Язык приложения как на устройстве.
+Клавиатура и стикеры в Сообщениях тоже.
+
+### 앱스토어 (스페인어)
+
+Punching ya está en 24 idiomas.
+Usa el idioma de tu dispositivo.
+También el teclado y los stickers.
+
+### 앱스토어 (독일어)
+
+Punching gibt es jetzt in 24 Sprachen.
+Die App folgt der Gerätesprache.
+Auch Tastatur und Nachrichten-Sticker.
+
+### 앱스토어 (프랑스어)
+
+Punching parle désormais 24 langues.
+L'app suit la langue de l'appareil.
+Le clavier et les autocollants aussi.
+
+### 앱스토어 (이탈리아어)
+
+Punching ora parla 24 lingue.
+Segue la lingua del dispositivo.
+Anche la tastiera e gli adesivi.
+
+### 앱스토어 (pt-BR)
+
+O Punching agora fala 24 idiomas.
+Segue o idioma do seu aparelho.
+O teclado e os adesivos também.
+
+### 앱스토어 (태국어)
+
+Punching รองรับ 24 ภาษาแล้ว
+หน้าจอเปลี่ยนตามภาษาของเครื่อง
+คีย์บอร์ดและสติกเกอร์ในข้อความด้วย
+
+### 앱스토어 (베트남어)
+
+Punching nay có 24 ngôn ngữ.
+Ứng dụng theo ngôn ngữ của máy.
+Cả bàn phím và nhãn dán trong Tin nhắn.
+
+### 앱스토어 (체코어)
+
+Punching teď umí 24 jazyků.
+Řídí se jazykem zařízení.
+Platí to i pro klávesnici a nálepky.
+
+### 앱스토어 (덴마크어)
+
+Punching findes nu på 24 sprog.
+Appen følger enhedens sprog.
+Det gør tastaturet og mærkerne også.
+
+### 앱스토어 (그리스어)
+
+Το Punching μιλά πλέον 24 γλώσσες.
+Ακολουθεί τη γλώσσα της συσκευής.
+Το ίδιο και τα αυτοκόλλητα.
+
+### 앱스토어 (핀란드어)
+
+Punching puhuu nyt 24 kieltä.
+Kieli seuraa laitteen asetusta.
+Myös näppäimistö ja tarrat.
+
+### 앱스토어 (인도네시아어)
+
+Punching kini hadir dalam 24 bahasa.
+Mengikuti bahasa perangkatmu.
+Termasuk papan ketik dan stiker Pesan.
+
+### 앱스토어 (노르웨이어(보크말))
+
+Punching finnes nå på 24 språk.
+Appen følger språket på enheten.
+Det gjør tastaturet og merkene også.
+
+### 앱스토어 (네덜란드어)
+
+Punching is er nu in 24 talen.
+De app volgt de taal van je toestel.
+Ook het toetsenbord en de stickers.
+
+### 앱스토어 (폴란드어)
+
+Punching mówi teraz w 24 językach.
+Dopasowuje się do języka urządzenia.
+Także klawiatura i naklejki.
+
+### 앱스토어 (스웨덴어)
+
+Punching finns nu på 24 språk.
+Appen följer enhetens språk.
+Tangentbordet och märkena också.
+
+### 앱스토어 (튀르키예어)
+
+Punching artık 24 dilde.
+Cihazının diline göre görünür.
+Klavye ve çıkartmalar da öyle.
+
 ## 1.0.1
 
 ### 앱스토어 (한국어)
