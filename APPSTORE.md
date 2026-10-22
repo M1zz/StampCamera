@@ -619,3 +619,127 @@ Importer depuis Photos
 Transformez en autocollants des photos prises plus tôt et ajoutez-les à un classeur.
 
 Tous vos autocollants et photos restent uniquement sur votre appareil.
+
+## it
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/it/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/it/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/it/
+
+### 이름
+
+Punching: adesivi animati
+
+### 부제
+
+Tieni premuto e stacca
+
+### 키워드
+
+ritaglio,gif,francobollo,scrapbook,diario,collage,vintage,retro,polaroid,cartolina,sfondo,messaggi
+
+### 프로모션 텍스트
+
+Tieni premuto: il momento che stacchi diventa un adesivo animato. Ritaglia solo il soggetto o staccalo come francobollo dentellato e invialo da Messaggi o dalla tastiera.
+
+### 설명
+
+Il momento che tieni premuto diventa un adesivo animato.
+Punching è un’app fotocamera che stacca come adesivo tutto ciò che vedi attraverso l’obiettivo.
+
+Inquadra la scena nella finestra della perforatrice, al centro dello schermo, e tieni premuto. Ottieni un adesivo che include anche il breve movimento subito prima e dopo la pressione. Se c’è un soggetto da ritagliare, come una persona, un animale o un oggetto, viene ritagliato solo quello; se non c’è, come in un paesaggio, viene staccato come francobollo dal bordo dentellato.
+
+Cosa puoi fare
+
+Invia da Messaggi e dalla tastiera
+Gli adesivi staccati compaiono nel cassetto adesivi di Messaggi e, attivando la tastiera di Punching, puoi sceglierli e incollarli anche in altre app. Gli adesivi animati vengono inviati in movimento.
+
+Copia e invia con un tocco
+Tocca Invia subito dopo lo stacco, oppure tieni premuto un adesivo per copiarlo e incollarlo ovunque.
+
+Forma e movimento sempre modificabili
+Anche dopo lo stacco, puoi passare dalla forma ritagliata al francobollo e dal movimento all’immagine ferma. La foto originale resta intatta.
+
+Uno stile e due parole
+Scegli uno stile tra Originale, Seppia, Bianco e nero, Sbiadito, Vivace e Ciano e lascia una breve nota su ogni adesivo. Anche data e luogo dello stacco vengono salvati.
+
+Un album per ogni tema
+Crea album per tema e scegli gli adesivi album per album in Messaggi e nella tastiera. Scegli pagine kraft, quadretti, a righe o pergamena e disponi tutto come preferisci.
+
+Stampa adesivi veri
+Trasforma un album in un PDF da stampare con linee di taglio a forma di francobollo e stampalo direttamente su carta per adesivi.
+
+Importa da Foto
+Trasforma in adesivi le foto scattate in precedenza e aggiungile a un album.
+
+Tutti i tuoi adesivi e le tue foto restano solo sul tuo dispositivo.
+
+## pt-BR
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/pt-BR/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/pt-BR/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/pt-BR/
+
+### 이름
+
+Punching: adesivos animados
+
+### 부제
+
+Segure e destaque o momento
+
+### 키워드
+
+recorte,gif,selo,scrapbook,diário,colagem,vintage,retrô,polaroid,cartão postal,fundo,mensagens,pet
+
+### 프로모션 텍스트
+
+Segure o botão e o momento que você destaca vira um adesivo animado. Recorte só o que importa ou destaque como selo serrilhado e envie pelo Mensagens ou pelo teclado.
+
+### 설명
+
+O momento que você segura vira um adesivo animado.
+O Punching é um app de câmera que destaca como adesivo tudo o que você vê pela lente.
+
+Enquadre a cena na janela do furador, no centro da tela, e segure. Você recebe um adesivo que inclui também o breve movimento de antes e depois do toque. Se houver algo para recortar, como uma pessoa, um pet ou um objeto, só isso é recortado; se não houver, como numa paisagem, ele é destacado como um selo de borda serrilhada.
+
+O que você pode fazer
+
+Envie pelo Mensagens e pelo teclado
+Os adesivos destacados aparecem na gaveta de adesivos do Mensagens e, ao ativar o teclado do Punching, você também pode escolhê-los e colá-los em outros apps. Adesivos com movimento são enviados em movimento.
+
+Copie e envie com um toque
+Toque em enviar logo depois de destacar ou mantenha um adesivo pressionado para copiá-lo e colá-lo onde quiser.
+
+Mude a forma e o movimento quando quiser
+Mesmo depois de destacar, você pode alternar entre a forma recortada e o selo, e entre movimento e imagem parada. A foto original fica guardada como estava.
+
+Um estilo e algumas palavras
+Escolha um estilo entre Original, Sépia, Preto e branco, Desbotado, Vívido e Ciano e deixe uma nota curta em cada adesivo. A data e o lugar em que você destacou também ficam salvos.
+
+Um álbum para cada tema
+Crie álbuns por tema e escolha os adesivos álbum por álbum no Mensagens e no teclado. Escolha páginas como kraft, quadriculado, pautado ou pergaminho e organize a ordem como preferir.
+
+Imprima adesivos de verdade
+Transforme um álbum em um PDF para imprimir com linhas de corte em forma de selo e imprima direto em papel de adesivo.
+
+Importe das Fotos
+Transforme em adesivos as fotos que você tirou antes e adicione-as a um álbum.
+
+Todos os seus adesivos e fotos ficam guardados somente no seu aparelho.

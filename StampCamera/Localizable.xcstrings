@@ -63,6 +63,18 @@
             "state" : "translated",
             "value" : "Verrouillage Face ID"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blocco con Face ID"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueio com Face ID"
+          }
         }
       }
     },
@@ -127,6 +139,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verrouillez l’app avec Face ID pour protéger vos classeurs."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blocca l’app con Face ID per proteggere i tuoi album."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueie o app com Face ID para proteger seus álbuns."
           }
         }
       }
@@ -193,6 +217,18 @@
             "state" : "translated",
             "value" : "Plus pratique avec VoiceOver"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Più comodo con VoiceOver"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais fácil com o VoiceOver"
+          }
         }
       }
     },
@@ -257,6 +293,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quand vous agrandissez le texte, les écrans se réorganisent sans être coupés."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando ingrandisci il testo, le schermate si riorganizzano senza tagliare nulla."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ao aumentar o texto, as telas se reorganizam sem cortar nada."
           }
         }
       }
@@ -323,6 +371,18 @@
             "state" : "translated",
             "value" : "Synchronisation entre appareils"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronizzazione tra dispositivi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronização entre aparelhos"
+          }
         }
       }
     },
@@ -387,6 +447,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tout reste lisible, même avec « Augmenter le contraste » ou si les couleurs sont difficiles à distinguer."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutto resta leggibile, anche con «Aumenta contrasto» attivo o se è difficile distinguere i colori."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tudo continua legível, mesmo com “Aumentar contraste” ativado ou se for difícil distinguir as cores."
           }
         }
       }
@@ -453,6 +525,18 @@
             "state" : "translated",
             "value" : "Utilisez l’app dans davantage de langues."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa l’app in più lingue."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use o app em mais idiomas."
+          }
         }
       }
     },
@@ -517,6 +601,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Plus de langues"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Più lingue"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais idiomas"
           }
         }
       }
@@ -583,6 +679,18 @@
             "state" : "translated",
             "value" : "Enregistrez vos autocollants dans un fichier et récupérez-les plus tard."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva i tuoi adesivi in un file e recuperali più tardi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salve seus adesivos em um arquivo e recupere-os depois."
+          }
         }
       }
     },
@@ -647,6 +755,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Couleurs et contraste plus lisibles"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colori e contrasto più leggibili"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cores e contraste mais fáceis de ver"
           }
         }
       }
@@ -713,6 +833,18 @@
             "state" : "translated",
             "value" : "Si vous changez d’iPhone, vos autocollants vous suivent grâce à iCloud."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se passi a un nuovo iPhone, i tuoi adesivi ti seguono tramite iCloud."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você trocar de iPhone, seus adesivos continuam com você pelo iCloud."
+          }
         }
       }
     },
@@ -777,6 +909,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Coller librement sur la page"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attacca dove vuoi sulla pagina"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cole onde quiser na página"
           }
         }
       }
@@ -843,6 +987,18 @@
             "state" : "translated",
             "value" : "Si l’app se ferme pendant que vous décorez un classeur, votre travail est conservé."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se l’app si chiude mentre decori un album, quello che avevi fatto resta."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se o app fechar enquanto você decora um álbum, o que você fez continua lá."
+          }
         }
       }
     },
@@ -907,6 +1063,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sauvegarde et export des autocollants"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backup ed esportazione degli adesivi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backup e exportação de adesivos"
           }
         }
       }
@@ -973,6 +1141,18 @@
             "state" : "translated",
             "value" : "Supprimer tous les autocollants d’un coup"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina tutti gli adesivi in una volta"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagar todos os adesivos de uma vez"
+          }
         }
       }
     },
@@ -1037,6 +1217,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utilisez toute l’app en anglais."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa tutta l’app anche in inglese."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use o app inteiro em inglês."
           }
         }
       }
@@ -1103,6 +1295,18 @@
             "state" : "translated",
             "value" : "À la première ouverture après une mise à jour, découvrez ce qui est nouveau."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alla prima apertura dopo un aggiornamento, scopri cosa c’è di nuovo."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na primeira abertura após uma atualização, veja o que há de novo."
+          }
         }
       }
     },
@@ -1167,6 +1371,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nouveautés"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novità"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novidades"
           }
         }
       }
@@ -1233,6 +1449,18 @@
             "state" : "translated",
             "value" : "Prise en charge de l’anglais"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supporto per l’inglese"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suporte a inglês"
+          }
         }
       }
     },
@@ -1297,6 +1525,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impression selon la forme détourée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stampa con la forma ritagliata"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimir na forma recortada"
           }
         }
       }
@@ -1363,6 +1603,18 @@
             "state" : "translated",
             "value" : "Réduire les animations"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riduci movimento"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reduzir movimento"
+          }
         }
       }
     },
@@ -1427,6 +1679,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Avec « Réduire les animations » activé, les effets d’écran se font plus discrets."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con «Riduci movimento» attivo, gli effetti sullo schermo diventano più calmi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com “Reduzir movimento” ativado, os efeitos na tela ficam mais calmos."
           }
         }
       }
@@ -1493,6 +1757,18 @@
             "state" : "translated",
             "value" : "Si vous le souhaitez, effacez tous vos autocollants depuis l’app."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se vuoi, puoi cancellare tutti gli adesivi raccolti direttamente nell’app."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se quiser, apague todos os adesivos coletados direto no app."
+          }
         }
       }
     },
@@ -1557,6 +1833,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sur la planche à imprimer, les autocollants détourés ont une ligne de découpe qui suit leur propre contour, et non la forme de timbre."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sul foglio da stampare, gli adesivi ritagliati hanno una linea di taglio che segue il loro contorno, non la forma di francobollo."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na folha de adesivos para imprimir, os adesivos recortados ganham uma linha de corte que segue o próprio contorno, e não a forma de selo."
           }
         }
       }
@@ -1623,6 +1911,18 @@
             "state" : "translated",
             "value" : "Une notification vous montre les autocollants détachés il y a un an jour pour jour."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una notifica ti mostra gli adesivi staccati un anno fa nello stesso giorno."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma notificação mostra os adesivos que você destacou neste mesmo dia no ano passado."
+          }
         }
       }
     },
@@ -1687,6 +1987,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Souvenirs d’autocollants"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adesivi di un anno fa"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lembrança de adesivos antigos"
           }
         }
       }
@@ -1753,6 +2065,18 @@
             "state" : "translated",
             "value" : "Guide pour les débutants"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guida per chi inizia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guia para quem está começando"
+          }
         }
       }
     },
@@ -1817,6 +2141,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "À la première ouverture, un court guide montre comment détacher et utiliser les autocollants."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alla prima apertura, una breve guida mostra come staccare e usare gli adesivi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na primeira abertura, um guia curto mostra como destacar e usar adesivos."
           }
         }
       }
@@ -1883,6 +2219,18 @@
             "state" : "translated",
             "value" : "Sans grille, collez les autocollants où vous voulez sur la page, même de travers."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senza griglia, attacca gli adesivi dove vuoi sulla pagina, anche storti."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem grade, cole os adesivos onde quiser na página, até na diagonal."
+          }
         }
       }
     },
@@ -1947,6 +2295,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Écrans pour grands textes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schermate per testo grande"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telas para texto grande"
           }
         }
       }
@@ -2013,6 +2373,18 @@
             "state" : "translated",
             "value" : "Affichage pour iPhone pliable"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schermata per iPhone pieghevole"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tela para iPhone dobrável"
+          }
         }
       }
     },
@@ -2077,6 +2449,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utilisez le grand écran d’un iPhone pliable en deux volets côte à côte."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa il grande schermo di un iPhone pieghevole diviso in due pannelli."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use a tela larga de um iPhone dobrável dividida em dois painéis."
           }
         }
       }
@@ -2143,6 +2527,18 @@
             "state" : "translated",
             "value" : "Reprendre là où vous en étiez"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riprendi da dove avevi lasciato"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue de onde parou"
+          }
         }
       }
     },
@@ -2207,6 +2603,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver lit chaque bouton et chaque autocollant, sans en oublier et dans le bon ordre."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver legge ogni pulsante e ogni adesivo, senza saltarne nessuno e nell’ordine giusto."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O VoiceOver lê cada botão e cada adesivo, sem pular nenhum e na ordem certa."
           }
         }
       }
@@ -2273,6 +2681,18 @@
             "state" : "translated",
             "value" : "Ouvrir l’appareil photo Punching"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la fotocamera di Punching"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir a câmera do Punching"
+          }
         }
       }
     },
@@ -2337,6 +2757,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouvre tout de suite l’appareil photo de Punching."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apre subito la fotocamera di Punching."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre a câmera do Punching na hora."
           }
         }
       }
@@ -2403,6 +2835,18 @@
             "state" : "translated",
             "value" : "Ouvrir l’appareil photo"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la fotocamera"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir câmera"
+          }
         }
       }
     },
@@ -2467,6 +2911,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Forme par défaut"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forma predefinita"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forma padrão"
           }
         }
       }
@@ -2533,6 +2989,18 @@
             "state" : "translated",
             "value" : "Autocollant détouré"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adesivo ritagliato"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adesivo recortado"
+          }
         }
       }
     },
@@ -2597,6 +3065,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Timbre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Francobollo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selo"
           }
         }
       }
@@ -2663,6 +3143,18 @@
             "state" : "translated",
             "value" : "Cadre Punching"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornice Punching"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moldura do Punching"
+          }
         }
       }
     },
@@ -2727,6 +3219,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cadre %lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornice %lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moldura %lld"
           }
         }
       }
@@ -2793,6 +3297,18 @@
             "state" : "translated",
             "value" : "Détachage"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stacco"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destacar"
+          }
         }
       }
     },
@@ -2857,6 +3373,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si rien n’est à détourer, l’image est détachée en forme de timbre. Le mouvement est toujours enregistré : après le détachage, vous pouvez changer la forme et le mouvement de chaque autocollant."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se non c’è nulla da ritagliare, viene staccato a forma di francobollo. Il movimento viene sempre catturato, quindi dopo lo stacco puoi cambiare forma e movimento di ogni adesivo."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se não houver nada para recortar, ele é destacado em forma de selo. O movimento sempre é capturado, então depois de destacar você pode mudar a forma e o movimento de cada adesivo."
           }
         }
       }
@@ -2923,6 +3451,18 @@
             "state" : "translated",
             "value" : "Lecture auto du mouvement"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riproduci il movimento in automatico"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reproduzir movimento automaticamente"
+          }
         }
       }
     },
@@ -2987,6 +3527,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Effet de page tournée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effetto sfoglia pagina"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Efeito de virar página"
           }
         }
       }
@@ -3053,6 +3605,18 @@
             "state" : "translated",
             "value" : "Affichage"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualizzazione"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualização"
+          }
         }
       }
     },
@@ -3117,6 +3681,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si la lecture auto est désactivée, les autocollants s’affichent partout en image fixe. Le mouvement n’est jamais effacé."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con la riproduzione automatica disattivata, gli adesivi appaiono sempre fermi. Il movimento non viene mai cancellato."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com a reprodução automática desativada, os adesivos aparecem parados em todo lugar. O movimento nunca é apagado."
           }
         }
       }
@@ -3183,6 +3759,18 @@
             "state" : "translated",
             "value" : "Utiliser dans Messages et le clavier"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa in Messaggi e nella tastiera"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar no Mensagens e no teclado"
+          }
         }
       }
     },
@@ -3247,6 +3835,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imprimer sur des autocollants papier"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stampa su adesivi di carta"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimir em adesivos de papel"
           }
         }
       }
@@ -3313,6 +3913,18 @@
             "state" : "translated",
             "value" : "Utilisation"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uso"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar"
+          }
         }
       }
     },
@@ -3377,6 +3989,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Assistance"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supporto"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suporte"
           }
         }
       }
@@ -3443,6 +4067,18 @@
             "state" : "translated",
             "value" : "Réglages"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
         }
       }
     },
@@ -3504,6 +4140,18 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fine"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
@@ -3573,6 +4221,18 @@
             "state" : "translated",
             "value" : "Ouvrez une conversation dans Messages."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri una conversazione in Messaggi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abra uma conversa no Mensagens."
+          }
         }
       }
     },
@@ -3637,6 +4297,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Touchez le bouton ＋ à côté du champ de saisie, puis choisissez un autocollant Punching dans « Autocollants »."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca il pulsante ＋ accanto al campo di testo e scegli un adesivo Punching in «Adesivi»."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque no botão ＋ ao lado do campo de texto e escolha um adesivo do Punching em “Adesivos”."
           }
         }
       }
@@ -3703,6 +4375,18 @@
             "state" : "translated",
             "value" : "Maintenez le doigt appuyé pour le coller où vous voulez dans la conversation. Les autocollants animés se collent en mouvement."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tieni premuto per attaccarlo dove vuoi nella conversazione. Gli adesivi animati si attaccano in movimento."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantenha pressionado para colar em qualquer lugar da conversa. Adesivos com movimento são colados em movimento."
+          }
         }
       }
     },
@@ -3767,6 +4451,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Messages"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Messaggi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mensagens"
           }
         }
       }
@@ -3833,6 +4529,18 @@
             "state" : "translated",
             "value" : "Chaque classeur apparaît comme un pack d’autocollants à part."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogni album compare come un pacchetto di adesivi a parte."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada álbum aparece como um pacote de adesivos separado."
+          }
         }
       }
     },
@@ -3897,6 +4605,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Touchez « Ouvrir les réglages » ci-dessous ▸ Claviers ▸ activez Punching Autocollants."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca «Apri Impostazioni» qui sotto ▸ Tastiere ▸ attiva Punching Adesivi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque em “Abrir Ajustes” abaixo ▸ Teclados ▸ ative Punching Adesivos."
           }
         }
       }
@@ -3963,6 +4683,18 @@
             "state" : "translated",
             "value" : "Au même endroit, activez aussi « Autoriser l’accès complet ». Il est nécessaire pour copier et coller les autocollants."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nello stesso punto, attiva anche «Consenti accesso completo». Serve per copiare e incollare gli adesivi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No mesmo lugar, ative também “Permitir acesso total”. Ele é necessário para copiar e colar os adesivos."
+          }
         }
       }
     },
@@ -4027,6 +4759,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dans n’importe quelle app, touchez le globe du clavier pour passer à Punching Autocollants."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In qualsiasi app, tocca il globo sulla tastiera per passare a Punching Adesivi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em qualquer app, toque no globo do teclado para trocar para Punching Adesivos."
           }
         }
       }
@@ -4093,6 +4837,18 @@
             "state" : "translated",
             "value" : "Ouvrir les réglages"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri Impostazioni"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes"
+          }
         }
       }
     },
@@ -4157,6 +4913,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clavier"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastiera"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teclado"
           }
         }
       }
@@ -4223,6 +4991,18 @@
             "state" : "translated",
             "value" : "Les autocollants ne circulent que dans votre appareil. Le clavier ne lit ni n’envoie ce que vous saisissez."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gli adesivi circolano solo all’interno del tuo dispositivo. La tastiera non legge né invia ciò che scrivi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os adesivos só circulam dentro do seu aparelho. O teclado não lê nem envia o que você digita."
+          }
         }
       }
     },
@@ -4287,6 +5067,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mouvement non enregistré"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Movimento non catturato"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Movimento não capturado"
           }
         }
       }
@@ -4353,6 +5145,18 @@
             "state" : "translated",
             "value" : "Le mouvement enregistré est insuffisant. Réessayer ?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il movimento catturato non è sufficiente. Vuoi riprovare?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi capturado movimento suficiente. Tentar de novo?"
+          }
         }
       }
     },
@@ -4417,6 +5221,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nouveau classeur"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuovo album"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novo álbum"
           }
         }
       }
@@ -4483,6 +5299,18 @@
             "state" : "translated",
             "value" : "Nom du classeur"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome dell’album"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome do álbum"
+          }
         }
       }
     },
@@ -4547,6 +5375,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         }
       }
@@ -4613,6 +5453,18 @@
             "state" : "translated",
             "value" : "Créer"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criar"
+          }
         }
       }
     },
@@ -4677,6 +5529,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reprendre"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rifai"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refazer"
           }
         }
       }
@@ -4743,6 +5607,18 @@
             "state" : "translated",
             "value" : "Garder"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lascia così"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manter"
+          }
         }
       }
     },
@@ -4807,6 +5683,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nouveau classeur…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuovo album…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novo álbum…"
           }
         }
       }
@@ -4873,6 +5761,18 @@
             "state" : "translated",
             "value" : "Rien à détourer : détaché en forme de timbre"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niente da ritagliare: staccato a forma di francobollo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nada para recortar, então foi destacado em forma de selo"
+          }
         }
       }
     },
@@ -4937,6 +5837,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching a besoin d’accéder à l’appareil photo pour transformer vos instants en autocollants.\nActivez l’appareil photo dans Réglages."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching ha bisogno della fotocamera per trasformare i momenti in adesivi.\nAttiva la fotocamera in Impostazioni."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Punching precisa de acesso à câmera para transformar momentos em adesivos.\nAtive a câmera em Ajustes."
           }
         }
       }
@@ -5003,6 +5915,18 @@
             "state" : "translated",
             "value" : "Classeurs"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Álbuns"
+          }
         }
       }
     },
@@ -5067,6 +5991,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Appareil photo"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotocamera"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Câmera"
           }
         }
       }
@@ -5133,6 +6069,18 @@
             "state" : "translated",
             "value" : "Importer depuis Photos"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importa da Foto"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importar das Fotos"
+          }
         }
       }
     },
@@ -5198,6 +6146,18 @@
             "state" : "translated",
             "value" : "En cours de collecte"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In raccolta"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coletando"
+          }
         }
       }
     },
@@ -5259,6 +6219,18 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -5328,6 +6300,18 @@
             "state" : "translated",
             "value" : "Tous"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutti"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos"
+          }
         }
       }
     },
@@ -5392,6 +6376,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Animés"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animati"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com movimento"
           }
         }
       }
@@ -5458,6 +6454,18 @@
             "state" : "translated",
             "value" : "Détourés"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ritagliati"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recortados"
+          }
         }
       }
     },
@@ -5522,6 +6530,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun autocollant « %@ » pour le moment"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ancora nessun adesivo «%@»"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ainda não há adesivos “%@”"
           }
         }
       }
@@ -5588,6 +6608,18 @@
             "state" : "translated",
             "value" : "Sélectionner"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleziona"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecionar"
+          }
         }
       }
     },
@@ -5652,6 +6684,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tout afficher"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra tutti"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver todos"
           }
         }
       }
@@ -5718,6 +6762,18 @@
             "state" : "translated",
             "value" : "Supprimer les %lld autocollants sélectionnés ?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminare i %lld adesivi selezionati?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir os %lld adesivos selecionados?"
+          }
         }
       }
     },
@@ -5782,6 +6838,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supprimer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir"
           }
         }
       }
@@ -5848,6 +6916,18 @@
             "state" : "translated",
             "value" : "Renommer"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rinomina"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renomear"
+          }
         }
       }
     },
@@ -5912,6 +6992,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enregistrer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
           }
         }
       }
@@ -5978,6 +7070,18 @@
             "state" : "translated",
             "value" : "Supprimer le classeur « %@ » et ses %lld autocollants ?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminare l’album «%@» e i suoi %lld adesivi?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir o álbum “%@” e os %lld adesivos dentro dele?"
+          }
         }
       }
     },
@@ -6042,6 +7146,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supprimer cet autocollant ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminare questo adesivo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir este adesivo?"
           }
         }
       }
@@ -6108,6 +7224,18 @@
             "state" : "translated",
             "value" : "Création de la planche d’autocollants…"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creazione del foglio di adesivi…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criando a folha de adesivos…"
+          }
         }
       }
     },
@@ -6172,6 +7300,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Collecter ici"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccogli qui"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coletar aqui"
           }
         }
       }
@@ -6238,6 +7378,18 @@
             "state" : "translated",
             "value" : "Collecte ici"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccolta qui"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coletando aqui"
+          }
         }
       }
     },
@@ -6302,6 +7454,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Décorer librement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decora a piacere"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decorar livremente"
           }
         }
       }
@@ -6368,6 +7532,18 @@
             "state" : "translated",
             "value" : "Partager en image"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi come immagine"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhar como imagem"
+          }
         }
       }
     },
@@ -6432,6 +7608,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Planche d’autocollants à imprimer (PDF)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foglio di adesivi da stampare (PDF)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folha de adesivos para imprimir (PDF)"
           }
         }
       }
@@ -6498,6 +7686,18 @@
             "state" : "translated",
             "value" : "Guide d’impression"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guida alla stampa"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guia de impressão"
+          }
         }
       }
     },
@@ -6562,6 +7762,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supprimer le classeur"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina album"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir álbum"
           }
         }
       }
@@ -6628,6 +7840,18 @@
             "state" : "translated",
             "value" : "Tout désélectionner"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deseleziona tutto"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desmarcar tudo"
+          }
         }
       }
     },
@@ -6692,6 +7916,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tout sélectionner"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleziona tutto"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecionar tudo"
           }
         }
       }
@@ -6758,6 +7994,18 @@
             "state" : "translated",
             "value" : "Choisissez des autocollants"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli gli adesivi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha os adesivos"
+          }
         }
       }
     },
@@ -6822,6 +8070,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld sélectionné(s)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld selezionati"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld selecionados"
           }
         }
       }
@@ -6888,6 +8148,18 @@
             "state" : "translated",
             "value" : "Déplacer"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sposta"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mover"
+          }
         }
       }
     },
@@ -6952,6 +8224,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fond « %@ »"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sfondo «%@»"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fundo “%@”"
           }
         }
       }
@@ -7018,6 +8302,18 @@
             "state" : "translated",
             "value" : "Maintenez un autocollant pour le déplacer où vous voulez"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tieni premuto un adesivo per spostarlo dove vuoi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantenha um adesivo pressionado para movê-lo para onde quiser"
+          }
         }
       }
     },
@@ -7082,6 +8378,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dans l’ordre de prise"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In ordine di scatto"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na ordem em que foram tirados"
           }
         }
       }
@@ -7148,6 +8456,18 @@
             "state" : "translated",
             "value" : "Copier"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiar"
+          }
         }
       }
     },
@@ -7212,6 +8532,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Envoyer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar"
           }
         }
       }
@@ -7278,6 +8610,18 @@
             "state" : "translated",
             "value" : "Vers un autre classeur"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In un altro album"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para outro álbum"
+          }
         }
       }
     },
@@ -7342,6 +8686,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mon classeur d’autocollants « %@ » #Punching"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il mio album di adesivi «%@» #Punching"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meu álbum de adesivos “%@” #Punching"
           }
         }
       }
@@ -7408,6 +8764,18 @@
             "state" : "translated",
             "value" : "Ce classeur est encore vide"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questo album è ancora vuoto"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este álbum ainda está vazio"
+          }
         }
       }
     },
@@ -7472,6 +8840,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Collecte ici : détachez des autocollants avec l’appareil photo pour le remplir"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccolta qui: stacca adesivi con la fotocamera per riempirlo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coletando aqui: destaque adesivos com a câmera para enchê-lo"
           }
         }
       }
@@ -7538,6 +8918,18 @@
             "state" : "translated",
             "value" : "Forme"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forma"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forma"
+          }
         }
       }
     },
@@ -7602,6 +8994,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Détouré"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ritagliato"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recortado"
           }
         }
       }
@@ -7668,6 +9072,18 @@
             "state" : "translated",
             "value" : "Timbre"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Francobollo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selo"
+          }
         }
       }
     },
@@ -7732,6 +9148,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mouvement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Movimento"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Movimento"
           }
         }
       }
@@ -7798,6 +9226,18 @@
             "state" : "translated",
             "value" : "Fixe"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parado"
+          }
         }
       }
     },
@@ -7862,6 +9302,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crème uni"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crema tinta unita"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creme liso"
           }
         }
       }
@@ -7928,6 +9380,18 @@
             "state" : "translated",
             "value" : "Quadrillé"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quadretti"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quadriculado"
+          }
         }
       }
     },
@@ -7992,6 +9456,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ligné"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A righe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pautado"
           }
         }
       }
@@ -8058,6 +9534,18 @@
             "state" : "translated",
             "value" : "Pointillé"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puntinato"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pontilhado"
+          }
         }
       }
     },
@@ -8119,6 +9607,18 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kraft"
@@ -8188,6 +9688,18 @@
             "state" : "translated",
             "value" : "Parchemin"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergamena"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergaminho"
+          }
         }
       }
     },
@@ -8249,6 +9761,18 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cornell"
@@ -8318,6 +9842,18 @@
             "state" : "translated",
             "value" : "Millimétré"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Millimetrata"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Milimetrado"
+          }
         }
       }
     },
@@ -8382,6 +9918,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menthe"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menta"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menta"
           }
         }
       }
@@ -8448,6 +9996,18 @@
             "state" : "translated",
             "value" : "Quadrillage sombre"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Griglia scura"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grade escura"
+          }
         }
       }
     },
@@ -8512,6 +10072,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Maintenez la perforatrice dans l’appareil photo, puis relâchez. Clic ! Ce qui apparaissait dans la fenêtre est détaché tel quel en autocollant."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tieni premuta la perforatrice nella fotocamera e rilascia. Clic! Ciò che si vedeva nella finestra viene staccato così com’è come adesivo."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantenha o furador pressionado na câmera e solte. Clique! O que aparecia na janela é destacado do jeito que está, como um adesivo."
           }
         }
       }
@@ -8578,6 +10150,18 @@
             "state" : "translated",
             "value" : "Choisir un rendu"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli uno stile"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha um estilo"
+          }
         }
       }
     },
@@ -8642,6 +10226,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Écrivez quelques mots sur la carte de votre autocollant tout frais, puis ajoutez un rendu, comme sépia ou noir et blanc, dans « Plus ». Vous pouvez changer de rendu à tout moment sans perdre en qualité."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scrivi due parole sulla scheda dell’adesivo appena fatto, poi in «Altro» aggiungi uno stile come seppia o bianco e nero. Puoi cambiare stile quando vuoi senza perdere qualità."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escreva algumas palavras no cartão do adesivo recém-saído e, em “Mais”, aplique um estilo como sépia ou preto e branco. Você pode mudar o estilo quando quiser, sem perder qualidade."
           }
         }
       }
@@ -8708,6 +10304,18 @@
             "state" : "translated",
             "value" : "Rassembler dans un classeur"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccogli in un album"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reúna em um álbum"
+          }
         }
       }
     },
@@ -8772,6 +10380,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les planches d’autocollants se font par classeur. Rassemblez dans un même classeur les autocollants à imprimer : dans le classeur, touchez « Sélectionner » puis « Déplacer » pour en déplacer plusieurs d’un coup."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I fogli di adesivi si creano per album. Metti in un unico album gli adesivi da stampare: nell’album tocca «Seleziona», poi «Sposta» per spostarne molti insieme."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As folhas de adesivos são feitas por álbum. Junte os adesivos que quer imprimir em um só álbum: no álbum, toque em “Selecionar” e depois em “Mover” para mover vários de uma vez."
           }
         }
       }
@@ -8838,6 +10458,18 @@
             "state" : "translated",
             "value" : "Créer une planche à imprimer"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea un foglio da stampare"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crie uma folha para imprimir"
+          }
         }
       }
     },
@@ -8902,6 +10534,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menu ⋯ en haut à droite du classeur ▸ « Utilisation » ▸ « Planche d’autocollants à imprimer (PDF) ». Vous obtenez un PDF en 300 ppp à remettre tel quel à un imprimeur. Enregistrez-le avec « Enregistrer dans Fichiers » ou envoyez-le par AirDrop ou e-mail."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nel menu ⋯ in alto a destra dell’album ▸ «Uso» ▸ «Foglio di adesivi da stampare (PDF)». Ottieni un PDF a 300 dpi da consegnare così com’è in tipografia. Salvalo con «Salva su File» o invialo con AirDrop o e-mail."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No menu ⋯ no canto superior direito do álbum ▸ “Usar” ▸ “Folha de adesivos para imprimir (PDF)”. Você recebe um PDF de 300 dpi que pode entregar direto a uma gráfica. Guarde com “Salvar em Arquivos” ou envie por AirDrop ou e-mail."
           }
         }
       }
@@ -8968,6 +10612,18 @@
             "state" : "translated",
             "value" : "Imprimer"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stampa"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimir"
+          }
         }
       }
     },
@@ -9032,6 +10688,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "À la maison : imprimez sur du papier étiquette ou autocollant A4 ou Letter (mat conseillé) en « Taille réelle (100 %) » ; désactivez impérativement « Ajuster à la page ».\nChez un imprimeur ou fabricant d’autocollants : remettez simplement le PDF. Le pointillé magenta est la ligne de demi-découpe (kiss-cut), et les repères aux coins servent à la découpe."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A casa: stampa su carta per etichette o adesivi A4 o Letter (meglio opaca) a «Dimensione reale (100%)»; disattiva sempre «Adatta alla pagina».\nIn tipografia o da chi produce adesivi: consegna semplicemente il PDF. La linea tratteggiata magenta è il taglio parziale (kiss-cut) e i segni agli angoli sono i riferimenti di rifilatura."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em casa: imprima em papel de etiqueta ou adesivo A4 ou Carta (de preferência fosco) em “Tamanho real (100%)”; desative sempre “Ajustar à página”.\nEm gráficas e fabricantes de adesivos: basta entregar o PDF. A linha tracejada magenta é o corte parcial (kiss-cut) e as marcas nos cantos são a referência de refile."
           }
         }
       }
@@ -9098,6 +10766,18 @@
             "state" : "translated",
             "value" : "Découper et coller"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ritaglia e attacca"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recorte e cole"
+          }
         }
       }
     },
@@ -9162,6 +10842,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Découpez le long des pointillés aux ciseaux ou avec une découpeuse, et c’est fini ! Collez-les sur des enveloppes, agendas, ordinateurs portables… partout."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ritaglia lungo la linea tratteggiata con le forbici o una taglierina e il gioco è fatto! Attaccali su buste, agende, computer portatili… ovunque."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recorte pela linha pontilhada com tesoura ou máquina de corte e pronto! Cole em envelopes, agendas, notebooks… onde quiser."
           }
         }
       }
@@ -9228,6 +10920,18 @@
             "state" : "translated",
             "value" : "📮 De l’instant détaché à l’autocollant dans la main"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Dal momento staccato all’adesivo tra le mani"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Do momento destacado ao adesivo na sua mão"
+          }
         }
       }
     },
@@ -9292,6 +10996,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Six étapes transforment l’autocollant de votre téléphone en autocollant sur votre bureau."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sei passaggi trasformano l’adesivo sul telefono in un adesivo sulla scrivania."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seis passos transformam o adesivo do celular em adesivo na sua mesa."
           }
         }
       }
@@ -9358,6 +11074,18 @@
             "state" : "translated",
             "value" : "Bon à savoir"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Da sapere"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bom saber"
+          }
         }
       }
     },
@@ -9422,6 +11150,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Les planches à imprimer ont toujours une forme de timbre. Les lignes de découpe gardent le bord dentelé, donc une fois décollés, les autocollants ressemblent à de vrais timbres (environ 5 cm, 12 par page)."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• I fogli da stampare hanno sempre la forma di francobollo. Le linee di taglio mantengono il bordo dentellato, così gli adesivi staccati sembrano veri francobolli (circa 5 cm, 12 per pagina)."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• As folhas para imprimir sempre têm forma de selo. As linhas de corte mantêm a borda serrilhada, então os adesivos destacados parecem selos de verdade (cerca de 5 cm, 12 por página)."
           }
         }
       }
@@ -9488,6 +11228,18 @@
             "state" : "translated",
             "value" : "• Les autocollants qui conservent leur photo d’origine sont recalculés en 300 ppp à l’impression, pour un rendu net."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Gli adesivi che conservano la foto originale vengono ricreati a 300 dpi in stampa, così risultano nitidi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Adesivos que guardam a foto original são redesenhados em 300 dpi na impressão e saem nítidos."
+          }
         }
       }
     },
@@ -9552,6 +11304,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Aussi en numérique : chaque autocollant devient automatiquement un autocollant Messages. Collez-le directement depuis le tiroir d’autocollants de Messages ; les animés se collent en mouvement."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Anche in digitale: ogni adesivo diventa automaticamente un adesivo di Messaggi. Attaccalo direttamente dal cassetto adesivi di Messaggi; quelli animati si attaccano in movimento."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Também no digital: cada adesivo vira automaticamente um adesivo do Mensagens. Cole direto da gaveta de adesivos do Mensagens; os com movimento são colados em movimento."
           }
         }
       }
@@ -9618,6 +11382,18 @@
             "state" : "translated",
             "value" : "• Ce ne sont pas de vrais timbres postaux : décorez vos lettres à volonté, mais laissez la place du timbre au vrai !"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Non sono veri francobolli postali: decora le lettere quanto vuoi, ma lascia il posto del francobollo a quello vero!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Não são selos postais de verdade: decore suas cartas à vontade, mas deixe o lugar do selo para o selo de verdade!"
+          }
         }
       }
     },
@@ -9682,6 +11458,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Votre autocollant est arrivé !"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il tuo adesivo è arrivato!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu adesivo chegou!"
           }
         }
       }
@@ -9748,6 +11536,18 @@
             "state" : "translated",
             "value" : "Faites tourner l’autocollant"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fai girare l’adesivo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gire o adesivo"
+          }
         }
       }
     },
@@ -9812,6 +11612,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quelques mots sur cet instant…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Due parole su questo momento…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algumas palavras sobre este momento…"
           }
         }
       }
@@ -9878,6 +11690,18 @@
             "state" : "translated",
             "value" : "Ajouter au classeur"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi all’album"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar ao álbum"
+          }
         }
       }
     },
@@ -9942,6 +11766,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jeter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scarta"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descartar"
           }
         }
       }
@@ -10008,6 +11844,18 @@
             "state" : "translated",
             "value" : "Plus"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Altro"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais"
+          }
         }
       }
     },
@@ -10072,6 +11920,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Photo entière"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto intera"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto inteira"
           }
         }
       }
@@ -10138,6 +11998,18 @@
             "state" : "translated",
             "value" : "Timbre seul"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo francobollo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Só o selo"
+          }
         }
       }
     },
@@ -10202,6 +12074,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modifier"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
           }
         }
       }
@@ -10268,6 +12152,18 @@
             "state" : "translated",
             "value" : "Copié !"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiato!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiado!"
+          }
         }
       }
     },
@@ -10332,6 +12228,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Partager"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhar"
           }
         }
       }
@@ -10398,6 +12306,18 @@
             "state" : "translated",
             "value" : "Timbre animé"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Francobollo animato"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selo com movimento"
+          }
         }
       }
     },
@@ -10463,6 +12383,18 @@
             "state" : "translated",
             "value" : "Autocollant détouré animé"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adesivo ritagliato animato"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adesivo recortado com movimento"
+          }
         }
       }
     },
@@ -10524,6 +12456,18 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Originale"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Original"
@@ -10593,6 +12537,18 @@
             "state" : "translated",
             "value" : "Sépia"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seppia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sépia"
+          }
         }
       }
     },
@@ -10657,6 +12613,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Noir et blanc"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bianco e nero"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preto e branco"
           }
         }
       }
@@ -10723,6 +12691,18 @@
             "state" : "translated",
             "value" : "Délavé"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sbiadito"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbotado"
+          }
         }
       }
     },
@@ -10787,6 +12767,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Éclatant"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vivace"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vívido"
           }
         }
       }
@@ -10853,6 +12845,18 @@
             "state" : "translated",
             "value" : "Cyan"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciano"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciano"
+          }
         }
       }
     },
@@ -10917,6 +12921,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Maintenez pour voir la photo entière"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tieni premuto per vedere la foto intera"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantenha pressionado para ver a foto inteira"
           }
         }
       }
@@ -10983,6 +12999,18 @@
             "state" : "translated",
             "value" : "Quel est cet instant ?"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Che momento è questo?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que momento é este?"
+          }
         }
       }
     },
@@ -11048,6 +13076,18 @@
             "state" : "translated",
             "value" : "Supprimer cet autocollant"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina questo adesivo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir este adesivo"
+          }
         }
       }
     },
@@ -11112,6 +13152,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rendu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stile"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estilo"
           }
         }
       }

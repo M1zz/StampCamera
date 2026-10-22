@@ -64,6 +64,18 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -129,6 +141,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching utilise l’appareil photo pour transformer vos instants en autocollants."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching usa la fotocamera per trasformare i momenti in adesivi."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Punching usa a câmera para transformar momentos em adesivos."
           }
         }
       }
@@ -196,6 +220,18 @@
             "state" : "translated",
             "value" : "Sert à enregistrer les autocollants terminés dans Photos."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serve per salvare gli adesivi finiti in Foto."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usado para salvar os adesivos prontos nas Fotos."
+          }
         }
       }
     },
@@ -261,6 +297,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sert à noter l’endroit où un autocollant a été détaché."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serve per registrare dove è stato staccato un adesivo."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usado para registrar onde um adesivo foi destacado."
           }
         }
       }

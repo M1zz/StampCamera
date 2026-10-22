@@ -63,6 +63,18 @@
             "state" : "translated",
             "value" : "Tous"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutti"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos"
+          }
         }
       }
     },
@@ -127,6 +139,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pour utiliser les autocollants, activez « Autoriser l’accès complet ».\nRéglages ▸ Général ▸ Clavier ▸ Punching Autocollants ▸ Autoriser l’accès complet"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per usare gli adesivi, attiva «Consenti accesso completo».\nImpostazioni ▸ Generali ▸ Tastiera ▸ Punching Adesivi ▸ Consenti accesso completo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para usar os adesivos, ative “Permitir acesso total”.\nAjustes ▸ Geral ▸ Teclado ▸ Punching Adesivos ▸ Permitir acesso total"
           }
         }
       }
@@ -193,6 +217,18 @@
             "state" : "translated",
             "value" : "Détachez des autocollants dans Punching\net ils apparaîtront ici."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stacca adesivi in Punching\ne compariranno qui."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destaque adesivos no Punching\ne eles aparecerão aqui."
+          }
         }
       }
     },
@@ -257,6 +293,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copié : collez-le maintenant"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiato: ora incollalo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiado: agora é só colar"
           }
         }
       }

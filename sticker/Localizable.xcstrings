@@ -63,6 +63,18 @@
             "state" : "translated",
             "value" : "Tous"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutti"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos"
+          }
         }
       }
     },
@@ -127,6 +139,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Détachez des autocollants dans Punching\net ils apparaîtront ici."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stacca adesivi in Punching\ne compariranno qui."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destaque adesivos no Punching\ne eles aparecerão aqui."
           }
         }
       }
@@ -193,6 +217,18 @@
             "state" : "translated",
             "value" : "Le partage d’autocollants nécessite la configuration « App Group ».\n(Vérifiez les réglages de signature de l’app et de l’extension)"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per condividere gli adesivi serve la configurazione «App Group».\n(Controlla le impostazioni di firma dell’app e dell’estensione)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para compartilhar adesivos é preciso configurar o “App Group”.\n(Confira os ajustes de assinatura do app e da extensão)"
+          }
         }
       }
     },
@@ -257,6 +293,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching Autocollants"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Adesivi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Adesivos"
           }
         }
       }

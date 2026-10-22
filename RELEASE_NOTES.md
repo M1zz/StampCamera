@@ -84,3 +84,19 @@ Envoyez les animés en mouvement.
 Décorez pages et ordre du classeur.
 Collections devenues classeurs.
 Réglages réunis au même endroit.
+
+### 앱스토어 (it)
+
+I momenti staccati diventano animati.
+Invia gli adesivi animati in movimento.
+Decora pagine e ordine di ogni album.
+Le raccolte sono diventate album.
+Impostazioni riunite in un solo posto.
+
+### 앱스토어 (pt-BR)
+
+Momentos destacados viram animados.
+Envie adesivos animados em movimento.
+Decore páginas e ordem de cada álbum.
+Coleções viraram álbuns de mesmo nome.
+Ajustes todos reunidos em um só lugar.

@@ -64,6 +64,18 @@
             "state" : "translated",
             "value" : "Punching Autocollants"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Adesivi"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Adesivos"
+          }
         }
       }
     }
