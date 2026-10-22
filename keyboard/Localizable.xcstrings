@@ -117,6 +117,12 @@
             "state" : "translated",
             "value" : "ทั้งหมด"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vše"
+          }
         }
       }
     },
@@ -235,6 +241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "หากต้องการใช้สติกเกอร์ ให้เปิด “อนุญาตการเข้าถึงทั้งหมด”\nการตั้งค่า ▸ ทั่วไป ▸ คีย์บอร์ด ▸ สติกเกอร์ Punching ▸ อนุญาตการเข้าถึงทั้งหมด"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chceš-li používat nálepky, zapni „Povolit úplný přístup“.\nNastavení ▸ Obecné ▸ Klávesnice ▸ Nálepky Punching ▸ Povolit úplný přístup"
           }
         }
       }
@@ -355,6 +367,12 @@
             "state" : "translated",
             "value" : "ฉีกสติกเกอร์ใน Punching\nแล้วจะแสดงที่นี่"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odtrhni nálepky v Punching\na objeví se tady."
+          }
         }
       }
     },
@@ -473,6 +491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "คัดลอกแล้ว — วางได้เลย"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zkopírováno — teď vlož"
           }
         }
       }

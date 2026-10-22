@@ -117,6 +117,12 @@
             "state" : "translated",
             "value" : "กล้อง Punching"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoaparát Punching"
+          }
         }
       }
     },
@@ -235,6 +241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เปิดกล้อง Punching ทันที"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hned otevře fotoaparát Punching."
           }
         }
       }

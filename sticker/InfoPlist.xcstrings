@@ -118,6 +118,12 @@
             "state" : "translated",
             "value" : "สติกเกอร์ Punching"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nálepky Punching"
+          }
         }
       }
     }

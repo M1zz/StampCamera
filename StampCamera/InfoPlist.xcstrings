@@ -118,6 +118,12 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -237,6 +243,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching ใช้กล้องเพื่อเปลี่ยนช่วงเวลาให้เป็นสติกเกอร์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching používá fotoaparát, aby měnil okamžiky v nálepky."
           }
         }
       }
@@ -358,6 +370,12 @@
             "state" : "translated",
             "value" : "ใช้เพื่อบันทึกสติกเกอร์ที่เสร็จแล้วลงในรูปภาพ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slouží k uložení hotových nálepek do Fotek."
+          }
         }
       }
     },
@@ -477,6 +495,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ใช้เพื่อบันทึกสถานที่ที่ฉีกสติกเกอร์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slouží k zaznamenání místa, kde byla nálepka odtržena."
           }
         }
       }

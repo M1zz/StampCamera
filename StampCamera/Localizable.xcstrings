@@ -117,6 +117,12 @@
             "state" : "translated",
             "value" : "ล็อกด้วย Face ID"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zámek Face ID"
+          }
         }
       }
     },
@@ -235,6 +241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ล็อกแอปด้วย Face ID เพื่อปกป้องอัลบั้มของคุณ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamkni aplikaci pomocí Face ID a ochraň svá alba."
           }
         }
       }
@@ -355,6 +367,12 @@
             "state" : "translated",
             "value" : "ใช้ VoiceOver ได้สะดวกขึ้น"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohodlněji s VoiceOverem"
+          }
         }
       }
     },
@@ -473,6 +491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เมื่อขยายตัวอักษร หน้าจอจะจัดเรียงใหม่โดยไม่ถูกตัด"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Když zvětšíš text, obrazovky se přeskupí a nic se neuřízne."
           }
         }
       }
@@ -593,6 +617,12 @@
             "state" : "translated",
             "value" : "ซิงค์ข้ามอุปกรณ์"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchronizace mezi zařízeními"
+          }
         }
       }
     },
@@ -711,6 +741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ทุกอย่างยังอ่านออก แม้เปิดเพิ่มคอนทราสต์หรือแยกสีได้ยาก"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Všechno zůstane čitelné, i když je zapnutý vyšší kontrast nebo se barvy špatně rozlišují."
           }
         }
       }
@@ -831,6 +867,12 @@
             "state" : "translated",
             "value" : "ใช้แอปได้ในอีกหลายภาษา"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Používej aplikaci v dalších jazycích."
+          }
         }
       }
     },
@@ -949,6 +991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ภาษาเพิ่มเติม"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Více jazyků"
           }
         }
       }
@@ -1069,6 +1117,12 @@
             "state" : "translated",
             "value" : "บันทึกสติกเกอร์ลงไฟล์ แล้วนำกลับมาใช้ภายหลังได้"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulož nálepky do souboru a později je obnov."
+          }
         }
       }
     },
@@ -1187,6 +1241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สีและคอนทราสต์ที่ดูง่ายขึ้น"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Příjemnější barvy a kontrast"
           }
         }
       }
@@ -1307,6 +1367,12 @@
             "state" : "translated",
             "value" : "แม้เปลี่ยนไปใช้ iPhone เครื่องใหม่ สติกเกอร์ที่สะสมไว้ก็ตามไปผ่าน iCloud"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Když přejdeš na nový iPhone, nálepky ti zůstanou přes iCloud."
+          }
         }
       }
     },
@@ -1425,6 +1491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แปะตรงไหนก็ได้ในหน้า"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lepení kamkoli na stránku"
           }
         }
       }
@@ -1545,6 +1617,12 @@
             "state" : "translated",
             "value" : "หากแอปปิดไประหว่างตกแต่งอัลบั้ม สิ่งที่ทำไว้จะยังอยู่"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Když se aplikace při zdobení alba zavře, tvoje práce zůstane."
+          }
         }
       }
     },
@@ -1663,6 +1741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สำรองและส่งออกสติกเกอร์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Záloha a export nálepek"
           }
         }
       }
@@ -1783,6 +1867,12 @@
             "state" : "translated",
             "value" : "ลบสติกเกอร์ทั้งหมดในครั้งเดียว"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat všechny nálepky najednou"
+          }
         }
       }
     },
@@ -1901,6 +1991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ใช้แอปทั้งหมดเป็นภาษาอังกฤษได้"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Používej celou aplikaci i v angličtině."
           }
         }
       }
@@ -2021,6 +2117,12 @@
             "state" : "translated",
             "value" : "เมื่อเปิดครั้งแรกหลังอัปเดต จะบอกว่ามีอะไรใหม่"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Při prvním otevření po aktualizaci se dozvíš, co je nového."
+          }
         }
       }
     },
@@ -2139,6 +2241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "มีอะไรใหม่"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co je nového"
           }
         }
       }
@@ -2259,6 +2367,12 @@
             "state" : "translated",
             "value" : "รองรับภาษาอังกฤษ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podpora angličtiny"
+          }
         }
       }
     },
@@ -2377,6 +2491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "พิมพ์ตามรูปทรงที่ตัดขอบ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tisk ve vystřiženém tvaru"
           }
         }
       }
@@ -2497,6 +2617,12 @@
             "state" : "translated",
             "value" : "ลดการเคลื่อนไหว"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omezit pohyb"
+          }
         }
       }
     },
@@ -2615,6 +2741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เมื่อเปิด “ลดการเคลื่อนไหว” เอฟเฟกต์บนหน้าจอจะนุ่มนวลขึ้น"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Když je zapnuté „Omezit pohyb“, efekty na obrazovce se zklidní."
           }
         }
       }
@@ -2735,6 +2867,12 @@
             "state" : "translated",
             "value" : "หากต้องการ คุณลบสติกเกอร์ที่สะสมทั้งหมดได้จากในแอป"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chceš-li, můžeš všechny nasbírané nálepky smazat přímo v aplikaci."
+          }
         }
       }
     },
@@ -2853,6 +2991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "บนแผ่นสติกเกอร์สำหรับพิมพ์ สติกเกอร์ตัดขอบจะมีเส้นตัดตามเส้นขอบของตัวเอง ไม่ใช่รูปแสตมป์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na archu k tisku mají vystřižené nálepky řeznou čáru podél vlastního obrysu, ne ve tvaru známky."
           }
         }
       }
@@ -2973,6 +3117,12 @@
             "state" : "translated",
             "value" : "การแจ้งเตือนจะนำสติกเกอร์ที่คุณฉีกในวันนี้เมื่อปีที่แล้วมาให้ดูอีกครั้ง"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oznámení ti ukáže nálepky, které jsi odtrhl(a) přesně před rokem."
+          }
         }
       }
     },
@@ -3091,6 +3241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สติกเกอร์ย้อนหลัง"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nálepky z minulosti"
           }
         }
       }
@@ -3211,6 +3367,12 @@
             "state" : "translated",
             "value" : "คำแนะนำสำหรับมือใหม่"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Průvodce pro začátečníky"
+          }
         }
       }
     },
@@ -3329,6 +3491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เมื่อเปิดครั้งแรก จะแสดงวิธีฉีกและใช้สติกเกอร์แบบสั้นๆ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Při prvním otevření krátce ukáže, jak nálepky odtrhávat a používat."
           }
         }
       }
@@ -3449,6 +3617,12 @@
             "state" : "translated",
             "value" : "ไม่ต้องอยู่ในช่อง แปะสติกเกอร์ตรงไหนของหน้าก็ได้ แม้แปะเอียง"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez mřížky nalepuj nálepky kamkoli na stránku, i našikmo."
+          }
         }
       }
     },
@@ -3567,6 +3741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "หน้าจอสำหรับตัวอักษรขนาดใหญ่"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obrazovky pro velké písmo"
           }
         }
       }
@@ -3687,6 +3867,12 @@
             "state" : "translated",
             "value" : "หน้าจอสำหรับ iPhone แบบพับได้"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozvržení pro skládací iPhone"
+          }
         }
       }
     },
@@ -3805,6 +3991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ใช้หน้าจอกว้างของ iPhone แบบพับได้เป็นสองส่วนเคียงกัน"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Používej široký displej skládacího iPhonu jako dva panely vedle sebe."
           }
         }
       }
@@ -3925,6 +4117,12 @@
             "state" : "translated",
             "value" : "ทำต่อจากที่ค้างไว้"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokračuj tam, kde jsi skončil(a)"
+          }
         }
       }
     },
@@ -4043,6 +4241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver อ่านทุกปุ่มและทุกสติกเกอร์ไม่ตกหล่นและเรียงลำดับถูกต้อง"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver přečte každé tlačítko i každou nálepku, nic nevynechá a ve správném pořadí."
           }
         }
       }
@@ -4163,6 +4367,12 @@
             "state" : "translated",
             "value" : "เปิดกล้อง Punching"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřít fotoaparát Punching"
+          }
         }
       }
     },
@@ -4281,6 +4491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เปิดกล้อง Punching ทันที"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hned otevře fotoaparát Punching."
           }
         }
       }
@@ -4401,6 +4617,12 @@
             "state" : "translated",
             "value" : "เปิดกล้อง"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřít fotoaparát"
+          }
         }
       }
     },
@@ -4519,6 +4741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "รูปทรงเริ่มต้น"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Výchozí tvar"
           }
         }
       }
@@ -4639,6 +4867,12 @@
             "state" : "translated",
             "value" : "สติกเกอร์ตัดขอบ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vystřižená nálepka"
+          }
         }
       }
     },
@@ -4757,6 +4991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แสตมป์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Známka"
           }
         }
       }
@@ -4877,6 +5117,12 @@
             "state" : "translated",
             "value" : "กรอบ Punching"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rámeček Punching"
+          }
         }
       }
     },
@@ -4995,6 +5241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "กรอบ %lld"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rámeček %lld"
           }
         }
       }
@@ -5115,6 +5367,12 @@
             "state" : "translated",
             "value" : "ฉีก"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odtrhnout"
+          }
         }
       }
     },
@@ -5233,6 +5491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "หากไม่มีอะไรให้ตัด ภาพจะถูกฉีกเป็นรูปแสตมป์ การเคลื่อนไหวถูกบันทึกไว้เสมอ ดังนั้นหลังฉีกแล้วคุณยังเปลี่ยนรูปทรงและการเคลื่อนไหวของสติกเกอร์แต่ละชิ้นได้"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokud není co vystřihnout, odtrhne se tvar známky. Pohyb se zachytává vždy, takže po odtržení můžeš u každé nálepky změnit tvar i pohyb."
           }
         }
       }
@@ -5353,6 +5617,12 @@
             "state" : "translated",
             "value" : "เล่นการเคลื่อนไหวอัตโนมัติ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automaticky přehrávat pohyb"
+          }
         }
       }
     },
@@ -5471,6 +5741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เอฟเฟกต์พลิกหน้า"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Efekt otáčení stránek"
           }
         }
       }
@@ -5591,6 +5867,12 @@
             "state" : "translated",
             "value" : "มุมมอง"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zobrazení"
+          }
         }
       }
     },
@@ -5709,6 +5991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เมื่อปิดการเล่นอัตโนมัติ สติกเกอร์จะแสดงเป็นภาพนิ่งทุกที่ การเคลื่อนไหวจะไม่ถูกลบ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Když je automatické přehrávání vypnuté, nálepky se všude zobrazují jako nehybné. Pohyb se nikdy nesmaže."
           }
         }
       }
@@ -5829,6 +6117,12 @@
             "state" : "translated",
             "value" : "ใช้ในข้อความและคีย์บอร์ด"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Použití ve Zprávách a na klávesnici"
+          }
         }
       }
     },
@@ -5947,6 +6241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "พิมพ์เป็นสติกเกอร์กระดาษ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tisk na papírové nálepky"
           }
         }
       }
@@ -6067,6 +6367,12 @@
             "state" : "translated",
             "value" : "ใช้งาน"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Použití"
+          }
         }
       }
     },
@@ -6185,6 +6491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ช่วยเหลือ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podpora"
           }
         }
       }
@@ -6305,6 +6617,12 @@
             "state" : "translated",
             "value" : "การตั้งค่า"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavení"
+          }
         }
       }
     },
@@ -6423,6 +6741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เสร็จสิ้น"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovo"
           }
         }
       }
@@ -6543,6 +6867,12 @@
             "state" : "translated",
             "value" : "เปิดบทสนทนาในแอปข้อความ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevři konverzaci ve Zprávách."
+          }
         }
       }
     },
@@ -6661,6 +6991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แตะปุ่ม ＋ ข้างช่องพิมพ์ แล้วเลือกสติกเกอร์ Punching จาก “สติกเกอร์”"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klepni na tlačítko ＋ vedle textového pole a v části „Nálepky“ vyber nálepku Punching."
           }
         }
       }
@@ -6781,6 +7117,12 @@
             "state" : "translated",
             "value" : "แตะค้างเพื่อแปะตรงไหนก็ได้ในบทสนทนา สติกเกอร์ที่เคลื่อนไหวจะเคลื่อนไหวขณะแปะ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podrž prst a nalep ji kamkoli do konverzace. Pohyblivé nálepky se nalepí v pohybu."
+          }
         }
       }
     },
@@ -6899,6 +7241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ข้อความ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zprávy"
           }
         }
       }
@@ -7019,6 +7367,12 @@
             "state" : "translated",
             "value" : "แต่ละอัลบั้มจะแสดงเป็นชุดสติกเกอร์แยกกัน"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Každé album se zobrazí jako samostatná sada nálepek."
+          }
         }
       }
     },
@@ -7137,6 +7491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แตะ “เปิดการตั้งค่า” ด้านล่าง ▸ คีย์บอร์ด ▸ เปิดสติกเกอร์ Punching"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klepni níže na „Otevřít Nastavení“ ▸ Klávesnice ▸ zapni Nálepky Punching."
           }
         }
       }
@@ -7257,6 +7617,12 @@
             "state" : "translated",
             "value" : "ในที่เดียวกัน ให้เปิด “อนุญาตการเข้าถึงทั้งหมด” ด้วย จำเป็นสำหรับการคัดลอกและวางสติกเกอร์"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na stejném místě zapni i „Povolit úplný přístup“. Je potřeba ke kopírování a vkládání nálepek."
+          }
         }
       }
     },
@@ -7375,6 +7741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ในแอปใดก็ได้ แตะปุ่มลูกโลกบนคีย์บอร์ดเพื่อสลับไปใช้สติกเกอร์ Punching"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V libovolné aplikaci klepni na klávesnici na glóbus a přepni na Nálepky Punching."
           }
         }
       }
@@ -7495,6 +7867,12 @@
             "state" : "translated",
             "value" : "เปิดการตั้งค่า"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřít Nastavení"
+          }
         }
       }
     },
@@ -7613,6 +7991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "คีย์บอร์ด"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klávesnice"
           }
         }
       }
@@ -7733,6 +8117,12 @@
             "state" : "translated",
             "value" : "สติกเกอร์เดินทางอยู่ภายในอุปกรณ์ของคุณเท่านั้น คีย์บอร์ดไม่อ่านและไม่ส่งสิ่งที่คุณพิมพ์"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nálepky putují jen uvnitř tvého zařízení. Klávesnice nečte ani neodesílá, co píšeš."
+          }
         }
       }
     },
@@ -7851,6 +8241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "บันทึกการเคลื่อนไหวไม่ได้"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohyb se nepodařilo zachytit"
           }
         }
       }
@@ -7971,6 +8367,12 @@
             "state" : "translated",
             "value" : "บันทึกการเคลื่อนไหวได้ไม่พอ ลองอีกครั้งไหม"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zachytil se příliš malý pohyb. Zkusit to znovu?"
+          }
         }
       }
     },
@@ -8089,6 +8491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "อัลบั้มใหม่"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nové album"
           }
         }
       }
@@ -8209,6 +8617,12 @@
             "state" : "translated",
             "value" : "ชื่ออัลบั้ม"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Název alba"
+          }
         }
       }
     },
@@ -8327,6 +8741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ยกเลิก"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrušit"
           }
         }
       }
@@ -8447,6 +8867,12 @@
             "state" : "translated",
             "value" : "สร้าง"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvořit"
+          }
         }
       }
     },
@@ -8565,6 +8991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ถ่ายใหม่"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Natočit znovu"
           }
         }
       }
@@ -8685,6 +9117,12 @@
             "state" : "translated",
             "value" : "เก็บไว้ตามเดิม"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nechat"
+          }
         }
       }
     },
@@ -8803,6 +9241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "อัลบั้มใหม่…"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nové album…"
           }
         }
       }
@@ -8923,6 +9367,12 @@
             "state" : "translated",
             "value" : "ไม่มีอะไรให้ตัด จึงฉีกเป็นรูปแสตมป์"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nebylo co vystřihnout, proto se odtrhla známka"
+          }
         }
       }
     },
@@ -9041,6 +9491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching ต้องใช้กล้องเพื่อเปลี่ยนช่วงเวลาให้เป็นสติกเกอร์\nโปรดเปิดกล้องในการตั้งค่า"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching potřebuje přístup k fotoaparátu, aby mohl měnit okamžiky v nálepky.\nZapni fotoaparát v Nastavení."
           }
         }
       }
@@ -9161,6 +9617,12 @@
             "state" : "translated",
             "value" : "อัลบั้ม"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alba"
+          }
         }
       }
     },
@@ -9279,6 +9741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "กล้อง"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoaparát"
           }
         }
       }
@@ -9399,6 +9867,12 @@
             "state" : "translated",
             "value" : "นำเข้าจากรูปภาพ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importovat z Fotek"
+          }
         }
       }
     },
@@ -9517,6 +9991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "กำลังสะสม"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sbírá se"
           }
         }
       }
@@ -9637,6 +10117,12 @@
             "state" : "translated",
             "value" : "%lld ชิ้น"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
         }
       }
     },
@@ -9755,6 +10241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ทั้งหมด"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vše"
           }
         }
       }
@@ -9875,6 +10367,12 @@
             "state" : "translated",
             "value" : "เคลื่อนไหว"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohyblivé"
+          }
         }
       }
     },
@@ -9993,6 +10491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ตัดขอบ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vystřižené"
           }
         }
       }
@@ -10113,6 +10617,12 @@
             "state" : "translated",
             "value" : "ยังไม่มีสติกเกอร์ “%@”"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatím tu nejsou žádné nálepky „%@“"
+          }
         }
       }
     },
@@ -10231,6 +10741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เลือก"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrat"
           }
         }
       }
@@ -10351,6 +10867,12 @@
             "state" : "translated",
             "value" : "ดูทั้งหมด"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zobrazit vše"
+          }
         }
       }
     },
@@ -10469,6 +10991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ลบสติกเกอร์ที่เลือก %lld ชิ้นไหม"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat %lld vybraných nálepek?"
           }
         }
       }
@@ -10589,6 +11117,12 @@
             "state" : "translated",
             "value" : "ลบ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat"
+          }
         }
       }
     },
@@ -10707,6 +11241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เปลี่ยนชื่อ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přejmenovat"
           }
         }
       }
@@ -10827,6 +11367,12 @@
             "state" : "translated",
             "value" : "บันทึก"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uložit"
+          }
         }
       }
     },
@@ -10945,6 +11491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ลบอัลบั้ม “%@” และสติกเกอร์ %lld ชิ้นในอัลบั้มไหม"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat album „%@“ a %lld nálepek v něm?"
           }
         }
       }
@@ -11065,6 +11617,12 @@
             "state" : "translated",
             "value" : "ลบสติกเกอร์นี้ไหม"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat tuto nálepku?"
+          }
         }
       }
     },
@@ -11183,6 +11741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "กำลังสร้างแผ่นสติกเกอร์…"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytváří se arch nálepek…"
           }
         }
       }
@@ -11303,6 +11867,12 @@
             "state" : "translated",
             "value" : "สะสมที่นี่"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sbírat sem"
+          }
         }
       }
     },
@@ -11421,6 +11991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "กำลังสะสมที่นี่"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sbírá se sem"
           }
         }
       }
@@ -11541,6 +12117,12 @@
             "state" : "translated",
             "value" : "ตกแต่งอิสระ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libovolně ozdobit"
+          }
         }
       }
     },
@@ -11659,6 +12241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แชร์เป็นรูปภาพ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sdílet jako obrázek"
           }
         }
       }
@@ -11779,6 +12367,12 @@
             "state" : "translated",
             "value" : "แผ่นสติกเกอร์สำหรับพิมพ์ (PDF)"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arch nálepek k vytištění (PDF)"
+          }
         }
       }
     },
@@ -11897,6 +12491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "คู่มือการพิมพ์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Průvodce tiskem"
           }
         }
       }
@@ -12017,6 +12617,12 @@
             "state" : "translated",
             "value" : "ลบอัลบั้ม"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat album"
+          }
         }
       }
     },
@@ -12135,6 +12741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ยกเลิกการเลือกทั้งหมด"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrušit výběr"
           }
         }
       }
@@ -12255,6 +12867,12 @@
             "state" : "translated",
             "value" : "เลือกทั้งหมด"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrat vše"
+          }
         }
       }
     },
@@ -12373,6 +12991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เลือกสติกเกอร์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyber nálepky"
           }
         }
       }
@@ -12493,6 +13117,12 @@
             "state" : "translated",
             "value" : "เลือกแล้ว %lld"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybráno: %lld"
+          }
         }
       }
     },
@@ -12611,6 +13241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ย้าย"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přesunout"
           }
         }
       }
@@ -12731,6 +13367,12 @@
             "state" : "translated",
             "value" : "พื้นหลัง “%@”"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozadí „%@“"
+          }
         }
       }
     },
@@ -12849,6 +13491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แตะค้างที่สติกเกอร์เพื่อย้ายไปตำแหน่งที่ต้องการ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podrž nálepku a přesuň ji, kam chceš"
           }
         }
       }
@@ -12969,6 +13617,12 @@
             "state" : "translated",
             "value" : "ตามลำดับที่ถ่าย"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podle pořadí pořízení"
+          }
         }
       }
     },
@@ -13087,6 +13741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "คัดลอก"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopírovat"
           }
         }
       }
@@ -13207,6 +13867,12 @@
             "state" : "translated",
             "value" : "ส่ง"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odeslat"
+          }
         }
       }
     },
@@ -13325,6 +13991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ไปอัลบั้มอื่น"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do jiného alba"
           }
         }
       }
@@ -13445,6 +14117,12 @@
             "state" : "translated",
             "value" : "อัลบั้มสติกเกอร์ของฉัน “%@” #Punching"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moje album nálepek „%@“ #Punching"
+          }
         }
       }
     },
@@ -13563,6 +14241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "อัลบั้มนี้ยังว่างอยู่"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toto album je zatím prázdné"
           }
         }
       }
@@ -13683,6 +14367,12 @@
             "state" : "translated",
             "value" : "กำลังสะสมที่นี่ — ฉีกสติกเกอร์ด้วยกล้องเพื่อเติมให้เต็ม"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sbírá se sem — odtrhávej nálepky fotoaparátem a naplň ho"
+          }
         }
       }
     },
@@ -13801,6 +14491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "รูปทรง"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tvar"
           }
         }
       }
@@ -13921,6 +14617,12 @@
             "state" : "translated",
             "value" : "ตัดขอบ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vystřižená"
+          }
         }
       }
     },
@@ -14039,6 +14741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แสตมป์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Známka"
           }
         }
       }
@@ -14159,6 +14867,12 @@
             "state" : "translated",
             "value" : "การเคลื่อนไหว"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohyb"
+          }
         }
       }
     },
@@ -14277,6 +14991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "นิ่ง"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nehybná"
           }
         }
       }
@@ -14397,6 +15117,12 @@
             "state" : "translated",
             "value" : "ครีมเรียบ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hladká krémová"
+          }
         }
       }
     },
@@ -14515,6 +15241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ตาราง"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čtverečkovaná"
           }
         }
       }
@@ -14635,6 +15367,12 @@
             "state" : "translated",
             "value" : "เส้นบรรทัด"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linkovaná"
+          }
         }
       }
     },
@@ -14753,6 +15491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "จุด"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tečkovaná"
           }
         }
       }
@@ -14873,6 +15617,12 @@
             "state" : "translated",
             "value" : "คราฟต์"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
         }
       }
     },
@@ -14991,6 +15741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "กระดาษหนังแกะ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergamen"
           }
         }
       }
@@ -15111,6 +15867,12 @@
             "state" : "translated",
             "value" : "คอร์เนลล์"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
         }
       }
     },
@@ -15229,6 +15991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "กราฟ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Milimetrový papír"
           }
         }
       }
@@ -15349,6 +16117,12 @@
             "state" : "translated",
             "value" : "มินต์"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mátová"
+          }
         }
       }
     },
@@ -15467,6 +16241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ตารางสีเข้ม"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tmavá mřížka"
           }
         }
       }
@@ -15587,6 +16367,12 @@
             "state" : "translated",
             "value" : "ในกล้อง แตะค้างที่เครื่องเจาะแล้วปล่อย แชะ! ภาพที่เห็นในช่องจะถูกฉีกออกมาเป็นสติกเกอร์ตามเดิม"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podrž ve fotoaparátu dírkovač a pusť. Cvak! Co bylo vidět v okénku, se odtrhne tak, jak to je, jako nálepka."
+          }
         }
       }
     },
@@ -15705,6 +16491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เลือกโทนภาพ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyber styl"
           }
         }
       }
@@ -15825,6 +16617,12 @@
             "state" : "translated",
             "value" : "เขียนข้อความสั้นๆ บนการ์ดสติกเกอร์ที่เพิ่งออกมา แล้วเลือกโทนภาพอย่างซีเปียหรือขาวดำจาก “เพิ่มเติม” เปลี่ยนโทนภาพได้ทุกเมื่อโดยคุณภาพไม่ลดลง"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napiš pár slov na kartu čerstvé nálepky a v části „Více“ přidej styl, třeba sépii nebo černobílý. Styl můžeš kdykoli změnit, aniž by se zhoršila kvalita."
+          }
         }
       }
     },
@@ -15943,6 +16741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สะสมลงอัลบั้ม"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sbírej do alba"
           }
         }
       }
@@ -16063,6 +16867,12 @@
             "state" : "translated",
             "value" : "แผ่นสติกเกอร์สร้างเป็นรายอัลบั้ม รวบรวมสติกเกอร์ที่อยากพิมพ์ไว้ในอัลบั้มเดียว แล้วแตะ “เลือก” ตามด้วย “ย้าย” ในอัลบั้มเพื่อย้ายทีละหลายชิ้น"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archy nálepek se vytvářejí po albech. Nálepky, které chceš tisknout, sesbírej do jednoho alba: v albu klepni na „Vybrat“ a pak na „Přesunout“, abys jich přesunul(a) víc najednou."
+          }
         }
       }
     },
@@ -16181,6 +16991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สร้างแผ่นสำหรับพิมพ์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvoř arch k tisku"
           }
         }
       }
@@ -16301,6 +17117,12 @@
             "state" : "translated",
             "value" : "เมนู ⋯ มุมขวาบนของอัลบั้ม ▸ “ใช้งาน” ▸ “แผ่นสติกเกอร์สำหรับพิมพ์ (PDF)” คุณจะได้ PDF ความละเอียด 300 dpi ที่ส่งให้โรงพิมพ์ได้เลย เก็บไว้ด้วย “บันทึกลงในไฟล์” หรือส่งผ่าน AirDrop หรืออีเมล"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V nabídce ⋯ vpravo nahoře v albu ▸ „Použití“ ▸ „Arch nálepek k vytištění (PDF)“. Dostaneš PDF o rozlišení 300 dpi, které můžeš rovnou předat tiskárně. Ulož ho přes „Uložit do Souborů“ nebo pošli přes AirDrop či e-mailem."
+          }
         }
       }
     },
@@ -16419,6 +17241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "พิมพ์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tisk"
           }
         }
       }
@@ -16539,6 +17367,12 @@
             "state" : "translated",
             "value" : "ที่บ้าน: พิมพ์ลงกระดาษสติกเกอร์หรือกระดาษฉลาก A4 หรือ Letter (แนะนำแบบด้าน) ที่ “ขนาดจริง (100%)” และต้องปิด “พอดีกับหน้ากระดาษ” เสมอ\nโรงพิมพ์หรือร้านทำสติกเกอร์: ส่งไฟล์ PDF ไปได้เลย เส้นประสีแมเจนตาคือเส้นไดคัตครึ่งชั้น (kiss-cut) และเครื่องหมายมุมคือแนวตัดขอบ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doma: tiskni na etiketový nebo nálepkový papír A4 či Letter (nejlépe matný) ve „Skutečné velikosti (100 %)“; „Přizpůsobit stránce“ vždy vypni.\nV tiskárně nebo u výrobce nálepek: stačí předat PDF. Purpurová čárkovaná čára je čára poloviční řezu (kiss-cut) a značky v rozích jsou ořezové značky."
+          }
         }
       }
     },
@@ -16657,6 +17491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ตัดแล้วแปะ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vystřihni a nalep"
           }
         }
       }
@@ -16777,6 +17617,12 @@
             "state" : "translated",
             "value" : "ตัดตามเส้นประด้วยกรรไกรหรือเครื่องตัดก็เสร็จแล้ว! แปะบนซองจดหมาย สมุดแพลนเนอร์ แล็ปท็อป… แปะได้ทุกที่"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vystřihni podél tečkované čáry nůžkami nebo řezacím plotrem a je hotovo! Nalep na obálky, diáře, notebooky… kamkoli."
+          }
         }
       }
     },
@@ -16895,6 +17741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "📮 จากช่วงเวลาที่ฉีก สู่สติกเกอร์ในมือคุณ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Od odtrženého okamžiku k nálepce v ruce"
           }
         }
       }
@@ -17015,6 +17867,12 @@
             "state" : "translated",
             "value" : "หกขั้นตอนเปลี่ยนสติกเกอร์ในมือถือให้เป็นสติกเกอร์บนโต๊ะ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Šest kroků promění nálepku v telefonu v nálepku na stole."
+          }
         }
       }
     },
@@ -17133,6 +17991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ควรรู้"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dobré vědět"
           }
         }
       }
@@ -17253,6 +18117,12 @@
             "state" : "translated",
             "value" : "• แผ่นสำหรับพิมพ์เป็นรูปแสตมป์เสมอ เส้นตัดคงขอบฟันปลาไว้ ดังนั้นสติกเกอร์ที่แกะออกมาจึงดูเหมือนแสตมป์จริง (ประมาณ 5 ซม. หน้าละ 12 ชิ้น)"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Archy k tisku mají vždy tvar známky. Řezné čáry si zachovávají zoubkovaný okraj, takže odlepené nálepky vypadají jako opravdové známky (asi 5 cm, 12 na stránku)."
+          }
         }
       }
     },
@@ -17371,6 +18241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• สติกเกอร์ที่เก็บภาพต้นฉบับไว้จะถูกวาดใหม่ที่ 300 dpi ตอนพิมพ์ จึงคมชัด"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Nálepky, které si uchovávají původní fotku, se při tisku znovu vykreslí ve 300 dpi, takže jsou ostré."
           }
         }
       }
@@ -17491,6 +18367,12 @@
             "state" : "translated",
             "value" : "• ดิจิทัลก็ได้: สติกเกอร์ทุกชิ้นกลายเป็นสติกเกอร์ในข้อความโดยอัตโนมัติ แปะได้ทันทีจากลิ้นชักสติกเกอร์ในข้อความ และสติกเกอร์ที่เคลื่อนไหวจะเคลื่อนไหวขณะแปะ"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• I digitálně: každá nálepka se automaticky stane nálepkou do Zpráv. Nalep ji přímo ze šuplíku nálepek ve Zprávách; pohyblivé se nalepí v pohybu."
+          }
         }
       }
     },
@@ -17609,6 +18491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• นี่ไม่ใช่แสตมป์ไปรษณีย์จริง ตกแต่งจดหมายได้เต็มที่ แต่ที่ติดแสตมป์ขอเว้นไว้ให้แสตมป์จริง!"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Nejsou to opravdové poštovní známky — ozdobuj dopisy, jak chceš, ale místo pro známku nech té opravdové!"
           }
         }
       }
@@ -17729,6 +18617,12 @@
             "state" : "translated",
             "value" : "สติกเกอร์มาถึงแล้ว!"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tvoje nálepka dorazila!"
+          }
         }
       }
     },
@@ -17847,6 +18741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ลองหมุนสติกเกอร์ดู"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roztoč nálepku"
           }
         }
       }
@@ -17967,6 +18867,12 @@
             "state" : "translated",
             "value" : "เขียนสั้นๆ เกี่ยวกับช่วงเวลานี้…"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pár slov o tomto okamžiku…"
+          }
         }
       }
     },
@@ -18085,6 +18991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เพิ่มลงอัลบั้ม"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přidat do alba"
           }
         }
       }
@@ -18205,6 +19117,12 @@
             "state" : "translated",
             "value" : "ทิ้ง"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zahodit"
+          }
         }
       }
     },
@@ -18323,6 +19241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เพิ่มเติม"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Více"
           }
         }
       }
@@ -18443,6 +19367,12 @@
             "state" : "translated",
             "value" : "ภาพเต็ม"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Celá fotka"
+          }
         }
       }
     },
@@ -18561,6 +19491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "เฉพาะแสตมป์"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jen známka"
           }
         }
       }
@@ -18681,6 +19617,12 @@
             "state" : "translated",
             "value" : "แก้ไข"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upravit"
+          }
         }
       }
     },
@@ -18799,6 +19741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "คัดลอกแล้ว!"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zkopírováno!"
           }
         }
       }
@@ -18919,6 +19867,12 @@
             "state" : "translated",
             "value" : "แชร์"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sdílet"
+          }
         }
       }
     },
@@ -19037,6 +19991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แสตมป์เคลื่อนไหว"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohyblivá známka"
           }
         }
       }
@@ -19157,6 +20117,12 @@
             "state" : "translated",
             "value" : "สติกเกอร์ตัดขอบเคลื่อนไหว"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohyblivá vystřižená nálepka"
+          }
         }
       }
     },
@@ -19275,6 +20241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ต้นฉบับ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Originál"
           }
         }
       }
@@ -19395,6 +20367,12 @@
             "state" : "translated",
             "value" : "ซีเปีย"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sépie"
+          }
         }
       }
     },
@@ -19513,6 +20491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ขาวดำ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Černobílý"
           }
         }
       }
@@ -19633,6 +20617,12 @@
             "state" : "translated",
             "value" : "ซีดจาง"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybledlý"
+          }
         }
       }
     },
@@ -19751,6 +20741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สดใส"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sytý"
           }
         }
       }
@@ -19871,6 +20867,12 @@
             "state" : "translated",
             "value" : "ฟ้าอมเขียว"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azurový"
+          }
         }
       }
     },
@@ -19989,6 +20991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "แตะค้างเพื่อดูภาพเต็ม"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podrž pro zobrazení celé fotky"
           }
         }
       }
@@ -20109,6 +21117,12 @@
             "state" : "translated",
             "value" : "นี่คือช่วงเวลาอะไร"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co je to za okamžik?"
+          }
         }
       }
     },
@@ -20228,6 +21242,12 @@
             "state" : "translated",
             "value" : "ลบสติกเกอร์นี้"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat tuto nálepku"
+          }
         }
       }
     },
@@ -20346,6 +21366,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "โทนภาพ"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Styl"
           }
         }
       }

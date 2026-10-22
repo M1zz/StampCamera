@@ -117,6 +117,12 @@
             "state" : "translated",
             "value" : "ทั้งหมด"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vše"
+          }
         }
       }
     },
@@ -235,6 +241,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ฉีกสติกเกอร์ใน Punching\nแล้วจะแสดงที่นี่"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odtrhni nálepky v Punching\na objeví se tady."
           }
         }
       }
@@ -355,6 +367,12 @@
             "state" : "translated",
             "value" : "การแชร์สติกเกอร์ต้องตั้งค่า “App Group”\n(ตรวจสอบการตั้งค่าการลงนามของแอปและส่วนขยาย)"
           }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sdílení nálepek vyžaduje nastavení „App Group“.\n(Zkontroluj nastavení podepisování aplikace a rozšíření)"
+          }
         }
       }
     },
@@ -473,6 +491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "สติกเกอร์ Punching"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nálepky Punching"
           }
         }
       }

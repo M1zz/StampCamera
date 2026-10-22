@@ -1177,3 +1177,65 @@ Punching คือแอปกล้องที่ฉีกสิ่งที�
 เปลี่ยนรูปที่ถ่ายไว้ก่อนหน้าให้เป็นสติกเกอร์แล้วเพิ่มลงอัลบั้ม
 
 สติกเกอร์และรูปภาพทั้งหมดถูกเก็บไว้ในอุปกรณ์ของคุณเท่านั้น
+
+## cs
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/cs/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/cs/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/cs/
+
+### 이름
+
+Punching: pohyblivé nálepky
+
+### 부제
+
+Podrž a odtrhni okamžik
+
+### 키워드
+
+vystřižení,gif,známka,scrapbook,deník,koláž,vintage,retro,polaroid,pohlednice,pozadí,zprávy
+
+### 프로모션 텍스트
+
+Podrž a odtržený okamžik se promění v pohyblivou nálepku. Vystřihni jen objekt nebo odtrhni zoubkovanou známku a pošli ji ze Zpráv nebo z klávesnice.
+
+### 설명
+
+Okamžik, který podržíš, se promění v pohyblivou nálepku.
+Punching je aplikace fotoaparátu, která odtrhne jako nálepku vše, co vidíš v objektivu.
+
+Zaměř scénu v okénku dírkovače uprostřed obrazovky a podrž. Dostaneš nálepku, která obsahuje i krátký pohyb těsně před stisknutím a po něm. Pokud je co vystřihnout, například člověka, mazlíčka nebo předmět, vystřihne se jen to; pokud ne, třeba u krajiny, odtrhne se jako známka se zoubkovaným okrajem.
+
+Co všechno můžeš dělat
+
+Posílej ze Zpráv a z klávesnice
+Odtržené nálepky se objeví v šuplíku nálepek ve Zprávách a po zapnutí klávesnice Punching je můžeš vybírat a vkládat i v jiných aplikacích. Pohyblivé nálepky se odesílají v pohybu.
+
+Kopíruj a posílej jedním klepnutím
+Klepni na Odeslat hned po odtržení, nebo podrž nálepku, zkopíruj ji a vlož kamkoli.
+
+Tvar i pohyb můžeš kdykoli změnit
+I po odtržení můžeš přepínat mezi vystřiženým tvarem a známkou i mezi pohybem a nehybnou nálepkou. Původní fotka zůstane beze změny.
+
+Styl a pár slov
+Vyber styl: Originál, Sépie, Černobílý, Vybledlý, Sytý nebo Azurový, a ke každé nálepce přidej krátkou poznámku. Uloží se i datum a místo odtržení.
+
+Album pro každé téma
+Vytvářej alba podle témat a vybírej nálepky album po albu ve Zprávách i na klávesnici. Vybírej stránky jako kraft, čtverečkovaný, linkovaný nebo pergamen a pořadí uspořádej, jak chceš.
+
+Tiskni opravdové nálepky
+Proměň album v PDF k tisku s řeznými čárami ve tvaru známky a vytiskni ho rovnou na nálepkový papír.
+
+Import z Fotek
+Změň dřív pořízené fotky v nálepky a přidej je do alba.
+
+Všechny nálepky a fotky se ukládají jen do tvého zařízení.

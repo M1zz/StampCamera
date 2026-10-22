@@ -156,3 +156,11 @@ Asetukset ovat nyt yhdessä paikassa.
 ตกแต่งหน้ากระดาษและลำดับในอัลบั้มได้
 คอลเลกชันย้ายไปอัลบั้มชื่อเดียวกันแล้ว
 การตั้งค่ารวมไว้ในที่เดียว หาง่ายขึ้น
+
+### 앱스토어 (cs)
+
+Odtržené okamžiky se pohybují.
+Posílej pohyblivé nálepky v pohybu.
+Ozdob stránky i pořadí v albech.
+Kolekce se přesunuly do alb.
+Nastavení je teď na jednom místě.
