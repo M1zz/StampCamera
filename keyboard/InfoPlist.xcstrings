@@ -52,6 +52,18 @@
             "state" : "translated",
             "value" : "Punching Stickers"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Sticker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Autocollants"
+          }
         }
       }
     }

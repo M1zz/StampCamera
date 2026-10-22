@@ -52,6 +52,18 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -105,6 +117,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching usa la cámara para convertir momentos en stickers."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching nutzt die Kamera, um Momente in Sticker zu verwandeln."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching utilise l’appareil photo pour transformer vos instants en autocollants."
           }
         }
       }
@@ -160,6 +184,18 @@
             "state" : "translated",
             "value" : "Se usa para guardar los stickers terminados en Fotos."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird verwendet, um fertige Sticker in Fotos zu sichern."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sert à enregistrer les autocollants terminés dans Photos."
+          }
         }
       }
     },
@@ -213,6 +249,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se usa para registrar dónde se arrancó un sticker."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird verwendet, um zu notieren, wo ein Sticker abgetrennt wurde."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sert à noter l’endroit où un autocollant a été détaché."
           }
         }
       }

@@ -51,6 +51,18 @@
             "state" : "translated",
             "value" : "Cámara de Punching"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-Kamera"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appareil photo Punching"
+          }
         }
       }
     },
@@ -103,6 +115,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abre la cámara de Punching al instante."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffnet die Punching-Kamera sofort."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre tout de suite l’appareil photo de Punching."
           }
         }
       }

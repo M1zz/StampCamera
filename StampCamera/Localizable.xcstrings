@@ -51,6 +51,18 @@
             "state" : "translated",
             "value" : "Bloqueo con Face ID"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face-ID-Sperre"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verrouillage Face ID"
+          }
         }
       }
     },
@@ -103,6 +115,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bloquea la app con Face ID para proteger tus álbumes."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sperre die App mit Face ID, um deine Sammlungen zu schützen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verrouillez l’app avec Face ID pour protéger vos classeurs."
           }
         }
       }
@@ -157,6 +181,18 @@
             "state" : "translated",
             "value" : "Más cómodo con VoiceOver"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bessere Nutzung mit VoiceOver"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus pratique avec VoiceOver"
+          }
         }
       }
     },
@@ -209,6 +245,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Al agrandar el texto, las pantallas se reorganizan sin cortarse y se ven bien."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bei größerer Schrift werden die Bildschirme neu angeordnet, nichts wird abgeschnitten."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand vous agrandissez le texte, les écrans se réorganisent sans être coupés."
           }
         }
       }
@@ -263,6 +311,18 @@
             "state" : "translated",
             "value" : "Sincronización entre dispositivos"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync zwischen Geräten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchronisation entre appareils"
+          }
         }
       }
     },
@@ -315,6 +375,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Todo se lee bien, incluso con «Aumentar contraste» o si cuesta distinguir los colores."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles bleibt lesbar, auch bei erhöhtem Kontrast oder wenn Farben schwer zu unterscheiden sind."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout reste lisible, même avec « Augmenter le contraste » ou si les couleurs sont difficiles à distinguer."
           }
         }
       }
@@ -369,6 +441,18 @@
             "state" : "translated",
             "value" : "Usa la app en más idiomas."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutze die App in noch mehr Sprachen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisez l’app dans davantage de langues."
+          }
         }
       }
     },
@@ -421,6 +505,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Más idiomas"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr Sprachen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus de langues"
           }
         }
       }
@@ -475,6 +571,18 @@
             "state" : "translated",
             "value" : "Guarda tus stickers en un archivo y recupéralos cuando quieras."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichere deine Sticker in einer Datei und hole sie später zurück."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrez vos autocollants dans un fichier et récupérez-les plus tard."
+          }
         }
       }
     },
@@ -527,6 +635,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colores y contraste más cómodos"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bessere Farben und Kontraste"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleurs et contraste plus lisibles"
           }
         }
       }
@@ -581,6 +701,18 @@
             "state" : "translated",
             "value" : "Si cambias de iPhone, tus stickers pasan contigo a través de iCloud."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wechselst du zu einem neuen iPhone, bleiben deine Sticker über iCloud erhalten."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si vous changez d’iPhone, vos autocollants vous suivent grâce à iCloud."
+          }
         }
       }
     },
@@ -633,6 +765,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pega donde quieras en la página"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frei auf der Seite platzieren"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coller librement sur la page"
           }
         }
       }
@@ -687,6 +831,18 @@
             "state" : "translated",
             "value" : "Si la app se cierra mientras decoras un álbum, lo que llevabas sigue ahí."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schließt sich die App beim Gestalten einer Sammlung, bleibt dein Stand erhalten."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si l’app se ferme pendant que vous décorez un classeur, votre travail est conservé."
+          }
         }
       }
     },
@@ -739,6 +895,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copia de seguridad y exportación de stickers"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker sichern und exportieren"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sauvegarde et export des autocollants"
           }
         }
       }
@@ -793,6 +961,18 @@
             "state" : "translated",
             "value" : "Borrar todos los stickers a la vez"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Sticker auf einmal löschen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer tous les autocollants d’un coup"
+          }
         }
       }
     },
@@ -845,6 +1025,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usa toda la app en inglés."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutze die ganze App auch auf Englisch."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisez toute l’app en anglais."
           }
         }
       }
@@ -899,6 +1091,18 @@
             "state" : "translated",
             "value" : "La primera vez que abres la app tras una actualización, te cuenta qué hay de nuevo."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim ersten Öffnen nach einem Update siehst du, was neu ist."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À la première ouverture après une mise à jour, découvrez ce qui est nouveau."
+          }
         }
       }
     },
@@ -951,6 +1155,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Novedades"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuigkeiten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveautés"
           }
         }
       }
@@ -1005,6 +1221,18 @@
             "state" : "translated",
             "value" : "Compatible con inglés"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstützung für Englisch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prise en charge de l’anglais"
+          }
         }
       }
     },
@@ -1057,6 +1285,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imprimir con la forma recortada"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drucken in ausgeschnittener Form"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impression selon la forme détourée"
           }
         }
       }
@@ -1111,6 +1351,18 @@
             "state" : "translated",
             "value" : "Reducir movimiento"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegung reduzieren"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réduire les animations"
+          }
         }
       }
     },
@@ -1163,6 +1415,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Con «Reducir movimiento» activado, los efectos de pantalla se calman."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit „Bewegung reduzieren“ werden Bildschirmeffekte ruhiger."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avec « Réduire les animations » activé, les effets d’écran se font plus discrets."
           }
         }
       }
@@ -1217,6 +1481,18 @@
             "state" : "translated",
             "value" : "Si quieres, puedes borrar todos tus stickers desde la app."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf Wunsch kannst du alle gesammelten Sticker direkt in der App löschen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si vous le souhaitez, effacez tous vos autocollants depuis l’app."
+          }
         }
       }
     },
@@ -1269,6 +1545,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En la hoja de stickers para imprimir, los stickers recortados llevan una línea de corte que sigue su propio contorno, no la forma de sello."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf dem Druckbogen bekommen ausgeschnittene Sticker eine Schnittlinie entlang ihrer eigenen Kontur statt in Briefmarkenform."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sur la planche à imprimer, les autocollants détourés ont une ligne de découpe qui suit leur propre contour, et non la forme de timbre."
           }
         }
       }
@@ -1323,6 +1611,18 @@
             "state" : "translated",
             "value" : "Recibe una notificación con los stickers que arrancaste un día como hoy el año pasado."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine Mitteilung zeigt dir die Sticker, die du vor einem Jahr an diesem Tag abgetrennt hast."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une notification vous montre les autocollants détachés il y a un an jour pour jour."
+          }
         }
       }
     },
@@ -1375,6 +1675,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aviso de stickers de otros años"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker-Rückblick"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Souvenirs d’autocollants"
           }
         }
       }
@@ -1429,6 +1741,18 @@
             "state" : "translated",
             "value" : "Guía para quien empieza"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurze Einführung für Neue"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guide pour les débutants"
+          }
         }
       }
     },
@@ -1481,6 +1805,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La primera vez que abres la app, te enseña brevemente a arrancar y usar stickers."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim ersten Öffnen zeigt eine kurze Einführung, wie man Sticker abtrennt und verwendet."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À la première ouverture, un court guide montre comment détacher et utiliser les autocollants."
           }
         }
       }
@@ -1535,6 +1871,18 @@
             "state" : "translated",
             "value" : "Sin ajustarte a una cuadrícula, pega los stickers donde quieras de la página, incluso en diagonal."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statt in ein Raster klebst du Sticker an beliebiger Stelle und auch schräg auf die Seite."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sans grille, collez les autocollants où vous voulez sur la page, même de travers."
+          }
         }
       }
     },
@@ -1587,6 +1935,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pantallas para texto grande"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildschirme für große Schrift"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écrans pour grands textes"
           }
         }
       }
@@ -1641,6 +2001,18 @@
             "state" : "translated",
             "value" : "Pantalla para iPhone plegable"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ansicht für faltbares iPhone"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affichage pour iPhone pliable"
+          }
         }
       }
     },
@@ -1693,6 +2065,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usa la pantalla ancha de un iPhone plegable dividida en dos paneles."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutze den breiten Bildschirm eines faltbaren iPhone in zwei Bereichen nebeneinander."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisez le grand écran d’un iPhone pliable en deux volets côte à côte."
           }
         }
       }
@@ -1747,6 +2131,18 @@
             "state" : "translated",
             "value" : "Retoma donde lo dejaste"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dort weitermachen, wo du aufgehört hast"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reprendre là où vous en étiez"
+          }
         }
       }
     },
@@ -1799,6 +2195,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver lee todos los botones y stickers, sin saltarse ninguno y en el orden correcto."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver liest jede Taste und jeden Sticker vollständig und in der richtigen Reihenfolge vor."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver lit chaque bouton et chaque autocollant, sans en oublier et dans le bon ordre."
           }
         }
       }
@@ -1853,6 +2261,18 @@
             "state" : "translated",
             "value" : "Abrir la cámara de Punching"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-Kamera öffnen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir l’appareil photo Punching"
+          }
         }
       }
     },
@@ -1905,6 +2325,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abre la cámara de Punching al instante."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffnet die Punching-Kamera sofort."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre tout de suite l’appareil photo de Punching."
           }
         }
       }
@@ -1959,6 +2391,18 @@
             "state" : "translated",
             "value" : "Abrir cámara"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera öffnen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir l’appareil photo"
+          }
         }
       }
     },
@@ -2011,6 +2455,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Forma predeterminada"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standardform"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forme par défaut"
           }
         }
       }
@@ -2065,6 +2521,18 @@
             "state" : "translated",
             "value" : "Sticker recortado"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgeschnittener Sticker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autocollant détouré"
+          }
         }
       }
     },
@@ -2117,6 +2585,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sello"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Briefmarke"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timbre"
           }
         }
       }
@@ -2171,6 +2651,18 @@
             "state" : "translated",
             "value" : "Marco de Punching"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-Rahmen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cadre Punching"
+          }
         }
       }
     },
@@ -2223,6 +2715,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Marco %lld"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rahmen %lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cadre %lld"
           }
         }
       }
@@ -2277,6 +2781,18 @@
             "state" : "translated",
             "value" : "Arrancar"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abtrennen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détachage"
+          }
         }
       }
     },
@@ -2329,6 +2845,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si no hay nada que recortar, se arranca con forma de sello. El movimiento siempre se captura, así que después puedes cambiar la forma y el movimiento de cada sticker."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gibt es nichts auszuschneiden, wird als Briefmarke abgetrennt. Die Bewegung wird immer mit aufgenommen, daher kannst du Form und Bewegung jedes Stickers danach noch ändern."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si rien n’est à détourer, l’image est détachée en forme de timbre. Le mouvement est toujours enregistré : après le détachage, vous pouvez changer la forme et le mouvement de chaque autocollant."
           }
         }
       }
@@ -2383,6 +2911,18 @@
             "state" : "translated",
             "value" : "Reproducir movimiento automáticamente"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegung automatisch abspielen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecture auto du mouvement"
+          }
         }
       }
     },
@@ -2435,6 +2975,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Efecto de pasar página"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blättereffekt"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effet de page tournée"
           }
         }
       }
@@ -2489,6 +3041,18 @@
             "state" : "translated",
             "value" : "Vista"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ansicht"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affichage"
+          }
         }
       }
     },
@@ -2541,6 +3105,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si desactivas la reproducción automática, los stickers se muestran fijos en todas partes. El movimiento nunca se borra."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ist die automatische Wiedergabe aus, werden Sticker überall als Standbild gezeigt. Die Bewegung geht dabei nie verloren."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si la lecture auto est désactivée, les autocollants s’affichent partout en image fixe. Le mouvement n’est jamais effacé."
           }
         }
       }
@@ -2595,6 +3171,18 @@
             "state" : "translated",
             "value" : "Usar en Mensajes y el teclado"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Nachrichten und Tastatur verwenden"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser dans Messages et le clavier"
+          }
         }
       }
     },
@@ -2647,6 +3235,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imprimir en stickers de papel"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf Papierstickern drucken"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimer sur des autocollants papier"
           }
         }
       }
@@ -2701,6 +3301,18 @@
             "state" : "translated",
             "value" : "Usar"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisation"
+          }
         }
       }
     },
@@ -2753,6 +3365,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Soporte"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assistance"
           }
         }
       }
@@ -2807,6 +3431,18 @@
             "state" : "translated",
             "value" : "Ajustes"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
+          }
         }
       }
     },
@@ -2859,6 +3495,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Listo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
@@ -2913,6 +3561,18 @@
             "state" : "translated",
             "value" : "Abre una conversación en Mensajes."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffne in Nachrichten eine Unterhaltung."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrez une conversation dans Messages."
+          }
         }
       }
     },
@@ -2965,6 +3625,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toca el botón ＋ junto al campo de texto y elige un sticker de Punching en «Stickers»."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe neben dem Eingabefeld auf ＋ und wähle unter „Sticker“ einen Punching-Sticker."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touchez le bouton ＋ à côté du champ de saisie, puis choisissez un autocollant Punching dans « Autocollants »."
           }
         }
       }
@@ -3019,6 +3691,18 @@
             "state" : "translated",
             "value" : "Mantén pulsado para pegarlo donde quieras en la conversación. Los stickers con movimiento se pegan en movimiento."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halte ihn gedrückt, um ihn irgendwo in der Unterhaltung aufzukleben. Bewegte Sticker bewegen sich beim Aufkleben."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maintenez le doigt appuyé pour le coller où vous voulez dans la conversation. Les autocollants animés se collent en mouvement."
+          }
         }
       }
     },
@@ -3071,6 +3755,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mensajes"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nachrichten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Messages"
           }
         }
       }
@@ -3125,6 +3821,18 @@
             "state" : "translated",
             "value" : "Cada álbum aparece como un paquete de stickers aparte."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jede Sammlung erscheint als eigenes Sticker-Paket."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque classeur apparaît comme un pack d’autocollants à part."
+          }
         }
       }
     },
@@ -3177,6 +3885,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toca «Abrir Ajustes» abajo ▸ Teclados ▸ activa Punching Stickers."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe unten auf „Einstellungen öffnen“ ▸ Tastaturen ▸ aktiviere Punching Sticker."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touchez « Ouvrir les réglages » ci-dessous ▸ Claviers ▸ activez Punching Autocollants."
           }
         }
       }
@@ -3231,6 +3951,18 @@
             "state" : "translated",
             "value" : "En el mismo sitio, activa también «Permitir acceso completo». Es necesario para copiar y pegar stickers."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktiviere dort auch „Vollen Zugriff erlauben“. Das wird zum Kopieren und Einsetzen der Sticker gebraucht."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Au même endroit, activez aussi « Autoriser l’accès complet ». Il est nécessaire pour copier et coller les autocollants."
+          }
         }
       }
     },
@@ -3283,6 +4015,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En cualquier app, toca el botón del globo en el teclado para cambiar a Punching Stickers."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe in einer beliebigen App auf der Tastatur auf das Globus-Symbol, um zu Punching Sticker zu wechseln."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dans n’importe quelle app, touchez le globe du clavier pour passer à Punching Autocollants."
           }
         }
       }
@@ -3337,6 +4081,18 @@
             "state" : "translated",
             "value" : "Abrir Ajustes"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen öffnen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir les réglages"
+          }
         }
       }
     },
@@ -3389,6 +4145,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Teclado"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastatur"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clavier"
           }
         }
       }
@@ -3443,6 +4211,18 @@
             "state" : "translated",
             "value" : "Los stickers solo circulan dentro de tu dispositivo. El teclado no lee ni envía lo que escribes."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker werden nur innerhalb deines Geräts übertragen. Die Tastatur liest oder sendet nicht, was du tippst."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les autocollants ne circulent que dans votre appareil. Le clavier ne lit ni n’envoie ce que vous saisissez."
+          }
         }
       }
     },
@@ -3495,6 +4275,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No se pudo capturar el movimiento"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegung nicht erfasst"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mouvement non enregistré"
           }
         }
       }
@@ -3549,6 +4341,18 @@
             "state" : "translated",
             "value" : "No se capturó suficiente movimiento. ¿Quieres intentarlo de nuevo?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es wurde nicht genug Bewegung erfasst. Noch einmal versuchen?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le mouvement enregistré est insuffisant. Réessayer ?"
+          }
         }
       }
     },
@@ -3601,6 +4405,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuevo álbum"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Sammlung"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau classeur"
           }
         }
       }
@@ -3655,6 +4471,18 @@
             "state" : "translated",
             "value" : "Nombre del álbum"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name der Sammlung"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom du classeur"
+          }
         }
       }
     },
@@ -3707,6 +4535,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancelar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
           }
         }
       }
@@ -3761,6 +4601,18 @@
             "state" : "translated",
             "value" : "Crear"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anlegen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer"
+          }
         }
       }
     },
@@ -3813,6 +4665,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repetir"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neu aufnehmen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reprendre"
           }
         }
       }
@@ -3867,6 +4731,18 @@
             "state" : "translated",
             "value" : "Dejar así"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Behalten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garder"
+          }
         }
       }
     },
@@ -3919,6 +4795,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuevo álbum…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Sammlung …"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau classeur…"
           }
         }
       }
@@ -3973,6 +4861,18 @@
             "state" : "translated",
             "value" : "No había nada que recortar, así que se arrancó con forma de sello"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nichts zum Ausschneiden – als Briefmarke abgetrennt"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rien à détourer : détaché en forme de timbre"
+          }
         }
       }
     },
@@ -4025,6 +4925,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching necesita acceso a la cámara para convertir momentos en stickers.\nActiva la cámara en Ajustes."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching braucht Zugriff auf die Kamera, um Momente in Sticker zu verwandeln.\nBitte aktiviere die Kamera in den Einstellungen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching a besoin d’accéder à l’appareil photo pour transformer vos instants en autocollants.\nActivez l’appareil photo dans Réglages."
           }
         }
       }
@@ -4079,6 +4991,18 @@
             "state" : "translated",
             "value" : "Álbumes"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sammlungen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classeurs"
+          }
         }
       }
     },
@@ -4131,6 +5055,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cámara"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appareil photo"
           }
         }
       }
@@ -4185,6 +5121,18 @@
             "state" : "translated",
             "value" : "Importar desde Fotos"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aus Fotos importieren"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importer depuis Photos"
+          }
         }
       }
     },
@@ -4238,6 +5186,18 @@
             "state" : "translated",
             "value" : "Coleccionando"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sammelt gerade"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En cours de collecte"
+          }
         }
       }
     },
@@ -4287,6 +5247,18 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -4344,6 +5316,18 @@
             "state" : "translated",
             "value" : "Todos"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tous"
+          }
         }
       }
     },
@@ -4396,6 +5380,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Con movimiento"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegt"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animés"
           }
         }
       }
@@ -4450,6 +5446,18 @@
             "state" : "translated",
             "value" : "Recortados"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgeschnitten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détourés"
+          }
         }
       }
     },
@@ -4502,6 +5510,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aún no hay stickers de tipo «%@»"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch keine Sticker mit „%@“"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun autocollant « %@ » pour le moment"
           }
         }
       }
@@ -4556,6 +5576,18 @@
             "state" : "translated",
             "value" : "Seleccionar"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auswählen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionner"
+          }
         }
       }
     },
@@ -4608,6 +5640,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ver todos"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle ansehen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout afficher"
           }
         }
       }
@@ -4662,6 +5706,18 @@
             "state" : "translated",
             "value" : "¿Eliminar los %lld stickers seleccionados?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die %lld ausgewählten Sticker löschen?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer les %lld autocollants sélectionnés ?"
+          }
         }
       }
     },
@@ -4714,6 +5770,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
           }
         }
       }
@@ -4768,6 +5836,18 @@
             "state" : "translated",
             "value" : "Renombrar"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umbenennen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renommer"
+          }
         }
       }
     },
@@ -4820,6 +5900,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guardar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sichern"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer"
           }
         }
       }
@@ -4874,6 +5966,18 @@
             "state" : "translated",
             "value" : "¿Eliminar el álbum «%@» y sus %lld stickers?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sammlung „%@“ und die %lld Sticker darin löschen?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer le classeur « %@ » et ses %lld autocollants ?"
+          }
         }
       }
     },
@@ -4926,6 +6030,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Eliminar este sticker?"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diesen Sticker löschen?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer cet autocollant ?"
           }
         }
       }
@@ -4980,6 +6096,18 @@
             "state" : "translated",
             "value" : "Creando la hoja de stickers…"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker-Bogen wird erstellt …"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Création de la planche d’autocollants…"
+          }
         }
       }
     },
@@ -5032,6 +6160,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guardar aquí"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hier sammeln"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecter ici"
           }
         }
       }
@@ -5086,6 +6226,18 @@
             "state" : "translated",
             "value" : "Guardando aquí"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sammelt hier"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecte ici"
+          }
         }
       }
     },
@@ -5138,6 +6290,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Decorar libremente"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frei gestalten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Décorer librement"
           }
         }
       }
@@ -5192,6 +6356,18 @@
             "state" : "translated",
             "value" : "Compartir como imagen"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als Bild teilen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partager en image"
+          }
         }
       }
     },
@@ -5244,6 +6420,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hoja de stickers para imprimir (PDF)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker-Bogen zum Drucken (PDF)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Planche d’autocollants à imprimer (PDF)"
           }
         }
       }
@@ -5298,6 +6486,18 @@
             "state" : "translated",
             "value" : "Guía de impresión"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Druckanleitung"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guide d’impression"
+          }
         }
       }
     },
@@ -5350,6 +6550,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminar álbum"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sammlung löschen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer le classeur"
           }
         }
       }
@@ -5404,6 +6616,18 @@
             "state" : "translated",
             "value" : "Deseleccionar todo"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auswahl aufheben"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout désélectionner"
+          }
         }
       }
     },
@@ -5456,6 +6680,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleccionar todo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle auswählen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout sélectionner"
           }
         }
       }
@@ -5510,6 +6746,18 @@
             "state" : "translated",
             "value" : "Elige stickers"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle Sticker aus"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez des autocollants"
+          }
         }
       }
     },
@@ -5562,6 +6810,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld seleccionados"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ausgewählt"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sélectionné(s)"
           }
         }
       }
@@ -5616,6 +6876,18 @@
             "state" : "translated",
             "value" : "Mover"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Déplacer"
+          }
         }
       }
     },
@@ -5668,6 +6940,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fondo %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hintergrund „%@“"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fond « %@ »"
           }
         }
       }
@@ -5722,6 +7006,18 @@
             "state" : "translated",
             "value" : "Mantén pulsado un sticker para moverlo donde quieras"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halte einen Sticker gedrückt, um ihn an die gewünschte Stelle zu schieben"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maintenez un autocollant pour le déplacer où vous voulez"
+          }
         }
       }
     },
@@ -5774,6 +7070,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En orden de captura"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Aufnahmereihenfolge"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dans l’ordre de prise"
           }
         }
       }
@@ -5828,6 +7136,18 @@
             "state" : "translated",
             "value" : "Copiar"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieren"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copier"
+          }
         }
       }
     },
@@ -5880,6 +7200,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enviar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senden"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyer"
           }
         }
       }
@@ -5934,6 +7266,18 @@
             "state" : "translated",
             "value" : "A otro álbum"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In andere Sammlung"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vers un autre classeur"
+          }
         }
       }
     },
@@ -5986,6 +7330,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mi álbum de stickers «%@» #Punching"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meine Sticker-Sammlung „%@“ #Punching"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mon classeur d’autocollants « %@ » #Punching"
           }
         }
       }
@@ -6040,6 +7396,18 @@
             "state" : "translated",
             "value" : "Este álbum aún está vacío"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Sammlung ist noch leer"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce classeur est encore vide"
+          }
         }
       }
     },
@@ -6092,6 +7460,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guardando aquí: arranca stickers con la cámara para llenarlo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sammelt hier – trenne mit der Kamera Sticker ab, um sie zu füllen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecte ici : détachez des autocollants avec l’appareil photo pour le remplir"
           }
         }
       }
@@ -6146,6 +7526,18 @@
             "state" : "translated",
             "value" : "Forma"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Form"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forme"
+          }
         }
       }
     },
@@ -6198,6 +7590,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recortado"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgeschnitten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détouré"
           }
         }
       }
@@ -6252,6 +7656,18 @@
             "state" : "translated",
             "value" : "Sello"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Briefmarke"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timbre"
+          }
         }
       }
     },
@@ -6304,6 +7720,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Movimiento"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegung"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mouvement"
           }
         }
       }
@@ -6358,6 +7786,18 @@
             "state" : "translated",
             "value" : "Fijo"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standbild"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixe"
+          }
         }
       }
     },
@@ -6410,6 +7850,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crema liso"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cremeweiß"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crème uni"
           }
         }
       }
@@ -6464,6 +7916,18 @@
             "state" : "translated",
             "value" : "Cuadrícula"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kariert"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quadrillé"
+          }
         }
       }
     },
@@ -6516,6 +7980,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rayas"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liniert"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ligné"
           }
         }
       }
@@ -6570,6 +8046,18 @@
             "state" : "translated",
             "value" : "Puntos"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gepunktet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pointillé"
+          }
         }
       }
     },
@@ -6619,6 +8107,18 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraftpapier"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kraft"
@@ -6676,6 +8176,18 @@
             "state" : "translated",
             "value" : "Pergamino"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergament"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parchemin"
+          }
         }
       }
     },
@@ -6725,6 +8237,18 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cornell"
@@ -6782,6 +8306,18 @@
             "state" : "translated",
             "value" : "Gráfica"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Millimeterpapier"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Millimétré"
+          }
         }
       }
     },
@@ -6834,6 +8370,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menta"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mint"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menthe"
           }
         }
       }
@@ -6888,6 +8436,18 @@
             "state" : "translated",
             "value" : "Cuadrícula oscura"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dunkles Raster"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quadrillage sombre"
+          }
         }
       }
     },
@@ -6940,6 +8500,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mantén pulsado el perforador en la cámara y suéltalo. ¡Clic! Lo que se veía en la ventana se arranca tal cual como sticker."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halte in der Kamera den Locher gedrückt und lass los. Klick! Was im Fenster zu sehen war, wird als Sticker abgetrennt."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maintenez la perforatrice dans l’appareil photo, puis relâchez. Clic ! Ce qui apparaissait dans la fenêtre est détaché tel quel en autocollant."
           }
         }
       }
@@ -6994,6 +8566,18 @@
             "state" : "translated",
             "value" : "Elige un tono"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look wählen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisir un rendu"
+          }
         }
       }
     },
@@ -7046,6 +8630,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Escribe unas palabras en la tarjeta del sticker recién hecho y, en «Más», añade un tono como sepia o blanco y negro. Puedes cambiar el tono cuando quieras sin perder calidad."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schreib ein paar Worte auf die frische Stickerkarte und gib ihr unter „Mehr“ einen Look wie Sepia oder Schwarzweiß. Den Look kannst du jederzeit ändern, ohne an Qualität zu verlieren."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écrivez quelques mots sur la carte de votre autocollant tout frais, puis ajoutez un rendu, comme sépia ou noir et blanc, dans « Plus ». Vous pouvez changer de rendu à tout moment sans perdre en qualité."
           }
         }
       }
@@ -7100,6 +8696,18 @@
             "state" : "translated",
             "value" : "Reúnelos en un álbum"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In einer Sammlung sammeln"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rassembler dans un classeur"
+          }
         }
       }
     },
@@ -7152,6 +8760,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Las hojas de stickers se hacen por álbum. Junta en un álbum los stickers que quieras imprimir: en el álbum toca «Seleccionar» y luego «Mover» para pasar muchos de una vez."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker-Bogen entstehen pro Sammlung. Sammle die Sticker, die du drucken möchtest, in einer Sammlung: Tippe dort auf „Auswählen“ und dann auf „Bewegen“, um viele auf einmal zu verschieben."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les planches d’autocollants se font par classeur. Rassemblez dans un même classeur les autocollants à imprimer : dans le classeur, touchez « Sélectionner » puis « Déplacer » pour en déplacer plusieurs d’un coup."
           }
         }
       }
@@ -7206,6 +8826,18 @@
             "state" : "translated",
             "value" : "Crea una hoja para imprimir"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Druckbogen erstellen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer une planche à imprimer"
+          }
         }
       }
     },
@@ -7258,6 +8890,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En el menú ⋯ de arriba a la derecha del álbum ▸ «Usar» ▸ «Hoja de stickers para imprimir (PDF)». Obtienes un PDF de 300 ppp que puedes entregar tal cual en una imprenta. Guárdalo con «Guardar en Archivos» o envíalo por AirDrop o correo."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Im ⋯-Menü oben rechts in der Sammlung ▸ „Verwenden“ ▸ „Sticker-Bogen zum Drucken (PDF)“. Du erhältst ein PDF mit 300 dpi, das du direkt in der Druckerei abgeben kannst. Speichere es mit „In Dateien sichern“ oder verschicke es per AirDrop oder E-Mail."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu ⋯ en haut à droite du classeur ▸ « Utilisation » ▸ « Planche d’autocollants à imprimer (PDF) ». Vous obtenez un PDF en 300 ppp à remettre tel quel à un imprimeur. Enregistrez-le avec « Enregistrer dans Fichiers » ou envoyez-le par AirDrop ou e-mail."
           }
         }
       }
@@ -7312,6 +8956,18 @@
             "state" : "translated",
             "value" : "Imprime"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drucken"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimer"
+          }
         }
       }
     },
@@ -7364,6 +9020,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En casa: imprime en papel de etiquetas o stickers A4 o Carta (mejor mate) a «Tamaño real (100 %)»; desactiva siempre «Ajustar a la página».\nEn imprentas y empresas de stickers: entrega el PDF tal cual. La línea discontinua magenta es el corte parcial (kiss-cut) y las marcas de las esquinas son la guía de recorte."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zu Hause: Drucke auf A4- oder Letter-Etiketten- bzw. Stickerpapier (matt empfohlen) in „Tatsächlicher Größe (100 %)“ – „An Seite anpassen“ unbedingt ausschalten.\nDruckerei oder Sticker-Hersteller: Gib einfach das PDF weiter. Die magentafarbene Strichlinie ist die Schnittlinie (Kiss-Cut), die Eckmarken sind die Beschnittmarken."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À la maison : imprimez sur du papier étiquette ou autocollant A4 ou Letter (mat conseillé) en « Taille réelle (100 %) » ; désactivez impérativement « Ajuster à la page ».\nChez un imprimeur ou fabricant d’autocollants : remettez simplement le PDF. Le pointillé magenta est la ligne de demi-découpe (kiss-cut), et les repères aux coins servent à la découpe."
           }
         }
       }
@@ -7418,6 +9086,18 @@
             "state" : "translated",
             "value" : "Recorta y pega"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausschneiden und aufkleben"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Découper et coller"
+          }
         }
       }
     },
@@ -7470,6 +9150,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recorta por la línea de puntos con tijeras o una cortadora y listo. Pégalos en sobres, agendas, portátiles… donde quieras."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schneide an der gepunkteten Linie mit Schere oder Schneideplotter aus – fertig! Klebe sie auf Umschläge, Kalender, Laptops … überallhin."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Découpez le long des pointillés aux ciseaux ou avec une découpeuse, et c’est fini ! Collez-les sur des enveloppes, agendas, ordinateurs portables… partout."
           }
         }
       }
@@ -7524,6 +9216,18 @@
             "state" : "translated",
             "value" : "📮 Del momento arrancado al sticker en tu mano"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Vom abgetrennten Moment zum Sticker in der Hand"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 De l’instant détaché à l’autocollant dans la main"
+          }
         }
       }
     },
@@ -7576,6 +9280,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seis pasos para que el sticker de tu teléfono acabe en tu escritorio."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sechs Schritte machen aus dem Sticker auf dem Handy einen Sticker auf dem Schreibtisch."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Six étapes transforment l’autocollant de votre téléphone en autocollant sur votre bureau."
           }
         }
       }
@@ -7630,6 +9346,18 @@
             "state" : "translated",
             "value" : "Conviene saber"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gut zu wissen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bon à savoir"
+          }
         }
       }
     },
@@ -7682,6 +9410,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Las hojas para imprimir siempre tienen forma de sello. Las líneas de corte conservan el borde perforado, así que al despegarlos parecen sellos de verdad (unos 5 cm, 12 por página)."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Druckbogen haben immer Briefmarkenform. Die Schnittlinien behalten den Zackenrand, abgelöst sehen die Sticker also wie echte Briefmarken aus (etwa 5 cm, 12 pro Seite)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Les planches à imprimer ont toujours une forme de timbre. Les lignes de découpe gardent le bord dentelé, donc une fois décollés, les autocollants ressemblent à de vrais timbres (environ 5 cm, 12 par page)."
           }
         }
       }
@@ -7736,6 +9476,18 @@
             "state" : "translated",
             "value" : "• Los stickers que conservan la foto original se vuelven a generar a 300 ppp al imprimir, así que salen nítidos."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Sticker mit Originalfoto werden beim Drucken mit 300 dpi neu berechnet und werden dadurch gestochen scharf."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Les autocollants qui conservent leur photo d’origine sont recalculés en 300 ppp à l’impression, pour un rendu net."
+          }
         }
       }
     },
@@ -7788,6 +9540,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• También en digital: cada sticker se convierte automáticamente en sticker de Mensajes. Pégalo directo desde el cajón de stickers de Mensajes; los que tienen movimiento se pegan en movimiento."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Auch digital: Jeder Sticker wird automatisch zu einem Nachrichten-Sticker – klebe ihn direkt aus der Sticker-Ablage in Nachrichten auf; bewegte Sticker bewegen sich dabei."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Aussi en numérique : chaque autocollant devient automatiquement un autocollant Messages. Collez-le directement depuis le tiroir d’autocollants de Messages ; les animés se collent en mouvement."
           }
         }
       }
@@ -7842,6 +9606,18 @@
             "state" : "translated",
             "value" : "• No son sellos postales de verdad: decora tus cartas todo lo que quieras, pero deja el lugar del sello al de verdad."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Das sind keine echten Postwertzeichen – dekoriere deine Briefe nach Lust und Laune, aber lass den Platz für die Briefmarke der echten!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Ce ne sont pas de vrais timbres postaux : décorez vos lettres à volonté, mais laissez la place du timbre au vrai !"
+          }
         }
       }
     },
@@ -7894,6 +9670,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "¡Tu sticker ha llegado!"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Sticker ist da!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre autocollant est arrivé !"
           }
         }
       }
@@ -7948,6 +9736,18 @@
             "state" : "translated",
             "value" : "Haz girar el sticker"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dreh den Sticker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites tourner l’autocollant"
+          }
         }
       }
     },
@@ -8000,6 +9800,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unas palabras sobre este momento…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein paar Worte zu diesem Moment …"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelques mots sur cet instant…"
           }
         }
       }
@@ -8054,6 +9866,18 @@
             "state" : "translated",
             "value" : "Añadir al álbum"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Sammlung"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter au classeur"
+          }
         }
       }
     },
@@ -8106,6 +9930,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descartar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwerfen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeter"
           }
         }
       }
@@ -8160,6 +9996,18 @@
             "state" : "translated",
             "value" : "Más"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus"
+          }
         }
       }
     },
@@ -8212,6 +10060,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Foto completa"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganzes Foto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photo entière"
           }
         }
       }
@@ -8266,6 +10126,18 @@
             "state" : "translated",
             "value" : "Solo sello"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nur Marke"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timbre seul"
+          }
         }
       }
     },
@@ -8318,6 +10190,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Editar"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bearbeiten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier"
           }
         }
       }
@@ -8372,6 +10256,18 @@
             "state" : "translated",
             "value" : "¡Copiado!"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiert!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copié !"
+          }
         }
       }
     },
@@ -8424,6 +10320,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compartir"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teilen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partager"
           }
         }
       }
@@ -8478,6 +10386,18 @@
             "state" : "translated",
             "value" : "Sello con movimiento"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegte Briefmarke"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timbre animé"
+          }
         }
       }
     },
@@ -8531,6 +10451,18 @@
             "state" : "translated",
             "value" : "Sticker recortado con movimiento"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegter ausgeschnittener Sticker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autocollant détouré animé"
+          }
         }
       }
     },
@@ -8580,6 +10512,18 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Original"
@@ -8637,6 +10581,18 @@
             "state" : "translated",
             "value" : "Sepia"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sépia"
+          }
         }
       }
     },
@@ -8689,6 +10645,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blanco y negro"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schwarzweiß"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noir et blanc"
           }
         }
       }
@@ -8743,6 +10711,18 @@
             "state" : "translated",
             "value" : "Desvaído"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verblasst"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Délavé"
+          }
         }
       }
     },
@@ -8795,6 +10775,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Intenso"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kräftig"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Éclatant"
           }
         }
       }
@@ -8849,6 +10841,18 @@
             "state" : "translated",
             "value" : "Cian"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyan"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyan"
+          }
         }
       }
     },
@@ -8901,6 +10905,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mantén pulsado para ver la foto completa"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gedrückt halten für das ganze Foto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maintenez pour voir la photo entière"
           }
         }
       }
@@ -8955,6 +10971,18 @@
             "state" : "translated",
             "value" : "¿Qué momento es este?"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist das für ein Moment?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est cet instant ?"
+          }
         }
       }
     },
@@ -9008,6 +11036,18 @@
             "state" : "translated",
             "value" : "Eliminar este sticker"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diesen Sticker löschen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer cet autocollant"
+          }
         }
       }
     },
@@ -9060,6 +11100,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tono"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendu"
           }
         }
       }

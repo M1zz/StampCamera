@@ -68,3 +68,19 @@ Envía stickers animados en movimiento.
 Decora páginas y orden de cada álbum.
 Tus colecciones pasaron a álbumes.
 Ajustes reunidos en un solo lugar.
+
+### 앱스토어 (de)
+
+Momente werden zu bewegten Stickern.
+Bewegte Sticker senden, bewegt bleiben.
+Gestalte Seiten und Reihenfolge.
+Bisherige Sammlungen wurden übernommen.
+Einstellungen jetzt an einem Ort.
+
+### 앱스토어 (fr)
+
+L’instant détaché devient animé.
+Envoyez les animés en mouvement.
+Décorez pages et ordre du classeur.
+Collections devenues classeurs.
+Réglages réunis au même endroit.

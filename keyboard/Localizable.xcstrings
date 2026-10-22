@@ -51,6 +51,18 @@
             "state" : "translated",
             "value" : "Todos"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tous"
+          }
         }
       }
     },
@@ -103,6 +115,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Para usar los stickers, activa «Permitir acceso completo».\nAjustes ▸ General ▸ Teclado ▸ Punching Stickers ▸ Permitir acceso completo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um Sticker zu verwenden, aktiviere „Vollen Zugriff erlauben“.\nEinstellungen ▸ Allgemein ▸ Tastatur ▸ Punching Sticker ▸ Vollen Zugriff erlauben"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour utiliser les autocollants, activez « Autoriser l’accès complet ».\nRéglages ▸ Général ▸ Clavier ▸ Punching Autocollants ▸ Autoriser l’accès complet"
           }
         }
       }
@@ -157,6 +181,18 @@
             "state" : "translated",
             "value" : "Arranca stickers en Punching\ny aparecerán aquí."
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trenne in Punching Sticker ab,\ndann erscheinen sie hier."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détachez des autocollants dans Punching\net ils apparaîtront ici."
+          }
         }
       }
     },
@@ -209,6 +245,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copiado: ahora pégalo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiert – jetzt einsetzen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copié : collez-le maintenant"
           }
         }
       }

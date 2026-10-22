@@ -495,3 +495,127 @@ Importa desde Fotos
 Convierte en stickers las fotos que hiciste antes y añádelas a un álbum.
 
 Todos tus stickers y fotos se guardan solo en tu dispositivo.
+
+## de
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/de/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/de/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/de/
+
+### 이름
+
+Punching: bewegte Sticker
+
+### 부제
+
+Halten, abtrennen, fertig
+
+### 키워드
+
+ausschneiden,freistellen,gif,briefmarke,scrapbook,tagebuch,collage,vintage,retro,polaroid,postkarte
+
+### 프로모션 텍스트
+
+Gedrückt halten, und der Moment wird zum bewegten Sticker. Schneide nur das Motiv aus oder trenne eine gezackte Briefmarke ab und schick sie aus Nachrichten.
+
+### 설명
+
+Aus dem Moment, den du hältst, wird ein bewegter Sticker.
+Punching ist eine Kamera-App, die alles, was du durch die Linse siehst, als Sticker abtrennt.
+
+Richte die Szene im Locherfenster in der Bildschirmmitte aus und halte gedrückt. Du erhältst einen Sticker, der auch die kurze Bewegung kurz vor und nach dem Drücken enthält. Gibt es ein Motiv zum Ausschneiden, etwa eine Person, ein Haustier oder einen Gegenstand, wird nur dieses ausgeschnitten; gibt es keines, etwa bei einer Landschaft, wird es als Briefmarke mit Zackenrand abgetrennt.
+
+Das kannst du damit machen
+
+Direkt aus Nachrichten und Tastatur senden
+Abgetrennte Sticker erscheinen in der Sticker-Ablage von Nachrichten, und wenn du die Punching-Tastatur aktivierst, kannst du sie auch in anderen Apps auswählen und einsetzen. Bewegte Sticker werden bewegt gesendet.
+
+Kopieren und senden mit einem Tipp
+Tippe direkt nach dem Abtrennen auf Senden oder halte einen Sticker gedrückt, um ihn zu kopieren und überall einzusetzen.
+
+Form und Bewegung jederzeit ändern
+Auch nach dem Abtrennen kannst du zwischen ausgeschnittener Form und Briefmarke sowie zwischen Bewegung und Standbild wechseln. Dein Originalfoto bleibt unverändert erhalten.
+
+Ein Look und ein paar Worte
+Wähle einen Look aus Original, Sepia, Schwarzweiß, Verblasst, Kräftig und Cyan und hinterlasse eine kurze Notiz an jedem Sticker. Datum und Ort des Abtrennens werden ebenfalls gespeichert.
+
+Eine Sammlung für jedes Thema
+Lege Sammlungen nach Thema an und wähle Sticker in Nachrichten und auf der Tastatur Sammlung für Sammlung aus. Such dir Seiten wie Kraftpapier, Kariert, Liniert oder Pergament aus und ordne alles, wie du magst.
+
+Echte Sticker drucken
+Verwandle eine Sammlung in ein druckfertiges PDF mit briefmarkenförmigen Schnittlinien und drucke sie direkt auf Stickerpapier.
+
+Aus Fotos importieren
+Verwandle früher aufgenommene Fotos in Sticker und füge sie einer Sammlung hinzu.
+
+Alle Sticker und Fotos werden nur auf deinem Gerät gespeichert.
+
+## fr
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/fr/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/fr/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/fr/
+
+### 이름
+
+Punching : autocollants animés
+
+### 부제
+
+Maintenez pour détacher
+
+### 키워드
+
+détourage,gif,timbre,scrapbook,journal,collage,vintage,rétro,polaroid,carte postale,fond,messages
+
+### 프로모션 텍스트
+
+Maintenez appuyé : l’instant détaché devient un autocollant animé. Détourez le sujet ou détachez un timbre dentelé, puis envoyez-le depuis Messages ou le clavier.
+
+### 설명
+
+L’instant que vous maintenez devient un autocollant animé.
+Punching est une app d’appareil photo qui détache en autocollant tout ce que vous voyez dans l’objectif.
+
+Cadrez la scène dans la fenêtre de la perforatrice, au centre de l’écran, et maintenez appuyé. Vous obtenez un autocollant qui contient aussi le court mouvement juste avant et après votre appui. S’il y a un sujet à détourer, comme une personne, un animal ou un objet, seul ce sujet est détouré ; sinon, comme pour un paysage, l’image est détachée en timbre au bord dentelé.
+
+Ce que vous pouvez faire
+
+Envoyer depuis Messages et le clavier
+Les autocollants détachés apparaissent dans le tiroir d’autocollants de Messages et, si vous activez le clavier Punching, vous pouvez aussi les choisir et les coller dans d’autres apps. Les autocollants animés partent en mouvement.
+
+Copier et envoyer d’un geste
+Touchez Envoyer juste après le détachage, ou maintenez un autocollant pour le copier et le coller où vous voulez.
+
+Forme et mouvement modifiables à tout moment
+Même après le détachage, vous pouvez passer de la forme détourée au timbre, et du mouvement à l’image fixe. Votre photo d’origine est conservée telle quelle.
+
+Un rendu et quelques mots
+Choisissez un rendu parmi Original, Sépia, Noir et blanc, Délavé, Éclatant et Cyan, et laissez une courte note sur chaque autocollant. La date et le lieu du détachage sont aussi enregistrés.
+
+Un classeur par thème
+Créez des classeurs par thème et choisissez vos autocollants classeur par classeur dans Messages et sur le clavier. Choisissez des pages kraft, quadrillées, lignées ou parchemin, et ordonnez tout comme vous voulez.
+
+Imprimez de vrais autocollants
+Transformez un classeur en PDF à imprimer avec des lignes de découpe en forme de timbre, et imprimez-le directement sur du papier autocollant.
+
+Importer depuis Photos
+Transformez en autocollants des photos prises plus tôt et ajoutez-les à un classeur.
+
+Tous vos autocollants et photos restent uniquement sur votre appareil.
