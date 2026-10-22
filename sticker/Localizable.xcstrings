@@ -99,6 +99,18 @@
             "state" : "translated",
             "value" : "Tất cả"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όλα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaikki"
+          }
         }
       }
     },
@@ -199,6 +211,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hãy bấm nhãn dán trong Punching\nvà chúng sẽ hiện ở đây."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Απόσπασε αυτοκόλλητα στο Punching\nκαι θα εμφανιστούν εδώ."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Irrota tarroja Punchingissa,\nniin ne ilmestyvät tänne."
           }
         }
       }
@@ -301,6 +325,18 @@
             "state" : "translated",
             "value" : "Để chia sẻ nhãn dán cần thiết lập “App Group”.\n(Kiểm tra cài đặt ký của ứng dụng và tiện ích mở rộng)"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η κοινοποίηση αυτοκόλλητων απαιτεί ρύθμιση «App Group».\n(Έλεγξε τις ρυθμίσεις υπογραφής της εφαρμογής και της επέκτασης)"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarrojen jakaminen vaatii ”App Group” -asetuksen.\n(Tarkista apin ja laajennuksen allekirjoitusasetukset)"
+          }
         }
       }
     },
@@ -401,6 +437,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nhãn dán Punching"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αυτοκόλλητα Punching"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-tarrat"
           }
         }
       }

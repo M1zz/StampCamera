@@ -99,6 +99,18 @@
             "state" : "translated",
             "value" : "Camera Punching"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κάμερα Punching"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-kamera"
+          }
         }
       }
     },
@@ -199,6 +211,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mở ngay camera Punching."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ανοίγει αμέσως την κάμερα του Punching."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa Punching-kameran heti."
           }
         }
       }

@@ -99,6 +99,18 @@
             "state" : "translated",
             "value" : "Tất cả"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όλα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaikki"
+          }
         }
       }
     },
@@ -199,6 +211,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Để dùng nhãn dán, hãy bật “Cho phép truy cập đầy đủ”.\nCài đặt ▸ Cài đặt chung ▸ Bàn phím ▸ Nhãn dán Punching ▸ Cho phép truy cập đầy đủ"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Για να χρησιμοποιήσεις τα αυτοκόλλητα, ενεργοποίησε το «Να επιτρέπεται η πλήρης πρόσβαση».\nΡυθμίσεις ▸ Γενικά ▸ Πληκτρολόγιο ▸ Αυτοκόλλητα Punching ▸ Να επιτρέπεται η πλήρης πρόσβαση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jos haluat käyttää tarroja, ota käyttöön ”Salli täysi pääsy”.\nAsetukset ▸ Yleiset ▸ Näppäimistö ▸ Punching-tarrat ▸ Salli täysi pääsy"
           }
         }
       }
@@ -301,6 +325,18 @@
             "state" : "translated",
             "value" : "Hãy bấm nhãn dán trong Punching\nvà chúng sẽ hiện ở đây."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Απόσπασε αυτοκόλλητα στο Punching\nκαι θα εμφανιστούν εδώ."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Irrota tarroja Punchingissa,\nniin ne ilmestyvät tänne."
+          }
         }
       }
     },
@@ -401,6 +437,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Đã sao chép — giờ hãy dán"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αντιγράφηκε — τώρα επικόλλησέ το"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopioitu – liitä nyt"
           }
         }
       }

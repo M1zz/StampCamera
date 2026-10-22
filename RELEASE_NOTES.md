@@ -132,3 +132,19 @@ Gửi nhãn dán chuyển động vẫn động.
 Trang trí trang và thứ tự bộ sưu tập.
 Bộ sưu tập cũ được giữ nguyên.
 Cài đặt gom về một chỗ.
+
+### 앱스토어 (el)
+
+Οι στιγμές γίνονται κινούμενες.
+Στείλε κινούμενα αυτοκόλλητα εν κινήσει.
+Διακόσμησε σελίδες και σειρά άλμπουμ.
+Οι συλλογές έγιναν άλμπουμ.
+Οι ρυθμίσεις μαζεύτηκαν σε ένα σημείο.
+
+### 앱스토어 (fi)
+
+Irrotetut hetket muuttuvat liikkuviksi.
+Lähetä liikkuvat tarrat liikkuen.
+Koristele albumin sivut ja järjestys.
+Kokoelmat siirrettiin albumeihin.
+Asetukset ovat nyt yhdessä paikassa.

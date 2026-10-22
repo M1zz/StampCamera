@@ -100,6 +100,18 @@
             "state" : "translated",
             "value" : "Nhãn dán Punching"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αυτοκόλλητα Punching"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-tarrat"
+          }
         }
       }
     }

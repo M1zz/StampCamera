@@ -991,3 +991,127 @@ Nhập từ Ảnh
 Biến những bức ảnh đã chụp trước đó thành nhãn dán và thêm vào bộ sưu tập.
 
 Mọi nhãn dán và ảnh chỉ được lưu trong thiết bị của bạn.
+
+## el
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/el/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/el/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/el/
+
+### 이름
+
+Punching: Ζωντανά αυτοκόλλητα
+
+### 부제
+
+Κράτα πατημένο και απόσπασε
+
+### 키워드
+
+αποκοπή,gif,γραμματόσημο,scrapbook,ημερολόγιο,κολάζ,vintage,ρετρό,polaroid,καρτ ποστάλ,φόντο
+
+### 프로모션 텍스트
+
+Κράτα πατημένο και η στιγμή που αποσπάς γίνεται κινούμενο αυτοκόλλητο. Κόψε μόνο το θέμα ή απόσπασέ το ως οδοντωτό γραμματόσημο και στείλ’ το από τα Μηνύματα.
+
+### 설명
+
+Η στιγμή που κρατάς πατημένη γίνεται κινούμενο αυτοκόλλητο.
+Το Punching είναι μια εφαρμογή κάμερας που αποσπά ως αυτοκόλλητο ό,τι βλέπεις μέσα από τον φακό.
+
+Στόχευσε τη σκηνή στο παράθυρο της τρυπητής, στη μέση της οθόνης, και κράτα πατημένο. Παίρνεις ένα αυτοκόλλητο που περιλαμβάνει και τη σύντομη κίνηση λίγο πριν και μετά το πάτημα. Αν υπάρχει θέμα που μπορεί να κοπεί, όπως άνθρωπος, κατοικίδιο ή αντικείμενο, κόβεται μόνο αυτό· αν δεν υπάρχει, όπως σε ένα τοπίο, αποσπάται ως γραμματόσημο με οδοντωτή άκρη.
+
+Τι μπορείς να κάνεις
+
+Στείλε από τα Μηνύματα και το πληκτρολόγιο
+Τα αυτοκόλλητα που αποσπάς εμφανίζονται στο συρτάρι αυτοκόλλητων των Μηνυμάτων και, αν ενεργοποιήσεις το πληκτρολόγιο Punching, μπορείς να τα διαλέγεις και να τα επικολλάς και σε άλλες εφαρμογές. Τα κινούμενα αυτοκόλλητα στέλνονται εν κινήσει.
+
+Αντίγραψε και στείλε με ένα άγγιγμα
+Πάτα Αποστολή αμέσως μετά την απόσπαση ή κράτα πατημένο ένα αυτοκόλλητο για να το αντιγράψεις και να το επικολλήσεις όπου θες.
+
+Άλλαξε σχήμα και κίνηση όποτε θες
+Ακόμη και μετά την απόσπαση, μπορείς να αλλάζεις ανάμεσα σε σχήμα με περίγραμμα και γραμματόσημο, και ανάμεσα σε κίνηση και ακίνητη εικόνα. Η αρχική φωτογραφία μένει όπως ήταν.
+
+Ένα ύφος και λίγες λέξεις
+Διάλεξε ύφος ανάμεσα σε Πρωτότυπο, Σέπια, Ασπρόμαυρο, Ξεθωριασμένο, Έντονο και Κυανό και άφησε μια σύντομη σημείωση σε κάθε αυτοκόλλητο. Αποθηκεύονται και η ημερομηνία και το μέρος της απόσπασης.
+
+Ένα άλμπουμ για κάθε θέμα
+Φτιάξε άλμπουμ ανά θέμα και διάλεξε αυτοκόλλητα άλμπουμ προς άλμπουμ στα Μηνύματα και στο πληκτρολόγιο. Διάλεξε σελίδες όπως κραφτ, καρό, γραμμές ή περγαμηνή και βάλε τη σειρά όπως θες.
+
+Εκτύπωσε αληθινά αυτοκόλλητα
+Μετάτρεψε ένα άλμπουμ σε PDF για εκτύπωση με γραμμές κοπής σε σχήμα γραμματοσήμου και τύπωσέ το κατευθείαν σε χαρτί αυτοκόλλητων.
+
+Εισαγωγή από Φωτογραφίες
+Μετάτρεψε φωτογραφίες που τράβηξες παλιότερα σε αυτοκόλλητα και πρόσθεσέ τες σε ένα άλμπουμ.
+
+Όλα τα αυτοκόλλητα και οι φωτογραφίες αποθηκεύονται μόνο στη συσκευή σου.
+
+## fi
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/fi/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/fi/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/fi/
+
+### 이름
+
+Punching: liikkuvat tarrat
+
+### 부제
+
+Pidä painettuna ja irrota
+
+### 키워드
+
+rajaus,gif,postimerkki,leikekirja,päiväkirja,kollaasi,vintage,retro,polaroid,postikortti,tausta
+
+### 프로모션 텍스트
+
+Pidä painettuna, ja irrottamasi hetki muuttuu liikkuvaksi tarraksi. Rajaa vain kohde tai irrota hammastettu postimerkki ja lähetä se Viesteistä tai näppäimistöltä.
+
+### 설명
+
+Hetki, jonka pidät painettuna, muuttuu liikkuvaksi tarraksi.
+Punching on kamera-appi, joka irrottaa tarraksi kaiken, minkä näet linssin läpi.
+
+Aseta kuva näytön keskellä olevaan reikälävistimen ikkunaan ja pidä painettuna. Saat tarran, jossa on mukana myös lyhyt liike juuri ennen painallusta ja sen jälkeen. Jos kuvassa on rajattava kohde, kuten ihminen, lemmikki tai esine, vain se rajataan; jos ei ole, kuten maisemassa, kuva irrotetaan postimerkkinä, jonka reuna on hammastettu.
+
+Mitä voit tehdä
+
+Lähetä Viesteistä ja näppäimistöltä
+Irrotetut tarrat ilmestyvät Viestien tarralaatikkoon, ja kun otat Punching-näppäimistön käyttöön, voit valita ja liittää ne myös muissa appeissa. Liikkuvat tarrat lähtevät liikkuen.
+
+Kopioi ja lähetä yhdellä napautuksella
+Napauta Lähetä heti irrotuksen jälkeen tai pidä tarraa painettuna kopioidaksesi sen ja liittääksesi minne vain.
+
+Muuta muotoa ja liikettä milloin vain
+Irrotuksen jälkeenkin voit vaihtaa rajatun muodon ja postimerkin välillä sekä liikkeen ja pysäytyskuvan välillä. Alkuperäinen kuva säilyy sellaisenaan.
+
+Ilme ja muutama sana
+Valitse ilme: Alkuperäinen, Seepia, Mustavalkoinen, Haalistunut, Eloisa tai Syaani, ja jätä jokaiseen tarraan lyhyt muistiinpano. Irrotuksen päivämäärä ja paikka tallentuvat myös.
+
+Albumi jokaiselle aiheelle
+Luo albumeja aiheittain ja valitse tarroja albumi kerrallaan Viesteissä ja näppäimistöllä. Valitse sivuja, kuten kraft, ruudullinen, viivoitettu tai pergamentti, ja järjestä kaikki mielesi mukaan.
+
+Tulosta oikeita tarroja
+Muuta albumi tulostettavaksi PDF:ksi, jossa on postimerkin muotoiset leikkausviivat, ja tulosta se suoraan tarrapaperille.
+
+Tuo Kuvista
+Muuta aiemmin ottamasi kuvat tarroiksi ja lisää ne albumiin.
+
+Kaikki tarrasi ja kuvasi tallennetaan vain laitteellesi.

@@ -99,6 +99,18 @@
             "state" : "translated",
             "value" : "Khóa Face ID"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κλείδωμα με Face ID"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID -lukitus"
+          }
         }
       }
     },
@@ -199,6 +211,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Khóa ứng dụng bằng Face ID để giữ riêng tư cho các bộ sưu tập của bạn."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κλείδωσε την εφαρμογή με Face ID για να προστατεύεις τα άλμπουμ σου."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lukitse app Face ID:llä suojataksesi albumisi."
           }
         }
       }
@@ -301,6 +325,18 @@
             "state" : "translated",
             "value" : "Dùng VoiceOver thuận tiện hơn"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πιο εύκολα με το VoiceOver"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helpompi käyttää VoiceOverilla"
+          }
         }
       }
     },
@@ -401,6 +437,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Khi bạn phóng to chữ, màn hình tự sắp xếp lại và không bị cắt mất."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όταν μεγαλώνεις το κείμενο, οι οθόνες αναδιατάσσονται χωρίς να κόβεται τίποτα."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun suurennat tekstiä, näytöt järjestyvät uudelleen eikä mitään leikkaudu pois."
           }
         }
       }
@@ -503,6 +551,18 @@
             "state" : "translated",
             "value" : "Đồng bộ giữa các thiết bị"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συγχρονισμός μεταξύ συσκευών"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synkronointi laitteiden välillä"
+          }
         }
       }
     },
@@ -603,6 +663,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mọi thứ vẫn dễ đọc, kể cả khi bật tăng độ tương phản hoặc khó phân biệt màu."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όλα παραμένουν ευανάγνωστα, ακόμη και με αυξημένη αντίθεση ή όταν είναι δύσκολο να ξεχωρίσεις τα χρώματα."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaikki pysyy luettavana, vaikka Lisää kontrastia olisi päällä tai värejä olisi vaikea erottaa."
           }
         }
       }
@@ -705,6 +777,18 @@
             "state" : "translated",
             "value" : "Dùng ứng dụng bằng nhiều ngôn ngữ hơn."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποίησε την εφαρμογή σε περισσότερες γλώσσες."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä appia useammalla kielellä."
+          }
         }
       }
     },
@@ -805,6 +889,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Thêm nhiều ngôn ngữ"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Περισσότερες γλώσσες"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisää kieliä"
           }
         }
       }
@@ -907,6 +1003,18 @@
             "state" : "translated",
             "value" : "Lưu nhãn dán vào một tệp và nhập lại sau."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αποθήκευσε τα αυτοκόλλητά σου σε αρχείο και επανάφερέ τα αργότερα."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallenna tarrasi tiedostoon ja palauta ne myöhemmin."
+          }
         }
       }
     },
@@ -1007,6 +1115,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Màu sắc và độ tương phản dễ nhìn hơn"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πιο άνετα χρώματα και αντίθεση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helpommat värit ja kontrasti"
           }
         }
       }
@@ -1109,6 +1229,18 @@
             "state" : "translated",
             "value" : "Đổi sang iPhone mới, nhãn dán của bạn vẫn theo bạn qua iCloud."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αν αλλάξεις iPhone, τα αυτοκόλλητά σου έρχονται μαζί σου μέσω iCloud."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun vaihdat uuteen iPhoneen, tarrasi siirtyvät mukana iCloudin kautta."
+          }
         }
       }
     },
@@ -1209,6 +1341,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dán tự do trên trang"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κόλλησε όπου θες στη σελίδα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liimaa mihin tahansa sivulla"
           }
         }
       }
@@ -1311,6 +1455,18 @@
             "state" : "translated",
             "value" : "Nếu ứng dụng tắt giữa chừng khi bạn trang trí bộ sưu tập, phần đang làm vẫn còn nguyên."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αν η εφαρμογή κλείσει ενώ διακοσμείς ένα άλμπουμ, όσα έκανες μένουν."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jos app sulkeutuu albumia koristellessa, tekemäsi säilyy."
+          }
         }
       }
     },
@@ -1411,6 +1567,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sao lưu và xuất nhãn dán"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αντίγραφο ασφαλείας και εξαγωγή αυτοκόλλητων"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarrojen varmuuskopio ja vienti"
           }
         }
       }
@@ -1513,6 +1681,18 @@
             "state" : "translated",
             "value" : "Xóa tất cả nhãn dán một lần"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διαγραφή όλων των αυτοκόλλητων με μία κίνηση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista kaikki tarrat kerralla"
+          }
         }
       }
     },
@@ -1613,6 +1793,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dùng toàn bộ ứng dụng bằng tiếng Anh."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποίησε ολόκληρη την εφαρμογή και στα αγγλικά."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä koko appia myös englanniksi."
           }
         }
       }
@@ -1715,6 +1907,18 @@
             "state" : "translated",
             "value" : "Lần đầu mở sau khi cập nhật, cho bạn biết có gì mới."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Στο πρώτο άνοιγμα μετά από μια ενημέρωση, δες τι άλλαξε."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ensimmäisellä avauskerralla päivityksen jälkeen näet, mitä uutta on."
+          }
         }
       }
     },
@@ -1815,6 +2019,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Có gì mới"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τι νέο υπάρχει"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uutta"
           }
         }
       }
@@ -1917,6 +2133,18 @@
             "state" : "translated",
             "value" : "Hỗ trợ tiếng Anh"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Υποστήριξη αγγλικών"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Englannin tuki"
+          }
         }
       }
     },
@@ -2017,6 +2245,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "In đúng hình cắt viền"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εκτύπωση με το σχήμα του περιγράμματος"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulostus rajattuun muotoon"
           }
         }
       }
@@ -2119,6 +2359,18 @@
             "state" : "translated",
             "value" : "Giảm chuyển động"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μείωση κίνησης"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vähennä liikettä"
+          }
         }
       }
     },
@@ -2219,6 +2471,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Khi bật “Giảm chuyển động”, các hiệu ứng trên màn hình dịu hơn."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Με ενεργή τη «Μείωση κίνησης», τα εφέ στην οθόνη γίνονται πιο ήρεμα."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun Vähennä liikettä on päällä, näyttötehosteet rauhoittuvat."
           }
         }
       }
@@ -2321,6 +2585,18 @@
             "state" : "translated",
             "value" : "Nếu muốn, bạn có thể xóa mọi nhãn dán đã gom ngay trong ứng dụng."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αν θέλεις, μπορείς να σβήσεις όλα τα αυτοκόλλητα που συνέλεξες μέσα από την εφαρμογή."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halutessasi voit poistaa kaikki keräämäsi tarrat suoraan apissa."
+          }
         }
       }
     },
@@ -2421,6 +2697,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trên tờ nhãn dán để in, nhãn dán cắt viền có đường cắt đi theo đường viền của chính nó, không theo hình tem."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Στο φύλλο εκτύπωσης, τα αυτοκόλλητα με περίγραμμα παίρνουν γραμμή κοπής που ακολουθεί το δικό τους περίγραμμα και όχι το σχήμα γραμματοσήμου."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulostettavalla arkilla rajatut tarrat saavat leikkausviivan oman ääriviivansa mukaan, eivät postimerkin muotoon."
           }
         }
       }
@@ -2523,6 +2811,18 @@
             "state" : "translated",
             "value" : "Một thông báo cho bạn xem lại những nhãn dán đã bấm đúng ngày này năm ngoái."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μια ειδοποίηση σου δείχνει τα αυτοκόλλητα που απόσπασες σαν σήμερα πέρυσι."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ilmoitus näyttää tarrat, jotka irrotit tänä päivänä vuosi sitten."
+          }
         }
       }
     },
@@ -2623,6 +2923,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nhãn dán năm ngoái"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αυτοκόλλητα από πέρυσι"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarroja vuoden takaa"
           }
         }
       }
@@ -2725,6 +3037,18 @@
             "state" : "translated",
             "value" : "Hướng dẫn cho người mới"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Οδηγός για αρχάριους"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opas aloittelijoille"
+          }
         }
       }
     },
@@ -2825,6 +3149,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lần đầu mở ứng dụng, hướng dẫn ngắn cho bạn cách bấm và dùng nhãn dán."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Στο πρώτο άνοιγμα, δείχνει σύντομα πώς να αποσπάς και να χρησιμοποιείς αυτοκόλλητα."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ensimmäisellä avauskerralla näytetään lyhyesti, miten tarroja irrotetaan ja käytetään."
           }
         }
       }
@@ -2927,6 +3263,18 @@
             "state" : "translated",
             "value" : "Không cần theo ô, bạn dán nhãn dán vào bất kỳ chỗ nào trên trang, kể cả dán nghiêng."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χωρίς πλέγμα, κόλλησε τα αυτοκόλλητα όπου θες στη σελίδα, ακόμη και λοξά."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ilman ruudukkoa liimaa tarroja minne tahansa sivulle, vinoonkin."
+          }
         }
       }
     },
@@ -3027,6 +3375,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Màn hình cho chữ lớn"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Οθόνες για μεγάλα γράμματα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näytöt isolle tekstille"
           }
         }
       }
@@ -3129,6 +3489,18 @@
             "state" : "translated",
             "value" : "Màn hình iPhone gập"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Οθόνη για αναδιπλούμενο iPhone"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näkymä taitettavalle iPhonelle"
+          }
         }
       }
     },
@@ -3229,6 +3601,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dùng màn hình rộng của iPhone gập thành hai ngăn cạnh nhau."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποίησε την πλατιά οθόνη ενός αναδιπλούμενου iPhone ως δύο πάνελ δίπλα δίπλα."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä taitettavan iPhonen leveää näyttöä kahtena rinnakkaisena ruutuna."
           }
         }
       }
@@ -3331,6 +3715,18 @@
             "state" : "translated",
             "value" : "Tiếp tục từ chỗ đang làm"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συνέχισε από εκεί που σταμάτησες"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jatka siitä, mihin jäit"
+          }
         }
       }
     },
@@ -3431,6 +3827,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver đọc đủ từng nút và từng nhãn dán, theo đúng thứ tự."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το VoiceOver διαβάζει κάθε κουμπί και κάθε αυτοκόλλητο, χωρίς παραλείψεις και με τη σωστή σειρά."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver lukee jokaisen painikkeen ja tarran, yhtäkään ohittamatta ja oikeassa järjestyksessä."
           }
         }
       }
@@ -3533,6 +3941,18 @@
             "state" : "translated",
             "value" : "Mở camera Punching"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Άνοιγμα κάμερας Punching"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa Punching-kamera"
+          }
         }
       }
     },
@@ -3633,6 +4053,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mở ngay camera Punching."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ανοίγει αμέσως την κάμερα του Punching."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa Punching-kameran heti."
           }
         }
       }
@@ -3735,6 +4167,18 @@
             "state" : "translated",
             "value" : "Mở camera"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Άνοιγμα κάμερας"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa kamera"
+          }
         }
       }
     },
@@ -3835,6 +4279,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hình dạng mặc định"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προεπιλεγμένο σχήμα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oletusmuoto"
           }
         }
       }
@@ -3937,6 +4393,18 @@
             "state" : "translated",
             "value" : "Nhãn dán cắt viền"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αυτοκόλλητο με περίγραμμα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rajattu tarra"
+          }
         }
       }
     },
@@ -4037,6 +4505,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tem"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γραμματόσημο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Postimerkki"
           }
         }
       }
@@ -4139,6 +4619,18 @@
             "state" : "translated",
             "value" : "Khung Punching"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κορνίζα Punching"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-kehys"
+          }
         }
       }
     },
@@ -4239,6 +4731,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Khung %lld"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κορνίζα %lld"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kehys %lld"
           }
         }
       }
@@ -4341,6 +4845,18 @@
             "state" : "translated",
             "value" : "Bấm"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Απόσπαση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Irrotus"
+          }
         }
       }
     },
@@ -4441,6 +4957,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nếu không có gì để cắt, ảnh sẽ được bấm thành hình tem. Chuyển động luôn được ghi lại, nên sau khi bấm bạn vẫn đổi được hình dạng và chuyển động của từng nhãn dán."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αν δεν υπάρχει κάτι να κοπεί, αποσπάται σε σχήμα γραμματοσήμου. Η κίνηση καταγράφεται πάντα, οπότε μετά την απόσπαση μπορείς να αλλάξεις το σχήμα και την κίνηση κάθε αυτοκόλλητου."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jos mitään ei ole rajattavaa, kuva irrotetaan postimerkin muotoon. Liike tallentuu aina mukaan, joten irrotuksen jälkeen voit muuttaa jokaisen tarran muotoa ja liikettä."
           }
         }
       }
@@ -4543,6 +5071,18 @@
             "state" : "translated",
             "value" : "Tự phát chuyển động"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αυτόματη αναπαραγωγή κίνησης"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toista liike automaattisesti"
+          }
         }
       }
     },
@@ -4643,6 +5183,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hiệu ứng lật trang"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εφέ γυρίσματος σελίδας"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sivunkääntötehoste"
           }
         }
       }
@@ -4745,6 +5297,18 @@
             "state" : "translated",
             "value" : "Hiển thị"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προβολή"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näkymä"
+          }
         }
       }
     },
@@ -4845,6 +5409,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Khi tắt tự phát, nhãn dán luôn hiện dưới dạng ảnh tĩnh. Chuyển động không bao giờ bị xóa."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όταν η αυτόματη αναπαραγωγή είναι ανενεργή, τα αυτοκόλλητα εμφανίζονται παντού ακίνητα. Η κίνηση δεν διαγράφεται ποτέ."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun automaattinen toisto on pois päältä, tarrat näkyvät kaikkialla pysähtyneinä. Liikettä ei koskaan poisteta."
           }
         }
       }
@@ -4947,6 +5523,18 @@
             "state" : "translated",
             "value" : "Dùng trong Tin nhắn và bàn phím"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρήση στα Μηνύματα και στο πληκτρολόγιο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käyttö Viesteissä ja näppäimistöllä"
+          }
         }
       }
     },
@@ -5047,6 +5635,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "In ra nhãn dán giấy"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εκτύπωση σε χάρτινα αυτοκόλλητα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulosta paperitarroiksi"
           }
         }
       }
@@ -5149,6 +5749,18 @@
             "state" : "translated",
             "value" : "Sử dụng"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρήση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käyttö"
+          }
         }
       }
     },
@@ -5249,6 +5861,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hỗ trợ"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Υποστήριξη"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tuki"
           }
         }
       }
@@ -5351,6 +5975,18 @@
             "state" : "translated",
             "value" : "Cài đặt"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ρυθμίσεις"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asetukset"
+          }
         }
       }
     },
@@ -5451,6 +6087,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Xong"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τέλος"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valmis"
           }
         }
       }
@@ -5553,6 +6201,18 @@
             "state" : "translated",
             "value" : "Mở một cuộc trò chuyện trong Tin nhắn."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Άνοιξε μια συνομιλία στα Μηνύματα."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa keskustelu Viesteissä."
+          }
         }
       }
     },
@@ -5653,6 +6313,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chạm nút ＋ cạnh ô nhập, rồi chọn nhãn dán Punching trong “Nhãn dán”."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πάτα το κουμπί ＋ δίπλα στο πεδίο κειμένου και διάλεξε ένα αυτοκόλλητο Punching από τα «Αυτοκόλλητα»."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napauta tekstikentän vieressä olevaa ＋-painiketta ja valitse Punching-tarra kohdasta ”Tarrat”."
           }
         }
       }
@@ -5755,6 +6427,18 @@
             "state" : "translated",
             "value" : "Chạm giữ để dán vào bất kỳ chỗ nào trong cuộc trò chuyện. Nhãn dán chuyển động sẽ vừa dán vừa chuyển động."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κράτα πατημένο για να το κολλήσεις όπου θέλεις στη συνομιλία. Τα κινούμενα αυτοκόλλητα κολλάνε εν κινήσει."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pidä painettuna, niin voit liimata sen mihin tahansa keskusteluun. Liikkuvat tarrat liimautuvat liikkuen."
+          }
         }
       }
     },
@@ -5855,6 +6539,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tin nhắn"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μηνύματα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viestit"
           }
         }
       }
@@ -5957,6 +6653,18 @@
             "state" : "translated",
             "value" : "Mỗi bộ sưu tập hiện thành một gói nhãn dán riêng."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κάθε άλμπουμ εμφανίζεται ως ξεχωριστό πακέτο αυτοκόλλητων."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jokainen albumi näkyy omana tarrapakettinaan."
+          }
         }
       }
     },
@@ -6057,6 +6765,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chạm “Mở Cài đặt” bên dưới ▸ Bàn phím ▸ bật Nhãn dán Punching."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πάτα παρακάτω «Άνοιγμα Ρυθμίσεων» ▸ Πληκτρολόγια ▸ ενεργοποίησε τα Αυτοκόλλητα Punching."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napauta alta ”Avaa Asetukset” ▸ Näppäimistöt ▸ ota käyttöön Punching-tarrat."
           }
         }
       }
@@ -6159,6 +6879,18 @@
             "state" : "translated",
             "value" : "Ở cùng chỗ đó, bật thêm “Cho phép truy cập đầy đủ”. Cần có mục này để sao chép và dán nhãn dán."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Στο ίδιο σημείο ενεργοποίησε και το «Να επιτρέπεται η πλήρης πρόσβαση». Χρειάζεται για να αντιγράφεις και να επικολλάς αυτοκόλλητα."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ota samasta paikasta käyttöön myös ”Salli täysi pääsy”. Se tarvitaan tarrojen kopioimiseen ja liittämiseen."
+          }
         }
       }
     },
@@ -6259,6 +6991,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trong bất kỳ ứng dụng nào, chạm nút quả địa cầu trên bàn phím để chuyển sang Nhãn dán Punching."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σε οποιαδήποτε εφαρμογή, πάτα τη σφαίρα στο πληκτρολόγιο για να αλλάξεις στα Αυτοκόλλητα Punching."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napauta missä tahansa apissa näppäimistön maapalloa vaihtaaksesi Punching-tarroihin."
           }
         }
       }
@@ -6361,6 +7105,18 @@
             "state" : "translated",
             "value" : "Mở Cài đặt"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Άνοιγμα Ρυθμίσεων"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa Asetukset"
+          }
         }
       }
     },
@@ -6461,6 +7217,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bàn phím"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πληκτρολόγιο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näppäimistö"
           }
         }
       }
@@ -6563,6 +7331,18 @@
             "state" : "translated",
             "value" : "Nhãn dán chỉ đi lại bên trong thiết bị của bạn. Bàn phím không đọc hay gửi những gì bạn gõ."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τα αυτοκόλλητα κινούνται μόνο μέσα στη συσκευή σου. Το πληκτρολόγιο δεν διαβάζει και δεν στέλνει ό,τι πληκτρολογείς."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarrat liikkuvat vain laitteesi sisällä. Näppäimistö ei lue eikä lähetä kirjoittamaasi."
+          }
         }
       }
     },
@@ -6663,6 +7443,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chưa ghi được chuyển động"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η κίνηση δεν καταγράφηκε"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liikettä ei tallentunut"
           }
         }
       }
@@ -6765,6 +7557,18 @@
             "state" : "translated",
             "value" : "Chuyển động ghi được chưa đủ. Thử lại nhé?"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν καταγράφηκε αρκετή κίνηση. Να δοκιμάσεις ξανά;"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liikettä ei tallentunut tarpeeksi. Yritetäänkö uudelleen?"
+          }
         }
       }
     },
@@ -6865,6 +7669,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bộ sưu tập mới"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Νέο άλμπουμ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uusi albumi"
           }
         }
       }
@@ -6967,6 +7783,18 @@
             "state" : "translated",
             "value" : "Tên bộ sưu tập"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όνομα άλμπουμ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albumin nimi"
+          }
         }
       }
     },
@@ -7067,6 +7895,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hủy"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ακύρωση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peruuta"
           }
         }
       }
@@ -7169,6 +8009,18 @@
             "state" : "translated",
             "value" : "Tạo"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δημιουργία"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luo"
+          }
         }
       }
     },
@@ -7269,6 +8121,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chụp lại"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Νέα λήψη"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ota uudelleen"
           }
         }
       }
@@ -7371,6 +8235,18 @@
             "state" : "translated",
             "value" : "Giữ nguyên"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Να μείνει"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jätä sellaisenaan"
+          }
         }
       }
     },
@@ -7471,6 +8347,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bộ sưu tập mới…"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Νέο άλμπουμ…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uusi albumi…"
           }
         }
       }
@@ -7573,6 +8461,18 @@
             "state" : "translated",
             "value" : "Không có gì để cắt nên đã bấm thành hình tem"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν υπήρχε κάτι να κοπεί, οπότε αποσπάστηκε σε σχήμα γραμματοσήμου"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rajattavaa ei ollut, joten irrotettiin postimerkin muotoon"
+          }
         }
       }
     },
@@ -7673,6 +8573,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching cần quyền truy cập camera để biến khoảnh khắc thành nhãn dán.\nHãy bật camera trong Cài đặt."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το Punching χρειάζεται πρόσβαση στην κάμερα για να μετατρέπει στιγμές σε αυτοκόλλητα.\nΕνεργοποίησε την κάμερα στις Ρυθμίσεις."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching tarvitsee pääsyn kameraan muuttaakseen hetket tarroiksi.\nOta kamera käyttöön Asetuksissa."
           }
         }
       }
@@ -7775,6 +8687,18 @@
             "state" : "translated",
             "value" : "Bộ sưu tập"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Άλμπουμ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albumit"
+          }
         }
       }
     },
@@ -7875,6 +8799,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Camera"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κάμερα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera"
           }
         }
       }
@@ -7977,6 +8913,18 @@
             "state" : "translated",
             "value" : "Nhập từ Ảnh"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εισαγωγή από Φωτογραφίες"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tuo Kuvista"
+          }
         }
       }
     },
@@ -8078,6 +9026,18 @@
             "state" : "translated",
             "value" : "Đang gom"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συλλέγει"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keräämässä"
+          }
         }
       }
     },
@@ -8175,6 +9135,18 @@
           }
         },
         "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "fi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -8280,6 +9252,18 @@
             "state" : "translated",
             "value" : "Tất cả"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όλα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaikki"
+          }
         }
       }
     },
@@ -8380,6 +9364,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chuyển động"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κινούμενα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liikkuvat"
           }
         }
       }
@@ -8482,6 +9478,18 @@
             "state" : "translated",
             "value" : "Cắt viền"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Με περίγραμμα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rajatut"
+          }
         }
       }
     },
@@ -8582,6 +9590,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chưa có nhãn dán “%@”"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν υπάρχουν ακόμη αυτοκόλλητα «%@»"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarroja ”%@” ei vielä ole"
           }
         }
       }
@@ -8684,6 +9704,18 @@
             "state" : "translated",
             "value" : "Chọn"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Επιλογή"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse"
+          }
         }
       }
     },
@@ -8784,6 +9816,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Xem tất cả"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εμφάνιση όλων"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näytä kaikki"
           }
         }
       }
@@ -8886,6 +9930,18 @@
             "state" : "translated",
             "value" : "Xóa %lld nhãn dán đã chọn?"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Να διαγραφούν τα %lld επιλεγμένα αυτοκόλλητα;"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poistetaanko valitut %lld tarraa?"
+          }
         }
       }
     },
@@ -8986,6 +10042,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Xóa"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διαγραφή"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista"
           }
         }
       }
@@ -9088,6 +10156,18 @@
             "state" : "translated",
             "value" : "Đổi tên"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μετονομασία"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nimeä uudelleen"
+          }
         }
       }
     },
@@ -9188,6 +10268,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lưu"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αποθήκευση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tallenna"
           }
         }
       }
@@ -9290,6 +10382,18 @@
             "state" : "translated",
             "value" : "Xóa bộ sưu tập “%@” và %lld nhãn dán trong đó?"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Να διαγραφεί το άλμπουμ «%@» και τα %lld αυτοκόλλητα μέσα του;"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poistetaanko albumi ”%@” ja sen %lld tarraa?"
+          }
         }
       }
     },
@@ -9390,6 +10494,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Xóa nhãn dán này?"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Να διαγραφεί αυτό το αυτοκόλλητο;"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poistetaanko tämä tarra?"
           }
         }
       }
@@ -9492,6 +10608,18 @@
             "state" : "translated",
             "value" : "Đang tạo tờ nhãn dán…"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δημιουργία φύλλου αυτοκόλλητων…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luodaan tarra-arkkia…"
+          }
         }
       }
     },
@@ -9592,6 +10720,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gom vào đây"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συλλογή εδώ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kerää tähän"
           }
         }
       }
@@ -9694,6 +10834,18 @@
             "state" : "translated",
             "value" : "Đang gom vào đây"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συλλέγει εδώ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kerää tähän"
+          }
         }
       }
     },
@@ -9794,6 +10946,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trang trí tự do"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διακόσμηση ελεύθερα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koristele vapaasti"
           }
         }
       }
@@ -9896,6 +11060,18 @@
             "state" : "translated",
             "value" : "Chia sẻ dưới dạng ảnh"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κοινοποίηση ως εικόνα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jaa kuvana"
+          }
         }
       }
     },
@@ -9996,6 +11172,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tờ nhãn dán để in (PDF)"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Φύλλο αυτοκόλλητων προς εκτύπωση (PDF)"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulostettava tarra-arkki (PDF)"
           }
         }
       }
@@ -10098,6 +11286,18 @@
             "state" : "translated",
             "value" : "Hướng dẫn in"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Οδηγός εκτύπωσης"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulostusopas"
+          }
         }
       }
     },
@@ -10198,6 +11398,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Xóa bộ sưu tập"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διαγραφή άλμπουμ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista albumi"
           }
         }
       }
@@ -10300,6 +11512,18 @@
             "state" : "translated",
             "value" : "Bỏ chọn tất cả"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αποεπιλογή όλων"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista valinnat"
+          }
         }
       }
     },
@@ -10400,6 +11624,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chọn tất cả"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Επιλογή όλων"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse kaikki"
           }
         }
       }
@@ -10502,6 +11738,18 @@
             "state" : "translated",
             "value" : "Hãy chọn nhãn dán"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διάλεξε αυτοκόλλητα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse tarroja"
+          }
         }
       }
     },
@@ -10602,6 +11850,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Đã chọn %lld"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Επιλέχθηκαν %lld"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld valittu"
           }
         }
       }
@@ -10704,6 +11964,18 @@
             "state" : "translated",
             "value" : "Di chuyển"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μετακίνηση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siirrä"
+          }
         }
       }
     },
@@ -10804,6 +12076,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nền “%@”"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Φόντο «%@»"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tausta ”%@”"
           }
         }
       }
@@ -10906,6 +12190,18 @@
             "state" : "translated",
             "value" : "Chạm giữ một nhãn dán để chuyển đến chỗ bạn muốn"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κράτα πατημένο ένα αυτοκόλλητο για να το μετακινήσεις όπου θέλεις"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pidä tarraa painettuna siirtääksesi sen minne haluat"
+          }
         }
       }
     },
@@ -11006,6 +12302,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Theo thứ tự chụp"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Με σειρά λήψης"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ottojärjestyksessä"
           }
         }
       }
@@ -11108,6 +12416,18 @@
             "state" : "translated",
             "value" : "Sao chép"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αντιγραφή"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopioi"
+          }
         }
       }
     },
@@ -11208,6 +12528,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gửi"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αποστολή"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lähetä"
           }
         }
       }
@@ -11310,6 +12642,18 @@
             "state" : "translated",
             "value" : "Sang bộ sưu tập khác"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σε άλλο άλμπουμ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toiseen albumiin"
+          }
         }
       }
     },
@@ -11410,6 +12754,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bộ sưu tập nhãn dán của tôi “%@” #Punching"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το άλμπουμ αυτοκόλλητών μου «%@» #Punching"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarra-albumini ”%@” #Punching"
           }
         }
       }
@@ -11512,6 +12868,18 @@
             "state" : "translated",
             "value" : "Bộ sưu tập này vẫn còn trống"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αυτό το άλμπουμ είναι ακόμη άδειο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tämä albumi on vielä tyhjä"
+          }
         }
       }
     },
@@ -11612,6 +12980,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Đang gom vào đây — hãy bấm nhãn dán bằng camera để lấp đầy"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συλλέγει εδώ — απόσπασε αυτοκόλλητα με την κάμερα για να το γεμίσεις"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kerää tähän – irrota tarroja kameralla täyttääksesi albumin"
           }
         }
       }
@@ -11714,6 +13094,18 @@
             "state" : "translated",
             "value" : "Hình dạng"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σχήμα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muoto"
+          }
         }
       }
     },
@@ -11814,6 +13206,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cắt viền"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Με περίγραμμα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rajattu"
           }
         }
       }
@@ -11916,6 +13320,18 @@
             "state" : "translated",
             "value" : "Tem"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γραμματόσημο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Postimerkki"
+          }
         }
       }
     },
@@ -12016,6 +13432,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chuyển động"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κίνηση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liike"
           }
         }
       }
@@ -12118,6 +13546,18 @@
             "state" : "translated",
             "value" : "Tĩnh"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ακίνητο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pysäytetty"
+          }
         }
       }
     },
@@ -12218,6 +13658,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kem trơn"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Απλό κρεμ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tavallinen kerma"
           }
         }
       }
@@ -12320,6 +13772,18 @@
             "state" : "translated",
             "value" : "Ô vuông"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Καρό"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruudullinen"
+          }
         }
       }
     },
@@ -12420,6 +13884,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kẻ dòng"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γραμμές"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viivoitettu"
           }
         }
       }
@@ -12522,6 +13998,18 @@
             "state" : "translated",
             "value" : "Chấm bi"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Βούλες"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pisteitetty"
+          }
         }
       }
     },
@@ -12622,6 +14110,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Giấy kraft"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κραφτ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
           }
         }
       }
@@ -12724,6 +14224,18 @@
             "state" : "translated",
             "value" : "Giấy da"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Περγαμηνή"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergamentti"
+          }
         }
       }
     },
@@ -12821,6 +14333,18 @@
           }
         },
         "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "fi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cornell"
@@ -12926,6 +14450,18 @@
             "state" : "translated",
             "value" : "Giấy kẻ ô"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γράφημα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Millimetripaperi"
+          }
         }
       }
     },
@@ -13026,6 +14562,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bạc hà"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μέντα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minttu"
           }
         }
       }
@@ -13128,6 +14676,18 @@
             "state" : "translated",
             "value" : "Lưới tối"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σκούρο πλέγμα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tumma ruudukko"
+          }
         }
       }
     },
@@ -13228,6 +14788,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trong camera, chạm giữ cái bấm lỗ rồi thả ra. Tách! Cảnh trong ô cửa được bấm ra nguyên vẹn thành nhãn dán."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κράτα πατημένη την τρυπητή στην κάμερα και άφησέ την. Κλικ! Ό,τι φαινόταν στο παράθυρο αποσπάται όπως είναι ως αυτοκόλλητο."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pidä kamerassa reikälävistintä painettuna ja päästä irti. Naps! Ikkunassa näkynyt kuva irtoaa sellaisenaan tarraksi."
           }
         }
       }
@@ -13330,6 +14902,18 @@
             "state" : "translated",
             "value" : "Chọn màu ảnh"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διάλεξε ύφος"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse ilme"
+          }
         }
       }
     },
@@ -13430,6 +15014,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Viết vài chữ lên thẻ nhãn dán vừa ra lò, rồi vào “Thêm” để thêm màu ảnh như nâu đỏ hay đen trắng. Bạn có thể đổi màu ảnh bất cứ lúc nào mà không giảm chất lượng."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γράψε λίγες λέξεις στην κάρτα του φρέσκου αυτοκόλλητου και μετά από το «Περισσότερα» πρόσθεσε ένα ύφος, όπως σέπια ή ασπρόμαυρο. Μπορείς να αλλάζεις το ύφος όποτε θέλεις χωρίς απώλεια ποιότητας."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kirjoita muutama sana juuri syntyneeseen tarrakorttiin ja lisää kohdasta ”Lisää” ilme, kuten seepia tai mustavalkoinen. Voit vaihtaa ilmettä milloin tahansa laadun heikkenemättä."
           }
         }
       }
@@ -13532,6 +15128,18 @@
             "state" : "translated",
             "value" : "Gom vào bộ sưu tập"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συλλογή σε άλμπουμ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kerää albumiin"
+          }
         }
       }
     },
@@ -13632,6 +15240,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tờ nhãn dán được tạo theo từng bộ sưu tập. Hãy gom các nhãn dán muốn in vào một bộ sưu tập: trong bộ sưu tập, chạm “Chọn” rồi “Di chuyển” để chuyển nhiều cái cùng lúc."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τα φύλλα αυτοκόλλητων φτιάχνονται ανά άλμπουμ. Μάζεψε τα αυτοκόλλητα που θες να εκτυπώσεις σε ένα άλμπουμ: στο άλμπουμ πάτα «Επιλογή» και μετά «Μετακίνηση» για να μετακινήσεις πολλά μαζί."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarra-arkit tehdään albumi kerrallaan. Kerää tulostettavat tarrat yhteen albumiin: napauta albumissa ”Valitse” ja sitten ”Siirrä”, niin voit siirtää monta kerralla."
           }
         }
       }
@@ -13734,6 +15354,18 @@
             "state" : "translated",
             "value" : "Tạo tờ để in"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δημιουργία φύλλου εκτύπωσης"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luo tulostettava arkki"
+          }
         }
       }
     },
@@ -13834,6 +15466,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menu ⋯ ở góc trên bên phải bộ sưu tập ▸ “Sử dụng” ▸ “Tờ nhãn dán để in (PDF)”. Bạn nhận được tệp PDF 300 dpi để đưa thẳng cho tiệm in. Lưu bằng “Lưu vào Tệp” hoặc gửi qua AirDrop hay email."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μενού ⋯ πάνω δεξιά στο άλμπουμ ▸ «Χρήση» ▸ «Φύλλο αυτοκόλλητων προς εκτύπωση (PDF)». Παίρνεις ένα PDF 300 dpi που μπορείς να δώσεις κατευθείαν σε τυπογραφείο. Αποθήκευσέ το με «Αποθήκευση στα Αρχεία» ή στείλ’ το με AirDrop ή email."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albumin oikean yläkulman ⋯-valikko ▸ ”Käyttö” ▸ ”Tulostettava tarra-arkki (PDF)”. Saat 300 dpi:n PDF:n, jonka voit viedä suoraan painotaloon. Tallenna se kohdalla ”Tallenna Tiedostoihin” tai lähetä AirDropilla tai sähköpostilla."
           }
         }
       }
@@ -13936,6 +15580,18 @@
             "state" : "translated",
             "value" : "In"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εκτύπωση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulosta"
+          }
         }
       }
     },
@@ -14036,6 +15692,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ở nhà: in lên giấy decal/nhãn dán A4 hoặc Letter (nên chọn giấy mờ) ở “Kích thước thật (100%)”; nhớ tắt “Vừa với trang”.\nTiệm in hoặc xưởng làm nhãn dán: cứ đưa thẳng tệp PDF. Đường nét đứt màu hồng sẫm là đường cắt nửa (kiss-cut), còn dấu ở các góc là dấu xén."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Στο σπίτι: τύπωσε σε χαρτί ετικετών ή αυτοκόλλητων A4 ή Letter (προτιμότερο ματ) με «Πραγματικό μέγεθος (100%)» — κλείσε οπωσδήποτε το «Προσαρμογή στη σελίδα».\nΣε τυπογραφείο ή εταιρεία αυτοκόλλητων: δώσε απλώς το PDF. Η διακεκομμένη γραμμή ματζέντα είναι η γραμμή ημιτομής (kiss-cut) και τα σημάδια στις γωνίες είναι οι οδηγοί κοπής."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotona: tulosta A4- tai Letter-kokoiselle tarra- tai etikettipaperille (himmeä suositeltava) ”Todellinen koko (100 %)” -asetuksella; ”Sovita sivulle” on aina otettava pois päältä.\nPainotalossa tai tarravalmistajalla: anna vain PDF sellaisenaan. Magenta katkoviiva on puolileikkausviiva (kiss-cut) ja kulmamerkit ovat leikkausmerkkejä."
           }
         }
       }
@@ -14138,6 +15806,18 @@
             "state" : "translated",
             "value" : "Cắt và dán"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κόψε και κόλλησε"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leikkaa ja liimaa"
+          }
         }
       }
     },
@@ -14238,6 +15918,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cắt theo đường chấm bằng kéo hoặc máy cắt là xong! Dán lên phong bì, sổ tay, laptop… ở đâu cũng được."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κόψε κατά μήκος της διακεκομμένης γραμμής με ψαλίδι ή κοπτικό μηχάνημα και είναι έτοιμο! Κόλλησέ τα σε φακέλους, ατζέντες, λάπτοπ… όπου θες."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leikkaa pisteviivaa pitkin saksilla tai leikkurilla, niin valmista tuli! Liimaa kirjekuoriin, kalentereihin, kannettaviin… minne vain."
           }
         }
       }
@@ -14340,6 +16032,18 @@
             "state" : "translated",
             "value" : "📮 Từ khoảnh khắc được bấm ra đến nhãn dán trong tay"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Από τη στιγμή που αποσπάστηκε στο αυτοκόλλητο στο χέρι σου"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Irrotetusta hetkestä tarraksi käteesi"
+          }
         }
       }
     },
@@ -14440,6 +16144,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sáu bước biến nhãn dán trong điện thoại thành nhãn dán trên bàn của bạn."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Έξι βήματα μετατρέπουν το αυτοκόλλητο στο κινητό σου σε αυτοκόλλητο στο γραφείο σου."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuudella vaiheella puhelimesi tarra päätyy työpöydällesi."
           }
         }
       }
@@ -14542,6 +16258,18 @@
             "state" : "translated",
             "value" : "Nên biết"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Καλό είναι να ξέρεις"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hyvä tietää"
+          }
         }
       }
     },
@@ -14642,6 +16370,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Tờ để in luôn có hình tem. Đường cắt giữ nguyên mép răng cưa, nên nhãn dán khi bóc ra trông như tem thật (khoảng 5 cm, 12 cái mỗi trang)."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Τα φύλλα εκτύπωσης έχουν πάντα σχήμα γραμματοσήμου. Οι γραμμές κοπής κρατούν την οδοντωτή άκρη, οπότε τα αυτοκόλλητα που ξεκολλάς μοιάζουν με αληθινά γραμματόσημα (περίπου 5 εκ., 12 ανά σελίδα)."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Tulostettavat arkit ovat aina postimerkin muotoisia. Leikkausviivat säilyttävät hammastetun reunan, joten irrotetut tarrat näyttävät aidoilta postimerkeiltä (noin 5 cm, 12 sivulla)."
           }
         }
       }
@@ -14744,6 +16484,18 @@
             "state" : "translated",
             "value" : "• Nhãn dán còn giữ ảnh gốc sẽ được vẽ lại ở 300 dpi khi in nên rất nét."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Τα αυτοκόλλητα που κρατούν την αρχική φωτογραφία αναδημιουργούνται στα 300 dpi κατά την εκτύπωση, οπότε βγαίνουν καθαρά."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Tarrat, jotka säilyttävät alkuperäisen kuvan, piirretään tulostettaessa uudelleen 300 dpi:llä, joten ne tulevat teräviksi."
+          }
         }
       }
     },
@@ -14844,6 +16596,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Dùng cả trên kỹ thuật số: mỗi nhãn dán tự động thành nhãn dán Tin nhắn. Dán thẳng từ ngăn nhãn dán của Tin nhắn; nhãn dán chuyển động sẽ vừa dán vừa chuyển động."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Και ψηφιακά: κάθε αυτοκόλλητο γίνεται αυτόματα αυτοκόλλητο Μηνυμάτων. Κόλλησέ το κατευθείαν από το συρτάρι αυτοκόλλητων των Μηνυμάτων· τα κινούμενα κολλάνε εν κινήσει."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Myös digitaalisesti: jokaisesta tarrasta tulee automaattisesti Viestit-tarra. Liimaa se suoraan Viestien tarralaatikosta; liikkuvat tarrat liimautuvat liikkuen."
           }
         }
       }
@@ -14946,6 +16710,18 @@
             "state" : "translated",
             "value" : "• Đây không phải tem bưu chính thật — cứ thoải mái trang trí thư, nhưng chỗ dán tem hãy nhường cho tem thật!"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Δεν είναι αληθινά ταχυδρομικά γραμματόσημα — στόλισε τα γράμματά σου όσο θες, αλλά άφησε τη θέση του γραμματοσήμου στο αληθινό!"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Nämä eivät ole aitoja postimerkkejä – koristele kirjeitäsi vapaasti, mutta jätä postimerkin paikka aidolle!"
+          }
         }
       }
     },
@@ -15046,6 +16822,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nhãn dán của bạn đã đến!"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το αυτοκόλλητό σου έφτασε!"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarrasi on saapunut!"
           }
         }
       }
@@ -15148,6 +16936,18 @@
             "state" : "translated",
             "value" : "Xoay nhãn dán thử xem"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γύρνα το αυτοκόλλητο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pyöräytä tarraa"
+          }
         }
       }
     },
@@ -15248,6 +17048,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vài chữ về khoảnh khắc này…"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Λίγα λόγια για αυτή τη στιγμή…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muutama sana tästä hetkestä…"
           }
         }
       }
@@ -15350,6 +17162,18 @@
             "state" : "translated",
             "value" : "Thêm vào bộ sưu tập"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προσθήκη στο άλμπουμ"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisää albumiin"
+          }
         }
       }
     },
@@ -15450,6 +17274,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bỏ đi"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Απόρριψη"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hylkää"
           }
         }
       }
@@ -15552,6 +17388,18 @@
             "state" : "translated",
             "value" : "Thêm"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Περισσότερα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisää"
+          }
         }
       }
     },
@@ -15652,6 +17500,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ảnh đầy đủ"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ολόκληρη η φωτογραφία"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koko kuva"
           }
         }
       }
@@ -15754,6 +17614,18 @@
             "state" : "translated",
             "value" : "Chỉ tem"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μόνο γραμματόσημο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vain postimerkki"
+          }
         }
       }
     },
@@ -15854,6 +17726,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sửa"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Επεξεργασία"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muokkaa"
           }
         }
       }
@@ -15956,6 +17840,18 @@
             "state" : "translated",
             "value" : "Đã sao chép!"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αντιγράφηκε!"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopioitu!"
+          }
         }
       }
     },
@@ -16056,6 +17952,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chia sẻ"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κοινοποίηση"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jaa"
           }
         }
       }
@@ -16158,6 +18066,18 @@
             "state" : "translated",
             "value" : "Tem chuyển động"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κινούμενο γραμματόσημο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liikkuva postimerkki"
+          }
         }
       }
     },
@@ -16258,6 +18178,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nhãn dán cắt viền chuyển động"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κινούμενο αυτοκόλλητο με περίγραμμα"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liikkuva rajattu tarra"
           }
         }
       }
@@ -16360,6 +18292,18 @@
             "state" : "translated",
             "value" : "Gốc"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Πρωτότυπο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alkuperäinen"
+          }
         }
       }
     },
@@ -16460,6 +18404,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nâu đỏ"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Σέπια"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seepia"
           }
         }
       }
@@ -16562,6 +18518,18 @@
             "state" : "translated",
             "value" : "Đen trắng"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ασπρόμαυρο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mustavalkoinen"
+          }
         }
       }
     },
@@ -16662,6 +18630,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Phai màu"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ξεθωριασμένο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haalistunut"
           }
         }
       }
@@ -16764,6 +18744,18 @@
             "state" : "translated",
             "value" : "Rực rỡ"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Έντονο"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eloisa"
+          }
         }
       }
     },
@@ -16864,6 +18856,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Xanh lơ"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κυανό"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Syaani"
           }
         }
       }
@@ -16966,6 +18970,18 @@
             "state" : "translated",
             "value" : "Chạm giữ để xem ảnh đầy đủ"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κράτα πατημένο για να δεις ολόκληρη τη φωτογραφία"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pidä painettuna nähdäksesi koko kuvan"
+          }
         }
       }
     },
@@ -17066,6 +19082,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Đây là khoảnh khắc gì?"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τι στιγμή είναι αυτή;"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikä hetki tämä on?"
           }
         }
       }
@@ -17168,6 +19196,18 @@
             "state" : "translated",
             "value" : "Xóa nhãn dán này"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διαγραφή αυτού του αυτοκόλλητου"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista tämä tarra"
+          }
         }
       }
     },
@@ -17268,6 +19308,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Màu ảnh"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ύφος"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ilme"
           }
         }
       }

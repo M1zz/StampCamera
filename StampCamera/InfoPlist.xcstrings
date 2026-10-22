@@ -100,6 +100,18 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -201,6 +213,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching dùng camera để biến khoảnh khắc thành nhãn dán."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το Punching χρησιμοποιεί την κάμερα για να μετατρέπει στιγμές σε αυτοκόλλητα."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching käyttää kameraa muuttaakseen hetket tarroiksi."
           }
         }
       }
@@ -304,6 +328,18 @@
             "state" : "translated",
             "value" : "Dùng để lưu nhãn dán đã hoàn thành vào Ảnh."
           }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποιείται για την αποθήκευση έτοιμων αυτοκόλλητων στις Φωτογραφίες."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytetään valmiiden tarrojen tallentamiseen Kuviin."
+          }
         }
       }
     },
@@ -405,6 +441,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dùng để ghi lại nơi nhãn dán được bấm ra."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποιείται για την καταγραφή του σημείου όπου αποσπάστηκε ένα αυτοκόλλητο."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytetään tallentamaan paikka, jossa tarra irrotettiin."
           }
         }
       }
