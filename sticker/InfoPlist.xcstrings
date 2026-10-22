@@ -88,6 +88,18 @@
             "state" : "translated",
             "value" : "Naklejki Punching"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Çıkartmaları"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhãn dán Punching"
+          }
         }
       }
     }

@@ -867,3 +867,127 @@ Importuj ze Zdjęć
 Zamień wcześniej zrobione zdjęcia w naklejki i dodaj je do albumu.
 
 Wszystkie naklejki i zdjęcia są przechowywane wyłącznie na Twoim urządzeniu.
+
+## tr
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/tr/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/tr/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/tr/
+
+### 이름
+
+Punching: hareketli çıkartma
+
+### 부제
+
+Basılı tut, anı kopar
+
+### 키워드
+
+kesme,gif,pul,karalama defteri,günlük,kolaj,vintage,retro,polaroid,kartpostal,arka plan,mesajlar
+
+### 프로모션 텍스트
+
+Basılı tut, koparılan an hareketli bir çıkartma olsun. Sadece konuyu kes ya da tırtıklı bir pul olarak kopar, Mesajlar’dan veya klavyeden gönder.
+
+### 설명
+
+Basılı tuttuğun an, hareketli bir çıkartmaya dönüşür.
+Punching, lensten gördüğün her şeyi çıkartma olarak koparan bir kamera uygulaması.
+
+Sahneyi ekranın ortasındaki delgeç penceresine hizala ve basılı tut. Basmadan hemen önceki ve sonraki kısa hareketi de içeren bir çıkartma elde edersin. Kesilecek bir konu varsa (kişi, evcil hayvan ya da nesne gibi) yalnızca o kesilir; manzara gibi konu yoksa tırtıklı kenarlı bir pul olarak koparılır.
+
+Neler yapabilirsin
+
+Mesajlar’dan ve klavyeden hemen gönder
+Koparılan çıkartmalar Mesajlar’daki çıkartma çekmecesinde görünür; Punching klavyesini açarsan diğer uygulamalarda da seçip yapıştırabilirsin. Hareketli çıkartmalar hareketli olarak gönderilir.
+
+Tek dokunuşla kopyala ve gönder
+Koparttıktan hemen sonra Gönder’e dokun ya da bir çıkartmayı basılı tutup kopyala ve istediğin yere yapıştır.
+
+Şekil ve hareket her zaman değiştirilebilir
+Koparttıktan sonra bile kesilmiş şekil ile pul arasında, hareket ile durağan görüntü arasında geçiş yapabilirsin. Orijinal fotoğrafın olduğu gibi saklanır.
+
+Bir görünüm ve birkaç söz
+Orijinal, Sepya, Siyah beyaz, Solmuş, Canlı ve Camgöbeği arasından bir görünüm seç, her çıkartmaya kısa bir not bırak. Koparttığın tarih ve yer de kaydedilir.
+
+Her tema için bir koleksiyon
+Temalara göre koleksiyonlar oluştur; Mesajlar’da ve klavyede çıkartmaları koleksiyon koleksiyon seç. Kraft, kareli, çizgili ya da parşömen gibi sayfalar seç, sırayı dilediğin gibi düzenle.
+
+Gerçek çıkartma yazdır
+Bir koleksiyonu pul şeklinde kesim çizgileri olan yazdırmalık bir PDF’ye dönüştür ve doğrudan çıkartma kâğıdına yazdır.
+
+Fotoğraflar’dan içe aktar
+Daha önce çektiğin fotoğrafları çıkartmaya dönüştürüp bir koleksiyona ekle.
+
+Tüm çıkartmaların ve fotoğrafların yalnızca cihazında saklanır.
+
+## vi
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/vi/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/vi/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/vi/
+
+### 이름
+
+Punching: nhãn dán chuyển động
+
+### 부제
+
+Chạm giữ để bấm ra khoảnh khắc
+
+### 키워드
+
+cắt nền,gif,tem,scrapbook,nhật ký,ghép ảnh,vintage,retro,polaroid,bưu thiếp,tin nhắn,bàn phím,in ấn
+
+### 프로모션 텍스트
+
+Chạm giữ, khoảnh khắc bấm ra sẽ thành nhãn dán chuyển động. Chỉ cắt chủ thể hoặc bấm thành tem răng cưa rồi gửi ngay từ Tin nhắn hoặc bàn phím.
+
+### 설명
+
+Khoảnh khắc bạn chạm giữ trở thành nhãn dán chuyển động.
+Punching là ứng dụng camera bấm mọi thứ bạn thấy qua ống kính thành nhãn dán.
+
+Đưa cảnh vào ô cửa của cái bấm lỗ ở giữa màn hình rồi chạm giữ. Bạn sẽ có một nhãn dán gồm cả đoạn chuyển động ngắn ngay trước và sau lúc bấm. Nếu có chủ thể để cắt, như người, thú cưng hay đồ vật, chỉ riêng chủ thể được cắt ra; nếu không có, như cảnh phong cảnh, ảnh được bấm thành tem có mép răng cưa.
+
+Bạn có thể làm gì
+
+Gửi ngay từ Tin nhắn và bàn phím
+Nhãn dán đã bấm hiện trong ngăn nhãn dán của Tin nhắn, và nếu bật bàn phím Punching, bạn cũng có thể chọn và dán trong các ứng dụng khác. Nhãn dán chuyển động được gửi đi trong khi đang chuyển động.
+
+Sao chép và gửi chỉ một chạm
+Chạm Gửi ngay sau khi bấm, hoặc chạm giữ một nhãn dán để sao chép rồi dán vào bất cứ đâu.
+
+Đổi hình dạng và chuyển động bất cứ lúc nào
+Ngay cả sau khi bấm, bạn vẫn chuyển qua lại giữa hình cắt viền và hình tem, giữa chuyển động và ảnh tĩnh. Ảnh gốc được giữ nguyên.
+
+Một màu ảnh và vài chữ
+Chọn màu ảnh trong Gốc, Nâu đỏ, Đen trắng, Phai màu, Rực rỡ và Xanh lơ, rồi để lại một ghi chú ngắn cho từng nhãn dán. Ngày và nơi bấm cũng được lưu lại.
+
+Mỗi chủ đề một bộ sưu tập
+Tạo bộ sưu tập theo chủ đề và chọn nhãn dán theo từng bộ sưu tập trong Tin nhắn và bàn phím. Chọn trang như giấy kraft, ô vuông, kẻ dòng hay giấy da, rồi sắp xếp thứ tự tùy ý.
+
+In nhãn dán thật
+Biến một bộ sưu tập thành tệp PDF để in với đường cắt hình tem và in thẳng lên giấy nhãn dán.
+
+Nhập từ Ảnh
+Biến những bức ảnh đã chụp trước đó thành nhãn dán và thêm vào bộ sưu tập.
+
+Mọi nhãn dán và ảnh chỉ được lưu trong thiết bị của bạn.

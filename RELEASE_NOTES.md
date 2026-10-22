@@ -116,3 +116,19 @@ Wysyłaj naklejki w ruchu.
 Dekoruj strony i kolejność albumów.
 Kolekcje przeszły do albumów.
 Ustawienia zebrane w jednym miejscu.
+
+### 앱스토어 (tr)
+
+Koparılan anlar hareketli çıkartma olur.
+Hareketli çıkartmalar hareketli gider.
+Sayfaları ve sırayı süsleyebilirsin.
+Eski koleksiyonlar aynen taşındı.
+Ayarlar tek bir yerde toplandı.
+
+### 앱스토어 (vi)
+
+Khoảnh khắc bấm ra thành nhãn dán động.
+Gửi nhãn dán chuyển động vẫn động.
+Trang trí trang và thứ tự bộ sưu tập.
+Bộ sưu tập cũ được giữ nguyên.
+Cài đặt gom về một chỗ.

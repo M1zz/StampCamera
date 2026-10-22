@@ -87,6 +87,18 @@
             "state" : "translated",
             "value" : "Blokada Face ID"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID kilidi"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khóa Face ID"
+          }
         }
       }
     },
@@ -175,6 +187,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zablokuj aplikację za pomocą Face ID, aby chronić swoje albumy."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koleksiyonlarını korumak için uygulamayı Face ID ile kilitle."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khóa ứng dụng bằng Face ID để giữ riêng tư cho các bộ sưu tập của bạn."
           }
         }
       }
@@ -265,6 +289,18 @@
             "state" : "translated",
             "value" : "Wygodniej z VoiceOver"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver ile daha rahat"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng VoiceOver thuận tiện hơn"
+          }
         }
       }
     },
@@ -353,6 +389,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Po powiększeniu tekstu ekrany układają się na nowo i nic nie jest ucinane."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazıyı büyüttüğünde ekranlar kesilmeden yeniden düzenlenir."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khi bạn phóng to chữ, màn hình tự sắp xếp lại và không bị cắt mất."
           }
         }
       }
@@ -443,6 +491,18 @@
             "state" : "translated",
             "value" : "Synchronizacja między urządzeniami"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cihazlar arası eşitleme"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đồng bộ giữa các thiết bị"
+          }
         }
       }
     },
@@ -531,6 +591,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wszystko pozostaje czytelne, nawet przy włączonym zwiększonym kontraście lub gdy trudno rozróżniać kolory."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontrastı artırsan ya da renkleri ayırt etmekte zorlansan bile her şey okunaklı kalır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mọi thứ vẫn dễ đọc, kể cả khi bật tăng độ tương phản hoặc khó phân biệt màu."
           }
         }
       }
@@ -621,6 +693,18 @@
             "state" : "translated",
             "value" : "Używaj aplikacji w jeszcze większej liczbie języków."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulamayı daha fazla dilde kullan."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng ứng dụng bằng nhiều ngôn ngữ hơn."
+          }
         }
       }
     },
@@ -709,6 +793,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Więcej języków"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha fazla dil"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thêm nhiều ngôn ngữ"
           }
         }
       }
@@ -799,6 +895,18 @@
             "state" : "translated",
             "value" : "Zapisz naklejki w pliku i przywróć je później."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartmalarını bir dosyaya kaydet, sonra geri yükle."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưu nhãn dán vào một tệp và nhập lại sau."
+          }
         }
       }
     },
@@ -887,6 +995,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wygodniejsze kolory i kontrast"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha rahat renkler ve kontrast"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Màu sắc và độ tương phản dễ nhìn hơn"
           }
         }
       }
@@ -977,6 +1097,18 @@
             "state" : "translated",
             "value" : "Po zmianie iPhone’a Twoje naklejki przechodzą dalej przez iCloud."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni bir iPhone’a geçsen de çıkartmaların iCloud ile sende kalır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đổi sang iPhone mới, nhãn dán của bạn vẫn theo bạn qua iCloud."
+          }
         }
       }
     },
@@ -1065,6 +1197,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Naklejaj gdziekolwiek na stronie"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sayfada istediğin yere yapıştır"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dán tự do trên trang"
           }
         }
       }
@@ -1155,6 +1299,18 @@
             "state" : "translated",
             "value" : "Jeśli aplikacja zamknie się podczas dekorowania albumu, Twoje zmiany zostaną zachowane."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koleksiyonu süslerken uygulama kapansa bile yaptıkların kalır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nếu ứng dụng tắt giữa chừng khi bạn trang trí bộ sưu tập, phần đang làm vẫn còn nguyên."
+          }
         }
       }
     },
@@ -1243,6 +1399,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kopia zapasowa i eksport naklejek"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartma yedekleme ve dışa aktarma"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sao lưu và xuất nhãn dán"
           }
         }
       }
@@ -1333,6 +1501,18 @@
             "state" : "translated",
             "value" : "Usuń wszystkie naklejki naraz"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm çıkartmaları tek seferde sil"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa tất cả nhãn dán một lần"
+          }
         }
       }
     },
@@ -1421,6 +1601,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Używaj całej aplikacji także po angielsku."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulamanın tamamını İngilizce de kullanabilirsin."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng toàn bộ ứng dụng bằng tiếng Anh."
           }
         }
       }
@@ -1511,6 +1703,18 @@
             "state" : "translated",
             "value" : "Przy pierwszym otwarciu po aktualizacji pokazuje, co nowego."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güncellemeden sonra ilk açışta nelerin yenilendiğini gösterir."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lần đầu mở sau khi cập nhật, cho bạn biết có gì mới."
+          }
         }
       }
     },
@@ -1599,6 +1803,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Co nowego"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yenilikler"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Có gì mới"
           }
         }
       }
@@ -1689,6 +1905,18 @@
             "state" : "translated",
             "value" : "Obsługa angielskiego"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İngilizce desteği"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hỗ trợ tiếng Anh"
+          }
         }
       }
     },
@@ -1777,6 +2005,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Druk w wyciętym kształcie"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesilmiş şekliyle yazdır"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In đúng hình cắt viền"
           }
         }
       }
@@ -1867,6 +2107,18 @@
             "state" : "translated",
             "value" : "Ogranicz ruch"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hareketi azalt"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giảm chuyển động"
+          }
         }
       }
     },
@@ -1955,6 +2207,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Po włączeniu „Ogranicz ruch” efekty na ekranie stają się spokojniejsze."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Hareketi Azalt” açıkken ekran efektleri sakinleşir."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khi bật “Giảm chuyển động”, các hiệu ứng trên màn hình dịu hơn."
           }
         }
       }
@@ -2045,6 +2309,18 @@
             "state" : "translated",
             "value" : "Jeśli chcesz, możesz usunąć wszystkie zebrane naklejki bezpośrednio w aplikacji."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İstersen topladığın tüm çıkartmaları uygulamadan silebilirsin."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nếu muốn, bạn có thể xóa mọi nhãn dán đã gom ngay trong ứng dụng."
+          }
         }
       }
     },
@@ -2133,6 +2409,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Na arkuszu do druku wycięte naklejki dostają linię cięcia wzdłuż własnego konturu, a nie w kształcie znaczka."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazdırmalık sayfada kesilmiş çıkartmalar pul şekli yerine kendi dış çizgisini izleyen bir kesim çizgisi alır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trên tờ nhãn dán để in, nhãn dán cắt viền có đường cắt đi theo đường viền của chính nó, không theo hình tem."
           }
         }
       }
@@ -2223,6 +2511,18 @@
             "state" : "translated",
             "value" : "Powiadomienie pokazuje naklejki oderwane dokładnie rok temu."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir bildirim, geçen yıl bugün koparttığın çıkartmaları gösterir."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Một thông báo cho bạn xem lại những nhãn dán đã bấm đúng ngày này năm ngoái."
+          }
         }
       }
     },
@@ -2311,6 +2611,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Naklejki sprzed roku"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geçmişten çıkartmalar"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhãn dán năm ngoái"
           }
         }
       }
@@ -2401,6 +2713,18 @@
             "state" : "translated",
             "value" : "Przewodnik dla początkujących"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni başlayanlar için rehber"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hướng dẫn cho người mới"
+          }
         }
       }
     },
@@ -2489,6 +2813,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Przy pierwszym otwarciu krótko pokazuje, jak odrywać naklejki i z nich korzystać."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İlk açılışta çıkartmaların nasıl koparılıp kullanılacağını kısaca gösterir."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lần đầu mở ứng dụng, hướng dẫn ngắn cho bạn cách bấm và dùng nhãn dán."
           }
         }
       }
@@ -2579,6 +2915,18 @@
             "state" : "translated",
             "value" : "Bez siatki naklejaj naklejki w dowolnym miejscu strony, także pod kątem."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izgaraya bağlı kalmadan çıkartmaları sayfanın istediğin yerine, hatta eğik de yapıştırabilirsin."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không cần theo ô, bạn dán nhãn dán vào bất kỳ chỗ nào trên trang, kể cả dán nghiêng."
+          }
         }
       }
     },
@@ -2667,6 +3015,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ekrany dla dużego tekstu"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Büyük yazıya uyumlu ekranlar"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Màn hình cho chữ lớn"
           }
         }
       }
@@ -2757,6 +3117,18 @@
             "state" : "translated",
             "value" : "Ekran dla składanego iPhone’a"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katlanabilir iPhone ekranı"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Màn hình iPhone gập"
+          }
         }
       }
     },
@@ -2845,6 +3217,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Używaj szerokiego ekranu składanego iPhone’a jako dwóch paneli obok siebie."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katlanabilir iPhone’un geniş ekranını yan yana iki bölme olarak kullan."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng màn hình rộng của iPhone gập thành hai ngăn cạnh nhau."
           }
         }
       }
@@ -2935,6 +3319,18 @@
             "state" : "translated",
             "value" : "Wróć do przerwanej pracy"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaldığın yerden devam et"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiếp tục từ chỗ đang làm"
+          }
         }
       }
     },
@@ -3023,6 +3419,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver czyta każdy przycisk i każdą naklejkę, niczego nie pomijając i w odpowiedniej kolejności."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver her düğmeyi ve her çıkartmayı eksiksiz, doğru sırayla okur."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver đọc đủ từng nút và từng nhãn dán, theo đúng thứ tự."
           }
         }
       }
@@ -3113,6 +3521,18 @@
             "state" : "translated",
             "value" : "Otwórz aparat Punching"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Kamera’yı aç"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở camera Punching"
+          }
         }
       }
     },
@@ -3201,6 +3621,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Od razu otwiera aparat Punching."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching kamerasını hemen açar."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở ngay camera Punching."
           }
         }
       }
@@ -3291,6 +3723,18 @@
             "state" : "translated",
             "value" : "Otwórz aparat"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamerayı aç"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở camera"
+          }
         }
       }
     },
@@ -3379,6 +3823,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Domyślny kształt"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsayılan şekil"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hình dạng mặc định"
           }
         }
       }
@@ -3469,6 +3925,18 @@
             "state" : "translated",
             "value" : "Naklejka wycięta"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesilmiş çıkartma"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhãn dán cắt viền"
+          }
         }
       }
     },
@@ -3557,6 +4025,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Znaczek"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pul"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem"
           }
         }
       }
@@ -3647,6 +4127,18 @@
             "state" : "translated",
             "value" : "Ramka Punching"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching çerçevesi"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khung Punching"
+          }
         }
       }
     },
@@ -3735,6 +4227,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ramka %lld"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çerçeve %lld"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khung %lld"
           }
         }
       }
@@ -3825,6 +4329,18 @@
             "state" : "translated",
             "value" : "Odrywanie"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koparma"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bấm"
+          }
         }
       }
     },
@@ -3913,6 +4429,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jeśli nie ma czego wyciąć, kadr jest odrywany w kształcie znaczka. Ruch jest zawsze nagrywany, więc po oderwaniu możesz zmienić kształt i ruch każdej naklejki."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesilecek bir şey yoksa pul şeklinde koparılır. Hareket her zaman kaydedilir; bu yüzden koparttıktan sonra her çıkartmanın şeklini ve hareketini değiştirebilirsin."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nếu không có gì để cắt, ảnh sẽ được bấm thành hình tem. Chuyển động luôn được ghi lại, nên sau khi bấm bạn vẫn đổi được hình dạng và chuyển động của từng nhãn dán."
           }
         }
       }
@@ -4003,6 +4531,18 @@
             "state" : "translated",
             "value" : "Automatyczne odtwarzanie ruchu"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hareketi otomatik oynat"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tự phát chuyển động"
+          }
         }
       }
     },
@@ -4091,6 +4631,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Efekt przewracania stron"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sayfa çevirme efekti"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hiệu ứng lật trang"
           }
         }
       }
@@ -4181,6 +4733,18 @@
             "state" : "translated",
             "value" : "Widok"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Görünüm"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hiển thị"
+          }
         }
       }
     },
@@ -4269,6 +4833,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Przy wyłączonym automatycznym odtwarzaniu naklejki są wszędzie nieruchome. Ruch nigdy nie jest usuwany."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otomatik oynatma kapalıyken çıkartmalar her yerde durağan görünür. Hareket hiçbir zaman silinmez."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khi tắt tự phát, nhãn dán luôn hiện dưới dạng ảnh tĩnh. Chuyển động không bao giờ bị xóa."
           }
         }
       }
@@ -4359,6 +4935,18 @@
             "state" : "translated",
             "value" : "Użycie w Wiadomościach i na klawiaturze"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesajlar’da ve klavyede kullan"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng trong Tin nhắn và bàn phím"
+          }
         }
       }
     },
@@ -4447,6 +5035,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Drukowanie na papierowych naklejkach"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kâğıt çıkartma olarak yazdır"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In ra nhãn dán giấy"
           }
         }
       }
@@ -4537,6 +5137,18 @@
             "state" : "translated",
             "value" : "Użyj"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullanım"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sử dụng"
+          }
         }
       }
     },
@@ -4625,6 +5237,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pomoc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destek"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hỗ trợ"
           }
         }
       }
@@ -4715,6 +5339,18 @@
             "state" : "translated",
             "value" : "Ustawienia"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cài đặt"
+          }
         }
       }
     },
@@ -4803,6 +5439,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gotowe"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitti"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xong"
           }
         }
       }
@@ -4893,6 +5541,18 @@
             "state" : "translated",
             "value" : "Otwórz rozmowę w Wiadomościach."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesajlar’da bir konuşma aç."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở một cuộc trò chuyện trong Tin nhắn."
+          }
         }
       }
     },
@@ -4981,6 +5641,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dotknij ＋ obok pola tekstowego i wybierz naklejkę Punching w sekcji „Naklejki”."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metin alanının yanındaki ＋ düğmesine dokun ve “Çıkartmalar” bölümünden bir Punching çıkartması seç."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chạm nút ＋ cạnh ô nhập, rồi chọn nhãn dán Punching trong “Nhãn dán”."
           }
         }
       }
@@ -5071,6 +5743,18 @@
             "state" : "translated",
             "value" : "Przytrzymaj, aby nakleić ją w dowolnym miejscu rozmowy. Ruchome naklejki przyklejają się w ruchu."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konuşmada istediğin yere yapıştırmak için basılı tut. Hareketli çıkartmalar hareket ederek yapışır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chạm giữ để dán vào bất kỳ chỗ nào trong cuộc trò chuyện. Nhãn dán chuyển động sẽ vừa dán vừa chuyển động."
+          }
         }
       }
     },
@@ -5159,6 +5843,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wiadomości"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesajlar"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tin nhắn"
           }
         }
       }
@@ -5249,6 +5945,18 @@
             "state" : "translated",
             "value" : "Każdy album pojawia się jako osobny zestaw naklejek."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her koleksiyon ayrı bir çıkartma paketi olarak görünür."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mỗi bộ sưu tập hiện thành một gói nhãn dán riêng."
+          }
         }
       }
     },
@@ -5337,6 +6045,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dotknij poniżej „Otwórz Ustawienia” ▸ Klawiatury ▸ włącz Naklejki Punching."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aşağıdaki “Ayarlar’ı Aç”a dokun ▸ Klavyeler ▸ Punching Çıkartmaları’nı aç."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chạm “Mở Cài đặt” bên dưới ▸ Bàn phím ▸ bật Nhãn dán Punching."
           }
         }
       }
@@ -5427,6 +6147,18 @@
             "state" : "translated",
             "value" : "W tym samym miejscu włącz też „Zezwalaj na pełny dostęp”. Jest potrzebny do kopiowania i wklejania naklejek."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aynı yerde “Tam Erişime İzin Ver”i de aç. Çıkartmaları kopyalayıp yapıştırmak için gerekli."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ở cùng chỗ đó, bật thêm “Cho phép truy cập đầy đủ”. Cần có mục này để sao chép và dán nhãn dán."
+          }
         }
       }
     },
@@ -5515,6 +6247,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "W dowolnej aplikacji dotknij globusa na klawiaturze, aby przełączyć się na Naklejki Punching."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Herhangi bir uygulamada klavyedeki küre düğmesine dokunarak Punching Çıkartmaları’na geç."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trong bất kỳ ứng dụng nào, chạm nút quả địa cầu trên bàn phím để chuyển sang Nhãn dán Punching."
           }
         }
       }
@@ -5605,6 +6349,18 @@
             "state" : "translated",
             "value" : "Otwórz Ustawienia"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar’ı Aç"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở Cài đặt"
+          }
         }
       }
     },
@@ -5693,6 +6449,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klawiatura"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klavye"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bàn phím"
           }
         }
       }
@@ -5783,6 +6551,18 @@
             "state" : "translated",
             "value" : "Naklejki krążą tylko w obrębie Twojego urządzenia. Klawiatura nie odczytuje ani nie wysyła tego, co wpisujesz."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartmalar yalnızca cihazının içinde dolaşır. Klavye yazdıklarını okumaz ve göndermez."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhãn dán chỉ đi lại bên trong thiết bị của bạn. Bàn phím không đọc hay gửi những gì bạn gõ."
+          }
         }
       }
     },
@@ -5871,6 +6651,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nie udało się nagrać ruchu"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hareket kaydedilemedi"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa ghi được chuyển động"
           }
         }
       }
@@ -5961,6 +6753,18 @@
             "state" : "translated",
             "value" : "Nagrano za mało ruchu. Spróbować jeszcze raz?"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeterli hareket kaydedilemedi. Tekrar denensin mi?"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chuyển động ghi được chưa đủ. Thử lại nhé?"
+          }
         }
       }
     },
@@ -6049,6 +6853,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nowy album"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni koleksiyon"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bộ sưu tập mới"
           }
         }
       }
@@ -6139,6 +6955,18 @@
             "state" : "translated",
             "value" : "Nazwa albumu"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koleksiyon adı"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tên bộ sưu tập"
+          }
         }
       }
     },
@@ -6227,6 +7055,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anuluj"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vazgeç"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hủy"
           }
         }
       }
@@ -6317,6 +7157,18 @@
             "state" : "translated",
             "value" : "Utwórz"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oluştur"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tạo"
+          }
         }
       }
     },
@@ -6405,6 +7257,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zrób od nowa"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeniden çek"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chụp lại"
           }
         }
       }
@@ -6495,6 +7359,18 @@
             "state" : "translated",
             "value" : "Zostaw"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olduğu gibi bırak"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giữ nguyên"
+          }
         }
       }
     },
@@ -6583,6 +7459,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nowy album…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni koleksiyon…"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bộ sưu tập mới…"
           }
         }
       }
@@ -6673,6 +7561,18 @@
             "state" : "translated",
             "value" : "Nie było czego wyciąć, więc oderwano w kształcie znaczka"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesilecek bir şey olmadığından pul şeklinde koparıldı"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có gì để cắt nên đã bấm thành hình tem"
+          }
         }
       }
     },
@@ -6761,6 +7661,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching potrzebuje dostępu do aparatu, aby zamieniać chwile w naklejki.\nWłącz aparat w Ustawieniach."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching, anları çıkartmaya dönüştürmek için kameraya erişmek ister.\nLütfen Ayarlar’da kamerayı aç."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching cần quyền truy cập camera để biến khoảnh khắc thành nhãn dán.\nHãy bật camera trong Cài đặt."
           }
         }
       }
@@ -6851,6 +7763,18 @@
             "state" : "translated",
             "value" : "Albumy"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koleksiyonlar"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bộ sưu tập"
+          }
         }
       }
     },
@@ -6939,6 +7863,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aparat"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera"
           }
         }
       }
@@ -7029,6 +7965,18 @@
             "state" : "translated",
             "value" : "Importuj ze Zdjęć"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotoğraflar’dan içe aktar"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhập từ Ảnh"
+          }
         }
       }
     },
@@ -7118,6 +8066,18 @@
             "state" : "translated",
             "value" : "Zbieranie"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toplanıyor"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang gom"
+          }
         }
       }
     },
@@ -7203,6 +8163,18 @@
           }
         },
         "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -7296,6 +8268,18 @@
             "state" : "translated",
             "value" : "Wszystkie"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tümü"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tất cả"
+          }
         }
       }
     },
@@ -7384,6 +8368,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ruchome"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hareketli"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chuyển động"
           }
         }
       }
@@ -7474,6 +8470,18 @@
             "state" : "translated",
             "value" : "Wycięte"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesilmiş"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cắt viền"
+          }
         }
       }
     },
@@ -7562,6 +8570,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nie ma jeszcze naklejek typu „%@”"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Henüz “%@” çıkartması yok"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa có nhãn dán “%@”"
           }
         }
       }
@@ -7652,6 +8672,18 @@
             "state" : "translated",
             "value" : "Wybierz"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seç"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chọn"
+          }
         }
       }
     },
@@ -7740,6 +8772,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pokaż wszystkie"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tümünü göster"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xem tất cả"
           }
         }
       }
@@ -7830,6 +8874,18 @@
             "state" : "translated",
             "value" : "Usunąć wybrane naklejki (%lld)?"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seçilen %lld çıkartma silinsin mi?"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa %lld nhãn dán đã chọn?"
+          }
         }
       }
     },
@@ -7918,6 +8974,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usuń"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sil"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa"
           }
         }
       }
@@ -8008,6 +9076,18 @@
             "state" : "translated",
             "value" : "Zmień nazwę"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeniden adlandır"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đổi tên"
+          }
         }
       }
     },
@@ -8096,6 +9176,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zapisz"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaydet"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưu"
           }
         }
       }
@@ -8186,6 +9278,18 @@
             "state" : "translated",
             "value" : "Usunąć album „%@” i znajdujące się w nim naklejki (%lld)?"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” koleksiyonu ve içindeki %lld çıkartma silinsin mi?"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa bộ sưu tập “%@” và %lld nhãn dán trong đó?"
+          }
         }
       }
     },
@@ -8274,6 +9378,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usunąć tę naklejkę?"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu çıkartma silinsin mi?"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa nhãn dán này?"
           }
         }
       }
@@ -8364,6 +9480,18 @@
             "state" : "translated",
             "value" : "Tworzenie arkusza naklejek…"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartma sayfası hazırlanıyor…"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang tạo tờ nhãn dán…"
+          }
         }
       }
     },
@@ -8452,6 +9580,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zbieraj tutaj"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buraya topla"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gom vào đây"
           }
         }
       }
@@ -8542,6 +9682,18 @@
             "state" : "translated",
             "value" : "Zbiera tutaj"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buraya toplanıyor"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang gom vào đây"
+          }
         }
       }
     },
@@ -8630,6 +9782,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dekoruj dowolnie"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serbestçe süsle"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trang trí tự do"
           }
         }
       }
@@ -8720,6 +9884,18 @@
             "state" : "translated",
             "value" : "Udostępnij jako obraz"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Görsel olarak paylaş"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chia sẻ dưới dạng ảnh"
+          }
         }
       }
     },
@@ -8808,6 +9984,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arkusz naklejek do druku (PDF)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazdırmalık çıkartma sayfası (PDF)"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tờ nhãn dán để in (PDF)"
           }
         }
       }
@@ -8898,6 +10086,18 @@
             "state" : "translated",
             "value" : "Poradnik drukowania"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazdırma rehberi"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hướng dẫn in"
+          }
         }
       }
     },
@@ -8986,6 +10186,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usuń album"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koleksiyonu sil"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa bộ sưu tập"
           }
         }
       }
@@ -9076,6 +10288,18 @@
             "state" : "translated",
             "value" : "Odznacz wszystko"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seçimi kaldır"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bỏ chọn tất cả"
+          }
         }
       }
     },
@@ -9164,6 +10388,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zaznacz wszystko"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tümünü seç"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chọn tất cả"
           }
         }
       }
@@ -9254,6 +10490,18 @@
             "state" : "translated",
             "value" : "Wybierz naklejki"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartma seç"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy chọn nhãn dán"
+          }
         }
       }
     },
@@ -9342,6 +10590,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybrano: %lld"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld seçildi"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã chọn %lld"
           }
         }
       }
@@ -9432,6 +10692,18 @@
             "state" : "translated",
             "value" : "Przenieś"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taşı"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di chuyển"
+          }
         }
       }
     },
@@ -9520,6 +10792,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tło „%@”"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” arka planı"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nền “%@”"
           }
         }
       }
@@ -9610,6 +10894,18 @@
             "state" : "translated",
             "value" : "Przytrzymaj naklejkę, aby przesunąć ją w dowolne miejsce"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir çıkartmayı istediğin yere taşımak için basılı tut"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chạm giữ một nhãn dán để chuyển đến chỗ bạn muốn"
+          }
         }
       }
     },
@@ -9698,6 +10994,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "W kolejności robienia"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çekim sırasına göre"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Theo thứ tự chụp"
           }
         }
       }
@@ -9788,6 +11096,18 @@
             "state" : "translated",
             "value" : "Kopiuj"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopyala"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sao chép"
+          }
         }
       }
     },
@@ -9876,6 +11196,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wyślij"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gönder"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gửi"
           }
         }
       }
@@ -9966,6 +11298,18 @@
             "state" : "translated",
             "value" : "Do innego albumu"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başka koleksiyona"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sang bộ sưu tập khác"
+          }
         }
       }
     },
@@ -10054,6 +11398,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mój album naklejek „%@” #Punching"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartma koleksiyonum “%@” #Punching"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bộ sưu tập nhãn dán của tôi “%@” #Punching"
           }
         }
       }
@@ -10144,6 +11500,18 @@
             "state" : "translated",
             "value" : "Ten album jest jeszcze pusty"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu koleksiyon henüz boş"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bộ sưu tập này vẫn còn trống"
+          }
         }
       }
     },
@@ -10232,6 +11600,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zbiera tutaj: odrywaj naklejki aparatem, aby go zapełnić"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buraya toplanıyor — doldurmak için kamerayla çıkartma kopar"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang gom vào đây — hãy bấm nhãn dán bằng camera để lấp đầy"
           }
         }
       }
@@ -10322,6 +11702,18 @@
             "state" : "translated",
             "value" : "Kształt"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şekil"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hình dạng"
+          }
         }
       }
     },
@@ -10410,6 +11802,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wycięta"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesilmiş"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cắt viền"
           }
         }
       }
@@ -10500,6 +11904,18 @@
             "state" : "translated",
             "value" : "Znaczek"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pul"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem"
+          }
         }
       }
     },
@@ -10588,6 +12004,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ruch"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hareket"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chuyển động"
           }
         }
       }
@@ -10678,6 +12106,18 @@
             "state" : "translated",
             "value" : "Statyczna"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durağan"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tĩnh"
+          }
         }
       }
     },
@@ -10766,6 +12206,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gładki krem"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Düz krem"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kem trơn"
           }
         }
       }
@@ -10856,6 +12308,18 @@
             "state" : "translated",
             "value" : "Kratka"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kareli"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ô vuông"
+          }
         }
       }
     },
@@ -10944,6 +12408,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Linie"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çizgili"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kẻ dòng"
           }
         }
       }
@@ -11034,6 +12510,18 @@
             "state" : "translated",
             "value" : "Kropki"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noktalı"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chấm bi"
+          }
         }
       }
     },
@@ -11122,6 +12610,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kraft"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giấy kraft"
           }
         }
       }
@@ -11212,6 +12712,18 @@
             "state" : "translated",
             "value" : "Pergamin"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parşömen"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giấy da"
+          }
         }
       }
     },
@@ -11297,6 +12809,18 @@
           }
         },
         "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cornell"
@@ -11390,6 +12914,18 @@
             "state" : "translated",
             "value" : "Milimetrowy"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grafik"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giấy kẻ ô"
+          }
         }
       }
     },
@@ -11478,6 +13014,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mięta"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nane"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạc hà"
           }
         }
       }
@@ -11568,6 +13116,18 @@
             "state" : "translated",
             "value" : "Ciemna siatka"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koyu ızgara"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lưới tối"
+          }
         }
       }
     },
@@ -11656,6 +13216,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Przytrzymaj dziurkacz w aparacie i puść. Klik! To, co było widać w okienku, zostaje oderwane jako naklejka."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamerada delgeci basılı tutup bırak. Çıt! Pencerede görünen sahne olduğu gibi çıkartma olarak kopar."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trong camera, chạm giữ cái bấm lỗ rồi thả ra. Tách! Cảnh trong ô cửa được bấm ra nguyên vẹn thành nhãn dán."
           }
         }
       }
@@ -11746,6 +13318,18 @@
             "state" : "translated",
             "value" : "Wybierz styl"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir görünüm seç"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chọn màu ảnh"
+          }
         }
       }
     },
@@ -11834,6 +13418,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Napisz kilka słów na świeżej karcie naklejki, a potem w sekcji „Więcej” dodaj styl, np. sepię lub czerń i biel. Styl możesz zmienić w każdej chwili bez utraty jakości."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni çıkan çıkartma kartına birkaç söz yaz, sonra “Daha fazla”dan sepya ya da siyah beyaz gibi bir görünüm ekle. Görünümü istediğin zaman değiştirebilirsin; kalite kaybolmaz."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viết vài chữ lên thẻ nhãn dán vừa ra lò, rồi vào “Thêm” để thêm màu ảnh như nâu đỏ hay đen trắng. Bạn có thể đổi màu ảnh bất cứ lúc nào mà không giảm chất lượng."
           }
         }
       }
@@ -11924,6 +13520,18 @@
             "state" : "translated",
             "value" : "Zbierz w albumie"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koleksiyonda topla"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gom vào bộ sưu tập"
+          }
         }
       }
     },
@@ -12012,6 +13620,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arkusze naklejek powstają dla jednego albumu. Zbierz naklejki do druku w jednym albumie: w albumie dotknij „Wybierz”, a potem „Przenieś”, aby przenieść wiele naraz."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartma sayfaları koleksiyon başına hazırlanır. Yazdırmak istediğin çıkartmaları tek bir koleksiyonda topla: koleksiyonda “Seç”e, sonra “Taşı”ya dokunarak çoğunu birden taşıyabilirsin."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tờ nhãn dán được tạo theo từng bộ sưu tập. Hãy gom các nhãn dán muốn in vào một bộ sưu tập: trong bộ sưu tập, chạm “Chọn” rồi “Di chuyển” để chuyển nhiều cái cùng lúc."
           }
         }
       }
@@ -12102,6 +13722,18 @@
             "state" : "translated",
             "value" : "Utwórz arkusz do druku"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazdırmalık sayfa oluştur"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tạo tờ để in"
+          }
         }
       }
     },
@@ -12190,6 +13822,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "W menu ⋯ w prawym górnym rogu albumu ▸ „Użyj” ▸ „Arkusz naklejek do druku (PDF)”. Otrzymasz plik PDF 300 dpi, który możesz od razu oddać do drukarni. Zapisz go przez „Zachowaj w Plikach” albo wyślij przez AirDrop lub e-mail."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koleksiyonun sağ üstündeki ⋯ menüsü ▸ “Kullanım” ▸ “Yazdırmalık çıkartma sayfası (PDF)”. Doğrudan matbaaya verebileceğin 300 dpi bir PDF elde edersin. “Dosyalar’a Kaydet” ile sakla ya da AirDrop veya e-postayla gönder."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu ⋯ ở góc trên bên phải bộ sưu tập ▸ “Sử dụng” ▸ “Tờ nhãn dán để in (PDF)”. Bạn nhận được tệp PDF 300 dpi để đưa thẳng cho tiệm in. Lưu bằng “Lưu vào Tệp” hoặc gửi qua AirDrop hay email."
           }
         }
       }
@@ -12280,6 +13924,18 @@
             "state" : "translated",
             "value" : "Drukuj"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazdır"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In"
+          }
         }
       }
     },
@@ -12368,6 +14024,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "W domu: drukuj na papierze do etykiet lub naklejek A4 albo Letter (najlepiej matowym) w „Rzeczywistym rozmiarze (100%)”; koniecznie wyłącz „Dopasuj do strony”.\nW drukarni lub u producenta naklejek: po prostu oddaj plik PDF. Magentowa linia przerywana to linia cięcia (kiss-cut), a znaczniki w rogach to znaczniki przycięcia."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Evde: A4 ya da Letter etiket/çıkartma kâğıdına (mat önerilir) “Gerçek Boyut (%100)” ile yazdır; “Sayfaya Sığdır”ı mutlaka kapat.\nMatbaa veya çıkartma üreticisi: PDF’yi olduğu gibi ver. Macenta kesik çizgi yarım kesim (kiss-cut) çizgisi, köşe işaretleri ise kırpma kılavuzudur."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ở nhà: in lên giấy decal/nhãn dán A4 hoặc Letter (nên chọn giấy mờ) ở “Kích thước thật (100%)”; nhớ tắt “Vừa với trang”.\nTiệm in hoặc xưởng làm nhãn dán: cứ đưa thẳng tệp PDF. Đường nét đứt màu hồng sẫm là đường cắt nửa (kiss-cut), còn dấu ở các góc là dấu xén."
           }
         }
       }
@@ -12458,6 +14126,18 @@
             "state" : "translated",
             "value" : "Wytnij i naklej"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kes ve yapıştır"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cắt và dán"
+          }
         }
       }
     },
@@ -12546,6 +14226,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wytnij wzdłuż kropkowanej linii nożyczkami lub ploterem i gotowe! Naklej na koperty, kalendarze, laptopy… gdziekolwiek."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noktalı çizgi boyunca makas veya kesici makineyle kes, bitti! Zarflara, ajandalara, dizüstü bilgisayarlara… istediğin yere yapıştır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cắt theo đường chấm bằng kéo hoặc máy cắt là xong! Dán lên phong bì, sổ tay, laptop… ở đâu cũng được."
           }
         }
       }
@@ -12636,6 +14328,18 @@
             "state" : "translated",
             "value" : "📮 Od oderwanej chwili do naklejki w dłoni"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Koparılan andan elindeki çıkartmaya"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Từ khoảnh khắc được bấm ra đến nhãn dán trong tay"
+          }
         }
       }
     },
@@ -12724,6 +14428,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sześć kroków zamienia naklejkę z telefonu w naklejkę na biurku."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Altı adımda telefonundaki çıkartma masandaki çıkartmaya dönüşür."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sáu bước biến nhãn dán trong điện thoại thành nhãn dán trên bàn của bạn."
           }
         }
       }
@@ -12814,6 +14530,18 @@
             "state" : "translated",
             "value" : "Warto wiedzieć"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilmekte fayda var"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nên biết"
+          }
         }
       }
     },
@@ -12902,6 +14630,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Arkusze do druku zawsze mają kształt znaczka. Linie cięcia zachowują ząbkowany brzeg, więc odklejone naklejki wyglądają jak prawdziwe znaczki (ok. 5 cm, 12 na stronie)."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Yazdırmalık sayfalar her zaman pul şeklindedir. Kesim çizgileri tırtıklı kenarı korur; bu yüzden sökülen çıkartmalar gerçek pul gibi görünür (yaklaşık 5 cm, sayfada 12 adet)."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Tờ để in luôn có hình tem. Đường cắt giữ nguyên mép răng cưa, nên nhãn dán khi bóc ra trông như tem thật (khoảng 5 cm, 12 cái mỗi trang)."
           }
         }
       }
@@ -12992,6 +14732,18 @@
             "state" : "translated",
             "value" : "• Naklejki z zachowanym oryginalnym zdjęciem są przy druku renderowane na nowo w 300 dpi, więc są ostre."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Orijinal fotoğrafını koruyan çıkartmalar yazdırılırken 300 dpi ile yeniden oluşturulur, bu yüzden net çıkar."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Nhãn dán còn giữ ảnh gốc sẽ được vẽ lại ở 300 dpi khi in nên rất nét."
+          }
         }
       }
     },
@@ -13080,6 +14832,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Także cyfrowo: każda naklejka automatycznie staje się naklejką do Wiadomości. Naklej ją prosto z szuflady naklejek w Wiadomościach; ruchome naklejki przyklejają się w ruchu."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Dijital de olur: her çıkartma otomatik olarak bir Mesajlar çıkartması olur. Doğrudan Mesajlar’daki çıkartma çekmecesinden yapıştır; hareketli çıkartmalar hareket ederek yapışır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Dùng cả trên kỹ thuật số: mỗi nhãn dán tự động thành nhãn dán Tin nhắn. Dán thẳng từ ngăn nhãn dán của Tin nhắn; nhãn dán chuyển động sẽ vừa dán vừa chuyển động."
           }
         }
       }
@@ -13170,6 +14934,18 @@
             "state" : "translated",
             "value" : "• To nie są prawdziwe znaczki pocztowe: ozdabiaj listy do woli, ale miejsce na znaczek zostaw prawdziwemu!"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Bunlar gerçek posta pulları değil: mektuplarını istediğin kadar süsle ama pul yerini gerçek pula bırak!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Đây không phải tem bưu chính thật — cứ thoải mái trang trí thư, nhưng chỗ dán tem hãy nhường cho tem thật!"
+          }
         }
       }
     },
@@ -13258,6 +15034,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Twoja naklejka dotarła!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartman geldi!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhãn dán của bạn đã đến!"
           }
         }
       }
@@ -13348,6 +15136,18 @@
             "state" : "translated",
             "value" : "Obróć naklejkę"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartmayı döndür"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xoay nhãn dán thử xem"
+          }
         }
       }
     },
@@ -13436,6 +15236,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kilka słów o tej chwili…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu an hakkında birkaç söz…"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vài chữ về khoảnh khắc này…"
           }
         }
       }
@@ -13526,6 +15338,18 @@
             "state" : "translated",
             "value" : "Dodaj do albumu"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koleksiyona ekle"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thêm vào bộ sưu tập"
+          }
         }
       }
     },
@@ -13614,6 +15438,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Odrzuć"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "At"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bỏ đi"
           }
         }
       }
@@ -13704,6 +15540,18 @@
             "state" : "translated",
             "value" : "Więcej"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha fazla"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thêm"
+          }
         }
       }
     },
@@ -13792,6 +15640,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Całe zdjęcie"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm fotoğraf"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ảnh đầy đủ"
           }
         }
       }
@@ -13882,6 +15742,18 @@
             "state" : "translated",
             "value" : "Tylko znaczek"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yalnızca pul"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chỉ tem"
+          }
         }
       }
     },
@@ -13970,6 +15842,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Edytuj"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Düzenle"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sửa"
           }
         }
       }
@@ -14060,6 +15944,18 @@
             "state" : "translated",
             "value" : "Skopiowano!"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopyalandı!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã sao chép!"
+          }
         }
       }
     },
@@ -14148,6 +16044,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Udostępnij"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paylaş"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chia sẻ"
           }
         }
       }
@@ -14238,6 +16146,18 @@
             "state" : "translated",
             "value" : "Ruchomy znaczek"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hareketli pul"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem chuyển động"
+          }
         }
       }
     },
@@ -14326,6 +16246,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ruchoma naklejka wycięta"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hareketli kesilmiş çıkartma"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhãn dán cắt viền chuyển động"
           }
         }
       }
@@ -14416,6 +16348,18 @@
             "state" : "translated",
             "value" : "Oryginał"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orijinal"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gốc"
+          }
         }
       }
     },
@@ -14504,6 +16448,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sepia"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepya"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nâu đỏ"
           }
         }
       }
@@ -14594,6 +16550,18 @@
             "state" : "translated",
             "value" : "Czerń i biel"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siyah beyaz"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đen trắng"
+          }
         }
       }
     },
@@ -14682,6 +16650,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wyblakły"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solmuş"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phai màu"
           }
         }
       }
@@ -14772,6 +16752,18 @@
             "state" : "translated",
             "value" : "Wyrazisty"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canlı"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rực rỡ"
+          }
         }
       }
     },
@@ -14860,6 +16852,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cyjan"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camgöbeği"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xanh lơ"
           }
         }
       }
@@ -14950,6 +16954,18 @@
             "state" : "translated",
             "value" : "Przytrzymaj, aby zobaczyć całe zdjęcie"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm fotoğrafı görmek için basılı tut"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chạm giữ để xem ảnh đầy đủ"
+          }
         }
       }
     },
@@ -15038,6 +17054,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Co to za chwila?"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu nasıl bir an?"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đây là khoảnh khắc gì?"
           }
         }
       }
@@ -15128,6 +17156,18 @@
             "state" : "translated",
             "value" : "Usuń tę naklejkę"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu çıkartmayı sil"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xóa nhãn dán này"
+          }
         }
       }
     },
@@ -15216,6 +17256,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Styl"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Görünüm"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Màu ảnh"
           }
         }
       }

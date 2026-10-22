@@ -88,6 +88,18 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -177,6 +189,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching używa aparatu, aby zamieniać chwile w naklejki."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching, anları çıkartmaya dönüştürmek için kamerayı kullanır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching dùng camera để biến khoảnh khắc thành nhãn dán."
           }
         }
       }
@@ -268,6 +292,18 @@
             "state" : "translated",
             "value" : "Służy do zapisywania gotowych naklejek w Zdjęciach."
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamamlanan çıkartmaları Fotoğraflar’a kaydetmek için kullanılır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng để lưu nhãn dán đã hoàn thành vào Ảnh."
+          }
         }
       }
     },
@@ -357,6 +393,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Służy do zapisywania miejsca, w którym oderwano naklejkę."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir çıkartmanın nerede koparıldığını kaydetmek için kullanılır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng để ghi lại nơi nhãn dán được bấm ra."
           }
         }
       }

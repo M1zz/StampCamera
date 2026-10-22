@@ -87,6 +87,18 @@
             "state" : "translated",
             "value" : "Wszystkie"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tümü"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tất cả"
+          }
         }
       }
     },
@@ -175,6 +187,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oderwij naklejki w Punching,\na pojawią się tutaj."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching’de çıkartma kopar,\nburada görünsün."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hãy bấm nhãn dán trong Punching\nvà chúng sẽ hiện ở đây."
           }
         }
       }
@@ -265,6 +289,18 @@
             "state" : "translated",
             "value" : "Udostępnianie naklejek wymaga konfiguracji „App Group”.\n(Sprawdź ustawienia podpisywania aplikacji i rozszerzeń)"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkartmaları paylaşmak için “App Group” ayarı gerekir.\n(Uygulamanın ve uzantının imzalama ayarlarını kontrol et)"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Để chia sẻ nhãn dán cần thiết lập “App Group”.\n(Kiểm tra cài đặt ký của ứng dụng và tiện ích mở rộng)"
+          }
         }
       }
     },
@@ -353,6 +389,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Naklejki Punching"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Çıkartmaları"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhãn dán Punching"
           }
         }
       }

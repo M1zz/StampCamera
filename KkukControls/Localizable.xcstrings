@@ -87,6 +87,18 @@
             "state" : "translated",
             "value" : "Aparat Punching"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Kamera"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera Punching"
+          }
         }
       }
     },
@@ -175,6 +187,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Od razu otwiera aparat Punching."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching kamerasını hemen açar."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở ngay camera Punching."
           }
         }
       }
