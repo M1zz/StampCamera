@@ -40,6 +40,18 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -81,6 +93,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching 使用相機，把瞬間撕成貼圖。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching использует камеру, чтобы превращать мгновения в стикеры."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching usa la cámara para convertir momentos en stickers."
           }
         }
       }
@@ -124,6 +148,18 @@
             "state" : "translated",
             "value" : "用於將完成的貼圖儲存到「照片」。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нужно, чтобы сохранять готовые стикеры в «Фото»."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se usa para guardar los stickers terminados en Fotos."
+          }
         }
       }
     },
@@ -165,6 +201,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "用於記錄貼圖是在哪裡撕下的。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нужно, чтобы записывать место, где оторван стикер."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se usa para registrar dónde se arrancó un sticker."
           }
         }
       }

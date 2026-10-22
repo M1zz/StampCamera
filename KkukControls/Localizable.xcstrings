@@ -39,6 +39,18 @@
             "state" : "translated",
             "value" : "Punching 相機"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Камера Punching"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cámara de Punching"
+          }
         }
       }
     },
@@ -79,6 +91,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "立即開啟 Punching 相機。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сразу открывает камеру Punching."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la cámara de Punching al instante."
           }
         }
       }

@@ -39,6 +39,18 @@
             "state" : "translated",
             "value" : "Face ID 鎖定"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Блокировка Face ID"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueo con Face ID"
+          }
         }
       }
     },
@@ -79,6 +91,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "用 Face ID 鎖住 App，守護你的收藏冊。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заблокируйте приложение с помощью Face ID, чтобы сохранить альбомы в тайне."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloquea la app con Face ID para proteger tus álbumes."
           }
         }
       }
@@ -121,6 +145,18 @@
             "state" : "translated",
             "value" : "VoiceOver 更好用"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver удобнее"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más cómodo con VoiceOver"
+          }
         }
       }
     },
@@ -161,6 +197,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "放大字體後，畫面也會重新排版，不會被截斷，看起來依然舒服。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "При увеличении текста экраны перестраиваются, ничего не обрезается и всё удобно читать."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al agrandar el texto, las pantallas se reorganizan sin cortarse y se ven bien."
           }
         }
       }
@@ -203,6 +251,18 @@
             "state" : "translated",
             "value" : "跨裝置同步"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синхронизация между устройствами"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronización entre dispositivos"
+          }
         }
       }
     },
@@ -243,6 +303,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "即使開啟了提高對比，或難以分辨顏色，內容依然清楚可辨。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всё остаётся читаемым даже при включённом повышении контрастности или если трудно различать цвета."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todo se lee bien, incluso con «Aumentar contraste» o si cuesta distinguir los colores."
           }
         }
       }
@@ -285,6 +357,18 @@
             "state" : "translated",
             "value" : "讓你用更多語言使用這個 App。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Приложение станет доступно на большем числе языков."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa la app en más idiomas."
+          }
         }
       }
     },
@@ -325,6 +409,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "更多語言"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Больше языков"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más idiomas"
           }
         }
       }
@@ -367,6 +463,18 @@
             "state" : "translated",
             "value" : "把收集的貼圖存成檔案，之後還能再匯入。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохраняйте стикеры в файл и возвращайте их позже."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda tus stickers en un archivo y recupéralos cuando quieras."
+          }
         }
       }
     },
@@ -407,6 +515,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "更易看清的顏色與對比"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удобные цвета и контраст"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colores y contraste más cómodos"
           }
         }
       }
@@ -449,6 +569,18 @@
             "state" : "translated",
             "value" : "換了新 iPhone，收集的貼圖也會透過 iCloud 原樣延續。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Смените iPhone — и собранные стикеры сохранятся через iCloud."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si cambias de iPhone, tus stickers pasan contigo a través de iCloud."
+          }
         }
       }
     },
@@ -489,6 +621,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "在收藏冊頁面上隨意黏貼"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Свободное размещение на странице"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pega donde quieras en la página"
           }
         }
       }
@@ -531,6 +675,18 @@
             "state" : "translated",
             "value" : "裝飾收藏冊時即使 App 被關閉，做到一半的內容也會保留。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Если приложение закроется при оформлении альбома, ваши правки сохранятся."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si la app se cierra mientras decoras un álbum, lo que llevabas sigue ahí."
+          }
         }
       }
     },
@@ -571,6 +727,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "貼圖備份與匯出"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Резервная копия и экспорт стикеров"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copia de seguridad y exportación de stickers"
           }
         }
       }
@@ -613,6 +781,18 @@
             "state" : "translated",
             "value" : "一次清空貼圖"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить все стикеры сразу"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar todos los stickers a la vez"
+          }
         }
       }
     },
@@ -653,6 +833,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "App 也可以用英文使用。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всё приложение можно использовать на английском."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa toda la app en inglés."
           }
         }
       }
@@ -695,6 +887,18 @@
             "state" : "translated",
             "value" : "更新後第一次打開時，告訴你有什麼新變化。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "При первом запуске после обновления рассказывает, что появилось нового."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La primera vez que abres la app tras una actualización, te cuenta qué hay de nuevo."
+          }
         }
       }
     },
@@ -735,6 +939,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "更新內容"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Что нового"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novedades"
           }
         }
       }
@@ -777,6 +993,18 @@
             "state" : "translated",
             "value" : "支援英文"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поддержка английского"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatible con inglés"
+          }
         }
       }
     },
@@ -817,6 +1045,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "依去背輪廓列印"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Печать по вырезанному контуру"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimir con la forma recortada"
           }
         }
       }
@@ -859,6 +1099,18 @@
             "state" : "translated",
             "value" : "減少動態效果"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уменьшение движения"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reducir movimiento"
+          }
         }
       }
     },
@@ -899,6 +1151,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "開啟「減少動態效果」後，螢幕效果會更平靜。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Если включить «Уменьшение движения», эффекты на экране становятся спокойнее."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con «Reducir movimiento» activado, los efectos de pantalla se calman."
           }
         }
       }
@@ -941,6 +1205,18 @@
             "state" : "translated",
             "value" : "需要時，可以在 App 內清除收集的所有貼圖。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "При желании можно стереть все собранные стикеры прямо в приложении."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si quieres, puedes borrar todos tus stickers desde la app."
+          }
         }
       }
     },
@@ -981,6 +1257,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "在可列印貼紙頁上，去背貼圖的模切線會沿著它自己的輪廓，而不是郵票形狀。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На листе стикеров для печати линия надреза вырезанных стикеров идёт по их контуру, а не по форме марки."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En la hoja de stickers para imprimir, los stickers recortados llevan una línea de corte que sigue su propio contorno, no la forma de sello."
           }
         }
       }
@@ -1023,6 +1311,18 @@
             "state" : "translated",
             "value" : "用通知把去年今天撕下的貼圖再次拿給你看。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Присылает уведомление со стикерами, оторванными в этот день в прошлом году."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recibe una notificación con los stickers que arrancaste un día como hoy el año pasado."
+          }
         }
       }
     },
@@ -1063,6 +1363,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "往年今日貼圖提醒"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стикеры прошлых лет"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de stickers de otros años"
           }
         }
       }
@@ -1105,6 +1417,18 @@
             "state" : "translated",
             "value" : "新手導覽"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подсказки для новичков"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guía para quien empieza"
+          }
         }
       }
     },
@@ -1145,6 +1469,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "第一次打開時，簡短介紹如何撕取和使用貼圖。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "При первом запуске коротко показывает, как отрывать стикеры и пользоваться ими."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La primera vez que abres la app, te enseña brevemente a arrancar y usar stickers."
           }
         }
       }
@@ -1187,6 +1523,18 @@
             "state" : "translated",
             "value" : "不必對齊格子，可以把貼圖斜著貼在內頁的任何位置來裝飾。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стикеры можно клеить на страницу в любое место и под любым углом, а не по клеткам."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin ajustarte a una cuadrícula, pega los stickers donde quieras de la página, incluso en diagonal."
+          }
         }
       }
     },
@@ -1227,6 +1575,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "適應大字體的畫面"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Экраны для крупного текста"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantallas para texto grande"
           }
         }
       }
@@ -1269,6 +1629,18 @@
             "state" : "translated",
             "value" : "摺疊 iPhone 畫面"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Экран для складного iPhone"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantalla para iPhone plegable"
+          }
         }
       }
     },
@@ -1309,6 +1681,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "在摺疊 iPhone 的寬螢幕上分成兩欄使用。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На широком экране складного iPhone приложение делится на две панели."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa la pantalla ancha de un iPhone plegable dividida en dos paneles."
           }
         }
       }
@@ -1351,6 +1735,18 @@
             "state" : "translated",
             "value" : "接著上次繼續"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Продолжить с того же места"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retoma donde lo dejaste"
+          }
         }
       }
     },
@@ -1391,6 +1787,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "旁白會依合適的順序讀出每個按鈕和貼圖，一個不漏。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver зачитывает каждую кнопку и каждый стикер, ничего не пропуская и в правильном порядке."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver lee todos los botones y stickers, sin saltarse ninguno y en el orden correcto."
           }
         }
       }
@@ -1433,6 +1841,18 @@
             "state" : "translated",
             "value" : "開啟 Punching 相機"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть камеру Punching"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir la cámara de Punching"
+          }
         }
       }
     },
@@ -1473,6 +1893,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "立即開啟 Punching 相機。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сразу открывает камеру Punching."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la cámara de Punching al instante."
           }
         }
       }
@@ -1515,6 +1947,18 @@
             "state" : "translated",
             "value" : "開啟相機"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть камеру"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir cámara"
+          }
         }
       }
     },
@@ -1555,6 +1999,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "預設形狀"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Форма по умолчанию"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forma predeterminada"
           }
         }
       }
@@ -1597,6 +2053,18 @@
             "state" : "translated",
             "value" : "去背貼圖"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вырезанный стикер"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker recortado"
+          }
         }
       }
     },
@@ -1637,6 +2105,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "郵票"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Марка"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sello"
           }
         }
       }
@@ -1679,6 +2159,18 @@
             "state" : "translated",
             "value" : "Punching 邊框"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рамка Punching"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marco de Punching"
+          }
         }
       }
     },
@@ -1719,6 +2211,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "邊框 %lld"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рамка %lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marco %lld"
           }
         }
       }
@@ -1761,6 +2265,18 @@
             "state" : "translated",
             "value" : "撕取"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отрыв"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrancar"
+          }
         }
       }
     },
@@ -1801,6 +2317,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "沒有可去背的主體時，會撕成郵票形狀。動態一律會一併記錄，所以撕下後可以為每張貼圖更改形狀與動態。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Если вырезать нечего, кадр отрывается в форме марки. Движение записывается всегда, поэтому после отрыва можно изменить форму и движение каждого стикера."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si no hay nada que recortar, se arranca con forma de sello. El movimiento siempre se captura, así que después puedes cambiar la forma y el movimiento de cada sticker."
           }
         }
       }
@@ -1843,6 +2371,18 @@
             "state" : "translated",
             "value" : "自動播放動態"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автовоспроизведение движения"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reproducir movimiento automáticamente"
+          }
         }
       }
     },
@@ -1883,6 +2423,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "翻書效果"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Эффект перелистывания"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Efecto de pasar página"
           }
         }
       }
@@ -1925,6 +2477,18 @@
             "state" : "translated",
             "value" : "顯示"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вид"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista"
+          }
         }
       }
     },
@@ -1965,6 +2529,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "關閉自動播放後，貼圖在任何地方都會顯示為靜止畫面。動態不會被刪除。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Если автовоспроизведение выключено, стикеры везде показываются неподвижными. Движение при этом не удаляется."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si desactivas la reproducción automática, los stickers se muestran fijos en todas partes. El movimiento nunca se borra."
           }
         }
       }
@@ -2007,6 +2583,18 @@
             "state" : "translated",
             "value" : "在訊息和鍵盤中使用"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Использование в «Сообщениях» и на клавиатуре"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar en Mensajes y el teclado"
+          }
         }
       }
     },
@@ -2047,6 +2635,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "列印成紙本貼紙"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Печать на бумажных стикерах"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimir en stickers de papel"
           }
         }
       }
@@ -2089,6 +2689,18 @@
             "state" : "translated",
             "value" : "使用"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Использовать"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar"
+          }
         }
       }
     },
@@ -2129,6 +2741,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "支援"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поддержка"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soporte"
           }
         }
       }
@@ -2171,6 +2795,18 @@
             "state" : "translated",
             "value" : "設定"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Настройки"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
         }
       }
     },
@@ -2211,6 +2847,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "完成"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готово"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
           }
         }
       }
@@ -2253,6 +2901,18 @@
             "state" : "translated",
             "value" : "在「訊息」App 中打開一個對話。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Откройте переписку в «Сообщениях»."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre una conversación en Mensajes."
+          }
         }
       }
     },
@@ -2293,6 +2953,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "點一下輸入框旁的 ＋ 按鈕，在「貼圖」中選取 Punching 貼圖。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажмите ＋ рядом с полем ввода и выберите стикер Punching в разделе «Стикеры»."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca el botón ＋ junto al campo de texto y elige un sticker de Punching en «Stickers»."
           }
         }
       }
@@ -2335,6 +3007,18 @@
             "state" : "translated",
             "value" : "長按即可把它貼到對話中的任何位置。動態貼圖會動著貼上去。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажмите и удерживайте, чтобы приклеить его в любое место переписки. Анимированные стикеры приклеиваются в движении."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantén pulsado para pegarlo donde quieras en la conversación. Los stickers con movimiento se pegan en movimiento."
+          }
         }
       }
     },
@@ -2375,6 +3059,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "訊息"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сообщения"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mensajes"
           }
         }
       }
@@ -2417,6 +3113,18 @@
             "state" : "translated",
             "value" : "每個收藏冊都會以獨立的貼圖包顯示。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Каждый альбом отображается как отдельный набор стикеров."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada álbum aparece como un paquete de stickers aparte."
+          }
         }
       }
     },
@@ -2457,6 +3165,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "點一下下方的「開啟設定」▸ 鍵盤 ▸ 開啟 Punching 貼圖。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажмите ниже «Открыть настройки» ▸ «Клавиатуры» ▸ включите «Стикеры Punching»."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca «Abrir Ajustes» abajo ▸ Teclados ▸ activa Punching Stickers."
           }
         }
       }
@@ -2499,6 +3219,18 @@
             "state" : "translated",
             "value" : "在同一頁面中，也開啟「允許完整取用」。拷貝和貼上貼圖需要它。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Там же включите «Разрешить полный доступ». Он нужен, чтобы копировать и вставлять стикеры."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En el mismo sitio, activa también «Permitir acceso completo». Es necesario para copiar y pegar stickers."
+          }
         }
       }
     },
@@ -2539,6 +3271,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "在任何 App 中，點一下鍵盤上的地球按鈕，即可切換到 Punching 貼圖。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В любом приложении нажмите на клавиатуре значок глобуса и переключитесь на «Стикеры Punching»."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En cualquier app, toca el botón del globo en el teclado para cambiar a Punching Stickers."
           }
         }
       }
@@ -2581,6 +3325,18 @@
             "state" : "translated",
             "value" : "開啟設定"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть настройки"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes"
+          }
         }
       }
     },
@@ -2621,6 +3377,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "鍵盤"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Клавиатура"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teclado"
           }
         }
       }
@@ -2663,6 +3431,18 @@
             "state" : "translated",
             "value" : "貼圖只會在你的裝置內傳遞。鍵盤不會讀取或傳送你輸入的內容。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стикеры передаются только внутри вашего устройства. Клавиатура не читает и не отправляет то, что вы набираете."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los stickers solo circulan dentro de tu dispositivo. El teclado no lee ni envía lo que escribes."
+          }
         }
       }
     },
@@ -2703,6 +3483,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "沒能記錄到動態"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось записать движение"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo capturar el movimiento"
           }
         }
       }
@@ -2745,6 +3537,18 @@
             "state" : "translated",
             "value" : "沒有記錄到足夠的動態。要重拍一次嗎？"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Движения записалось недостаточно. Попробовать ещё раз?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se capturó suficiente movimiento. ¿Quieres intentarlo de nuevo?"
+          }
         }
       }
     },
@@ -2785,6 +3589,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新增收藏冊"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новый альбом"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo álbum"
           }
         }
       }
@@ -2827,6 +3643,18 @@
             "state" : "translated",
             "value" : "收藏冊名稱"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Название альбома"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del álbum"
+          }
         }
       }
     },
@@ -2867,6 +3695,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "取消"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         }
       }
@@ -2909,6 +3749,18 @@
             "state" : "translated",
             "value" : "建立"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создать"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear"
+          }
         }
       }
     },
@@ -2949,6 +3801,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "重拍"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переснять"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repetir"
           }
         }
       }
@@ -2991,6 +3855,18 @@
             "state" : "translated",
             "value" : "維持原樣"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оставить"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dejar así"
+          }
         }
       }
     },
@@ -3031,6 +3907,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新增收藏冊⋯"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новый альбом…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo álbum…"
           }
         }
       }
@@ -3073,6 +3961,18 @@
             "state" : "translated",
             "value" : "沒有可去背的主體，已撕成郵票形狀"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вырезать было нечего, поэтому кадр оторван маркой"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No había nada que recortar, así que se arrancó con forma de sello"
+          }
         }
       }
     },
@@ -3113,6 +4013,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "需要使用相機，才能把瞬間撕成貼圖。\n請在「設定」中開啟相機。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Для превращения мгновений в стикеры Punching нужен доступ к камере.\nВключите камеру в настройках."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching necesita acceso a la cámara para convertir momentos en stickers.\nActiva la cámara en Ajustes."
           }
         }
       }
@@ -3155,6 +4067,18 @@
             "state" : "translated",
             "value" : "收藏冊"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Альбомы"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Álbumes"
+          }
         }
       }
     },
@@ -3195,6 +4119,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "相機"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Камера"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cámara"
           }
         }
       }
@@ -3237,6 +4173,18 @@
             "state" : "translated",
             "value" : "從照片匯入"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Импорт из «Фото»"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importar desde Fotos"
+          }
         }
       }
     },
@@ -3277,6 +4225,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "收集中"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Собирается"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coleccionando"
           }
         }
       }
@@ -3319,6 +4279,18 @@
             "state" : "translated",
             "value" : "%lld 張"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld шт."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
         }
       }
     },
@@ -3359,6 +4331,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "全部"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos"
           }
         }
       }
@@ -3401,6 +4385,18 @@
             "state" : "translated",
             "value" : "動態"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Живые"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con movimiento"
+          }
         }
       }
     },
@@ -3441,6 +4437,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "去背"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вырезанные"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recortados"
           }
         }
       }
@@ -3483,6 +4491,18 @@
             "state" : "translated",
             "value" : "還沒有%@貼圖"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стикеров «%@» пока нет"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay stickers de tipo «%@»"
+          }
         }
       }
     },
@@ -3523,6 +4543,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "選取"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбрать"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleccionar"
           }
         }
       }
@@ -3565,6 +4597,18 @@
             "state" : "translated",
             "value" : "檢視全部"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать все"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver todos"
+          }
         }
       }
     },
@@ -3605,6 +4649,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "要刪除所選的 %lld 張貼圖嗎？"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить выбранные стикеры (%lld)?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar los %lld stickers seleccionados?"
           }
         }
       }
@@ -3647,6 +4703,18 @@
             "state" : "translated",
             "value" : "刪除"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
         }
       }
     },
@@ -3687,6 +4755,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "重新命名"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переименовать"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renombrar"
           }
         }
       }
@@ -3729,6 +4809,18 @@
             "state" : "translated",
             "value" : "儲存"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
         }
       }
     },
@@ -3769,6 +4861,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "要刪除收藏冊「%@」及其中的 %lld 張貼圖嗎？"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить альбом «%@» и все стикеры в нём (%lld)?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar el álbum «%@» y sus %lld stickers?"
           }
         }
       }
@@ -3811,6 +4915,18 @@
             "state" : "translated",
             "value" : "要刪除這張貼圖嗎？"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить этот стикер?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar este sticker?"
+          }
         }
       }
     },
@@ -3851,6 +4967,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在製作貼紙頁⋯"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создаётся лист стикеров…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creando la hoja de stickers…"
           }
         }
       }
@@ -3893,6 +5021,18 @@
             "state" : "translated",
             "value" : "放到這裡"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Собирать сюда"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar aquí"
+          }
         }
       }
     },
@@ -3933,6 +5073,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正放到這裡"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Собирается сюда"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardando aquí"
           }
         }
       }
@@ -3975,6 +5127,18 @@
             "state" : "translated",
             "value" : "自由裝飾"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оформить как угодно"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decorar libremente"
+          }
         }
       }
     },
@@ -4015,6 +5179,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "以圖片分享"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поделиться картинкой"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartir como imagen"
           }
         }
       }
@@ -4057,6 +5233,18 @@
             "state" : "translated",
             "value" : "可列印貼紙頁（PDF）"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лист стикеров для печати (PDF)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoja de stickers para imprimir (PDF)"
+          }
         }
       }
     },
@@ -4097,6 +5285,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "列印指南"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Руководство по печати"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guía de impresión"
           }
         }
       }
@@ -4139,6 +5339,18 @@
             "state" : "translated",
             "value" : "刪除收藏冊"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить альбом"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar álbum"
+          }
         }
       }
     },
@@ -4179,6 +5391,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "全部取消選取"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Снять выбор"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deseleccionar todo"
           }
         }
       }
@@ -4221,6 +5445,18 @@
             "state" : "translated",
             "value" : "全選"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбрать все"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleccionar todo"
+          }
         }
       }
     },
@@ -4261,6 +5497,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "請選擇貼圖"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите стикеры"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige stickers"
           }
         }
       }
@@ -4303,6 +5551,18 @@
             "state" : "translated",
             "value" : "已選取 %lld 張"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбрано: %lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld seleccionados"
+          }
         }
       }
     },
@@ -4343,6 +5603,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "移動"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переместить"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mover"
           }
         }
       }
@@ -4385,6 +5657,18 @@
             "state" : "translated",
             "value" : "%@背景"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фон «%@»"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fondo %@"
+          }
         }
       }
     },
@@ -4425,6 +5709,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "長按貼圖，把它移到喜歡的位置"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажмите на стикер и удерживайте, чтобы перенести его в нужное место"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantén pulsado un sticker para moverlo donde quieras"
           }
         }
       }
@@ -4467,6 +5763,18 @@
             "state" : "translated",
             "value" : "依拍攝順序"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В порядке съёмки"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En orden de captura"
+          }
         }
       }
     },
@@ -4507,6 +5815,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "拷貝"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скопировать"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiar"
           }
         }
       }
@@ -4549,6 +5869,18 @@
             "state" : "translated",
             "value" : "傳送"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправить"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar"
+          }
         }
       }
     },
@@ -4589,6 +5921,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "放到其他收藏冊"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В другой альбом"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A otro álbum"
           }
         }
       }
@@ -4631,6 +5975,18 @@
             "state" : "translated",
             "value" : "我的貼圖收藏冊「%@」 #Punching"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мой альбом стикеров «%@» #Punching"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mi álbum de stickers «%@» #Punching"
+          }
         }
       }
     },
@@ -4671,6 +6027,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "這個收藏冊還是空的"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Этот альбом пока пуст"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este álbum aún está vacío"
           }
         }
       }
@@ -4713,6 +6081,18 @@
             "state" : "translated",
             "value" : "正放到這裡 — 用相機撕下貼圖來填滿它"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Собирается сюда — оторвите стикеры камерой, чтобы наполнить альбом"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardando aquí: arranca stickers con la cámara para llenarlo"
+          }
         }
       }
     },
@@ -4753,6 +6133,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "形狀"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Форма"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forma"
           }
         }
       }
@@ -4795,6 +6187,18 @@
             "state" : "translated",
             "value" : "去背"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вырезанный"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recortado"
+          }
         }
       }
     },
@@ -4835,6 +6239,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "郵票"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Марка"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sello"
           }
         }
       }
@@ -4877,6 +6293,18 @@
             "state" : "translated",
             "value" : "動態"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Движение"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Movimiento"
+          }
         }
       }
     },
@@ -4917,6 +6345,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "靜止"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стоп"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fijo"
           }
         }
       }
@@ -4959,6 +6399,18 @@
             "state" : "translated",
             "value" : "素色奶油"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чистый крем"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crema liso"
+          }
         }
       }
     },
@@ -4999,6 +6451,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "方格"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Клетка"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuadrícula"
           }
         }
       }
@@ -5041,6 +6505,18 @@
             "state" : "translated",
             "value" : "橫線"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Линейка"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rayas"
+          }
         }
       }
     },
@@ -5081,6 +6557,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "圓點"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Точки"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puntos"
           }
         }
       }
@@ -5123,6 +6611,18 @@
             "state" : "translated",
             "value" : "牛皮紙"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Крафт"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
         }
       }
     },
@@ -5163,6 +6663,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "羊皮紙"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пергамент"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergamino"
           }
         }
       }
@@ -5205,6 +6717,18 @@
             "state" : "translated",
             "value" : "康乃爾"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Корнелл"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
         }
       }
     },
@@ -5245,6 +6769,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "座標紙"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "График"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gráfica"
           }
         }
       }
@@ -5287,6 +6823,18 @@
             "state" : "translated",
             "value" : "薄荷"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мята"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menta"
+          }
         }
       }
     },
@@ -5327,6 +6875,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "深色方格"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тёмная сетка"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuadrícula oscura"
           }
         }
       }
@@ -5369,6 +6929,18 @@
             "state" : "translated",
             "value" : "在相機裡長按打孔器，再放開，喀嚓！視窗裡的畫面就原樣撕成了貼圖。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажмите и удерживайте дырокол в камере, затем отпустите — щёлк! Всё, что было в окошке, оторвётся стикером."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantén pulsado el perforador en la cámara y suéltalo. ¡Clic! Lo que se veía en la ventana se arranca tal cual como sticker."
+          }
         }
       }
     },
@@ -5409,6 +6981,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "挑個色調"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите стиль"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige un tono"
           }
         }
       }
@@ -5451,6 +7035,18 @@
             "state" : "translated",
             "value" : "在剛出爐的貼圖卡上寫句話，再到「詳細」裡加上棕褐、黑白之類的色調。色調隨時都能更改，畫質也不會受損。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Напишите пару слов на только что созданной карточке стикера, затем в разделе «Ещё» добавьте стиль — например, сепию или чёрно-белый. Стиль можно менять в любой момент без потери качества."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escribe unas palabras en la tarjeta del sticker recién hecho y, en «Más», añade un tono como sepia o blanco y negro. Puedes cambiar el tono cuando quieras sin perder calidad."
+          }
         }
       }
     },
@@ -5491,6 +7087,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "收進收藏冊"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Соберите в альбом"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reúnelos en un álbum"
           }
         }
       }
@@ -5533,6 +7141,18 @@
             "state" : "translated",
             "value" : "貼紙頁是以收藏冊為單位製作的。把想列印的貼圖收進同一個收藏冊吧——在收藏冊裡點「選取」，再點「移動」，就能一次移走多張。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Листы стикеров создаются по одному альбому. Соберите стикеры, которые хотите напечатать, в одном альбоме: в альбоме нажмите «Выбрать», затем «Переместить», чтобы перенести сразу много."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las hojas de stickers se hacen por álbum. Junta en un álbum los stickers que quieras imprimir: en el álbum toca «Seleccionar» y luego «Mover» para pasar muchos de una vez."
+          }
         }
       }
     },
@@ -5573,6 +7193,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "製作可列印頁"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создайте лист для печати"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea una hoja para imprimir"
           }
         }
       }
@@ -5615,6 +7247,18 @@
             "state" : "translated",
             "value" : "收藏冊右上角的 ⋯ 選單 ▸「使用」▸「可列印貼紙頁（PDF）」。會產生可直接交給印刷店的 300dpi PDF。可以用「儲存到檔案」保存，也可以透過 AirDrop 或郵件傳送。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В меню ⋯ вверху справа в альбоме ▸ «Использовать» ▸ «Лист стикеров для печати (PDF)». Получится PDF в 300 dpi, который можно сразу отдать в типографию. Сохраните его через «Сохранить в Файлы» или отправьте по AirDrop или почте."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En el menú ⋯ de arriba a la derecha del álbum ▸ «Usar» ▸ «Hoja de stickers para imprimir (PDF)». Obtienes un PDF de 300 ppp que puedes entregar tal cual en una imprenta. Guárdalo con «Guardar en Archivos» o envíalo por AirDrop o correo."
+          }
         }
       }
     },
@@ -5655,6 +7299,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "列印"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Печать"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprime"
           }
         }
       }
@@ -5697,6 +7353,18 @@
             "state" : "translated",
             "value" : "在家：用 A4 或 Letter 的標籤／貼紙紙（建議霧面），以「實際大小（100%）」列印——一定要關掉「符合紙張」。\n印刷店或貼紙廠商：直接交付 PDF 即可。洋紅色虛線是模切線（半切），角落的記號是裁切基準。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дома: печатайте на этикеточной или стикерной бумаге A4 или Letter (лучше матовой) в «Фактическом размере (100%)» — «По размеру страницы» обязательно выключите.\nВ типографии или у производителя стикеров: просто передайте PDF. Пунктир пурпурного цвета — линия надреза (kiss-cut), а метки по углам — границы обрезки."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En casa: imprime en papel de etiquetas o stickers A4 o Carta (mejor mate) a «Tamaño real (100 %)»; desactiva siempre «Ajustar a la página».\nEn imprentas y empresas de stickers: entrega el PDF tal cual. La línea discontinua magenta es el corte parcial (kiss-cut) y las marcas de las esquinas son la guía de recorte."
+          }
         }
       }
     },
@@ -5737,6 +7405,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "剪下來貼上去"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вырежьте и наклейте"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recorta y pega"
           }
         }
       }
@@ -5779,6 +7459,18 @@
             "state" : "translated",
             "value" : "沿著虛線用剪刀或裁切機剪下就完成囉！信封、手帳、筆電……貼哪裡都行。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вырежьте по пунктиру ножницами или режущим плоттером — и готово! Клейте на конверты, ежедневники, ноутбуки… куда угодно."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recorta por la línea de puntos con tijeras o una cortadora y listo. Pégalos en sobres, agendas, portátiles… donde quieras."
+          }
         }
       }
     },
@@ -5819,6 +7511,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "📮 撕下的瞬間，變成握在手裡的貼紙"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 От оторванного мгновения до стикера в руках"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Del momento arrancado al sticker en tu mano"
           }
         }
       }
@@ -5861,6 +7565,18 @@
             "state" : "translated",
             "value" : "六個步驟，讓手機裡的貼圖變成桌上的貼紙。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шесть шагов — и стикер из телефона оказывается на вашем столе."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seis pasos para que el sticker de tu teléfono acabe en tu escritorio."
+          }
         }
       }
     },
@@ -5901,6 +7617,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "小提醒"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Полезно знать"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conviene saber"
           }
         }
       }
@@ -5943,6 +7671,18 @@
             "state" : "translated",
             "value" : "• 可列印頁一律是郵票形狀。模切線保留齒孔邊緣，撕下來就是一張像真郵票一樣的貼紙（約 5 公分，每頁 12 張）。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Листы для печати всегда в форме марки. Линия надреза повторяет зубчатый край, поэтому отклеенный стикер выглядит как настоящая марка (около 5 см, 12 штук на странице)."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Las hojas para imprimir siempre tienen forma de sello. Las líneas de corte conservan el borde perforado, así que al despegarlos parecen sellos de verdad (unos 5 cm, 12 por página)."
+          }
         }
       }
     },
@@ -5983,6 +7723,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• 保留了原始照片的貼圖，列印時會以 300dpi 重新繪製，成品清晰銳利。"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Стикеры, сохранившие исходное фото, при печати перерисовываются в 300 dpi и получаются чёткими."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Los stickers que conservan la foto original se vuelven a generar a 300 ppp al imprimir, así que salen nítidos."
           }
         }
       }
@@ -6025,6 +7777,18 @@
             "state" : "translated",
             "value" : "• 不只是紙本，數位也行：每張貼圖都會自動成為訊息貼圖——直接從「訊息」的貼圖抽屜貼上去，動態貼圖會動著貼上。"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Можно и без бумаги: каждый стикер автоматически становится стикером для «Сообщений» — клейте его прямо из ящика стикеров, анимированные приклеиваются в движении."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• También en digital: cada sticker se convierte automáticamente en sticker de Mensajes. Pégalo directo desde el cajón de stickers de Mensajes; los que tienen movimiento se pegan en movimiento."
+          }
         }
       }
     },
@@ -6065,6 +7829,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• 這不是真正的郵資郵票——裝飾信件儘管用，郵票的位置還是留給真郵票吧！"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Это не настоящие почтовые марки — украшайте письма сколько угодно, но место для марки оставьте настоящей!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• No son sellos postales de verdad: decora tus cartas todo lo que quieras, pero deja el lugar del sello al de verdad."
           }
         }
       }
@@ -6107,6 +7883,18 @@
             "state" : "translated",
             "value" : "貼圖送到囉！"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваш стикер готов!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Tu sticker ha llegado!"
+          }
         }
       }
     },
@@ -6147,6 +7935,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "轉一轉貼圖吧"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Покрутите стикер"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz girar el sticker"
           }
         }
       }
@@ -6189,6 +7989,18 @@
             "state" : "translated",
             "value" : "為這一刻寫句話⋯"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пара слов об этом мгновении…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unas palabras sobre este momento…"
+          }
         }
       }
     },
@@ -6229,6 +8041,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "放入收藏冊"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В альбом"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir al álbum"
           }
         }
       }
@@ -6271,6 +8095,18 @@
             "state" : "translated",
             "value" : "丟棄"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбросить"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descartar"
+          }
         }
       }
     },
@@ -6311,6 +8147,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "詳細"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ещё"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más"
           }
         }
       }
@@ -6353,6 +8201,18 @@
             "state" : "translated",
             "value" : "完整照片"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всё фото"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto completa"
+          }
         }
       }
     },
@@ -6393,6 +8253,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "僅郵票"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Только марка"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo sello"
           }
         }
       }
@@ -6435,6 +8307,18 @@
             "state" : "translated",
             "value" : "編輯"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изменить"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
+          }
         }
       }
     },
@@ -6475,6 +8359,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "已拷貝！"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скопировано!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Copiado!"
           }
         }
       }
@@ -6517,6 +8413,18 @@
             "state" : "translated",
             "value" : "分享"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поделиться"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartir"
+          }
         }
       }
     },
@@ -6557,6 +8465,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "動態郵票"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Живая марка"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sello con movimiento"
           }
         }
       }
@@ -6599,6 +8519,18 @@
             "state" : "translated",
             "value" : "動態去背貼圖"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Живой вырезанный стикер"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker recortado con movimiento"
+          }
         }
       }
     },
@@ -6639,6 +8571,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "原圖"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оригинал"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original"
           }
         }
       }
@@ -6681,6 +8625,18 @@
             "state" : "translated",
             "value" : "棕褐"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сепия"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia"
+          }
         }
       }
     },
@@ -6721,6 +8677,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "黑白"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чёрно-белый"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blanco y negro"
           }
         }
       }
@@ -6763,6 +8731,18 @@
             "state" : "translated",
             "value" : "褪色"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выцветший"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desvaído"
+          }
         }
       }
     },
@@ -6803,6 +8783,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "鮮豔"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Яркий"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intenso"
           }
         }
       }
@@ -6845,6 +8837,18 @@
             "state" : "translated",
             "value" : "青藍"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Голубой"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cian"
+          }
         }
       }
     },
@@ -6885,6 +8889,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "長按檢視完整照片"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажмите и удерживайте, чтобы увидеть всё фото"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mantén pulsado para ver la foto completa"
           }
         }
       }
@@ -6927,6 +8943,18 @@
             "state" : "translated",
             "value" : "這是個什麼瞬間？"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Что это за момент?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué momento es este?"
+          }
         }
       }
     },
@@ -6968,6 +8996,18 @@
             "state" : "translated",
             "value" : "刪除這張貼圖"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить этот стикер"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar este sticker"
+          }
         }
       }
     },
@@ -7008,6 +9048,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "色調"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стиль"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tono"
           }
         }
       }

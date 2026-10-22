@@ -40,6 +40,18 @@
             "state" : "translated",
             "value" : "Punching 貼圖"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стикеры Punching"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Stickers"
+          }
         }
       }
     }

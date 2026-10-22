@@ -52,3 +52,19 @@ Settings now live in one place.
 可以裝飾每個收藏冊的內頁與順序。
 「收藏」已搬到同名的收藏冊。
 設定集中到一處，更好找了。
+
+### 앱스토어 (ru)
+
+Мгновения становятся живыми стикерами.
+Живые стикеры уходят в движении.
+Оформляйте страницы и порядок альбомов.
+Коллекции стали одноимёнными альбомами.
+Настройки теперь собраны в одном месте.
+
+### 앱스토어 (es)
+
+Lo que arrancas es un sticker animado.
+Envía stickers animados en movimiento.
+Decora páginas y orden de cada álbum.
+Tus colecciones pasaron a álbumes.
+Ajustes reunidos en un solo lugar.

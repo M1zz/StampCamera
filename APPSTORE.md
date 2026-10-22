@@ -371,3 +371,127 @@ Punching 是一款把鏡頭裡的畫面撕成貼圖的相機 App。
 以前拍的照片也能做成貼圖，收進收藏冊。
 
 所有貼圖和照片都只儲存在你的裝置中。
+
+## ru
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/ru/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/ru/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/ru/
+
+### 이름
+
+Punching: живые стикеры
+
+### 부제
+
+Удержите — и оторвите кадр
+
+### 키워드
+
+вырезание,гиф,марка,скрапбукинг,дневник,коллаж,винтаж,ретро,полароид,открытка,печать,фон,питомец
+
+### 프로모션 텍스트
+
+Удержите кнопку — и оторванное мгновение станет живым стикером. Вырежьте только героя кадра или оторвите зубчатую марку и отправляйте в «Сообщениях» и с клавиатуры.
+
+### 설명
+
+Удержите мгновение — получите живой стикер.
+Punching — камера, которая отрывает всё, что вы видите в кадре, стикером.
+
+Наведите дырокол на сцену, нажмите и удерживайте — и получите стикер с короткой анимацией до и после нажатия. Если в кадре есть кого вырезать — человек, питомец, предмет, — вырезается только он; если нет, как на пейзаже, кадр отрывается маркой с зубчатым краем.
+
+Что можно делать
+
+Отправка из «Сообщений» и с клавиатуры
+Оторванные стикеры появляются в ящике стикеров «Сообщений», а если включить клавиатуру Punching, их можно выбирать и вставлять и в других приложениях. Живые стикеры уходят в движении.
+
+Копируйте и отправляйте одним касанием
+Нажмите «Отправить» сразу после отрыва или удерживайте стикер, чтобы скопировать его и вставить куда угодно.
+
+Форма и движение — когда захотите
+Даже после отрыва можно переключаться между вырезанной формой и маркой, между движением и стоп-кадром. Исходное фото сохраняется как есть.
+
+Стиль и пара слов
+Выберите стиль: оригинал, сепия, чёрно-белый, выцветший, яркий или голубой — и оставьте короткую заметку к каждому стикеру. Дата и место отрыва сохраняются тоже.
+
+Альбом стикеров для каждой темы
+Создавайте альбомы по темам и выбирайте стикеры по альбомам в «Сообщениях» и на клавиатуре. Выбирайте страницы — крафт, клетку, линейку, пергамент — и располагайте всё в любом порядке.
+
+Печать настоящих стикеров
+Превратите альбом в PDF для печати с линиями надреза в форме марки и распечатайте его прямо на стикерной бумаге.
+
+Импорт из «Фото»
+Старые фотографии тоже можно превратить в стикеры и добавить в альбом.
+
+Все стикеры и фото хранятся только на вашем устройстве.
+
+## es
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/es/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/es/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/es/
+
+### 이름
+
+Punching: cámara de stickers
+
+### 부제
+
+Pulsa y arranca el momento
+
+### 키워드
+
+animados,gif,recorte,sello,scrapbook,diario,collage,vintage,retro,polaroid,postal,quitar fondo
+
+### 프로모션 텍스트
+
+Mantén pulsado y el momento que arrancas se convierte en un sticker con movimiento. Recorta lo que importa o arráncalo como sello perforado y envíalo desde Mensajes.
+
+### 설명
+
+El momento que mantienes, hecho sticker con movimiento.
+Punching es una app de cámara que arranca como sticker lo que ves por el objetivo.
+
+Encuadra la escena en la ventana del perforador, en el centro de la pantalla, y mantén pulsado. Obtienes un sticker que incluye el breve movimiento de antes y después de pulsar. Si hay algo que recortar, como una persona, una mascota o un objeto, solo se recorta eso; si no hay nada, como en un paisaje, se arranca como un sello con borde perforado.
+
+Qué puedes hacer
+
+Envía desde Mensajes y el teclado
+Los stickers arrancados aparecen en el cajón de stickers de Mensajes y, si activas el teclado de Punching, también puedes elegirlos y pegarlos en otras apps. Los stickers con movimiento se envían en movimiento.
+
+Copiar y enviar con un toque
+Toca enviar nada más arrancar, o mantén pulsado un sticker para copiarlo y pegarlo donde quieras.
+
+Cambia la forma y el movimiento cuando quieras
+Incluso después de arrancarlo, puedes alternar entre la forma recortada y la de sello, y entre movimiento y fijo. Tu foto original se conserva tal cual.
+
+Un tono y unas palabras
+Elige un tono entre Original, Sepia, Blanco y negro, Desvaído, Intenso y Cian, y deja una breve nota en cada sticker. También se guardan la fecha y el lugar donde lo arrancaste.
+
+Un álbum para cada tema
+Crea álbumes por tema y elige los stickers álbum por álbum en Mensajes y el teclado. Escoge páginas como kraft, cuadrícula, rayas o pergamino y ordénalos a tu gusto.
+
+Imprime stickers de verdad
+Convierte un álbum en un PDF para imprimir con líneas de corte en forma de sello y pásalo directo a papel de stickers.
+
+Importa desde Fotos
+Convierte en stickers las fotos que hiciste antes y añádelas a un álbum.
+
+Todos tus stickers y fotos se guardan solo en tu dispositivo.
