@@ -123,6 +123,12 @@
             "state" : "translated",
             "value" : "Vše"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
         }
       }
     },
@@ -247,6 +253,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chceš-li používat nálepky, zapni „Povolit úplný přístup“.\nNastavení ▸ Obecné ▸ Klávesnice ▸ Nálepky Punching ▸ Povolit úplný přístup"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For at bruge klistermærker skal du slå “Tillad fuld adgang” til.\nIndstillinger ▸ Generelt ▸ Tastatur ▸ Punching-klistermærker ▸ Tillad fuld adgang"
           }
         }
       }
@@ -373,6 +385,12 @@
             "state" : "translated",
             "value" : "Odtrhni nálepky v Punching\na objeví se tady."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv klistermærker af i Punching,\nså dukker de op her."
+          }
         }
       }
     },
@@ -497,6 +515,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zkopírováno — teď vlož"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieret — indsæt nu"
           }
         }
       }

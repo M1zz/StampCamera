@@ -124,6 +124,12 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -249,6 +255,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching používá fotoaparát, aby měnil okamžiky v nálepky."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching bruger kameraet til at gøre øjeblikke til klistermærker."
           }
         }
       }
@@ -376,6 +388,12 @@
             "state" : "translated",
             "value" : "Slouží k uložení hotových nálepek do Fotek."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruges til at gemme færdige klistermærker i Fotos."
+          }
         }
       }
     },
@@ -501,6 +519,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Slouží k zaznamenání místa, kde byla nálepka odtržena."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruges til at registrere, hvor et klistermærke blev revet af."
           }
         }
       }

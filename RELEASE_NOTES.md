@@ -164,3 +164,11 @@ Posílej pohyblivé nálepky v pohybu.
 Ozdob stránky i pořadí v albech.
 Kolekce se přesunuly do alb.
 Nastavení je teď na jednom místě.
+
+### 앱스토어 (da)
+
+Afrevne øjeblikke bliver bevægelige.
+Send bevægelige mærker i bevægelse.
+Pynt albummets sider og rækkefølge.
+Samlinger er flyttet til album.
+Indstillinger er nu samlet ét sted.

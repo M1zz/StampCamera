@@ -123,6 +123,12 @@
             "state" : "translated",
             "value" : "Vše"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
         }
       }
     },
@@ -247,6 +253,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Odtrhni nálepky v Punching\na objeví se tady."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv klistermærker af i Punching,\nså dukker de op her."
           }
         }
       }
@@ -373,6 +385,12 @@
             "state" : "translated",
             "value" : "Sdílení nálepek vyžaduje nastavení „App Group“.\n(Zkontroluj nastavení podepisování aplikace a rozšíření)"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deling af klistermærker kræver opsætning af “App Group”.\n(Tjek signeringsindstillingerne for appen og udvidelsen)"
+          }
         }
       }
     },
@@ -497,6 +515,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nálepky Punching"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-klistermærker"
           }
         }
       }

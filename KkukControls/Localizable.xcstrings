@@ -123,6 +123,12 @@
             "state" : "translated",
             "value" : "Fotoaparát Punching"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-kamera"
+          }
         }
       }
     },
@@ -247,6 +253,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hned otevře fotoaparát Punching."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åbner Punching-kameraet med det samme."
           }
         }
       }

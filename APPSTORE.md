@@ -1239,3 +1239,65 @@ Import z Fotek
 Změň dřív pořízené fotky v nálepky a přidej je do alba.
 
 Všechny nálepky a fotky se ukládají jen do tvého zařízení.
+
+## da
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/da/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/da/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/da/
+
+### 이름
+
+Punching: bevægelige mærker
+
+### 부제
+
+Hold nede og riv øjeblikket af
+
+### 키워드
+
+udskæring,gif,frimærke,scrapbog,dagbog,collage,vintage,retro,polaroid,postkort,baggrund,beskeder
+
+### 프로모션 텍스트
+
+Hold nede, og det øjeblik, du river af, bliver til et bevægeligt klistermærke. Skær kun motivet ud, eller riv et takket frimærke af, og send det fra Beskeder.
+
+### 설명
+
+Øjeblikket, du holder fast i, bliver til et bevægeligt klistermærke.
+Punching er en kamera-app, der river alt, hvad du ser gennem linsen, af som et klistermærke.
+
+Stil scenen op i hullerens vindue midt på skærmen, og hold nede. Du får et klistermærke, der også indeholder den korte bevægelse lige før og efter dit tryk. Hvis der er et motiv at skære ud, som et menneske, et kæledyr eller en ting, skæres kun det ud; hvis ikke, som i et landskab, rives det af som et frimærke med takket kant.
+
+Det kan du gøre
+
+Send fra Beskeder og tastaturet
+Afrevne klistermærker dukker op i klistermærkeskuffen i Beskeder, og når du slår Punching-tastaturet til, kan du også vælge og indsætte dem i andre apps. Bevægelige klistermærker sendes i bevægelse.
+
+Kopiér og send med ét tryk
+Tryk på Send lige efter afrivningen, eller hold et klistermærke nede for at kopiere det og indsætte det, hvor som helst.
+
+Skift form og bevægelse, når som helst
+Selv efter afrivningen kan du skifte mellem den udskårne form og frimærket, og mellem bevægelse og stillbillede. Dit originale foto bevares, som det var.
+
+Et look og et par ord
+Vælg et look blandt Original, Sepia, Sort/hvid, Falmet, Livlig og Cyan, og skriv en kort note på hvert klistermærke. Dato og sted for afrivningen gemmes også.
+
+Et album til hvert tema
+Lav album efter tema, og vælg klistermærker album for album i Beskeder og på tastaturet. Vælg sider som kraft, ternet, linjeret eller pergament, og ordn rækkefølgen, som du vil.
+
+Print rigtige klistermærker
+Gør et album til en PDF til print med skærelinjer i frimærkeform, og print den direkte på klistermærkepapir.
+
+Importér fra Fotos
+Gør tidligere tagne fotos til klistermærker, og føj dem til et album.
+
+Alle dine klistermærker og fotos gemmes kun på din enhed.

@@ -124,6 +124,12 @@
             "state" : "translated",
             "value" : "Nálepky Punching"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-klistermærker"
+          }
         }
       }
     }

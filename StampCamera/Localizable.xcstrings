@@ -123,6 +123,12 @@
             "state" : "translated",
             "value" : "Zámek Face ID"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID-lås"
+          }
         }
       }
     },
@@ -247,6 +253,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zamkni aplikaci pomocí Face ID a ochraň svá alba."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lås appen med Face ID for at beskytte dine album."
           }
         }
       }
@@ -373,6 +385,12 @@
             "state" : "translated",
             "value" : "Pohodlněji s VoiceOverem"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nemmere med VoiceOver"
+          }
         }
       }
     },
@@ -497,6 +515,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Když zvětšíš text, obrazovky se přeskupí a nic se neuřízne."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Når du gør teksten større, ordnes skærmene om, så intet bliver skåret af."
           }
         }
       }
@@ -623,6 +647,12 @@
             "state" : "translated",
             "value" : "Synchronizace mezi zařízeními"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synkronisering mellem enheder"
+          }
         }
       }
     },
@@ -747,6 +777,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Všechno zůstane čitelné, i když je zapnutý vyšší kontrast nebo se barvy špatně rozlišují."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alt kan stadig læses, selv med øget kontrast, eller hvis det er svært at skelne farver."
           }
         }
       }
@@ -873,6 +909,12 @@
             "state" : "translated",
             "value" : "Používej aplikaci v dalších jazycích."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug appen på flere sprog."
+          }
         }
       }
     },
@@ -997,6 +1039,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Více jazyků"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flere sprog"
           }
         }
       }
@@ -1123,6 +1171,12 @@
             "state" : "translated",
             "value" : "Ulož nálepky do souboru a později je obnov."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem dine klistermærker i en fil, og hent dem tilbage senere."
+          }
         }
       }
     },
@@ -1247,6 +1301,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Příjemnější barvy a kontrast"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nemmere farver og kontrast"
           }
         }
       }
@@ -1373,6 +1433,12 @@
             "state" : "translated",
             "value" : "Když přejdeš na nový iPhone, nálepky ti zůstanou přes iCloud."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skifter du til en ny iPhone, følger dine klistermærker med via iCloud."
+          }
         }
       }
     },
@@ -1497,6 +1563,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lepení kamkoli na stránku"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sæt fast hvor som helst på siden"
           }
         }
       }
@@ -1623,6 +1695,12 @@
             "state" : "translated",
             "value" : "Když se aplikace při zdobení alba zavře, tvoje práce zůstane."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvis appen lukker, mens du pynter et album, bliver dit arbejde gemt."
+          }
         }
       }
     },
@@ -1747,6 +1825,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Záloha a export nálepek"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backup og eksport af klistermærker"
           }
         }
       }
@@ -1873,6 +1957,12 @@
             "state" : "translated",
             "value" : "Smazat všechny nálepky najednou"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet alle klistermærker på én gang"
+          }
         }
       }
     },
@@ -1997,6 +2087,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Používej celou aplikaci i v angličtině."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug hele appen på engelsk."
           }
         }
       }
@@ -2123,6 +2219,12 @@
             "state" : "translated",
             "value" : "Při prvním otevření po aktualizaci se dozvíš, co je nového."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Første gang du åbner appen efter en opdatering, kan du se, hvad der er nyt."
+          }
         }
       }
     },
@@ -2247,6 +2349,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Co je nového"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyheder"
           }
         }
       }
@@ -2373,6 +2481,12 @@
             "state" : "translated",
             "value" : "Podpora angličtiny"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Understøttelse af engelsk"
+          }
         }
       }
     },
@@ -2497,6 +2611,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tisk ve vystřiženém tvaru"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print i den udskårne form"
           }
         }
       }
@@ -2623,6 +2743,12 @@
             "state" : "translated",
             "value" : "Omezit pohyb"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reducer bevægelse"
+          }
         }
       }
     },
@@ -2747,6 +2873,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Když je zapnuté „Omezit pohyb“, efekty na obrazovce se zklidní."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Når “Reducer bevægelse” er slået til, bliver effekterne på skærmen mere rolige."
           }
         }
       }
@@ -2873,6 +3005,12 @@
             "state" : "translated",
             "value" : "Chceš-li, můžeš všechny nasbírané nálepky smazat přímo v aplikaci."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvis du vil, kan du slette alle dine samlede klistermærker direkte i appen."
+          }
         }
       }
     },
@@ -2997,6 +3135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Na archu k tisku mají vystřižené nálepky řeznou čáru podél vlastního obrysu, ne ve tvaru známky."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "På arket til print får udskårne klistermærker en skærelinje langs deres egen kontur i stedet for frimærkeformen."
           }
         }
       }
@@ -3123,6 +3267,12 @@
             "state" : "translated",
             "value" : "Oznámení ti ukáže nálepky, které jsi odtrhl(a) přesně před rokem."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En notifikation viser de klistermærker, du rev af på denne dag sidste år."
+          }
         }
       }
     },
@@ -3247,6 +3397,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nálepky z minulosti"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klistermærker fra tidligere"
           }
         }
       }
@@ -3373,6 +3529,12 @@
             "state" : "translated",
             "value" : "Průvodce pro začátečníky"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guide til nye brugere"
+          }
         }
       }
     },
@@ -3497,6 +3659,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Při prvním otevření krátce ukáže, jak nálepky odtrhávat a používat."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Første gang du åbner appen, viser en kort guide, hvordan du river klistermærker af og bruger dem."
           }
         }
       }
@@ -3623,6 +3791,12 @@
             "state" : "translated",
             "value" : "Bez mřížky nalepuj nálepky kamkoli na stránku, i našikmo."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uden gitter kan du sætte klistermærker fast, hvor du vil på siden, også på skrå."
+          }
         }
       }
     },
@@ -3747,6 +3921,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Obrazovky pro velké písmo"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skærme til stor tekst"
           }
         }
       }
@@ -3873,6 +4053,12 @@
             "state" : "translated",
             "value" : "Rozvržení pro skládací iPhone"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visning til foldbar iPhone"
+          }
         }
       }
     },
@@ -3997,6 +4183,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Používej široký displej skládacího iPhonu jako dva panely vedle sebe."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug den brede skærm på en foldbar iPhone som to paneler side om side."
           }
         }
       }
@@ -4123,6 +4315,12 @@
             "state" : "translated",
             "value" : "Pokračuj tam, kde jsi skončil(a)"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortsæt, hvor du slap"
+          }
         }
       }
     },
@@ -4247,6 +4445,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver přečte každé tlačítko i každou nálepku, nic nevynechá a ve správném pořadí."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver læser hver knap og hvert klistermærke op uden at springe noget over og i den rigtige rækkefølge."
           }
         }
       }
@@ -4373,6 +4577,12 @@
             "state" : "translated",
             "value" : "Otevřít fotoaparát Punching"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åbn Punching-kamera"
+          }
         }
       }
     },
@@ -4497,6 +4707,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hned otevře fotoaparát Punching."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åbner Punching-kameraet med det samme."
           }
         }
       }
@@ -4623,6 +4839,12 @@
             "state" : "translated",
             "value" : "Otevřít fotoaparát"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åbn kamera"
+          }
         }
       }
     },
@@ -4747,6 +4969,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Výchozí tvar"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standardform"
           }
         }
       }
@@ -4873,6 +5101,12 @@
             "state" : "translated",
             "value" : "Vystřižená nálepka"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udskåret klistermærke"
+          }
         }
       }
     },
@@ -4997,6 +5231,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Známka"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frimærke"
           }
         }
       }
@@ -5123,6 +5363,12 @@
             "state" : "translated",
             "value" : "Rámeček Punching"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-ramme"
+          }
         }
       }
     },
@@ -5247,6 +5493,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rámeček %lld"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ramme %lld"
           }
         }
       }
@@ -5373,6 +5625,12 @@
             "state" : "translated",
             "value" : "Odtrhnout"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv af"
+          }
         }
       }
     },
@@ -5497,6 +5755,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pokud není co vystřihnout, odtrhne se tvar známky. Pohyb se zachytává vždy, takže po odtržení můžeš u každé nálepky změnit tvar i pohyb."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvis der ikke er noget at skære ud, rives det af som et frimærke. Bevægelsen optages altid, så efter afrivningen kan du ændre form og bevægelse for hvert klistermærke."
           }
         }
       }
@@ -5623,6 +5887,12 @@
             "state" : "translated",
             "value" : "Automaticky přehrávat pohyb"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afspil bevægelse automatisk"
+          }
         }
       }
     },
@@ -5747,6 +6017,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Efekt otáčení stránek"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sidevendingseffekt"
           }
         }
       }
@@ -5873,6 +6149,12 @@
             "state" : "translated",
             "value" : "Zobrazení"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visning"
+          }
         }
       }
     },
@@ -5997,6 +6279,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Když je automatické přehrávání vypnuté, nálepky se všude zobrazují jako nehybné. Pohyb se nikdy nesmaže."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Når automatisk afspilning er slået fra, vises klistermærker som stillbilleder overalt. Bevægelsen slettes aldrig."
           }
         }
       }
@@ -6123,6 +6411,12 @@
             "state" : "translated",
             "value" : "Použití ve Zprávách a na klávesnici"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug i Beskeder og på tastaturet"
+          }
         }
       }
     },
@@ -6247,6 +6541,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tisk na papírové nálepky"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print på papirklistermærker"
           }
         }
       }
@@ -6373,6 +6673,12 @@
             "state" : "translated",
             "value" : "Použití"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brug"
+          }
         }
       }
     },
@@ -6497,6 +6803,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Podpora"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
           }
         }
       }
@@ -6623,6 +6935,12 @@
             "state" : "translated",
             "value" : "Nastavení"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indstillinger"
+          }
         }
       }
     },
@@ -6747,6 +7065,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hotovo"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Færdig"
           }
         }
       }
@@ -6873,6 +7197,12 @@
             "state" : "translated",
             "value" : "Otevři konverzaci ve Zprávách."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åbn en samtale i Beskeder."
+          }
         }
       }
     },
@@ -6997,6 +7327,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klepni na tlačítko ＋ vedle textového pole a v části „Nálepky“ vyber nálepku Punching."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryk på knappen ＋ ved siden af tekstfeltet, og vælg et Punching-klistermærke under “Klistermærker”."
           }
         }
       }
@@ -7123,6 +7459,12 @@
             "state" : "translated",
             "value" : "Podrž prst a nalep ji kamkoli do konverzace. Pohyblivé nálepky se nalepí v pohybu."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold nede for at sætte det fast et vilkårligt sted i samtalen. Bevægelige klistermærker bevæger sig, når de sættes fast."
+          }
         }
       }
     },
@@ -7247,6 +7589,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zprávy"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beskeder"
           }
         }
       }
@@ -7373,6 +7721,12 @@
             "state" : "translated",
             "value" : "Každé album se zobrazí jako samostatná sada nálepek."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvert album vises som sin egen pakke med klistermærker."
+          }
         }
       }
     },
@@ -7497,6 +7851,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klepni níže na „Otevřít Nastavení“ ▸ Klávesnice ▸ zapni Nálepky Punching."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryk på “Åbn Indstillinger” nedenfor ▸ Tastaturer ▸ slå Punching-klistermærker til."
           }
         }
       }
@@ -7623,6 +7983,12 @@
             "state" : "translated",
             "value" : "Na stejném místě zapni i „Povolit úplný přístup“. Je potřeba ke kopírování a vkládání nálepek."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slå også “Tillad fuld adgang” til samme sted. Den skal bruges til at kopiere og indsætte klistermærker."
+          }
         }
       }
     },
@@ -7747,6 +8113,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "V libovolné aplikaci klepni na klávesnici na glóbus a přepni na Nálepky Punching."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryk på globusknappen på tastaturet i en vilkårlig app for at skifte til Punching-klistermærker."
           }
         }
       }
@@ -7873,6 +8245,12 @@
             "state" : "translated",
             "value" : "Otevřít Nastavení"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åbn Indstillinger"
+          }
         }
       }
     },
@@ -7997,6 +8375,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klávesnice"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastatur"
           }
         }
       }
@@ -8123,6 +8507,12 @@
             "state" : "translated",
             "value" : "Nálepky putují jen uvnitř tvého zařízení. Klávesnice nečte ani neodesílá, co píšeš."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klistermærker bevæger sig kun inde på din enhed. Tastaturet læser eller sender ikke det, du skriver."
+          }
         }
       }
     },
@@ -8247,6 +8637,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pohyb se nepodařilo zachytit"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevægelsen blev ikke optaget"
           }
         }
       }
@@ -8373,6 +8769,12 @@
             "state" : "translated",
             "value" : "Zachytil se příliš malý pohyb. Zkusit to znovu?"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der blev ikke optaget nok bevægelse. Vil du prøve igen?"
+          }
         }
       }
     },
@@ -8497,6 +8899,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nové album"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyt album"
           }
         }
       }
@@ -8623,6 +9031,12 @@
             "state" : "translated",
             "value" : "Název alba"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albummets navn"
+          }
         }
       }
     },
@@ -8747,6 +9161,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zrušit"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuller"
           }
         }
       }
@@ -8873,6 +9293,12 @@
             "state" : "translated",
             "value" : "Vytvořit"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opret"
+          }
         }
       }
     },
@@ -8997,6 +9423,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Natočit znovu"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag om"
           }
         }
       }
@@ -9123,6 +9555,12 @@
             "state" : "translated",
             "value" : "Nechat"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Behold"
+          }
         }
       }
     },
@@ -9247,6 +9685,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nové album…"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyt album…"
           }
         }
       }
@@ -9373,6 +9817,12 @@
             "state" : "translated",
             "value" : "Nebylo co vystřihnout, proto se odtrhla známka"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der var intet at skære ud, så det blev revet af som et frimærke"
+          }
         }
       }
     },
@@ -9497,6 +9947,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching potřebuje přístup k fotoaparátu, aby mohl měnit okamžiky v nálepky.\nZapni fotoaparát v Nastavení."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching skal have adgang til kameraet for at gøre øjeblikke til klistermærker.\nSlå kameraet til i Indstillinger."
           }
         }
       }
@@ -9623,6 +10079,12 @@
             "state" : "translated",
             "value" : "Alba"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album"
+          }
         }
       }
     },
@@ -9747,6 +10209,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fotoaparát"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera"
           }
         }
       }
@@ -9873,6 +10341,12 @@
             "state" : "translated",
             "value" : "Importovat z Fotek"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importér fra Fotos"
+          }
         }
       }
     },
@@ -9998,6 +10472,12 @@
             "state" : "translated",
             "value" : "Sbírá se"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samler"
+          }
         }
       }
     },
@@ -10119,6 +10599,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "da" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -10248,6 +10734,12 @@
             "state" : "translated",
             "value" : "Vše"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
         }
       }
     },
@@ -10372,6 +10864,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pohyblivé"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevægelige"
           }
         }
       }
@@ -10498,6 +10996,12 @@
             "state" : "translated",
             "value" : "Vystřižené"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udskårne"
+          }
         }
       }
     },
@@ -10622,6 +11126,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zatím tu nejsou žádné nálepky „%@“"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen “%@”-klistermærker endnu"
           }
         }
       }
@@ -10748,6 +11258,12 @@
             "state" : "translated",
             "value" : "Vybrat"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vælg"
+          }
         }
       }
     },
@@ -10872,6 +11388,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zobrazit vše"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis alle"
           }
         }
       }
@@ -10998,6 +11520,12 @@
             "state" : "translated",
             "value" : "Smazat %lld vybraných nálepek?"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet de %lld valgte klistermærker?"
+          }
         }
       }
     },
@@ -11122,6 +11650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Smazat"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet"
           }
         }
       }
@@ -11248,6 +11782,12 @@
             "state" : "translated",
             "value" : "Přejmenovat"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omdøb"
+          }
         }
       }
     },
@@ -11372,6 +11912,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uložit"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem"
           }
         }
       }
@@ -11498,6 +12044,12 @@
             "state" : "translated",
             "value" : "Smazat album „%@“ a %lld nálepek v něm?"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet albummet “%@” og de %lld klistermærker i det?"
+          }
         }
       }
     },
@@ -11622,6 +12174,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Smazat tuto nálepku?"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet dette klistermærke?"
           }
         }
       }
@@ -11748,6 +12306,12 @@
             "state" : "translated",
             "value" : "Vytváří se arch nálepek…"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laver ark med klistermærker…"
+          }
         }
       }
     },
@@ -11872,6 +12436,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sbírat sem"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saml her"
           }
         }
       }
@@ -11998,6 +12568,12 @@
             "state" : "translated",
             "value" : "Sbírá se sem"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samler her"
+          }
         }
       }
     },
@@ -12122,6 +12698,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Libovolně ozdobit"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pynt frit"
           }
         }
       }
@@ -12248,6 +12830,12 @@
             "state" : "translated",
             "value" : "Sdílet jako obrázek"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Del som billede"
+          }
         }
       }
     },
@@ -12372,6 +12960,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arch nálepek k vytištění (PDF)"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ark med klistermærker til print (PDF)"
           }
         }
       }
@@ -12498,6 +13092,12 @@
             "state" : "translated",
             "value" : "Průvodce tiskem"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printguide"
+          }
         }
       }
     },
@@ -12622,6 +13222,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Smazat album"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet album"
           }
         }
       }
@@ -12748,6 +13354,12 @@
             "state" : "translated",
             "value" : "Zrušit výběr"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fravælg alle"
+          }
         }
       }
     },
@@ -12872,6 +13484,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vybrat vše"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vælg alle"
           }
         }
       }
@@ -12998,6 +13616,12 @@
             "state" : "translated",
             "value" : "Vyber nálepky"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vælg klistermærker"
+          }
         }
       }
     },
@@ -13122,6 +13746,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vybráno: %lld"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld valgt"
           }
         }
       }
@@ -13248,6 +13878,12 @@
             "state" : "translated",
             "value" : "Přesunout"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flyt"
+          }
         }
       }
     },
@@ -13372,6 +14008,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pozadí „%@“"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baggrund “%@”"
           }
         }
       }
@@ -13498,6 +14140,12 @@
             "state" : "translated",
             "value" : "Podrž nálepku a přesuň ji, kam chceš"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold et klistermærke nede for at flytte det, hvorhen du vil"
+          }
         }
       }
     },
@@ -13622,6 +14270,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Podle pořadí pořízení"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I rækkefølgen de er taget"
           }
         }
       }
@@ -13748,6 +14402,12 @@
             "state" : "translated",
             "value" : "Kopírovat"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiér"
+          }
         }
       }
     },
@@ -13872,6 +14532,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Odeslat"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send"
           }
         }
       }
@@ -13998,6 +14664,12 @@
             "state" : "translated",
             "value" : "Do jiného alba"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Til et andet album"
+          }
         }
       }
     },
@@ -14122,6 +14794,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Moje album nálepek „%@“ #Punching"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit klistermærkealbum “%@” #Punching"
           }
         }
       }
@@ -14248,6 +14926,12 @@
             "state" : "translated",
             "value" : "Toto album je zatím prázdné"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dette album er stadig tomt"
+          }
         }
       }
     },
@@ -14372,6 +15056,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sbírá se sem — odtrhávej nálepky fotoaparátem a naplň ho"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samler her — riv klistermærker af med kameraet for at fylde det"
           }
         }
       }
@@ -14498,6 +15188,12 @@
             "state" : "translated",
             "value" : "Tvar"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Form"
+          }
         }
       }
     },
@@ -14622,6 +15318,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vystřižená"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udskåret"
           }
         }
       }
@@ -14748,6 +15450,12 @@
             "state" : "translated",
             "value" : "Známka"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frimærke"
+          }
         }
       }
     },
@@ -14872,6 +15580,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pohyb"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevægelse"
           }
         }
       }
@@ -14998,6 +15712,12 @@
             "state" : "translated",
             "value" : "Nehybná"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stillbillede"
+          }
         }
       }
     },
@@ -15122,6 +15842,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hladká krémová"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Almindelig creme"
           }
         }
       }
@@ -15248,6 +15974,12 @@
             "state" : "translated",
             "value" : "Čtverečkovaná"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ternet"
+          }
         }
       }
     },
@@ -15372,6 +16104,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Linkovaná"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linjeret"
           }
         }
       }
@@ -15498,6 +16236,12 @@
             "state" : "translated",
             "value" : "Tečkovaná"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prikker"
+          }
         }
       }
     },
@@ -15619,6 +16363,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "da" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kraft"
@@ -15748,6 +16498,12 @@
             "state" : "translated",
             "value" : "Pergamen"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergament"
+          }
         }
       }
     },
@@ -15869,6 +16625,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "da" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cornell"
@@ -15998,6 +16760,12 @@
             "state" : "translated",
             "value" : "Milimetrový papír"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grafpapir"
+          }
         }
       }
     },
@@ -16122,6 +16890,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mátová"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mint"
           }
         }
       }
@@ -16248,6 +17022,12 @@
             "state" : "translated",
             "value" : "Tmavá mřížka"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mørkt gitter"
+          }
         }
       }
     },
@@ -16372,6 +17152,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Podrž ve fotoaparátu dírkovač a pusť. Cvak! Co bylo vidět v okénku, se odtrhne tak, jak to je, jako nálepka."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold hulleren nede i kameraet, og slip. Klik! Det, der var i vinduet, rives af som et klistermærke, præcis som det er."
           }
         }
       }
@@ -16498,6 +17284,12 @@
             "state" : "translated",
             "value" : "Vyber styl"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vælg et look"
+          }
         }
       }
     },
@@ -16622,6 +17414,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Napiš pár slov na kartu čerstvé nálepky a v části „Více“ přidej styl, třeba sépii nebo černobílý. Styl můžeš kdykoli změnit, aniž by se zhoršila kvalita."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skriv et par ord på det nye klistermærkekort, og tilføj et look som sepia eller sort/hvid under “Mere”. Du kan altid skifte look uden at miste kvalitet."
           }
         }
       }
@@ -16748,6 +17546,12 @@
             "state" : "translated",
             "value" : "Sbírej do alba"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saml i et album"
+          }
         }
       }
     },
@@ -16872,6 +17676,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Archy nálepek se vytvářejí po albech. Nálepky, které chceš tisknout, sesbírej do jednoho alba: v albu klepni na „Vybrat“ a pak na „Přesunout“, abys jich přesunul(a) víc najednou."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klistermærkeark laves for ét album ad gangen. Saml de klistermærker, du vil printe, i ét album: tryk på “Vælg” i albummet og derefter på “Flyt” for at flytte mange på én gang."
           }
         }
       }
@@ -16998,6 +17808,12 @@
             "state" : "translated",
             "value" : "Vytvoř arch k tisku"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lav et ark til print"
+          }
         }
       }
     },
@@ -17122,6 +17938,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "V nabídce ⋯ vpravo nahoře v albu ▸ „Použití“ ▸ „Arch nálepek k vytištění (PDF)“. Dostaneš PDF o rozlišení 300 dpi, které můžeš rovnou předat tiskárně. Ulož ho přes „Uložit do Souborů“ nebo pošli přes AirDrop či e-mailem."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I menuen ⋯ øverst til højre i albummet ▸ “Brug” ▸ “Ark med klistermærker til print (PDF)”. Du får en PDF på 300 dpi, som du kan aflevere direkte på et trykkeri. Gem den med “Gem i Filer”, eller send den via AirDrop eller mail."
           }
         }
       }
@@ -17248,6 +18070,12 @@
             "state" : "translated",
             "value" : "Tisk"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print"
+          }
         }
       }
     },
@@ -17372,6 +18200,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Doma: tiskni na etiketový nebo nálepkový papír A4 či Letter (nejlépe matný) ve „Skutečné velikosti (100 %)“; „Přizpůsobit stránce“ vždy vypni.\nV tiskárně nebo u výrobce nálepek: stačí předat PDF. Purpurová čárkovaná čára je čára poloviční řezu (kiss-cut) a značky v rozích jsou ořezové značky."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Derhjemme: print på A4- eller Letter-etiket- eller klistermærkepapir (helst mat) i “Faktisk størrelse (100 %)”; slå altid “Tilpas til side” fra.\nPå trykkeri eller hos klistermærkeproducent: aflevér blot PDF’en. Den magentafarvede stiplede linje er kiss-cut-linjen, og hjørnemærkerne er beskæringsmærker."
           }
         }
       }
@@ -17498,6 +18332,12 @@
             "state" : "translated",
             "value" : "Vystřihni a nalep"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klip ud og sæt fast"
+          }
         }
       }
     },
@@ -17622,6 +18462,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vystřihni podél tečkované čáry nůžkami nebo řezacím plotrem a je hotovo! Nalep na obálky, diáře, notebooky… kamkoli."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klip langs den prikkede linje med saks eller skæremaskine, og så er du færdig! Sæt dem på konvolutter, kalendere, bærbare… hvor som helst."
           }
         }
       }
@@ -17748,6 +18594,12 @@
             "state" : "translated",
             "value" : "📮 Od odtrženého okamžiku k nálepce v ruce"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Fra afrevet øjeblik til klistermærke i hånden"
+          }
         }
       }
     },
@@ -17872,6 +18724,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Šest kroků promění nálepku v telefonu v nálepku na stole."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seks trin gør klistermærket på din telefon til et klistermærke på dit skrivebord."
           }
         }
       }
@@ -17998,6 +18856,12 @@
             "state" : "translated",
             "value" : "Dobré vědět"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Godt at vide"
+          }
         }
       }
     },
@@ -18122,6 +18986,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Archy k tisku mají vždy tvar známky. Řezné čáry si zachovávají zoubkovaný okraj, takže odlepené nálepky vypadají jako opravdové známky (asi 5 cm, 12 na stránku)."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Printark har altid frimærkeform. Skærelinjerne bevarer den takkede kant, så afløste klistermærker ligner rigtige frimærker (ca. 5 cm, 12 pr. side)."
           }
         }
       }
@@ -18248,6 +19118,12 @@
             "state" : "translated",
             "value" : "• Nálepky, které si uchovávají původní fotku, se při tisku znovu vykreslí ve 300 dpi, takže jsou ostré."
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Klistermærker, der bevarer det originale foto, gengives igen i 300 dpi ved print, så de bliver knivskarpe."
+          }
         }
       }
     },
@@ -18372,6 +19248,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• I digitálně: každá nálepka se automaticky stane nálepkou do Zpráv. Nalep ji přímo ze šuplíku nálepek ve Zprávách; pohyblivé se nalepí v pohybu."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Også digitalt: Hvert klistermærke bliver automatisk til et Beskeder-klistermærke. Sæt det direkte fra klistermærkeskuffen i Beskeder; bevægelige klistermærker bevæger sig, når de sættes fast."
           }
         }
       }
@@ -18498,6 +19380,12 @@
             "state" : "translated",
             "value" : "• Nejsou to opravdové poštovní známky — ozdobuj dopisy, jak chceš, ale místo pro známku nech té opravdové!"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Det er ikke rigtige portofrimærker — pynt dine breve, så meget du vil, men lad pladsen til frimærket høre til et rigtigt et!"
+          }
         }
       }
     },
@@ -18622,6 +19510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tvoje nálepka dorazila!"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dit klistermærke er ankommet!"
           }
         }
       }
@@ -18748,6 +19642,12 @@
             "state" : "translated",
             "value" : "Roztoč nálepku"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drej klistermærket rundt"
+          }
         }
       }
     },
@@ -18872,6 +19772,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pár slov o tomto okamžiku…"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Et par ord om dette øjeblik…"
           }
         }
       }
@@ -18998,6 +19904,12 @@
             "state" : "translated",
             "value" : "Přidat do alba"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Føj til album"
+          }
         }
       }
     },
@@ -19122,6 +20034,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zahodit"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kassér"
           }
         }
       }
@@ -19248,6 +20166,12 @@
             "state" : "translated",
             "value" : "Více"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mere"
+          }
         }
       }
     },
@@ -19372,6 +20296,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Celá fotka"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hele billedet"
           }
         }
       }
@@ -19498,6 +20428,12 @@
             "state" : "translated",
             "value" : "Jen známka"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun frimærke"
+          }
         }
       }
     },
@@ -19622,6 +20558,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Upravit"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rediger"
           }
         }
       }
@@ -19748,6 +20690,12 @@
             "state" : "translated",
             "value" : "Zkopírováno!"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieret!"
+          }
         }
       }
     },
@@ -19872,6 +20820,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sdílet"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Del"
           }
         }
       }
@@ -19998,6 +20952,12 @@
             "state" : "translated",
             "value" : "Pohyblivá známka"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevægeligt frimærke"
+          }
         }
       }
     },
@@ -20122,6 +21082,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pohyblivá vystřižená nálepka"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevægeligt udskåret klistermærke"
           }
         }
       }
@@ -20248,6 +21214,12 @@
             "state" : "translated",
             "value" : "Originál"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original"
+          }
         }
       }
     },
@@ -20372,6 +21344,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sépie"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia"
           }
         }
       }
@@ -20498,6 +21476,12 @@
             "state" : "translated",
             "value" : "Černobílý"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort/hvid"
+          }
         }
       }
     },
@@ -20622,6 +21606,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vybledlý"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falmet"
           }
         }
       }
@@ -20748,6 +21738,12 @@
             "state" : "translated",
             "value" : "Sytý"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livlig"
+          }
         }
       }
     },
@@ -20872,6 +21868,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Azurový"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyan"
           }
         }
       }
@@ -20998,6 +22000,12 @@
             "state" : "translated",
             "value" : "Podrž pro zobrazení celé fotky"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold nede for at se hele billedet"
+          }
         }
       }
     },
@@ -21122,6 +22130,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Co je to za okamžik?"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvad er det for et øjeblik?"
           }
         }
       }
@@ -21248,6 +22262,12 @@
             "state" : "translated",
             "value" : "Smazat tuto nálepku"
           }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet dette klistermærke"
+          }
         }
       }
     },
@@ -21372,6 +22392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Styl"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look"
           }
         }
       }
