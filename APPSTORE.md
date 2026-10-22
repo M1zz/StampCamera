@@ -1301,3 +1301,65 @@ Importér fra Fotos
 Gør tidligere tagne fotos til klistermærker, og føj dem til et album.
 
 Alle dine klistermærker og fotos gemmes kun på din enhed.
+
+## id
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/id/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/id/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/id/
+
+### 이름
+
+Punching: Kamera Stiker Hidup
+
+### 부제
+
+Tahan lalu sobek momennya
+
+### 키워드
+
+potong,hapus latar,gif,perangko,scrapbook,jurnal,kolase,vintage,retro,polaroid,kartu pos,pesan
+
+### 프로모션 텍스트
+
+Tahan, dan momen yang kamu sobek menjadi stiker bergerak. Potong objeknya saja atau sobek jadi perangko bergerigi, lalu kirim dari Pesan atau keyboard.
+
+### 설명
+
+Momen yang kamu tahan menjadi stiker bergerak.
+Punching adalah aplikasi kamera yang menyobek apa pun yang kamu lihat lewat lensa menjadi stiker.
+
+Posisikan adegan di jendela pelubang di tengah layar, lalu tekan dan tahan. Kamu mendapat stiker yang juga menyimpan gerakan singkat sesaat sebelum dan sesudah kamu menekan. Jika ada objek yang bisa dipotong, seperti orang, hewan peliharaan, atau benda, hanya objek itu yang dipotong; jika tidak ada, seperti pemandangan, hasilnya disobek menjadi perangko bertepi bergerigi.
+
+Yang bisa kamu lakukan
+
+Kirim dari Pesan dan keyboard
+Stiker yang disobek muncul di laci stiker di Pesan, dan setelah keyboard Punching diaktifkan, kamu juga bisa memilih dan menempelkannya di aplikasi lain. Stiker bergerak dikirim dalam keadaan bergerak.
+
+Salin dan kirim dengan sekali ketuk
+Ketuk kirim tepat setelah menyobek, atau tekan dan tahan stiker untuk menyalinnya lalu tempel di mana saja.
+
+Ubah bentuk dan gerakan kapan saja
+Bahkan setelah disobek, kamu bisa beralih antara bentuk potongan dan perangko, serta antara bergerak dan diam. Foto aslimu tetap tersimpan seperti semula.
+
+Satu gaya dan beberapa kata
+Pilih gaya dari Asli, Sepia, Hitam Putih, Pudar, Cerah, dan Sian, lalu tinggalkan catatan singkat di setiap stiker. Tanggal dan tempat saat disobek juga tersimpan.
+
+Satu album untuk setiap tema
+Buat album per tema dan pilih stiker album demi album di Pesan dan keyboard. Pilih halaman seperti kraft, kotak-kotak, bergaris, atau perkamen, lalu atur urutannya sesukamu.
+
+Cetak stiker sungguhan
+Ubah album menjadi PDF siap cetak dengan garis potong berbentuk perangko, lalu cetak langsung di kertas stiker.
+
+Impor dari Foto
+Ubah foto yang kamu ambil sebelumnya menjadi stiker dan tambahkan ke album.
+
+Semua stiker dan fotomu hanya disimpan di perangkatmu.

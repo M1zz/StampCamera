@@ -129,6 +129,12 @@
             "state" : "translated",
             "value" : "Alle"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua"
+          }
         }
       }
     },
@@ -259,6 +265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Riv klistermærker af i Punching,\nså dukker de op her."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobek stiker di Punching\ndan stiker akan muncul di sini."
           }
         }
       }
@@ -391,6 +403,12 @@
             "state" : "translated",
             "value" : "Deling af klistermærker kræver opsætning af “App Group”.\n(Tjek signeringsindstillingerne for appen og udvidelsen)"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berbagi stiker memerlukan pengaturan “App Group”.\n(Periksa pengaturan penandatanganan aplikasi dan ekstensi)"
+          }
         }
       }
     },
@@ -521,6 +539,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching-klistermærker"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stiker Punching"
           }
         }
       }

@@ -172,3 +172,11 @@ Send bevægelige mærker i bevægelse.
 Pynt albummets sider og rækkefølge.
 Samlinger er flyttet til album.
 Indstillinger er nu samlet ét sted.
+
+### 앱스토어 (id)
+
+Momen yang disobek jadi stiker bergerak.
+Kirim stiker bergerak tetap bergerak.
+Hias halaman dan urutan tiap album.
+Koleksi pindah ke album bernama sama.
+Pengaturan kini ada di satu tempat.

@@ -129,6 +129,12 @@
             "state" : "translated",
             "value" : "Face ID-lås"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunci Face ID"
+          }
         }
       }
     },
@@ -259,6 +265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lås appen med Face ID for at beskytte dine album."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunci aplikasi dengan Face ID untuk menjaga albummu."
           }
         }
       }
@@ -391,6 +403,12 @@
             "state" : "translated",
             "value" : "Nemmere med VoiceOver"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lebih Mudah dengan VoiceOver"
+          }
         }
       }
     },
@@ -521,6 +539,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Når du gør teksten større, ordnes skærmene om, så intet bliver skåret af."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat teks diperbesar, layar menata ulang dengan rapi dan tidak terpotong."
           }
         }
       }
@@ -653,6 +677,12 @@
             "state" : "translated",
             "value" : "Synkronisering mellem enheder"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sinkronisasi Antarperangkat"
+          }
         }
       }
     },
@@ -783,6 +813,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alt kan stadig læses, selv med øget kontrast, eller hvis det er svært at skelne farver."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semuanya tetap terbaca, bahkan saat Tingkatkan Kontras aktif atau sulit membedakan warna."
           }
         }
       }
@@ -915,6 +951,12 @@
             "state" : "translated",
             "value" : "Brug appen på flere sprog."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan aplikasi dalam lebih banyak bahasa."
+          }
         }
       }
     },
@@ -1045,6 +1087,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flere sprog"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lebih Banyak Bahasa"
           }
         }
       }
@@ -1177,6 +1225,12 @@
             "state" : "translated",
             "value" : "Gem dine klistermærker i en fil, og hent dem tilbage senere."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan stikermu ke file dan pulihkan nanti."
+          }
         }
       }
     },
@@ -1307,6 +1361,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nemmere farver og kontrast"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warna dan Kontras yang Lebih Nyaman"
           }
         }
       }
@@ -1439,6 +1499,12 @@
             "state" : "translated",
             "value" : "Skifter du til en ny iPhone, følger dine klistermærker med via iCloud."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganti ke iPhone baru, stikermu ikut lewat iCloud."
+          }
         }
       }
     },
@@ -1569,6 +1635,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sæt fast hvor som helst på siden"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempel di Mana Saja di Halaman"
           }
         }
       }
@@ -1701,6 +1773,12 @@
             "state" : "translated",
             "value" : "Hvis appen lukker, mens du pynter et album, bliver dit arbejde gemt."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jika aplikasi tertutup saat menghias album, pekerjaanmu tetap tersimpan."
+          }
         }
       }
     },
@@ -1831,6 +1909,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Backup og eksport af klistermærker"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cadangkan dan Ekspor Stiker"
           }
         }
       }
@@ -1963,6 +2047,12 @@
             "state" : "translated",
             "value" : "Slet alle klistermærker på én gang"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus Semua Stiker Sekaligus"
+          }
         }
       }
     },
@@ -2093,6 +2183,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Brug hele appen på engelsk."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan seluruh aplikasi dalam bahasa Inggris."
           }
         }
       }
@@ -2225,6 +2321,12 @@
             "state" : "translated",
             "value" : "Første gang du åbner appen efter en opdatering, kan du se, hvad der er nyt."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat pertama dibuka setelah pembaruan, kamu bisa melihat apa yang baru."
+          }
         }
       }
     },
@@ -2355,6 +2457,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nyheder"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yang Baru"
           }
         }
       }
@@ -2487,6 +2595,12 @@
             "state" : "translated",
             "value" : "Understøttelse af engelsk"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dukungan Bahasa Inggris"
+          }
         }
       }
     },
@@ -2617,6 +2731,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Print i den udskårne form"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cetak dengan Bentuk Potongan"
           }
         }
       }
@@ -2749,6 +2869,12 @@
             "state" : "translated",
             "value" : "Reducer bevægelse"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurangi Gerakan"
+          }
         }
       }
     },
@@ -2879,6 +3005,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Når “Reducer bevægelse” er slået til, bliver effekterne på skærmen mere rolige."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat “Kurangi Gerakan” aktif, efek di layar menjadi lebih tenang."
           }
         }
       }
@@ -3011,6 +3143,12 @@
             "state" : "translated",
             "value" : "Hvis du vil, kan du slette alle dine samlede klistermærker direkte i appen."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jika mau, kamu bisa menghapus semua stiker yang terkumpul langsung di aplikasi."
+          }
         }
       }
     },
@@ -3141,6 +3279,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "På arket til print får udskårne klistermærker en skærelinje langs deres egen kontur i stedet for frimærkeformen."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di lembar cetak, stiker potongan mendapat garis potong mengikuti kontur aslinya, bukan bentuk perangko."
           }
         }
       }
@@ -3273,6 +3417,12 @@
             "state" : "translated",
             "value" : "En notifikation viser de klistermærker, du rev af på denne dag sidste år."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifikasi menampilkan stiker yang kamu sobek pada hari ini setahun lalu."
+          }
         }
       }
     },
@@ -3403,6 +3553,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klistermærker fra tidligere"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stiker Setahun Lalu"
           }
         }
       }
@@ -3535,6 +3691,12 @@
             "state" : "translated",
             "value" : "Guide til nye brugere"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panduan untuk Pengguna Baru"
+          }
         }
       }
     },
@@ -3665,6 +3827,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Første gang du åbner appen, viser en kort guide, hvordan du river klistermærker af og bruger dem."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat pertama dibuka, tampil panduan singkat cara menyobek dan memakai stiker."
           }
         }
       }
@@ -3797,6 +3965,12 @@
             "state" : "translated",
             "value" : "Uden gitter kan du sætte klistermærker fast, hvor du vil på siden, også på skrå."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanpa kotak, tempel stiker di mana pun di halaman, bahkan miring."
+          }
         }
       }
     },
@@ -3927,6 +4101,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Skærme til stor tekst"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilan untuk Teks Besar"
           }
         }
       }
@@ -4059,6 +4239,12 @@
             "state" : "translated",
             "value" : "Visning til foldbar iPhone"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilan iPhone Lipat"
+          }
         }
       }
     },
@@ -4189,6 +4375,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Brug den brede skærm på en foldbar iPhone som to paneler side om side."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan layar lebar iPhone lipat sebagai dua panel berdampingan."
           }
         }
       }
@@ -4321,6 +4513,12 @@
             "state" : "translated",
             "value" : "Fortsæt, hvor du slap"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lanjutkan dari yang Tadi"
+          }
         }
       }
     },
@@ -4451,6 +4649,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver læser hver knap og hvert klistermærke op uden at springe noget over og i den rigtige rækkefølge."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver membacakan setiap tombol dan stiker tanpa terlewat dan dalam urutan yang benar."
           }
         }
       }
@@ -4583,6 +4787,12 @@
             "state" : "translated",
             "value" : "Åbn Punching-kamera"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka Kamera Punching"
+          }
         }
       }
     },
@@ -4713,6 +4923,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Åbner Punching-kameraet med det samme."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langsung membuka kamera Punching."
           }
         }
       }
@@ -4845,6 +5061,12 @@
             "state" : "translated",
             "value" : "Åbn kamera"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka Kamera"
+          }
         }
       }
     },
@@ -4975,6 +5197,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Standardform"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bentuk Default"
           }
         }
       }
@@ -5107,6 +5335,12 @@
             "state" : "translated",
             "value" : "Udskåret klistermærke"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stiker Potongan"
+          }
         }
       }
     },
@@ -5237,6 +5471,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Frimærke"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perangko"
           }
         }
       }
@@ -5369,6 +5609,12 @@
             "state" : "translated",
             "value" : "Punching-ramme"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bingkai Punching"
+          }
         }
       }
     },
@@ -5499,6 +5745,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ramme %lld"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bingkai %lld"
           }
         }
       }
@@ -5631,6 +5883,12 @@
             "state" : "translated",
             "value" : "Riv af"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobek"
+          }
         }
       }
     },
@@ -5761,6 +6019,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hvis der ikke er noget at skære ud, rives det af som et frimærke. Bevægelsen optages altid, så efter afrivningen kan du ændre form og bevægelse for hvert klistermærke."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jika tidak ada yang bisa dipotong, hasilnya disobek berbentuk perangko. Gerakan selalu ikut terekam, jadi setelah disobek kamu tetap bisa mengubah bentuk dan gerakan tiap stiker."
           }
         }
       }
@@ -5893,6 +6157,12 @@
             "state" : "translated",
             "value" : "Afspil bevægelse automatisk"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Putar Gerakan Otomatis"
+          }
         }
       }
     },
@@ -6023,6 +6293,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sidevendingseffekt"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Efek Balik Halaman"
           }
         }
       }
@@ -6155,6 +6431,12 @@
             "state" : "translated",
             "value" : "Visning"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilan"
+          }
         }
       }
     },
@@ -6285,6 +6567,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Når automatisk afspilning er slået fra, vises klistermærker som stillbilleder overalt. Bevægelsen slettes aldrig."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jika putar otomatis dimatikan, stiker tampil diam di mana pun. Gerakannya tidak pernah terhapus."
           }
         }
       }
@@ -6417,6 +6705,12 @@
             "state" : "translated",
             "value" : "Brug i Beskeder og på tastaturet"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan di Pesan dan Keyboard"
+          }
         }
       }
     },
@@ -6547,6 +6841,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Print på papirklistermærker"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cetak jadi Stiker Kertas"
           }
         }
       }
@@ -6679,6 +6979,12 @@
             "state" : "translated",
             "value" : "Brug"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan"
+          }
         }
       }
     },
@@ -6809,6 +7115,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Support"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dukungan"
           }
         }
       }
@@ -6941,6 +7253,12 @@
             "state" : "translated",
             "value" : "Indstillinger"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan"
+          }
         }
       }
     },
@@ -7071,6 +7389,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Færdig"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
           }
         }
       }
@@ -7203,6 +7527,12 @@
             "state" : "translated",
             "value" : "Åbn en samtale i Beskeder."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka percakapan di Pesan."
+          }
         }
       }
     },
@@ -7333,6 +7663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tryk på knappen ＋ ved siden af tekstfeltet, og vælg et Punching-klistermærke under “Klistermærker”."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketuk tombol ＋ di samping kolom teks, lalu pilih stiker Punching di “Stiker”."
           }
         }
       }
@@ -7465,6 +7801,12 @@
             "state" : "translated",
             "value" : "Hold nede for at sætte det fast et vilkårligt sted i samtalen. Bevægelige klistermærker bevæger sig, når de sættes fast."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekan dan tahan untuk menempelkannya di mana saja dalam percakapan. Stiker bergerak akan menempel sambil bergerak."
+          }
         }
       }
     },
@@ -7595,6 +7937,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beskeder"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesan"
           }
         }
       }
@@ -7727,6 +8075,12 @@
             "state" : "translated",
             "value" : "Hvert album vises som sin egen pakke med klistermærker."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Setiap album muncul sebagai paket stiker tersendiri."
+          }
         }
       }
     },
@@ -7857,6 +8211,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tryk på “Åbn Indstillinger” nedenfor ▸ Tastaturer ▸ slå Punching-klistermærker til."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketuk “Buka Pengaturan” di bawah ▸ Keyboard ▸ aktifkan Stiker Punching."
           }
         }
       }
@@ -7989,6 +8349,12 @@
             "state" : "translated",
             "value" : "Slå også “Tillad fuld adgang” til samme sted. Den skal bruges til at kopiere og indsætte klistermærker."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di tempat yang sama, aktifkan juga “Izinkan Akses Penuh”. Ini diperlukan untuk menyalin dan menempel stiker."
+          }
         }
       }
     },
@@ -8119,6 +8485,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tryk på globusknappen på tastaturet i en vilkårlig app for at skifte til Punching-klistermærker."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di aplikasi mana pun, ketuk tombol bola dunia di keyboard untuk beralih ke Stiker Punching."
           }
         }
       }
@@ -8251,6 +8623,12 @@
             "state" : "translated",
             "value" : "Åbn Indstillinger"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka Pengaturan"
+          }
         }
       }
     },
@@ -8381,6 +8759,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tastatur"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard"
           }
         }
       }
@@ -8513,6 +8897,12 @@
             "state" : "translated",
             "value" : "Klistermærker bevæger sig kun inde på din enhed. Tastaturet læser eller sender ikke det, du skriver."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stiker hanya berpindah di dalam perangkatmu. Keyboard tidak membaca atau mengirim apa yang kamu ketik."
+          }
         }
       }
     },
@@ -8643,6 +9033,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bevægelsen blev ikke optaget"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerakan tidak terekam"
           }
         }
       }
@@ -8775,6 +9171,12 @@
             "state" : "translated",
             "value" : "Der blev ikke optaget nok bevægelse. Vil du prøve igen?"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerakan yang terekam kurang. Coba lagi?"
+          }
         }
       }
     },
@@ -8905,6 +9307,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nyt album"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album Baru"
           }
         }
       }
@@ -9037,6 +9445,12 @@
             "state" : "translated",
             "value" : "Albummets navn"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama album"
+          }
         }
       }
     },
@@ -9167,6 +9581,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Annuller"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batal"
           }
         }
       }
@@ -9299,6 +9719,12 @@
             "state" : "translated",
             "value" : "Opret"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buat"
+          }
         }
       }
     },
@@ -9429,6 +9855,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tag om"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulangi"
           }
         }
       }
@@ -9561,6 +9993,12 @@
             "state" : "translated",
             "value" : "Behold"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biarkan"
+          }
         }
       }
     },
@@ -9691,6 +10129,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nyt album…"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album Baru…"
           }
         }
       }
@@ -9823,6 +10267,12 @@
             "state" : "translated",
             "value" : "Der var intet at skære ud, så det blev revet af som et frimærke"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada yang bisa dipotong, jadi disobek berbentuk perangko"
+          }
         }
       }
     },
@@ -9954,6 +10404,12 @@
             "state" : "translated",
             "value" : "Punching skal have adgang til kameraet for at gøre øjeblikke til klistermærker.\nSlå kameraet til i Indstillinger."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching memerlukan akses kamera untuk mengubah momen menjadi stiker.\nSilakan aktifkan kamera di Pengaturan."
+          }
         }
       }
     },
@@ -10081,6 +10537,12 @@
           }
         },
         "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Album"
@@ -10216,6 +10678,12 @@
             "state" : "translated",
             "value" : "Kamera"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera"
+          }
         }
       }
     },
@@ -10346,6 +10814,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Importér fra Fotos"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impor dari Foto"
           }
         }
       }
@@ -10478,6 +10952,12 @@
             "state" : "translated",
             "value" : "Samler"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sedang dikumpulkan"
+          }
         }
       }
     },
@@ -10605,6 +11085,12 @@
           }
         },
         "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -10740,6 +11226,12 @@
             "state" : "translated",
             "value" : "Alle"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua"
+          }
         }
       }
     },
@@ -10870,6 +11362,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bevægelige"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bergerak"
           }
         }
       }
@@ -11002,6 +11500,12 @@
             "state" : "translated",
             "value" : "Udskårne"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potongan"
+          }
         }
       }
     },
@@ -11132,6 +11636,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ingen “%@”-klistermærker endnu"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum ada stiker “%@”"
           }
         }
       }
@@ -11264,6 +11774,12 @@
             "state" : "translated",
             "value" : "Vælg"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih"
+          }
         }
       }
     },
@@ -11394,6 +11910,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vis alle"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lihat Semua"
           }
         }
       }
@@ -11526,6 +12048,12 @@
             "state" : "translated",
             "value" : "Slet de %lld valgte klistermærker?"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus %lld stiker yang dipilih?"
+          }
         }
       }
     },
@@ -11656,6 +12184,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Slet"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus"
           }
         }
       }
@@ -11788,6 +12322,12 @@
             "state" : "translated",
             "value" : "Omdøb"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganti Nama"
+          }
         }
       }
     },
@@ -11918,6 +12458,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gem"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan"
           }
         }
       }
@@ -12050,6 +12596,12 @@
             "state" : "translated",
             "value" : "Slet albummet “%@” og de %lld klistermærker i det?"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus album “%@” dan %lld stiker di dalamnya?"
+          }
         }
       }
     },
@@ -12180,6 +12732,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Slet dette klistermærke?"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus stiker ini?"
           }
         }
       }
@@ -12312,6 +12870,12 @@
             "state" : "translated",
             "value" : "Laver ark med klistermærker…"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Membuat lembar stiker…"
+          }
         }
       }
     },
@@ -12442,6 +13006,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saml her"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kumpulkan di sini"
           }
         }
       }
@@ -12574,6 +13144,12 @@
             "state" : "translated",
             "value" : "Samler her"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengumpulkan di sini"
+          }
         }
       }
     },
@@ -12704,6 +13280,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pynt frit"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hias Bebas"
           }
         }
       }
@@ -12836,6 +13418,12 @@
             "state" : "translated",
             "value" : "Del som billede"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagikan sebagai Gambar"
+          }
         }
       }
     },
@@ -12966,6 +13554,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ark med klistermærker til print (PDF)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lembar Stiker untuk Dicetak (PDF)"
           }
         }
       }
@@ -13098,6 +13692,12 @@
             "state" : "translated",
             "value" : "Printguide"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panduan Cetak"
+          }
         }
       }
     },
@@ -13228,6 +13828,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Slet album"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus Album"
           }
         }
       }
@@ -13360,6 +13966,12 @@
             "state" : "translated",
             "value" : "Fravælg alle"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batalkan Semua Pilihan"
+          }
         }
       }
     },
@@ -13490,6 +14102,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vælg alle"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih Semua"
           }
         }
       }
@@ -13622,6 +14240,12 @@
             "state" : "translated",
             "value" : "Vælg klistermærker"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih stiker"
+          }
         }
       }
     },
@@ -13752,6 +14376,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld valgt"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dipilih"
           }
         }
       }
@@ -13884,6 +14514,12 @@
             "state" : "translated",
             "value" : "Flyt"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pindahkan"
+          }
         }
       }
     },
@@ -14014,6 +14650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Baggrund “%@”"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latar “%@”"
           }
         }
       }
@@ -14146,6 +14788,12 @@
             "state" : "translated",
             "value" : "Hold et klistermærke nede for at flytte det, hvorhen du vil"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekan dan tahan stiker untuk memindahkannya ke tempat yang kamu mau"
+          }
         }
       }
     },
@@ -14276,6 +14924,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "I rækkefølgen de er taget"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sesuai urutan pengambilan"
           }
         }
       }
@@ -14408,6 +15062,12 @@
             "state" : "translated",
             "value" : "Kopiér"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salin"
+          }
         }
       }
     },
@@ -14538,6 +15198,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Send"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kirim"
           }
         }
       }
@@ -14670,6 +15336,12 @@
             "state" : "translated",
             "value" : "Til et andet album"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ke Album Lain"
+          }
         }
       }
     },
@@ -14800,6 +15472,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mit klistermærkealbum “%@” #Punching"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album stikerku “%@” #Punching"
           }
         }
       }
@@ -14932,6 +15610,12 @@
             "state" : "translated",
             "value" : "Dette album er stadig tomt"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album ini masih kosong"
+          }
         }
       }
     },
@@ -15062,6 +15746,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Samler her — riv klistermærker af med kameraet for at fylde det"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengumpulkan di sini — sobek stiker dengan kamera untuk mengisinya"
           }
         }
       }
@@ -15194,6 +15884,12 @@
             "state" : "translated",
             "value" : "Form"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bentuk"
+          }
         }
       }
     },
@@ -15324,6 +16020,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Udskåret"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potongan"
           }
         }
       }
@@ -15456,6 +16158,12 @@
             "state" : "translated",
             "value" : "Frimærke"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perangko"
+          }
         }
       }
     },
@@ -15586,6 +16294,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bevægelse"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerakan"
           }
         }
       }
@@ -15718,6 +16432,12 @@
             "state" : "translated",
             "value" : "Stillbillede"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diam"
+          }
         }
       }
     },
@@ -15848,6 +16568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Almindelig creme"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krem Polos"
           }
         }
       }
@@ -15980,6 +16706,12 @@
             "state" : "translated",
             "value" : "Ternet"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotak-kotak"
+          }
         }
       }
     },
@@ -16110,6 +16842,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Linjeret"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bergaris"
           }
         }
       }
@@ -16242,6 +16980,12 @@
             "state" : "translated",
             "value" : "Prikker"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titik-titik"
+          }
         }
       }
     },
@@ -16369,6 +17113,12 @@
           }
         },
         "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kraft"
@@ -16504,6 +17254,12 @@
             "state" : "translated",
             "value" : "Pergament"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perkamen"
+          }
         }
       }
     },
@@ -16631,6 +17387,12 @@
           }
         },
         "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cornell"
@@ -16766,6 +17528,12 @@
             "state" : "translated",
             "value" : "Grafpapir"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grafik"
+          }
         }
       }
     },
@@ -16893,6 +17661,12 @@
           }
         },
         "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mint"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mint"
@@ -17028,6 +17802,12 @@
             "state" : "translated",
             "value" : "Mørkt gitter"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kisi Gelap"
+          }
         }
       }
     },
@@ -17158,6 +17938,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hold hulleren nede i kameraet, og slip. Klik! Det, der var i vinduet, rives af som et klistermærke, præcis som det er."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di kamera, tekan dan tahan alat pelubang lalu lepas. Klik! Apa pun yang ada di jendela disobek apa adanya jadi stiker."
           }
         }
       }
@@ -17290,6 +18076,12 @@
             "state" : "translated",
             "value" : "Vælg et look"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih Gaya"
+          }
         }
       }
     },
@@ -17420,6 +18212,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Skriv et par ord på det nye klistermærkekort, og tilføj et look som sepia eller sort/hvid under “Mere”. Du kan altid skifte look uden at miste kvalitet."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tulis beberapa kata di kartu stiker yang baru jadi, lalu tambahkan gaya seperti sepia atau hitam putih lewat “Lainnya”. Gaya bisa diubah kapan saja tanpa mengurangi kualitas."
           }
         }
       }
@@ -17552,6 +18350,12 @@
             "state" : "translated",
             "value" : "Saml i et album"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kumpulkan di Album"
+          }
         }
       }
     },
@@ -17682,6 +18486,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klistermærkeark laves for ét album ad gangen. Saml de klistermærker, du vil printe, i ét album: tryk på “Vælg” i albummet og derefter på “Flyt” for at flytte mange på én gang."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lembar stiker dibuat per album. Kumpulkan stiker yang ingin dicetak dalam satu album: di album, ketuk “Pilih” lalu “Pindahkan” untuk memindahkan banyak sekaligus."
           }
         }
       }
@@ -17814,6 +18624,12 @@
             "state" : "translated",
             "value" : "Lav et ark til print"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buat Lembar untuk Dicetak"
+          }
         }
       }
     },
@@ -17944,6 +18760,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "I menuen ⋯ øverst til højre i albummet ▸ “Brug” ▸ “Ark med klistermærker til print (PDF)”. Du får en PDF på 300 dpi, som du kan aflevere direkte på et trykkeri. Gem den med “Gem i Filer”, eller send den via AirDrop eller mail."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu ⋯ di kanan atas album ▸ “Gunakan” ▸ “Lembar Stiker untuk Dicetak (PDF)”. Kamu mendapat PDF 300 dpi yang bisa langsung diserahkan ke percetakan. Simpan lewat “Simpan ke File” atau kirim lewat AirDrop atau email."
           }
         }
       }
@@ -18076,6 +18898,12 @@
             "state" : "translated",
             "value" : "Print"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cetak"
+          }
         }
       }
     },
@@ -18206,6 +19034,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Derhjemme: print på A4- eller Letter-etiket- eller klistermærkepapir (helst mat) i “Faktisk størrelse (100 %)”; slå altid “Tilpas til side” fra.\nPå trykkeri eller hos klistermærkeproducent: aflevér blot PDF’en. Den magentafarvede stiplede linje er kiss-cut-linjen, og hjørnemærkerne er beskæringsmærker."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di rumah: cetak di kertas label/stiker A4 atau Letter (disarankan doff) dengan “Ukuran Sebenarnya (100%)”; pastikan “Sesuaikan dengan Halaman” dimatikan.\nDi percetakan atau produsen stiker: cukup serahkan PDF-nya. Garis putus-putus magenta adalah garis potong setengah (kiss-cut), dan tanda di sudut adalah panduan pemotongan."
           }
         }
       }
@@ -18338,6 +19172,12 @@
             "state" : "translated",
             "value" : "Klip ud og sæt fast"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunting dan Tempel"
+          }
         }
       }
     },
@@ -18468,6 +19308,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klip langs den prikkede linje med saks eller skæremaskine, og så er du færdig! Sæt dem på konvolutter, kalendere, bærbare… hvor som helst."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunting mengikuti garis putus-putus dengan gunting atau mesin pemotong, selesai! Tempel di amplop, planner, laptop… di mana saja."
           }
         }
       }
@@ -18600,6 +19446,12 @@
             "state" : "translated",
             "value" : "📮 Fra afrevet øjeblik til klistermærke i hånden"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Dari momen yang disobek jadi stiker di tanganmu"
+          }
         }
       }
     },
@@ -18730,6 +19582,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seks trin gør klistermærket på din telefon til et klistermærke på dit skrivebord."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enam langkah mengubah stiker di ponsel menjadi stiker di mejamu."
           }
         }
       }
@@ -18862,6 +19720,12 @@
             "state" : "translated",
             "value" : "Godt at vide"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perlu Diketahui"
+          }
         }
       }
     },
@@ -18992,6 +19856,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Printark har altid frimærkeform. Skærelinjerne bevarer den takkede kant, så afløste klistermærker ligner rigtige frimærker (ca. 5 cm, 12 pr. side)."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Lembar cetak selalu berbentuk perangko. Garis potong mempertahankan tepi bergerigi, jadi stiker yang dilepas tampak seperti perangko asli (sekitar 5 cm, 12 per halaman)."
           }
         }
       }
@@ -19124,6 +19994,12 @@
             "state" : "translated",
             "value" : "• Klistermærker, der bevarer det originale foto, gengives igen i 300 dpi ved print, så de bliver knivskarpe."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Stiker yang menyimpan foto aslinya digambar ulang pada 300 dpi saat dicetak, sehingga hasilnya tajam."
+          }
         }
       }
     },
@@ -19254,6 +20130,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Også digitalt: Hvert klistermærke bliver automatisk til et Beskeder-klistermærke. Sæt det direkte fra klistermærkeskuffen i Beskeder; bevægelige klistermærker bevæger sig, når de sættes fast."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Digital juga bisa: setiap stiker otomatis menjadi stiker Pesan. Tempel langsung dari laci stiker di Pesan; stiker bergerak menempel sambil bergerak."
           }
         }
       }
@@ -19386,6 +20268,12 @@
             "state" : "translated",
             "value" : "• Det er ikke rigtige portofrimærker — pynt dine breve, så meget du vil, men lad pladsen til frimærket høre til et rigtigt et!"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Ini bukan perangko pos sungguhan — hias suratmu sepuasnya, tapi tempat perangko biarkan untuk perangko asli!"
+          }
         }
       }
     },
@@ -19516,6 +20404,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dit klistermærke er ankommet!"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stikermu sudah tiba!"
           }
         }
       }
@@ -19648,6 +20542,12 @@
             "state" : "translated",
             "value" : "Drej klistermærket rundt"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Putar stikernya"
+          }
         }
       }
     },
@@ -19778,6 +20678,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Et par ord om dette øjeblik…"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beberapa kata tentang momen ini…"
           }
         }
       }
@@ -19910,6 +20816,12 @@
             "state" : "translated",
             "value" : "Føj til album"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan ke Album"
+          }
         }
       }
     },
@@ -20040,6 +20952,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kassér"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buang"
           }
         }
       }
@@ -20172,6 +21090,12 @@
             "state" : "translated",
             "value" : "Mere"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lainnya"
+          }
         }
       }
     },
@@ -20302,6 +21226,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hele billedet"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto Penuh"
           }
         }
       }
@@ -20434,6 +21364,12 @@
             "state" : "translated",
             "value" : "Kun frimærke"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perangko Saja"
+          }
         }
       }
     },
@@ -20564,6 +21500,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rediger"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
           }
         }
       }
@@ -20696,6 +21638,12 @@
             "state" : "translated",
             "value" : "Kopieret!"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tersalin!"
+          }
         }
       }
     },
@@ -20826,6 +21774,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Del"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagikan"
           }
         }
       }
@@ -20958,6 +21912,12 @@
             "state" : "translated",
             "value" : "Bevægeligt frimærke"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perangko Bergerak"
+          }
         }
       }
     },
@@ -21088,6 +22048,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bevægeligt udskåret klistermærke"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stiker Potongan Bergerak"
           }
         }
       }
@@ -21220,6 +22186,12 @@
             "state" : "translated",
             "value" : "Original"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asli"
+          }
         }
       }
     },
@@ -21347,6 +22319,12 @@
           }
         },
         "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia"
+          }
+        },
+        "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sepia"
@@ -21482,6 +22460,12 @@
             "state" : "translated",
             "value" : "Sort/hvid"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hitam Putih"
+          }
         }
       }
     },
@@ -21612,6 +22596,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Falmet"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pudar"
           }
         }
       }
@@ -21744,6 +22734,12 @@
             "state" : "translated",
             "value" : "Livlig"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerah"
+          }
         }
       }
     },
@@ -21874,6 +22870,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cyan"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sian"
           }
         }
       }
@@ -22006,6 +23008,12 @@
             "state" : "translated",
             "value" : "Hold nede for at se hele billedet"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekan dan tahan untuk melihat foto penuh"
+          }
         }
       }
     },
@@ -22136,6 +23144,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hvad er det for et øjeblik?"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Momen apa ini?"
           }
         }
       }
@@ -22268,6 +23282,12 @@
             "state" : "translated",
             "value" : "Slet dette klistermærke"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hapus Stiker Ini"
+          }
         }
       }
     },
@@ -22398,6 +23418,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Look"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gaya"
           }
         }
       }

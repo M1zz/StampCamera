@@ -129,6 +129,12 @@
             "state" : "translated",
             "value" : "Alle"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semua"
+          }
         }
       }
     },
@@ -259,6 +265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "For at bruge klistermærker skal du slå “Tillad fuld adgang” til.\nIndstillinger ▸ Generelt ▸ Tastatur ▸ Punching-klistermærker ▸ Tillad fuld adgang"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untuk memakai stiker, aktifkan “Izinkan Akses Penuh”.\nPengaturan ▸ Umum ▸ Keyboard ▸ Stiker Punching ▸ Izinkan Akses Penuh"
           }
         }
       }
@@ -391,6 +403,12 @@
             "state" : "translated",
             "value" : "Riv klistermærker af i Punching,\nså dukker de op her."
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobek stiker di Punching\ndan stiker akan muncul di sini."
+          }
         }
       }
     },
@@ -521,6 +539,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kopieret — indsæt nu"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tersalin — sekarang tempel"
           }
         }
       }

@@ -130,6 +130,12 @@
             "state" : "translated",
             "value" : "Punching-klistermærker"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stiker Punching"
+          }
         }
       }
     }

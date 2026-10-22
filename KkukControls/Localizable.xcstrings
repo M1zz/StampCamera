@@ -129,6 +129,12 @@
             "state" : "translated",
             "value" : "Punching-kamera"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera Punching"
+          }
         }
       }
     },
@@ -259,6 +265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Åbner Punching-kameraet med det samme."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langsung membuka kamera Punching."
           }
         }
       }
