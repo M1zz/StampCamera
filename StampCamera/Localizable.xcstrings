@@ -578,6 +578,2335 @@
           }
         }
       }
+    },
+    "펀칭 카메라 열기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭 카메라 열기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Punching Camera"
+          }
+        }
+      }
+    },
+    "펀칭 카메라를 바로 엽니다." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭 카메라를 바로 엽니다."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens the Punching camera right away."
+          }
+        }
+      }
+    },
+    "카메라 열기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카메라 열기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Camera"
+          }
+        }
+      }
+    },
+    "기본 모양" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기본 모양"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default Shape"
+          }
+        }
+      }
+    },
+    "오려낸 스티커" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오려낸 스티커"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut-out Sticker"
+          }
+        }
+      }
+    },
+    "우표 모양" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "우표 모양"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stamp"
+          }
+        }
+      }
+    },
+    "펀칭 프레임" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭 프레임"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Frame"
+          }
+        }
+      }
+    },
+    "프레임 %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "프레임 %lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frame %lld"
+          }
+        }
+      }
+    },
+    "뜯기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "뜯기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punch Out"
+          }
+        }
+      }
+    },
+    "오려낼 대상이 없으면 우표 모양으로 뜯어요. 움직임은 언제나 함께 담기니, 뜯은 뒤 스티커마다 모양과 움직임을 바꿀 수 있어요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오려낼 대상이 없으면 우표 모양으로 뜯어요. 움직임은 언제나 함께 담기니, 뜯은 뒤 스티커마다 모양과 움직임을 바꿀 수 있어요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If there’s nothing to cut out, it’s punched out as a stamp. Motion is always captured too, so after punching you can change each sticker’s shape and motion."
+          }
+        }
+      }
+    },
+    "움직임 자동 재생" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "움직임 자동 재생"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autoplay Motion"
+          }
+        }
+      }
+    },
+    "책처럼 넘기기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "책처럼 넘기기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page-Turn Effect"
+          }
+        }
+      }
+    },
+    "보기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "보기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View"
+          }
+        }
+      }
+    },
+    "자동 재생을 끄면 어디서나 멈춘 모습으로 보여요. 움직임은 지워지지 않아요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "자동 재생을 끄면 어디서나 멈춘 모습으로 보여요. 움직임은 지워지지 않아요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With autoplay off, stickers show as still images everywhere. Motion is never erased."
+          }
+        }
+      }
+    },
+    "메시지·키보드에서 쓰기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메시지·키보드에서 쓰기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use in Messages and Keyboard"
+          }
+        }
+      }
+    },
+    "종이 스티커로 인쇄하기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "종이 스티커로 인쇄하기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print on Paper Stickers"
+          }
+        }
+      }
+    },
+    "쓰기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "쓰기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use"
+          }
+        }
+      }
+    },
+    "지원" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지원"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
+          }
+        }
+      }
+    },
+    "설정" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "완료" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완료"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "메시지 앱에서 대화를 열어요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메시지 앱에서 대화를 열어요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open a conversation in Messages."
+          }
+        }
+      }
+    },
+    "입력창 옆 ＋ 단추를 누르고 ‘스티커’에서 펀칭 스티커를 골라요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "입력창 옆 ＋ 단추를 누르고 ‘스티커’에서 펀칭 스티커를 골라요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap the ＋ button next to the text field, then pick a Punching sticker under “Stickers”."
+          }
+        }
+      }
+    },
+    "꾹 눌러 대화 위 아무 데나 붙여요. 움직이는 스티커는 움직이며 붙어요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "꾹 눌러 대화 위 아무 데나 붙여요. 움직이는 스티커는 움직이며 붙어요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touch and hold to place it anywhere on the conversation. Moving stickers move as they land."
+          }
+        }
+      }
+    },
+    "메시지" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메시지"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Messages"
+          }
+        }
+      }
+    },
+    "수집함마다 스티커 묶음이 따로 나와요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수집함마다 스티커 묶음이 따로 나와요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Each book appears as its own sticker pack."
+          }
+        }
+      }
+    },
+    "아래 ‘설정 열기’ ▸ 키보드 ▸ 펀칭 스티커를 켜요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아래 ‘설정 열기’ ▸ 키보드 ▸ 펀칭 스티커를 켜요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap “Open Settings” below ▸ Keyboards ▸ turn on Punching Stickers."
+          }
+        }
+      }
+    },
+    "같은 곳에서 ‘전체 접근 허용’도 켜요. 스티커를 복사해 붙이는 데 필요해요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "같은 곳에서 ‘전체 접근 허용’도 켜요. 스티커를 복사해 붙이는 데 필요해요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the same place, turn on “Allow Full Access” too. It’s needed to copy and paste stickers."
+          }
+        }
+      }
+    },
+    "아무 앱에서나 키보드의 지구본 단추를 눌러 펀칭 스티커로 바꿔요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아무 앱에서나 키보드의 지구본 단추를 눌러 펀칭 스티커로 바꿔요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In any app, tap the globe button on the keyboard to switch to Punching Stickers."
+          }
+        }
+      }
+    },
+    "설정 열기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정 열기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
+          }
+        }
+      }
+    },
+    "키보드" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "키보드"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyboard"
+          }
+        }
+      }
+    },
+    "스티커는 기기 안에서만 오가요. 키보드는 입력한 글자를 읽거나 보내지 않아요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커는 기기 안에서만 오가요. 키보드는 입력한 글자를 읽거나 보내지 않아요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stickers only travel within your device. The keyboard never reads or sends what you type."
+          }
+        }
+      }
+    },
+    "움직임을 담지 못했어요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "움직임을 담지 못했어요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn’t capture motion"
+          }
+        }
+      }
+    },
+    "움직이는 장면을 충분히 담지 못했어요. 다시 찍어볼까요?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "움직이는 장면을 충분히 담지 못했어요. 다시 찍어볼까요?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not enough movement was captured. Want to try again?"
+          }
+        }
+      }
+    },
+    "새 수집함" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 수집함"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Book"
+          }
+        }
+      }
+    },
+    "수집함 이름" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수집함 이름"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Book name"
+          }
+        }
+      }
+    },
+    "취소" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "취소"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "만들기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "만들기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create"
+          }
+        }
+      }
+    },
+    "다시 찍기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다시 찍기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retake"
+          }
+        }
+      }
+    },
+    "그대로 두기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "그대로 두기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep It"
+          }
+        }
+      }
+    },
+    "새 수집함…" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 수집함…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Book…"
+          }
+        }
+      }
+    },
+    "오려낼 대상이 없어 우표 모양으로 뜯었어요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오려낼 대상이 없어 우표 모양으로 뜯었어요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nothing to cut out, so it was punched out as a stamp"
+          }
+        }
+      }
+    },
+    "순간을 스티커로 뜯으려면 카메라 권한이 필요해요.\n설정에서 카메라를 켜주세요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "순간을 스티커로 뜯으려면 카메라 권한이 필요해요.\n설정에서 카메라를 켜주세요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching needs camera access to turn moments into stickers.\nPlease turn on the camera in Settings."
+          }
+        }
+      }
+    },
+    "수집함" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수집함"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Books"
+          }
+        }
+      }
+    },
+    "카메라" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카메라"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera"
+          }
+        }
+      }
+    },
+    "사진에서 가져오기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "사진에서 가져오기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import from Photos"
+          }
+        }
+      }
+    },
+    "모으는 중" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모으는 중"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecting"
+          }
+        }
+      }
+    },
+    "%lld장" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld장"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "전체" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전체"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        }
+      }
+    },
+    "움직이는 것" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "움직이는 것"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moving"
+          }
+        }
+      }
+    },
+    "오려낸 모양" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오려낸 모양"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut-out"
+          }
+        }
+      }
+    },
+    "%@에 해당하는 스티커가 아직 없어요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@에 해당하는 스티커가 아직 없어요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No %@ stickers yet"
+          }
+        }
+      }
+    },
+    "선택" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "선택"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        }
+      }
+    },
+    "모아보기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모아보기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browse All"
+          }
+        }
+      }
+    },
+    "선택한 스티커 %lld장을 삭제할까요?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "선택한 스티커 %lld장을 삭제할까요?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete the %lld selected stickers?"
+          }
+        }
+      }
+    },
+    "삭제" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "삭제"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
+    "이름 변경" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이름 변경"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rename"
+          }
+        }
+      }
+    },
+    "저장" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "저장"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        }
+      }
+    },
+    "수집함 '%@' 과(와) 안의 스티커 %lld장을 모두 삭제할까요?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수집함 '%@' 과(와) 안의 스티커 %lld장을 모두 삭제할까요?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete the book “%@” and its %lld stickers?"
+          }
+        }
+      }
+    },
+    "이 스티커를 삭제할까요?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 스티커를 삭제할까요?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete this sticker?"
+          }
+        }
+      }
+    },
+    "스티커 시트 만드는 중…" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커 시트 만드는 중…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Making sticker sheet…"
+          }
+        }
+      }
+    },
+    "여기에 담기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여기에 담기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collect here"
+          }
+        }
+      }
+    },
+    "여기에 담는 중" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여기에 담는 중"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecting here"
+          }
+        }
+      }
+    },
+    "자유롭게 꾸미기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "자유롭게 꾸미기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decorate Freely"
+          }
+        }
+      }
+    },
+    "이미지로 공유" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이미지로 공유"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share as Image"
+          }
+        }
+      }
+    },
+    "인쇄용 스티커 시트 (PDF)" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "인쇄용 스티커 시트 (PDF)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printable Sticker Sheet (PDF)"
+          }
+        }
+      }
+    },
+    "인쇄 가이드" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "인쇄 가이드"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printing Guide"
+          }
+        }
+      }
+    },
+    "수집함 삭제" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수집함 삭제"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Book"
+          }
+        }
+      }
+    },
+    "모두 해제" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모두 해제"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deselect All"
+          }
+        }
+      }
+    },
+    "모두 선택" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모두 선택"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select All"
+          }
+        }
+      }
+    },
+    "스티커를 골라주세요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커를 골라주세요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose stickers"
+          }
+        }
+      }
+    },
+    "%lld장 선택됨" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld장 선택됨"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld selected"
+          }
+        }
+      }
+    },
+    "옮기기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "옮기기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move"
+          }
+        }
+      }
+    },
+    "%@ 배경" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 배경"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ background"
+          }
+        }
+      }
+    },
+    "스티커를 꾹 눌러 원하는 자리로 옮겨요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커를 꾹 눌러 원하는 자리로 옮겨요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touch and hold a sticker to move it where you like"
+          }
+        }
+      }
+    },
+    "찍은 순서로" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "찍은 순서로"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In order taken"
+          }
+        }
+      }
+    },
+    "복사" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "복사"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy"
+          }
+        }
+      }
+    },
+    "보내기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "보내기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send"
+          }
+        }
+      }
+    },
+    "다른 수집함으로" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다른 수집함으로"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To Another Book"
+          }
+        }
+      }
+    },
+    "내 스티커 수집함 ‘%@’ #펀칭" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "내 스티커 수집함 ‘%@’ #펀칭"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My sticker book “%@” #Punching"
+          }
+        }
+      }
+    },
+    "아직 비어 있는 수집함이에요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아직 비어 있는 수집함이에요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This book is still empty"
+          }
+        }
+      }
+    },
+    "여기에 담는 중 — 카메라로 스티커를 뜯어 채워보세요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여기에 담는 중 — 카메라로 스티커를 뜯어 채워보세요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecting here — punch out stickers with the camera to fill it"
+          }
+        }
+      }
+    },
+    "모양" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모양"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shape"
+          }
+        }
+      }
+    },
+    "오려낸" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오려낸"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut-out"
+          }
+        }
+      }
+    },
+    "우표" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "우표"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stamp"
+          }
+        }
+      }
+    },
+    "움직임" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "움직임"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motion"
+          }
+        }
+      }
+    },
+    "멈춤" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "멈춤"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Still"
+          }
+        }
+      }
+    },
+    "무지 크림" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "무지 크림"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plain Cream"
+          }
+        }
+      }
+    },
+    "모눈" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모눈"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grid"
+          }
+        }
+      }
+    },
+    "줄노트" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "줄노트"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lined"
+          }
+        }
+      }
+    },
+    "도트" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "도트"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dots"
+          }
+        }
+      }
+    },
+    "크라프트" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "크라프트"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        }
+      }
+    },
+    "양피지" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "양피지"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parchment"
+          }
+        }
+      }
+    },
+    "코넬" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "코넬"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        }
+      }
+    },
+    "그래프" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "그래프"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Graph"
+          }
+        }
+      }
+    },
+    "민트" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "민트"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mint"
+          }
+        }
+      }
+    },
+    "다크 그리드" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다크 그리드"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark Grid"
+          }
+        }
+      }
+    },
+    "카메라에서 펀칭기를 꾹 눌렀다 놓으면 찰칵! 창에 보이던 장면이 그대로 스티커로 뜯겨요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "카메라에서 펀칭기를 꾹 눌렀다 놓으면 찰칵! 창에 보이던 장면이 그대로 스티커로 뜯겨요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press and hold the puncher in the camera, then let go. Click! Whatever was in the window is punched out as a sticker."
+          }
+        }
+      }
+    },
+    "색감 고르기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색감 고르기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick a Look"
+          }
+        }
+      }
+    },
+    "갓 나온 스티커 카드에 한 마디를 적고, ‘자세히’에서 세피아·흑백 같은 색감을 입혀보세요. 색감은 언제든 바꿔도 화질이 상하지 않아요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "갓 나온 스티커 카드에 한 마디를 적고, ‘자세히’에서 세피아·흑백 같은 색감을 입혀보세요. 색감은 언제든 바꿔도 화질이 상하지 않아요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write a few words on your fresh sticker card, then tap “More” to add a look like sepia or black and white. You can change the look any time without losing quality."
+          }
+        }
+      }
+    },
+    "수집함에 모으기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수집함에 모으기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collect in a Book"
+          }
+        }
+      }
+    },
+    "스티커 시트는 수집함 단위로 만들어져요. 인쇄하고 싶은 스티커를 한 수집함에 모으세요 — 수집함에서 ‘선택’ 후 ‘옮기기’로 한 번에 옮길 수 있어요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커 시트는 수집함 단위로 만들어져요. 인쇄하고 싶은 스티커를 한 수집함에 모으세요 — 수집함에서 ‘선택’ 후 ‘옮기기’로 한 번에 옮길 수 있어요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticker sheets are made one book at a time. Gather the stickers you want to print in one book — in the book, tap “Select”, then “Move” to move many at once."
+          }
+        }
+      }
+    },
+    "인쇄용 시트 만들기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "인쇄용 시트 만들기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Make a Printable Sheet"
+          }
+        }
+      }
+    },
+    "수집함 오른쪽 위 ⋯ 메뉴 → ‘쓰기’ → ‘인쇄용 스티커 시트 (PDF)’. 인쇄소에 바로 건넬 수 있는 300dpi PDF가 만들어져요. ‘파일에 저장’으로 보관하거나 AirDrop·메일로 보내세요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수집함 오른쪽 위 ⋯ 메뉴 → ‘쓰기’ → ‘인쇄용 스티커 시트 (PDF)’. 인쇄소에 바로 건넬 수 있는 300dpi PDF가 만들어져요. ‘파일에 저장’으로 보관하거나 AirDrop·메일로 보내세요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the book’s ⋯ menu at the top right ▸ “Use” ▸ “Printable Sticker Sheet (PDF)”. You get a 300 dpi PDF you can hand straight to a print shop. Save it with “Save to Files”, or send it by AirDrop or email."
+          }
+        }
+      }
+    },
+    "인쇄하기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "인쇄하기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print"
+          }
+        }
+      }
+    },
+    "집에서: A4·레터 라벨/스티커 용지(무광 추천)에 ‘실제 크기(100%)’로 인쇄하세요 — ‘용지에 맞춤’은 꼭 끄기.\n인쇄소·스티커 업체: PDF를 그대로 전달하면 돼요. 마젠타 점선이 칼선(kiss-cut), 모서리 표시가 재단 기준이에요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "집에서: A4·레터 라벨/스티커 용지(무광 추천)에 ‘실제 크기(100%)’로 인쇄하세요 — ‘용지에 맞춤’은 꼭 끄기.\n인쇄소·스티커 업체: PDF를 그대로 전달하면 돼요. 마젠타 점선이 칼선(kiss-cut), 모서리 표시가 재단 기준이에요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "At home: print on A4 or Letter label/sticker paper (matte recommended) at “Actual Size (100%)” — make sure “Fit to Page” is off.\nPrint shops and sticker makers: just hand over the PDF. The magenta dashed line is the kiss-cut line, and the corner marks are the trim guides."
+          }
+        }
+      }
+    },
+    "오려서 붙이기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오려서 붙이기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut and Stick"
+          }
+        }
+      }
+    },
+    "점선을 따라 가위나 커팅기로 오리면 완성! 봉투, 다이어리, 노트북… 어디든 붙여보세요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "점선을 따라 가위나 커팅기로 오리면 완성! 봉투, 다이어리, 노트북… 어디든 붙여보세요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cut along the dotted line with scissors or a cutting machine and you’re done! Stick them on envelopes, planners, laptops… anywhere."
+          }
+        }
+      }
+    },
+    "📮 뜯은 순간, 손에 잡히는 스티커로" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 뜯은 순간, 손에 잡히는 스티커로"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 From punched-out moment to sticker in your hand"
+          }
+        }
+      }
+    },
+    "여섯 걸음이면 휴대폰 속 스티커가 책상 위 스티커가 돼요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여섯 걸음이면 휴대폰 속 스티커가 책상 위 스티커가 돼요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Six steps turn a sticker on your phone into a sticker on your desk."
+          }
+        }
+      }
+    },
+    "알아두면 좋아요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "알아두면 좋아요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Good to Know"
+          }
+        }
+      }
+    },
+    "• 인쇄용 시트는 모두 우표 모양으로 나와요. 칼선이 톱니 모양 그대로라, 떼어내면 진짜 우표처럼 생긴 스티커가 돼요(약 5cm, 한 페이지 12장)." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 인쇄용 시트는 모두 우표 모양으로 나와요. 칼선이 톱니 모양 그대로라, 떼어내면 진짜 우표처럼 생긴 스티커가 돼요(약 5cm, 한 페이지 12장)."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Printable sheets are always stamp-shaped. The cut lines keep the perforated edge, so peeled-off stickers look like real stamps (about 5 cm, 12 per page)."
+          }
+        }
+      }
+    },
+    "• 원본 사진을 간직한 스티커는 인쇄 때 300dpi로 새로 구워져 또렷하게 나와요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 원본 사진을 간직한 스티커는 인쇄 때 300dpi로 새로 구워져 또렷하게 나와요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Stickers that keep their original photo are re-rendered at 300 dpi when printed, so they come out crisp."
+          }
+        }
+      }
+    },
+    "• 종이 말고 디지털로도: 모든 스티커는 자동으로 메시지 스티커가 돼요 — 메시지 앱 스티커 서랍에서 바로 붙이고, 움직이는 스티커는 움직이며 붙어요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 종이 말고 디지털로도: 모든 스티커는 자동으로 메시지 스티커가 돼요 — 메시지 앱 스티커 서랍에서 바로 붙이고, 움직이는 스티커는 움직이며 붙어요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Digital works too: every sticker automatically becomes a Messages sticker — place it straight from the Messages sticker drawer, and moving stickers move as they land."
+          }
+        }
+      }
+    },
+    "• 진짜 우편요금 우표는 아니에요 — 편지 장식은 마음껏, 우표 자리는 진짜 우표에게 양보!" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 진짜 우편요금 우표는 아니에요 — 편지 장식은 마음껏, 우표 자리는 진짜 우표에게 양보!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• These aren’t real postage stamps — decorate your letters all you like, but leave the stamp corner to the real thing!"
+          }
+        }
+      }
+    },
+    "스티커가 도착했어요!" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커가 도착했어요!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your sticker has arrived!"
+          }
+        }
+      }
+    },
+    "스티커를 빙글 돌려보세요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커를 빙글 돌려보세요"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Give the sticker a spin"
+          }
+        }
+      }
+    },
+    "이 순간에 한 마디…" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 순간에 한 마디…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A few words about this moment…"
+          }
+        }
+      }
+    },
+    "수집함에 담기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수집함에 담기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to Book"
+          }
+        }
+      }
+    },
+    "버리기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버리기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discard"
+          }
+        }
+      }
+    },
+    "자세히" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "자세히"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More"
+          }
+        }
+      }
+    },
+    "전체사진" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전체사진"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full Photo"
+          }
+        }
+      }
+    },
+    "우표만" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "우표만"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stamp Only"
+          }
+        }
+      }
+    },
+    "편집" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "편집"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        }
+      }
+    },
+    "복사됨!" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "복사됨!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copied!"
+          }
+        }
+      }
+    },
+    "공유" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "공유"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share"
+          }
+        }
+      }
+    },
+    "움직이는 우표 모양" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "움직이는 우표 모양"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moving Stamp"
+          }
+        }
+      }
+    },
+    "움직이는 오려낸 스티커" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "움직이는 오려낸 스티커"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moving Cut-out Sticker"
+          }
+        }
+      }
+    },
+    "원본" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "원본"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original"
+          }
+        }
+      }
+    },
+    "세피아" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "세피아"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia"
+          }
+        }
+      }
+    },
+    "흑백" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "흑백"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Black & White"
+          }
+        }
+      }
+    },
+    "빛바램" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "빛바램"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faded"
+          }
+        }
+      }
+    },
+    "쨍하게" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "쨍하게"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vivid"
+          }
+        }
+      }
+    },
+    "푸름" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "푸름"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyan"
+          }
+        }
+      }
+    },
+    "꾹 눌러 전체 사진 보기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "꾹 눌러 전체 사진 보기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press and hold to see the full photo"
+          }
+        }
+      }
+    },
+    "이건 무슨 순간이에요?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이건 무슨 순간이에요?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What moment is this?"
+          }
+        }
+      }
+    },
+    "이 스티커 지우기" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 스티커 지우기"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete This Sticker"
+          }
+        }
+      }
+    },
+    "색감" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색감"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

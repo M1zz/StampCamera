@@ -1,0 +1,40 @@
+{
+  "sourceLanguage" : "ko",
+  "strings" : {
+    "꾹 카메라" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "꾹 카메라"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Camera"
+          }
+        }
+      }
+    },
+    "꾹 카메라를 바로 엽니다." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "꾹 카메라를 바로 엽니다."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens Punching Camera right away."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

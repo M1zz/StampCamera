@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "ko",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription" : {
+      "comment" : "",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭기로 순간을 스티커로 뜯어내기 위해 카메라를 사용해요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching uses the camera to turn moments into stickers with the puncher."
+          }
+        }
+      }
+    },
+    "NSPhotoLibraryAddUsageDescription" : {
+      "comment" : "",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완성된 스티커를 사진 앱에 저장하기 위해 사용해요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Used to save finished stickers to your Photos."
+          }
+        }
+      }
+    },
+    "NSLocationWhenInUseUsageDescription" : {
+      "comment" : "",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커에 뜯은 장소를 기록하기 위해 위치를 사용해요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Used to record where a sticker was punched out."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

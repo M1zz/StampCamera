@@ -1,0 +1,74 @@
+{
+  "sourceLanguage" : "ko",
+  "strings" : {
+    "전체" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전체"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        }
+      }
+    },
+    "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punch out stickers in Punching\nand they’ll show up here."
+          }
+        }
+      }
+    },
+    "스티커를 공유하려면 ‘App Group’ 설정이 필요해요.\n(앱·확장 프로그램 서명 설정 확인)" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커를 공유하려면 ‘App Group’ 설정이 필요해요.\n(앱·확장 프로그램 서명 설정 확인)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sharing stickers requires the “App Group” setup.\n(Check the app and extension signing settings)"
+          }
+        }
+      }
+    },
+    "펀칭 스티커" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭 스티커"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Stickers"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
