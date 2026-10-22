@@ -141,6 +141,12 @@
             "state" : "translated",
             "value" : "Alle"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alla"
+          }
         }
       }
     },
@@ -283,6 +289,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "For å bruke klistremerker må du slå på «Tillat full tilgang».\nInnstillinger ▸ Generelt ▸ Tastatur ▸ Punching-klistremerker ▸ Tillat full tilgang"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "För att använda klistermärken, slå på ”Tillåt full åtkomst”.\nInställningar ▸ Allmänt ▸ Tangentbord ▸ Punching-klistermärken ▸ Tillåt full åtkomst"
           }
         }
       }
@@ -427,6 +439,12 @@
             "state" : "translated",
             "value" : "Riv av klistremerker i Punching,\nså dukker de opp her."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv loss klistermärken i Punching,\nså dyker de upp här."
+          }
         }
       }
     },
@@ -569,6 +587,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kopiert – lim inn nå"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopierat – klistra in nu"
           }
         }
       }

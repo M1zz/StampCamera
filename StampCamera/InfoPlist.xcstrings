@@ -142,6 +142,12 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -285,6 +291,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching bruker kameraet til å gjøre øyeblikk om til klistremerker."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching använder kameran för att förvandla ögonblick till klistermärken."
           }
         }
       }
@@ -430,6 +442,12 @@
             "state" : "translated",
             "value" : "Brukes til å lagre ferdige klistremerker i Bilder."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Används för att spara färdiga klistermärken i Bilder."
+          }
         }
       }
     },
@@ -573,6 +591,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Brukes til å registrere hvor et klistremerke ble revet av."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Används för att registrera var ett klistermärke revs loss."
           }
         }
       }

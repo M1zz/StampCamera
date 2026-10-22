@@ -141,6 +141,12 @@
             "state" : "translated",
             "value" : "Punching-kamera"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-kamera"
+          }
         }
       }
     },
@@ -283,6 +289,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Åpner Punching-kameraet med en gang."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppnar Punching-kameran direkt."
           }
         }
       }

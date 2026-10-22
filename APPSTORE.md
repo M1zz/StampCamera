@@ -1425,3 +1425,65 @@ Importer fra Bilder
 Gjør bilder du har tatt tidligere, om til klistremerker, og legg dem til i et album.
 
 Alle klistremerkene og bildene dine lagres bare på enheten din.
+
+## sv
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/sv/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/sv/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/sv/
+
+### 이름
+
+Punching: klistermärkeskamera
+
+### 부제
+
+Håll nere och riv loss stunden
+
+### 키워드
+
+utklipp,gif,frimärke,scrapbook,dagbok,collage,vintage,retro,polaroid,vykort,bakgrund,meddelanden
+
+### 프로모션 텍스트
+
+Håll nere, så blir stunden du river loss ett rörligt klistermärke. Klipp ut bara motivet eller riv loss ett tandat frimärke och skicka det från Meddelanden.
+
+### 설명
+
+Stunden du håller fast blir ett rörligt klistermärke.
+Punching är en kameraapp som river loss allt du ser genom linsen som ett klistermärke.
+
+Ställ in scenen i hålslagets fönster mitt på skärmen och håll nere. Du får ett klistermärke som också innehåller den korta rörelsen strax före och efter trycket. Finns det ett motiv att klippa ut, som en människa, ett husdjur eller en sak, klipps bara det ut; finns det inget, som i ett landskap, rivs det loss som ett frimärke med tandad kant.
+
+Det här kan du göra
+
+Skicka från Meddelanden och tangentbordet
+Lossrivna klistermärken dyker upp i klistermärkeslådan i Meddelanden, och när du slår på Punching-tangentbordet kan du även välja och klistra in dem i andra appar. Rörliga klistermärken skickas i rörelse.
+
+Kopiera och skicka med ett tryck
+Tryck på Skicka direkt efter att du rivit loss, eller håll ett klistermärke nedtryckt för att kopiera det och klistra in var som helst.
+
+Ändra form och rörelse när som helst
+Även efter att du rivit loss kan du växla mellan urklippt form och frimärke, och mellan rörelse och stillbild. Ditt originalfoto behålls som det var.
+
+En look och några ord
+Välj en look bland Original, Sepia, Svartvitt, Blekt, Livfull och Cyan och lämna en kort anteckning på varje klistermärke. Datum och plats för lossrivningen sparas också.
+
+Ett album för varje tema
+Skapa album efter tema och välj klistermärken album för album i Meddelanden och på tangentbordet. Välj sidor som kraft, rutat, linjerat eller pergament och ordna ordningen som du vill.
+
+Skriv ut riktiga klistermärken
+Gör ett album till en PDF för utskrift med skärlinjer i frimärksform och skriv ut den direkt på klistermärkespapper.
+
+Importera från Bilder
+Förvandla foton du tagit tidigare till klistermärken och lägg till dem i ett album.
+
+Alla dina klistermärken och foton sparas bara på din enhet.

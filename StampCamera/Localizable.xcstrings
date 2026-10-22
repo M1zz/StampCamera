@@ -141,6 +141,12 @@
             "state" : "translated",
             "value" : "Face ID-lås"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID-lås"
+          }
         }
       }
     },
@@ -283,6 +289,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lås appen med Face ID for å beskytte albumene dine."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lås appen med Face ID för att skydda dina album."
           }
         }
       }
@@ -427,6 +439,12 @@
             "state" : "translated",
             "value" : "Enklere med VoiceOver"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enklare med VoiceOver"
+          }
         }
       }
     },
@@ -569,6 +587,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Når du gjør teksten større, ordnes skjermene om uten at noe kuttes."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "När du förstorar texten ordnas skärmarna om utan att något klipps av."
           }
         }
       }
@@ -713,6 +737,12 @@
             "state" : "translated",
             "value" : "Synkronisering mellom enheter"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synkronisering mellan enheter"
+          }
         }
       }
     },
@@ -855,6 +885,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alt er fortsatt lesbart, selv med økt kontrast på eller hvis det er vanskelig å skille farger."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allt går fortfarande att läsa, även med högre kontrast på eller om det är svårt att skilja på färger."
           }
         }
       }
@@ -999,6 +1035,12 @@
             "state" : "translated",
             "value" : "Bruk appen på flere språk."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd appen på fler språk."
+          }
         }
       }
     },
@@ -1141,6 +1183,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flere språk"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fler språk"
           }
         }
       }
@@ -1285,6 +1333,12 @@
             "state" : "translated",
             "value" : "Lagre klistremerkene dine i en fil, og hent dem tilbake senere."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spara dina klistermärken i en fil och hämta tillbaka dem senare."
+          }
         }
       }
     },
@@ -1427,6 +1481,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lettere farger og kontrast"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Behagligare färger och kontrast"
           }
         }
       }
@@ -1571,6 +1631,12 @@
             "state" : "translated",
             "value" : "Bytter du til en ny iPhone, følger klistremerkene dine med via iCloud."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Byter du till en ny iPhone följer klistermärkena med via iCloud."
+          }
         }
       }
     },
@@ -1713,6 +1779,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fest hvor som helst på siden"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klistra var som helst på sidan"
           }
         }
       }
@@ -1857,6 +1929,12 @@
             "state" : "translated",
             "value" : "Hvis appen lukkes mens du pynter et album, blir arbeidet ditt bevart."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Om appen stängs medan du dekorerar ett album finns ditt arbete kvar."
+          }
         }
       }
     },
@@ -1999,6 +2077,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sikkerhetskopi og eksport av klistremerker"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Säkerhetskopiera och exportera klistermärken"
           }
         }
       }
@@ -2143,6 +2227,12 @@
             "state" : "translated",
             "value" : "Slett alle klistremerker på en gang"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera alla klistermärken på en gång"
+          }
         }
       }
     },
@@ -2285,6 +2375,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bruk hele appen på engelsk."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd hela appen på engelska."
           }
         }
       }
@@ -2429,6 +2525,12 @@
             "state" : "translated",
             "value" : "Første gang du åpner appen etter en oppdatering, ser du hva som er nytt."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Första gången du öppnar appen efter en uppdatering ser du vad som är nytt."
+          }
         }
       }
     },
@@ -2568,6 +2670,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyheter"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nyheter"
@@ -2715,6 +2823,12 @@
             "state" : "translated",
             "value" : "Støtte for engelsk"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stöd för engelska"
+          }
         }
       }
     },
@@ -2857,6 +2971,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utskrift i den utklippede formen"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utskrift i den urklippta formen"
           }
         }
       }
@@ -3001,6 +3121,12 @@
             "state" : "translated",
             "value" : "Reduser bevegelse"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minska rörelser"
+          }
         }
       }
     },
@@ -3143,6 +3269,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Når «Reduser bevegelse» er på, blir skjermeffektene roligere."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "När ”Minska rörelser” är på blir skärmeffekterna lugnare."
           }
         }
       }
@@ -3287,6 +3419,12 @@
             "state" : "translated",
             "value" : "Hvis du vil, kan du slette alle samlede klistremerker rett i appen."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Om du vill kan du radera alla samlade klistermärken direkt i appen."
+          }
         }
       }
     },
@@ -3429,6 +3567,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "På utskriftsarket får utklippede klistremerker en skjærelinje langs sin egen kontur i stedet for frimerkeformen."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "På utskriftsarket får urklippta klistermärken en skärlinje längs sin egen kontur i stället för frimärksformen."
           }
         }
       }
@@ -3573,6 +3717,12 @@
             "state" : "translated",
             "value" : "Et varsel viser klistremerkene du rev av på denne dagen for ett år siden."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En avisering visar klistermärkena du rev loss på den här dagen för ett år sedan."
+          }
         }
       }
     },
@@ -3715,6 +3865,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klistremerker fra tidligere"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klistermärken från förr"
           }
         }
       }
@@ -3859,6 +4015,12 @@
             "state" : "translated",
             "value" : "Veiledning for nye brukere"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guide för nybörjare"
+          }
         }
       }
     },
@@ -4001,6 +4163,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Første gang du åpner appen, viser en kort veiledning hvordan du river av og bruker klistremerker."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Första gången du öppnar appen visas en kort guide om hur du river loss och använder klistermärken."
           }
         }
       }
@@ -4145,6 +4313,12 @@
             "state" : "translated",
             "value" : "Uten rutenett kan du feste klistremerker hvor du vil på siden, også på skrå."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utan rutnät klistrar du fast klistermärken var du vill på sidan, även på snedden."
+          }
         }
       }
     },
@@ -4287,6 +4461,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Skjermer for stor tekst"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skärmar för stor text"
           }
         }
       }
@@ -4431,6 +4611,12 @@
             "state" : "translated",
             "value" : "Visning for foldbar iPhone"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vy för vikbar iPhone"
+          }
         }
       }
     },
@@ -4573,6 +4759,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bruk den brede skjermen på en foldbar iPhone som to paneler side ved side."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd den breda skärmen på en vikbar iPhone som två paneler sida vid sida."
           }
         }
       }
@@ -4717,6 +4909,12 @@
             "state" : "translated",
             "value" : "Fortsett der du slapp"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortsätt där du slutade"
+          }
         }
       }
     },
@@ -4859,6 +5057,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver leser opp hver knapp og hvert klistremerke uten å hoppe over noe og i riktig rekkefølge."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver läser upp varje knapp och varje klistermärke utan att hoppa över något och i rätt ordning."
           }
         }
       }
@@ -5003,6 +5207,12 @@
             "state" : "translated",
             "value" : "Åpne Punching-kamera"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppna Punching-kameran"
+          }
         }
       }
     },
@@ -5145,6 +5355,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Åpner Punching-kameraet med en gang."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppnar Punching-kameran direkt."
           }
         }
       }
@@ -5289,6 +5505,12 @@
             "state" : "translated",
             "value" : "Åpne kamera"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppna kameran"
+          }
         }
       }
     },
@@ -5428,6 +5650,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standardform"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Standardform"
@@ -5575,6 +5803,12 @@
             "state" : "translated",
             "value" : "Utklippet klistremerke"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Urklippt klistermärke"
+          }
         }
       }
     },
@@ -5717,6 +5951,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Frimerke"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frimärke"
           }
         }
       }
@@ -5861,6 +6101,12 @@
             "state" : "translated",
             "value" : "Punching-ramme"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-ram"
+          }
         }
       }
     },
@@ -6003,6 +6249,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ramme %lld"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ram %lld"
           }
         }
       }
@@ -6147,6 +6399,12 @@
             "state" : "translated",
             "value" : "Riv av"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv loss"
+          }
         }
       }
     },
@@ -6289,6 +6547,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hvis det ikke er noe å klippe ut, rives det av som et frimerke. Bevegelsen tas alltid opp, så etter avrivingen kan du endre form og bevegelse for hvert klistremerke."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Om det inte finns något att klippa ut rivs bilden loss som ett frimärke. Rörelsen spelas alltid in, så efter att du rivit loss kan du ändra form och rörelse för varje klistermärke."
           }
         }
       }
@@ -6433,6 +6697,12 @@
             "state" : "translated",
             "value" : "Spill av bevegelse automatisk"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spela upp rörelse automatiskt"
+          }
         }
       }
     },
@@ -6576,6 +6846,12 @@
             "state" : "translated",
             "value" : "Sidevendingseffekt"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sidvändningseffekt"
+          }
         }
       }
     },
@@ -6715,6 +6991,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visning"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Visning"
@@ -6862,6 +7144,12 @@
             "state" : "translated",
             "value" : "Når automatisk avspilling er slått av, vises klistremerker som stillbilder overalt. Bevegelsen slettes aldri."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "När automatisk uppspelning är av visas klistermärken som stillbilder överallt. Rörelsen raderas aldrig."
+          }
         }
       }
     },
@@ -7004,6 +7292,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bruk i Meldinger og på tastaturet"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd i Meddelanden och på tangentbordet"
           }
         }
       }
@@ -7148,6 +7442,12 @@
             "state" : "translated",
             "value" : "Skriv ut på papirklistremerker"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skriv ut på papperklistermärken"
+          }
         }
       }
     },
@@ -7290,6 +7590,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bruk"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd"
           }
         }
       }
@@ -7434,6 +7740,12 @@
             "state" : "translated",
             "value" : "Brukerstøtte"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support"
+          }
         }
       }
     },
@@ -7576,6 +7888,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Innstillinger"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inställningar"
           }
         }
       }
@@ -7720,6 +8038,12 @@
             "state" : "translated",
             "value" : "Ferdig"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klar"
+          }
         }
       }
     },
@@ -7862,6 +8186,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Åpne en samtale i Meldinger."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppna en konversation i Meddelanden."
           }
         }
       }
@@ -8006,6 +8336,12 @@
             "state" : "translated",
             "value" : "Trykk på ＋-knappen ved siden av tekstfeltet, og velg et Punching-klistremerke under «Klistremerker»."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryck på ＋-knappen bredvid textfältet och välj ett Punching-klistermärke under ”Klistermärken”."
+          }
         }
       }
     },
@@ -8148,6 +8484,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hold inne for å feste det hvor som helst i samtalen. Bevegelige klistremerker beveger seg når de festes."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Håll nedtryckt för att klistra fast det var som helst i konversationen. Rörliga klistermärken rör sig när de klistras fast."
           }
         }
       }
@@ -8292,6 +8634,12 @@
             "state" : "translated",
             "value" : "Meldinger"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meddelanden"
+          }
         }
       }
     },
@@ -8434,6 +8782,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hvert album vises som sin egen pakke med klistremerker."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varje album visas som ett eget paket med klistermärken."
           }
         }
       }
@@ -8578,6 +8932,12 @@
             "state" : "translated",
             "value" : "Trykk på «Åpne Innstillinger» nedenfor ▸ Tastaturer ▸ slå på Punching-klistremerker."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryck på ”Öppna Inställningar” nedan ▸ Tangentbord ▸ slå på Punching-klistermärken."
+          }
         }
       }
     },
@@ -8720,6 +9080,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Slå også på «Tillat full tilgang» på samme sted. Den trengs for å kopiere og lime inn klistremerker."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slå också på ”Tillåt full åtkomst” på samma ställe. Den behövs för att kopiera och klistra in klistermärken."
           }
         }
       }
@@ -8864,6 +9230,12 @@
             "state" : "translated",
             "value" : "I en hvilken som helst app trykker du på globusknappen på tastaturet for å bytte til Punching-klistremerker."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryck på jordglobsknappen på tangentbordet i valfri app för att byta till Punching-klistermärken."
+          }
         }
       }
     },
@@ -9006,6 +9378,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Åpne Innstillinger"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppna Inställningar"
           }
         }
       }
@@ -9150,6 +9528,12 @@
             "state" : "translated",
             "value" : "Tastatur"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tangentbord"
+          }
         }
       }
     },
@@ -9292,6 +9676,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klistremerker beveger seg bare inne på enheten din. Tastaturet leser eller sender ikke det du skriver."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klistermärken förflyttas bara inne i din enhet. Tangentbordet läser eller skickar inte det du skriver."
           }
         }
       }
@@ -9436,6 +9826,12 @@
             "state" : "translated",
             "value" : "Bevegelsen ble ikke tatt opp"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rörelsen spelades inte in"
+          }
         }
       }
     },
@@ -9579,6 +9975,12 @@
             "state" : "translated",
             "value" : "Det ble ikke tatt opp nok bevegelse. Vil du prøve igjen?"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det spelades inte in tillräckligt med rörelse. Vill du försöka igen?"
+          }
         }
       }
     },
@@ -9718,6 +10120,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nytt album"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nytt album"
@@ -9865,6 +10273,12 @@
             "state" : "translated",
             "value" : "Albumnavn"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albumnamn"
+          }
         }
       }
     },
@@ -10004,6 +10418,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avbryt"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Avbryt"
@@ -10151,6 +10571,12 @@
             "state" : "translated",
             "value" : "Opprett"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skapa"
+          }
         }
       }
     },
@@ -10293,6 +10719,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ta på nytt"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta om"
           }
         }
       }
@@ -10437,6 +10869,12 @@
             "state" : "translated",
             "value" : "Behold"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Behåll"
+          }
         }
       }
     },
@@ -10576,6 +11014,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nytt album…"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nytt album…"
@@ -10723,6 +11167,12 @@
             "state" : "translated",
             "value" : "Det var ikke noe å klippe ut, så det ble revet av som et frimerke"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det fanns inget att klippa ut, så det revs loss som ett frimärke"
+          }
         }
       }
     },
@@ -10866,6 +11316,12 @@
             "state" : "translated",
             "value" : "Punching trenger tilgang til kameraet for å gjøre øyeblikk om til klistremerker.\nSlå på kameraet i Innstillinger."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching behöver åtkomst till kameran för att förvandla ögonblick till klistermärken.\nSlå på kameran i Inställningar."
+          }
         }
       }
     },
@@ -11005,6 +11461,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Album"
@@ -11152,6 +11614,12 @@
             "state" : "translated",
             "value" : "Kamera"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera"
+          }
         }
       }
     },
@@ -11294,6 +11762,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Importer fra Bilder"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importera från Bilder"
           }
         }
       }
@@ -11438,6 +11912,12 @@
             "state" : "translated",
             "value" : "Samler"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samlar"
+          }
         }
       }
     },
@@ -11577,6 +12057,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -11724,6 +12210,12 @@
             "state" : "translated",
             "value" : "Alle"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alla"
+          }
         }
       }
     },
@@ -11866,6 +12358,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bevegelige"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rörliga"
           }
         }
       }
@@ -12010,6 +12508,12 @@
             "state" : "translated",
             "value" : "Utklippede"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Urklippta"
+          }
         }
       }
     },
@@ -12152,6 +12656,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ingen «%@»-klistremerker ennå"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga ”%@”-klistermärken ännu"
           }
         }
       }
@@ -12296,6 +12806,12 @@
             "state" : "translated",
             "value" : "Velg"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markera"
+          }
         }
       }
     },
@@ -12438,6 +12954,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vis alle"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visa alla"
           }
         }
       }
@@ -12582,6 +13104,12 @@
             "state" : "translated",
             "value" : "Slette de %lld valgte klistremerkene?"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera de %lld markerade klistermärkena?"
+          }
         }
       }
     },
@@ -12724,6 +13252,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Slett"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera"
           }
         }
       }
@@ -12868,6 +13402,12 @@
             "state" : "translated",
             "value" : "Gi nytt navn"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Byt namn"
+          }
         }
       }
     },
@@ -13010,6 +13550,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lagre"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spara"
           }
         }
       }
@@ -13154,6 +13700,12 @@
             "state" : "translated",
             "value" : "Slette albumet «%@» og de %lld klistremerkene i det?"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera albumet ”%@” och de %lld klistermärkena i det?"
+          }
         }
       }
     },
@@ -13296,6 +13848,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Slette dette klistremerket?"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera det här klistermärket?"
           }
         }
       }
@@ -13440,6 +13998,12 @@
             "state" : "translated",
             "value" : "Lager klistremerkeark …"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skapar klistermärkesark …"
+          }
         }
       }
     },
@@ -13582,6 +14146,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Samle her"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samla här"
           }
         }
       }
@@ -13726,6 +14296,12 @@
             "state" : "translated",
             "value" : "Samler her"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samlar här"
+          }
         }
       }
     },
@@ -13868,6 +14444,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pynt fritt"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dekorera fritt"
           }
         }
       }
@@ -14012,6 +14594,12 @@
             "state" : "translated",
             "value" : "Del som bilde"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dela som bild"
+          }
         }
       }
     },
@@ -14154,6 +14742,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klistremerkeark til utskrift (PDF)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klistermärkesark för utskrift (PDF)"
           }
         }
       }
@@ -14298,6 +14892,12 @@
             "state" : "translated",
             "value" : "Utskriftsveiledning"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utskriftsguide"
+          }
         }
       }
     },
@@ -14440,6 +15040,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Slett album"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera album"
           }
         }
       }
@@ -14584,6 +15190,12 @@
             "state" : "translated",
             "value" : "Fjern alle valg"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avmarkera alla"
+          }
         }
       }
     },
@@ -14726,6 +15338,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Velg alle"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markera alla"
           }
         }
       }
@@ -14870,6 +15488,12 @@
             "state" : "translated",
             "value" : "Velg klistremerker"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj klistermärken"
+          }
         }
       }
     },
@@ -15012,6 +15636,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld valgt"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld markerade"
           }
         }
       }
@@ -15156,6 +15786,12 @@
             "state" : "translated",
             "value" : "Flytt"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flytta"
+          }
         }
       }
     },
@@ -15298,6 +15934,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bakgrunn «%@»"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bakgrund ”%@”"
           }
         }
       }
@@ -15442,6 +16084,12 @@
             "state" : "translated",
             "value" : "Hold inne et klistremerke for å flytte det dit du vil"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Håll ett klistermärke nedtryckt för att flytta det dit du vill"
+          }
         }
       }
     },
@@ -15584,6 +16232,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "I rekkefølgen de er tatt"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I den ordning de togs"
           }
         }
       }
@@ -15728,6 +16382,12 @@
             "state" : "translated",
             "value" : "Kopier"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiera"
+          }
         }
       }
     },
@@ -15870,6 +16530,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Send"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skicka"
           }
         }
       }
@@ -16014,6 +16680,12 @@
             "state" : "translated",
             "value" : "Til et annet album"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Till ett annat album"
+          }
         }
       }
     },
@@ -16156,6 +16828,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mitt klistremerkealbum «%@» #Punching"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mitt klistermärkesalbum ”%@” #Punching"
           }
         }
       }
@@ -16300,6 +16978,12 @@
             "state" : "translated",
             "value" : "Dette albumet er fortsatt tomt"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det här albumet är fortfarande tomt"
+          }
         }
       }
     },
@@ -16443,6 +17127,12 @@
             "state" : "translated",
             "value" : "Samler her – riv av klistremerker med kameraet for å fylle det"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samlar här – riv loss klistermärken med kameran för att fylla det"
+          }
         }
       }
     },
@@ -16582,6 +17272,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Form"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Form"
@@ -16729,6 +17425,12 @@
             "state" : "translated",
             "value" : "Utklippet"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Urklippt"
+          }
         }
       }
     },
@@ -16871,6 +17573,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Frimerke"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frimärke"
           }
         }
       }
@@ -17015,6 +17723,12 @@
             "state" : "translated",
             "value" : "Bevegelse"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rörelse"
+          }
         }
       }
     },
@@ -17157,6 +17871,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stille"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stillbild"
           }
         }
       }
@@ -17301,6 +18021,12 @@
             "state" : "translated",
             "value" : "Vanlig krem"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slät kräm"
+          }
         }
       }
     },
@@ -17443,6 +18169,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rutete"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rutat"
           }
         }
       }
@@ -17587,6 +18319,12 @@
             "state" : "translated",
             "value" : "Linjert"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linjerat"
+          }
         }
       }
     },
@@ -17730,6 +18468,12 @@
             "state" : "translated",
             "value" : "Prikker"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prickigt"
+          }
         }
       }
     },
@@ -17869,6 +18613,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kraft"
@@ -18016,6 +18766,12 @@
             "state" : "translated",
             "value" : "Pergament"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergament"
+          }
         }
       }
     },
@@ -18155,6 +18911,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cornell"
@@ -18302,6 +19064,12 @@
             "state" : "translated",
             "value" : "Millimeterpapir"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Millimeterpapper"
+          }
         }
       }
     },
@@ -18444,6 +19212,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mynte"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mint"
           }
         }
       }
@@ -18588,6 +19362,12 @@
             "state" : "translated",
             "value" : "Mørkt rutenett"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mörkt rutnät"
+          }
         }
       }
     },
@@ -18730,6 +19510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hold hullemaskinen inne i kameraet og slipp. Klikk! Det som var i vinduet, rives av som et klistremerke, akkurat som det er."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Håll hålslaget nedtryckt i kameran och släpp. Klick! Det som syntes i fönstret rivs loss precis som det är som ett klistermärke."
           }
         }
       }
@@ -18874,6 +19660,12 @@
             "state" : "translated",
             "value" : "Velg et uttrykk"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj en look"
+          }
         }
       }
     },
@@ -19016,6 +19808,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Skriv noen ord på det ferske klistremerkekortet, og legg til et uttrykk som sepia eller svart-hvitt under «Mer». Du kan bytte uttrykk når som helst uten å miste kvalitet."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skriv några ord på det nya klistermärkeskortet och lägg till en look som sepia eller svartvitt under ”Mer”. Du kan byta look när som helst utan att tappa kvalitet."
           }
         }
       }
@@ -19160,6 +19958,12 @@
             "state" : "translated",
             "value" : "Samle i et album"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samla i ett album"
+          }
         }
       }
     },
@@ -19302,6 +20106,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klistremerkeark lages for ett album om gangen. Samle klistremerkene du vil skrive ut i ett album: trykk på «Velg» i albumet og deretter «Flytt» for å flytte mange på en gang."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klistermärkesark skapas per album. Samla klistermärkena du vill skriva ut i ett album: tryck på ”Markera” i albumet och sedan på ”Flytta” för att flytta många på en gång."
           }
         }
       }
@@ -19446,6 +20256,12 @@
             "state" : "translated",
             "value" : "Lag et ark til utskrift"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skapa ett ark för utskrift"
+          }
         }
       }
     },
@@ -19589,6 +20405,12 @@
             "state" : "translated",
             "value" : "Meny ⋯ øverst til høyre i albumet ▸ «Bruk» ▸ «Klistremerkeark til utskrift (PDF)». Du får en PDF på 300 dpi som du kan levere rett til et trykkeri. Lagre den med «Arkiver i Filer», eller send den via AirDrop eller e-post."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menyn ⋯ uppe till höger i albumet ▸ ”Använd” ▸ ”Klistermärkesark för utskrift (PDF)”. Du får en PDF på 300 dpi som du kan lämna direkt till ett tryckeri. Spara den med ”Spara i Filer” eller skicka den via AirDrop eller e-post."
+          }
         }
       }
     },
@@ -19728,6 +20550,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skriv ut"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Skriv ut"
@@ -19875,6 +20703,12 @@
             "state" : "translated",
             "value" : "Hjemme: skriv ut på etikett- eller klistremerkepapir i A4 eller Letter (helst matt) i «Faktisk størrelse (100 %)»; slå alltid av «Tilpass til side».\nHos trykkeri eller klistremerkeprodusent: lever bare PDF-en. Den magentafargede stiplede linjen er kiss-cut-linjen, og hjørnemerkene er beskjæringsmerker."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hemma: skriv ut på etikett- eller klistermärkespapper i A4 eller Letter (helst matt) i ”Verklig storlek (100 %)”; stäng alltid av ”Anpassa till sida”.\nPå tryckeri eller hos klistermärkestillverkare: lämna bara PDF-filen. Den magentafärgade streckade linjen är kiss-cut-linjen och hörnmärkena är beskärningsmärken."
+          }
         }
       }
     },
@@ -20017,6 +20851,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klipp ut og fest"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klipp ut och klistra"
           }
         }
       }
@@ -20161,6 +21001,12 @@
             "state" : "translated",
             "value" : "Klipp langs den prikkede linjen med saks eller skjæremaskin, så er du ferdig! Fest dem på konvolutter, kalendere, bærbare … hvor som helst."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klipp längs den prickade linjen med sax eller skärmaskin, så är du klar! Klistra på kuvert, kalendrar, bärbara datorer … var som helst."
+          }
         }
       }
     },
@@ -20303,6 +21149,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "📮 Fra avrevet øyeblikk til klistremerke i hånden"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Från lossriven stund till klistermärke i handen"
           }
         }
       }
@@ -20447,6 +21299,12 @@
             "state" : "translated",
             "value" : "Seks trinn gjør klistremerket på telefonen til et klistremerke på skrivebordet."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sex steg förvandlar klistermärket i telefonen till ett klistermärke på skrivbordet."
+          }
         }
       }
     },
@@ -20589,6 +21447,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Greit å vite"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bra att veta"
           }
         }
       }
@@ -20733,6 +21597,12 @@
             "state" : "translated",
             "value" : "• Utskriftsark har alltid frimerkeform. Skjærelinjene beholder den takkete kanten, så avløste klistremerker ser ut som ekte frimerker (ca. 5 cm, 12 per side)."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Utskriftsark har alltid frimärksform. Skärlinjerna behåller den tandade kanten, så avlösta klistermärken ser ut som riktiga frimärken (cirka 5 cm, 12 per sida)."
+          }
         }
       }
     },
@@ -20875,6 +21745,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Klistremerker som beholder originalbildet, tegnes opp igjen i 300 dpi ved utskrift, så de blir skarpe."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Klistermärken som behåller originalfotot ritas om i 300 dpi vid utskrift, så de blir skarpa."
           }
         }
       }
@@ -21019,6 +21895,12 @@
             "state" : "translated",
             "value" : "• Også digitalt: hvert klistremerke blir automatisk et Meldinger-klistremerke. Fest det rett fra klistremerkeskuffen i Meldinger; bevegelige klistremerker beveger seg når de festes."
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Även digitalt: varje klistermärke blir automatiskt ett Meddelanden-klistermärke. Klistra fast det direkt från klistermärkeslådan i Meddelanden; rörliga klistermärken rör sig när de klistras fast."
+          }
         }
       }
     },
@@ -21161,6 +22043,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Dette er ikke ekte portofrimerker – pynt brevene så mye du vil, men la plassen til frimerket tilhøre et ekte!"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Det här är inte riktiga portofrimärken – dekorera breven hur du vill, men lämna platsen för frimärket åt ett riktigt!"
           }
         }
       }
@@ -21305,6 +22193,12 @@
             "state" : "translated",
             "value" : "Klistremerket ditt er kommet!"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ditt klistermärke har kommit!"
+          }
         }
       }
     },
@@ -21447,6 +22341,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Snurr klistremerket rundt"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snurra på klistermärket"
           }
         }
       }
@@ -21591,6 +22491,12 @@
             "state" : "translated",
             "value" : "Noen ord om dette øyeblikket …"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Några ord om det här ögonblicket …"
+          }
         }
       }
     },
@@ -21733,6 +22639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Legg til i album"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lägg till i album"
           }
         }
       }
@@ -21877,6 +22789,12 @@
             "state" : "translated",
             "value" : "Forkast"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Släng"
+          }
         }
       }
     },
@@ -22016,6 +22934,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mer"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mer"
@@ -22163,6 +23087,12 @@
             "state" : "translated",
             "value" : "Hele bildet"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hela bilden"
+          }
         }
       }
     },
@@ -22305,6 +23235,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bare frimerke"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bara frimärke"
           }
         }
       }
@@ -22449,6 +23385,12 @@
             "state" : "translated",
             "value" : "Rediger"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redigera"
+          }
         }
       }
     },
@@ -22591,6 +23533,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kopiert!"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopierat!"
           }
         }
       }
@@ -22735,6 +23683,12 @@
             "state" : "translated",
             "value" : "Del"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dela"
+          }
         }
       }
     },
@@ -22877,6 +23831,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bevegelig frimerke"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rörligt frimärke"
           }
         }
       }
@@ -23021,6 +23981,12 @@
             "state" : "translated",
             "value" : "Bevegelig utklippet klistremerke"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rörligt urklippt klistermärke"
+          }
         }
       }
     },
@@ -23160,6 +24126,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Original"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Original"
@@ -23307,6 +24279,12 @@
             "state" : "translated",
             "value" : "Sepia"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia"
+          }
         }
       }
     },
@@ -23449,6 +24427,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Svart-hvitt"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Svartvitt"
           }
         }
       }
@@ -23593,6 +24577,12 @@
             "state" : "translated",
             "value" : "Falmet"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blekt"
+          }
         }
       }
     },
@@ -23736,6 +24726,12 @@
             "state" : "translated",
             "value" : "Livlig"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livfull"
+          }
         }
       }
     },
@@ -23875,6 +24871,12 @@
           }
         },
         "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyan"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cyan"
@@ -24022,6 +25024,12 @@
             "state" : "translated",
             "value" : "Hold inne for å se hele bildet"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Håll nedtryckt för att se hela bilden"
+          }
         }
       }
     },
@@ -24164,6 +25172,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hva slags øyeblikk er dette?"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vad är det här för ögonblick?"
           }
         }
       }
@@ -24308,6 +25322,12 @@
             "state" : "translated",
             "value" : "Slett dette klistremerket"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radera det här klistermärket"
+          }
         }
       }
     },
@@ -24450,6 +25470,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uttrykk"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look"
           }
         }
       }

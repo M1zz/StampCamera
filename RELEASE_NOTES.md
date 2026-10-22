@@ -188,3 +188,11 @@ Send bevegelige merker i bevegelse.
 Pynt albumsider og rekkefølge.
 Samlinger er flyttet til album.
 Innstillinger er samlet på ett sted.
+
+### 앱스토어 (sv)
+
+Lossrivna stunder blir rörliga.
+Skicka rörliga klistermärken i rörelse.
+Dekorera albumsidor och ordning.
+Samlingar har flyttats till album.
+Inställningar samlade på ett ställe.

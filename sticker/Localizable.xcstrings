@@ -141,6 +141,12 @@
             "state" : "translated",
             "value" : "Alle"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alla"
+          }
         }
       }
     },
@@ -283,6 +289,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Riv av klistremerker i Punching,\nså dukker de opp her."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riv loss klistermärken i Punching,\nså dyker de upp här."
           }
         }
       }
@@ -427,6 +439,12 @@
             "state" : "translated",
             "value" : "Deling av klistremerker krever «App Group»-oppsett.\n(Sjekk signeringsinnstillingene for appen og utvidelsen)"
           }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "För att dela klistermärken krävs ”App Group”-inställning.\n(Kontrollera signeringsinställningarna för appen och tillägget)"
+          }
         }
       }
     },
@@ -569,6 +587,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching-klistremerker"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-klistermärken"
           }
         }
       }
