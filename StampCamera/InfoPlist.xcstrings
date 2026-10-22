@@ -76,6 +76,18 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -153,6 +165,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "O Punching usa a câmera para transformar momentos em adesivos."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching gebruikt de camera om momenten in stickers te veranderen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching używa aparatu, aby zamieniać chwile w naklejki."
           }
         }
       }
@@ -232,6 +256,18 @@
             "state" : "translated",
             "value" : "Usado para salvar os adesivos prontos nas Fotos."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wordt gebruikt om voltooide stickers in Foto’s te bewaren."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Służy do zapisywania gotowych naklejek w Zdjęciach."
+          }
         }
       }
     },
@@ -309,6 +345,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usado para registrar onde um adesivo foi destacado."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wordt gebruikt om vast te leggen waar een sticker is afgescheurd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Służy do zapisywania miejsca, w którym oderwano naklejkę."
           }
         }
       }

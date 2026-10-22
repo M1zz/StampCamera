@@ -75,6 +75,18 @@
             "state" : "translated",
             "value" : "Câmera do Punching"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-camera"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparat Punching"
+          }
         }
       }
     },
@@ -151,6 +163,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abre a câmera do Punching na hora."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opent meteen de Punching-camera."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Od razu otwiera aparat Punching."
           }
         }
       }

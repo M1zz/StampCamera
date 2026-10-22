@@ -100,3 +100,19 @@ Envie adesivos animados em movimento.
 Decore páginas e ordem de cada álbum.
 Coleções viraram álbuns de mesmo nome.
 Ajustes todos reunidos em um só lugar.
+
+### 앱스토어 (nl)
+
+Afgescheurde momenten gaan bewegen.
+Verstuur stickers met beweging.
+Versier pagina’s en volgorde.
+Collecties zijn nu verzamelingen.
+Instellingen op één plek.
+
+### 앱스토어 (pl)
+
+Oderwane chwile stają się ruchome.
+Wysyłaj naklejki w ruchu.
+Dekoruj strony i kolejność albumów.
+Kolekcje przeszły do albumów.
+Ustawienia zebrane w jednym miejscu.

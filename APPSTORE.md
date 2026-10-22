@@ -743,3 +743,127 @@ Importe das Fotos
 Transforme em adesivos as fotos que você tirou antes e adicione-as a um álbum.
 
 Todos os seus adesivos e fotos ficam guardados somente no seu aparelho.
+
+## nl
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/nl/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/nl/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/nl/
+
+### 이름
+
+Punching: bewegende stickers
+
+### 부제
+
+Houd vast, scheur het af
+
+### 키워드
+
+uitknippen,gif,postzegel,scrapbook,dagboek,collage,vintage,retro,polaroid,ansichtkaart,achtergrond
+
+### 프로모션 텍스트
+
+Houd ingedrukt en het moment dat je afscheurt wordt een bewegende sticker. Knip alleen het onderwerp uit of scheur een getande postzegel af en stuur hem via Berichten.
+
+### 설명
+
+Het moment dat je vasthoudt, wordt een bewegende sticker.
+Punching is een camera-app die alles wat je door de lens ziet als sticker afscheurt.
+
+Richt de scène in het perforatorvenster midden op het scherm en houd ingedrukt. Je krijgt een sticker met ook de korte beweging vlak voor en na je druk. Is er een onderwerp om uit te knippen, zoals een persoon, een huisdier of een voorwerp, dan wordt alleen dat uitgeknipt; is er geen, zoals bij een landschap, dan wordt het afgescheurd als postzegel met getande rand.
+
+Dit kun je doen
+
+Versturen vanuit Berichten en het toetsenbord
+Afgescheurde stickers verschijnen in de stickerlade van Berichten en als je het Punching-toetsenbord aanzet, kun je ze ook in andere apps kiezen en plakken. Stickers met beweging worden bewegend verstuurd.
+
+Kopiëren en versturen met één tik
+Tik direct na het afscheuren op Verstuur, of houd een sticker ingedrukt om hem te kopiëren en overal te plakken.
+
+Vorm en beweging altijd aan te passen
+Ook na het afscheuren schakel je tussen uitgeknipt en postzegel, en tussen beweging en stilstaand. Je originele foto blijft bewaard zoals hij was.
+
+Een look en een paar woorden
+Kies een look uit Origineel, Sepia, Zwart-wit, Vervaagd, Levendig en Cyaan en laat een korte notitie achter bij elke sticker. De datum en plek van het afscheuren worden ook bewaard.
+
+Een verzameling voor elk thema
+Maak verzamelingen per thema en kies stickers per verzameling in Berichten en op het toetsenbord. Kies pagina’s zoals kraft, ruitjes, gelijnd of perkament en rangschik alles zoals jij wilt.
+
+Echte stickers printen
+Maak van een verzameling een pdf om te printen met snijlijnen in postzegelvorm en print hem direct op stickerpapier.
+
+Importeren uit Foto’s
+Verander eerder gemaakte foto’s in stickers en voeg ze toe aan een verzameling.
+
+Al je stickers en foto’s worden alleen op je apparaat bewaard.
+
+## pl
+
+### 지원 URL
+
+https://m1zz.github.io/StampCamera/pl/support.html
+
+### 개인정보처리방침 URL
+
+https://m1zz.github.io/StampCamera/pl/privacy.html
+
+### 마케팅 URL
+
+https://m1zz.github.io/StampCamera/pl/
+
+### 이름
+
+Punching: ruchome naklejki
+
+### 부제
+
+Przytrzymaj i oderwij chwilę
+
+### 키워드
+
+wycinanie,gif,znaczek,scrapbook,pamiętnik,kolaż,vintage,retro,polaroid,pocztówka,tło,wiadomości
+
+### 프로모션 텍스트
+
+Przytrzymaj, a oderwana chwila stanie się ruchomą naklejką. Wytnij sam obiekt albo oderwij ząbkowany znaczek i wyślij go z Wiadomości lub klawiatury.
+
+### 설명
+
+Chwila, którą przytrzymasz, staje się ruchomą naklejką.
+Punching to aplikacja aparatu, która odrywa jako naklejkę wszystko, co widzisz przez obiektyw.
+
+Ustaw scenę w okienku dziurkacza na środku ekranu i przytrzymaj. Otrzymasz naklejkę, która zawiera też krótki ruch tuż przed naciśnięciem i po nim. Jeśli jest obiekt do wycięcia, na przykład osoba, zwierzak lub przedmiot, wycinany jest tylko on; jeśli go nie ma, jak w krajobrazie, kadr jest odrywany jako znaczek z ząbkowanym brzegiem.
+
+Co możesz robić
+
+Wysyłaj z Wiadomości i klawiatury
+Oderwane naklejki pojawiają się w szufladzie naklejek w Wiadomościach, a po włączeniu klawiatury Punching możesz wybierać i wklejać je także w innych aplikacjach. Ruchome naklejki są wysyłane w ruchu.
+
+Kopiuj i wysyłaj jednym dotknięciem
+Dotknij Wyślij zaraz po oderwaniu albo przytrzymaj naklejkę, aby ją skopiować i wkleić gdziekolwiek.
+
+Kształt i ruch zmienisz w każdej chwili
+Nawet po oderwaniu możesz przełączać między wyciętym kształtem a znaczkiem oraz między ruchem a obrazem statycznym. Oryginalne zdjęcie zostaje nietknięte.
+
+Styl i kilka słów
+Wybierz styl: Oryginał, Sepia, Czerń i biel, Wyblakły, Wyrazisty lub Cyjan, i zostaw krótką notatkę przy każdej naklejce. Zapisywane są też data i miejsce oderwania.
+
+Album na każdy temat
+Twórz albumy tematyczne i wybieraj naklejki album po albumie w Wiadomościach i na klawiaturze. Wybieraj strony, np. kraft, kratkę, linie lub pergamin, i ustawiaj kolejność, jak chcesz.
+
+Drukuj prawdziwe naklejki
+Zamień album w plik PDF do druku z liniami cięcia w kształcie znaczka i drukuj go prosto na papierze do naklejek.
+
+Importuj ze Zdjęć
+Zamień wcześniej zrobione zdjęcia w naklejki i dodaj je do albumu.
+
+Wszystkie naklejki i zdjęcia są przechowywane wyłącznie na Twoim urządzeniu.

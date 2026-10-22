@@ -76,6 +76,18 @@
             "state" : "translated",
             "value" : "Punching Adesivos"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching Stickers"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naklejki Punching"
+          }
         }
       }
     }

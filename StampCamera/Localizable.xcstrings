@@ -75,6 +75,18 @@
             "state" : "translated",
             "value" : "Bloqueio com Face ID"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID-vergrendeling"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blokada Face ID"
+          }
         }
       }
     },
@@ -151,6 +163,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bloqueie o app com Face ID para proteger seus álbuns."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vergrendel de app met Face ID om je verzamelingen privé te houden."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zablokuj aplikację za pomocą Face ID, aby chronić swoje albumy."
           }
         }
       }
@@ -229,6 +253,18 @@
             "state" : "translated",
             "value" : "Mais fácil com o VoiceOver"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fijner met VoiceOver"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wygodniej z VoiceOver"
+          }
         }
       }
     },
@@ -305,6 +341,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ao aumentar o texto, as telas se reorganizam sem cortar nada."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je de tekst vergroot, worden schermen netjes opnieuw ingedeeld zonder dat er iets wordt afgekapt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po powiększeniu tekstu ekrany układają się na nowo i nic nie jest ucinane."
           }
         }
       }
@@ -383,6 +431,18 @@
             "state" : "translated",
             "value" : "Sincronização entre aparelhos"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchroniseren tussen apparaten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchronizacja między urządzeniami"
+          }
         }
       }
     },
@@ -459,6 +519,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tudo continua legível, mesmo com “Aumentar contraste” ativado ou se for difícil distinguir as cores."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles blijft leesbaar, ook met ‘Verhoog contrast’ aan of als kleuren moeilijk te onderscheiden zijn."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystko pozostaje czytelne, nawet przy włączonym zwiększonym kontraście lub gdy trudno rozróżniać kolory."
           }
         }
       }
@@ -537,6 +609,18 @@
             "state" : "translated",
             "value" : "Use o app em mais idiomas."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruik de app in nog meer talen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj aplikacji w jeszcze większej liczbie języków."
+          }
         }
       }
     },
@@ -613,6 +697,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mais idiomas"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meer talen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Więcej języków"
           }
         }
       }
@@ -691,6 +787,18 @@
             "state" : "translated",
             "value" : "Salve seus adesivos em um arquivo e recupere-os depois."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaar je stickers in een bestand en haal ze later weer terug."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz naklejki w pliku i przywróć je później."
+          }
         }
       }
     },
@@ -767,6 +875,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cores e contraste mais fáceis de ver"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fijnere kleuren en contrast"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wygodniejsze kolory i kontrast"
           }
         }
       }
@@ -845,6 +965,18 @@
             "state" : "translated",
             "value" : "Se você trocar de iPhone, seus adesivos continuam com você pelo iCloud."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stap je over op een nieuwe iPhone, dan nemen je stickers via iCloud mee."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po zmianie iPhone’a Twoje naklejki przechodzą dalej przez iCloud."
+          }
         }
       }
     },
@@ -921,6 +1053,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cole onde quiser na página"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overal op de pagina plakken"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naklejaj gdziekolwiek na stronie"
           }
         }
       }
@@ -999,6 +1143,18 @@
             "state" : "translated",
             "value" : "Se o app fechar enquanto você decora um álbum, o que você fez continua lá."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sluit de app tijdens het versieren van een verzameling af, dan blijft je werk behouden."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli aplikacja zamknie się podczas dekorowania albumu, Twoje zmiany zostaną zachowane."
+          }
         }
       }
     },
@@ -1075,6 +1231,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Backup e exportação de adesivos"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stickers back-uppen en exporteren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopia zapasowa i eksport naklejek"
           }
         }
       }
@@ -1153,6 +1321,18 @@
             "state" : "translated",
             "value" : "Apagar todos os adesivos de uma vez"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle stickers in één keer wissen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń wszystkie naklejki naraz"
+          }
         }
       }
     },
@@ -1229,6 +1409,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use o app inteiro em inglês."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruik de hele app ook in het Engels."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj całej aplikacji także po angielsku."
           }
         }
       }
@@ -1307,6 +1499,18 @@
             "state" : "translated",
             "value" : "Na primeira abertura após uma atualização, veja o que há de novo."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bij het eerste openen na een update zie je wat er nieuw is."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przy pierwszym otwarciu po aktualizacji pokazuje, co nowego."
+          }
         }
       }
     },
@@ -1383,6 +1587,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Novidades"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuw in deze versie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co nowego"
           }
         }
       }
@@ -1461,6 +1677,18 @@
             "state" : "translated",
             "value" : "Suporte a inglês"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondersteuning voor Engels"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obsługa angielskiego"
+          }
         }
       }
     },
@@ -1537,6 +1765,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imprimir na forma recortada"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printen in uitgeknipte vorm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Druk w wyciętym kształcie"
           }
         }
       }
@@ -1615,6 +1855,18 @@
             "state" : "translated",
             "value" : "Reduzir movimento"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beweging beperken"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogranicz ruch"
+          }
         }
       }
     },
@@ -1691,6 +1943,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Com “Reduzir movimento” ativado, os efeitos na tela ficam mais calmos."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Met ‘Beweging beperken’ aan worden schermeffecten rustiger."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po włączeniu „Ogranicz ruch” efekty na ekranie stają się spokojniejsze."
           }
         }
       }
@@ -1769,6 +2033,18 @@
             "state" : "translated",
             "value" : "Se quiser, apague todos os adesivos coletados direto no app."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als je wilt, wis je alle verzamelde stickers rechtstreeks in de app."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli chcesz, możesz usunąć wszystkie zebrane naklejki bezpośrednio w aplikacji."
+          }
         }
       }
     },
@@ -1845,6 +2121,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Na folha de adesivos para imprimir, os adesivos recortados ganham uma linha de corte que segue o próprio contorno, e não a forma de selo."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Op het printvel krijgen uitgeknipte stickers een snijlijn langs hun eigen contour in plaats van de postzegelvorm."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na arkuszu do druku wycięte naklejki dostają linię cięcia wzdłuż własnego konturu, a nie w kształcie znaczka."
           }
         }
       }
@@ -1923,6 +2211,18 @@
             "state" : "translated",
             "value" : "Uma notificação mostra os adesivos que você destacou neste mesmo dia no ano passado."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een melding toont de stickers die je precies een jaar geleden hebt afgescheurd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiadomienie pokazuje naklejki oderwane dokładnie rok temu."
+          }
         }
       }
     },
@@ -1999,6 +2299,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lembrança de adesivos antigos"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stickers van vroeger"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naklejki sprzed roku"
           }
         }
       }
@@ -2077,6 +2389,18 @@
             "state" : "translated",
             "value" : "Guia para quem está começando"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uitleg voor beginners"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przewodnik dla początkujących"
+          }
         }
       }
     },
@@ -2153,6 +2477,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Na primeira abertura, um guia curto mostra como destacar e usar adesivos."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bij het eerste openen laat een korte uitleg zien hoe je stickers afscheurt en gebruikt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przy pierwszym otwarciu krótko pokazuje, jak odrywać naklejki i z nich korzystać."
           }
         }
       }
@@ -2231,6 +2567,18 @@
             "state" : "translated",
             "value" : "Sem grade, cole os adesivos onde quiser na página, até na diagonal."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zonder raster plak je stickers waar je maar wilt op de pagina, ook schuin."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez siatki naklejaj naklejki w dowolnym miejscu strony, także pod kątem."
+          }
         }
       }
     },
@@ -2307,6 +2655,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Telas para texto grande"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schermen voor grotere tekst"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekrany dla dużego tekstu"
           }
         }
       }
@@ -2385,6 +2745,18 @@
             "state" : "translated",
             "value" : "Tela para iPhone dobrável"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weergave voor vouwbare iPhone"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran dla składanego iPhone’a"
+          }
         }
       }
     },
@@ -2461,6 +2833,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use a tela larga de um iPhone dobrável dividida em dois painéis."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruik het brede scherm van een vouwbare iPhone als twee vlakken naast elkaar."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj szerokiego ekranu składanego iPhone’a jako dwóch paneli obok siebie."
           }
         }
       }
@@ -2539,6 +2923,18 @@
             "state" : "translated",
             "value" : "Continue de onde parou"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verder waar je was gebleven"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wróć do przerwanej pracy"
+          }
         }
       }
     },
@@ -2615,6 +3011,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "O VoiceOver lê cada botão e cada adesivo, sem pular nenhum e na ordem certa."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver leest elke knop en elke sticker voor, zonder iets over te slaan en in de juiste volgorde."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver czyta każdy przycisk i każdą naklejkę, niczego nie pomijając i w odpowiedniej kolejności."
           }
         }
       }
@@ -2693,6 +3101,18 @@
             "state" : "translated",
             "value" : "Abrir a câmera do Punching"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-camera openen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz aparat Punching"
+          }
         }
       }
     },
@@ -2769,6 +3189,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abre a câmera do Punching na hora."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opent meteen de Punching-camera."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Od razu otwiera aparat Punching."
           }
         }
       }
@@ -2847,6 +3279,18 @@
             "state" : "translated",
             "value" : "Abrir câmera"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera openen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz aparat"
+          }
         }
       }
     },
@@ -2923,6 +3367,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Forma padrão"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standaardvorm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domyślny kształt"
           }
         }
       }
@@ -3001,6 +3457,18 @@
             "state" : "translated",
             "value" : "Adesivo recortado"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uitgeknipte sticker"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naklejka wycięta"
+          }
         }
       }
     },
@@ -3077,6 +3545,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selo"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Postzegel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Znaczek"
           }
         }
       }
@@ -3155,6 +3635,18 @@
             "state" : "translated",
             "value" : "Moldura do Punching"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching-kader"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ramka Punching"
+          }
         }
       }
     },
@@ -3231,6 +3723,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Moldura %lld"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kader %lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ramka %lld"
           }
         }
       }
@@ -3309,6 +3813,18 @@
             "state" : "translated",
             "value" : "Destacar"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afscheuren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odrywanie"
+          }
         }
       }
     },
@@ -3385,6 +3901,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se não houver nada para recortar, ele é destacado em forma de selo. O movimento sempre é capturado, então depois de destacar você pode mudar a forma e o movimento de cada adesivo."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als er niets uit te knippen valt, scheur je het af als postzegel. Beweging wordt altijd meegenomen, dus na het afscheuren kun je de vorm en beweging van elke sticker nog aanpassen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli nie ma czego wyciąć, kadr jest odrywany w kształcie znaczka. Ruch jest zawsze nagrywany, więc po oderwaniu możesz zmienić kształt i ruch każdej naklejki."
           }
         }
       }
@@ -3463,6 +3991,18 @@
             "state" : "translated",
             "value" : "Reproduzir movimento automaticamente"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beweging automatisch afspelen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatyczne odtwarzanie ruchu"
+          }
         }
       }
     },
@@ -3539,6 +4079,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Efeito de virar página"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bladereffect"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Efekt przewracania stron"
           }
         }
       }
@@ -3617,6 +4169,18 @@
             "state" : "translated",
             "value" : "Visualização"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weergave"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widok"
+          }
         }
       }
     },
@@ -3693,6 +4257,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Com a reprodução automática desativada, os adesivos aparecem parados em todo lugar. O movimento nunca é apagado."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als automatisch afspelen uit staat, zie je stickers overal stilstaand. De beweging wordt nooit gewist."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przy wyłączonym automatycznym odtwarzaniu naklejki są wszędzie nieruchome. Ruch nigdy nie jest usuwany."
           }
         }
       }
@@ -3771,6 +4347,18 @@
             "state" : "translated",
             "value" : "Usar no Mensagens e no teclado"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruiken in Berichten en toetsenbord"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użycie w Wiadomościach i na klawiaturze"
+          }
         }
       }
     },
@@ -3847,6 +4435,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imprimir em adesivos de papel"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printen op papieren stickers"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drukowanie na papierowych naklejkach"
           }
         }
       }
@@ -3925,6 +4525,18 @@
             "state" : "translated",
             "value" : "Usar"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruiken"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj"
+          }
         }
       }
     },
@@ -4001,6 +4613,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suporte"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondersteuning"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomoc"
           }
         }
       }
@@ -4079,6 +4703,18 @@
             "state" : "translated",
             "value" : "Ajustes"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instellingen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustawienia"
+          }
         }
       }
     },
@@ -4155,6 +4791,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gereed"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotowe"
           }
         }
       }
@@ -4233,6 +4881,18 @@
             "state" : "translated",
             "value" : "Abra uma conversa no Mensagens."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open een gesprek in Berichten."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz rozmowę w Wiadomościach."
+          }
         }
       }
     },
@@ -4309,6 +4969,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toque no botão ＋ ao lado do campo de texto e escolha um adesivo do Punching em “Adesivos”."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tik naast het tekstveld op de knop ＋ en kies onder ‘Stickers’ een Punching-sticker."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dotknij ＋ obok pola tekstowego i wybierz naklejkę Punching w sekcji „Naklejki”."
           }
         }
       }
@@ -4387,6 +5059,18 @@
             "state" : "translated",
             "value" : "Mantenha pressionado para colar em qualquer lugar da conversa. Adesivos com movimento são colados em movimento."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Houd ingedrukt om hem ergens in het gesprek te plakken. Stickers met beweging plakken in beweging."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przytrzymaj, aby nakleić ją w dowolnym miejscu rozmowy. Ruchome naklejki przyklejają się w ruchu."
+          }
         }
       }
     },
@@ -4463,6 +5147,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mensagens"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berichten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiadomości"
           }
         }
       }
@@ -4541,6 +5237,18 @@
             "state" : "translated",
             "value" : "Cada álbum aparece como um pacote de adesivos separado."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elke verzameling verschijnt als een eigen stickerpakket."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Każdy album pojawia się jako osobny zestaw naklejek."
+          }
         }
       }
     },
@@ -4617,6 +5325,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toque em “Abrir Ajustes” abaixo ▸ Teclados ▸ ative Punching Adesivos."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tik hieronder op ‘Open Instellingen’ ▸ Toetsenborden ▸ zet Punching Stickers aan."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dotknij poniżej „Otwórz Ustawienia” ▸ Klawiatury ▸ włącz Naklejki Punching."
           }
         }
       }
@@ -4695,6 +5415,18 @@
             "state" : "translated",
             "value" : "No mesmo lugar, ative também “Permitir acesso total”. Ele é necessário para copiar e colar os adesivos."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zet op dezelfde plek ook ‘Volledige toegang toestaan’ aan. Die is nodig om stickers te kopiëren en te plakken."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W tym samym miejscu włącz też „Zezwalaj na pełny dostęp”. Jest potrzebny do kopiowania i wklejania naklejek."
+          }
         }
       }
     },
@@ -4771,6 +5503,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Em qualquer app, toque no globo do teclado para trocar para Punching Adesivos."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tik in een willekeurige app op de wereldbol van het toetsenbord om over te schakelen naar Punching Stickers."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W dowolnej aplikacji dotknij globusa na klawiaturze, aby przełączyć się na Naklejki Punching."
           }
         }
       }
@@ -4849,6 +5593,18 @@
             "state" : "translated",
             "value" : "Abrir Ajustes"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Instellingen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz Ustawienia"
+          }
         }
       }
     },
@@ -4925,6 +5681,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Teclado"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toetsenbord"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klawiatura"
           }
         }
       }
@@ -5003,6 +5771,18 @@
             "state" : "translated",
             "value" : "Os adesivos só circulam dentro do seu aparelho. O teclado não lê nem envia o que você digita."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stickers gaan alleen binnen je apparaat heen en weer. Het toetsenbord leest of verstuurt niet wat je typt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naklejki krążą tylko w obrębie Twojego urządzenia. Klawiatura nie odczytuje ani nie wysyła tego, co wpisujesz."
+          }
         }
       }
     },
@@ -5079,6 +5859,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Movimento não capturado"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beweging niet vastgelegd"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się nagrać ruchu"
           }
         }
       }
@@ -5157,6 +5949,18 @@
             "state" : "translated",
             "value" : "Não foi capturado movimento suficiente. Tentar de novo?"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Er is niet genoeg beweging vastgelegd. Opnieuw proberen?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nagrano za mało ruchu. Spróbować jeszcze raz?"
+          }
         }
       }
     },
@@ -5233,6 +6037,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Novo álbum"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuwe verzameling"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nowy album"
           }
         }
       }
@@ -5311,6 +6127,18 @@
             "state" : "translated",
             "value" : "Nome do álbum"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naam van verzameling"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nazwa albumu"
+          }
         }
       }
     },
@@ -5387,6 +6215,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancelar"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuleer"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
           }
         }
       }
@@ -5465,6 +6305,18 @@
             "state" : "translated",
             "value" : "Criar"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maak aan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utwórz"
+          }
         }
       }
     },
@@ -5541,6 +6393,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Refazer"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opnieuw"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrób od nowa"
           }
         }
       }
@@ -5619,6 +6483,18 @@
             "state" : "translated",
             "value" : "Manter"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laten staan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zostaw"
+          }
         }
       }
     },
@@ -5695,6 +6571,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Novo álbum…"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuwe verzameling…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nowy album…"
           }
         }
       }
@@ -5773,6 +6661,18 @@
             "state" : "translated",
             "value" : "Nada para recortar, então foi destacado em forma de selo"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niets om uit te knippen, daarom afgescheurd als postzegel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie było czego wyciąć, więc oderwano w kształcie znaczka"
+          }
         }
       }
     },
@@ -5849,6 +6749,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "O Punching precisa de acesso à câmera para transformar momentos em adesivos.\nAtive a câmera em Ajustes."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching heeft toegang tot de camera nodig om momenten in stickers te veranderen.\nZet de camera aan in Instellingen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching potrzebuje dostępu do aparatu, aby zamieniać chwile w naklejki.\nWłącz aparat w Ustawieniach."
           }
         }
       }
@@ -5927,6 +6839,18 @@
             "state" : "translated",
             "value" : "Álbuns"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzamelingen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albumy"
+          }
         }
       }
     },
@@ -6003,6 +6927,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Câmera"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparat"
           }
         }
       }
@@ -6081,6 +7017,18 @@
             "state" : "translated",
             "value" : "Importar das Fotos"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importeren uit Foto’s"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importuj ze Zdjęć"
+          }
         }
       }
     },
@@ -6158,6 +7106,18 @@
             "state" : "translated",
             "value" : "Coletando"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzamelt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zbieranie"
+          }
         }
       }
     },
@@ -6231,6 +7191,18 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -6312,6 +7284,18 @@
             "state" : "translated",
             "value" : "Todos"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie"
+          }
         }
       }
     },
@@ -6388,6 +7372,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Com movimento"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegend"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruchome"
           }
         }
       }
@@ -6466,6 +7462,18 @@
             "state" : "translated",
             "value" : "Recortados"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uitgeknipt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wycięte"
+          }
         }
       }
     },
@@ -6542,6 +7550,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ainda não há adesivos “%@”"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog geen ‘%@’-stickers"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie ma jeszcze naklejek typu „%@”"
           }
         }
       }
@@ -6620,6 +7640,18 @@
             "state" : "translated",
             "value" : "Selecionar"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecteer"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz"
+          }
         }
       }
     },
@@ -6696,6 +7728,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ver todos"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toon alles"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż wszystkie"
           }
         }
       }
@@ -6774,6 +7818,18 @@
             "state" : "translated",
             "value" : "Excluir os %lld adesivos selecionados?"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De %lld geselecteerde stickers verwijderen?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usunąć wybrane naklejki (%lld)?"
+          }
         }
       }
     },
@@ -6850,6 +7906,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Excluir"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwijder"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń"
           }
         }
       }
@@ -6928,6 +7996,18 @@
             "state" : "translated",
             "value" : "Renomear"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hernoem"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień nazwę"
+          }
         }
       }
     },
@@ -7004,6 +8084,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salvar"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaar"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz"
           }
         }
       }
@@ -7082,6 +8174,18 @@
             "state" : "translated",
             "value" : "Excluir o álbum “%@” e os %lld adesivos dentro dele?"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De verzameling ‘%@’ en de %lld stickers erin verwijderen?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usunąć album „%@” i znajdujące się w nim naklejki (%lld)?"
+          }
         }
       }
     },
@@ -7158,6 +8262,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Excluir este adesivo?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze sticker verwijderen?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usunąć tę naklejkę?"
           }
         }
       }
@@ -7236,6 +8352,18 @@
             "state" : "translated",
             "value" : "Criando a folha de adesivos…"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stickervel maken…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tworzenie arkusza naklejek…"
+          }
         }
       }
     },
@@ -7312,6 +8440,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Coletar aqui"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hier verzamelen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zbieraj tutaj"
           }
         }
       }
@@ -7390,6 +8530,18 @@
             "state" : "translated",
             "value" : "Coletando aqui"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzamelt hier"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zbiera tutaj"
+          }
         }
       }
     },
@@ -7466,6 +8618,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Decorar livremente"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vrij versieren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dekoruj dowolnie"
           }
         }
       }
@@ -7544,6 +8708,18 @@
             "state" : "translated",
             "value" : "Compartilhar como imagem"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delen als afbeelding"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udostępnij jako obraz"
+          }
         }
       }
     },
@@ -7620,6 +8796,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Folha de adesivos para imprimir (PDF)"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stickervel om te printen (pdf)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arkusz naklejek do druku (PDF)"
           }
         }
       }
@@ -7698,6 +8886,18 @@
             "state" : "translated",
             "value" : "Guia de impressão"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Printgids"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poradnik drukowania"
+          }
         }
       }
     },
@@ -7774,6 +8974,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Excluir álbum"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzameling verwijderen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń album"
           }
         }
       }
@@ -7852,6 +9064,18 @@
             "state" : "translated",
             "value" : "Desmarcar tudo"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deselecteer alles"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odznacz wszystko"
+          }
         }
       }
     },
@@ -7928,6 +9152,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selecionar tudo"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecteer alles"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaznacz wszystko"
           }
         }
       }
@@ -8006,6 +9242,18 @@
             "state" : "translated",
             "value" : "Escolha os adesivos"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies stickers"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz naklejki"
+          }
         }
       }
     },
@@ -8082,6 +9330,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld selecionados"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld geselecteerd"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybrano: %lld"
           }
         }
       }
@@ -8160,6 +9420,18 @@
             "state" : "translated",
             "value" : "Mover"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verplaats"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przenieś"
+          }
         }
       }
     },
@@ -8236,6 +9508,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fundo “%@”"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achtergrond ‘%@’"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tło „%@”"
           }
         }
       }
@@ -8314,6 +9598,18 @@
             "state" : "translated",
             "value" : "Mantenha um adesivo pressionado para movê-lo para onde quiser"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Houd een sticker ingedrukt om hem te verplaatsen waar je wilt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przytrzymaj naklejkę, aby przesunąć ją w dowolne miejsce"
+          }
         }
       }
     },
@@ -8390,6 +9686,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Na ordem em que foram tirados"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In volgorde van opname"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W kolejności robienia"
           }
         }
       }
@@ -8468,6 +9776,18 @@
             "state" : "translated",
             "value" : "Copiar"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieer"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiuj"
+          }
         }
       }
     },
@@ -8544,6 +9864,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enviar"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verstuur"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyślij"
           }
         }
       }
@@ -8622,6 +9954,18 @@
             "state" : "translated",
             "value" : "Para outro álbum"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naar andere verzameling"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do innego albumu"
+          }
         }
       }
     },
@@ -8698,6 +10042,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meu álbum de adesivos “%@” #Punching"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mijn stickerverzameling ‘%@’ #Punching"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mój album naklejek „%@” #Punching"
           }
         }
       }
@@ -8776,6 +10132,18 @@
             "state" : "translated",
             "value" : "Este álbum ainda está vazio"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze verzameling is nog leeg"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ten album jest jeszcze pusty"
+          }
         }
       }
     },
@@ -8852,6 +10220,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Coletando aqui: destaque adesivos com a câmera para enchê-lo"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzamelt hier: scheur stickers af met de camera om hem te vullen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zbiera tutaj: odrywaj naklejki aparatem, aby go zapełnić"
           }
         }
       }
@@ -8930,6 +10310,18 @@
             "state" : "translated",
             "value" : "Forma"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorm"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kształt"
+          }
         }
       }
     },
@@ -9006,6 +10398,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recortado"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uitgeknipt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wycięta"
           }
         }
       }
@@ -9084,6 +10488,18 @@
             "state" : "translated",
             "value" : "Selo"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Postzegel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Znaczek"
+          }
         }
       }
     },
@@ -9160,6 +10576,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Movimento"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beweging"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruch"
           }
         }
       }
@@ -9238,6 +10666,18 @@
             "state" : "translated",
             "value" : "Parado"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stilstaand"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statyczna"
+          }
         }
       }
     },
@@ -9314,6 +10754,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Creme liso"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effen crème"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gładki krem"
           }
         }
       }
@@ -9392,6 +10844,18 @@
             "state" : "translated",
             "value" : "Quadriculado"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruitjes"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kratka"
+          }
         }
       }
     },
@@ -9468,6 +10932,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pautado"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gelijnd"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linie"
           }
         }
       }
@@ -9546,6 +11022,18 @@
             "state" : "translated",
             "value" : "Pontilhado"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stippen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kropki"
+          }
         }
       }
     },
@@ -9619,6 +11107,18 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kraft"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kraft"
@@ -9700,6 +11200,18 @@
             "state" : "translated",
             "value" : "Pergaminho"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perkament"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergamin"
+          }
         }
       }
     },
@@ -9773,6 +11285,18 @@
           }
         },
         "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cornell"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cornell"
@@ -9854,6 +11378,18 @@
             "state" : "translated",
             "value" : "Milimetrado"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grafiek"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Milimetrowy"
+          }
         }
       }
     },
@@ -9930,6 +11466,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menta"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Munt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mięta"
           }
         }
       }
@@ -10008,6 +11556,18 @@
             "state" : "translated",
             "value" : "Grade escura"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donker raster"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciemna siatka"
+          }
         }
       }
     },
@@ -10084,6 +11644,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mantenha o furador pressionado na câmera e solte. Clique! O que aparecia na janela é destacado do jeito que está, como um adesivo."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Houd de perforator in de camera ingedrukt en laat los. Klik! Wat in het venster te zien was, scheur je zo af als sticker."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przytrzymaj dziurkacz w aparacie i puść. Klik! To, co było widać w okienku, zostaje oderwane jako naklejka."
           }
         }
       }
@@ -10162,6 +11734,18 @@
             "state" : "translated",
             "value" : "Escolha um estilo"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies een look"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz styl"
+          }
         }
       }
     },
@@ -10238,6 +11822,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Escreva algumas palavras no cartão do adesivo recém-saído e, em “Mais”, aplique um estilo como sépia ou preto e branco. Você pode mudar o estilo quando quiser, sem perder qualidade."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schrijf een paar woorden op de verse stickerkaart en geef hem onder ‘Meer’ een look zoals sepia of zwart-wit. Je kunt de look altijd aanpassen zonder kwaliteitsverlies."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napisz kilka słów na świeżej karcie naklejki, a potem w sekcji „Więcej” dodaj styl, np. sepię lub czerń i biel. Styl możesz zmienić w każdej chwili bez utraty jakości."
           }
         }
       }
@@ -10316,6 +11912,18 @@
             "state" : "translated",
             "value" : "Reúna em um álbum"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzamel in een verzameling"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zbierz w albumie"
+          }
         }
       }
     },
@@ -10392,6 +12000,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "As folhas de adesivos são feitas por álbum. Junte os adesivos que quer imprimir em um só álbum: no álbum, toque em “Selecionar” e depois em “Mover” para mover vários de uma vez."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stickervellen worden per verzameling gemaakt. Verzamel de stickers die je wilt printen in één verzameling: tik daarin op ‘Selecteer’ en dan op ‘Verplaats’ om er veel tegelijk te verplaatsen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arkusze naklejek powstają dla jednego albumu. Zbierz naklejki do druku w jednym albumie: w albumie dotknij „Wybierz”, a potem „Przenieś”, aby przenieść wiele naraz."
           }
         }
       }
@@ -10470,6 +12090,18 @@
             "state" : "translated",
             "value" : "Crie uma folha para imprimir"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maak een printvel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utwórz arkusz do druku"
+          }
         }
       }
     },
@@ -10546,6 +12178,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No menu ⋯ no canto superior direito do álbum ▸ “Usar” ▸ “Folha de adesivos para imprimir (PDF)”. Você recebe um PDF de 300 dpi que pode entregar direto a uma gráfica. Guarde com “Salvar em Arquivos” ou envie por AirDrop ou e-mail."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In het ⋯-menu rechtsboven in de verzameling ▸ ‘Gebruiken’ ▸ ‘Stickervel om te printen (pdf)’. Je krijgt een pdf van 300 dpi die je zo bij een drukkerij kunt afgeven. Bewaar hem met ‘Bewaar in Bestanden’ of verstuur hem via AirDrop of e-mail."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W menu ⋯ w prawym górnym rogu albumu ▸ „Użyj” ▸ „Arkusz naklejek do druku (PDF)”. Otrzymasz plik PDF 300 dpi, który możesz od razu oddać do drukarni. Zapisz go przez „Zachowaj w Plikach” albo wyślij przez AirDrop lub e-mail."
           }
         }
       }
@@ -10624,6 +12268,18 @@
             "state" : "translated",
             "value" : "Imprimir"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drukuj"
+          }
         }
       }
     },
@@ -10700,6 +12356,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Em casa: imprima em papel de etiqueta ou adesivo A4 ou Carta (de preferência fosco) em “Tamanho real (100%)”; desative sempre “Ajustar à página”.\nEm gráficas e fabricantes de adesivos: basta entregar o PDF. A linha tracejada magenta é o corte parcial (kiss-cut) e as marcas nos cantos são a referência de refile."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thuis: print op A4- of Letter-etiket- of stickerpapier (mat aanbevolen) op ‘Werkelijk formaat (100%)’; zet ‘Aanpassen aan pagina’ altijd uit.\nDrukkerij of stickerbedrijf: geef gewoon de pdf af. De magenta streeplijn is de kiss-cut-lijn en de hoekmarkeringen zijn de snijlijnen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W domu: drukuj na papierze do etykiet lub naklejek A4 albo Letter (najlepiej matowym) w „Rzeczywistym rozmiarze (100%)”; koniecznie wyłącz „Dopasuj do strony”.\nW drukarni lub u producenta naklejek: po prostu oddaj plik PDF. Magentowa linia przerywana to linia cięcia (kiss-cut), a znaczniki w rogach to znaczniki przycięcia."
           }
         }
       }
@@ -10778,6 +12446,18 @@
             "state" : "translated",
             "value" : "Recorte e cole"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Knip uit en plak"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wytnij i naklej"
+          }
         }
       }
     },
@@ -10854,6 +12534,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recorte pela linha pontilhada com tesoura ou máquina de corte e pronto! Cole em envelopes, agendas, notebooks… onde quiser."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Knip langs de stippellijn met een schaar of snijmachine en klaar! Plak ze op enveloppen, agenda’s, laptops… overal."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wytnij wzdłuż kropkowanej linii nożyczkami lub ploterem i gotowe! Naklej na koperty, kalendarze, laptopy… gdziekolwiek."
           }
         }
       }
@@ -10932,6 +12624,18 @@
             "state" : "translated",
             "value" : "📮 Do momento destacado ao adesivo na sua mão"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Van afgescheurd moment naar sticker in je hand"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 Od oderwanej chwili do naklejki w dłoni"
+          }
         }
       }
     },
@@ -11008,6 +12712,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seis passos transformam o adesivo do celular em adesivo na sua mesa."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zes stappen maken van de sticker op je telefoon een sticker op je bureau."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sześć kroków zamienia naklejkę z telefonu w naklejkę na biurku."
           }
         }
       }
@@ -11086,6 +12802,18 @@
             "state" : "translated",
             "value" : "Bom saber"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Goed om te weten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warto wiedzieć"
+          }
         }
       }
     },
@@ -11162,6 +12890,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• As folhas para imprimir sempre têm forma de selo. As linhas de corte mantêm a borda serrilhada, então os adesivos destacados parecem selos de verdade (cerca de 5 cm, 12 por página)."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Printvellen hebben altijd de vorm van een postzegel. De snijlijnen houden de getande rand, dus losgemaakte stickers zien eruit als echte postzegels (ongeveer 5 cm, 12 per pagina)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Arkusze do druku zawsze mają kształt znaczka. Linie cięcia zachowują ząbkowany brzeg, więc odklejone naklejki wyglądają jak prawdziwe znaczki (ok. 5 cm, 12 na stronie)."
           }
         }
       }
@@ -11240,6 +12980,18 @@
             "state" : "translated",
             "value" : "• Adesivos que guardam a foto original são redesenhados em 300 dpi na impressão e saem nítidos."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Stickers die hun originele foto bewaren, worden bij het printen opnieuw opgebouwd op 300 dpi en worden dus haarscherp."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Naklejki z zachowanym oryginalnym zdjęciem są przy druku renderowane na nowo w 300 dpi, więc są ostre."
+          }
         }
       }
     },
@@ -11316,6 +13068,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Também no digital: cada adesivo vira automaticamente um adesivo do Mensagens. Cole direto da gaveta de adesivos do Mensagens; os com movimento são colados em movimento."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Ook digitaal: elke sticker wordt automatisch een Berichten-sticker. Plak hem direct uit de stickerlade van Berichten; stickers met beweging plakken in beweging."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Także cyfrowo: każda naklejka automatycznie staje się naklejką do Wiadomości. Naklej ją prosto z szuflady naklejek w Wiadomościach; ruchome naklejki przyklejają się w ruchu."
           }
         }
       }
@@ -11394,6 +13158,18 @@
             "state" : "translated",
             "value" : "• Não são selos postais de verdade: decore suas cartas à vontade, mas deixe o lugar do selo para o selo de verdade!"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Dit zijn geen echte frankeerzegels: versier je brieven naar hartenlust, maar laat de plek voor de postzegel aan de echte!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• To nie są prawdziwe znaczki pocztowe: ozdabiaj listy do woli, ale miejsce na znaczek zostaw prawdziwemu!"
+          }
         }
       }
     },
@@ -11470,6 +13246,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seu adesivo chegou!"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je sticker is aangekomen!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoja naklejka dotarła!"
           }
         }
       }
@@ -11548,6 +13336,18 @@
             "state" : "translated",
             "value" : "Gire o adesivo"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draai de sticker rond"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obróć naklejkę"
+          }
         }
       }
     },
@@ -11624,6 +13424,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Algumas palavras sobre este momento…"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een paar woorden over dit moment…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kilka słów o tej chwili…"
           }
         }
       }
@@ -11702,6 +13514,18 @@
             "state" : "translated",
             "value" : "Adicionar ao álbum"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toevoegen aan verzameling"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj do albumu"
+          }
         }
       }
     },
@@ -11778,6 +13602,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descartar"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weggooien"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odrzuć"
           }
         }
       }
@@ -11856,6 +13692,18 @@
             "state" : "translated",
             "value" : "Mais"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meer"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Więcej"
+          }
         }
       }
     },
@@ -11932,6 +13780,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Foto inteira"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hele foto"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Całe zdjęcie"
           }
         }
       }
@@ -12010,6 +13870,18 @@
             "state" : "translated",
             "value" : "Só o selo"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alleen postzegel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tylko znaczek"
+          }
         }
       }
     },
@@ -12086,6 +13958,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Editar"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wijzig"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edytuj"
           }
         }
       }
@@ -12164,6 +14048,18 @@
             "state" : "translated",
             "value" : "Copiado!"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gekopieerd!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skopiowano!"
+          }
         }
       }
     },
@@ -12240,6 +14136,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compartilhar"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udostępnij"
           }
         }
       }
@@ -12318,6 +14226,18 @@
             "state" : "translated",
             "value" : "Selo com movimento"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegende postzegel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruchomy znaczek"
+          }
         }
       }
     },
@@ -12394,6 +14314,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Adesivo recortado com movimento"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewegende uitgeknipte sticker"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruchoma naklejka wycięta"
           }
         }
       }
@@ -12472,6 +14404,18 @@
             "state" : "translated",
             "value" : "Original"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Origineel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oryginał"
+          }
         }
       }
     },
@@ -12548,6 +14492,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sépia"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia"
           }
         }
       }
@@ -12626,6 +14582,18 @@
             "state" : "translated",
             "value" : "Preto e branco"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwart-wit"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czerń i biel"
+          }
         }
       }
     },
@@ -12702,6 +14670,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desbotado"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vervaagd"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyblakły"
           }
         }
       }
@@ -12780,6 +14760,18 @@
             "state" : "translated",
             "value" : "Vívido"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Levendig"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyrazisty"
+          }
         }
       }
     },
@@ -12856,6 +14848,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciano"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyaan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyjan"
           }
         }
       }
@@ -12934,6 +14938,18 @@
             "state" : "translated",
             "value" : "Mantenha pressionado para ver a foto inteira"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Houd ingedrukt voor de hele foto"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przytrzymaj, aby zobaczyć całe zdjęcie"
+          }
         }
       }
     },
@@ -13010,6 +15026,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Que momento é este?"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat voor moment is dit?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co to za chwila?"
           }
         }
       }
@@ -13088,6 +15116,18 @@
             "state" : "translated",
             "value" : "Excluir este adesivo"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwijder deze sticker"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń tę naklejkę"
+          }
         }
       }
     },
@@ -13164,6 +15204,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Estilo"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Styl"
           }
         }
       }

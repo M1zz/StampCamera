@@ -75,6 +75,18 @@
             "state" : "translated",
             "value" : "Todos"
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie"
+          }
         }
       }
     },
@@ -151,6 +163,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Para usar os adesivos, ative “Permitir acesso total”.\nAjustes ▸ Geral ▸ Teclado ▸ Punching Adesivos ▸ Permitir acesso total"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zet ‘Volledige toegang toestaan’ aan om stickers te gebruiken.\nInstellingen ▸ Algemeen ▸ Toetsenbord ▸ Punching Stickers ▸ Volledige toegang toestaan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aby używać naklejek, włącz „Zezwalaj na pełny dostęp”.\nUstawienia ▸ Ogólne ▸ Klawiatura ▸ Naklejki Punching ▸ Zezwalaj na pełny dostęp"
           }
         }
       }
@@ -229,6 +253,18 @@
             "state" : "translated",
             "value" : "Destaque adesivos no Punching\ne eles aparecerão aqui."
           }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scheur stickers af in Punching\nen ze verschijnen hier."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oderwij naklejki w Punching,\na pojawią się tutaj."
+          }
         }
       }
     },
@@ -305,6 +341,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Copiado: agora é só colar"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gekopieerd, plak nu"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skopiowano — teraz wklej"
           }
         }
       }
