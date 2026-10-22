@@ -28,6 +28,18 @@
             "state" : "translated",
             "value" : "Punching ステッカー"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching 贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching 貼圖"
+          }
         }
       }
     }

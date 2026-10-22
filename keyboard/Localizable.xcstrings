@@ -27,6 +27,18 @@
             "state" : "translated",
             "value" : "すべて"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
         }
       }
     },
@@ -55,6 +67,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ステッカーを使うには「フルアクセスを許可」をオンにしてください。\n設定 ▸ 一般 ▸ キーボード ▸ Punching ステッカー ▸ フルアクセスを許可"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要使用贴纸，请开启“允许完全访问”。\n设置 ▸ 通用 ▸ 键盘 ▸ Punching 贴纸 ▸ 允许完全访问"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要使用貼圖，請開啟「允許完整取用」。\n設定 ▸ 一般 ▸ 鍵盤 ▸ Punching 貼圖 ▸ 允許完整取用"
           }
         }
       }
@@ -85,6 +109,18 @@
             "state" : "translated",
             "value" : "Punching でステッカーをはがすと、\nここに表示されます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Punching 里撕下贴纸后，\n会显示在这里。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Punching 裡撕下貼圖後，\n會顯示在這裡。"
+          }
         }
       }
     },
@@ -113,6 +149,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "コピーしました — 貼り付けてください"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已拷贝 — 请粘贴"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已拷貝 — 請貼上"
           }
         }
       }

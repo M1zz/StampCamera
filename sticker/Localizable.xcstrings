@@ -27,6 +27,18 @@
             "state" : "translated",
             "value" : "すべて"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
         }
       }
     },
@@ -55,6 +67,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching でステッカーをはがすと、\nここに表示されます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Punching 里撕下贴纸后，\n会显示在这里。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Punching 裡撕下貼圖後，\n會顯示在這裡。"
           }
         }
       }
@@ -85,6 +109,18 @@
             "state" : "translated",
             "value" : "ステッカーを共有するには「App Group」の設定が必要です。\n（アプリと拡張機能の署名設定を確認してください）"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共享贴纸需要设置“App Group”。\n（请检查 App 与扩展的签名设置）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共享貼圖需要設定「App Group」。\n（請檢查 App 與延伸功能的簽署設定）"
+          }
         }
       }
     },
@@ -113,6 +149,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching ステッカー"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching 贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching 貼圖"
           }
         }
       }

@@ -27,6 +27,18 @@
             "state" : "translated",
             "value" : "Face IDロック"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID 锁定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID 鎖定"
+          }
         }
       }
     },
@@ -55,6 +67,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Face IDでアプリをロックして、ブックを守ります。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用 Face ID 锁住 App，守护你的收藏册。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用 Face ID 鎖住 App，守護你的收藏冊。"
           }
         }
       }
@@ -85,6 +109,18 @@
             "state" : "translated",
             "value" : "VoiceOverでもっと使いやすく"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver 更好用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver 更好用"
+          }
         }
       }
     },
@@ -113,6 +149,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "文字サイズを大きくしても、見切れずに見やすく配置し直されます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放大字体后，界面也会重新排版，不会被截断，看起来依然舒服。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放大字體後，畫面也會重新排版，不會被截斷，看起來依然舒服。"
           }
         }
       }
@@ -143,6 +191,18 @@
             "state" : "translated",
             "value" : "デバイス間の同期"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "跨设备同步"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "跨裝置同步"
+          }
         }
       }
     },
@@ -171,6 +231,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "コントラストを上げたり、色の区別がつきにくくても内容が分かります。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "即使开启了增强对比度，或难以分辨颜色，内容依然清晰可辨。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "即使開啟了提高對比，或難以分辨顏色，內容依然清楚可辨。"
           }
         }
       }
@@ -201,6 +273,18 @@
             "state" : "translated",
             "value" : "もっと多くの言語でアプリを使えるようにします。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "让你用更多语言使用这个 App。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "讓你用更多語言使用這個 App。"
+          }
         }
       }
     },
@@ -229,6 +313,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "さらに多くの言語"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多语言"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多語言"
           }
         }
       }
@@ -259,6 +355,18 @@
             "state" : "translated",
             "value" : "集めたステッカーをファイルに保存して、あとから読み込めます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "把收集的贴纸存成文件，之后还能再导入。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "把收集的貼圖存成檔案，之後還能再匯入。"
+          }
         }
       }
     },
@@ -287,6 +395,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "見やすい色とコントラスト"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更易看清的颜色与对比度"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更易看清的顏色與對比"
           }
         }
       }
@@ -317,6 +437,18 @@
             "state" : "translated",
             "value" : "新しいiPhoneに替えても、集めたステッカーがiCloudでそのまま引き継がれます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "换了新 iPhone，收集的贴纸也会通过 iCloud 原样延续。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "換了新 iPhone，收集的貼圖也會透過 iCloud 原樣延續。"
+          }
         }
       }
     },
@@ -345,6 +477,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ブックのページに自由に貼る"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在收藏册页面上随意粘贴"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在收藏冊頁面上隨意黏貼"
           }
         }
       }
@@ -375,6 +519,18 @@
             "state" : "translated",
             "value" : "ブックをデコっている途中でアプリが終了しても、作業内容が残っています。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "装饰收藏册时即使 App 被关闭，做到一半的内容也会保留。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "裝飾收藏冊時即使 App 被關閉，做到一半的內容也會保留。"
+          }
         }
       }
     },
@@ -403,6 +559,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ステッカーのバックアップと書き出し"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "贴纸备份与导出"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貼圖備份與匯出"
           }
         }
       }
@@ -433,6 +601,18 @@
             "state" : "translated",
             "value" : "ステッカーをまとめて削除"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一次清空贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一次清空貼圖"
+          }
         }
       }
     },
@@ -461,6 +641,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "アプリを英語でも使えます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 也可以用英语使用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 也可以用英文使用。"
           }
         }
       }
@@ -491,6 +683,18 @@
             "state" : "translated",
             "value" : "アップデート後に初めて開いたとき、新しくなった点をお知らせします。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新后第一次打开时，告诉你有什么新变化。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新後第一次打開時，告訴你有什麼新變化。"
+          }
         }
       }
     },
@@ -519,6 +723,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "アップデート情報"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新内容"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新內容"
           }
         }
       }
@@ -549,6 +765,18 @@
             "state" : "translated",
             "value" : "英語に対応"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持英语"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支援英文"
+          }
         }
       }
     },
@@ -577,6 +805,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "切り抜いた形のまま印刷"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按抠图轮廓打印"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "依去背輪廓列印"
           }
         }
       }
@@ -607,6 +847,18 @@
             "state" : "translated",
             "value" : "視差効果を減らす"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "减少动态效果"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "減少動態效果"
+          }
         }
       }
     },
@@ -635,6 +887,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "視差効果を減らすをオンにすると、画面の動きがおだやかになります。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开启“减弱动态效果”后，屏幕效果会更平静。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開啟「減少動態效果」後，螢幕效果會更平靜。"
           }
         }
       }
@@ -665,6 +929,18 @@
             "state" : "translated",
             "value" : "お望みなら、アプリ内で集めたステッカーをすべて削除できます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要时，可以在 App 内清除收集的所有贴纸。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要時，可以在 App 內清除收集的所有貼圖。"
+          }
         }
       }
     },
@@ -693,6 +969,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "印刷用シートでは、切り抜きステッカーに切手の形ではなく切り抜いた輪郭に沿ったカットラインが入ります。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在可打印贴纸页上，抠图贴纸的模切线会沿着它自己的轮廓，而不是邮票形状。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在可列印貼紙頁上，去背貼圖的模切線會沿著它自己的輪廓，而不是郵票形狀。"
           }
         }
       }
@@ -723,6 +1011,18 @@
             "state" : "translated",
             "value" : "去年の今日はがしたステッカーを通知でもう一度見せてくれます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用通知把去年今天撕下的贴纸再次拿给你看。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用通知把去年今天撕下的貼圖再次拿給你看。"
+          }
         }
       }
     },
@@ -751,6 +1051,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "過去のステッカー通知"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "往年今日贴纸提醒"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "往年今日貼圖提醒"
           }
         }
       }
@@ -781,6 +1093,18 @@
             "state" : "translated",
             "value" : "はじめての方へのガイド"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新手引导"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新手導覽"
+          }
         }
       }
     },
@@ -809,6 +1133,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "初めて開いたときに、ステッカーのはがし方と使い方を短く紹介します。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "第一次打开时，简短介绍如何撕取和使用贴纸。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "第一次打開時，簡短介紹如何撕取和使用貼圖。"
           }
         }
       }
@@ -839,6 +1175,18 @@
             "state" : "translated",
             "value" : "マス目に合わせず、台紙の好きな場所にステッカーを斜めにも貼ってデコれます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不必对齐格子，可以把贴纸斜着贴在内页的任何位置来装饰。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不必對齊格子，可以把貼圖斜著貼在內頁的任何位置來裝飾。"
+          }
         }
       }
     },
@@ -867,6 +1215,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "大きな文字に合わせた画面"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "适配大字体的界面"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "適應大字體的畫面"
           }
         }
       }
@@ -897,6 +1257,18 @@
             "state" : "translated",
             "value" : "折りたたみiPhone対応"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "折叠 iPhone 界面"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "摺疊 iPhone 畫面"
+          }
         }
       }
     },
@@ -925,6 +1297,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "折りたたみiPhoneの広い画面を2つに分けて使えます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在折叠 iPhone 的宽屏上分成两栏使用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在摺疊 iPhone 的寬螢幕上分成兩欄使用。"
           }
         }
       }
@@ -955,6 +1339,18 @@
             "state" : "translated",
             "value" : "続きから再開"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接着上次继续"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接著上次繼續"
+          }
         }
       }
     },
@@ -983,6 +1379,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "画面読み上げが、ボタンやステッカーをもれなく正しい順番で読み上げます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旁白会按合适的顺序读出每个按钮和贴纸，一个不漏。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旁白會依合適的順序讀出每個按鈕和貼圖，一個不漏。"
           }
         }
       }
@@ -1013,6 +1421,18 @@
             "state" : "translated",
             "value" : "Punching カメラを開く"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开 Punching 相机"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開啟 Punching 相機"
+          }
         }
       }
     },
@@ -1041,6 +1461,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching のカメラをすぐに開きます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "立即打开 Punching 相机。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "立即開啟 Punching 相機。"
           }
         }
       }
@@ -1071,6 +1503,18 @@
             "state" : "translated",
             "value" : "カメラを開く"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开相机"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開啟相機"
+          }
         }
       }
     },
@@ -1099,6 +1543,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "基本の形"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "默认形状"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設形狀"
           }
         }
       }
@@ -1129,6 +1585,18 @@
             "state" : "translated",
             "value" : "切り抜きステッカー"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "抠图贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "去背貼圖"
+          }
         }
       }
     },
@@ -1157,6 +1625,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "切手"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "邮票"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "郵票"
           }
         }
       }
@@ -1187,6 +1667,18 @@
             "state" : "translated",
             "value" : "Punching のフレーム"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching 边框"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching 邊框"
+          }
         }
       }
     },
@@ -1215,6 +1707,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "フレーム %lld"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "边框 %lld"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "邊框 %lld"
           }
         }
       }
@@ -1245,6 +1749,18 @@
             "state" : "translated",
             "value" : "はがす"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撕取"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撕取"
+          }
         }
       }
     },
@@ -1273,6 +1789,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "切り抜く対象がないときは切手の形ではがします。動きはいつも一緒に記録されるので、はがしたあとでステッカーごとに形と動きを変えられます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有可抠出的主体时，会撕成邮票形状。动态始终会一并记录，所以撕下后可以为每张贴纸更改形状和动态。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有可去背的主體時，會撕成郵票形狀。動態一律會一併記錄，所以撕下後可以為每張貼圖更改形狀與動態。"
           }
         }
       }
@@ -1303,6 +1831,18 @@
             "state" : "translated",
             "value" : "動きを自動再生"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动播放动态"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動播放動態"
+          }
         }
       }
     },
@@ -1331,6 +1871,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ページをめくる演出"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "翻书效果"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "翻書效果"
           }
         }
       }
@@ -1361,6 +1913,18 @@
             "state" : "translated",
             "value" : "表示"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示"
+          }
         }
       }
     },
@@ -1389,6 +1953,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "自動再生をオフにすると、どこでも止まった状態で表示されます。動きが消えることはありません。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭自动播放后，贴纸在任何地方都显示为静止画面。动态不会被删除。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關閉自動播放後，貼圖在任何地方都會顯示為靜止畫面。動態不會被刪除。"
           }
         }
       }
@@ -1419,6 +1995,18 @@
             "state" : "translated",
             "value" : "メッセージとキーボードで使う"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在信息和键盘中使用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在訊息和鍵盤中使用"
+          }
         }
       }
     },
@@ -1447,6 +2035,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "紙のステッカーに印刷する"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打印成纸质贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "列印成紙本貼紙"
           }
         }
       }
@@ -1477,6 +2077,18 @@
             "state" : "translated",
             "value" : "使う"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用"
+          }
         }
       }
     },
@@ -1506,6 +2118,18 @@
             "state" : "translated",
             "value" : "サポート"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支援"
+          }
         }
       }
     },
@@ -1531,6 +2155,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定"
@@ -1564,6 +2200,18 @@
             "state" : "translated",
             "value" : "完了"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成"
+          }
         }
       }
     },
@@ -1592,6 +2240,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "メッセージアプリで会話を開きます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在“信息”App 中打开一个对话。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在「訊息」App 中打開一個對話。"
           }
         }
       }
@@ -1622,6 +2282,18 @@
             "state" : "translated",
             "value" : "入力欄の横の＋ボタンをタップし、「ステッカー」からPunching のステッカーを選びます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "点按输入框旁的 ＋ 按钮，在“贴纸”中选取 Punching 贴纸。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點一下輸入框旁的 ＋ 按鈕，在「貼圖」中選取 Punching 貼圖。"
+          }
         }
       }
     },
@@ -1650,6 +2322,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "長押しして、会話の好きな場所に貼ります。動くステッカーは動いたまま貼れます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "长按即可把它贴到对话中的任意位置。动态贴纸会动着贴上去。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長按即可把它貼到對話中的任何位置。動態貼圖會動著貼上去。"
           }
         }
       }
@@ -1680,6 +2364,18 @@
             "state" : "translated",
             "value" : "メッセージ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "信息"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "訊息"
+          }
         }
       }
     },
@@ -1708,6 +2404,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ブックごとに別々のステッカーパックとして表示されます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每个收藏册都会作为单独的贴纸包显示。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每個收藏冊都會以獨立的貼圖包顯示。"
           }
         }
       }
@@ -1738,6 +2446,18 @@
             "state" : "translated",
             "value" : "下の「設定を開く」▸ キーボード ▸ Punching ステッカーをオンにします。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "点按下方“打开设置”▸ 键盘 ▸ 开启 Punching 贴纸。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點一下下方的「開啟設定」▸ 鍵盤 ▸ 開啟 Punching 貼圖。"
+          }
         }
       }
     },
@@ -1766,6 +2486,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "同じ画面で「フルアクセスを許可」もオンにします。ステッカーのコピーと貼り付けに必要です。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在同一页面里，也开启“允许完全访问”。复制和粘贴贴纸需要它。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在同一頁面中，也開啟「允許完整取用」。拷貝和貼上貼圖需要它。"
           }
         }
       }
@@ -1796,6 +2528,18 @@
             "state" : "translated",
             "value" : "どのアプリでも、キーボードの地球儀ボタンをタップしてPunching ステッカーに切り替えます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在任意 App 中，点按键盘上的地球按钮，即可切换到 Punching 贴纸。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在任何 App 中，點一下鍵盤上的地球按鈕，即可切換到 Punching 貼圖。"
+          }
         }
       }
     },
@@ -1824,6 +2568,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定を開く"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开设置"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開啟設定"
           }
         }
       }
@@ -1854,6 +2610,18 @@
             "state" : "translated",
             "value" : "キーボード"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "键盘"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鍵盤"
+          }
         }
       }
     },
@@ -1882,6 +2650,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ステッカーはデバイスの中だけでやり取りされます。キーボードが入力した文字を読み取ったり送信したりすることはありません。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "贴纸只在你的设备内传递。键盘不会读取或发送你输入的内容。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貼圖只會在你的裝置內傳遞。鍵盤不會讀取或傳送你輸入的內容。"
           }
         }
       }
@@ -1912,6 +2692,18 @@
             "state" : "translated",
             "value" : "動きを記録できませんでした"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没能记录到动态"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒能記錄到動態"
+          }
         }
       }
     },
@@ -1940,6 +2732,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "十分な動きを記録できませんでした。もう一度撮りますか？"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有记录到足够的动态。要重新拍一次吗？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有記錄到足夠的動態。要重拍一次嗎？"
           }
         }
       }
@@ -1970,6 +2774,18 @@
             "state" : "translated",
             "value" : "新しいブック"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新建收藏册"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新增收藏冊"
+          }
         }
       }
     },
@@ -1998,6 +2814,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ブック名"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收藏册名称"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收藏冊名稱"
           }
         }
       }
@@ -2028,6 +2856,18 @@
             "state" : "translated",
             "value" : "キャンセル"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
         }
       }
     },
@@ -2056,6 +2896,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "作成"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "创建"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "建立"
           }
         }
       }
@@ -2086,6 +2938,18 @@
             "state" : "translated",
             "value" : "撮り直す"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重拍"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重拍"
+          }
         }
       }
     },
@@ -2114,6 +2978,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "このままにする"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保持原样"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "維持原樣"
           }
         }
       }
@@ -2144,6 +3020,18 @@
             "state" : "translated",
             "value" : "新しいブック…"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新建收藏册…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新增收藏冊⋯"
+          }
         }
       }
     },
@@ -2172,6 +3060,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "切り抜く対象がないため、切手の形ではがしました"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有可抠出的主体，已撕成邮票形状"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有可去背的主體，已撕成郵票形狀"
           }
         }
       }
@@ -2202,6 +3102,18 @@
             "state" : "translated",
             "value" : "ひとときをステッカーにするには、カメラへのアクセスが必要です。\n設定でカメラをオンにしてください。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要使用相机，才能把瞬间撕成贴纸。\n请在“设置”中开启相机。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要使用相機，才能把瞬間撕成貼圖。\n請在「設定」中開啟相機。"
+          }
         }
       }
     },
@@ -2230,6 +3142,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ブック"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收藏册"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收藏冊"
           }
         }
       }
@@ -2260,6 +3184,18 @@
             "state" : "translated",
             "value" : "カメラ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相机"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相機"
+          }
         }
       }
     },
@@ -2288,6 +3224,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "写真から読み込む"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "从照片导入"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "從照片匯入"
           }
         }
       }
@@ -2318,6 +3266,18 @@
             "state" : "translated",
             "value" : "集めています"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收集中"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收集中"
+          }
         }
       }
     },
@@ -2346,6 +3306,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld枚"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 张"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 張"
           }
         }
       }
@@ -2376,6 +3348,18 @@
             "state" : "translated",
             "value" : "すべて"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
+          }
         }
       }
     },
@@ -2404,6 +3388,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "動くもの"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "动态"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動態"
           }
         }
       }
@@ -2434,6 +3430,18 @@
             "state" : "translated",
             "value" : "切り抜き"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "抠图"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "去背"
+          }
         }
       }
     },
@@ -2462,6 +3470,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@のステッカーはまだありません"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "还没有%@贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "還沒有%@貼圖"
           }
         }
       }
@@ -2492,6 +3512,18 @@
             "state" : "translated",
             "value" : "選択"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選取"
+          }
         }
       }
     },
@@ -2520,6 +3552,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "すべて表示"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看全部"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "檢視全部"
           }
         }
       }
@@ -2550,6 +3594,18 @@
             "state" : "translated",
             "value" : "選択した%lld枚のステッカーを削除しますか？"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要删除所选的 %lld 张贴纸吗？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要刪除所選的 %lld 張貼圖嗎？"
+          }
         }
       }
     },
@@ -2578,6 +3634,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "削除"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除"
           }
         }
       }
@@ -2608,6 +3676,18 @@
             "state" : "translated",
             "value" : "名前を変更"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重命名"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新命名"
+          }
         }
       }
     },
@@ -2636,6 +3716,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "保存"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "存储"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "儲存"
           }
         }
       }
@@ -2666,6 +3758,18 @@
             "state" : "translated",
             "value" : "ブック「%@」と中の%lld枚のステッカーをすべて削除しますか？"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要删除收藏册“%@”及其中的 %lld 张贴纸吗？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要刪除收藏冊「%@」及其中的 %lld 張貼圖嗎？"
+          }
         }
       }
     },
@@ -2694,6 +3798,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "このステッカーを削除しますか？"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要删除这张贴纸吗？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要刪除這張貼圖嗎？"
           }
         }
       }
@@ -2724,6 +3840,18 @@
             "state" : "translated",
             "value" : "ステッカーシートを作成中…"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在制作贴纸页…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在製作貼紙頁⋯"
+          }
         }
       }
     },
@@ -2752,6 +3880,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ここに入れる"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放到这里"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放到這裡"
           }
         }
       }
@@ -2782,6 +3922,18 @@
             "state" : "translated",
             "value" : "ここに入れています"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正放到这里"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正放到這裡"
+          }
         }
       }
     },
@@ -2810,6 +3962,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "自由にデコる"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自由装饰"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自由裝飾"
           }
         }
       }
@@ -2840,6 +4004,18 @@
             "state" : "translated",
             "value" : "画像として共有"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以图片分享"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以圖片分享"
+          }
         }
       }
     },
@@ -2868,6 +4044,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "印刷用ステッカーシート（PDF）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可打印贴纸页（PDF）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可列印貼紙頁（PDF）"
           }
         }
       }
@@ -2898,6 +4086,18 @@
             "state" : "translated",
             "value" : "印刷ガイド"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打印指南"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "列印指南"
+          }
         }
       }
     },
@@ -2926,6 +4126,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ブックを削除"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除收藏册"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除收藏冊"
           }
         }
       }
@@ -2956,6 +4168,18 @@
             "state" : "translated",
             "value" : "すべて選択解除"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部取消选择"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部取消選取"
+          }
         }
       }
     },
@@ -2984,6 +4208,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "すべて選択"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全选"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全選"
           }
         }
       }
@@ -3014,6 +4250,18 @@
             "state" : "translated",
             "value" : "ステッカーを選んでください"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请选择贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請選擇貼圖"
+          }
         }
       }
     },
@@ -3043,6 +4291,18 @@
             "state" : "translated",
             "value" : "%lld枚を選択中"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已选择 %lld 张"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已選取 %lld 張"
+          }
         }
       }
     },
@@ -3068,6 +4328,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移動"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移动"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "移動"
@@ -3101,6 +4373,18 @@
             "state" : "translated",
             "value" : "%@の背景"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@背景"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@背景"
+          }
         }
       }
     },
@@ -3129,6 +4413,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ステッカーを長押しして、好きな場所に動かせます"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "长按贴纸，把它移到喜欢的位置"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長按貼圖，把它移到喜歡的位置"
           }
         }
       }
@@ -3159,6 +4455,18 @@
             "state" : "translated",
             "value" : "撮った順"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按拍摄顺序"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "依拍攝順序"
+          }
         }
       }
     },
@@ -3187,6 +4495,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "コピー"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拷贝"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拷貝"
           }
         }
       }
@@ -3217,6 +4537,18 @@
             "state" : "translated",
             "value" : "送る"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "发送"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "傳送"
+          }
         }
       }
     },
@@ -3245,6 +4577,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "別のブックへ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放到其他收藏册"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放到其他收藏冊"
           }
         }
       }
@@ -3275,6 +4619,18 @@
             "state" : "translated",
             "value" : "わたしのステッカーブック「%@」 #Punching"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我的贴纸收藏册“%@” #Punching"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我的貼圖收藏冊「%@」 #Punching"
+          }
         }
       }
     },
@@ -3303,6 +4659,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "このブックはまだ空です"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这个收藏册还是空的"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "這個收藏冊還是空的"
           }
         }
       }
@@ -3333,6 +4701,18 @@
             "state" : "translated",
             "value" : "ここに入れています — カメラでステッカーをはがして増やしましょう"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正放到这里 — 用相机撕下贴纸来填满它"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正放到這裡 — 用相機撕下貼圖來填滿它"
+          }
         }
       }
     },
@@ -3361,6 +4741,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "形"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "形状"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "形狀"
           }
         }
       }
@@ -3391,6 +4783,18 @@
             "state" : "translated",
             "value" : "切り抜き"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "抠图"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "去背"
+          }
         }
       }
     },
@@ -3419,6 +4823,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "切手"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "邮票"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "郵票"
           }
         }
       }
@@ -3449,6 +4865,18 @@
             "state" : "translated",
             "value" : "動き"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "动态"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動態"
+          }
         }
       }
     },
@@ -3477,6 +4905,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "静止"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "静止"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "靜止"
           }
         }
       }
@@ -3507,6 +4947,18 @@
             "state" : "translated",
             "value" : "無地クリーム"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "素色奶油"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "素色奶油"
+          }
         }
       }
     },
@@ -3535,6 +4987,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "方眼"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "方格"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "方格"
           }
         }
       }
@@ -3565,6 +5029,18 @@
             "state" : "translated",
             "value" : "罫線"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "横线"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橫線"
+          }
         }
       }
     },
@@ -3593,6 +5069,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ドット"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "圆点"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "圓點"
           }
         }
       }
@@ -3623,6 +5111,18 @@
             "state" : "translated",
             "value" : "クラフト"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牛皮纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "牛皮紙"
+          }
         }
       }
     },
@@ -3648,6 +5148,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "羊皮紙"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "羊皮纸"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "羊皮紙"
@@ -3681,6 +5193,18 @@
             "state" : "translated",
             "value" : "コーネル"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "康奈尔"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "康乃爾"
+          }
         }
       }
     },
@@ -3709,6 +5233,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "グラフ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "坐标纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "座標紙"
           }
         }
       }
@@ -3739,6 +5275,18 @@
             "state" : "translated",
             "value" : "ミント"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "薄荷"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "薄荷"
+          }
         }
       }
     },
@@ -3767,6 +5315,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ダークグリッド"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "深色方格"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "深色方格"
           }
         }
       }
@@ -3797,6 +5357,18 @@
             "state" : "translated",
             "value" : "カメラでパンチを長押しして、離すとカシャッ！ 窓に映っていた場面がそのままステッカーになります。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在相机里长按打孔器，再松开，咔嚓！窗口里的画面就原样撕成了贴纸。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在相機裡長按打孔器，再放開，喀嚓！視窗裡的畫面就原樣撕成了貼圖。"
+          }
         }
       }
     },
@@ -3825,6 +5397,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "色合いを選ぶ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选个色调"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "挑個色調"
           }
         }
       }
@@ -3855,6 +5439,18 @@
             "state" : "translated",
             "value" : "できたてのステッカーカードにひとことを書き、「詳細」でセピアやモノクロなどの色合いを付けてみましょう。色合いはいつでも変えられ、画質も落ちません。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在刚出炉的贴纸卡上写句话，再到“详细”里加上棕褐、黑白之类的色调。色调随时可以更改，画质也不会受损。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在剛出爐的貼圖卡上寫句話，再到「詳細」裡加上棕褐、黑白之類的色調。色調隨時都能更改，畫質也不會受損。"
+          }
         }
       }
     },
@@ -3883,6 +5479,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ブックに集める"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收进收藏册"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收進收藏冊"
           }
         }
       }
@@ -3913,6 +5521,18 @@
             "state" : "translated",
             "value" : "ステッカーシートはブック単位で作られます。印刷したいステッカーを1つのブックに集めましょう。ブックで「選択」してから「移動」を押すと、まとめて移せます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "贴纸页是以收藏册为单位制作的。把想打印的贴纸收进同一个收藏册吧——在收藏册里点“选择”，再点“移动”，就能一次移走多张。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貼紙頁是以收藏冊為單位製作的。把想列印的貼圖收進同一個收藏冊吧——在收藏冊裡點「選取」，再點「移動」，就能一次移走多張。"
+          }
         }
       }
     },
@@ -3941,6 +5561,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "印刷用シートを作る"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "制作可打印页"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "製作可列印頁"
           }
         }
       }
@@ -3971,6 +5603,18 @@
             "state" : "translated",
             "value" : "ブック右上の⋯メニュー →「使う」→「印刷用ステッカーシート（PDF）」。印刷店にそのまま渡せる300dpiのPDFができます。「ファイルに保存」で保管したり、AirDropやメールで送ったりできます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收藏册右上角的 ⋯ 菜单 ▸“使用”▸“可打印贴纸页（PDF）”。会生成可直接交给打印店的 300dpi PDF。可以用“存储到文件”保存，也可以通过 AirDrop 或邮件发送。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收藏冊右上角的 ⋯ 選單 ▸「使用」▸「可列印貼紙頁（PDF）」。會產生可直接交給印刷店的 300dpi PDF。可以用「儲存到檔案」保存，也可以透過 AirDrop 或郵件傳送。"
+          }
         }
       }
     },
@@ -3999,6 +5643,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "印刷する"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打印"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "列印"
           }
         }
       }
@@ -4029,6 +5685,18 @@
             "state" : "translated",
             "value" : "自宅で：A4またはレターサイズのラベル・ステッカー用紙（マット推奨）に「実際のサイズ（100%）」で印刷してください。「用紙に合わせる」は必ずオフに。\n印刷店・ステッカー業者：PDFをそのまま渡せばOKです。マゼンタの点線がカットライン（ハーフカット）、角のマークが断裁の基準です。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在家：用 A4 或 Letter 的标签/贴纸纸（推荐哑光），按“实际大小（100%）”打印——一定要关掉“适合纸张”。\n打印店或贴纸厂商：直接交付 PDF 即可。品红色虚线是模切线（半切），角上的标记是裁切基准。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在家：用 A4 或 Letter 的標籤／貼紙紙（建議霧面），以「實際大小（100%）」列印——一定要關掉「符合紙張」。\n印刷店或貼紙廠商：直接交付 PDF 即可。洋紅色虛線是模切線（半切），角落的記號是裁切基準。"
+          }
         }
       }
     },
@@ -4057,6 +5725,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "切り取って貼る"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "剪下来贴上去"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "剪下來貼上去"
           }
         }
       }
@@ -4087,6 +5767,18 @@
             "state" : "translated",
             "value" : "点線に沿ってハサミやカッティングマシンで切れば完成！ 封筒、手帳、ノートパソコン…どこにでも貼ってみてください。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沿着虚线用剪刀或切割机剪下就完成啦！信封、手帐、笔记本电脑……贴哪里都行。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沿著虛線用剪刀或裁切機剪下就完成囉！信封、手帳、筆電……貼哪裡都行。"
+          }
         }
       }
     },
@@ -4115,6 +5807,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "📮 はがした瞬間を、手に取れるステッカーに"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 撕下的瞬间，变成握在手里的贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 撕下的瞬間，變成握在手裡的貼紙"
           }
         }
       }
@@ -4145,6 +5849,18 @@
             "state" : "translated",
             "value" : "6ステップで、スマホの中のステッカーが机の上のステッカーになります。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "六步，让手机里的贴纸变成桌上的贴纸。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "六個步驟，讓手機裡的貼圖變成桌上的貼紙。"
+          }
         }
       }
     },
@@ -4173,6 +5889,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "知っておくと便利です"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小提示"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小提醒"
           }
         }
       }
@@ -4203,6 +5931,18 @@
             "state" : "translated",
             "value" : "• 印刷用シートはすべて切手の形で出力されます。カットラインがギザギザのままなので、はがすと本物の切手のようなステッカーになります（約5cm、1ページ12枚）。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 可打印页一律是邮票形状。模切线保留齿孔边缘，撕下来就是一张像真邮票一样的贴纸（约 5 cm，每页 12 张）。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 可列印頁一律是郵票形狀。模切線保留齒孔邊緣，撕下來就是一張像真郵票一樣的貼紙（約 5 公分，每頁 12 張）。"
+          }
         }
       }
     },
@@ -4231,6 +5971,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• 元の写真を保持しているステッカーは、印刷時に300dpiで新しく描き直されるので、くっきり仕上がります。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 保留了原始照片的贴纸，打印时会以 300dpi 重新绘制，成品清晰锐利。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 保留了原始照片的貼圖，列印時會以 300dpi 重新繪製，成品清晰銳利。"
           }
         }
       }
@@ -4261,6 +6013,18 @@
             "state" : "translated",
             "value" : "• 紙だけでなくデジタルでも：すべてのステッカーは自動でメッセージのステッカーになります。メッセージアプリのステッカーパネルからそのまま貼れて、動くステッカーは動いたまま貼れます。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 不只是纸质，数码也行：每张贴纸都会自动成为信息贴纸——直接从“信息”的贴纸抽屉里贴上去，动态贴纸会动着贴上。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 不只是紙本，數位也行：每張貼圖都會自動成為訊息貼圖——直接從「訊息」的貼圖抽屜貼上去，動態貼圖會動著貼上。"
+          }
         }
       }
     },
@@ -4289,6 +6053,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• 本物の郵便切手ではありません。手紙のデコはご自由に、切手の場所は本物にお任せを！"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 这不是真正的邮资邮票——装饰信件尽管用，邮票的位置还是留给真邮票吧！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 這不是真正的郵資郵票——裝飾信件儘管用，郵票的位置還是留給真郵票吧！"
           }
         }
       }
@@ -4319,6 +6095,18 @@
             "state" : "translated",
             "value" : "ステッカーが届きました！"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "贴纸送到啦！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貼圖送到囉！"
+          }
         }
       }
     },
@@ -4347,6 +6135,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ステッカーをくるっと回してみよう"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "转一转贴纸吧"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轉一轉貼圖吧"
           }
         }
       }
@@ -4377,6 +6177,18 @@
             "state" : "translated",
             "value" : "このひとときにひとこと…"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "给这一刻写句话…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "為這一刻寫句話⋯"
+          }
         }
       }
     },
@@ -4405,6 +6217,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ブックに入れる"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放入收藏册"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放入收藏冊"
           }
         }
       }
@@ -4435,6 +6259,18 @@
             "state" : "translated",
             "value" : "捨てる"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "丢弃"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "丟棄"
+          }
         }
       }
     },
@@ -4460,6 +6296,18 @@
           }
         },
         "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "詳細"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "详细"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "詳細"
@@ -4493,6 +6341,18 @@
             "state" : "translated",
             "value" : "全体の写真"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完整照片"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完整照片"
+          }
         }
       }
     },
@@ -4521,6 +6381,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "切手のみ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅邮票"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "僅郵票"
           }
         }
       }
@@ -4551,6 +6423,18 @@
             "state" : "translated",
             "value" : "編集"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "编辑"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編輯"
+          }
         }
       }
     },
@@ -4579,6 +6463,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "コピーしました！"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已拷贝！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已拷貝！"
           }
         }
       }
@@ -4609,6 +6505,18 @@
             "state" : "translated",
             "value" : "共有"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分享"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分享"
+          }
         }
       }
     },
@@ -4637,6 +6545,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "動く切手"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "动态邮票"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動態郵票"
           }
         }
       }
@@ -4667,6 +6587,18 @@
             "state" : "translated",
             "value" : "動く切り抜きステッカー"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "动态抠图贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "動態去背貼圖"
+          }
         }
       }
     },
@@ -4695,6 +6627,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "オリジナル"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原图"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原圖"
           }
         }
       }
@@ -4725,6 +6669,18 @@
             "state" : "translated",
             "value" : "セピア"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "棕褐"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "棕褐"
+          }
         }
       }
     },
@@ -4753,6 +6709,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "モノクロ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "黑白"
           }
         }
       }
@@ -4783,6 +6751,18 @@
             "state" : "translated",
             "value" : "色あせ"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "褪色"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "褪色"
+          }
         }
       }
     },
@@ -4811,6 +6791,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ビビッド"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鲜艳"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鮮豔"
           }
         }
       }
@@ -4841,6 +6833,18 @@
             "state" : "translated",
             "value" : "シアン"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "青蓝"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "青藍"
+          }
         }
       }
     },
@@ -4869,6 +6873,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "長押しで全体の写真を表示"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "长按查看完整照片"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "長按檢視完整照片"
           }
         }
       }
@@ -4899,6 +6915,18 @@
             "state" : "translated",
             "value" : "これはどんなひととき？"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这是个什么瞬间？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "這是個什麼瞬間？"
+          }
         }
       }
     },
@@ -4928,6 +6956,18 @@
             "state" : "translated",
             "value" : "このステッカーを削除"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除这张贴纸"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "刪除這張貼圖"
+          }
         }
       }
     },
@@ -4956,6 +6996,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "色合い"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色调"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色調"
           }
         }
       }

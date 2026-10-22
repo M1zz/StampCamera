@@ -28,6 +28,18 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -57,6 +69,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching は、ひとときをステッカーにはがすためにカメラを使用します。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching 使用相机，把瞬间撕成贴纸。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching 使用相機，把瞬間撕成貼圖。"
           }
         }
       }
@@ -88,6 +112,18 @@
             "state" : "translated",
             "value" : "完成したステッカーを「写真」に保存するために使用します。"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用于把完成的贴纸存储到“照片”。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用於將完成的貼圖儲存到「照片」。"
+          }
         }
       }
     },
@@ -117,6 +153,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ステッカーにはがした場所を記録するために位置情報を使用します。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用于记录贴纸是在哪里撕下的。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用於記錄貼圖是在哪裡撕下的。"
           }
         }
       }

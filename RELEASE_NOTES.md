@@ -20,3 +20,35 @@ App Store 의 "이 버전의 새로운 기능" 에 그대로 올라가는 글이
 ブックごとに台紙と並びをデコれます。
 コレクションは同じ名前のブックに移りました。
 設定を一か所にまとめて探しやすくなりました。
+
+### 앱스토어 (en)
+
+Punched moments become moving stickers.
+Send moving stickers, still moving.
+Decorate each book’s pages and order.
+Collections moved to same-name books.
+Settings now live in one place.
+
+### 앱스토어 (en-GB)
+
+Punched moments become moving stickers.
+Send moving stickers, still moving.
+Decorate each book’s pages and order.
+Collections moved to same-name books.
+Settings now live in one place.
+
+### 앱스토어 (zh-Hans)
+
+撕下的瞬间会变成动态贴纸。
+动态贴纸可以动着发送。
+可以装饰每个收藏册的内页和顺序。
+“收藏”已搬到同名的收藏册。
+设置集中到一处，更好找了。
+
+### 앱스토어 (zh-Hant)
+
+撕下的瞬間會變成動態貼圖。
+動態貼圖可以動著傳送。
+可以裝飾每個收藏冊的內頁與順序。
+「收藏」已搬到同名的收藏冊。
+設定集中到一處，更好找了。
