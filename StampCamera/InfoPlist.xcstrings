@@ -112,6 +112,12 @@
             "state" : "translated",
             "value" : "Punching"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
         }
       }
     },
@@ -225,6 +231,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching käyttää kameraa muuttaakseen hetket tarroiksi."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching ใช้กล้องเพื่อเปลี่ยนช่วงเวลาให้เป็นสติกเกอร์"
           }
         }
       }
@@ -340,6 +352,12 @@
             "state" : "translated",
             "value" : "Käytetään valmiiden tarrojen tallentamiseen Kuviin."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้เพื่อบันทึกสติกเกอร์ที่เสร็จแล้วลงในรูปภาพ"
+          }
         }
       }
     },
@@ -453,6 +471,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Käytetään tallentamaan paikka, jossa tarra irrotettiin."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้เพื่อบันทึกสถานที่ที่ฉีกสติกเกอร์"
           }
         }
       }

@@ -111,6 +111,12 @@
             "state" : "translated",
             "value" : "Kaikki"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ทั้งหมด"
+          }
         }
       }
     },
@@ -223,6 +229,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jos haluat käyttää tarroja, ota käyttöön ”Salli täysi pääsy”.\nAsetukset ▸ Yleiset ▸ Näppäimistö ▸ Punching-tarrat ▸ Salli täysi pääsy"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หากต้องการใช้สติกเกอร์ ให้เปิด “อนุญาตการเข้าถึงทั้งหมด”\nการตั้งค่า ▸ ทั่วไป ▸ คีย์บอร์ด ▸ สติกเกอร์ Punching ▸ อนุญาตการเข้าถึงทั้งหมด"
           }
         }
       }
@@ -337,6 +349,12 @@
             "state" : "translated",
             "value" : "Irrota tarroja Punchingissa,\nniin ne ilmestyvät tänne."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ฉีกสติกเกอร์ใน Punching\nแล้วจะแสดงที่นี่"
+          }
         }
       }
     },
@@ -449,6 +467,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kopioitu – liitä nyt"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คัดลอกแล้ว — วางได้เลย"
           }
         }
       }

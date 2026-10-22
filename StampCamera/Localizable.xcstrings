@@ -111,6 +111,12 @@
             "state" : "translated",
             "value" : "Face ID -lukitus"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ล็อกด้วย Face ID"
+          }
         }
       }
     },
@@ -223,6 +229,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lukitse app Face ID:llä suojataksesi albumisi."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ล็อกแอปด้วย Face ID เพื่อปกป้องอัลบั้มของคุณ"
           }
         }
       }
@@ -337,6 +349,12 @@
             "state" : "translated",
             "value" : "Helpompi käyttää VoiceOverilla"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้ VoiceOver ได้สะดวกขึ้น"
+          }
         }
       }
     },
@@ -449,6 +467,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kun suurennat tekstiä, näytöt järjestyvät uudelleen eikä mitään leikkaudu pois."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เมื่อขยายตัวอักษร หน้าจอจะจัดเรียงใหม่โดยไม่ถูกตัด"
           }
         }
       }
@@ -563,6 +587,12 @@
             "state" : "translated",
             "value" : "Synkronointi laitteiden välillä"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ซิงค์ข้ามอุปกรณ์"
+          }
         }
       }
     },
@@ -675,6 +705,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kaikki pysyy luettavana, vaikka Lisää kontrastia olisi päällä tai värejä olisi vaikea erottaa."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ทุกอย่างยังอ่านออก แม้เปิดเพิ่มคอนทราสต์หรือแยกสีได้ยาก"
           }
         }
       }
@@ -789,6 +825,12 @@
             "state" : "translated",
             "value" : "Käytä appia useammalla kielellä."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้แอปได้ในอีกหลายภาษา"
+          }
         }
       }
     },
@@ -901,6 +943,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lisää kieliä"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ภาษาเพิ่มเติม"
           }
         }
       }
@@ -1015,6 +1063,12 @@
             "state" : "translated",
             "value" : "Tallenna tarrasi tiedostoon ja palauta ne myöhemmin."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บันทึกสติกเกอร์ลงไฟล์ แล้วนำกลับมาใช้ภายหลังได้"
+          }
         }
       }
     },
@@ -1127,6 +1181,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Helpommat värit ja kontrasti"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สีและคอนทราสต์ที่ดูง่ายขึ้น"
           }
         }
       }
@@ -1241,6 +1301,12 @@
             "state" : "translated",
             "value" : "Kun vaihdat uuteen iPhoneen, tarrasi siirtyvät mukana iCloudin kautta."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แม้เปลี่ยนไปใช้ iPhone เครื่องใหม่ สติกเกอร์ที่สะสมไว้ก็ตามไปผ่าน iCloud"
+          }
         }
       }
     },
@@ -1353,6 +1419,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liimaa mihin tahansa sivulla"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แปะตรงไหนก็ได้ในหน้า"
           }
         }
       }
@@ -1467,6 +1539,12 @@
             "state" : "translated",
             "value" : "Jos app sulkeutuu albumia koristellessa, tekemäsi säilyy."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หากแอปปิดไประหว่างตกแต่งอัลบั้ม สิ่งที่ทำไว้จะยังอยู่"
+          }
         }
       }
     },
@@ -1579,6 +1657,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tarrojen varmuuskopio ja vienti"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สำรองและส่งออกสติกเกอร์"
           }
         }
       }
@@ -1693,6 +1777,12 @@
             "state" : "translated",
             "value" : "Poista kaikki tarrat kerralla"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบสติกเกอร์ทั้งหมดในครั้งเดียว"
+          }
         }
       }
     },
@@ -1805,6 +1895,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Käytä koko appia myös englanniksi."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้แอปทั้งหมดเป็นภาษาอังกฤษได้"
           }
         }
       }
@@ -1919,6 +2015,12 @@
             "state" : "translated",
             "value" : "Ensimmäisellä avauskerralla päivityksen jälkeen näet, mitä uutta on."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เมื่อเปิดครั้งแรกหลังอัปเดต จะบอกว่ามีอะไรใหม่"
+          }
         }
       }
     },
@@ -2031,6 +2133,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uutta"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "มีอะไรใหม่"
           }
         }
       }
@@ -2145,6 +2253,12 @@
             "state" : "translated",
             "value" : "Englannin tuki"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "รองรับภาษาอังกฤษ"
+          }
         }
       }
     },
@@ -2257,6 +2371,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tulostus rajattuun muotoon"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "พิมพ์ตามรูปทรงที่ตัดขอบ"
           }
         }
       }
@@ -2371,6 +2491,12 @@
             "state" : "translated",
             "value" : "Vähennä liikettä"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลดการเคลื่อนไหว"
+          }
         }
       }
     },
@@ -2483,6 +2609,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kun Vähennä liikettä on päällä, näyttötehosteet rauhoittuvat."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เมื่อเปิด “ลดการเคลื่อนไหว” เอฟเฟกต์บนหน้าจอจะนุ่มนวลขึ้น"
           }
         }
       }
@@ -2597,6 +2729,12 @@
             "state" : "translated",
             "value" : "Halutessasi voit poistaa kaikki keräämäsi tarrat suoraan apissa."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หากต้องการ คุณลบสติกเกอร์ที่สะสมทั้งหมดได้จากในแอป"
+          }
         }
       }
     },
@@ -2709,6 +2847,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tulostettavalla arkilla rajatut tarrat saavat leikkausviivan oman ääriviivansa mukaan, eivät postimerkin muotoon."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บนแผ่นสติกเกอร์สำหรับพิมพ์ สติกเกอร์ตัดขอบจะมีเส้นตัดตามเส้นขอบของตัวเอง ไม่ใช่รูปแสตมป์"
           }
         }
       }
@@ -2823,6 +2967,12 @@
             "state" : "translated",
             "value" : "Ilmoitus näyttää tarrat, jotka irrotit tänä päivänä vuosi sitten."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การแจ้งเตือนจะนำสติกเกอร์ที่คุณฉีกในวันนี้เมื่อปีที่แล้วมาให้ดูอีกครั้ง"
+          }
         }
       }
     },
@@ -2935,6 +3085,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tarroja vuoden takaa"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สติกเกอร์ย้อนหลัง"
           }
         }
       }
@@ -3049,6 +3205,12 @@
             "state" : "translated",
             "value" : "Opas aloittelijoille"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คำแนะนำสำหรับมือใหม่"
+          }
         }
       }
     },
@@ -3161,6 +3323,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ensimmäisellä avauskerralla näytetään lyhyesti, miten tarroja irrotetaan ja käytetään."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เมื่อเปิดครั้งแรก จะแสดงวิธีฉีกและใช้สติกเกอร์แบบสั้นๆ"
           }
         }
       }
@@ -3275,6 +3443,12 @@
             "state" : "translated",
             "value" : "Ilman ruudukkoa liimaa tarroja minne tahansa sivulle, vinoonkin."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไม่ต้องอยู่ในช่อง แปะสติกเกอร์ตรงไหนของหน้าก็ได้ แม้แปะเอียง"
+          }
         }
       }
     },
@@ -3387,6 +3561,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Näytöt isolle tekstille"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หน้าจอสำหรับตัวอักษรขนาดใหญ่"
           }
         }
       }
@@ -3501,6 +3681,12 @@
             "state" : "translated",
             "value" : "Näkymä taitettavalle iPhonelle"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หน้าจอสำหรับ iPhone แบบพับได้"
+          }
         }
       }
     },
@@ -3613,6 +3799,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Käytä taitettavan iPhonen leveää näyttöä kahtena rinnakkaisena ruutuna."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้หน้าจอกว้างของ iPhone แบบพับได้เป็นสองส่วนเคียงกัน"
           }
         }
       }
@@ -3727,6 +3919,12 @@
             "state" : "translated",
             "value" : "Jatka siitä, mihin jäit"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ทำต่อจากที่ค้างไว้"
+          }
         }
       }
     },
@@ -3839,6 +4037,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "VoiceOver lukee jokaisen painikkeen ja tarran, yhtäkään ohittamatta ja oikeassa järjestyksessä."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VoiceOver อ่านทุกปุ่มและทุกสติกเกอร์ไม่ตกหล่นและเรียงลำดับถูกต้อง"
           }
         }
       }
@@ -3953,6 +4157,12 @@
             "state" : "translated",
             "value" : "Avaa Punching-kamera"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดกล้อง Punching"
+          }
         }
       }
     },
@@ -4065,6 +4275,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Avaa Punching-kameran heti."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดกล้อง Punching ทันที"
           }
         }
       }
@@ -4179,6 +4395,12 @@
             "state" : "translated",
             "value" : "Avaa kamera"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดกล้อง"
+          }
         }
       }
     },
@@ -4291,6 +4513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oletusmuoto"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "รูปทรงเริ่มต้น"
           }
         }
       }
@@ -4405,6 +4633,12 @@
             "state" : "translated",
             "value" : "Rajattu tarra"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สติกเกอร์ตัดขอบ"
+          }
         }
       }
     },
@@ -4517,6 +4751,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Postimerkki"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แสตมป์"
           }
         }
       }
@@ -4631,6 +4871,12 @@
             "state" : "translated",
             "value" : "Punching-kehys"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กรอบ Punching"
+          }
         }
       }
     },
@@ -4743,6 +4989,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kehys %lld"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กรอบ %lld"
           }
         }
       }
@@ -4857,6 +5109,12 @@
             "state" : "translated",
             "value" : "Irrotus"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ฉีก"
+          }
         }
       }
     },
@@ -4969,6 +5227,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jos mitään ei ole rajattavaa, kuva irrotetaan postimerkin muotoon. Liike tallentuu aina mukaan, joten irrotuksen jälkeen voit muuttaa jokaisen tarran muotoa ja liikettä."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หากไม่มีอะไรให้ตัด ภาพจะถูกฉีกเป็นรูปแสตมป์ การเคลื่อนไหวถูกบันทึกไว้เสมอ ดังนั้นหลังฉีกแล้วคุณยังเปลี่ยนรูปทรงและการเคลื่อนไหวของสติกเกอร์แต่ละชิ้นได้"
           }
         }
       }
@@ -5083,6 +5347,12 @@
             "state" : "translated",
             "value" : "Toista liike automaattisesti"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เล่นการเคลื่อนไหวอัตโนมัติ"
+          }
         }
       }
     },
@@ -5195,6 +5465,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sivunkääntötehoste"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เอฟเฟกต์พลิกหน้า"
           }
         }
       }
@@ -5309,6 +5585,12 @@
             "state" : "translated",
             "value" : "Näkymä"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "มุมมอง"
+          }
         }
       }
     },
@@ -5421,6 +5703,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kun automaattinen toisto on pois päältä, tarrat näkyvät kaikkialla pysähtyneinä. Liikettä ei koskaan poisteta."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เมื่อปิดการเล่นอัตโนมัติ สติกเกอร์จะแสดงเป็นภาพนิ่งทุกที่ การเคลื่อนไหวจะไม่ถูกลบ"
           }
         }
       }
@@ -5535,6 +5823,12 @@
             "state" : "translated",
             "value" : "Käyttö Viesteissä ja näppäimistöllä"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้ในข้อความและคีย์บอร์ด"
+          }
         }
       }
     },
@@ -5647,6 +5941,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tulosta paperitarroiksi"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "พิมพ์เป็นสติกเกอร์กระดาษ"
           }
         }
       }
@@ -5761,6 +6061,12 @@
             "state" : "translated",
             "value" : "Käyttö"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้งาน"
+          }
         }
       }
     },
@@ -5873,6 +6179,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tuki"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ช่วยเหลือ"
           }
         }
       }
@@ -5987,6 +6299,12 @@
             "state" : "translated",
             "value" : "Asetukset"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การตั้งค่า"
+          }
         }
       }
     },
@@ -6099,6 +6417,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Valmis"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เสร็จสิ้น"
           }
         }
       }
@@ -6213,6 +6537,12 @@
             "state" : "translated",
             "value" : "Avaa keskustelu Viesteissä."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดบทสนทนาในแอปข้อความ"
+          }
         }
       }
     },
@@ -6325,6 +6655,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Napauta tekstikentän vieressä olevaa ＋-painiketta ja valitse Punching-tarra kohdasta ”Tarrat”."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แตะปุ่ม ＋ ข้างช่องพิมพ์ แล้วเลือกสติกเกอร์ Punching จาก “สติกเกอร์”"
           }
         }
       }
@@ -6439,6 +6775,12 @@
             "state" : "translated",
             "value" : "Pidä painettuna, niin voit liimata sen mihin tahansa keskusteluun. Liikkuvat tarrat liimautuvat liikkuen."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แตะค้างเพื่อแปะตรงไหนก็ได้ในบทสนทนา สติกเกอร์ที่เคลื่อนไหวจะเคลื่อนไหวขณะแปะ"
+          }
         }
       }
     },
@@ -6551,6 +6893,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Viestit"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ข้อความ"
           }
         }
       }
@@ -6665,6 +7013,12 @@
             "state" : "translated",
             "value" : "Jokainen albumi näkyy omana tarrapakettinaan."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แต่ละอัลบั้มจะแสดงเป็นชุดสติกเกอร์แยกกัน"
+          }
         }
       }
     },
@@ -6777,6 +7131,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Napauta alta ”Avaa Asetukset” ▸ Näppäimistöt ▸ ota käyttöön Punching-tarrat."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แตะ “เปิดการตั้งค่า” ด้านล่าง ▸ คีย์บอร์ด ▸ เปิดสติกเกอร์ Punching"
           }
         }
       }
@@ -6891,6 +7251,12 @@
             "state" : "translated",
             "value" : "Ota samasta paikasta käyttöön myös ”Salli täysi pääsy”. Se tarvitaan tarrojen kopioimiseen ja liittämiseen."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ในที่เดียวกัน ให้เปิด “อนุญาตการเข้าถึงทั้งหมด” ด้วย จำเป็นสำหรับการคัดลอกและวางสติกเกอร์"
+          }
         }
       }
     },
@@ -7003,6 +7369,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Napauta missä tahansa apissa näppäimistön maapalloa vaihtaaksesi Punching-tarroihin."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ในแอปใดก็ได้ แตะปุ่มลูกโลกบนคีย์บอร์ดเพื่อสลับไปใช้สติกเกอร์ Punching"
           }
         }
       }
@@ -7117,6 +7489,12 @@
             "state" : "translated",
             "value" : "Avaa Asetukset"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดการตั้งค่า"
+          }
         }
       }
     },
@@ -7229,6 +7607,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Näppäimistö"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คีย์บอร์ด"
           }
         }
       }
@@ -7343,6 +7727,12 @@
             "state" : "translated",
             "value" : "Tarrat liikkuvat vain laitteesi sisällä. Näppäimistö ei lue eikä lähetä kirjoittamaasi."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สติกเกอร์เดินทางอยู่ภายในอุปกรณ์ของคุณเท่านั้น คีย์บอร์ดไม่อ่านและไม่ส่งสิ่งที่คุณพิมพ์"
+          }
         }
       }
     },
@@ -7455,6 +7845,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liikettä ei tallentunut"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บันทึกการเคลื่อนไหวไม่ได้"
           }
         }
       }
@@ -7569,6 +7965,12 @@
             "state" : "translated",
             "value" : "Liikettä ei tallentunut tarpeeksi. Yritetäänkö uudelleen?"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บันทึกการเคลื่อนไหวได้ไม่พอ ลองอีกครั้งไหม"
+          }
         }
       }
     },
@@ -7681,6 +8083,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uusi albumi"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อัลบั้มใหม่"
           }
         }
       }
@@ -7795,6 +8203,12 @@
             "state" : "translated",
             "value" : "Albumin nimi"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ชื่ออัลบั้ม"
+          }
         }
       }
     },
@@ -7907,6 +8321,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Peruuta"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยกเลิก"
           }
         }
       }
@@ -8021,6 +8441,12 @@
             "state" : "translated",
             "value" : "Luo"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สร้าง"
+          }
         }
       }
     },
@@ -8133,6 +8559,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ota uudelleen"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ถ่ายใหม่"
           }
         }
       }
@@ -8247,6 +8679,12 @@
             "state" : "translated",
             "value" : "Jätä sellaisenaan"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เก็บไว้ตามเดิม"
+          }
         }
       }
     },
@@ -8359,6 +8797,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uusi albumi…"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อัลบั้มใหม่…"
           }
         }
       }
@@ -8473,6 +8917,12 @@
             "state" : "translated",
             "value" : "Rajattavaa ei ollut, joten irrotettiin postimerkin muotoon"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไม่มีอะไรให้ตัด จึงฉีกเป็นรูปแสตมป์"
+          }
         }
       }
     },
@@ -8585,6 +9035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching tarvitsee pääsyn kameraan muuttaakseen hetket tarroiksi.\nOta kamera käyttöön Asetuksissa."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching ต้องใช้กล้องเพื่อเปลี่ยนช่วงเวลาให้เป็นสติกเกอร์\nโปรดเปิดกล้องในการตั้งค่า"
           }
         }
       }
@@ -8699,6 +9155,12 @@
             "state" : "translated",
             "value" : "Albumit"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อัลบั้ม"
+          }
         }
       }
     },
@@ -8811,6 +9273,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kamera"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กล้อง"
           }
         }
       }
@@ -8925,6 +9393,12 @@
             "state" : "translated",
             "value" : "Tuo Kuvista"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "นำเข้าจากรูปภาพ"
+          }
         }
       }
     },
@@ -9037,6 +9511,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keräämässä"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังสะสม"
           }
         }
       }
@@ -9151,6 +9631,12 @@
             "state" : "translated",
             "value" : "%lld"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ชิ้น"
+          }
         }
       }
     },
@@ -9263,6 +9749,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kaikki"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ทั้งหมด"
           }
         }
       }
@@ -9377,6 +9869,12 @@
             "state" : "translated",
             "value" : "Liikkuvat"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เคลื่อนไหว"
+          }
         }
       }
     },
@@ -9489,6 +9987,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rajatut"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตัดขอบ"
           }
         }
       }
@@ -9603,6 +10107,12 @@
             "state" : "translated",
             "value" : "Tarroja ”%@” ei vielä ole"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยังไม่มีสติกเกอร์ “%@”"
+          }
         }
       }
     },
@@ -9715,6 +10225,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Valitse"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เลือก"
           }
         }
       }
@@ -9829,6 +10345,12 @@
             "state" : "translated",
             "value" : "Näytä kaikki"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ดูทั้งหมด"
+          }
         }
       }
     },
@@ -9941,6 +10463,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poistetaanko valitut %lld tarraa?"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบสติกเกอร์ที่เลือก %lld ชิ้นไหม"
           }
         }
       }
@@ -10055,6 +10583,12 @@
             "state" : "translated",
             "value" : "Poista"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบ"
+          }
         }
       }
     },
@@ -10167,6 +10701,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nimeä uudelleen"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปลี่ยนชื่อ"
           }
         }
       }
@@ -10281,6 +10821,12 @@
             "state" : "translated",
             "value" : "Tallenna"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บันทึก"
+          }
         }
       }
     },
@@ -10393,6 +10939,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poistetaanko albumi ”%@” ja sen %lld tarraa?"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบอัลบั้ม “%@” และสติกเกอร์ %lld ชิ้นในอัลบั้มไหม"
           }
         }
       }
@@ -10507,6 +11059,12 @@
             "state" : "translated",
             "value" : "Poistetaanko tämä tarra?"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบสติกเกอร์นี้ไหม"
+          }
         }
       }
     },
@@ -10619,6 +11177,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Luodaan tarra-arkkia…"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังสร้างแผ่นสติกเกอร์…"
           }
         }
       }
@@ -10733,6 +11297,12 @@
             "state" : "translated",
             "value" : "Kerää tähän"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สะสมที่นี่"
+          }
         }
       }
     },
@@ -10845,6 +11415,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kerää tähän"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังสะสมที่นี่"
           }
         }
       }
@@ -10959,6 +11535,12 @@
             "state" : "translated",
             "value" : "Koristele vapaasti"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตกแต่งอิสระ"
+          }
         }
       }
     },
@@ -11071,6 +11653,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jaa kuvana"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แชร์เป็นรูปภาพ"
           }
         }
       }
@@ -11185,6 +11773,12 @@
             "state" : "translated",
             "value" : "Tulostettava tarra-arkki (PDF)"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แผ่นสติกเกอร์สำหรับพิมพ์ (PDF)"
+          }
         }
       }
     },
@@ -11297,6 +11891,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tulostusopas"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คู่มือการพิมพ์"
           }
         }
       }
@@ -11411,6 +12011,12 @@
             "state" : "translated",
             "value" : "Poista albumi"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบอัลบั้ม"
+          }
         }
       }
     },
@@ -11523,6 +12129,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Poista valinnat"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยกเลิกการเลือกทั้งหมด"
           }
         }
       }
@@ -11637,6 +12249,12 @@
             "state" : "translated",
             "value" : "Valitse kaikki"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เลือกทั้งหมด"
+          }
         }
       }
     },
@@ -11749,6 +12367,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Valitse tarroja"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เลือกสติกเกอร์"
           }
         }
       }
@@ -11863,6 +12487,12 @@
             "state" : "translated",
             "value" : "%lld valittu"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เลือกแล้ว %lld"
+          }
         }
       }
     },
@@ -11975,6 +12605,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siirrä"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ย้าย"
           }
         }
       }
@@ -12089,6 +12725,12 @@
             "state" : "translated",
             "value" : "Tausta ”%@”"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "พื้นหลัง “%@”"
+          }
         }
       }
     },
@@ -12201,6 +12843,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pidä tarraa painettuna siirtääksesi sen minne haluat"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แตะค้างที่สติกเกอร์เพื่อย้ายไปตำแหน่งที่ต้องการ"
           }
         }
       }
@@ -12315,6 +12963,12 @@
             "state" : "translated",
             "value" : "Ottojärjestyksessä"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตามลำดับที่ถ่าย"
+          }
         }
       }
     },
@@ -12427,6 +13081,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kopioi"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คัดลอก"
           }
         }
       }
@@ -12541,6 +13201,12 @@
             "state" : "translated",
             "value" : "Lähetä"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ส่ง"
+          }
         }
       }
     },
@@ -12653,6 +13319,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Toiseen albumiin"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไปอัลบั้มอื่น"
           }
         }
       }
@@ -12767,6 +13439,12 @@
             "state" : "translated",
             "value" : "Tarra-albumini ”%@” #Punching"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อัลบั้มสติกเกอร์ของฉัน “%@” #Punching"
+          }
         }
       }
     },
@@ -12879,6 +13557,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tämä albumi on vielä tyhjä"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อัลบั้มนี้ยังว่างอยู่"
           }
         }
       }
@@ -12993,6 +13677,12 @@
             "state" : "translated",
             "value" : "Kerää tähän – irrota tarroja kameralla täyttääksesi albumin"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังสะสมที่นี่ — ฉีกสติกเกอร์ด้วยกล้องเพื่อเติมให้เต็ม"
+          }
         }
       }
     },
@@ -13105,6 +13795,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Muoto"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "รูปทรง"
           }
         }
       }
@@ -13219,6 +13915,12 @@
             "state" : "translated",
             "value" : "Rajattu"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตัดขอบ"
+          }
         }
       }
     },
@@ -13331,6 +14033,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Postimerkki"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แสตมป์"
           }
         }
       }
@@ -13445,6 +14153,12 @@
             "state" : "translated",
             "value" : "Liike"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การเคลื่อนไหว"
+          }
         }
       }
     },
@@ -13557,6 +14271,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pysäytetty"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "นิ่ง"
           }
         }
       }
@@ -13671,6 +14391,12 @@
             "state" : "translated",
             "value" : "Tavallinen kerma"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ครีมเรียบ"
+          }
         }
       }
     },
@@ -13783,6 +14509,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ruudullinen"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตาราง"
           }
         }
       }
@@ -13897,6 +14629,12 @@
             "state" : "translated",
             "value" : "Viivoitettu"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เส้นบรรทัด"
+          }
         }
       }
     },
@@ -14009,6 +14747,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pisteitetty"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "จุด"
           }
         }
       }
@@ -14123,6 +14867,12 @@
             "state" : "translated",
             "value" : "Kraft"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คราฟต์"
+          }
         }
       }
     },
@@ -14235,6 +14985,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pergamentti"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กระดาษหนังแกะ"
           }
         }
       }
@@ -14349,6 +15105,12 @@
             "state" : "translated",
             "value" : "Cornell"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คอร์เนลล์"
+          }
         }
       }
     },
@@ -14461,6 +15223,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Millimetripaperi"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กราฟ"
           }
         }
       }
@@ -14575,6 +15343,12 @@
             "state" : "translated",
             "value" : "Minttu"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "มินต์"
+          }
         }
       }
     },
@@ -14687,6 +15461,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tumma ruudukko"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตารางสีเข้ม"
           }
         }
       }
@@ -14801,6 +15581,12 @@
             "state" : "translated",
             "value" : "Pidä kamerassa reikälävistintä painettuna ja päästä irti. Naps! Ikkunassa näkynyt kuva irtoaa sellaisenaan tarraksi."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ในกล้อง แตะค้างที่เครื่องเจาะแล้วปล่อย แชะ! ภาพที่เห็นในช่องจะถูกฉีกออกมาเป็นสติกเกอร์ตามเดิม"
+          }
         }
       }
     },
@@ -14913,6 +15699,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Valitse ilme"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เลือกโทนภาพ"
           }
         }
       }
@@ -15027,6 +15819,12 @@
             "state" : "translated",
             "value" : "Kirjoita muutama sana juuri syntyneeseen tarrakorttiin ja lisää kohdasta ”Lisää” ilme, kuten seepia tai mustavalkoinen. Voit vaihtaa ilmettä milloin tahansa laadun heikkenemättä."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เขียนข้อความสั้นๆ บนการ์ดสติกเกอร์ที่เพิ่งออกมา แล้วเลือกโทนภาพอย่างซีเปียหรือขาวดำจาก “เพิ่มเติม” เปลี่ยนโทนภาพได้ทุกเมื่อโดยคุณภาพไม่ลดลง"
+          }
         }
       }
     },
@@ -15139,6 +15937,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kerää albumiin"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สะสมลงอัลบั้ม"
           }
         }
       }
@@ -15253,6 +16057,12 @@
             "state" : "translated",
             "value" : "Tarra-arkit tehdään albumi kerrallaan. Kerää tulostettavat tarrat yhteen albumiin: napauta albumissa ”Valitse” ja sitten ”Siirrä”, niin voit siirtää monta kerralla."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แผ่นสติกเกอร์สร้างเป็นรายอัลบั้ม รวบรวมสติกเกอร์ที่อยากพิมพ์ไว้ในอัลบั้มเดียว แล้วแตะ “เลือก” ตามด้วย “ย้าย” ในอัลบั้มเพื่อย้ายทีละหลายชิ้น"
+          }
         }
       }
     },
@@ -15365,6 +16175,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Luo tulostettava arkki"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สร้างแผ่นสำหรับพิมพ์"
           }
         }
       }
@@ -15479,6 +16295,12 @@
             "state" : "translated",
             "value" : "Albumin oikean yläkulman ⋯-valikko ▸ ”Käyttö” ▸ ”Tulostettava tarra-arkki (PDF)”. Saat 300 dpi:n PDF:n, jonka voit viedä suoraan painotaloon. Tallenna se kohdalla ”Tallenna Tiedostoihin” tai lähetä AirDropilla tai sähköpostilla."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เมนู ⋯ มุมขวาบนของอัลบั้ม ▸ “ใช้งาน” ▸ “แผ่นสติกเกอร์สำหรับพิมพ์ (PDF)” คุณจะได้ PDF ความละเอียด 300 dpi ที่ส่งให้โรงพิมพ์ได้เลย เก็บไว้ด้วย “บันทึกลงในไฟล์” หรือส่งผ่าน AirDrop หรืออีเมล"
+          }
         }
       }
     },
@@ -15591,6 +16413,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tulosta"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "พิมพ์"
           }
         }
       }
@@ -15705,6 +16533,12 @@
             "state" : "translated",
             "value" : "Kotona: tulosta A4- tai Letter-kokoiselle tarra- tai etikettipaperille (himmeä suositeltava) ”Todellinen koko (100 %)” -asetuksella; ”Sovita sivulle” on aina otettava pois päältä.\nPainotalossa tai tarravalmistajalla: anna vain PDF sellaisenaan. Magenta katkoviiva on puolileikkausviiva (kiss-cut) ja kulmamerkit ovat leikkausmerkkejä."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ที่บ้าน: พิมพ์ลงกระดาษสติกเกอร์หรือกระดาษฉลาก A4 หรือ Letter (แนะนำแบบด้าน) ที่ “ขนาดจริง (100%)” และต้องปิด “พอดีกับหน้ากระดาษ” เสมอ\nโรงพิมพ์หรือร้านทำสติกเกอร์: ส่งไฟล์ PDF ไปได้เลย เส้นประสีแมเจนตาคือเส้นไดคัตครึ่งชั้น (kiss-cut) และเครื่องหมายมุมคือแนวตัดขอบ"
+          }
         }
       }
     },
@@ -15817,6 +16651,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Leikkaa ja liimaa"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตัดแล้วแปะ"
           }
         }
       }
@@ -15931,6 +16771,12 @@
             "state" : "translated",
             "value" : "Leikkaa pisteviivaa pitkin saksilla tai leikkurilla, niin valmista tuli! Liimaa kirjekuoriin, kalentereihin, kannettaviin… minne vain."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตัดตามเส้นประด้วยกรรไกรหรือเครื่องตัดก็เสร็จแล้ว! แปะบนซองจดหมาย สมุดแพลนเนอร์ แล็ปท็อป… แปะได้ทุกที่"
+          }
         }
       }
     },
@@ -16043,6 +16889,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "📮 Irrotetusta hetkestä tarraksi käteesi"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📮 จากช่วงเวลาที่ฉีก สู่สติกเกอร์ในมือคุณ"
           }
         }
       }
@@ -16157,6 +17009,12 @@
             "state" : "translated",
             "value" : "Kuudella vaiheella puhelimesi tarra päätyy työpöydällesi."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หกขั้นตอนเปลี่ยนสติกเกอร์ในมือถือให้เป็นสติกเกอร์บนโต๊ะ"
+          }
         }
       }
     },
@@ -16269,6 +17127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hyvä tietää"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ควรรู้"
           }
         }
       }
@@ -16383,6 +17247,12 @@
             "state" : "translated",
             "value" : "• Tulostettavat arkit ovat aina postimerkin muotoisia. Leikkausviivat säilyttävät hammastetun reunan, joten irrotetut tarrat näyttävät aidoilta postimerkeiltä (noin 5 cm, 12 sivulla)."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• แผ่นสำหรับพิมพ์เป็นรูปแสตมป์เสมอ เส้นตัดคงขอบฟันปลาไว้ ดังนั้นสติกเกอร์ที่แกะออกมาจึงดูเหมือนแสตมป์จริง (ประมาณ 5 ซม. หน้าละ 12 ชิ้น)"
+          }
         }
       }
     },
@@ -16495,6 +17365,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Tarrat, jotka säilyttävät alkuperäisen kuvan, piirretään tulostettaessa uudelleen 300 dpi:llä, joten ne tulevat teräviksi."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• สติกเกอร์ที่เก็บภาพต้นฉบับไว้จะถูกวาดใหม่ที่ 300 dpi ตอนพิมพ์ จึงคมชัด"
           }
         }
       }
@@ -16609,6 +17485,12 @@
             "state" : "translated",
             "value" : "• Myös digitaalisesti: jokaisesta tarrasta tulee automaattisesti Viestit-tarra. Liimaa se suoraan Viestien tarralaatikosta; liikkuvat tarrat liimautuvat liikkuen."
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• ดิจิทัลก็ได้: สติกเกอร์ทุกชิ้นกลายเป็นสติกเกอร์ในข้อความโดยอัตโนมัติ แปะได้ทันทีจากลิ้นชักสติกเกอร์ในข้อความ และสติกเกอร์ที่เคลื่อนไหวจะเคลื่อนไหวขณะแปะ"
+          }
         }
       }
     },
@@ -16721,6 +17603,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• Nämä eivät ole aitoja postimerkkejä – koristele kirjeitäsi vapaasti, mutta jätä postimerkin paikka aidolle!"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• นี่ไม่ใช่แสตมป์ไปรษณีย์จริง ตกแต่งจดหมายได้เต็มที่ แต่ที่ติดแสตมป์ขอเว้นไว้ให้แสตมป์จริง!"
           }
         }
       }
@@ -16835,6 +17723,12 @@
             "state" : "translated",
             "value" : "Tarrasi on saapunut!"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สติกเกอร์มาถึงแล้ว!"
+          }
         }
       }
     },
@@ -16947,6 +17841,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pyöräytä tarraa"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลองหมุนสติกเกอร์ดู"
           }
         }
       }
@@ -17061,6 +17961,12 @@
             "state" : "translated",
             "value" : "Muutama sana tästä hetkestä…"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เขียนสั้นๆ เกี่ยวกับช่วงเวลานี้…"
+          }
         }
       }
     },
@@ -17173,6 +18079,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lisää albumiin"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เพิ่มลงอัลบั้ม"
           }
         }
       }
@@ -17287,6 +18199,12 @@
             "state" : "translated",
             "value" : "Hylkää"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ทิ้ง"
+          }
         }
       }
     },
@@ -17399,6 +18317,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lisää"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เพิ่มเติม"
           }
         }
       }
@@ -17513,6 +18437,12 @@
             "state" : "translated",
             "value" : "Koko kuva"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ภาพเต็ม"
+          }
         }
       }
     },
@@ -17625,6 +18555,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vain postimerkki"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เฉพาะแสตมป์"
           }
         }
       }
@@ -17739,6 +18675,12 @@
             "state" : "translated",
             "value" : "Muokkaa"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แก้ไข"
+          }
         }
       }
     },
@@ -17851,6 +18793,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kopioitu!"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คัดลอกแล้ว!"
           }
         }
       }
@@ -17965,6 +18913,12 @@
             "state" : "translated",
             "value" : "Jaa"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แชร์"
+          }
         }
       }
     },
@@ -18077,6 +19031,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liikkuva postimerkki"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แสตมป์เคลื่อนไหว"
           }
         }
       }
@@ -18191,6 +19151,12 @@
             "state" : "translated",
             "value" : "Liikkuva rajattu tarra"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สติกเกอร์ตัดขอบเคลื่อนไหว"
+          }
         }
       }
     },
@@ -18303,6 +19269,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alkuperäinen"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ต้นฉบับ"
           }
         }
       }
@@ -18417,6 +19389,12 @@
             "state" : "translated",
             "value" : "Seepia"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ซีเปีย"
+          }
         }
       }
     },
@@ -18529,6 +19507,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mustavalkoinen"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ขาวดำ"
           }
         }
       }
@@ -18643,6 +19627,12 @@
             "state" : "translated",
             "value" : "Haalistunut"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ซีดจาง"
+          }
         }
       }
     },
@@ -18755,6 +19745,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eloisa"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สดใส"
           }
         }
       }
@@ -18869,6 +19865,12 @@
             "state" : "translated",
             "value" : "Syaani"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ฟ้าอมเขียว"
+          }
         }
       }
     },
@@ -18981,6 +19983,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pidä painettuna nähdäksesi koko kuvan"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แตะค้างเพื่อดูภาพเต็ม"
           }
         }
       }
@@ -19095,6 +20103,12 @@
             "state" : "translated",
             "value" : "Mikä hetki tämä on?"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "นี่คือช่วงเวลาอะไร"
+          }
         }
       }
     },
@@ -19208,6 +20222,12 @@
             "state" : "translated",
             "value" : "Poista tämä tarra"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลบสติกเกอร์นี้"
+          }
         }
       }
     },
@@ -19320,6 +20340,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ilme"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "โทนภาพ"
           }
         }
       }

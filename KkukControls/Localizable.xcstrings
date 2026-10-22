@@ -111,6 +111,12 @@
             "state" : "translated",
             "value" : "Punching-kamera"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กล้อง Punching"
+          }
         }
       }
     },
@@ -223,6 +229,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Avaa Punching-kameran heti."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดกล้อง Punching ทันที"
           }
         }
       }

@@ -111,6 +111,12 @@
             "state" : "translated",
             "value" : "Kaikki"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ทั้งหมด"
+          }
         }
       }
     },
@@ -223,6 +229,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Irrota tarroja Punchingissa,\nniin ne ilmestyvät tänne."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ฉีกสติกเกอร์ใน Punching\nแล้วจะแสดงที่นี่"
           }
         }
       }
@@ -337,6 +349,12 @@
             "state" : "translated",
             "value" : "Tarrojen jakaminen vaatii ”App Group” -asetuksen.\n(Tarkista apin ja laajennuksen allekirjoitusasetukset)"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การแชร์สติกเกอร์ต้องตั้งค่า “App Group”\n(ตรวจสอบการตั้งค่าการลงนามของแอปและส่วนขยาย)"
+          }
         }
       }
     },
@@ -449,6 +467,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching-tarrat"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สติกเกอร์ Punching"
           }
         }
       }

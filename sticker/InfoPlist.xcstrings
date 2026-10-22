@@ -112,6 +112,12 @@
             "state" : "translated",
             "value" : "Punching-tarrat"
           }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "สติกเกอร์ Punching"
+          }
         }
       }
     }

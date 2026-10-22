@@ -148,3 +148,11 @@ Lähetä liikkuvat tarrat liikkuen.
 Koristele albumin sivut ja järjestys.
 Kokoelmat siirrettiin albumeihin.
 Asetukset ovat nyt yhdessä paikassa.
+
+### 앱스토어 (th)
+
+ช่วงเวลาที่ฉีกกลายเป็นสติกเกอร์ขยับได้
+ส่งสติกเกอร์ขยับได้ ก็ขยับตามไปด้วย
+ตกแต่งหน้ากระดาษและลำดับในอัลบั้มได้
+คอลเลกชันย้ายไปอัลบั้มชื่อเดียวกันแล้ว
+การตั้งค่ารวมไว้ในที่เดียว หาง่ายขึ้น
