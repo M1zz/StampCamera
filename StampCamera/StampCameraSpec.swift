@@ -11,6 +11,8 @@ import LeeoKit
 enum StampCameraSpec: LeeoAppSpec {
     static let appName = "펀칭"
     static let developerEmail = "leeo@kakao.com"
+    /// 친구에게 소개하기·리뷰 남기기 링크에 쓴다.
+    static let appStoreID: String? = "6779659029"
 
     /// 공용 피드백 허브(FeedbackHub)로 수집 — appIdentifier로 앱을 구분한다.
     /// StampCamera.entitlements에 iCloud.com.Ysoup.FeedbackHub 컨테이너가 있어야 한다.
