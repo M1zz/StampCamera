@@ -1,96 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — Nhấn giữ, bấm khoảnh khắc thành nhãn dán động</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/vi/index.html">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                 "Helvetica Neue", Arial, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: camera biến khoảnh khắc thành nhãn dán chuyển động</title>
+  <meta name="description" content="Chạm và giữ để bấm cảnh trước camera thành nhãn dán chuyển động. Tách riêng chủ thể hoặc bấm thành hình con tem, rồi gửi ngay trong Tin nhắn hay bàn phím. Mọi tính năng đều miễn phí.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: camera biến khoảnh khắc thành nhãn dán chuyển động">
+  <meta property="og:description" content="Chạm và giữ để bấm cảnh trước camera thành nhãn dán chuyển động. Tách riêng chủ thể hoặc bấm thành hình con tem, rồi gửi ngay trong Tin nhắn hay bàn phím. Mọi tính năng đều miễn phí.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/vi/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/vi/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Nhấn giữ, bấm khoảnh khắc thành nhãn dán động.</p>
-    <p class="desc">
-      Ứng dụng camera iOS giúp bạn nhấn giữ khung bấm lỗ để bấm cảnh đang thấy thành nhãn dán động.
-      Bạn có thể tách riêng chủ thể hoặc bấm thành tem răng cưa, gom vào bộ sưu tập,
-      rồi gửi qua Tin nhắn, bàn phím hoặc in thành nhãn dán thật.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Hỗ trợ · Liên hệ</a>
-      <a class="btn ghost" href="./privacy.html">Chính sách quyền riêng tư</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Chuyển đến nội dung</a>
+  <header class="bar">
+    <a class="brand" href="../vi/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Ngôn ngữ</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Chạm và giữ,<br>khoảnh khắc thành nhãn dán</h1>
+        <p class="lead">Đặt cảnh vào ô bấm, chạm giữ rồi thả tay. Chú chó được cắt đúng theo dáng của chú, kèm cả chút chuyển động ngắn trước và sau khi bấm. Nhãn dán vừa bấm xong có thể gửi ngay trong Tin nhắn hoặc bàn phím.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Tải miễn phí trên App Store</a><a class="try" href="#try">Tự tay bấm thử ↓</a></div>
+        <p class="muted small">Mọi tính năng đều miễn phí. Nhãn dán và ảnh chỉ lưu trên thiết bị của bạn.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/01-reveal.jpg" alt="Chạm và giữ, khoảnh khắc thành nhãn dán" width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Tự tay bấm thử</h2>
+      <p class="muted">Chọn một cảnh, chạm và giữ nút bấm rồi thả ra. Bấm xong, thử đổi hình dạng và tông màu xem sao.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Tự tay bấm thử&quot;, &quot;lead&quot;: &quot;Chọn một cảnh, chạm và giữ nút bấm rồi thả ra. Bấm xong, thử đổi hình dạng và tông màu xem sao.&quot;, &quot;scenes&quot;: [&quot;Cún con&quot;, &quot;Kem&quot;, &quot;Bãi biển&quot;], &quot;hold&quot;: &quot;Giữ để bấm&quot;, &quot;holding&quot;: &quot;Thả tay để bấm&quot;, &quot;empty&quot;: &quot;Nhãn dán vừa bấm sẽ hiện ở đây&quot;, &quot;note&quot;: &quot;Bản thử trên web dùng những ảnh đã chọn sẵn. Phần tách nền và tông màu được làm sẵn theo đúng cách của ứng dụng. Trong ứng dụng, bạn bấm chính cảnh camera đang thấy, và nhãn dán giữ lại cả chuyển động trước và sau khi bấm.&quot;, &quot;shape&quot;: &quot;Hình dạng&quot;, &quot;cutout&quot;: &quot;Cắt viền&quot;, &quot;stamp&quot;: &quot;Tem&quot;, &quot;look&quot;: &quot;Màu ảnh&quot;, &quot;arrived&quot;: &quot;Nhãn dán của bạn đã đến!&quot;, &quot;noSubject&quot;: &quot;Không có gì để cắt nên đã bấm thành hình tem&quot;, &quot;inks&quot;: [&quot;Gốc&quot;, &quot;Nâu đỏ&quot;, &quot;Đen trắng&quot;, &quot;Phai màu&quot;, &quot;Rực rỡ&quot;, &quot;Xanh lơ&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Khoảnh khắc đáng yêu cứ nằm ngủ trong thư viện ảnh</h2>
+      <p>Bạn chụp được lúc chú chó thè lưỡi. Muốn gửi thành nhãn dán thì phải tìm ảnh, tách nền, rồi mở thêm một ứng dụng làm nhãn dán. Đến lúc xong, cuộc trò chuyện đã sang chuyện khác. Punching bấm ra nhãn dán ngay tại chỗ, và vừa cất vào bộ sưu tập là nó đã nằm sẵn trong ngăn nhãn dán của Tin nhắn.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Chủ thể được tách riêng, phong cảnh thành con tem</h2>
+        <p>Nếu có thứ để tách, như người, thú cưng hay đồ vật, bạn sẽ nhận được đúng hình dáng đó. Nếu không, như một khung cảnh, ảnh sẽ được bấm thành con tem viền răng cưa.<br>Chút chuyển động trước và sau khi bấm được lưu cùng, nên nhãn dán biết chuyển động.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/05-camera.jpg" alt="Chủ thể được tách riêng, phong cảnh thành con tem" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Dùng ngay trong Tin nhắn và bàn phím</h2>
+        <p>Nhãn dán vừa bấm xuất hiện trong ngăn nhãn dán của Tin nhắn. Bật bàn phím Punching là có thể chọn và dán sang các ứng dụng khác.<br>Nhãn dán chuyển động gửi đi vẫn chuyển động. Chạm và giữ để sao chép, rồi dán vào bất cứ đâu.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/06-chat.jpg" alt="Dùng ngay trong Tin nhắn và bàn phím" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Đổi hình dạng và tông màu bất cứ lúc nào</h2>
+        <p>Chuyển qua lại giữa tách nền và con tem, chuyển động và đứng yên, tùy ý. Ảnh gốc luôn được giữ lại, nên đổi bao nhiêu lần vẫn sắc nét như lần đầu.<br>Chọn tông màu Gốc, Nâu đỏ, Đen trắng, Phai màu, Rực rỡ hay Xanh lơ, và ghi thêm một dòng, ngày và nơi chụp.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/03-detail.jpg" alt="Đổi hình dạng và tông màu bất cứ lúc nào" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Gom vào bộ sưu tập, in ra nhãn dán giấy</h2>
+        <p>Tạo bộ sưu tập theo chủ đề, và trong Tin nhắn hay bàn phím bạn cũng chọn theo từng bộ. Chọn nền giấy kraft, ô vuông, kẻ dòng hay giấy da, rồi sắp xếp thứ tự tùy thích.<br>Biến một bộ sưu tập thành tệp PDF để in có đường cắt hình con tem, rồi in thẳng lên giấy nhãn dán.</p>
+      </div>
+      <div class="phone"><img src="../img/vi/04-arrange.jpg" alt="Gom vào bộ sưu tập, in ra nhãn dán giấy" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Bắt đầu chỉ với ba bước</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Căn vào ô bấm</h3><p>Đưa thứ bạn muốn giữ lại vào ô giữa camera.</p></li>
+<li class="card"><span class="n">2</span><h3>Chạm giữ rồi thả</h3><p>Nhãn dán được bấm ra ngay lúc bạn thả tay.</p></li>
+<li class="card"><span class="n">3</span><h3>Cất và gửi</h3><p>Cất vào bộ sưu tập là dùng được ngay trong Tin nhắn và bàn phím.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Dùng ở đâu, đổi ở đâu</h2>
+      <div class="card table">
+        <dl><div><dt>Tin nhắn</dt><dd>＋ cạnh ô nhập ▸ Nhãn dán ▸ Nhãn dán Punching</dd></div><div><dt>Ứng dụng khác</dt><dd>Bật bàn phím Punching, chuyển bằng nút quả địa cầu rồi chọn và dán</dd></div><div><dt>Bất cứ đâu</dt><dd>Chạm giữ nhãn dán để sao chép, rồi dán</dd></div><div><dt>Nhãn dán giấy</dt><dd>⋯ trong bộ sưu tập ▸ Sử dụng ▸ Tờ nhãn dán để in (PDF)</dd></div><div><dt>Nền giấy và thứ tự</dt><dd>⋯ trong bộ sưu tập ▸ Trang trí tự do</dd></div><div><dt>Ảnh cũ</dt><dd>Nhập từ Ảnh trong bộ sưu tập</dd></div><div><dt>Hình dạng khi bấm</dt><dd>Cài đặt ▸ Bấm ▸ Hình dạng mặc định</dd></div><div><dt>Xem chuyển động</dt><dd>Cài đặt ▸ Hiển thị ▸ Tự phát chuyển động</dd></div><div><dt>Mở nhanh</dt><dd>Mở camera Punching trong Phím tắt hoặc Trung tâm điều khiển</dd></div></dl>
+      </div>
+      <p class="muted">Cài đặt nằm ở nút bánh răng góc trên bên phải màn hình camera.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Câu hỏi thường gặp</h2>
+      <div class="faq"><details><summary>Nhãn dán không chuyển động.</summary><p>Ở góc trên bên phải camera, vào Cài đặt ▸ Hiển thị và kiểm tra Tự phát chuyển động đã bật. Sau đó chạm vào nhãn dán và xem Chuyển động bên dưới Hình dạng đã bật chưa. Chuyển động luôn được ghi lại, nên lúc nào bật cũng được. Ảnh nhập từ ứng dụng Ảnh chỉ có một khung hình nên không chuyển động.</p></details>
+<details><summary>Tôi nhận được con tem thay vì ảnh tách nền.</summary><p>Cảnh không có gì để tách, như phong cảnh, sẽ tự động được bấm thành con tem. Chạm vào nhãn dán để đổi trong Hình dạng bất cứ lúc nào. Nếu muốn bấm thành con tem ngay từ đầu, hãy đổi Cài đặt ▸ Bấm ▸ Hình dạng mặc định.</p></details>
+<details><summary>Không thấy nhãn dán trong Tin nhắn.</summary><p>Trong Tin nhắn, chạm nút ＋ cạnh ô nhập ▸ Nhãn dán rồi tìm Nhãn dán Punching. Mục này xuất hiện khi bạn đã bấm ít nhất một nhãn dán trong Punching, và nếu có từ hai bộ sưu tập trở lên, bạn có thể xem theo từng bộ. Hướng dẫn chi tiết có trong Cài đặt ▸ Sử dụng ▸ Dùng trong Tin nhắn và bàn phím.</p></details>
+<details><summary>Bật bàn phím như thế nào?</summary><p>Trong Cài đặt ▸ Sử dụng ▸ Dùng trong Tin nhắn và bàn phím, chạm “Mở Cài đặt”, rồi vào Bàn phím ▸ bật Nhãn dán Punching. Để dán nhãn dán cần Cho phép truy cập đầy đủ, nhưng bàn phím không đọc hay gửi những gì bạn gõ và không kết nối internet. Sau đó, trong bất kỳ ứng dụng nào, chạm nút quả địa cầu để chuyển sang Nhãn dán Punching.</p></details>
+<details><summary>Tôi muốn in thành nhãn dán thật.</summary><p>Chạm ⋯ ở góc trên bên phải bộ sưu tập ▸ Sử dụng ▸ Tờ nhãn dán để in (PDF). Bạn sẽ có tệp PDF 300dpi của cả bộ sưu tập, kèm đường cắt hình con tem, in thẳng lên giấy nhãn dán bằng máy in ở nhà hoặc mang ra tiệm in. Các bước chi tiết có trong Hướng dẫn in ở cùng menu.</p></details>
+<details><summary>Những Collection tôi tạo trước đây đi đâu rồi?</summary><p>Từ phiên bản 1.0.1, nhãn dán chỉ còn một cách gom duy nhất là bộ sưu tập. Mỗi Collection cũ đã trở thành bộ sưu tập cùng tên, giữ nguyên nhãn dán, nền giấy và thứ tự bên trong.</p></details>
+<details><summary>Có chấm xanh lá trên thanh trạng thái.</summary><p>Đó là đèn báo camera của iOS. Đèn chỉ sáng khi màn hình camera đang mở. Khi bạn mở bộ sưu tập, camera tạm dừng và đèn tắt.</p></details>
+<details><summary>Xóa nhãn dán thì sao?</summary><p>Nhãn dán, ảnh gốc và dữ liệu chuyển động bị xóa vĩnh viễn khỏi thiết bị, đồng thời biến mất khỏi ngăn nhãn dán của Tin nhắn. Không thể khôi phục, nên hãy cân nhắc trước khi xóa.</p></details>
+<details><summary>Ảnh và nhãn dán được lưu ở đâu?</summary><p>Chỉ trên thiết bị của bạn. Không có tài khoản, không có máy chủ riêng và không có quảng cáo. Thứ duy nhất rời khỏi thiết bị là thống kê sử dụng ẩn danh, báo cáo lỗi và góp ý do chính bạn gửi. Xem chi tiết trong Chính sách quyền riêng tư.</p></details>
+<details><summary>Có thật sự miễn phí không?</summary><p>Có, mọi tính năng đều miễn phí. Nếu thích, bạn có thể gửi tiền tip cho nhà phát triển ngay trong ứng dụng, nhưng tip không mở khóa thêm gì cả.</p></details></div>
+      <p class="contact">Có câu hỏi hay góp ý, hãy gửi về <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Chúng tôi thường trả lời trong 2 đến 3 ngày. Bạn cũng có thể báo lỗi và đề xuất tính năng qua mục issue trên GitHub tại M1zz/StampCamera.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Hôm nay thấy gì dễ thương?<br>Bấm nó thành nhãn dán nhé</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Tải miễn phí trên App Store</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Ngôn ngữ"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi" aria-current="page">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Chính sách quyền riêng tư</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

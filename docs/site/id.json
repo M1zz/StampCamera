@@ -1,0 +1,177 @@
+{
+  "title": "Punching: kamera yang mengubah momen jadi stiker bergerak",
+  "description": "Tekan lama untuk menyobek apa yang dilihat kamera jadi stiker bergerak. Potong subjeknya saja atau sobek seperti perangko, lalu kirim langsung dari Pesan atau keyboard. Semua fitur gratis.",
+  "hero": {
+    "headline": "Tekan lama,\nmomen itu jadi stiker",
+    "lead": "Bidik adegan di jendela pelubang, tekan lama lalu lepaskan. Anjingmu terpotong persis mengikuti bentuk tubuhnya, lengkap dengan gerakan singkat sebelum dan sesudah ditekan. Stikernya bisa langsung dikirim dari Pesan atau keyboard.",
+    "cta": "Unduh gratis di App Store",
+    "note": "Semua fitur gratis. Stiker dan foto hanya disimpan di perangkatmu."
+  },
+  "demo": {
+    "title": "Coba sobek sendiri",
+    "lead": "Pilih adegan, tekan lama tombol pelubang, lalu lepaskan. Setelah jadi, coba ganti bentuk dan nuansanya.",
+    "scenes": [
+      "Anak anjing",
+      "Es krim",
+      "Pantai"
+    ],
+    "hold": "Tekan lama",
+    "holding": "Lepas untuk menyobek",
+    "empty": "Stikermu akan muncul di sini",
+    "note": "Coba di web memakai foto yang sudah kami pilih. Potongan dan nuansanya dibuat lebih dulu dengan cara yang sama seperti di aplikasi. Di aplikasi, kamu menyobek apa yang dilihat kamera, dan stikernya menyimpan gerakan sebelum dan sesudah ditekan.",
+    "shape": "Bentuk",
+    "cutout": "Potongan",
+    "stamp": "Perangko",
+    "look": "Gaya",
+    "arrived": "Stikermu sudah tiba!",
+    "noSubject": "Tidak ada yang bisa dipotong, jadi disobek berbentuk perangko",
+    "inks": [
+      "Asli",
+      "Sepia",
+      "Hitam Putih",
+      "Pudar",
+      "Cerah",
+      "Sian"
+    ]
+  },
+  "problem": {
+    "title": "Momen menggemaskan sering tertidur di galeri",
+    "text": "Kamu berhasil memotret anjingmu menjulurkan lidah. Untuk mengirimnya sebagai stiker, kamu harus mencari fotonya, memotongnya, lalu membuka aplikasi stiker lain. Saat selesai, obrolan sudah pindah topik. Punching menyobek stikernya di tempat, dan begitu kamu simpan ke album, stiker itu sudah ada di laci stiker Pesan."
+  },
+  "features": [
+    {
+      "title": "Subjek dipotong, pemandangan jadi perangko",
+      "text": "Kalau ada yang bisa dipotong, seperti orang, hewan peliharaan, atau benda, hanya sosok itu yang diambil. Kalau tidak ada, seperti pemandangan, gambarnya disobek jadi perangko bertepi bergerigi.\nGerakan singkat sebelum dan sesudah ditekan ikut tersimpan, jadi stikernya bergerak.",
+      "shot": "05-camera"
+    },
+    {
+      "title": "Langsung di Pesan dan keyboard",
+      "text": "Stiker yang kamu sobek muncul di laci stiker aplikasi Pesan. Aktifkan keyboard Punching, dan kamu bisa memilih lalu menempelkannya di aplikasi lain juga.\nStiker bergerak tetap bergerak saat dikirim. Tekan lama untuk menyalin, lalu tempel di mana saja.",
+      "shot": "06-chat"
+    },
+    {
+      "title": "Ganti bentuk dan nuansa kapan saja",
+      "text": "Beralih antara potongan dan perangko, bergerak dan diam, sesukamu. Foto aslinya tetap disimpan, jadi berapa kali pun diganti, hasilnya tetap setajam pertama kali.\nPilih nuansa Asli, Sepia, Hitam Putih, Pudar, Cerah, atau Sian, lalu tambahkan catatan, tanggal, dan tempat.",
+      "shot": "03-detail"
+    },
+    {
+      "title": "Kumpulkan di album, cetak jadi stiker kertas",
+      "text": "Buat album per tema, dan di Pesan maupun keyboard kamu bisa memilih per album. Pilih latar kertas kraft, kotak-kotak, bergaris, atau perkamen, lalu atur urutannya sesukamu.\nUbah album jadi PDF siap cetak dengan garis potong berbentuk perangko, lalu cetak langsung di kertas stiker.",
+      "shot": "04-arrange"
+    }
+  ],
+  "steps": {
+    "title": "Mulai dalam tiga langkah",
+    "items": [
+      {
+        "title": "Bidik di jendela",
+        "text": "Masukkan yang ingin kamu simpan ke jendela di tengah kamera."
+      },
+      {
+        "title": "Tekan lama, lalu lepas",
+        "text": "Stiker tersobek tepat saat jarimu terangkat."
+      },
+      {
+        "title": "Simpan dan kirim",
+        "text": "Masukkan ke album, dan stiker langsung siap di Pesan dan keyboard."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Pakai di mana, ubah di mana",
+    "rows": [
+      [
+        "Pesan",
+        "＋ di samping kolom teks ▸ Stiker ▸ Stiker Punching"
+      ],
+      [
+        "Aplikasi lain",
+        "Aktifkan keyboard Punching, beralih dengan tombol bola dunia, lalu pilih dan tempel"
+      ],
+      [
+        "Di mana saja",
+        "Tekan lama stiker untuk menyalin, lalu tempel"
+      ],
+      [
+        "Stiker kertas",
+        "⋯ di album ▸ Gunakan ▸ Lembar Stiker untuk Dicetak (PDF)"
+      ],
+      [
+        "Latar dan urutan",
+        "⋯ di album ▸ Hias Bebas"
+      ],
+      [
+        "Foto lama",
+        "Impor dari Foto di album"
+      ],
+      [
+        "Bentuk awal",
+        "Pengaturan ▸ Sobek ▸ Bentuk Default"
+      ],
+      [
+        "Melihat gerakan",
+        "Pengaturan ▸ Tampilan ▸ Putar Gerakan Otomatis"
+      ],
+      [
+        "Buka cepat",
+        "Buka Kamera Punching di Pintasan atau Pusat Kontrol"
+      ]
+    ],
+    "note": "Pengaturan ada di tombol roda gigi di kanan atas layar kamera."
+  },
+  "faq": {
+    "title": "Pertanyaan umum",
+    "items": [
+      {
+        "q": "Stikerku tidak bergerak.",
+        "a": "Di kanan atas kamera, buka Pengaturan ▸ Tampilan dan pastikan Putar Gerakan Otomatis menyala. Lalu ketuk stiker dan pastikan Gerakan di bawah Bentuk menyala. Gerakan selalu ikut direkam, jadi bisa dinyalakan kapan saja. Foto yang diimpor dari aplikasi Foto hanya satu bingkai, jadi tidak bergerak."
+      },
+      {
+        "q": "Yang keluar perangko, bukan potongan.",
+        "a": "Adegan tanpa sesuatu untuk dipotong, seperti pemandangan, otomatis disobek jadi perangko. Ketuk stikernya untuk mengganti di Bentuk kapan saja. Kalau ingin langsung menyobek jadi perangko, ubah Pengaturan ▸ Sobek ▸ Bentuk Default."
+      },
+      {
+        "q": "Stikerku tidak muncul di Pesan.",
+        "a": "Di Pesan, ketuk tombol ＋ di samping kolom teks ▸ Stiker, lalu cari Stiker Punching. Stiker muncul setelah kamu menyobek setidaknya satu stiker di Punching, dan kalau punya lebih dari satu album, kamu bisa melihatnya per album. Langkah lengkapnya ada di Pengaturan ▸ Gunakan ▸ Gunakan di Pesan dan Keyboard."
+      },
+      {
+        "q": "Bagaimana cara mengaktifkan keyboard?",
+        "a": "Di Pengaturan ▸ Gunakan ▸ Gunakan di Pesan dan Keyboard, ketuk “Buka Pengaturan”, lalu buka Keyboard ▸ aktifkan Stiker Punching. Untuk menempel stiker diperlukan Izinkan Akses Penuh, tetapi keyboard tidak membaca atau mengirim apa yang kamu ketik dan tidak terhubung ke internet. Setelah itu, di aplikasi mana pun, ketuk tombol bola dunia untuk beralih ke Stiker Punching."
+      },
+      {
+        "q": "Aku ingin mencetak stiker sungguhan.",
+        "a": "Ketuk ⋯ di kanan atas album ▸ Gunakan ▸ Lembar Stiker untuk Dicetak (PDF). Kamu akan mendapat PDF 300dpi untuk seluruh album dengan garis potong berbentuk perangko, siap dicetak di kertas stiker dengan printer rumah atau di percetakan. Langkahnya ada di Panduan Cetak pada menu yang sama."
+      },
+      {
+        "q": "Ke mana koleksi lamaku?",
+        "a": "Sejak 1.0.1, stiker hanya dikelompokkan dengan satu cara: album. Setiap koleksi menjadi album dengan nama yang sama, dan stiker, latar, serta urutannya ikut pindah apa adanya."
+      },
+      {
+        "q": "Ada lampu hijau di bar status.",
+        "a": "Itu indikator kamera iOS. Lampu hanya menyala saat layar kamera terbuka. Saat kamu membuka album, kamera berhenti dan lampunya padam."
+      },
+      {
+        "q": "Apa yang terjadi kalau stiker dihapus?",
+        "a": "Stiker, foto asli, dan data gerakannya dihapus permanen dari perangkat, dan ikut hilang dari laci stiker Pesan. Tidak bisa dipulihkan, jadi hapus dengan hati-hati."
+      },
+      {
+        "q": "Di mana foto dan stikerku disimpan?",
+        "a": "Hanya di perangkatmu. Tidak ada akun, tidak ada server milik kami, dan tidak ada iklan. Yang keluar dari perangkat hanya statistik penggunaan anonim, laporan error, dan masukan yang kamu kirim sendiri. Detailnya ada di Kebijakan Privasi."
+      },
+      {
+        "q": "Benar-benar gratis?",
+        "a": "Ya, semua fitur gratis. Kalau suka, kamu bisa memberi tip untuk pengembang di dalam aplikasi, tetapi tip tidak membuka fitur apa pun."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Lihat yang menggemaskan hari ini?\nSobek jadi stiker",
+    "cta": "Unduh gratis di App Store"
+  },
+  "ui": {
+    "skip": "Langsung ke konten",
+    "languages": "Bahasa",
+    "privacy": "Kebijakan Privasi",
+    "contact": "Ada pertanyaan atau masukan? Kirim ke {email}. Biasanya kami membalas dalam 2 sampai 3 hari. Laporan bug dan usulan fitur juga bisa lewat issue di GitHub M1zz/StampCamera."
+  }
+}

@@ -1,95 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — przytrzymaj, a chwila zamieni się w ruchomą naklejkę</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: aparat, który zamienia chwilę w ruchomą naklejkę</title>
+  <meta name="description" content="Przytrzymaj i oderwij to, co widzisz, jako ruchomą naklejkę. Wytnij obiekt albo oderwij znaczek i wyślij z Wiadomości lub klawiatury. Za darmo.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: aparat, który zamienia chwilę w ruchomą naklejkę">
+  <meta property="og:description" content="Przytrzymaj i oderwij to, co widzisz, jako ruchomą naklejkę. Wytnij obiekt albo oderwij znaczek i wyślij z Wiadomości lub klawiatury. Za darmo.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/pl/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/pl/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Przytrzymaj, a chwila zamieni się w ruchomą naklejkę.</p>
-    <p class="desc">
-      Punching to aparat na iOS, który odrywa to, co widzisz, jako ruchomą naklejkę: wystarczy przytrzymać okno dziurkacza.
-      Możesz wyciąć sam obiekt albo oderwać kadr jako ząbkowany znaczek, zbierać naklejki w albumach,
-      wysyłać je w Wiadomościach i z klawiatury albo drukować jako prawdziwe naklejki.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Pomoc</a>
-      <a class="btn ghost" href="./privacy.html">Polityka prywatności</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Przejdź do treści</a>
+  <header class="bar">
+    <a class="brand" href="../pl/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Język</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Przytrzymaj.<br>Ta chwila to już naklejka.</h1>
+        <p class="lead">Ustaw kadr w okienku dziurkacza, przytrzymaj i puść. Pies zostaje wycięty dokładnie po swoim konturze, razem z krótkim ruchem sprzed naciśnięcia i po nim. Gotową naklejkę od razu wyślesz w Wiadomościach albo z klawiatury.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Za darmo w App Store</a><a class="try" href="#try">Oderwij naklejkę na próbę ↓</a></div>
+        <p class="muted small">Wszystkie funkcje są bezpłatne. Naklejki i zdjęcia zostają na Twoim urządzeniu.</p>
+      </div>
+      <div class="phone"><img src="../img/pl/01-reveal.jpg" alt="Przytrzymaj. Ta chwila to już naklejka." width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Oderwij naklejkę na próbę</h2>
+      <p class="muted">Wybierz scenę, przytrzymaj przycisk dziurkacza i puść. Potem zmień kształt i styl.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Oderwij naklejkę na próbę&quot;, &quot;lead&quot;: &quot;Wybierz scenę, przytrzymaj przycisk dziurkacza i puść. Potem zmień kształt i styl.&quot;, &quot;scenes&quot;: [&quot;Szczeniak&quot;, &quot;Lody&quot;, &quot;Plaża&quot;], &quot;hold&quot;: &quot;Przytrzymaj, by oderwać&quot;, &quot;holding&quot;: &quot;Puść, by oderwać&quot;, &quot;empty&quot;: &quot;Tu pojawi się Twoja naklejka&quot;, &quot;note&quot;: &quot;Wersja w przeglądarce korzysta z wybranych wcześniej zdjęć. Wycięcia i style przygotowaliśmy zawczasu tą samą metodą, której używa aplikacja. W aplikacji odrywasz to, co widzi aparat, a naklejka zachowuje ruch sprzed naciśnięcia i po nim.&quot;, &quot;shape&quot;: &quot;Kształt&quot;, &quot;cutout&quot;: &quot;Wycięta&quot;, &quot;stamp&quot;: &quot;Znaczek&quot;, &quot;look&quot;: &quot;Styl&quot;, &quot;arrived&quot;: &quot;Twoja naklejka dotarła!&quot;, &quot;noSubject&quot;: &quot;Nie było czego wyciąć, więc oderwano w kształcie znaczka&quot;, &quot;inks&quot;: [&quot;Oryginał&quot;, &quot;Sepia&quot;, &quot;Czerń i biel&quot;, &quot;Wyblakły&quot;, &quot;Wyrazisty&quot;, &quot;Cyjan&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Najfajniejsze chwile zasypiają w galerii</h2>
+      <p>Łapiesz moment, gdy pies wystawia język. Ale żeby zrobić z tego naklejkę, trzeba znaleźć zdjęcie, wyciąć je i otworzyć jeszcze jedną aplikację do naklejek. W tym czasie rozmowa dawno zeszła na inny temat. Punching odrywa naklejkę od razu, tam gdzie robisz zdjęcie, a gdy tylko dodasz ją do albumu, czeka w szufladzie naklejek w Wiadomościach.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Obiekt wycięty, krajobraz jako znaczek</h2>
+        <p>Gdy jest co wyciąć, na przykład osobę, zwierzaka albo przedmiot, dostajesz tylko to. Gdy nie ma, jak w krajobrazie, kadr odrywa się jako znaczek z ząbkowanym brzegiem.<br>Razem z naklejką zapisuje się krótki ruch sprzed naciśnięcia i po nim, więc naklejka się rusza.</p>
+      </div>
+      <div class="phone"><img src="../img/pl/05-camera.jpg" alt="Obiekt wycięty, krajobraz jako znaczek" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Prosto do Wiadomości i na klawiaturę</h2>
+        <p>Oderwane naklejki pojawiają się w szufladzie naklejek w Wiadomościach. Po włączeniu klawiatury Punching wybierzesz je i wkleisz także w innych aplikacjach.<br>Ruchome naklejki docierają w ruchu. Przytrzymaj naklejkę, żeby ją skopiować, i wklej, gdzie chcesz.</p>
+      </div>
+      <div class="phone"><img src="../img/pl/06-chat.jpg" alt="Prosto do Wiadomości i na klawiaturę" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Kształt i styl także po fakcie</h2>
+        <p>Przełączaj między wyciętym kształtem a znaczkiem, między ruchem a stopklatką, kiedy tylko chcesz. Oryginalne zdjęcie zostaje zachowane, więc obraz jest tak samo ostry jak za pierwszym razem, niezależnie od liczby zmian.<br>Wybierz styl: Oryginał, Sepia, Czerń i biel, Wyblakły, Wyrazisty lub Cyjan, i dopisz kilka słów, datę oraz miejsce.</p>
+      </div>
+      <div class="phone"><img src="../img/pl/03-detail.jpg" alt="Kształt i styl także po fakcie" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Zbieraj w albumach, drukuj na papierze</h2>
+        <p>Załóż album na każdy temat, a w Wiadomościach i na klawiaturze też wybierzesz naklejki album po albumie. Wybierz strony, np. kraft, kratkę, linie lub pergamin, i ułóż naklejki w dowolnej kolejności.<br>Zamień album w plik PDF do druku z liniami cięcia w kształcie znaczka i wydrukuj go prosto na papierze do naklejek.</p>
+      </div>
+      <div class="phone"><img src="../img/pl/04-arrange.jpg" alt="Zbieraj w albumach, drukuj na papierze" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Trzy kroki na start</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Wyceluj</h3><p>Umieść to, co chcesz uchwycić, w okienku na środku aparatu.</p></li>
+<li class="card"><span class="n">2</span><h3>Przytrzymaj i puść</h3><p>Naklejka odrywa się w chwili, gdy puszczasz.</p></li>
+<li class="card"><span class="n">3</span><h3>Zapisz i wyślij</h3><p>Dodaj ją do albumu, a od razu pojawi się w Wiadomościach i na klawiaturze.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Gdzie używać i gdzie zmieniać</h2>
+      <div class="card table">
+        <dl><div><dt>Wiadomości</dt><dd>＋ obok pola wiadomości ▸ Naklejki ▸ Naklejki Punching</dd></div><div><dt>Inne aplikacje</dt><dd>Włącz klawiaturę Punching, przełącz na nią klawiszem globusa, wybierz i wklej</dd></div><div><dt>Wszędzie</dt><dd>Przytrzymaj naklejkę, skopiuj ją i wklej</dd></div><div><dt>Papierowe naklejki</dt><dd>⋯ w albumie ▸ Użyj ▸ Arkusz naklejek do druku (PDF)</dd></div><div><dt>Strony i kolejność</dt><dd>⋯ w albumie ▸ Dekoruj dowolnie</dd></div><div><dt>Starsze zdjęcia</dt><dd>Importuj ze Zdjęć w albumie</dd></div><div><dt>Kształt na start</dt><dd>Ustawienia ▸ Odrywanie ▸ Domyślny kształt</dd></div><div><dt>Odtwarzanie ruchu</dt><dd>Ustawienia ▸ Widok ▸ Automatyczne odtwarzanie ruchu</dd></div><div><dt>Szybkie otwieranie</dt><dd>Otwórz aparat Punching w Skrótach lub Centrum sterowania</dd></div></dl>
+      </div>
+      <p class="muted">Ustawienia otworzysz kółkiem zębatym w prawym górnym rogu ekranu aparatu.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Najczęstsze pytania</h2>
+      <div class="faq"><details><summary>Moja naklejka się nie rusza.</summary><p>W prawym górnym rogu aparatu otwórz Ustawienia ▸ Widok i sprawdź, czy włączone jest Automatyczne odtwarzanie ruchu. Potem dotknij naklejki i sprawdź, czy pod opcją Kształt włączony jest Ruch. Ruch zapisuje się zawsze, więc możesz go włączyć w każdej chwili. Zdjęcia zaimportowane z aplikacji Zdjęcia to pojedyncze kadry, dlatego się nie ruszają.</p></details>
+<details><summary>Zamiast wyciętej naklejki dostaję znaczek.</summary><p>Kadry, w których nie ma czego wyciąć, na przykład krajobrazy, automatycznie odrywają się jako znaczek. Dotknij naklejki, aby w każdej chwili zmienić to w opcji Kształt. Jeśli chcesz od początku dostawać znaczki, zmień Ustawienia ▸ Odrywanie ▸ Domyślny kształt.</p></details>
+<details><summary>Nie widzę naklejek w Wiadomościach.</summary><p>W Wiadomościach dotknij ＋ obok pola wiadomości ▸ Naklejki i znajdź Naklejki Punching. Pojawiają się po oderwaniu w Punching co najmniej jednej naklejki, a jeśli masz kilka albumów, możesz je przeglądać album po albumie. Szczegółowe kroki znajdziesz w Ustawienia ▸ Użyj ▸ Użycie w Wiadomościach i na klawiaturze.</p></details>
+<details><summary>Jak włączyć klawiaturę?</summary><p>W Ustawienia ▸ Użyj ▸ Użycie w Wiadomościach i na klawiaturze dotknij Otwórz Ustawienia i włącz Klawiatury ▸ Naklejki Punching. Wklejanie naklejek wymaga opcji Pozwól na pełny dostęp, ale klawiatura nigdy nie odczytuje ani nie wysyła tego, co wpisujesz, i nie łączy się z internetem. Potem w dowolnej aplikacji dotknij klawisza globusa, aby przełączyć się na Naklejki Punching.</p></details>
+<details><summary>Czy mogę wydrukować prawdziwe naklejki?</summary><p>W albumie dotknij ⋯ w prawym górnym rogu ▸ Użyj ▸ Arkusz naklejek do druku (PDF). Dla całego albumu powstanie plik PDF do druku w 300 dpi z liniami cięcia w kształcie znaczków, gotowy na papier do naklejek w domowej drukarce albo do drukarni. Krok po kroku przeprowadzi Cię Poradnik drukowania w tym samym menu.</p></details>
+<details><summary>Gdzie podziały się moje dawne kolekcje?</summary><p>Od wersji 1.0.1 naklejki grupuje się tylko w jeden sposób: w albumy. Każda kolekcja stała się albumem o tej samej nazwie, a jej naklejki, strony i kolejność zostały przeniesione bez zmian.</p></details>
+<details><summary>Na pasku stanu świeci zielone światełko.</summary><p>To wskaźnik użycia aparatu w iOS. Świeci tylko wtedy, gdy widoczny jest ekran aparatu. Po otwarciu albumu aparat się zatrzymuje, a światełko gaśnie.</p></details>
+<details><summary>Co się stanie, gdy usunę naklejkę?</summary><p>Naklejka, oryginalne zdjęcie i dane ruchu zostaną trwale usunięte z urządzenia i znikną też z szuflady naklejek w Wiadomościach. Nie da się ich przywrócić, więc usuwaj z rozwagą.</p></details>
+<details><summary>Gdzie zapisują się moje zdjęcia i naklejki?</summary><p>Wyłącznie na Twoim urządzeniu. Nie ma konta, własnego serwera ani reklam. Na zewnątrz trafiają tylko anonimowe statystyki użycia, raporty błędów i opinie, które wyślesz samodzielnie. Szczegóły znajdziesz w polityce prywatności.</p></details>
+<details><summary>Czy to naprawdę za darmo?</summary><p>Tak, wszystkie funkcje są bezpłatne. Jeśli aplikacja Ci się podoba, możesz zostawić w niej twórcy napiwek, ale napiwek niczego nie odblokowuje.</p></details></div>
+      <p class="contact">Pytania lub uwagi? Napisz na <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Zwykle odpowiadamy w ciągu 2–3 dni. Błędy i pomysły na funkcje możesz też zgłaszać na GitHubie: M1zz/StampCamera.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Coś uroczego wpadło Ci dziś w oko?<br>Oderwij to jako naklejkę.</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Za darmo w App Store</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Język"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl" aria-current="page">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Polityka prywatności</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

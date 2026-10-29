@@ -1,97 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — Basılı tutup kopardığın anı hareketli çıkartmaya çevir</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/tr/index.html">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
-                 "Segoe UI", Roboto, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: anı hareketli çıkartmaya çeviren kamera</title>
+  <meta name="description" content="Basılı tut, gördüğünü hareketli bir çıkartma olarak kopar. Konuyu kes ya da pul olarak kopar, Mesajlar’dan veya klavyeden gönder. Tamamen ücretsiz.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: anı hareketli çıkartmaya çeviren kamera">
+  <meta property="og:description" content="Basılı tut, gördüğünü hareketli bir çıkartma olarak kopar. Konuyu kes ya da pul olarak kopar, Mesajlar’dan veya klavyeden gönder. Tamamen ücretsiz.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/tr/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/tr/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Basılı tutup kopardığın anı hareketli çıkartmaya çevir.</p>
-    <p class="desc">
-      Punching, delgeç penceresine sığdırdığın sahneyi basılı tutarak hareketli bir çıkartma olarak
-      koparan bir iOS kamera uygulaması. Yalnızca konuyu kesip çıkarabilir ya da kenarları dişli
-      pul şeklinde koparabilirsin. Koleksiyonda biriktirip Mesajlar'dan ve klavyeden gönderebilir
-      ya da gerçek çıkartma olarak yazdırabilirsin.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Destek · İletişim</a>
-      <a class="btn ghost" href="./privacy.html">Gizlilik Politikası</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">İçeriğe geç</a>
+  <header class="bar">
+    <a class="brand" href="../tr/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Dil</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Basılı tut.<br>O an artık bir çıkartma.</h1>
+        <p class="lead">Sahneyi delgeç penceresine hizala, basılı tut ve bırak. Köpeğin tam kendi şeklinde kesilir, basmadan hemen önceki ve sonraki kısa hareketle birlikte. Çıkartmayı hemen Mesajlar’dan ya da klavyeden gönderebilirsin.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">App Store’dan ücretsiz al</a><a class="try" href="#try">Kendin dene ↓</a></div>
+        <p class="muted small">Tüm özellikler ücretsiz. Çıkartmaların ve fotoğrafların yalnızca cihazında kalır.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/01-reveal.jpg" alt="Basılı tut. O an artık bir çıkartma." width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Kendin dene</h2>
+      <p class="muted">Bir sahne seç, delgeç düğmesini basılı tut ve bırak. Sonra farklı bir şekil ve görünüm dene.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Kendin dene&quot;, &quot;lead&quot;: &quot;Bir sahne seç, delgeç düğmesini basılı tut ve bırak. Sonra farklı bir şekil ve görünüm dene.&quot;, &quot;scenes&quot;: [&quot;Yavru köpek&quot;, &quot;Dondurma&quot;, &quot;Sahil&quot;], &quot;hold&quot;: &quot;Koparmak için basılı tut&quot;, &quot;holding&quot;: &quot;Bırakınca kopar&quot;, &quot;empty&quot;: &quot;Çıkartman burada belirir&quot;, &quot;note&quot;: &quot;Web denemesi önceden seçilmiş fotoğraflarla çalışır. Kesimler ve görünümler, uygulamanın kullandığı yöntemle önceden hazırlandı. Uygulamada kameranın gördüğünü koparırsın ve çıkartma, basma anının öncesindeki ve sonrasındaki hareketi de taşır.&quot;, &quot;shape&quot;: &quot;Şekil&quot;, &quot;cutout&quot;: &quot;Kesilmiş&quot;, &quot;stamp&quot;: &quot;Pul&quot;, &quot;look&quot;: &quot;Görünüm&quot;, &quot;arrived&quot;: &quot;Çıkartman geldi!&quot;, &quot;noSubject&quot;: &quot;Kesilecek bir şey olmadığından pul şeklinde koparıldı&quot;, &quot;inks&quot;: [&quot;Orijinal&quot;, &quot;Sepya&quot;, &quot;Siyah beyaz&quot;, &quot;Solmuş&quot;, &quot;Canlı&quot;, &quot;Camgöbeği&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>En tatlı anlar galeride uykuya dalar</h2>
+      <p>Köpeğin dilini çıkardığı anı yakaladın. Ama bunu çıkartma yapmak için fotoğrafı bulman, kesmen ve bir de çıkartma uygulaması açman gerekir. Bu arada sohbet çoktan başka konuya geçmiş olur. Punching çıkartmayı çektiğin yerde koparır; koleksiyona eklediğin anda Mesajlar’daki çıkartma çekmecesinde hazır bekler.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Konu kesilir, manzara pul olur</h2>
+        <p>Kişi, evcil hayvan ya da nesne gibi kesilecek bir konu varsa yalnızca o kesilir. Manzara gibi konu yoksa tırtıklı kenarlı bir pul olarak koparılır.<br>Basma anının öncesinden ve sonrasından kısa bir hareket de eklenir, böylece çıkartma hareket eder.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/05-camera.jpg" alt="Konu kesilir, manzara pul olur" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Doğrudan Mesajlar’a ve klavyeye</h2>
+        <p>Kopardığın çıkartmalar Mesajlar’daki çıkartma çekmecesinde görünür. Punching klavyesini açarsan diğer uygulamalarda da seçip yapıştırabilirsin.<br>Hareketli çıkartmalar hareket ederek gider. Bir çıkartmayı basılı tutup kopyala, istediğin yere yapıştır.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/06-chat.jpg" alt="Doğrudan Mesajlar’a ve klavyeye" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Şekil ve görünüm, sonradan bile</h2>
+        <p>Kesilmiş şekil ile pul, hareket ile durağan görüntü arasında istediğin zaman geçiş yap. Orijinal fotoğraf saklandığı için kaç kez değiştirirsen değiştir, ilk günkü kadar net kalır.<br>Orijinal, Sepya, Siyah beyaz, Solmuş, Canlı ve Camgöbeği arasından bir görünüm seç; birkaç söz, tarih ve yer de ekle.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/03-detail.jpg" alt="Şekil ve görünüm, sonradan bile" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Koleksiyonlarda topla, kâğıda yazdır</h2>
+        <p>Her tema için bir koleksiyon oluştur, Mesajlar’da ve klavyede de koleksiyon koleksiyon seç. Kraft, kareli, çizgili ya da parşömen gibi sayfalar seç, çıkartmaları dilediğin sırayla diz.<br>Bir koleksiyonu pul şeklinde kesim çizgileri olan yazdırmalık bir PDF’ye dönüştür ve doğrudan çıkartma kâğıdına yazdır.</p>
+      </div>
+      <div class="phone"><img src="../img/tr/04-arrange.jpg" alt="Koleksiyonlarda topla, kâğıda yazdır" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Üç adımda başla</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Hizala</h3><p>Saklamak istediğin şeyi kameranın ortasındaki pencereye yerleştir.</p></li>
+<li class="card"><span class="n">2</span><h3>Basılı tut ve bırak</h3><p>Bıraktığın anda çıkartma kopar.</p></li>
+<li class="card"><span class="n">3</span><h3>Sakla ve gönder</h3><p>Koleksiyona ekle, Mesajlar’da ve klavyede hemen hazır olsun.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Nerede kullanılır, nereden değiştirilir</h2>
+      <div class="card table">
+        <dl><div><dt>Mesajlar</dt><dd>Yazı alanının yanındaki ＋ ▸ Çıkartmalar ▸ Punching Çıkartmaları</dd></div><div><dt>Diğer uygulamalar</dt><dd>Punching klavyesini aç, küre tuşuyla ona geç, seç ve yapıştır</dd></div><div><dt>Her yerde</dt><dd>Çıkartmayı basılı tut, kopyala ve yapıştır</dd></div><div><dt>Kâğıt çıkartma</dt><dd>Koleksiyondaki ⋯ ▸ Kullanım ▸ Yazdırmalık çıkartma sayfası (PDF)</dd></div><div><dt>Sayfa ve sıralama</dt><dd>Koleksiyondaki ⋯ ▸ Serbestçe süsle</dd></div><div><dt>Eski fotoğraflar</dt><dd>Koleksiyondaki Fotoğraflar’dan içe aktar</dd></div><div><dt>İlk şekil</dt><dd>Ayarlar ▸ Koparma ▸ Varsayılan şekil</dd></div><div><dt>Hareketi görme</dt><dd>Ayarlar ▸ Görünüm ▸ Hareketi otomatik oynat</dd></div><div><dt>Hızlı açma</dt><dd>Kestirmeler’de ya da Denetim Merkezi’nde Punching Kamera’yı aç</dd></div></dl>
+      </div>
+      <p class="muted">Ayarlar, kamera ekranının sağ üstündeki dişli düğmesindedir.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Sık sorulan sorular</h2>
+      <div class="faq"><details><summary>Çıkartmam hareket etmiyor.</summary><p>Kameranın sağ üstünden Ayarlar ▸ Görünüm’e gir ve Hareketi otomatik oynat seçeneğinin açık olduğundan emin ol. Sonra çıkartmaya dokunup Şekil altında Hareket’in açık olduğunu kontrol et. Hareket her zaman birlikte kaydedilir, istediğin zaman açabilirsin. Fotoğraflar uygulamasından alınan fotoğraflar tek kare olduğu için hareket etmez.</p></details>
+<details><summary>Kesilmiş çıkartma yerine pul çıkıyor.</summary><p>Manzara gibi kesilecek konu olmayan sahneler otomatik olarak pul şeklinde koparılır. Çıkartmaya dokunup Şekil bölümünden istediğin zaman değiştirebilirsin. En baştan pul şeklinde koparmak istersen Ayarlar ▸ Koparma ▸ Varsayılan şekil seçeneğini değiştir.</p></details>
+<details><summary>Mesajlar’da çıkartmalarımı göremiyorum.</summary><p>Mesajlar’da yazı alanının yanındaki ＋ düğmesine dokun ▸ Çıkartmalar altında Punching Çıkartmaları’nı bul. Punching’de en az bir çıkartma kopardıktan sonra görünür; birden fazla koleksiyonun varsa koleksiyon koleksiyon göz atabilirsin. Ayrıntılı anlatım Ayarlar ▸ Kullanım ▸ Mesajlar’da ve klavyede kullan bölümünde.</p></details>
+<details><summary>Klavyeyi nasıl açarım?</summary><p>Ayarlar ▸ Kullanım ▸ Mesajlar’da ve klavyede kullan bölümünde Ayarlar’ı Aç’a dokun, ardından Klavyeler ▸ Punching Çıkartmaları’nı aç. Çıkartma yapıştırmak için Tam Erişime İzin Ver gerekir, ama klavye yazdıklarını asla okumaz, göndermez ve internete bağlanmaz. Sonra herhangi bir uygulamada küre tuşuna dokunarak Punching Çıkartmaları’na geç.</p></details>
+<details><summary>Gerçek çıkartma yazdırabilir miyim?</summary><p>Koleksiyonun sağ üstündeki ⋯ ▸ Kullanım ▸ Yazdırmalık çıkartma sayfası (PDF) seçeneğine dokun. Koleksiyonun tamamı için pul şeklinde kesim çizgileri olan 300 dpi yazdırmalık bir PDF oluşur; evdeki yazıcıda çıkartma kâğıdıyla ya da matbaada doğrudan kullanabilirsin. Adım adım anlatım aynı menüdeki Yazdırma rehberi bölümünde.</p></details>
+<details><summary>Eskiden oluşturduğum albümler nereye gitti?</summary><p>1.0.1 sürümünden itibaren çıkartmaları gruplamanın tek yolu koleksiyon oldu. Her albüm aynı adlı bir koleksiyona dönüştü; içindeki çıkartmalar, sayfalar ve sıralama da olduğu gibi taşındı.</p></details>
+<details><summary>Durum çubuğunda yeşil ışık yanıyor.</summary><p>Bu, iOS’un kamera kullanım göstergesi. Yalnızca kamera ekranı açıkken yanar. Bir koleksiyonu açtığında kamera durur ve ışık söner.</p></details>
+<details><summary>Bir çıkartmayı silersem ne olur?</summary><p>Çıkartma, orijinal fotoğraf ve hareket verisi cihazından kalıcı olarak silinir, Mesajlar’daki çıkartma çekmecesinden de kaybolur. Geri getirilemez, o yüzden silmeden önce iyi düşün.</p></details>
+<details><summary>Fotoğraflarım ve çıkartmalarım nerede saklanıyor?</summary><p>Yalnızca cihazında. Hesap yok, kendi sunucumuz yok, reklam yok. Cihazından dışarı yalnızca anonim kullanım istatistikleri, hata raporları ve kendi gönderdiğin geri bildirimler çıkar. Ayrıntılar Gizlilik Politikası’nda.</p></details>
+<details><summary>Gerçekten ücretsiz mi?</summary><p>Evet, tüm özellikler ücretsiz. Beğenirsen uygulama içinden geliştiriciye bahşiş bırakabilirsin, ama bahşiş hiçbir özelliğin kilidini açmaz.</p></details></div>
+      <p class="contact">Soru ya da görüşlerini <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> adresine yazabilirsin. Genellikle 2–3 gün içinde yanıt veriyoruz. Hata bildirimlerini ve özellik önerilerini GitHub’da M1zz/StampCamera üzerinden de alıyoruz.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Bugün tatlı bir şey mi gördün?<br>Onu çıkartma olarak kopar.</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">App Store’dan ücretsiz al</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Dil"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr" aria-current="page">Türkçe</a></nav>
+    <p><a href="privacy.html">Gizlilik Politikası</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

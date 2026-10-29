@@ -1,92 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — Podrž a okamžik se promění v pohyblivou nálepku</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-                 "Segoe UI", Roboto, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: fotoaparát, který z okamžiku udělá pohyblivou nálepku</title>
+  <meta name="description" content="Podrž a odtrhni, co vidíš, jako pohyblivou nálepku. Vystřihni objekt nebo ho odtrhni jako známku a pošli ze Zpráv či z klávesnice. Zdarma.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: fotoaparát, který z okamžiku udělá pohyblivou nálepku">
+  <meta property="og:description" content="Podrž a odtrhni, co vidíš, jako pohyblivou nálepku. Vystřihni objekt nebo ho odtrhni jako známku a pošli ze Zpráv či z klávesnice. Zdarma.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/cs/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/cs/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Podrž a okamžik se promění v pohyblivou nálepku.</p>
-    <p class="desc">
-      Punching je fotoaparát pro iOS, který vše, co vidíš skrz svůj dírkovač, odtrhne jako pohyblivou nálepku. Vystřihni objekt nebo ho odtrhni jako zoubkovanou známku, sbírej nálepky v albech, posílej je ze Zpráv či z klávesnice nebo je vytiskni jako opravdové nálepky.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Podpora a kontakt</a> <a class="btn ghost" href="./privacy.html">Zásady ochrany soukromí</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span> <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Přejít na obsah</a>
+  <header class="bar">
+    <a class="brand" href="../cs/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Jazyk</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Podrž prst.<br>A okamžik je nálepka.</h1>
+        <p class="lead">Zaměř scénu do okénka dírkovače, podrž a pusť. Pejsek se vystřihne přesně podle svého obrysu a s ním i krátký pohyb těsně před stisknutím a po něm. Hotovou nálepku pošleš hned ze Zpráv nebo z klávesnice.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Zdarma v App Storu</a><a class="try" href="#try">Vyzkoušej si to ↓</a></div>
+        <p class="muted small">Všechny funkce jsou zdarma. Nálepky i fotky zůstávají jen ve tvém zařízení.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/01-reveal.jpg" alt="Podrž prst. A okamžik je nálepka." width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Vyzkoušej si to</h2>
+      <p class="muted">Vyber scénu, podrž tlačítko dírkovače a pusť. Pak zkus jiný tvar a styl.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Vyzkoušej si to&quot;, &quot;lead&quot;: &quot;Vyber scénu, podrž tlačítko dírkovače a pusť. Pak zkus jiný tvar a styl.&quot;, &quot;scenes&quot;: [&quot;Štěně&quot;, &quot;Zmrzlina&quot;, &quot;Pláž&quot;], &quot;hold&quot;: &quot;Podrž a odtrhni&quot;, &quot;holding&quot;: &quot;Pusť a odtrhne se&quot;, &quot;empty&quot;: &quot;Tady se objeví tvoje nálepka&quot;, &quot;note&quot;: &quot;Webová ukázka pracuje s předem vybranými fotkami. Výřezy a styly jsme připravili dopředu stejným způsobem, jakým je dělá aplikace. V aplikaci odtrháváš to, co vidí fotoaparát, a nálepka si nese i pohyb z chvíle kolem stisknutí.&quot;, &quot;shape&quot;: &quot;Tvar&quot;, &quot;cutout&quot;: &quot;Vystřižená&quot;, &quot;stamp&quot;: &quot;Známka&quot;, &quot;look&quot;: &quot;Styl&quot;, &quot;arrived&quot;: &quot;Tvoje nálepka dorazila!&quot;, &quot;noSubject&quot;: &quot;Nebylo co vystřihnout, proto se odtrhla známka&quot;, &quot;inks&quot;: [&quot;Originál&quot;, &quot;Sépie&quot;, &quot;Černobílý&quot;, &quot;Vybledlý&quot;, &quot;Sytý&quot;, &quot;Azurový&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Nejhezčí okamžiky usínají ve Fotkách</h2>
+      <p>Pejsek vyplázne jazyk a ty ho zrovna vyfotíš. Jenže aby z toho byla nálepka, musíš fotku najít, vystřihnout a otevřít ještě další aplikaci na nálepky. Konverzace mezitím dávno běží dál. Punching odtrhne nálepku přímo tam, kde fotíš, a jakmile ji uložíš do alba, čeká v šuplíku nálepek ve Zprávách.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Objekt se vystřihne, krajina se stane známkou</h2>
+        <p>Když je co vystřihnout, třeba člověk, mazlíček nebo věc, dostaneš jen to. Když ne, jako u krajiny, odtrhne se známka se zoubkovaným okrajem.<br>S nálepkou se uloží i krátký pohyb těsně před stisknutím a po něm, takže se hýbe.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/05-camera.jpg" alt="Objekt se vystřihne, krajina se stane známkou" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Rovnou do Zpráv i na klávesnici</h2>
+        <p>Odtržené nálepky se objeví v šuplíku nálepek ve Zprávách. Když zapneš klávesnici Punching, vybereš a vložíš je i v jiných aplikacích.<br>Pohyblivé nálepky dorazí v pohybu. Podrž nálepku, zkopíruj ji a vlož kamkoli.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/06-chat.jpg" alt="Rovnou do Zpráv i na klávesnici" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Tvar a styl i dodatečně</h2>
+        <p>Mezi vystřiženým tvarem a známkou, pohybem a statickým obrázkem přepínáš, kdy chceš. Původní fotka zůstává uložená, takže i po mnoha změnách je všechno ostré jako poprvé.<br>Vyber styl Originál, Sépie, Černobílý, Vybledlý, Sytý nebo Azurový a připiš pár slov, datum a místo.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/03-detail.jpg" alt="Tvar a styl i dodatečně" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Sbírej do alb, tiskni na papír</h2>
+        <p>Založ si album pro každé téma a ve Zprávách i na klávesnici pak vybíráš album po albu. Zvol stránky jako kraft, čtverečkovaný, linkovaný nebo pergamen a nálepky seřaď podle sebe.<br>Z alba uděláš PDF k tisku s řeznými čárami ve tvaru známky a vytiskneš ho rovnou na nálepkový papír.</p>
+      </div>
+      <div class="phone"><img src="../img/cs/04-arrange.jpg" alt="Sbírej do alb, tiskni na papír" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Stačí tři kroky</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Zaměř</h3><p>To, co chceš uložit, dej do okénka uprostřed fotoaparátu.</p></li>
+<li class="card"><span class="n">2</span><h3>Podrž a pusť</h3><p>Ve chvíli, kdy pustíš, se nálepka odtrhne.</p></li>
+<li class="card"><span class="n">3</span><h3>Ulož a pošli</h3><p>Ulož ji do alba a hned ji najdeš ve Zprávách i na klávesnici.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Kde nálepky používat a kde co změnit</h2>
+      <div class="card table">
+        <dl><div><dt>Zprávy</dt><dd>＋ vedle textového pole ▸ Nálepky ▸ Nálepky Punching</dd></div><div><dt>Jiné aplikace</dt><dd>Zapni klávesnici Punching, přepni na ni glóbusem, vyber a vlož</dd></div><div><dt>Kdekoli</dt><dd>Podrž nálepku, zkopíruj ji a vlož</dd></div><div><dt>Papírové nálepky</dt><dd>⋯ v albu ▸ Použití ▸ Arch nálepek k vytištění (PDF)</dd></div><div><dt>Stránky a pořadí</dt><dd>⋯ v albu ▸ Libovolně ozdobit</dd></div><div><dt>Starší fotky</dt><dd>Importovat z Fotek v albu</dd></div><div><dt>Tvar při odtržení</dt><dd>Nastavení ▸ Odtrhnout ▸ Výchozí tvar</dd></div><div><dt>Přehrávání pohybu</dt><dd>Nastavení ▸ Zobrazení ▸ Automaticky přehrávat pohyb</dd></div><div><dt>Rychlé spuštění</dt><dd>Otevřít fotoaparát Punching ve Zkratkách nebo v Ovládacím centru</dd></div></dl>
+      </div>
+      <p class="muted">Nastavení otevřeš ozubeným kolečkem vpravo nahoře na obrazovce fotoaparátu.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Časté otázky</h2>
+      <div class="faq"><details><summary>Moje nálepka se nehýbe.</summary><p>Vpravo nahoře ve fotoaparátu otevři Nastavení ▸ Zobrazení a zkontroluj, že je zapnuté Automaticky přehrávat pohyb. Pak klepni na nálepku a ověř, že je pod položkou Tvar zapnutý Pohyb. Pohyb se ukládá vždy, takže ho můžeš kdykoli zapnout. Fotky importované z aplikace Fotky mají jen jeden snímek, a proto se nehýbou.</p></details>
+<details><summary>Místo vystřižené nálepky mám známku.</summary><p>Scény, ve kterých není co vystřihnout, třeba krajina, se automaticky odtrhnou jako známka. Klepni na nálepku a pod položkou Tvar to kdykoli změníš. Pokud chceš rovnou začínat se známkami, změň Nastavení ▸ Odtrhnout ▸ Výchozí tvar.</p></details>
+<details><summary>Ve Zprávách nálepky nevidím.</summary><p>Ve Zprávách klepni na ＋ vedle textového pole ▸ Nálepky a najdi Nálepky Punching. Objeví se, jakmile v Punching odtrhneš aspoň jednu nálepku, a pokud máš víc alb, procházíš je album po albu. Podrobný postup najdeš v Nastavení ▸ Použití ▸ Použití ve Zprávách a na klávesnici.</p></details>
+<details><summary>Jak zapnu klávesnici?</summary><p>V Nastavení ▸ Použití ▸ Použití ve Zprávách a na klávesnici klepni na Otevřít Nastavení a zapni Klávesnice ▸ Nálepky Punching. Ke vkládání nálepek je potřeba volba Povolit plný přístup, klávesnice ale nikdy nečte ani neodesílá, co píšeš, a nepřipojuje se k internetu. Pak v libovolné aplikaci klepni na glóbus a přepni na Nálepky Punching.</p></details>
+<details><summary>Dají se vytisknout opravdové nálepky?</summary><p>Klepni vpravo nahoře v albu na ⋯ ▸ Použití ▸ Arch nálepek k vytištění (PDF). Pro celé album vznikne PDF k tisku ve 300 dpi s řeznými čárami ve tvaru známky, připravené pro nálepkový papír v domácí tiskárně i pro tiskárnu. Krok za krokem tě provede Průvodce tiskem ve stejné nabídce.</p></details>
+<details><summary>Kam zmizely moje staré kolekce?</summary><p>Od verze 1.0.1 se nálepky seskupují jen jedním způsobem: do alb. Z každé kolekce se stalo album se stejným názvem a nálepky, stránky i pořadí se přenesly beze změny.</p></details>
+<details><summary>Ve stavovém řádku svítí zelené světýlko.</summary><p>To je indikátor fotoaparátu v iOS. Svítí jen tehdy, když je otevřená obrazovka fotoaparátu. Když otevřeš album, fotoaparát se zastaví a světýlko zhasne.</p></details>
+<details><summary>Co se stane, když nálepku smažu?</summary><p>Nálepka, původní fotka i data pohybu se z tvého zařízení trvale smažou a zmizí i ze šuplíku nálepek ve Zprávách. Obnovit je nejde, takže mazej s rozmyslem.</p></details>
+<details><summary>Kde se ukládají moje fotky a nálepky?</summary><p>Jen ve tvém zařízení. Žádný účet, žádný vlastní server, žádné reklamy. Ven odcházejí jen anonymní statistiky používání, hlášení chyb a zpětná vazba, kterou pošleš ty. Podrobnosti najdeš v Zásadách ochrany soukromí.</p></details>
+<details><summary>Je to opravdu zdarma?</summary><p>Ano, všechny funkce jsou zdarma. Pokud se ti aplikace líbí, můžeš vývojáři v aplikaci poslat spropitné, žádné funkce se tím ale neodemykají.</p></details></div>
+      <p class="contact">Dotazy nebo nápady posílej na <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Obvykle odpovídáme do 2–3 dnů. Chyby a návrhy funkcí můžeš nahlásit i na GitHubu v repozitáři M1zz/StampCamera.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Něco roztomilého z dneška?<br>Odtrhni si to jako nálepku.</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Zdarma v App Storu</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Jazyk"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs" aria-current="page">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Zásady ochrany soukromí</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

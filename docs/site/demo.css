@@ -1,0 +1,47 @@
+/* 펀칭 웹 체험. 펀칭기 몸체 색은 앱의 PuncherFrameView 와 같다. */
+.demo-card { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); align-items: start; }
+.pv-side { display: grid; gap: var(--s4); justify-items: center; }
+.pv { width: min(100%, 300px); }
+.pv-canvas { display: block; width: 100%; height: auto; filter: drop-shadow(0 14px 22px rgb(0 0 0 / .28)); }
+
+.pv-scenes { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s2); }
+.pv-scene { display: inline-flex; align-items: center; gap: var(--s2); min-height: 44px; padding: 4px var(--s4) 4px 4px;
+            font: inherit; font-weight: 600; color: var(--text); background: var(--bg); border: 2px solid transparent;
+            border-radius: 999px; cursor: pointer; transition: border-color .2s var(--ease); }
+.pv-scene img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.pv-scene[aria-pressed="true"] { border-color: var(--accent); }
+
+.pv-punch { font: inherit; font-weight: 700; min-height: 56px; min-width: 200px; padding: 0 var(--s6);
+            color: var(--on-accent); background: var(--accent); border: 0; border-radius: 999px; cursor: pointer;
+            user-select: none; -webkit-user-select: none; touch-action: none; -webkit-touch-callout: none;
+            transition: transform .15s var(--ease), box-shadow .2s var(--ease);
+            animation: hint 1.8s var(--ease) infinite; }
+.has-sticker .pv-punch { animation: none; }
+.pv-punch.down { transform: scale(.94); animation: none; }
+@keyframes hint { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 22%, transparent); } }
+
+.pv-out { display: grid; gap: var(--s3); align-content: start; }
+.pv-sticker { display: grid; place-items: center; min-height: 300px; border-radius: var(--r-inner); padding: var(--s5);
+              background: color-mix(in srgb, var(--accent) 7%, var(--bg)); }
+.pv-result { display: none; max-width: 100%; max-height: 280px; width: auto; height: auto;
+             filter: drop-shadow(0 8px 14px rgb(0 0 0 / .25)); }
+.has-sticker .pv-result { display: block; }
+.has-sticker .pv-empty { display: none; }
+.pv-empty { margin: 0; text-align: center; }
+.pv-result.pop { animation: pop .6s var(--ease); }
+@keyframes pop { 0% { transform: translateY(40px) scale(.6) rotate(-8deg); opacity: 0; } 100% { transform: none; opacity: 1; } }
+.pv-status { font-weight: 700; margin: 0; min-height: 1.6em; }
+
+.pv-tools { display: grid; gap: var(--s3); }
+.pv-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2); }
+.pv-label { flex-basis: 100%; color: var(--muted); font-size: .875rem; }
+.pv-chip { font: inherit; font-size: .9375rem; font-weight: 600; min-height: 44px; padding: 0 var(--s4);
+           color: var(--text); background: var(--bg); border: 0; border-radius: 999px; cursor: pointer; }
+.pv-chip[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+.pv-tools[hidden] { display: none; }
+.pv-note { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pv-punch, .pv-result.pop { animation: none; }
+}
+@media (max-width: 760px) { .demo-card { grid-template-columns: 1fr; } }

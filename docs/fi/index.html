@@ -1,95 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching – pitkä painallus, liikkuva tarra</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/fi/index.html">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: kamera, joka tekee hetkestä liikkuvan tarran</title>
+  <meta name="description" content="Pidä painettuna ja irrota näkemäsi liikkuvaksi tarraksi. Rajaa kohde tai irrota postimerkki ja lähetä Viesteistä tai näppäimistöltä. Ilmainen.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: kamera, joka tekee hetkestä liikkuvan tarran">
+  <meta property="og:description" content="Pidä painettuna ja irrota näkemäsi liikkuvaksi tarraksi. Rajaa kohde tai irrota postimerkki ja lähetä Viesteistä tai näppäimistöltä. Ilmainen.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/fi/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/fi/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Pitkä painallus, ja hetki irtoaa liikkuvana tarrana.</p>
-    <p class="desc">
-      Punching on iOS-kamerasovellus, jolla painat pitkään lävistysikkunaa ja irrotat näkemäsi hetken liikkuvana tarrana.
-      Voit leikata kohteen irti tai repiä sen hammaskoristeiseen postimerkin muotoon, koota tarrat albumeihin
-      ja lähettää ne Viesteissä tai näppäimistöllä – tai tulostaa ne oikeiksi tarroiksi.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Tuki · yhteys</a>
-      <a class="btn ghost" href="./privacy.html">Tietosuojaseloste</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Siirry sisältöön</a>
+  <header class="bar">
+    <a class="brand" href="../fi/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Kieli</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Pidä painettuna.<br>Hetkestä tulee tarra.</h1>
+        <p class="lead">Sovita kuva lävistimen ikkunaan, pidä painettuna ja päästä irti. Koira rajautuu tarkasti omaa muotoaan myöten, ja mukaan tarttuu lyhyt liike juuri ennen painallusta ja sen jälkeen. Lähetä tarra saman tien Viesteistä tai näppäimistöltä.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Ilmaiseksi App Storesta</a><a class="try" href="#try">Kokeile itse ↓</a></div>
+        <p class="muted small">Kaikki ominaisuudet ovat ilmaisia. Tarrat ja kuvat pysyvät laitteellasi.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/01-reveal.jpg" alt="Pidä painettuna. Hetkestä tulee tarra." width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Kokeile itse</h2>
+      <p class="muted">Valitse kuva, pidä lävistinpainiketta painettuna ja päästä irti. Kokeile sitten toista muotoa ja ilmettä.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Kokeile itse&quot;, &quot;lead&quot;: &quot;Valitse kuva, pidä lävistinpainiketta painettuna ja päästä irti. Kokeile sitten toista muotoa ja ilmettä.&quot;, &quot;scenes&quot;: [&quot;Koiranpentu&quot;, &quot;Jäätelö&quot;, &quot;Ranta&quot;], &quot;hold&quot;: &quot;Irrota pitämällä painettuna&quot;, &quot;holding&quot;: &quot;Päästä irti, niin tarra irtoaa&quot;, &quot;empty&quot;: &quot;Tarrasi ilmestyy tähän&quot;, &quot;note&quot;: &quot;Verkkokokeilussa käytetään valmiiksi valittuja kuvia. Rajaukset ja ilmeet on tehty etukäteen samalla tavalla kuin apissa. Apissa irrotat sen, mitä kamera näkee, ja tarraan tallentuu myös liike painalluksen ympäriltä.&quot;, &quot;shape&quot;: &quot;Muoto&quot;, &quot;cutout&quot;: &quot;Rajattu&quot;, &quot;stamp&quot;: &quot;Postimerkki&quot;, &quot;look&quot;: &quot;Ilme&quot;, &quot;arrived&quot;: &quot;Tarrasi on saapunut!&quot;, &quot;noSubject&quot;: &quot;Rajattavaa ei ollut, joten irrotettiin postimerkin muotoon&quot;, &quot;inks&quot;: [&quot;Alkuperäinen&quot;, &quot;Seepia&quot;, &quot;Mustavalkoinen&quot;, &quot;Haalistunut&quot;, &quot;Eloisa&quot;, &quot;Syaani&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Parhaat hetket nukahtavat kuvakirjastoon</h2>
+      <p>Nappaat kuvan juuri, kun koira näyttää kieltään. Jotta siitä tulisi tarra, pitää etsiä kuva, rajata se ja avata vielä erillinen tarra-appi. Sillä välin keskustelu on jo siirtynyt muihin aiheisiin. Punching irrottaa tarran siinä samassa, kun kuvaat, ja heti kun lisäät sen albumiin, se odottaa Viestien tarralaatikossa.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Kohde rajataan, maisemasta tulee postimerkki</h2>
+        <p>Jos kuvassa on rajattavaa, kuten ihminen, lemmikki tai esine, saat juuri sen. Jos ei ole, kuten maisemassa, kuva irtoaa postimerkkinä, jossa on hammastettu reuna.<br>Mukaan tallentuu lyhyt liike painalluksen ympäriltä, joten tarra liikkuu.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/05-camera.jpg" alt="Kohde rajataan, maisemasta tulee postimerkki" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Suoraan Viesteihin ja näppäimistölle</h2>
+        <p>Irrotetut tarrat ilmestyvät Viestien tarralaatikkoon. Kun otat Punching-näppäimistön käyttöön, voit valita ja liittää niitä muissakin apeissa.<br>Liikkuva tarra liikkuu myös perillä. Kopioi tarra pitämällä sitä painettuna ja liitä se minne haluat.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/06-chat.jpg" alt="Suoraan Viesteihin ja näppäimistölle" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Muoto ja ilme myös jälkikäteen</h2>
+        <p>Vaihda rajatun ja postimerkin, liikkeen ja pysäytyskuvan välillä milloin haluat. Alkuperäinen kuva säilyy, joten jälki pysyy yhtä terävänä kuin ensimmäisellä kerralla, vaihdoit kuinka usein tahansa.<br>Valitse ilme vaihtoehdoista Alkuperäinen, Seepia, Mustavalkoinen, Haalistunut, Eloisa ja Syaani, ja lisää muutama sana, päivämäärä ja paikka.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/03-detail.jpg" alt="Muoto ja ilme myös jälkikäteen" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Kokoa albumeihin, tulosta paperille</h2>
+        <p>Tee jokaiselle aiheelle oma albumi, niin voit valita tarroja albumi kerrallaan myös Viesteissä ja näppäimistöllä. Valitse sivuiksi esimerkiksi kraft, ruudullinen, viivoitettu tai pergamentti ja järjestä tarrat mieleiseesi järjestykseen.<br>Muuta albumi tulostettavaksi PDF:ksi, jossa on postimerkin muotoiset leikkausviivat, ja tulosta se suoraan tarrapaperille.</p>
+      </div>
+      <div class="phone"><img src="../img/fi/04-arrange.jpg" alt="Kokoa albumeihin, tulosta paperille" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Alkuun kolmessa vaiheessa</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Tähtää</h3><p>Aseta haluamasi kohde kameran keskellä olevaan ikkunaan.</p></li>
+<li class="card"><span class="n">2</span><h3>Paina ja päästä irti</h3><p>Tarra irtoaa sillä hetkellä, kun päästät irti.</p></li>
+<li class="card"><span class="n">3</span><h3>Tallenna ja lähetä</h3><p>Lisää tarra albumiin, niin se on heti valmiina Viesteissä ja näppäimistöllä.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Missä tarroja käytetään ja mistä asetuksia muutetaan</h2>
+      <div class="card table">
+        <dl><div><dt>Viestit</dt><dd>＋ kirjoituskentän vieressä ▸ Tarrat ▸ Punching-tarrat</dd></div><div><dt>Muut apit</dt><dd>Ota Punching-näppäimistö käyttöön, vaihda siihen maapallonäppäimellä, valitse ja liitä</dd></div><div><dt>Missä vain</dt><dd>Pidä tarraa painettuna, kopioi ja liitä</dd></div><div><dt>Paperitarrat</dt><dd>Albumin ⋯ ▸ Käyttö ▸ Tulostettava tarra-arkki (PDF)</dd></div><div><dt>Sivut ja järjestys</dt><dd>Albumin ⋯ ▸ Koristele vapaasti</dd></div><div><dt>Vanhemmat kuvat</dt><dd>Albumin Tuo Kuvista</dd></div><div><dt>Ensimmäinen muoto</dt><dd>Asetukset ▸ Irrotus ▸ Oletusmuoto</dd></div><div><dt>Liikkeen toisto</dt><dd>Asetukset ▸ Näkymä ▸ Toista liike automaattisesti</dd></div><div><dt>Pikakäynnistys</dt><dd>Avaa Punching-kamera Pikakomennoista tai Ohjauskeskuksesta</dd></div></dl>
+      </div>
+      <p class="muted">Asetukset avautuvat kameranäkymän oikean yläkulman rataspainikkeesta.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Usein kysyttyä</h2>
+      <div class="faq"><details><summary>Tarra ei liiku.</summary><p>Avaa kameran oikeasta yläkulmasta Asetukset ▸ Näkymä ja tarkista, että Toista liike automaattisesti on päällä. Napauta sitten tarraa ja tarkista, että Liike on päällä kohdassa Muoto. Liike tallentuu aina mukaan, joten voit ottaa sen käyttöön milloin vain. Kuvat-apista tuodut kuvat ovat yksittäisiä kuvia, joten ne eivät liiku.</p></details>
+<details><summary>Sain postimerkin enkä rajattua tarraa.</summary><p>Kuvat, joissa ei ole rajattavaa kohdetta, kuten maisemat, irtoavat automaattisesti postimerkkinä. Voit vaihtaa muodon milloin tahansa napauttamalla tarraa ja valitsemalla Muoto. Jos haluat postimerkkejä alusta asti, vaihda Asetukset ▸ Irrotus ▸ Oletusmuoto.</p></details>
+<details><summary>En näe tarroja Viesteissä.</summary><p>Napauta Viesteissä kirjoituskentän vieressä olevaa ＋-painiketta ▸ Tarrat ja etsi Punching-tarrat. Ne ilmestyvät, kun olet irrottanut Punchingissa vähintään yhden tarran, ja jos albumeita on useampi, voit selata niitä albumi kerrallaan. Tarkemmat ohjeet löytyvät kohdasta Asetukset ▸ Käyttö ▸ Käyttö Viesteissä ja näppäimistöllä.</p></details>
+<details><summary>Miten otan näppäimistön käyttöön?</summary><p>Napauta kohdassa Asetukset ▸ Käyttö ▸ Käyttö Viesteissä ja näppäimistöllä painiketta Avaa Asetukset ja ota käyttöön Näppäimistöt ▸ Punching-tarrat. Tarrojen liittäminen vaatii Salli täysi pääsy -asetuksen, mutta näppäimistö ei koskaan lue eikä lähetä kirjoittamaasi eikä muodosta yhteyttä internetiin. Napauta sen jälkeen missä tahansa apissa maapallonäppäintä ja vaihda Punching-tarroihin.</p></details>
+<details><summary>Voinko tulostaa oikeita tarroja?</summary><p>Napauta albumin oikeasta yläkulmasta ⋯ ▸ Käyttö ▸ Tulostettava tarra-arkki (PDF). Koko albumista syntyy 300 dpi:n tulostettava PDF, jossa on postimerkin muotoiset leikkausviivat, valmiina tarrapaperille kotitulostimessa tai painossa. Saman valikon Tulostusopas neuvoo vaihe vaiheelta.</p></details>
+<details><summary>Minne vanhat kokoelmani katosivat?</summary><p>Versiosta 1.0.1 lähtien tarrat ryhmitellään vain yhdellä tavalla: albumeihin. Jokaisesta kokoelmasta tuli samanniminen albumi, ja sen tarrat, sivut ja järjestys siirtyivät mukana sellaisinaan.</p></details>
+<details><summary>Tilapalkissa palaa vihreä valo.</summary><p>Se on iOS:n kameran merkkivalo. Se palaa vain, kun kameranäkymä on auki. Kun avaat albumin, kamera pysähtyy ja valo sammuu.</p></details>
+<details><summary>Mitä tapahtuu, kun poistan tarran?</summary><p>Tarra, alkuperäinen kuva ja liiketiedot poistetaan laitteeltasi pysyvästi, ja tarra katoaa myös Viestien tarralaatikosta. Poistoa ei voi perua, joten harkitse ennen poistamista.</p></details>
+<details><summary>Mihin kuvani ja tarrani tallentuvat?</summary><p>Vain laitteellesi. Ei tiliä, ei omaa palvelinta eikä mainoksia. Laitteelta lähtevät vain nimettömät käyttötilastot, virheraportit ja itse lähettämäsi palaute. Lisätietoja on tietosuojaselosteessa.</p></details>
+<details><summary>Onko se oikeasti ilmainen?</summary><p>Kyllä, kaikki ominaisuudet ovat ilmaisia. Jos pidät apista, voit antaa kehittäjälle tippiä apin sisällä, mutta tippi ei avaa mitään lisäominaisuuksia.</p></details></div>
+      <p class="contact">Kysyttävää tai palautetta? Kirjoita osoitteeseen <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Vastaamme yleensä 2–3 päivässä. Virheistä ja toiveista voi kertoa myös GitHubissa: M1zz/StampCamera.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Näitkö tänään jotain söpöä?<br>Irrota se tarraksi.</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Ilmaiseksi App Storesta</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Kieli"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi" aria-current="page">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Tietosuojaseloste</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

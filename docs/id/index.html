@@ -1,92 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — Tekan dan tahan untuk mengubah momen menjadi stiker bergerak</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-                 "Segoe UI", Roboto, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: kamera yang mengubah momen jadi stiker bergerak</title>
+  <meta name="description" content="Tekan lama untuk menyobek apa yang dilihat kamera jadi stiker bergerak. Potong subjeknya saja atau sobek seperti perangko, lalu kirim langsung dari Pesan atau keyboard. Semua fitur gratis.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: kamera yang mengubah momen jadi stiker bergerak">
+  <meta property="og:description" content="Tekan lama untuk menyobek apa yang dilihat kamera jadi stiker bergerak. Potong subjeknya saja atau sobek seperti perangko, lalu kirim langsung dari Pesan atau keyboard. Semua fitur gratis.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/id/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/id/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Tekan dan tahan untuk mengubah momen menjadi stiker bergerak.</p>
-    <p class="desc">
-      Punching adalah aplikasi kamera iOS yang menyobek apa pun yang kamu lihat lewat pelubangnya menjadi stiker bergerak. Potong objeknya atau sobek jadi perangko bergerigi, kumpulkan stiker di album, kirim dari Pesan atau keyboard, atau cetak menjadi stiker sungguhan.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Dukungan &amp; Kontak</a> <a class="btn ghost" href="./privacy.html">Kebijakan Privasi</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span> <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Langsung ke konten</a>
+  <header class="bar">
+    <a class="brand" href="../id/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Bahasa</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Tekan lama,<br>momen itu jadi stiker</h1>
+        <p class="lead">Bidik adegan di jendela pelubang, tekan lama lalu lepaskan. Anjingmu terpotong persis mengikuti bentuk tubuhnya, lengkap dengan gerakan singkat sebelum dan sesudah ditekan. Stikernya bisa langsung dikirim dari Pesan atau keyboard.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Unduh gratis di App Store</a><a class="try" href="#try">Coba sobek sendiri ↓</a></div>
+        <p class="muted small">Semua fitur gratis. Stiker dan foto hanya disimpan di perangkatmu.</p>
+      </div>
+      <div class="phone"><img src="../img/id/01-reveal.jpg" alt="Tekan lama, momen itu jadi stiker" width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Coba sobek sendiri</h2>
+      <p class="muted">Pilih adegan, tekan lama tombol pelubang, lalu lepaskan. Setelah jadi, coba ganti bentuk dan nuansanya.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Coba sobek sendiri&quot;, &quot;lead&quot;: &quot;Pilih adegan, tekan lama tombol pelubang, lalu lepaskan. Setelah jadi, coba ganti bentuk dan nuansanya.&quot;, &quot;scenes&quot;: [&quot;Anak anjing&quot;, &quot;Es krim&quot;, &quot;Pantai&quot;], &quot;hold&quot;: &quot;Tekan lama&quot;, &quot;holding&quot;: &quot;Lepas untuk menyobek&quot;, &quot;empty&quot;: &quot;Stikermu akan muncul di sini&quot;, &quot;note&quot;: &quot;Coba di web memakai foto yang sudah kami pilih. Potongan dan nuansanya dibuat lebih dulu dengan cara yang sama seperti di aplikasi. Di aplikasi, kamu menyobek apa yang dilihat kamera, dan stikernya menyimpan gerakan sebelum dan sesudah ditekan.&quot;, &quot;shape&quot;: &quot;Bentuk&quot;, &quot;cutout&quot;: &quot;Potongan&quot;, &quot;stamp&quot;: &quot;Perangko&quot;, &quot;look&quot;: &quot;Gaya&quot;, &quot;arrived&quot;: &quot;Stikermu sudah tiba!&quot;, &quot;noSubject&quot;: &quot;Tidak ada yang bisa dipotong, jadi disobek berbentuk perangko&quot;, &quot;inks&quot;: [&quot;Asli&quot;, &quot;Sepia&quot;, &quot;Hitam Putih&quot;, &quot;Pudar&quot;, &quot;Cerah&quot;, &quot;Sian&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Momen menggemaskan sering tertidur di galeri</h2>
+      <p>Kamu berhasil memotret anjingmu menjulurkan lidah. Untuk mengirimnya sebagai stiker, kamu harus mencari fotonya, memotongnya, lalu membuka aplikasi stiker lain. Saat selesai, obrolan sudah pindah topik. Punching menyobek stikernya di tempat, dan begitu kamu simpan ke album, stiker itu sudah ada di laci stiker Pesan.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Subjek dipotong, pemandangan jadi perangko</h2>
+        <p>Kalau ada yang bisa dipotong, seperti orang, hewan peliharaan, atau benda, hanya sosok itu yang diambil. Kalau tidak ada, seperti pemandangan, gambarnya disobek jadi perangko bertepi bergerigi.<br>Gerakan singkat sebelum dan sesudah ditekan ikut tersimpan, jadi stikernya bergerak.</p>
+      </div>
+      <div class="phone"><img src="../img/id/05-camera.jpg" alt="Subjek dipotong, pemandangan jadi perangko" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Langsung di Pesan dan keyboard</h2>
+        <p>Stiker yang kamu sobek muncul di laci stiker aplikasi Pesan. Aktifkan keyboard Punching, dan kamu bisa memilih lalu menempelkannya di aplikasi lain juga.<br>Stiker bergerak tetap bergerak saat dikirim. Tekan lama untuk menyalin, lalu tempel di mana saja.</p>
+      </div>
+      <div class="phone"><img src="../img/id/06-chat.jpg" alt="Langsung di Pesan dan keyboard" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Ganti bentuk dan nuansa kapan saja</h2>
+        <p>Beralih antara potongan dan perangko, bergerak dan diam, sesukamu. Foto aslinya tetap disimpan, jadi berapa kali pun diganti, hasilnya tetap setajam pertama kali.<br>Pilih nuansa Asli, Sepia, Hitam Putih, Pudar, Cerah, atau Sian, lalu tambahkan catatan, tanggal, dan tempat.</p>
+      </div>
+      <div class="phone"><img src="../img/id/03-detail.jpg" alt="Ganti bentuk dan nuansa kapan saja" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Kumpulkan di album, cetak jadi stiker kertas</h2>
+        <p>Buat album per tema, dan di Pesan maupun keyboard kamu bisa memilih per album. Pilih latar kertas kraft, kotak-kotak, bergaris, atau perkamen, lalu atur urutannya sesukamu.<br>Ubah album jadi PDF siap cetak dengan garis potong berbentuk perangko, lalu cetak langsung di kertas stiker.</p>
+      </div>
+      <div class="phone"><img src="../img/id/04-arrange.jpg" alt="Kumpulkan di album, cetak jadi stiker kertas" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Mulai dalam tiga langkah</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Bidik di jendela</h3><p>Masukkan yang ingin kamu simpan ke jendela di tengah kamera.</p></li>
+<li class="card"><span class="n">2</span><h3>Tekan lama, lalu lepas</h3><p>Stiker tersobek tepat saat jarimu terangkat.</p></li>
+<li class="card"><span class="n">3</span><h3>Simpan dan kirim</h3><p>Masukkan ke album, dan stiker langsung siap di Pesan dan keyboard.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Pakai di mana, ubah di mana</h2>
+      <div class="card table">
+        <dl><div><dt>Pesan</dt><dd>＋ di samping kolom teks ▸ Stiker ▸ Stiker Punching</dd></div><div><dt>Aplikasi lain</dt><dd>Aktifkan keyboard Punching, beralih dengan tombol bola dunia, lalu pilih dan tempel</dd></div><div><dt>Di mana saja</dt><dd>Tekan lama stiker untuk menyalin, lalu tempel</dd></div><div><dt>Stiker kertas</dt><dd>⋯ di album ▸ Gunakan ▸ Lembar Stiker untuk Dicetak (PDF)</dd></div><div><dt>Latar dan urutan</dt><dd>⋯ di album ▸ Hias Bebas</dd></div><div><dt>Foto lama</dt><dd>Impor dari Foto di album</dd></div><div><dt>Bentuk awal</dt><dd>Pengaturan ▸ Sobek ▸ Bentuk Default</dd></div><div><dt>Melihat gerakan</dt><dd>Pengaturan ▸ Tampilan ▸ Putar Gerakan Otomatis</dd></div><div><dt>Buka cepat</dt><dd>Buka Kamera Punching di Pintasan atau Pusat Kontrol</dd></div></dl>
+      </div>
+      <p class="muted">Pengaturan ada di tombol roda gigi di kanan atas layar kamera.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Pertanyaan umum</h2>
+      <div class="faq"><details><summary>Stikerku tidak bergerak.</summary><p>Di kanan atas kamera, buka Pengaturan ▸ Tampilan dan pastikan Putar Gerakan Otomatis menyala. Lalu ketuk stiker dan pastikan Gerakan di bawah Bentuk menyala. Gerakan selalu ikut direkam, jadi bisa dinyalakan kapan saja. Foto yang diimpor dari aplikasi Foto hanya satu bingkai, jadi tidak bergerak.</p></details>
+<details><summary>Yang keluar perangko, bukan potongan.</summary><p>Adegan tanpa sesuatu untuk dipotong, seperti pemandangan, otomatis disobek jadi perangko. Ketuk stikernya untuk mengganti di Bentuk kapan saja. Kalau ingin langsung menyobek jadi perangko, ubah Pengaturan ▸ Sobek ▸ Bentuk Default.</p></details>
+<details><summary>Stikerku tidak muncul di Pesan.</summary><p>Di Pesan, ketuk tombol ＋ di samping kolom teks ▸ Stiker, lalu cari Stiker Punching. Stiker muncul setelah kamu menyobek setidaknya satu stiker di Punching, dan kalau punya lebih dari satu album, kamu bisa melihatnya per album. Langkah lengkapnya ada di Pengaturan ▸ Gunakan ▸ Gunakan di Pesan dan Keyboard.</p></details>
+<details><summary>Bagaimana cara mengaktifkan keyboard?</summary><p>Di Pengaturan ▸ Gunakan ▸ Gunakan di Pesan dan Keyboard, ketuk “Buka Pengaturan”, lalu buka Keyboard ▸ aktifkan Stiker Punching. Untuk menempel stiker diperlukan Izinkan Akses Penuh, tetapi keyboard tidak membaca atau mengirim apa yang kamu ketik dan tidak terhubung ke internet. Setelah itu, di aplikasi mana pun, ketuk tombol bola dunia untuk beralih ke Stiker Punching.</p></details>
+<details><summary>Aku ingin mencetak stiker sungguhan.</summary><p>Ketuk ⋯ di kanan atas album ▸ Gunakan ▸ Lembar Stiker untuk Dicetak (PDF). Kamu akan mendapat PDF 300dpi untuk seluruh album dengan garis potong berbentuk perangko, siap dicetak di kertas stiker dengan printer rumah atau di percetakan. Langkahnya ada di Panduan Cetak pada menu yang sama.</p></details>
+<details><summary>Ke mana koleksi lamaku?</summary><p>Sejak 1.0.1, stiker hanya dikelompokkan dengan satu cara: album. Setiap koleksi menjadi album dengan nama yang sama, dan stiker, latar, serta urutannya ikut pindah apa adanya.</p></details>
+<details><summary>Ada lampu hijau di bar status.</summary><p>Itu indikator kamera iOS. Lampu hanya menyala saat layar kamera terbuka. Saat kamu membuka album, kamera berhenti dan lampunya padam.</p></details>
+<details><summary>Apa yang terjadi kalau stiker dihapus?</summary><p>Stiker, foto asli, dan data gerakannya dihapus permanen dari perangkat, dan ikut hilang dari laci stiker Pesan. Tidak bisa dipulihkan, jadi hapus dengan hati-hati.</p></details>
+<details><summary>Di mana foto dan stikerku disimpan?</summary><p>Hanya di perangkatmu. Tidak ada akun, tidak ada server milik kami, dan tidak ada iklan. Yang keluar dari perangkat hanya statistik penggunaan anonim, laporan error, dan masukan yang kamu kirim sendiri. Detailnya ada di Kebijakan Privasi.</p></details>
+<details><summary>Benar-benar gratis?</summary><p>Ya, semua fitur gratis. Kalau suka, kamu bisa memberi tip untuk pengembang di dalam aplikasi, tetapi tip tidak membuka fitur apa pun.</p></details></div>
+      <p class="contact">Ada pertanyaan atau masukan? Kirim ke <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Biasanya kami membalas dalam 2 sampai 3 hari. Laporan bug dan usulan fitur juga bisa lewat issue di GitHub M1zz/StampCamera.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Lihat yang menggemaskan hari ini?<br>Sobek jadi stiker</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Unduh gratis di App Store</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Bahasa"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id" aria-current="page">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Kebijakan Privasi</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

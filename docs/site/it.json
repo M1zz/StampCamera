@@ -1,0 +1,177 @@
+{
+  "title": "Punching: la fotocamera che stacca l’attimo in un adesivo animato",
+  "description": "Tieni premuto e stacca ciò che vedi come adesivo animato. Ritaglia il soggetto o staccalo come francobollo e invialo da Messaggi. Tutto gratis.",
+  "hero": {
+    "headline": "Tieni premuto,\nl’attimo diventa un adesivo",
+    "lead": "Inquadra la scena nella finestra della fustella, tieni premuto e rilascia. Il tuo cane viene ritagliato seguendo la sua sagoma, insieme al breve movimento di prima e dopo la pressione. Poi lo mandi subito da Messaggi o dalla tastiera.",
+    "cta": "Gratis su App Store",
+    "note": "Tutte le funzioni sono gratuite. Adesivi e foto restano sul tuo dispositivo."
+  },
+  "demo": {
+    "title": "Prova a staccarne uno",
+    "lead": "Scegli una scena, tieni premuto il pulsante della fustella e rilascia. Poi prova a cambiare forma e stile.",
+    "scenes": [
+      "Cucciolo",
+      "Gelato",
+      "Spiaggia"
+    ],
+    "hold": "Tieni premuto per staccare",
+    "holding": "Rilascia per staccare",
+    "empty": "Il tuo adesivo comparirà qui",
+    "note": "La demo web usa foto scelte da noi. Ritagli e stili sono stati preparati prima, con lo stesso metodo dell’app. Nell’app stacchi ciò che inquadra la fotocamera, e l’adesivo conserva il movimento di prima e dopo la pressione.",
+    "shape": "Forma",
+    "cutout": "Ritagliato",
+    "stamp": "Francobollo",
+    "look": "Stile",
+    "arrived": "Il tuo adesivo è arrivato!",
+    "noSubject": "Niente da ritagliare: staccato a forma di francobollo",
+    "inks": [
+      "Originale",
+      "Seppia",
+      "Bianco e nero",
+      "Sbiadito",
+      "Vivace",
+      "Ciano"
+    ]
+  },
+  "problem": {
+    "title": "I momenti più teneri si addormentano nella galleria",
+    "text": "Fotografi il tuo cane con la lingua di fuori. Per mandarlo come adesivo devi cercare la foto, ritagliarla e aprire un’altra app di adesivi. Nel frattempo la chat è già passata ad altro. Punching stacca l’adesivo proprio mentre scatti, e appena lo metti in un album è già nel cassetto adesivi di Messaggi."
+  },
+  "features": [
+    {
+      "title": "Il soggetto ritagliato, il paesaggio in francobollo",
+      "text": "Se c’è qualcosa da ritagliare, come una persona, un animale o un oggetto, ottieni solo quello. Se non c’è, come in un paesaggio, si stacca un francobollo dal bordo dentellato.\nInsieme all’adesivo arriva anche il breve movimento di prima e dopo la pressione, così si muove.",
+      "shot": "05-camera"
+    },
+    {
+      "title": "Subito in Messaggi e nella tastiera",
+      "text": "Gli adesivi staccati compaiono nel cassetto adesivi di Messaggi. Attiva la tastiera di Punching e potrai sceglierli e incollarli anche nelle altre app.\nGli adesivi animati arrivano in movimento. Tieni premuto un adesivo per copiarlo e incollalo dove vuoi.",
+      "shot": "06-chat"
+    },
+    {
+      "title": "Forma e stile, anche dopo",
+      "text": "Passa quando vuoi dal ritagliato al francobollo, dal movimento all’immagine ferma. La foto originale resta intatta, quindi l’adesivo rimane nitido come la prima volta, per quante volte tu lo cambi.\nScegli uno stile tra Originale, Seppia, Bianco e nero, Sbiadito, Vivace e Ciano, e aggiungi due parole, la data e il luogo.",
+      "shot": "03-detail"
+    },
+    {
+      "title": "Raccogli in album, stampa su carta",
+      "text": "Crea un album per ogni tema e anche in Messaggi e nella tastiera sceglierai album per album. Scegli pagine kraft, a quadretti, a righe o pergamena e disponi gli adesivi nell’ordine che preferisci.\nTrasforma un album in un PDF da stampare con linee di taglio a forma di francobollo e stampalo direttamente su carta adesiva.",
+      "shot": "04-arrange"
+    }
+  ],
+  "steps": {
+    "title": "Si comincia in tre passi",
+    "items": [
+      {
+        "title": "Inquadra",
+        "text": "Metti ciò che vuoi nella finestra al centro della fotocamera."
+      },
+      {
+        "title": "Tieni premuto e rilascia",
+        "text": "L’adesivo si stacca nel momento in cui rilasci."
+      },
+      {
+        "title": "Conserva e invia",
+        "text": "Aggiungilo a un album ed è subito pronto in Messaggi e nella tastiera."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Dove usarlo, dove cambiarlo",
+    "rows": [
+      [
+        "Messaggi",
+        "＋ accanto al campo di testo ▸ Adesivi ▸ Punching Adesivi"
+      ],
+      [
+        "Altre app",
+        "Attiva la tastiera di Punching, passaci con il tasto globo, poi scegli e incolla"
+      ],
+      [
+        "Ovunque",
+        "Tieni premuto un adesivo per copiarlo, poi incollalo"
+      ],
+      [
+        "Adesivi di carta",
+        "⋯ in un album ▸ Uso ▸ Foglio di adesivi da stampare (PDF)"
+      ],
+      [
+        "Pagine e ordine",
+        "⋯ in un album ▸ Decora a piacere"
+      ],
+      [
+        "Foto di prima",
+        "Importa da Foto, dentro un album"
+      ],
+      [
+        "Forma iniziale",
+        "Impostazioni ▸ Stacco ▸ Forma predefinita"
+      ],
+      [
+        "Vedere il movimento",
+        "Impostazioni ▸ Visualizzazione ▸ Riproduci il movimento in automatico"
+      ],
+      [
+        "Apertura rapida",
+        "Apri la fotocamera di Punching da Comandi Rapidi o da Centro di Controllo"
+      ]
+    ],
+    "note": "Le impostazioni sono sotto l’ingranaggio in alto a destra della fotocamera."
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "items": [
+      {
+        "q": "Il mio adesivo non si muove.",
+        "a": "In alto a destra nella fotocamera, apri Impostazioni ▸ Visualizzazione e controlla che Riproduci il movimento in automatico sia attivo. Poi tocca l’adesivo e verifica che sotto Forma l’opzione Movimento sia attiva. Il movimento viene sempre registrato, quindi puoi attivarlo quando vuoi. Le foto importate dall’app Foto sono un’immagine singola e non si muovono."
+      },
+      {
+        "q": "Ottengo un francobollo invece di un ritaglio.",
+        "a": "Le scene senza un soggetto da ritagliare, come un paesaggio, vengono staccate automaticamente a forma di francobollo. Tocca l’adesivo per cambiarla da Forma quando vuoi. Se preferisci il francobollo fin dall’inizio, modifica Impostazioni ▸ Stacco ▸ Forma predefinita."
+      },
+      {
+        "q": "Non vedo gli adesivi in Messaggi.",
+        "a": "In Messaggi, tocca il pulsante ＋ accanto al campo di testo ▸ Adesivi e cerca Punching Adesivi. Compare dopo che hai staccato almeno un adesivo in Punching e, se hai più di un album, puoi sfogliarli album per album. Trovi i passaggi dettagliati in Impostazioni ▸ Uso ▸ Usa in Messaggi e nella tastiera."
+      },
+      {
+        "q": "Come attivo la tastiera?",
+        "a": "In Impostazioni ▸ Uso ▸ Usa in Messaggi e nella tastiera, tocca Apri Impostazioni e attiva Tastiere ▸ Punching Adesivi. Per incollare gli adesivi serve «Consenti accesso completo», ma la tastiera non legge né invia mai ciò che scrivi e non si collega mai a internet. Poi, in qualsiasi app, tocca il tasto globo per passare a Punching Adesivi."
+      },
+      {
+        "q": "Posso stampare adesivi veri?",
+        "a": "Tocca ⋯ in alto a destra in un album ▸ Uso ▸ Foglio di adesivi da stampare (PDF). Ottieni un PDF a 300 dpi dell’intero album con linee di taglio a forma di francobollo, pronto per la carta adesiva della stampante di casa o per la tipografia. La Guida alla stampa, nello stesso menu, ti accompagna passo dopo passo."
+      },
+      {
+        "q": "Dove sono finite le mie vecchie raccolte?",
+        "a": "Dalla versione 1.0.1 gli adesivi si raggruppano in un solo modo: gli album. Ogni raccolta è diventata un album con lo stesso nome, con adesivi, pagine e ordine invariati."
+      },
+      {
+        "q": "Nella barra di stato compare una luce verde.",
+        "a": "È l’indicatore di utilizzo della fotocamera di iOS. Si accende solo mentre la schermata della fotocamera è aperta. Quando apri un album la fotocamera si ferma e la luce si spegne."
+      },
+      {
+        "q": "Cosa succede se elimino un adesivo?",
+        "a": "L’adesivo, la foto originale e i dati di movimento vengono eliminati per sempre dal dispositivo e spariscono anche dal cassetto adesivi di Messaggi. Non si possono recuperare, quindi pensaci bene prima di eliminarlo."
+      },
+      {
+        "q": "Dove vengono salvati foto e adesivi?",
+        "a": "Solo sul tuo dispositivo. Niente account, niente server nostri, niente pubblicità. Dal dispositivo escono soltanto statistiche d’uso anonime, segnalazioni di errore e i feedback che decidi di inviare. Tutti i dettagli sono nell’informativa sulla privacy."
+      },
+      {
+        "q": "È davvero gratis?",
+        "a": "Sì, tutte le funzioni sono gratuite. Se l’app ti piace puoi lasciare una mancia allo sviluppatore dall’app, ma la mancia non sblocca nulla."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Hai visto qualcosa di tenero oggi?\nFallo diventare un adesivo.",
+    "cta": "Gratis su App Store"
+  },
+  "ui": {
+    "skip": "Vai al contenuto",
+    "languages": "Lingua",
+    "privacy": "Informativa sulla privacy",
+    "contact": "Domande o suggerimenti? Scrivi a {email}. Di solito rispondiamo entro 2-3 giorni. Segnalazioni di bug e proposte di nuove funzioni sono benvenute anche su GitHub (M1zz/StampCamera)."
+  }
+}

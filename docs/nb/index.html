@@ -1,92 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nb">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — Hold inne, og øyeblikket blir til et bevegelig klistremerke</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-                 "Segoe UI", Roboto, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: kameraet som gjør øyeblikket til et bevegelig klistremerke</title>
+  <meta name="description" content="Hold inne og riv av det du ser som et bevegelig klistremerke. Klipp ut motivet eller lag et frimerke, og send fra Meldinger. Helt gratis.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: kameraet som gjør øyeblikket til et bevegelig klistremerke">
+  <meta property="og:description" content="Hold inne og riv av det du ser som et bevegelig klistremerke. Klipp ut motivet eller lag et frimerke, og send fra Meldinger. Helt gratis.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/nb/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/nb/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Hold inne, og øyeblikket blir til et bevegelig klistremerke.</p>
-    <p class="desc">
-      Punching er en kamera-app for iOS som river av alt du ser gjennom hullemaskinen som et bevegelig klistremerke. Klipp ut motivet eller riv det av som et takket frimerke, samle klistremerkene i album, send dem fra Meldinger eller tastaturet, eller skriv dem ut som ekte klistremerker.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Brukerstøtte og kontakt</a> <a class="btn ghost" href="./privacy.html">Personvernerklæring</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span> <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Hopp til innhold</a>
+  <header class="bar">
+    <a class="brand" href="../nb/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Språk</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Hold inne.<br>Øyeblikket er et klistremerke.</h1>
+        <p class="lead">Still inn scenen i hullemaskinens vindu, hold inne og slipp. Hunden din klippes ut etter sin egen form, med et lite glimt av bevegelse fra rett før og etter trykket. Send den med en gang fra Meldinger eller tastaturet.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Hent gratis i App Store</a><a class="try" href="#try">Prøv selv ↓</a></div>
+        <p class="muted small">Alle funksjoner er gratis. Klistremerker og bilder blir værende på enheten din.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/01-reveal.jpg" alt="Hold inne. Øyeblikket er et klistremerke." width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Prøv selv</h2>
+      <p class="muted">Velg en scene, hold inne hullemaskinknappen og slipp. Prøv så en annen form og et annet uttrykk.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Prøv selv&quot;, &quot;lead&quot;: &quot;Velg en scene, hold inne hullemaskinknappen og slipp. Prøv så en annen form og et annet uttrykk.&quot;, &quot;scenes&quot;: [&quot;Valp&quot;, &quot;Iskrem&quot;, &quot;Strand&quot;], &quot;hold&quot;: &quot;Hold inne for å rive av&quot;, &quot;holding&quot;: &quot;Slipp for å rive av&quot;, &quot;empty&quot;: &quot;Klistremerket ditt havner her&quot;, &quot;note&quot;: &quot;Nettdemoen bruker bilder vi har valgt ut på forhånd. Utklipp og uttrykk er laget i forkant på samme måte som appen lager dem. I appen river du av det kameraet ser, og klistremerket tar vare på bevegelsen rundt trykket.&quot;, &quot;shape&quot;: &quot;Form&quot;, &quot;cutout&quot;: &quot;Utklippet&quot;, &quot;stamp&quot;: &quot;Frimerke&quot;, &quot;look&quot;: &quot;Uttrykk&quot;, &quot;arrived&quot;: &quot;Klistremerket ditt er kommet!&quot;, &quot;noSubject&quot;: &quot;Det var ikke noe å klippe ut, så det ble revet av som et frimerke&quot;, &quot;inks&quot;: [&quot;Original&quot;, &quot;Sepia&quot;, &quot;Svart-hvitt&quot;, &quot;Falmet&quot;, &quot;Livlig&quot;, &quot;Cyan&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>De fineste øyeblikkene blir liggende i Bilder</h2>
+      <p>Du fanger hunden akkurat idet den rekker tunge. Men skal det bli et klistremerke, må du finne bildet, klippe det ut og åpne enda en klistremerke-app. I mellomtiden har samtalen for lengst gått videre. Punching river av klistremerket der du tar bildet, og så snart du legger det i et album, ligger det i klistremerkeskuffen i Meldinger.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Motiver klippes ut, landskap blir frimerker</h2>
+        <p>Er det noe å klippe ut, som et menneske, et kjæledyr eller en gjenstand, får du akkurat det. Er det ikke det, som i et landskap, rives det av som et frimerke med takket kant.<br>Et kort øyeblikk med bevegelse rundt trykket blir med, så klistremerket beveger seg.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/05-camera.jpg" alt="Motiver klippes ut, landskap blir frimerker" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Rett i Meldinger og på tastaturet</h2>
+        <p>Avrevne klistremerker dukker opp i klistremerkeskuffen i Meldinger. Slå på Punching-tastaturet, så kan du velge og lime dem inn i andre apper også.<br>Bevegelige klistremerker kommer fram i bevegelse. Hold inne et klistremerke for å kopiere det, og lim det inn hvor du vil.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/06-chat.jpg" alt="Rett i Meldinger og på tastaturet" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Form og uttrykk, også etterpå</h2>
+        <p>Bytt mellom utklippet og frimerke, mellom bevegelse og stillbilde, når du vil. Originalbildet tas vare på, så alt blir like skarpt som første gang, uansett hvor ofte du bytter.<br>Velg et uttrykk blant Original, Sepia, Svart-hvitt, Falmet, Livlig og Cyan, og legg til noen ord, dato og sted.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/03-detail.jpg" alt="Form og uttrykk, også etterpå" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Samle i album, skriv ut på papir</h2>
+        <p>Lag et album for hvert tema, så kan du velge album for album i Meldinger og på tastaturet også. Velg sider som kraft, rutete, linjert eller pergament, og ordne klistremerkene i den rekkefølgen du vil.<br>Gjør et album om til en PDF til utskrift med skjærelinjer i frimerkeform, og skriv den ut rett på klistremerkepapir.</p>
+      </div>
+      <div class="phone"><img src="../img/nb/04-arrange.jpg" alt="Samle i album, skriv ut på papir" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Kom i gang på tre trinn</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Sikt</h3><p>Plasser det du vil fange, i vinduet midt i kameraet.</p></li>
+<li class="card"><span class="n">2</span><h3>Hold inne og slipp</h3><p>Klistremerket rives av i det øyeblikket du slipper.</p></li>
+<li class="card"><span class="n">3</span><h3>Lagre og send</h3><p>Legg det i et album, så er det klart i Meldinger og på tastaturet.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Hvor du bruker det, og hvor du endrer det</h2>
+      <div class="card table">
+        <dl><div><dt>Meldinger</dt><dd>＋ ved siden av tekstfeltet ▸ Klistremerker ▸ Punching-klistremerker</dd></div><div><dt>Andre apper</dt><dd>Slå på Punching-tastaturet, bytt til det med globustasten, velg og lim inn</dd></div><div><dt>Overalt</dt><dd>Hold inne et klistremerke, kopier det og lim inn</dd></div><div><dt>Papirklistremerker</dt><dd>⋯ i et album ▸ Bruk ▸ Klistremerkeark til utskrift (PDF)</dd></div><div><dt>Sider og rekkefølge</dt><dd>⋯ i et album ▸ Pynt fritt</dd></div><div><dt>Eldre bilder</dt><dd>Importer fra Bilder i et album</dd></div><div><dt>Første form</dt><dd>Innstillinger ▸ Riv av ▸ Standardform</dd></div><div><dt>Se bevegelse</dt><dd>Innstillinger ▸ Visning ▸ Spill av bevegelse automatisk</dd></div><div><dt>Rask start</dt><dd>Åpne Punching-kamera i Snarveier eller Kontrollsenter</dd></div></dl>
+      </div>
+      <p class="muted">Innstillinger finner du bak tannhjulet øverst til høyre i kameraet.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Vanlige spørsmål</h2>
+      <div class="faq"><details><summary>Klistremerket mitt beveger seg ikke.</summary><p>Gå til Innstillinger ▸ Visning øverst til høyre i kameraet, og sjekk at Spill av bevegelse automatisk er slått på. Trykk deretter på klistremerket, og sjekk at Bevegelse er slått på under Form. Bevegelsen tas alltid opp, så du kan slå den på når som helst. Bilder importert fra Bilder-appen er ett enkelt bilde og beveger seg derfor ikke.</p></details>
+<details><summary>Jeg fikk et frimerke i stedet for et utklippet klistremerke.</summary><p>Scener uten noe å klippe ut, som et landskap, rives automatisk av som et frimerke. Trykk på klistremerket for å endre det under Form når som helst. Vil du ha frimerker fra starten av, endrer du Innstillinger ▸ Riv av ▸ Standardform.</p></details>
+<details><summary>Jeg ser ikke klistremerkene mine i Meldinger.</summary><p>I Meldinger trykker du på ＋ ved siden av tekstfeltet ▸ Klistremerker og finner Punching-klistremerker. De dukker opp når du har revet av minst ett klistremerke i Punching, og har du flere album, kan du bla album for album. Du finner en trinnvis veiledning i Innstillinger ▸ Bruk ▸ Bruk i Meldinger og på tastaturet.</p></details>
+<details><summary>Hvordan slår jeg på tastaturet?</summary><p>Trykk på Åpne Innstillinger under Innstillinger ▸ Bruk ▸ Bruk i Meldinger og på tastaturet, og slå på Tastaturer ▸ Punching-klistremerker. For å lime inn klistremerker trengs Tillat full tilgang, men tastaturet leser eller sender aldri det du skriver, og kobler seg aldri til internett. Trykk deretter på globustasten i en hvilken som helst app for å bytte til Punching-klistremerker.</p></details>
+<details><summary>Kan jeg skrive ut ekte klistremerker?</summary><p>Trykk på ⋯ øverst til høyre i et album ▸ Bruk ▸ Klistremerkeark til utskrift (PDF). Du får en PDF på 300 dpi for hele albumet med skjærelinjer i frimerkeform, klar for klistremerkepapir i skriveren hjemme eller hos et trykkeri. Utskriftsveiledning i samme meny tar deg gjennom det trinn for trinn.</p></details>
+<details><summary>Hvor ble de gamle samlingene mine av?</summary><p>Fra og med 1.0.1 samles klistremerker bare på én måte: i album. Hver samling ble til et album med samme navn, og klistremerkene, sidene og rekkefølgen ble flyttet over som de var.</p></details>
+<details><summary>Det lyser et grønt lys i statuslinjen.</summary><p>Det er kameraindikatoren i iOS. Den lyser bare mens kameraskjermen vises. Når du åpner et album, stopper kameraet og lyset slukkes.</p></details>
+<details><summary>Hva skjer når jeg sletter et klistremerke?</summary><p>Klistremerket, originalbildet og bevegelsesdataene slettes permanent fra enheten din og forsvinner også fra klistremerkeskuffen i Meldinger. Det kan ikke gjenopprettes, så tenk deg om før du sletter.</p></details>
+<details><summary>Hvor lagres bildene og klistremerkene mine?</summary><p>Bare på enheten din. Det finnes ingen konto, ingen egen server og ingen reklame. Det eneste som forlater enheten, er anonym bruksstatistikk, feilrapporter og tilbakemeldinger du selv sender. Du kan lese mer i personvernerklæringen.</p></details>
+<details><summary>Er det virkelig gratis?</summary><p>Ja, alle funksjoner er gratis. Liker du appen, kan du gi utvikleren driks i appen, men driks låser ikke opp noe.</p></details></div>
+      <p class="contact">Spørsmål eller tilbakemeldinger? Skriv til <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Vi svarer vanligvis innen 2–3 dager. Feil og ønsker om nye funksjoner kan du også melde på GitHub under M1zz/StampCamera.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Så du noe søtt i dag?<br>Riv det av som et klistremerke.</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Hent gratis i App Store</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Språk"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb" aria-current="page">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Personvernerklæring</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

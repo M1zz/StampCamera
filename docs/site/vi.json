@@ -1,0 +1,177 @@
+{
+  "title": "Punching: camera biến khoảnh khắc thành nhãn dán chuyển động",
+  "description": "Chạm và giữ để bấm cảnh trước camera thành nhãn dán chuyển động. Tách riêng chủ thể hoặc bấm thành hình con tem, rồi gửi ngay trong Tin nhắn hay bàn phím. Mọi tính năng đều miễn phí.",
+  "hero": {
+    "headline": "Chạm và giữ,\nkhoảnh khắc thành nhãn dán",
+    "lead": "Đặt cảnh vào ô bấm, chạm giữ rồi thả tay. Chú chó được cắt đúng theo dáng của chú, kèm cả chút chuyển động ngắn trước và sau khi bấm. Nhãn dán vừa bấm xong có thể gửi ngay trong Tin nhắn hoặc bàn phím.",
+    "cta": "Tải miễn phí trên App Store",
+    "note": "Mọi tính năng đều miễn phí. Nhãn dán và ảnh chỉ lưu trên thiết bị của bạn."
+  },
+  "demo": {
+    "title": "Tự tay bấm thử",
+    "lead": "Chọn một cảnh, chạm và giữ nút bấm rồi thả ra. Bấm xong, thử đổi hình dạng và tông màu xem sao.",
+    "scenes": [
+      "Cún con",
+      "Kem",
+      "Bãi biển"
+    ],
+    "hold": "Giữ để bấm",
+    "holding": "Thả tay để bấm",
+    "empty": "Nhãn dán vừa bấm sẽ hiện ở đây",
+    "note": "Bản thử trên web dùng những ảnh đã chọn sẵn. Phần tách nền và tông màu được làm sẵn theo đúng cách của ứng dụng. Trong ứng dụng, bạn bấm chính cảnh camera đang thấy, và nhãn dán giữ lại cả chuyển động trước và sau khi bấm.",
+    "shape": "Hình dạng",
+    "cutout": "Cắt viền",
+    "stamp": "Tem",
+    "look": "Màu ảnh",
+    "arrived": "Nhãn dán của bạn đã đến!",
+    "noSubject": "Không có gì để cắt nên đã bấm thành hình tem",
+    "inks": [
+      "Gốc",
+      "Nâu đỏ",
+      "Đen trắng",
+      "Phai màu",
+      "Rực rỡ",
+      "Xanh lơ"
+    ]
+  },
+  "problem": {
+    "title": "Khoảnh khắc đáng yêu cứ nằm ngủ trong thư viện ảnh",
+    "text": "Bạn chụp được lúc chú chó thè lưỡi. Muốn gửi thành nhãn dán thì phải tìm ảnh, tách nền, rồi mở thêm một ứng dụng làm nhãn dán. Đến lúc xong, cuộc trò chuyện đã sang chuyện khác. Punching bấm ra nhãn dán ngay tại chỗ, và vừa cất vào bộ sưu tập là nó đã nằm sẵn trong ngăn nhãn dán của Tin nhắn."
+  },
+  "features": [
+    {
+      "title": "Chủ thể được tách riêng, phong cảnh thành con tem",
+      "text": "Nếu có thứ để tách, như người, thú cưng hay đồ vật, bạn sẽ nhận được đúng hình dáng đó. Nếu không, như một khung cảnh, ảnh sẽ được bấm thành con tem viền răng cưa.\nChút chuyển động trước và sau khi bấm được lưu cùng, nên nhãn dán biết chuyển động.",
+      "shot": "05-camera"
+    },
+    {
+      "title": "Dùng ngay trong Tin nhắn và bàn phím",
+      "text": "Nhãn dán vừa bấm xuất hiện trong ngăn nhãn dán của Tin nhắn. Bật bàn phím Punching là có thể chọn và dán sang các ứng dụng khác.\nNhãn dán chuyển động gửi đi vẫn chuyển động. Chạm và giữ để sao chép, rồi dán vào bất cứ đâu.",
+      "shot": "06-chat"
+    },
+    {
+      "title": "Đổi hình dạng và tông màu bất cứ lúc nào",
+      "text": "Chuyển qua lại giữa tách nền và con tem, chuyển động và đứng yên, tùy ý. Ảnh gốc luôn được giữ lại, nên đổi bao nhiêu lần vẫn sắc nét như lần đầu.\nChọn tông màu Gốc, Nâu đỏ, Đen trắng, Phai màu, Rực rỡ hay Xanh lơ, và ghi thêm một dòng, ngày và nơi chụp.",
+      "shot": "03-detail"
+    },
+    {
+      "title": "Gom vào bộ sưu tập, in ra nhãn dán giấy",
+      "text": "Tạo bộ sưu tập theo chủ đề, và trong Tin nhắn hay bàn phím bạn cũng chọn theo từng bộ. Chọn nền giấy kraft, ô vuông, kẻ dòng hay giấy da, rồi sắp xếp thứ tự tùy thích.\nBiến một bộ sưu tập thành tệp PDF để in có đường cắt hình con tem, rồi in thẳng lên giấy nhãn dán.",
+      "shot": "04-arrange"
+    }
+  ],
+  "steps": {
+    "title": "Bắt đầu chỉ với ba bước",
+    "items": [
+      {
+        "title": "Căn vào ô bấm",
+        "text": "Đưa thứ bạn muốn giữ lại vào ô giữa camera."
+      },
+      {
+        "title": "Chạm giữ rồi thả",
+        "text": "Nhãn dán được bấm ra ngay lúc bạn thả tay."
+      },
+      {
+        "title": "Cất và gửi",
+        "text": "Cất vào bộ sưu tập là dùng được ngay trong Tin nhắn và bàn phím."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Dùng ở đâu, đổi ở đâu",
+    "rows": [
+      [
+        "Tin nhắn",
+        "＋ cạnh ô nhập ▸ Nhãn dán ▸ Nhãn dán Punching"
+      ],
+      [
+        "Ứng dụng khác",
+        "Bật bàn phím Punching, chuyển bằng nút quả địa cầu rồi chọn và dán"
+      ],
+      [
+        "Bất cứ đâu",
+        "Chạm giữ nhãn dán để sao chép, rồi dán"
+      ],
+      [
+        "Nhãn dán giấy",
+        "⋯ trong bộ sưu tập ▸ Sử dụng ▸ Tờ nhãn dán để in (PDF)"
+      ],
+      [
+        "Nền giấy và thứ tự",
+        "⋯ trong bộ sưu tập ▸ Trang trí tự do"
+      ],
+      [
+        "Ảnh cũ",
+        "Nhập từ Ảnh trong bộ sưu tập"
+      ],
+      [
+        "Hình dạng khi bấm",
+        "Cài đặt ▸ Bấm ▸ Hình dạng mặc định"
+      ],
+      [
+        "Xem chuyển động",
+        "Cài đặt ▸ Hiển thị ▸ Tự phát chuyển động"
+      ],
+      [
+        "Mở nhanh",
+        "Mở camera Punching trong Phím tắt hoặc Trung tâm điều khiển"
+      ]
+    ],
+    "note": "Cài đặt nằm ở nút bánh răng góc trên bên phải màn hình camera."
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "items": [
+      {
+        "q": "Nhãn dán không chuyển động.",
+        "a": "Ở góc trên bên phải camera, vào Cài đặt ▸ Hiển thị và kiểm tra Tự phát chuyển động đã bật. Sau đó chạm vào nhãn dán và xem Chuyển động bên dưới Hình dạng đã bật chưa. Chuyển động luôn được ghi lại, nên lúc nào bật cũng được. Ảnh nhập từ ứng dụng Ảnh chỉ có một khung hình nên không chuyển động."
+      },
+      {
+        "q": "Tôi nhận được con tem thay vì ảnh tách nền.",
+        "a": "Cảnh không có gì để tách, như phong cảnh, sẽ tự động được bấm thành con tem. Chạm vào nhãn dán để đổi trong Hình dạng bất cứ lúc nào. Nếu muốn bấm thành con tem ngay từ đầu, hãy đổi Cài đặt ▸ Bấm ▸ Hình dạng mặc định."
+      },
+      {
+        "q": "Không thấy nhãn dán trong Tin nhắn.",
+        "a": "Trong Tin nhắn, chạm nút ＋ cạnh ô nhập ▸ Nhãn dán rồi tìm Nhãn dán Punching. Mục này xuất hiện khi bạn đã bấm ít nhất một nhãn dán trong Punching, và nếu có từ hai bộ sưu tập trở lên, bạn có thể xem theo từng bộ. Hướng dẫn chi tiết có trong Cài đặt ▸ Sử dụng ▸ Dùng trong Tin nhắn và bàn phím."
+      },
+      {
+        "q": "Bật bàn phím như thế nào?",
+        "a": "Trong Cài đặt ▸ Sử dụng ▸ Dùng trong Tin nhắn và bàn phím, chạm “Mở Cài đặt”, rồi vào Bàn phím ▸ bật Nhãn dán Punching. Để dán nhãn dán cần Cho phép truy cập đầy đủ, nhưng bàn phím không đọc hay gửi những gì bạn gõ và không kết nối internet. Sau đó, trong bất kỳ ứng dụng nào, chạm nút quả địa cầu để chuyển sang Nhãn dán Punching."
+      },
+      {
+        "q": "Tôi muốn in thành nhãn dán thật.",
+        "a": "Chạm ⋯ ở góc trên bên phải bộ sưu tập ▸ Sử dụng ▸ Tờ nhãn dán để in (PDF). Bạn sẽ có tệp PDF 300dpi của cả bộ sưu tập, kèm đường cắt hình con tem, in thẳng lên giấy nhãn dán bằng máy in ở nhà hoặc mang ra tiệm in. Các bước chi tiết có trong Hướng dẫn in ở cùng menu."
+      },
+      {
+        "q": "Những Collection tôi tạo trước đây đi đâu rồi?",
+        "a": "Từ phiên bản 1.0.1, nhãn dán chỉ còn một cách gom duy nhất là bộ sưu tập. Mỗi Collection cũ đã trở thành bộ sưu tập cùng tên, giữ nguyên nhãn dán, nền giấy và thứ tự bên trong."
+      },
+      {
+        "q": "Có chấm xanh lá trên thanh trạng thái.",
+        "a": "Đó là đèn báo camera của iOS. Đèn chỉ sáng khi màn hình camera đang mở. Khi bạn mở bộ sưu tập, camera tạm dừng và đèn tắt."
+      },
+      {
+        "q": "Xóa nhãn dán thì sao?",
+        "a": "Nhãn dán, ảnh gốc và dữ liệu chuyển động bị xóa vĩnh viễn khỏi thiết bị, đồng thời biến mất khỏi ngăn nhãn dán của Tin nhắn. Không thể khôi phục, nên hãy cân nhắc trước khi xóa."
+      },
+      {
+        "q": "Ảnh và nhãn dán được lưu ở đâu?",
+        "a": "Chỉ trên thiết bị của bạn. Không có tài khoản, không có máy chủ riêng và không có quảng cáo. Thứ duy nhất rời khỏi thiết bị là thống kê sử dụng ẩn danh, báo cáo lỗi và góp ý do chính bạn gửi. Xem chi tiết trong Chính sách quyền riêng tư."
+      },
+      {
+        "q": "Có thật sự miễn phí không?",
+        "a": "Có, mọi tính năng đều miễn phí. Nếu thích, bạn có thể gửi tiền tip cho nhà phát triển ngay trong ứng dụng, nhưng tip không mở khóa thêm gì cả."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Hôm nay thấy gì dễ thương?\nBấm nó thành nhãn dán nhé",
+    "cta": "Tải miễn phí trên App Store"
+  },
+  "ui": {
+    "skip": "Chuyển đến nội dung",
+    "languages": "Ngôn ngữ",
+    "privacy": "Chính sách quyền riêng tư",
+    "contact": "Có câu hỏi hay góp ý, hãy gửi về {email}. Chúng tôi thường trả lời trong 2 đến 3 ngày. Bạn cũng có thể báo lỗi và đề xuất tính năng qua mục issue trên GitHub tại M1zz/StampCamera."
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "title": "Punching: kameran som gör stunden till ett rörligt klistermärke",
+  "description": "Håll nere och riv loss det du ser som ett rörligt klistermärke. Klipp ut motivet eller gör ett frimärke och skicka från Meddelanden. Helt gratis.",
+  "hero": {
+    "headline": "Håll nere.\nStunden blir ett klistermärke.",
+    "lead": "Ställ in scenen i hålslagets fönster, håll nere och släpp. Hunden klipps ut efter sin egen form, med en kort stunds rörelse från strax före och efter trycket. Skicka den direkt från Meddelanden eller tangentbordet.",
+    "cta": "Hämta gratis i App Store",
+    "note": "Alla funktioner är gratis. Klistermärken och foton stannar på din enhet."
+  },
+  "demo": {
+    "title": "Testa själv",
+    "lead": "Välj en scen, håll ned hålslagsknappen och släpp. Prova sedan en annan form och en annan look.",
+    "scenes": [
+      "Valp",
+      "Glass",
+      "Strand"
+    ],
+    "hold": "Håll nere för att riva loss",
+    "holding": "Släpp för att riva loss",
+    "empty": "Ditt klistermärke hamnar här",
+    "note": "Webbdemon använder foton som vi valt i förväg. Urklippen och lookerna är gjorda i förväg på samma sätt som appen gör dem. I appen river du loss det kameran ser, och klistermärket behåller rörelsen runt trycket.",
+    "shape": "Form",
+    "cutout": "Urklippt",
+    "stamp": "Frimärke",
+    "look": "Look",
+    "arrived": "Ditt klistermärke har kommit!",
+    "noSubject": "Det fanns inget att klippa ut, så det revs loss som ett frimärke",
+    "inks": [
+      "Original",
+      "Sepia",
+      "Svartvitt",
+      "Blekt",
+      "Livfull",
+      "Cyan"
+    ]
+  },
+  "problem": {
+    "title": "De bästa stunderna somnar in i Bilder",
+    "text": "Du fångar hunden precis när den räcker ut tungan. Men ska det bli ett klistermärke måste du leta upp bilden, klippa ut den och öppna ännu en klistermärkesapp. Under tiden har chatten för länge sedan gått vidare. Punching river loss klistermärket där du fotar, och så fort du lägger det i ett album ligger det i klistermärkeslådan i Meddelanden."
+  },
+  "features": [
+    {
+      "title": "Motiv klipps ut, landskap blir frimärken",
+      "text": "Finns det något att klippa ut, som en människa, ett husdjur eller en sak, får du just det. Finns det inget, som i ett landskap, rivs det loss som ett frimärke med tandad kant.\nEn kort stunds rörelse runt trycket följer med, så klistermärket rör sig.",
+      "shot": "05-camera"
+    },
+    {
+      "title": "Direkt i Meddelanden och på tangentbordet",
+      "text": "Lossrivna klistermärken dyker upp i klistermärkeslådan i Meddelanden. Slå på Punching-tangentbordet så kan du välja och klistra in dem i andra appar också.\nRörliga klistermärken kommer fram i rörelse. Håll ett klistermärke nedtryckt för att kopiera det och klistra in det var du vill.",
+      "shot": "06-chat"
+    },
+    {
+      "title": "Form och look, även efteråt",
+      "text": "Växla mellan urklippt och frimärke, mellan rörelse och stillbild, när du vill. Originalfotot sparas, så allt förblir lika skarpt som första gången hur många gånger du än byter.\nVälj en look bland Original, Sepia, Svartvitt, Blekt, Livfull och Cyan och lägg till några ord, datum och plats.",
+      "shot": "03-detail"
+    },
+    {
+      "title": "Samla i album, skriv ut på papper",
+      "text": "Gör ett album för varje tema, så kan du välja album för album även i Meddelanden och på tangentbordet. Välj sidor som kraft, rutat, linjerat eller pergament och ordna klistermärkena som du vill.\nGör ett album till en PDF för utskrift med skärlinjer i frimärksform och skriv ut den direkt på klistermärkespapper.",
+      "shot": "04-arrange"
+    }
+  ],
+  "steps": {
+    "title": "Kom igång i tre steg",
+    "items": [
+      {
+        "title": "Sikta",
+        "text": "Placera det du vill fånga i fönstret mitt i kameran."
+      },
+      {
+        "title": "Håll nere och släpp",
+        "text": "Klistermärket rivs loss i samma stund som du släpper."
+      },
+      {
+        "title": "Spara och skicka",
+        "text": "Lägg det i ett album så finns det direkt i Meddelanden och på tangentbordet."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Var du använder det och var du ändrar det",
+    "rows": [
+      [
+        "Meddelanden",
+        "＋ bredvid textfältet ▸ Klistermärken ▸ Punching-klistermärken"
+      ],
+      [
+        "Andra appar",
+        "Slå på Punching-tangentbordet, byt till det med jordglobsknappen, välj och klistra in"
+      ],
+      [
+        "Överallt",
+        "Håll ett klistermärke nedtryckt, kopiera och klistra in"
+      ],
+      [
+        "Pappersklistermärken",
+        "⋯ i ett album ▸ Använd ▸ Klistermärkesark för utskrift (PDF)"
+      ],
+      [
+        "Sidor och ordning",
+        "⋯ i ett album ▸ Dekorera fritt"
+      ],
+      [
+        "Äldre foton",
+        "Importera från Bilder i ett album"
+      ],
+      [
+        "Första formen",
+        "Inställningar ▸ Riv loss ▸ Standardform"
+      ],
+      [
+        "Se rörelse",
+        "Inställningar ▸ Visning ▸ Spela upp rörelse automatiskt"
+      ],
+      [
+        "Snabbstart",
+        "Öppna Punching-kameran i Genvägar eller Kontrollcenter"
+      ]
+    ],
+    "note": "Inställningar hittar du under kugghjulet uppe till höger i kameran."
+  },
+  "faq": {
+    "title": "Vanliga frågor",
+    "items": [
+      {
+        "q": "Mitt klistermärke rör sig inte.",
+        "a": "Gå till Inställningar ▸ Visning uppe till höger i kameran och kontrollera att Spela upp rörelse automatiskt är på. Tryck sedan på klistermärket och kontrollera att Rörelse är på under Form. Rörelsen spelas alltid in, så du kan slå på den när som helst. Foton som importerats från Bilder-appen är en enda bild och rör sig därför inte."
+      },
+      {
+        "q": "Jag fick ett frimärke i stället för ett urklippt klistermärke.",
+        "a": "Scener utan något att klippa ut, som ett landskap, rivs automatiskt loss som ett frimärke. Tryck på klistermärket för att ändra det under Form när som helst. Vill du ha frimärken från början ändrar du Inställningar ▸ Riv loss ▸ Standardform."
+      },
+      {
+        "q": "Jag ser inte mina klistermärken i Meddelanden.",
+        "a": "I Meddelanden trycker du på ＋ bredvid textfältet ▸ Klistermärken och letar upp Punching-klistermärken. De dyker upp när du har rivit loss minst ett klistermärke i Punching, och har du fler album kan du bläddra album för album. Steg för steg finns i Inställningar ▸ Använd ▸ Använd i Meddelanden och på tangentbordet."
+      },
+      {
+        "q": "Hur slår jag på tangentbordet?",
+        "a": "Tryck på Öppna Inställningar under Inställningar ▸ Använd ▸ Använd i Meddelanden och på tangentbordet och slå på Tangentbord ▸ Punching-klistermärken. För att klistra in klistermärken krävs Tillåt fullständig åtkomst, men tangentbordet läser eller skickar aldrig det du skriver och ansluter aldrig till internet. Tryck sedan på jordglobsknappen i valfri app för att byta till Punching-klistermärken."
+      },
+      {
+        "q": "Kan jag skriva ut riktiga klistermärken?",
+        "a": "Tryck på ⋯ uppe till höger i ett album ▸ Använd ▸ Klistermärkesark för utskrift (PDF). Du får en PDF på 300 dpi för hela albumet med skärlinjer i frimärksform, redo för klistermärkespapper i skrivaren hemma eller hos ett tryckeri. Utskriftsguide i samma meny tar dig igenom det steg för steg."
+      },
+      {
+        "q": "Vart tog mina gamla samlingar vägen?",
+        "a": "Från och med 1.0.1 grupperas klistermärken bara på ett sätt: i album. Varje samling blev ett album med samma namn, och klistermärkena, sidorna och ordningen följde med som de var."
+      },
+      {
+        "q": "Det lyser ett grönt ljus i statusfältet.",
+        "a": "Det är kameraindikatorn i iOS. Den lyser bara medan kameraskärmen visas. När du öppnar ett album stannar kameran och ljuset släcks."
+      },
+      {
+        "q": "Vad händer när jag raderar ett klistermärke?",
+        "a": "Klistermärket, originalfotot och rörelsedatan raderas permanent från din enhet och försvinner även från klistermärkeslådan i Meddelanden. Det går inte att återställa, så tänk efter innan du raderar."
+      },
+      {
+        "q": "Var sparas mina foton och klistermärken?",
+        "a": "Bara på din enhet. Det finns inget konto, ingen egen server och inga annonser. Det enda som lämnar enheten är anonym användningsstatistik, felrapporter och feedback som du själv skickar. Mer finns i integritetspolicyn."
+      },
+      {
+        "q": "Är det verkligen gratis?",
+        "a": "Ja, alla funktioner är gratis. Gillar du appen kan du ge utvecklaren dricks i appen, men dricks låser inte upp något."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Såg du något gulligt i dag?\nRiv loss det som ett klistermärke.",
+    "cta": "Hämta gratis i App Store"
+  },
+  "ui": {
+    "skip": "Hoppa till innehållet",
+    "languages": "Språk",
+    "privacy": "Integritetspolicy",
+    "contact": "Frågor eller feedback? Skriv till {email}. Vi svarar oftast inom 2–3 dagar. Buggar och funktionsförslag kan du också rapportera på GitHub under M1zz/StampCamera."
+  }
+}

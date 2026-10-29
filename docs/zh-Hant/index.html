@@ -1,96 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — 長按撕下瞬間，變成會動的貼圖</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/zh-Hant/index.html">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC",
-                 sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching：按住一下，把眼前的瞬間撕成會動的貼圖</title>
+  <meta name="description" content="按住取景，把相機裡的畫面撕成會動的貼圖。可以只去背留下主角，也能撕成郵票形狀，在訊息和鍵盤裡直接傳送。所有功能免費。">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching：按住一下，把眼前的瞬間撕成會動的貼圖">
+  <meta property="og:description" content="按住取景，把相機裡的畫面撕成會動的貼圖。可以只去背留下主角，也能撕成郵票形狀，在訊息和鍵盤裡直接傳送。所有功能免費。">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/zh-Hant/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">長按撕下的瞬間，變成會動的貼圖。</p>
-    <p class="desc">
-      Punching 是一款 iOS 相機 App：用打孔器長按取景，就能把看到的畫面撕成會動的貼圖。
-      可以只擷取主體，也可以撕成鋸齒郵票形狀，收進收藏冊後，
-      透過訊息、鍵盤傳送，或列印成真正的貼紙。
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">支援 · 聯絡</a>
-      <a class="btn ghost" href="./privacy.html">隱私權政策</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header class="bar">
+    <a class="brand" href="../zh-Hant/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">語言</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>按住一下，<br>這一刻就成了貼圖</h1>
+        <p class="lead">把畫面對準打孔窗，按住再放開。狗狗會照著狗狗的輪廓去背，按下前後那一小段動作也會一起留下。撕下的貼圖可以直接在訊息和鍵盤裡傳出去。</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">在 App Store 免費下載</a><a class="try" href="#try">親手撕一張看看 ↓</a></div>
+        <p class="muted small">所有功能免費。貼圖和照片只儲存在你的裝置上。</p>
+      </div>
+      <div class="phone"><img src="../img/zh-Hant/01-reveal.jpg" alt="按住一下， 這一刻就成了貼圖" width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>親手撕一張看看</h2>
+      <p class="muted">選一個畫面，按住打孔按鈕再放開。撕下來之後，也可以換換形狀和色調。</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;親手撕一張看看&quot;, &quot;lead&quot;: &quot;選一個畫面，按住打孔按鈕再放開。撕下來之後，也可以換換形狀和色調。&quot;, &quot;scenes&quot;: [&quot;狗狗&quot;, &quot;冰淇淋&quot;, &quot;海邊&quot;], &quot;hold&quot;: &quot;按住撕下&quot;, &quot;holding&quot;: &quot;放開就撕下來&quot;, &quot;empty&quot;: &quot;撕下的貼圖會出現在這裡&quot;, &quot;note&quot;: &quot;網頁體驗使用我們事先挑好的照片。去背和色調都是用和 App 相同的方法預先做好的。在 App 裡，你撕下的是相機看到的畫面，按下前後的動作也會留在貼圖裡。&quot;, &quot;shape&quot;: &quot;形狀&quot;, &quot;cutout&quot;: &quot;去背&quot;, &quot;stamp&quot;: &quot;郵票&quot;, &quot;look&quot;: &quot;色調&quot;, &quot;arrived&quot;: &quot;貼圖送到囉！&quot;, &quot;noSubject&quot;: &quot;沒有可去背的主體，已撕成郵票形狀&quot;, &quot;inks&quot;: [&quot;原圖&quot;, &quot;棕褐&quot;, &quot;黑白&quot;, &quot;褪色&quot;, &quot;鮮豔&quot;, &quot;青藍&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>可愛的瞬間，總是睡在相簿裡</h2>
+      <p>好不容易拍到狗狗吐舌頭，想做成貼圖傳給朋友，還得翻相簿、去背、再打開另一個貼圖 App。弄好的時候，聊天早就換了話題。Punching 在拍下的當下就撕出貼圖，放進收藏冊的那一刻，它已經在訊息的貼圖抽屜裡等著了。</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>主角去背，風景撕成郵票</h2>
+        <p>畫面裡有人、寵物或物品這類能去背的主角，就只留下它的樣子；像風景這樣沒有主角的畫面，就撕成鋸齒邊的郵票形狀。<br>按下前後的一小段動作會一起記錄下來，所以貼圖是會動的。</p>
+      </div>
+      <div class="phone"><img src="../img/zh-Hant/05-camera.jpg" alt="主角去背，風景撕成郵票" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>在訊息和鍵盤裡直接用</h2>
+        <p>撕下的貼圖會出現在「訊息」的貼圖抽屜裡。打開 Punching 鍵盤後，在其他 App 裡也能挑選、貼上。<br>會動的貼圖傳出去依然會動。按住貼圖拷貝，就能貼到任何地方。</p>
+      </div>
+      <div class="phone"><img src="../img/zh-Hant/06-chat.jpg" alt="在訊息和鍵盤裡直接用" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>撕下之後，形狀和色調隨時改</h2>
+        <p>去背和郵票、動態和靜止，隨時切換。原始照片一直保留，改幾次都和第一次一樣清晰。<br>還能從原圖、棕褐、黑白、褪色、鮮豔、青藍中選色調，並留下一句話、日期和地點。</p>
+      </div>
+      <div class="phone"><img src="../img/zh-Hant/03-detail.jpg" alt="撕下之後，形狀和色調隨時改" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>收進收藏冊，再印成紙貼紙</h2>
+        <p>依主題建立收藏冊，在訊息和鍵盤裡也能依收藏冊挑選。牛皮紙、方格、橫線、羊皮紙等底紙任你選，順序也能自由安排。<br>還能把收藏冊做成帶郵票形狀裁切線的可列印 PDF，直接印在貼紙用紙上。</p>
+      </div>
+      <div class="phone"><img src="../img/zh-Hant/04-arrange.jpg" alt="收進收藏冊，再印成紙貼紙" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>三個步驟就能開始</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>對準打孔窗</h3><p>把想留下的東西放進相機中間的窗口。</p></li>
+<li class="card"><span class="n">2</span><h3>按住再放開</h3><p>放開的那一瞬間，貼圖就撕下來了。</p></li>
+<li class="card"><span class="n">3</span><h3>收好，傳出去</h3><p>放進收藏冊後，訊息和鍵盤裡馬上就能用。</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>在哪裡用，在哪裡改</h2>
+      <div class="card table">
+        <dl><div><dt>訊息</dt><dd>輸入框旁的 ＋ ▸ 貼圖 ▸ Punching 貼圖</dd></div><div><dt>其他 App</dt><dd>開啟 Punching 鍵盤，用地球按鈕切換後挑選貼上</dd></div><div><dt>任何地方</dt><dd>按住貼圖拷貝，再貼上</dd></div><div><dt>紙貼紙</dt><dd>收藏冊的 ⋯ ▸ 使用 ▸ 可列印貼紙頁（PDF）</dd></div><div><dt>底紙和順序</dt><dd>收藏冊的 ⋯ ▸ 自由裝飾</dd></div><div><dt>以前的照片</dt><dd>在收藏冊裡點「從照片匯入」</dd></div><div><dt>預設撕取形狀</dt><dd>設定 ▸ 撕取 ▸ 預設形狀</dd></div><div><dt>顯示動態</dt><dd>設定 ▸ 顯示 ▸ 自動播放動態</dd></div><div><dt>快速開啟</dt><dd>捷徑或控制中心裡的「開啟 Punching 相機」</dd></div></dl>
+      </div>
+      <p class="muted">設定在相機畫面右上角的齒輪按鈕裡。</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>常見問題</h2>
+      <div class="faq"><details><summary>貼圖不會動。</summary><p>請到相機右上角的設定 ▸ 顯示，確認「自動播放動態」已開啟；再點開貼圖，看看形狀下方的「動態」有沒有打開。動態一定會一起記錄，所以隨時都能打開。從「照片」App 匯入的照片只有一張，所以不會動。</p></details>
+<details><summary>出來的不是去背，而是郵票形狀。</summary><p>像風景這樣沒有可去背主角的畫面，會自動撕成郵票形狀。點開貼圖，隨時可以在「形狀」裡更改。如果想一開始就撕成郵票形狀，請到設定 ▸ 撕取 ▸ 預設形狀修改。</p></details>
+<details><summary>在「訊息」裡看不到貼圖。</summary><p>請在「訊息」輸入框旁點一下 ＋ ▸ 貼圖，找到 Punching 貼圖。在 Punching 撕下至少一張貼圖後它才會出現；如果有兩個以上的收藏冊，可以依收藏冊瀏覽。詳細步驟在設定 ▸ 使用 ▸ 在訊息和鍵盤中使用。</p></details>
+<details><summary>鍵盤要怎麼開啟？</summary><p>在設定 ▸ 使用 ▸ 在訊息和鍵盤中使用裡點一下「開啟設定」，然後到鍵盤 ▸ 開啟 Punching 貼圖。貼上貼圖需要「允許完整取用」，但鍵盤不會讀取或傳送你輸入的文字，也不會連上網路。之後在任何 App 裡點一下鍵盤上的地球按鈕，切換到 Punching 貼圖就行了。</p></details>
+<details><summary>想印成真正的貼紙。</summary><p>點一下收藏冊右上角的 ⋯ ▸ 使用 ▸ 可列印貼紙頁（PDF）。會以收藏冊為單位產生帶郵票形狀裁切線的 300dpi 列印用 PDF，可以直接用家裡的印表機印在貼紙用紙上，也能拿去印刷店。詳細步驟請見同一選單裡的列印指南。</p></details>
+<details><summary>以前建立的合輯去哪了？</summary><p>從 1.0.1 開始，貼圖統一用收藏冊來整理。每個合輯都變成同名的收藏冊，裡面的貼圖、底紙和順序也原封不動搬了過去。</p></details>
+<details><summary>狀態列亮起了綠點。</summary><p>這是 iOS 的相機使用指示燈。只在相機畫面開著時亮起；打開收藏冊時相機會暫停，綠點也就熄了。</p></details>
+<details><summary>刪除貼圖會怎樣？</summary><p>貼圖、原始照片和動態資料會從裝置上永久刪除，也會從「訊息」的貼圖抽屜裡消失。刪除後無法復原，請小心操作。</p></details>
+<details><summary>照片和貼圖儲存在哪裡？</summary><p>全部只儲存在你的裝置上。沒有帳號，沒有我們自己的伺服器，也沒有廣告。離開裝置的只有匿名使用統計、錯誤報告，以及你主動傳送的意見回饋。詳情請見隱私權政策。</p></details>
+<details><summary>真的免費嗎？</summary><p>是的，所有功能都免費。喜歡的話可以在 App 裡給開發者小費，但小費不會解鎖任何功能。</p></details></div>
+      <p class="contact">有任何問題或建議，請寄信到 <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>，我們通常會在 2 到 3 天內回覆。也可以到 GitHub（M1zz/StampCamera）回報問題或提出功能建議。</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>今天遇見的可愛瞬間，<br>撕成貼圖留下來</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">在 App Store 免費下載</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="語言"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">隱私權政策</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

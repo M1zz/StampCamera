@@ -1,95 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching: segure e faça um adesivo com movimento</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: a câmera que transforma o momento em adesivo animado</title>
+  <meta name="description" content="Segure e destaque o que você vê como um adesivo animado. Recorte o que importa ou destaque como selo e envie pelo Mensagens. Tudo de graça.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: a câmera que transforma o momento em adesivo animado">
+  <meta property="og:description" content="Segure e destaque o que você vê como um adesivo animado. Recorte o que importa ou destaque como selo e envie pelo Mensagens. Tudo de graça.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/pt-BR/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/pt-BR/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Segure e transforme o momento em um adesivo com movimento.</p>
-    <p class="desc">
-      Um app de câmera para iOS que destaca como adesivo animado a cena que você vê
-      pelo furador. Recorte só o que importa ou destaque em forma de selo dentado,
-      reúna tudo em álbuns e envie pelo Mensagens ou pelo teclado, ou imprima como adesivos de verdade.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Ajuda e contato</a>
-      <a class="btn ghost" href="./privacy.html">Política de privacidade</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+  <header class="bar">
+    <a class="brand" href="../pt-BR/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Idioma</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Segure,<br>e o momento vira adesivo</h1>
+        <p class="lead">Enquadre a cena na janela do furador, segure e solte. Seu cachorro sai recortado no formato dele, com o breve movimento de antes e depois do toque. Dá para enviar na hora pelo Mensagens ou pelo teclado.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Baixe grátis na App Store</a><a class="try" href="#try">Destaque um você mesmo ↓</a></div>
+        <p class="muted small">Todos os recursos são gratuitos. Seus adesivos e fotos ficam só no seu aparelho.</p>
+      </div>
+      <div class="phone"><img src="../img/pt-BR/01-reveal.jpg" alt="Segure, e o momento vira adesivo" width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Destaque um você mesmo</h2>
+      <p class="muted">Escolha uma cena, segure o botão do furador e solte. Depois, experimente outra forma e outro estilo.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Destaque um você mesmo&quot;, &quot;lead&quot;: &quot;Escolha uma cena, segure o botão do furador e solte. Depois, experimente outra forma e outro estilo.&quot;, &quot;scenes&quot;: [&quot;Cachorrinho&quot;, &quot;Sorvete&quot;, &quot;Praia&quot;], &quot;hold&quot;: &quot;Segure para destacar&quot;, &quot;holding&quot;: &quot;Solte para destacar&quot;, &quot;empty&quot;: &quot;Seu adesivo aparece aqui&quot;, &quot;note&quot;: &quot;A demo na web usa fotos que nós escolhemos. Os recortes e estilos foram preparados antes, do mesmo jeito que o app faz. No app, você destaca o que a câmera vê, e o adesivo guarda o movimento de antes e depois do toque.&quot;, &quot;shape&quot;: &quot;Forma&quot;, &quot;cutout&quot;: &quot;Recortado&quot;, &quot;stamp&quot;: &quot;Selo&quot;, &quot;look&quot;: &quot;Estilo&quot;, &quot;arrived&quot;: &quot;Seu adesivo chegou!&quot;, &quot;noSubject&quot;: &quot;Nada para recortar, então foi destacado em forma de selo&quot;, &quot;inks&quot;: [&quot;Original&quot;, &quot;Sépia&quot;, &quot;Preto e branco&quot;, &quot;Desbotado&quot;, &quot;Vívido&quot;, &quot;Ciano&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Os momentos fofos ficam esquecidos na galeria</h2>
+      <p>Você flagra seu cachorro de língua de fora. Para mandar como adesivo, precisa achar a foto, recortar e ainda abrir outro app de adesivos. Até lá, a conversa já mudou de assunto. O Punching destaca o adesivo na hora da foto e, assim que você guarda, ele já está na gaveta de adesivos do Mensagens.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>O que importa recortado, a paisagem em selo</h2>
+        <p>Se houver algo para recortar, como uma pessoa, um pet ou um objeto, você recebe só isso. Se não houver, como numa paisagem, sai um selo de borda serrilhada.<br>O breve movimento de antes e depois do toque vem junto, então o adesivo se mexe.</p>
+      </div>
+      <div class="phone"><img src="../img/pt-BR/05-camera.jpg" alt="O que importa recortado, a paisagem em selo" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Direto no Mensagens e no teclado</h2>
+        <p>Os adesivos destacados aparecem na gaveta de adesivos do Mensagens. Ative o teclado do Punching para escolher e colar também em outros apps.<br>Adesivos com movimento chegam se mexendo. Mantenha um adesivo pressionado para copiar e cole onde quiser.</p>
+      </div>
+      <div class="phone"><img src="../img/pt-BR/06-chat.jpg" alt="Direto no Mensagens e no teclado" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Forma e estilo, mesmo depois</h2>
+        <p>Troque quando quiser entre recortado e selo, entre movimento e imagem parada. A foto original fica guardada, então tudo continua nítido como na primeira vez, não importa quantas vezes você mude.<br>Escolha um estilo entre Original, Sépia, Preto e branco, Desbotado, Vívido e Ciano, e anote algumas palavras, a data e o lugar.</p>
+      </div>
+      <div class="phone"><img src="../img/pt-BR/03-detail.jpg" alt="Forma e estilo, mesmo depois" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Junte em álbuns, imprima em papel</h2>
+        <p>Crie um álbum para cada tema e escolha álbum por álbum também no Mensagens e no teclado. Escolha páginas como kraft, quadriculado, pautado ou pergaminho e organize a ordem do seu jeito.<br>Transforme um álbum em um PDF para imprimir com linhas de corte em forma de selo e imprima direto em papel adesivo.</p>
+      </div>
+      <div class="phone"><img src="../img/pt-BR/04-arrange.jpg" alt="Junte em álbuns, imprima em papel" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Três passos para começar</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Enquadre</h3><p>Coloque o que você quer na janela no meio da câmera.</p></li>
+<li class="card"><span class="n">2</span><h3>Segure e solte</h3><p>O adesivo é destacado no instante em que você solta.</p></li>
+<li class="card"><span class="n">3</span><h3>Guarde e envie</h3><p>Adicione a um álbum e ele aparece na hora no Mensagens e no teclado.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Onde usar e onde mudar</h2>
+      <div class="card table">
+        <dl><div><dt>Mensagens</dt><dd>＋ ao lado do campo de texto ▸ Figurinhas ▸ Punching Adesivos</dd></div><div><dt>Outros apps</dt><dd>Ative o teclado do Punching, troque para ele com a tecla de globo, escolha e cole</dd></div><div><dt>Em qualquer lugar</dt><dd>Mantenha um adesivo pressionado para copiar e depois cole</dd></div><div><dt>Adesivos de papel</dt><dd>⋯ no álbum ▸ Usar ▸ Folha de adesivos para imprimir (PDF)</dd></div><div><dt>Páginas e ordem</dt><dd>⋯ no álbum ▸ Decorar livremente</dd></div><div><dt>Fotos antigas</dt><dd>Importar das Fotos, dentro do álbum</dd></div><div><dt>Forma ao destacar</dt><dd>Ajustes ▸ Destacar ▸ Forma padrão</dd></div><div><dt>Ver o movimento</dt><dd>Ajustes ▸ Visualização ▸ Reproduzir movimento automaticamente</dd></div><div><dt>Abrir rápido</dt><dd>Abrir a câmera do Punching pelos Atalhos ou pela Central de Controle</dd></div></dl>
+      </div>
+      <p class="muted">Os ajustes ficam no botão de engrenagem, no canto superior direito da câmera.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Perguntas frequentes</h2>
+      <div class="faq"><details><summary>Meu adesivo não se mexe.</summary><p>Na câmera, no canto superior direito, abra Ajustes ▸ Visualização e confira se Reproduzir movimento automaticamente está ativado. Depois toque no adesivo e veja se Movimento está ativado em Forma. O movimento é sempre guardado, então você pode ativá-lo quando quiser. Fotos importadas do app Fotos são uma imagem só, por isso não se mexem.</p></details>
+<details><summary>Saiu em forma de selo em vez de recortado.</summary><p>Cenas sem nada para recortar, como uma paisagem, são destacadas automaticamente em forma de selo. Toque no adesivo para mudar em Forma quando quiser. Se prefere selos desde o início, mude Ajustes ▸ Destacar ▸ Forma padrão.</p></details>
+<details><summary>Não vejo meus adesivos no Mensagens.</summary><p>No Mensagens, toque no botão ＋ ao lado do campo de texto ▸ Figurinhas e procure Punching Adesivos. Eles aparecem depois que você destaca pelo menos um adesivo no Punching e, se tiver mais de um álbum, dá para ver álbum por álbum. O passo a passo está em Ajustes ▸ Usar ▸ Usar no Mensagens e no teclado.</p></details>
+<details><summary>Como ativo o teclado?</summary><p>Em Ajustes ▸ Usar ▸ Usar no Mensagens e no teclado, toque em Abrir Ajustes e ative Teclados ▸ Punching Adesivos. Para colar adesivos é preciso ativar “Permitir Acesso Total”, mas o teclado nunca lê nem envia o que você digita e nunca se conecta à internet. Depois, em qualquer app, toque na tecla de globo para trocar para Punching Adesivos.</p></details>
+<details><summary>Dá para imprimir adesivos de verdade?</summary><p>Toque em ⋯ no canto superior direito do álbum ▸ Usar ▸ Folha de adesivos para imprimir (PDF). Você recebe um PDF de 300 dpi do álbum inteiro com linhas de corte em forma de selo, pronto para papel adesivo na impressora de casa ou numa gráfica. O Guia de impressão, no mesmo menu, explica cada passo.</p></details>
+<details><summary>Onde foram parar as coleções que eu fiz antes?</summary><p>A partir da 1.0.1, os adesivos são agrupados de um jeito só: em álbuns. Cada coleção virou um álbum com o mesmo nome, com os adesivos, as páginas e a ordem do jeito que estavam.</p></details>
+<details><summary>Aparece uma luz verde na barra de status.</summary><p>É o indicador de uso da câmera do iOS. Ele só acende enquanto a tela da câmera está aberta. Ao abrir um álbum, a câmera é pausada e a luz apaga.</p></details>
+<details><summary>O que acontece se eu apagar um adesivo?</summary><p>O adesivo, a foto original e os dados de movimento são apagados do aparelho para sempre e também somem da gaveta de adesivos do Mensagens. Não dá para recuperar, então pense bem antes de apagar.</p></details>
+<details><summary>Onde ficam minhas fotos e adesivos?</summary><p>Só no seu aparelho. Não tem conta, nem servidor próprio, nem anúncios. O que sai do aparelho são apenas estatísticas de uso anônimas, relatórios de erro e o feedback que você decidir enviar. Os detalhes estão na política de privacidade.</p></details>
+<details><summary>É grátis mesmo?</summary><p>Sim, todos os recursos são gratuitos. Se gostar, você pode deixar uma gorjeta para o desenvolvedor dentro do app, mas a gorjeta não libera nada.</p></details></div>
+      <p class="contact">Dúvidas ou sugestões? Escreva para <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Costumamos responder em 2 ou 3 dias. Também recebemos relatos de bugs e sugestões de recursos no GitHub (M1zz/StampCamera).</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Viu algo fofo hoje?<br>Transforme em adesivo.</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Baixe grátis na App Store</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Idioma"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Política de privacidade</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

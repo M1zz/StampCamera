@@ -1,95 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching: mantén pulsado y haz un sticker con movimiento</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: la cámara que convierte el momento en un sticker con movimiento</title>
+  <meta name="description" content="Mantén pulsado y arranca lo que ves como sticker con movimiento. Recorta lo importante o sácalo como sello y envíalo desde Mensajes. Todo gratis.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: la cámara que convierte el momento en un sticker con movimiento">
+  <meta property="og:description" content="Mantén pulsado y arranca lo que ves como sticker con movimiento. Recorta lo importante o sácalo como sello y envíalo desde Mensajes. Todo gratis.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/es/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/es/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Mantén pulsado y convierte el momento en un sticker con movimiento.</p>
-    <p class="desc">
-      Una app de cámara para iOS que arranca como sticker con movimiento lo que ves
-      con la perforadora. Recorta solo lo importante o arráncalo con forma de sello dentado,
-      reúnelo en álbumes y envíalo desde Mensajes o el teclado, o imprímelo como stickers de verdad.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Ayuda y contacto</a>
-      <a class="btn ghost" href="./privacy.html">Política de privacidad</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="bar">
+    <a class="brand" href="../es/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Idioma</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Mantén pulsado<br>y el momento es un sticker</h1>
+        <p class="lead">Encuadra la escena en la ventana de la perforadora, mantén pulsado y suelta. Tu perro sale recortado con su propia silueta, con el breve movimiento de antes y después de pulsar. Envíalo al momento desde Mensajes o el teclado.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Gratis en la App Store</a><a class="try" href="#try">Arranca uno tú mismo ↓</a></div>
+        <p class="muted small">Todas las funciones son gratis. Tus stickers y fotos se quedan en tu dispositivo.</p>
+      </div>
+      <div class="phone"><img src="../img/es/01-reveal.jpg" alt="Mantén pulsado y el momento es un sticker" width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Arranca uno tú mismo</h2>
+      <p class="muted">Elige una escena, mantén pulsado el botón de la perforadora y suelta. Después, prueba otra forma y otro tono.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Arranca uno tú mismo&quot;, &quot;lead&quot;: &quot;Elige una escena, mantén pulsado el botón de la perforadora y suelta. Después, prueba otra forma y otro tono.&quot;, &quot;scenes&quot;: [&quot;Cachorro&quot;, &quot;Helado&quot;, &quot;Playa&quot;], &quot;hold&quot;: &quot;Mantén para arrancar&quot;, &quot;holding&quot;: &quot;Suelta para arrancar&quot;, &quot;empty&quot;: &quot;Aquí aparecerá tu sticker&quot;, &quot;note&quot;: &quot;La demo web usa fotos que hemos elegido. Los recortes y tonos se prepararon antes, igual que los hace la app. En la app arrancas lo que ve la cámara, y el sticker guarda el movimiento de antes y después de pulsar.&quot;, &quot;shape&quot;: &quot;Forma&quot;, &quot;cutout&quot;: &quot;Recortado&quot;, &quot;stamp&quot;: &quot;Sello&quot;, &quot;look&quot;: &quot;Tono&quot;, &quot;arrived&quot;: &quot;¡Tu sticker ha llegado!&quot;, &quot;noSubject&quot;: &quot;No había nada que recortar, así que se arrancó con forma de sello&quot;, &quot;inks&quot;: [&quot;Original&quot;, &quot;Sepia&quot;, &quot;Blanco y negro&quot;, &quot;Desvaído&quot;, &quot;Intenso&quot;, &quot;Cian&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Los momentos más monos se quedan dormidos en la fototeca</h2>
+      <p>Pillas a tu perro sacando la lengua. Para mandarlo como sticker tienes que buscar la foto, recortarla y abrir otra app de stickers. Para entonces, la conversación ya va por otro tema. Punching arranca el sticker en el mismo sitio donde haces la foto, y en cuanto lo guardas aparece en el cajón de stickers de Mensajes.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Lo importante, recortado; el paisaje, en sello</h2>
+        <p>Si hay algo que recortar, como una persona, una mascota o un objeto, obtienes solo eso. Si no lo hay, como en un paisaje, se arranca como un sello con borde perforado.<br>También se guarda el breve movimiento de antes y después de pulsar, así que el sticker se mueve.</p>
+      </div>
+      <div class="phone"><img src="../img/es/05-camera.jpg" alt="Lo importante, recortado; el paisaje, en sello" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Directo a Mensajes y al teclado</h2>
+        <p>Los stickers que arrancas aparecen en el cajón de stickers de Mensajes. Activa el teclado de Punching y podrás elegirlos y pegarlos también en otras apps.<br>Los stickers con movimiento llegan moviéndose. Mantén pulsado uno para copiarlo y pégalo donde quieras.</p>
+      </div>
+      <div class="phone"><img src="../img/es/06-chat.jpg" alt="Directo a Mensajes y al teclado" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Forma y tono, también después</h2>
+        <p>Cambia cuando quieras entre recortado y sello, entre movimiento y fijo. La foto original se conserva, así que sigue igual de nítido que el primer día por muchas veces que lo cambies.<br>Elige un tono entre Original, Sepia, Blanco y negro, Desvaído, Intenso y Cian, y añade unas palabras, la fecha y el lugar.</p>
+      </div>
+      <div class="phone"><img src="../img/es/03-detail.jpg" alt="Forma y tono, también después" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Reúnelos en álbumes, imprímelos en papel</h2>
+        <p>Crea un álbum por tema y también podrás elegir álbum por álbum en Mensajes y el teclado. Escoge páginas de kraft, cuadrícula, rayas o pergamino y ordénalos a tu gusto.<br>Convierte un álbum en un PDF para imprimir con líneas de corte en forma de sello e imprímelo directamente en papel adhesivo.</p>
+      </div>
+      <div class="phone"><img src="../img/es/04-arrange.jpg" alt="Reúnelos en álbumes, imprímelos en papel" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Empezar es cosa de tres pasos</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Encuadra</h3><p>Mete lo que quieras en la ventana del centro de la cámara.</p></li>
+<li class="card"><span class="n">2</span><h3>Mantén y suelta</h3><p>El sticker se arranca en cuanto sueltas.</p></li>
+<li class="card"><span class="n">3</span><h3>Guárdalo y envíalo</h3><p>Añádelo a un álbum y ya lo tienes en Mensajes y el teclado.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Dónde usarlo y dónde cambiarlo</h2>
+      <div class="card table">
+        <dl><div><dt>Mensajes</dt><dd>＋ junto al campo de texto ▸ Stickers ▸ Punching Stickers</dd></div><div><dt>Otras apps</dt><dd>Activa el teclado de Punching, cámbialo con la tecla del globo, elige y pega</dd></div><div><dt>En cualquier sitio</dt><dd>Mantén pulsado un sticker para copiarlo y pégalo</dd></div><div><dt>Stickers en papel</dt><dd>⋯ en un álbum ▸ Usar ▸ Hoja de stickers para imprimir (PDF)</dd></div><div><dt>Páginas y orden</dt><dd>⋯ en un álbum ▸ Decorar libremente</dd></div><div><dt>Fotos antiguas</dt><dd>Importar desde Fotos, dentro de un álbum</dd></div><div><dt>Forma al arrancar</dt><dd>Ajustes ▸ Arrancar ▸ Forma predeterminada</dd></div><div><dt>Ver el movimiento</dt><dd>Ajustes ▸ Vista ▸ Reproducir movimiento automáticamente</dd></div><div><dt>Abrir rápido</dt><dd>Abrir la cámara de Punching desde Atajos o el centro de control</dd></div></dl>
+      </div>
+      <p class="muted">Los ajustes están en el botón del engranaje, arriba a la derecha de la cámara.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq"><details><summary>Mi sticker no se mueve.</summary><p>En la cámara, arriba a la derecha, ve a Ajustes ▸ Vista y comprueba que Reproducir movimiento automáticamente esté activado. Luego toca el sticker y comprueba que Movimiento esté activado en Forma. El movimiento siempre se guarda, así que puedes activarlo cuando quieras. Las fotos importadas de la app Fotos son una sola imagen, por eso no se mueven.</p></details>
+<details><summary>Me sale con forma de sello y no recortado.</summary><p>Las escenas sin nada que recortar, como un paisaje, se arrancan automáticamente con forma de sello. Toca el sticker para cambiarlo en Forma cuando quieras. Si prefieres sellos desde el principio, cambia Ajustes ▸ Arrancar ▸ Forma predeterminada.</p></details>
+<details><summary>No veo mis stickers en Mensajes.</summary><p>En Mensajes, toca el botón ＋ junto al campo de texto ▸ Stickers y busca Punching Stickers. Aparecen en cuanto arrancas al menos un sticker en Punching y, si tienes más de un álbum, puedes verlos álbum por álbum. Tienes los pasos detallados en Ajustes ▸ Usar ▸ Usar en Mensajes y el teclado.</p></details>
+<details><summary>¿Cómo activo el teclado?</summary><p>En Ajustes ▸ Usar ▸ Usar en Mensajes y el teclado, toca Abrir Ajustes y activa Teclados ▸ Punching Stickers. Para pegar stickers hace falta «Permitir acceso completo», pero el teclado nunca lee ni envía lo que escribes y nunca se conecta a internet. Después, en cualquier app, toca la tecla del globo para cambiar a Punching Stickers.</p></details>
+<details><summary>¿Puedo imprimirlos como stickers de verdad?</summary><p>Toca ⋯ arriba a la derecha de un álbum ▸ Usar ▸ Hoja de stickers para imprimir (PDF). Se crea un PDF a 300 dpi de todo el álbum con líneas de corte en forma de sello, listo para papel adhesivo en la impresora de casa o en una imprenta. La Guía de impresión del mismo menú te explica cada paso.</p></details>
+<details><summary>¿Dónde están las colecciones que hice antes?</summary><p>Desde la 1.0.1, los stickers se agrupan de una sola forma: en álbumes. Cada colección pasó a ser un álbum con el mismo nombre, con sus stickers, páginas y orden tal cual.</p></details>
+<details><summary>Aparece una luz verde en la barra de estado.</summary><p>Es el indicador de uso de la cámara de iOS. Solo se enciende mientras la pantalla de la cámara está abierta. Al abrir un álbum, la cámara se detiene y la luz se apaga.</p></details>
+<details><summary>¿Qué pasa si elimino un sticker?</summary><p>El sticker, su foto original y los datos de movimiento se borran del dispositivo para siempre y también desaparecen del cajón de stickers de Mensajes. No se pueden recuperar, así que piénsalo bien antes de borrar.</p></details>
+<details><summary>¿Dónde se guardan mis fotos y stickers?</summary><p>Solo en tu dispositivo. No hay cuenta, ni servidor propio, ni anuncios. Lo único que sale del dispositivo son estadísticas de uso anónimas, informes de errores y los comentarios que decidas enviar. Tienes todos los detalles en la política de privacidad.</p></details>
+<details><summary>¿De verdad es gratis?</summary><p>Sí, todas las funciones son gratis. Si te gusta, puedes dejarle una propina al desarrollador desde la app, pero las propinas no desbloquean nada.</p></details></div>
+      <p class="contact">¿Dudas o sugerencias? Escribe a <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Solemos responder en 2 o 3 días. También recibimos avisos de errores y sugerencias de funciones en GitHub (M1zz/StampCamera).</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>¿Has visto algo mono hoy?<br>Conviértelo en sticker.</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Gratis en la App Store</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Idioma"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es" aria-current="page">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Política de privacidad</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

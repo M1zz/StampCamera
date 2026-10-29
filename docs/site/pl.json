@@ -1,0 +1,177 @@
+{
+  "title": "Punching: aparat, który zamienia chwilę w ruchomą naklejkę",
+  "description": "Przytrzymaj i oderwij to, co widzisz, jako ruchomą naklejkę. Wytnij obiekt albo oderwij znaczek i wyślij z Wiadomości lub klawiatury. Za darmo.",
+  "hero": {
+    "headline": "Przytrzymaj.\nTa chwila to już naklejka.",
+    "lead": "Ustaw kadr w okienku dziurkacza, przytrzymaj i puść. Pies zostaje wycięty dokładnie po swoim konturze, razem z krótkim ruchem sprzed naciśnięcia i po nim. Gotową naklejkę od razu wyślesz w Wiadomościach albo z klawiatury.",
+    "cta": "Za darmo w App Store",
+    "note": "Wszystkie funkcje są bezpłatne. Naklejki i zdjęcia zostają na Twoim urządzeniu."
+  },
+  "demo": {
+    "title": "Oderwij naklejkę na próbę",
+    "lead": "Wybierz scenę, przytrzymaj przycisk dziurkacza i puść. Potem zmień kształt i styl.",
+    "scenes": [
+      "Szczeniak",
+      "Lody",
+      "Plaża"
+    ],
+    "hold": "Przytrzymaj, by oderwać",
+    "holding": "Puść, by oderwać",
+    "empty": "Tu pojawi się Twoja naklejka",
+    "note": "Wersja w przeglądarce korzysta z wybranych wcześniej zdjęć. Wycięcia i style przygotowaliśmy zawczasu tą samą metodą, której używa aplikacja. W aplikacji odrywasz to, co widzi aparat, a naklejka zachowuje ruch sprzed naciśnięcia i po nim.",
+    "shape": "Kształt",
+    "cutout": "Wycięta",
+    "stamp": "Znaczek",
+    "look": "Styl",
+    "arrived": "Twoja naklejka dotarła!",
+    "noSubject": "Nie było czego wyciąć, więc oderwano w kształcie znaczka",
+    "inks": [
+      "Oryginał",
+      "Sepia",
+      "Czerń i biel",
+      "Wyblakły",
+      "Wyrazisty",
+      "Cyjan"
+    ]
+  },
+  "problem": {
+    "title": "Najfajniejsze chwile zasypiają w galerii",
+    "text": "Łapiesz moment, gdy pies wystawia język. Ale żeby zrobić z tego naklejkę, trzeba znaleźć zdjęcie, wyciąć je i otworzyć jeszcze jedną aplikację do naklejek. W tym czasie rozmowa dawno zeszła na inny temat. Punching odrywa naklejkę od razu, tam gdzie robisz zdjęcie, a gdy tylko dodasz ją do albumu, czeka w szufladzie naklejek w Wiadomościach."
+  },
+  "features": [
+    {
+      "title": "Obiekt wycięty, krajobraz jako znaczek",
+      "text": "Gdy jest co wyciąć, na przykład osobę, zwierzaka albo przedmiot, dostajesz tylko to. Gdy nie ma, jak w krajobrazie, kadr odrywa się jako znaczek z ząbkowanym brzegiem.\nRazem z naklejką zapisuje się krótki ruch sprzed naciśnięcia i po nim, więc naklejka się rusza.",
+      "shot": "05-camera"
+    },
+    {
+      "title": "Prosto do Wiadomości i na klawiaturę",
+      "text": "Oderwane naklejki pojawiają się w szufladzie naklejek w Wiadomościach. Po włączeniu klawiatury Punching wybierzesz je i wkleisz także w innych aplikacjach.\nRuchome naklejki docierają w ruchu. Przytrzymaj naklejkę, żeby ją skopiować, i wklej, gdzie chcesz.",
+      "shot": "06-chat"
+    },
+    {
+      "title": "Kształt i styl także po fakcie",
+      "text": "Przełączaj między wyciętym kształtem a znaczkiem, między ruchem a stopklatką, kiedy tylko chcesz. Oryginalne zdjęcie zostaje zachowane, więc obraz jest tak samo ostry jak za pierwszym razem, niezależnie od liczby zmian.\nWybierz styl: Oryginał, Sepia, Czerń i biel, Wyblakły, Wyrazisty lub Cyjan, i dopisz kilka słów, datę oraz miejsce.",
+      "shot": "03-detail"
+    },
+    {
+      "title": "Zbieraj w albumach, drukuj na papierze",
+      "text": "Załóż album na każdy temat, a w Wiadomościach i na klawiaturze też wybierzesz naklejki album po albumie. Wybierz strony, np. kraft, kratkę, linie lub pergamin, i ułóż naklejki w dowolnej kolejności.\nZamień album w plik PDF do druku z liniami cięcia w kształcie znaczka i wydrukuj go prosto na papierze do naklejek.",
+      "shot": "04-arrange"
+    }
+  ],
+  "steps": {
+    "title": "Trzy kroki na start",
+    "items": [
+      {
+        "title": "Wyceluj",
+        "text": "Umieść to, co chcesz uchwycić, w okienku na środku aparatu."
+      },
+      {
+        "title": "Przytrzymaj i puść",
+        "text": "Naklejka odrywa się w chwili, gdy puszczasz."
+      },
+      {
+        "title": "Zapisz i wyślij",
+        "text": "Dodaj ją do albumu, a od razu pojawi się w Wiadomościach i na klawiaturze."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Gdzie używać i gdzie zmieniać",
+    "rows": [
+      [
+        "Wiadomości",
+        "＋ obok pola wiadomości ▸ Naklejki ▸ Naklejki Punching"
+      ],
+      [
+        "Inne aplikacje",
+        "Włącz klawiaturę Punching, przełącz na nią klawiszem globusa, wybierz i wklej"
+      ],
+      [
+        "Wszędzie",
+        "Przytrzymaj naklejkę, skopiuj ją i wklej"
+      ],
+      [
+        "Papierowe naklejki",
+        "⋯ w albumie ▸ Użyj ▸ Arkusz naklejek do druku (PDF)"
+      ],
+      [
+        "Strony i kolejność",
+        "⋯ w albumie ▸ Dekoruj dowolnie"
+      ],
+      [
+        "Starsze zdjęcia",
+        "Importuj ze Zdjęć w albumie"
+      ],
+      [
+        "Kształt na start",
+        "Ustawienia ▸ Odrywanie ▸ Domyślny kształt"
+      ],
+      [
+        "Odtwarzanie ruchu",
+        "Ustawienia ▸ Widok ▸ Automatyczne odtwarzanie ruchu"
+      ],
+      [
+        "Szybkie otwieranie",
+        "Otwórz aparat Punching w Skrótach lub Centrum sterowania"
+      ]
+    ],
+    "note": "Ustawienia otworzysz kółkiem zębatym w prawym górnym rogu ekranu aparatu."
+  },
+  "faq": {
+    "title": "Najczęstsze pytania",
+    "items": [
+      {
+        "q": "Moja naklejka się nie rusza.",
+        "a": "W prawym górnym rogu aparatu otwórz Ustawienia ▸ Widok i sprawdź, czy włączone jest Automatyczne odtwarzanie ruchu. Potem dotknij naklejki i sprawdź, czy pod opcją Kształt włączony jest Ruch. Ruch zapisuje się zawsze, więc możesz go włączyć w każdej chwili. Zdjęcia zaimportowane z aplikacji Zdjęcia to pojedyncze kadry, dlatego się nie ruszają."
+      },
+      {
+        "q": "Zamiast wyciętej naklejki dostaję znaczek.",
+        "a": "Kadry, w których nie ma czego wyciąć, na przykład krajobrazy, automatycznie odrywają się jako znaczek. Dotknij naklejki, aby w każdej chwili zmienić to w opcji Kształt. Jeśli chcesz od początku dostawać znaczki, zmień Ustawienia ▸ Odrywanie ▸ Domyślny kształt."
+      },
+      {
+        "q": "Nie widzę naklejek w Wiadomościach.",
+        "a": "W Wiadomościach dotknij ＋ obok pola wiadomości ▸ Naklejki i znajdź Naklejki Punching. Pojawiają się po oderwaniu w Punching co najmniej jednej naklejki, a jeśli masz kilka albumów, możesz je przeglądać album po albumie. Szczegółowe kroki znajdziesz w Ustawienia ▸ Użyj ▸ Użycie w Wiadomościach i na klawiaturze."
+      },
+      {
+        "q": "Jak włączyć klawiaturę?",
+        "a": "W Ustawienia ▸ Użyj ▸ Użycie w Wiadomościach i na klawiaturze dotknij Otwórz Ustawienia i włącz Klawiatury ▸ Naklejki Punching. Wklejanie naklejek wymaga opcji Pozwól na pełny dostęp, ale klawiatura nigdy nie odczytuje ani nie wysyła tego, co wpisujesz, i nie łączy się z internetem. Potem w dowolnej aplikacji dotknij klawisza globusa, aby przełączyć się na Naklejki Punching."
+      },
+      {
+        "q": "Czy mogę wydrukować prawdziwe naklejki?",
+        "a": "W albumie dotknij ⋯ w prawym górnym rogu ▸ Użyj ▸ Arkusz naklejek do druku (PDF). Dla całego albumu powstanie plik PDF do druku w 300 dpi z liniami cięcia w kształcie znaczków, gotowy na papier do naklejek w domowej drukarce albo do drukarni. Krok po kroku przeprowadzi Cię Poradnik drukowania w tym samym menu."
+      },
+      {
+        "q": "Gdzie podziały się moje dawne kolekcje?",
+        "a": "Od wersji 1.0.1 naklejki grupuje się tylko w jeden sposób: w albumy. Każda kolekcja stała się albumem o tej samej nazwie, a jej naklejki, strony i kolejność zostały przeniesione bez zmian."
+      },
+      {
+        "q": "Na pasku stanu świeci zielone światełko.",
+        "a": "To wskaźnik użycia aparatu w iOS. Świeci tylko wtedy, gdy widoczny jest ekran aparatu. Po otwarciu albumu aparat się zatrzymuje, a światełko gaśnie."
+      },
+      {
+        "q": "Co się stanie, gdy usunę naklejkę?",
+        "a": "Naklejka, oryginalne zdjęcie i dane ruchu zostaną trwale usunięte z urządzenia i znikną też z szuflady naklejek w Wiadomościach. Nie da się ich przywrócić, więc usuwaj z rozwagą."
+      },
+      {
+        "q": "Gdzie zapisują się moje zdjęcia i naklejki?",
+        "a": "Wyłącznie na Twoim urządzeniu. Nie ma konta, własnego serwera ani reklam. Na zewnątrz trafiają tylko anonimowe statystyki użycia, raporty błędów i opinie, które wyślesz samodzielnie. Szczegóły znajdziesz w polityce prywatności."
+      },
+      {
+        "q": "Czy to naprawdę za darmo?",
+        "a": "Tak, wszystkie funkcje są bezpłatne. Jeśli aplikacja Ci się podoba, możesz zostawić w niej twórcy napiwek, ale napiwek niczego nie odblokowuje."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Coś uroczego wpadło Ci dziś w oko?\nOderwij to jako naklejkę.",
+    "cta": "Za darmo w App Store"
+  },
+  "ui": {
+    "skip": "Przejdź do treści",
+    "languages": "Język",
+    "privacy": "Polityka prywatności",
+    "contact": "Pytania lub uwagi? Napisz na {email}. Zwykle odpowiadamy w ciągu 2–3 dni. Błędy i pomysły na funkcje możesz też zgłaszać na GitHubie: M1zz/StampCamera."
+  }
+}

@@ -1,95 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching – Gedrückt gehaltene Momente als bewegte Sticker</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/de/index.html">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: Die Kamera, die Momente zu bewegten Stickern macht</title>
+  <meta name="description" content="Halte gedrückt und trenne ab, was du siehst: als bewegten Sticker. Motiv ausschneiden oder als Briefmarke, direkt aus Nachrichten senden. Gratis.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: Die Kamera, die Momente zu bewegten Stickern macht">
+  <meta property="og:description" content="Halte gedrückt und trenne ab, was du siehst: als bewegten Sticker. Motiv ausschneiden oder als Briefmarke, direkt aus Nachrichten senden. Gratis.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/de/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/de/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Gedrückt halten, abtrennen: Aus Momenten werden bewegte Sticker.</p>
-    <p class="desc">
-      Eine iOS-Kamera-App: Halte den Locher auf eine Szene gedrückt und trenne sie als bewegten Sticker ab.
-      Löse nur das Motiv frei oder trenne es als gezackte Briefmarke ab, sammle alles in deiner
-      Sammlung und schicke es per Nachrichten oder Tastatur – oder drucke echte Sticker aus.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Support · Kontakt</a>
-      <a class="btn ghost" href="./privacy.html">Datenschutzerklärung</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <header class="bar">
+    <a class="brand" href="../de/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Sprache</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Gedrückt halten.<br>Der Moment wird zum Sticker.</h1>
+        <p class="lead">Richte die Szene im Locherfenster aus, halte gedrückt und lass los. Dein Hund wird genau entlang seiner Umrisse ausgeschnitten, samt der kurzen Bewegung vor und nach dem Drücken. Senden kannst du ihn sofort aus Nachrichten oder über die Tastatur.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Gratis im App Store laden</a><a class="try" href="#try">Probier es selbst aus ↓</a></div>
+        <p class="muted small">Alle Funktionen sind kostenlos. Sticker und Fotos bleiben auf deinem Gerät.</p>
+      </div>
+      <div class="phone"><img src="../img/de/01-reveal.jpg" alt="Gedrückt halten. Der Moment wird zum Sticker." width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Probier es selbst aus</h2>
+      <p class="muted">Wähle eine Szene, halte den Locher-Knopf gedrückt und lass los. Danach kannst du Form und Look wechseln.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Probier es selbst aus&quot;, &quot;lead&quot;: &quot;Wähle eine Szene, halte den Locher-Knopf gedrückt und lass los. Danach kannst du Form und Look wechseln.&quot;, &quot;scenes&quot;: [&quot;Welpe&quot;, &quot;Eis&quot;, &quot;Strand&quot;], &quot;hold&quot;: &quot;Gedrückt halten&quot;, &quot;holding&quot;: &quot;Loslassen zum Abtrennen&quot;, &quot;empty&quot;: &quot;Hier landet dein Sticker&quot;, &quot;note&quot;: &quot;Die Web-Demo nutzt vorab ausgewählte Fotos. Ausschnitte und Looks wurden vorher auf dieselbe Weise erstellt wie in der App. In der App trennst du ab, was die Kamera sieht, und der Sticker behält die Bewegung vor und nach dem Drücken.&quot;, &quot;shape&quot;: &quot;Form&quot;, &quot;cutout&quot;: &quot;Ausgeschnitten&quot;, &quot;stamp&quot;: &quot;Briefmarke&quot;, &quot;look&quot;: &quot;Look&quot;, &quot;arrived&quot;: &quot;Dein Sticker ist da!&quot;, &quot;noSubject&quot;: &quot;Nichts zum Ausschneiden – als Briefmarke abgetrennt&quot;, &quot;inks&quot;: [&quot;Original&quot;, &quot;Sepia&quot;, &quot;Schwarzweiß&quot;, &quot;Verblasst&quot;, &quot;Kräftig&quot;, &quot;Cyan&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Süße Momente schlummern in der Fotomediathek</h2>
+      <p>Dein Hund streckt die Zunge raus, und du erwischst genau den Moment. Um daraus einen Sticker zu machen, musst du das Foto suchen, ausschneiden und noch eine Sticker-App öffnen. Bis dahin ist der Chat längst beim nächsten Thema. Punching trennt den Sticker direkt beim Fotografieren ab, und sobald du ihn in eine Sammlung legst, liegt er in der Sticker-Ablage von Nachrichten.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Motive ausgeschnitten, Landschaften als Briefmarke</h2>
+        <p>Gibt es etwas zum Ausschneiden, etwa eine Person, ein Haustier oder einen Gegenstand, bekommst du genau das. Fehlt ein Motiv, wie bei einer Landschaft, wird eine Briefmarke mit Zackenrand abgetrennt.<br>Die kurze Bewegung vor und nach dem Drücken kommt mit, deshalb bewegt sich dein Sticker.</p>
+      </div>
+      <div class="phone"><img src="../img/de/05-camera.jpg" alt="Motive ausgeschnitten, Landschaften als Briefmarke" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Direkt in Nachrichten und auf der Tastatur</h2>
+        <p>Abgetrennte Sticker erscheinen in der Sticker-Ablage von Nachrichten. Aktivierst du die Punching-Tastatur, kannst du sie auch in anderen Apps auswählen und einsetzen.<br>Bewegte Sticker kommen bewegt an. Halte einen Sticker gedrückt, um ihn zu kopieren, und setze ihn ein, wo du willst.</p>
+      </div>
+      <div class="phone"><img src="../img/de/06-chat.jpg" alt="Direkt in Nachrichten und auf der Tastatur" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Form und Look auch nachträglich</h2>
+        <p>Wechsle jederzeit zwischen ausgeschnitten und Briefmarke, zwischen Bewegung und Standbild. Das Originalfoto bleibt erhalten, deshalb bleibt alles so scharf wie beim ersten Mal, egal wie oft du wechselst.<br>Wähle einen Look aus Original, Sepia, Schwarzweiß, Verblasst, Kräftig und Cyan und notiere ein paar Worte, Datum und Ort.</p>
+      </div>
+      <div class="phone"><img src="../img/de/03-detail.jpg" alt="Form und Look auch nachträglich" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>In Sammlungen ordnen, auf Papier drucken</h2>
+        <p>Lege Sammlungen nach Thema an, dann wählst du auch in Nachrichten und auf der Tastatur Sammlung für Sammlung. Such dir Seiten wie Kraftpapier, Kariert, Liniert oder Pergament aus und ordne die Sticker, wie du magst.<br>Mach aus einer Sammlung ein druckfertiges PDF mit Schnittlinien in Briefmarkenform und drucke es direkt auf Stickerpapier.</p>
+      </div>
+      <div class="phone"><img src="../img/de/04-arrange.jpg" alt="In Sammlungen ordnen, auf Papier drucken" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>In drei Schritten loslegen</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Ausrichten</h3><p>Bring, was du festhalten willst, ins Fenster in der Mitte der Kamera.</p></li>
+<li class="card"><span class="n">2</span><h3>Halten und loslassen</h3><p>Beim Loslassen wird der Sticker abgetrennt.</p></li>
+<li class="card"><span class="n">3</span><h3>Sammeln und senden</h3><p>Leg ihn in eine Sammlung, und schon ist er in Nachrichten und auf der Tastatur.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Wo du es nutzt und wo du es änderst</h2>
+      <div class="card table">
+        <dl><div><dt>Nachrichten</dt><dd>＋ neben dem Eingabefeld ▸ Sticker ▸ Punching Sticker</dd></div><div><dt>Andere Apps</dt><dd>Punching-Tastatur aktivieren, mit der Globus-Taste wechseln, Sticker auswählen und einsetzen</dd></div><div><dt>Überall</dt><dd>Sticker gedrückt halten, kopieren und einsetzen</dd></div><div><dt>Papier-Sticker</dt><dd>⋯ in einer Sammlung ▸ Verwenden ▸ Sticker-Bogen zum Drucken (PDF)</dd></div><div><dt>Seiten und Reihenfolge</dt><dd>⋯ in einer Sammlung ▸ Frei gestalten</dd></div><div><dt>Ältere Fotos</dt><dd>Aus Fotos importieren in einer Sammlung</dd></div><div><dt>Form beim Abtrennen</dt><dd>Einstellungen ▸ Abtrennen ▸ Standardform</dd></div><div><dt>Bewegung ansehen</dt><dd>Einstellungen ▸ Ansicht ▸ Bewegung automatisch abspielen</dd></div><div><dt>Schnell öffnen</dt><dd>Punching-Kamera öffnen in Kurzbefehle oder im Kontrollzentrum</dd></div></dl>
+      </div>
+      <p class="muted">Die Einstellungen öffnest du über das Zahnrad oben rechts in der Kamera.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Häufige Fragen</h2>
+      <div class="faq"><details><summary>Mein Sticker bewegt sich nicht.</summary><p>Prüfe oben rechts in der Kamera unter Einstellungen ▸ Ansicht, ob Bewegung automatisch abspielen aktiviert ist. Tippe dann den Sticker an und sieh nach, ob unter Form die Option Bewegung aktiviert ist. Die Bewegung wird immer mit aufgenommen, du kannst sie also jederzeit einschalten. Aus der Fotos-App importierte Fotos sind Einzelbilder und bewegen sich nicht.</p></details>
+<details><summary>Ich bekomme eine Briefmarke statt eines ausgeschnittenen Stickers.</summary><p>Szenen ohne Motiv zum Ausschneiden, etwa Landschaften, werden automatisch als Briefmarke abgetrennt. Tippe den Sticker an, um das unter Form jederzeit zu ändern. Willst du von Anfang an Briefmarken, ändere Einstellungen ▸ Abtrennen ▸ Standardform.</p></details>
+<details><summary>Meine Sticker erscheinen nicht in Nachrichten.</summary><p>Tippe in Nachrichten neben dem Eingabefeld auf ＋ ▸ Sticker und such nach Punching Sticker. Sie erscheinen, sobald du in Punching mindestens einen Sticker abgetrennt hast. Hast du mehr als eine Sammlung, kannst du Sammlung für Sammlung blättern. Eine Schritt-für-Schritt-Anleitung findest du unter Einstellungen ▸ Verwenden ▸ In Nachrichten und Tastatur verwenden.</p></details>
+<details><summary>Wie aktiviere ich die Tastatur?</summary><p>Tippe unter Einstellungen ▸ Verwenden ▸ In Nachrichten und Tastatur verwenden auf Einstellungen öffnen und aktiviere Tastaturen ▸ Punching Sticker. Zum Einsetzen von Stickern ist „Vollen Zugriff erlauben“ nötig, die Tastatur liest oder sendet aber nie, was du tippst, und geht nie ins Internet. Tippe dann in einer beliebigen App auf die Globus-Taste, um zu Punching Sticker zu wechseln.</p></details>
+<details><summary>Kann ich echte Sticker drucken?</summary><p>Tippe oben rechts in einer Sammlung auf ⋯ ▸ Verwenden ▸ Sticker-Bogen zum Drucken (PDF). Du bekommst für die ganze Sammlung ein druckfertiges PDF mit 300 dpi und Schnittlinien in Briefmarkenform, bereit für Stickerpapier im Drucker zu Hause oder für die Druckerei. Die Druckanleitung im selben Menü führt dich Schritt für Schritt durch.</p></details>
+<details><summary>Wo sind meine früheren Kollektionen?</summary><p>Seit Version 1.0.1 werden Sticker nur noch auf eine Art gruppiert: in Sammlungen. Jede Kollektion wurde zu einer Sammlung mit demselben Namen, Sticker, Seiten und Reihenfolge wurden unverändert übernommen.</p></details>
+<details><summary>In der Statusleiste leuchtet ein grünes Licht.</summary><p>Das ist die Kamera-Anzeige von iOS. Sie leuchtet nur, solange die Kameraansicht offen ist. Öffnest du eine Sammlung, wird die Kamera angehalten und das Licht geht aus.</p></details>
+<details><summary>Was passiert, wenn ich einen Sticker lösche?</summary><p>Sticker, Originalfoto und Bewegungsdaten werden endgültig von deinem Gerät gelöscht und verschwinden auch aus der Sticker-Ablage von Nachrichten. Wiederherstellen lässt sich nichts, also lösche mit Bedacht.</p></details>
+<details><summary>Wo werden meine Fotos und Sticker gespeichert?</summary><p>Nur auf deinem Gerät. Es gibt kein Konto, keinen eigenen Server und keine Werbung. Dein Gerät verlassen nur anonyme Nutzungsstatistiken, Fehlerberichte und Feedback, das du selbst schickst. Details stehen in der Datenschutzerklärung.</p></details>
+<details><summary>Ist das wirklich kostenlos?</summary><p>Ja, alle Funktionen sind kostenlos. Wenn dir die App gefällt, kannst du dem Entwickler in der App ein Trinkgeld geben, freigeschaltet wird dadurch aber nichts.</p></details></div>
+      <p class="contact">Fragen oder Feedback? Schreib an <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Wir antworten meist innerhalb von 2 bis 3 Tagen. Fehlermeldungen und Funktionswünsche nehmen wir auch auf GitHub unter M1zz/StampCamera entgegen.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Heute was Süßes gesehen?<br>Mach einen Sticker daraus.</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Gratis im App Store laden</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Sprache"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de" aria-current="page">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Datenschutzerklärung</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

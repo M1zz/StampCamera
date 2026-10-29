@@ -1,95 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — зажмите, и момент станет живым стикером</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: камера, которая превращает момент в живой стикер</title>
+  <meta name="description" content="Удерживайте кадр, и он отрывается живым стикером. Можно вырезать только объект или оторвать марку, а потом сразу отправить в «Сообщениях» или с клавиатуры. Всё бесплатно.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: камера, которая превращает момент в живой стикер">
+  <meta property="og:description" content="Удерживайте кадр, и он отрывается живым стикером. Можно вырезать только объект или оторвать марку, а потом сразу отправить в «Сообщениях» или с клавиатуры. Всё бесплатно.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/ru/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/ru/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">Зажмите — и момент станет живым стикером.</p>
-    <p class="desc">
-      Punching — камера для iOS, которая отрывает увиденное живым стикером: зажмите окно дырокола.
-      Можно вырезать только нужный объект или оторвать кадр зубчатой маркой, собирать стикеры в альбомы,
-      отправлять через «Сообщения» и клавиатуру или распечатать как настоящие наклейки.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">Поддержка</a>
-      <a class="btn ghost" href="./privacy.html">Политика конфиденциальности</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+  <header class="bar">
+    <a class="brand" href="../ru/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">Язык</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>Нажмите и держите.<br>Этот момент станет стикером</h1>
+        <p class="lead">Поймайте сцену в окошко дырокола, нажмите и отпустите. Собака вырежется точно по своему силуэту, а вместе с ней сохранится короткое движение до и после нажатия. Готовый стикер можно сразу отправить в «Сообщениях» или с клавиатуры.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">Скачать бесплатно</a><a class="try" href="#try">Оторвите стикер сами ↓</a></div>
+        <p class="muted small">Все функции бесплатны. Стикеры и фото хранятся только на вашем устройстве.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/01-reveal.jpg" alt="Нажмите и держите. Этот момент станет стикером" width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>Оторвите стикер сами</h2>
+      <p class="muted">Выберите сцену, нажмите и удерживайте кнопку, потом отпустите. Когда стикер готов, попробуйте другую форму и оттенок.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;Оторвите стикер сами&quot;, &quot;lead&quot;: &quot;Выберите сцену, нажмите и удерживайте кнопку, потом отпустите. Когда стикер готов, попробуйте другую форму и оттенок.&quot;, &quot;scenes&quot;: [&quot;Щенок&quot;, &quot;Мороженое&quot;, &quot;Пляж&quot;], &quot;hold&quot;: &quot;Удерживайте&quot;, &quot;holding&quot;: &quot;Отпустите, чтобы оторвать&quot;, &quot;empty&quot;: &quot;Здесь появится ваш стикер&quot;, &quot;note&quot;: &quot;В веб-версии используются заранее выбранные фото. Вырезка и оттенки сделаны заранее тем же способом, что и в приложении. В приложении вы отрываете то, что видит камера, и стикер сохраняет движение вокруг момента нажатия.&quot;, &quot;shape&quot;: &quot;Форма&quot;, &quot;cutout&quot;: &quot;Вырезанный&quot;, &quot;stamp&quot;: &quot;Марка&quot;, &quot;look&quot;: &quot;Стиль&quot;, &quot;arrived&quot;: &quot;Ваш стикер готов!&quot;, &quot;noSubject&quot;: &quot;Вырезать было нечего, поэтому кадр оторван маркой&quot;, &quot;inks&quot;: [&quot;Оригинал&quot;, &quot;Сепия&quot;, &quot;Чёрно-белый&quot;, &quot;Выцветший&quot;, &quot;Яркий&quot;, &quot;Голубой&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>Самые милые моменты так и засыпают в галерее</h2>
+      <p>Вы поймали момент, когда пёс высунул язык. Чтобы отправить его стикером, нужно найти фото, вырезать его и открыть ещё одно приложение для стикеров. А разговор к тому времени уже ушёл дальше. Punching отрывает стикер прямо там, где вы снимаете, и как только вы сохраните его в альбом, он уже лежит в стикерах «Сообщений».</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Объект вырезается, пейзаж становится маркой</h2>
+        <p>Если в кадре есть что вырезать — человек, питомец или вещь, — останется только он. Если нет, как на пейзаже, кадр отрывается маркой с зубчатым краем.<br>Вместе с ним сохраняется короткое движение до и после нажатия, поэтому стикер живой.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/05-camera.jpg" alt="Объект вырезается, пейзаж становится маркой" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Сразу в «Сообщениях» и на клавиатуре</h2>
+        <p>Готовые стикеры появляются в панели стикеров «Сообщений». Включите клавиатуру Punching, и их можно будет выбирать и вставлять в других приложениях.<br>Живые стикеры приходят живыми. Удерживайте стикер, чтобы скопировать его, и вставляйте куда угодно.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/06-chat.jpg" alt="Сразу в «Сообщениях» и на клавиатуре" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Форму и оттенок можно менять потом</h2>
+        <p>Вырезка или марка, движение или стоп-кадр — переключайте когда угодно. Исходное фото сохраняется, поэтому сколько ни меняйте, стикер остаётся таким же чётким.<br>Выберите оттенок: Оригинал, Сепия, Чёрно-белый, Выцветший, Яркий или Голубой. Добавьте подпись, дату и место.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/03-detail.jpg" alt="Форму и оттенок можно менять потом" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>Собирайте в альбомы и печатайте на бумаге</h2>
+        <p>Заведите альбом под каждую тему, и в «Сообщениях» и на клавиатуре стикеры тоже будут разложены по альбомам. Выберите фон страницы — крафт, клетку, линейку или пергамент — и расставьте стикеры в любом порядке.<br>Альбом можно превратить в PDF для печати с линиями реза в форме марок и сразу распечатать на стикерной бумаге.</p>
+      </div>
+      <div class="phone"><img src="../img/ru/04-arrange.jpg" alt="Собирайте в альбомы и печатайте на бумаге" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>Три шага, чтобы начать</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>Наведите окошко</h3><p>Поймайте нужное в окошко посередине камеры.</p></li>
+<li class="card"><span class="n">2</span><h3>Нажмите и отпустите</h3><p>Стикер отрывается в момент, когда вы отпускаете палец.</p></li>
+<li class="card"><span class="n">3</span><h3>Сохраните и отправьте</h3><p>Добавьте в альбом, и стикер сразу появится в «Сообщениях» и на клавиатуре.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>Где пользоваться и где настроить</h2>
+      <div class="card table">
+        <dl><div><dt>«Сообщения»</dt><dd>＋ рядом с полем ввода ▸ Стикеры ▸ Стикеры Punching</dd></div><div><dt>Другие приложения</dt><dd>Включите клавиатуру Punching, переключитесь на неё глобусом и вставьте стикер</dd></div><div><dt>Куда угодно</dt><dd>Удерживайте стикер, скопируйте и вставьте</dd></div><div><dt>Бумажные стикеры</dt><dd>⋯ в альбоме ▸ Использовать ▸ Лист стикеров для печати (PDF)</dd></div><div><dt>Фон и порядок</dt><dd>⋯ в альбоме ▸ Оформить как угодно</dd></div><div><dt>Старые фото</dt><dd>Импорт из «Фото» в альбоме</dd></div><div><dt>Форма по умолчанию</dt><dd>Настройки ▸ Отрыв ▸ Форма по умолчанию</dd></div><div><dt>Показ движения</dt><dd>Настройки ▸ Вид ▸ Автовоспроизведение движения</dd></div><div><dt>Быстрый запуск</dt><dd>«Открыть камеру Punching» в «Командах» или Пункте управления</dd></div></dl>
+      </div>
+      <p class="muted">Настройки открываются кнопкой с шестерёнкой в правом верхнем углу камеры.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>Вопросы и ответы</h2>
+      <div class="faq"><details><summary>Стикер не двигается.</summary><p>В правом верхнем углу камеры откройте Настройки ▸ Вид и проверьте, что включено автовоспроизведение движения. Затем коснитесь стикера и убедитесь, что под формой включено движение. Движение записывается всегда, так что включить его можно в любой момент. Фото, импортированные из «Фото», состоят из одного кадра и не двигаются.</p></details>
+<details><summary>Вместо вырезки получилась марка.</summary><p>Если в кадре нечего вырезать, как на пейзаже, он автоматически отрывается маркой. Коснитесь стикера, чтобы в любой момент сменить форму. Чтобы сразу отрывать марки, измените Настройки ▸ Отрыв ▸ Форма по умолчанию.</p></details>
+<details><summary>В «Сообщениях» не видно стикеров.</summary><p>В «Сообщениях» нажмите ＋ рядом с полем ввода ▸ Стикеры и найдите «Стикеры Punching». Они появляются, когда вы оторвёте хотя бы один стикер, а если альбомов несколько, их можно листать по альбомам. Подробная инструкция есть в разделе Настройки ▸ Использовать ▸ Использование в «Сообщениях» и на клавиатуре.</p></details>
+<details><summary>Как включить клавиатуру?</summary><p>В разделе Настройки ▸ Использовать ▸ Использование в «Сообщениях» и на клавиатуре нажмите «Открыть настройки», затем включите «Клавиатуры» ▸ «Стикеры Punching». Чтобы вставлять стикеры, нужен полный доступ, но клавиатура не читает и не отправляет то, что вы печатаете, и не подключается к интернету. Потом в любом приложении нажмите значок глобуса и переключитесь на «Стикеры Punching».</p></details>
+<details><summary>Можно напечатать настоящие стикеры?</summary><p>Нажмите ⋯ в правом верхнем углу альбома ▸ Использовать ▸ Лист стикеров для печати (PDF). Получится PDF всего альбома в 300 dpi с линиями реза в форме марок: его можно печатать дома на стикерной бумаге или отнести в типографию. Пошаговая инструкция есть в том же меню, в руководстве по печати.</p></details>
+<details><summary>Куда делись мои старые коллекции?</summary><p>С версии 1.0.1 стикеры группируются только в альбомы. Каждая коллекция стала альбомом с тем же названием, а её стикеры, фон и порядок перенеслись без изменений.</p></details>
+<details><summary>В строке состояния горит зелёный индикатор.</summary><p>Это индикатор камеры iOS. Он горит, только пока открыт экран камеры. Когда вы открываете альбом, камера останавливается, и индикатор гаснет.</p></details>
+<details><summary>Что будет, если удалить стикер?</summary><p>Стикер, исходное фото и данные движения навсегда удаляются с устройства и пропадают из стикеров «Сообщений». Восстановить их нельзя, так что будьте внимательны.</p></details>
+<details><summary>Где хранятся фото и стикеры?</summary><p>Только на вашем устройстве. Нет ни аккаунта, ни собственного сервера, ни рекламы. Наружу уходят лишь анонимная статистика использования, отчёты об ошибках и отзывы, которые вы отправляете сами. Подробнее в политике конфиденциальности.</p></details>
+<details><summary>Это правда бесплатно?</summary><p>Да, все функции бесплатны. Если приложение понравится, разработчику можно оставить чаевые прямо в нём, но чаевые ничего не открывают.</p></details></div>
+      <p class="contact">Вопросы и пожелания присылайте на <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>. Обычно мы отвечаем в течение 2–3 дней. Об ошибках и идеях можно написать и в issues на GitHub: M1zz/StampCamera.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Увидели сегодня что-то милое?<br>Оторвите это стикером</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">Скачать бесплатно</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="Язык"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru" aria-current="page">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">Политика конфиденциальности</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

@@ -1,0 +1,177 @@
+{
+  "title": "Punching: anı hareketli çıkartmaya çeviren kamera",
+  "description": "Basılı tut, gördüğünü hareketli bir çıkartma olarak kopar. Konuyu kes ya da pul olarak kopar, Mesajlar’dan veya klavyeden gönder. Tamamen ücretsiz.",
+  "hero": {
+    "headline": "Basılı tut.\nO an artık bir çıkartma.",
+    "lead": "Sahneyi delgeç penceresine hizala, basılı tut ve bırak. Köpeğin tam kendi şeklinde kesilir, basmadan hemen önceki ve sonraki kısa hareketle birlikte. Çıkartmayı hemen Mesajlar’dan ya da klavyeden gönderebilirsin.",
+    "cta": "App Store’dan ücretsiz al",
+    "note": "Tüm özellikler ücretsiz. Çıkartmaların ve fotoğrafların yalnızca cihazında kalır."
+  },
+  "demo": {
+    "title": "Kendin dene",
+    "lead": "Bir sahne seç, delgeç düğmesini basılı tut ve bırak. Sonra farklı bir şekil ve görünüm dene.",
+    "scenes": [
+      "Yavru köpek",
+      "Dondurma",
+      "Sahil"
+    ],
+    "hold": "Koparmak için basılı tut",
+    "holding": "Bırakınca kopar",
+    "empty": "Çıkartman burada belirir",
+    "note": "Web denemesi önceden seçilmiş fotoğraflarla çalışır. Kesimler ve görünümler, uygulamanın kullandığı yöntemle önceden hazırlandı. Uygulamada kameranın gördüğünü koparırsın ve çıkartma, basma anının öncesindeki ve sonrasındaki hareketi de taşır.",
+    "shape": "Şekil",
+    "cutout": "Kesilmiş",
+    "stamp": "Pul",
+    "look": "Görünüm",
+    "arrived": "Çıkartman geldi!",
+    "noSubject": "Kesilecek bir şey olmadığından pul şeklinde koparıldı",
+    "inks": [
+      "Orijinal",
+      "Sepya",
+      "Siyah beyaz",
+      "Solmuş",
+      "Canlı",
+      "Camgöbeği"
+    ]
+  },
+  "problem": {
+    "title": "En tatlı anlar galeride uykuya dalar",
+    "text": "Köpeğin dilini çıkardığı anı yakaladın. Ama bunu çıkartma yapmak için fotoğrafı bulman, kesmen ve bir de çıkartma uygulaması açman gerekir. Bu arada sohbet çoktan başka konuya geçmiş olur. Punching çıkartmayı çektiğin yerde koparır; koleksiyona eklediğin anda Mesajlar’daki çıkartma çekmecesinde hazır bekler."
+  },
+  "features": [
+    {
+      "title": "Konu kesilir, manzara pul olur",
+      "text": "Kişi, evcil hayvan ya da nesne gibi kesilecek bir konu varsa yalnızca o kesilir. Manzara gibi konu yoksa tırtıklı kenarlı bir pul olarak koparılır.\nBasma anının öncesinden ve sonrasından kısa bir hareket de eklenir, böylece çıkartma hareket eder.",
+      "shot": "05-camera"
+    },
+    {
+      "title": "Doğrudan Mesajlar’a ve klavyeye",
+      "text": "Kopardığın çıkartmalar Mesajlar’daki çıkartma çekmecesinde görünür. Punching klavyesini açarsan diğer uygulamalarda da seçip yapıştırabilirsin.\nHareketli çıkartmalar hareket ederek gider. Bir çıkartmayı basılı tutup kopyala, istediğin yere yapıştır.",
+      "shot": "06-chat"
+    },
+    {
+      "title": "Şekil ve görünüm, sonradan bile",
+      "text": "Kesilmiş şekil ile pul, hareket ile durağan görüntü arasında istediğin zaman geçiş yap. Orijinal fotoğraf saklandığı için kaç kez değiştirirsen değiştir, ilk günkü kadar net kalır.\nOrijinal, Sepya, Siyah beyaz, Solmuş, Canlı ve Camgöbeği arasından bir görünüm seç; birkaç söz, tarih ve yer de ekle.",
+      "shot": "03-detail"
+    },
+    {
+      "title": "Koleksiyonlarda topla, kâğıda yazdır",
+      "text": "Her tema için bir koleksiyon oluştur, Mesajlar’da ve klavyede de koleksiyon koleksiyon seç. Kraft, kareli, çizgili ya da parşömen gibi sayfalar seç, çıkartmaları dilediğin sırayla diz.\nBir koleksiyonu pul şeklinde kesim çizgileri olan yazdırmalık bir PDF’ye dönüştür ve doğrudan çıkartma kâğıdına yazdır.",
+      "shot": "04-arrange"
+    }
+  ],
+  "steps": {
+    "title": "Üç adımda başla",
+    "items": [
+      {
+        "title": "Hizala",
+        "text": "Saklamak istediğin şeyi kameranın ortasındaki pencereye yerleştir."
+      },
+      {
+        "title": "Basılı tut ve bırak",
+        "text": "Bıraktığın anda çıkartma kopar."
+      },
+      {
+        "title": "Sakla ve gönder",
+        "text": "Koleksiyona ekle, Mesajlar’da ve klavyede hemen hazır olsun."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Nerede kullanılır, nereden değiştirilir",
+    "rows": [
+      [
+        "Mesajlar",
+        "Yazı alanının yanındaki ＋ ▸ Çıkartmalar ▸ Punching Çıkartmaları"
+      ],
+      [
+        "Diğer uygulamalar",
+        "Punching klavyesini aç, küre tuşuyla ona geç, seç ve yapıştır"
+      ],
+      [
+        "Her yerde",
+        "Çıkartmayı basılı tut, kopyala ve yapıştır"
+      ],
+      [
+        "Kâğıt çıkartma",
+        "Koleksiyondaki ⋯ ▸ Kullanım ▸ Yazdırmalık çıkartma sayfası (PDF)"
+      ],
+      [
+        "Sayfa ve sıralama",
+        "Koleksiyondaki ⋯ ▸ Serbestçe süsle"
+      ],
+      [
+        "Eski fotoğraflar",
+        "Koleksiyondaki Fotoğraflar’dan içe aktar"
+      ],
+      [
+        "İlk şekil",
+        "Ayarlar ▸ Koparma ▸ Varsayılan şekil"
+      ],
+      [
+        "Hareketi görme",
+        "Ayarlar ▸ Görünüm ▸ Hareketi otomatik oynat"
+      ],
+      [
+        "Hızlı açma",
+        "Kestirmeler’de ya da Denetim Merkezi’nde Punching Kamera’yı aç"
+      ]
+    ],
+    "note": "Ayarlar, kamera ekranının sağ üstündeki dişli düğmesindedir."
+  },
+  "faq": {
+    "title": "Sık sorulan sorular",
+    "items": [
+      {
+        "q": "Çıkartmam hareket etmiyor.",
+        "a": "Kameranın sağ üstünden Ayarlar ▸ Görünüm’e gir ve Hareketi otomatik oynat seçeneğinin açık olduğundan emin ol. Sonra çıkartmaya dokunup Şekil altında Hareket’in açık olduğunu kontrol et. Hareket her zaman birlikte kaydedilir, istediğin zaman açabilirsin. Fotoğraflar uygulamasından alınan fotoğraflar tek kare olduğu için hareket etmez."
+      },
+      {
+        "q": "Kesilmiş çıkartma yerine pul çıkıyor.",
+        "a": "Manzara gibi kesilecek konu olmayan sahneler otomatik olarak pul şeklinde koparılır. Çıkartmaya dokunup Şekil bölümünden istediğin zaman değiştirebilirsin. En baştan pul şeklinde koparmak istersen Ayarlar ▸ Koparma ▸ Varsayılan şekil seçeneğini değiştir."
+      },
+      {
+        "q": "Mesajlar’da çıkartmalarımı göremiyorum.",
+        "a": "Mesajlar’da yazı alanının yanındaki ＋ düğmesine dokun ▸ Çıkartmalar altında Punching Çıkartmaları’nı bul. Punching’de en az bir çıkartma kopardıktan sonra görünür; birden fazla koleksiyonun varsa koleksiyon koleksiyon göz atabilirsin. Ayrıntılı anlatım Ayarlar ▸ Kullanım ▸ Mesajlar’da ve klavyede kullan bölümünde."
+      },
+      {
+        "q": "Klavyeyi nasıl açarım?",
+        "a": "Ayarlar ▸ Kullanım ▸ Mesajlar’da ve klavyede kullan bölümünde Ayarlar’ı Aç’a dokun, ardından Klavyeler ▸ Punching Çıkartmaları’nı aç. Çıkartma yapıştırmak için Tam Erişime İzin Ver gerekir, ama klavye yazdıklarını asla okumaz, göndermez ve internete bağlanmaz. Sonra herhangi bir uygulamada küre tuşuna dokunarak Punching Çıkartmaları’na geç."
+      },
+      {
+        "q": "Gerçek çıkartma yazdırabilir miyim?",
+        "a": "Koleksiyonun sağ üstündeki ⋯ ▸ Kullanım ▸ Yazdırmalık çıkartma sayfası (PDF) seçeneğine dokun. Koleksiyonun tamamı için pul şeklinde kesim çizgileri olan 300 dpi yazdırmalık bir PDF oluşur; evdeki yazıcıda çıkartma kâğıdıyla ya da matbaada doğrudan kullanabilirsin. Adım adım anlatım aynı menüdeki Yazdırma rehberi bölümünde."
+      },
+      {
+        "q": "Eskiden oluşturduğum albümler nereye gitti?",
+        "a": "1.0.1 sürümünden itibaren çıkartmaları gruplamanın tek yolu koleksiyon oldu. Her albüm aynı adlı bir koleksiyona dönüştü; içindeki çıkartmalar, sayfalar ve sıralama da olduğu gibi taşındı."
+      },
+      {
+        "q": "Durum çubuğunda yeşil ışık yanıyor.",
+        "a": "Bu, iOS’un kamera kullanım göstergesi. Yalnızca kamera ekranı açıkken yanar. Bir koleksiyonu açtığında kamera durur ve ışık söner."
+      },
+      {
+        "q": "Bir çıkartmayı silersem ne olur?",
+        "a": "Çıkartma, orijinal fotoğraf ve hareket verisi cihazından kalıcı olarak silinir, Mesajlar’daki çıkartma çekmecesinden de kaybolur. Geri getirilemez, o yüzden silmeden önce iyi düşün."
+      },
+      {
+        "q": "Fotoğraflarım ve çıkartmalarım nerede saklanıyor?",
+        "a": "Yalnızca cihazında. Hesap yok, kendi sunucumuz yok, reklam yok. Cihazından dışarı yalnızca anonim kullanım istatistikleri, hata raporları ve kendi gönderdiğin geri bildirimler çıkar. Ayrıntılar Gizlilik Politikası’nda."
+      },
+      {
+        "q": "Gerçekten ücretsiz mi?",
+        "a": "Evet, tüm özellikler ücretsiz. Beğenirsen uygulama içinden geliştiriciye bahşiş bırakabilirsin, ama bahşiş hiçbir özelliğin kilidini açmaz."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Bugün tatlı bir şey mi gördün?\nOnu çıkartma olarak kopar.",
+    "cta": "App Store’dan ücretsiz al"
+  },
+  "ui": {
+    "skip": "İçeriğe geç",
+    "languages": "Dil",
+    "privacy": "Gizlilik Politikası",
+    "contact": "Soru ya da görüşlerini {email} adresine yazabilirsin. Genellikle 2–3 gün içinde yanıt veriyoruz. Hata bildirimlerini ve özellik önerilerini GitHub’da M1zz/StampCamera üzerinden de alıyoruz."
+  }
+}

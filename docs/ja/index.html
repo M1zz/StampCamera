@@ -1,92 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — 長押しで、ひとときを動くステッカーに</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-                 "Segoe UI", Roboto, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: 長押しではがす、動くステッカーカメラ</title>
+  <meta name="description" content="カメラに映った場面を長押しして、動くステッカーにはがします。被写体だけを切り抜くか切手の形ではがし、メッセージやキーボードからすぐ送れます。すべての機能が無料です。">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: 長押しではがす、動くステッカーカメラ">
+  <meta property="og:description" content="カメラに映った場面を長押しして、動くステッカーにはがします。被写体だけを切り抜くか切手の形ではがし、メッセージやキーボードからすぐ送れます。すべての機能が無料です。">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/ja/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/ja/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">長押しで、ひとときを動くステッカーに。</p>
-    <p class="desc">
-      Punching は、カメラ越しに見えたものをパンチで動くステッカーとしてはがす iOS カメラアプリです。被写体を切り抜いても、ギザギザの切手の形ではがしても OK。ステッカーはブックに集めて、メッセージやキーボードから送ったり、本物のステッカーとして印刷したりできます。
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">サポート &amp; お問い合わせ</a> <a class="btn ghost" href="./privacy.html">プライバシーポリシー</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span> <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <header class="bar">
+    <a class="brand" href="../ja/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">言語</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>長押しすると、<br>その瞬間がステッカーに</h1>
+        <p class="lead">パンチの窓に場面を合わせて、長押ししてから指を離します。犬なら犬の形のまま切り抜かれ、押す前後の短い動きまで残ります。はがしたステッカーは、メッセージやキーボードからすぐ送れます。</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">App Storeで無料入手</a><a class="try" href="#try">はがしてみよう ↓</a></div>
+        <p class="muted small">すべての機能が無料です。ステッカーと写真はデバイスの中にだけ保存されます。</p>
+      </div>
+      <div class="phone"><img src="../img/ja/01-reveal.jpg" alt="長押しすると、 その瞬間がステッカーに" width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>はがしてみよう</h2>
+      <p class="muted">場面を選んで、パンチボタンを長押ししてから離してください。はがしたあとで、形や色合いも変えてみましょう。</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;はがしてみよう&quot;, &quot;lead&quot;: &quot;場面を選んで、パンチボタンを長押ししてから離してください。はがしたあとで、形や色合いも変えてみましょう。&quot;, &quot;scenes&quot;: [&quot;子犬&quot;, &quot;アイス&quot;, &quot;海辺&quot;], &quot;hold&quot;: &quot;長押しではがす&quot;, &quot;holding&quot;: &quot;離すとはがれます&quot;, &quot;empty&quot;: &quot;はがしたステッカーがここに届きます&quot;, &quot;note&quot;: &quot;Web体験では、あらかじめ選んだ写真を使います。切り抜きと色合いは、アプリと同じ方法で前もって作っておいたものです。アプリではカメラに映った場面をはがし、押す前後の動きまでステッカーに残ります。&quot;, &quot;shape&quot;: &quot;形&quot;, &quot;cutout&quot;: &quot;切り抜き&quot;, &quot;stamp&quot;: &quot;切手&quot;, &quot;look&quot;: &quot;色合い&quot;, &quot;arrived&quot;: &quot;ステッカーが届きました！&quot;, &quot;noSubject&quot;: &quot;切り抜く対象がないため、切手の形ではがしました&quot;, &quot;inks&quot;: [&quot;オリジナル&quot;, &quot;セピア&quot;, &quot;モノクロ&quot;, &quot;色あせ&quot;, &quot;ビビッド&quot;, &quot;シアン&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>かわいい瞬間は、カメラロールで眠ったまま</h2>
+      <p>犬が舌を出した瞬間を撮れても、ステッカーにして送るには、写真を探して、切り抜いて、別のステッカーアプリを開く必要があります。そのころには、もう会話は次の話題へ。Punchingなら撮ったその場でステッカーをはがし、ブックに入れた瞬間にメッセージのステッカーパネルに並びます。</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>被写体は切り抜き、風景は切手に</h2>
+        <p>人やペット、モノのように切り抜ける被写体があれば、その姿だけを切り抜きます。風景のように被写体がなければ、ギザギザの縁の切手の形ではがします。<br>押す前後の短い動きも一緒に記録されるので、ステッカーが動きます。</p>
+      </div>
+      <div class="phone"><img src="../img/ja/05-camera.jpg" alt="被写体は切り抜き、風景は切手に" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>メッセージとキーボードですぐに</h2>
+        <p>はがしたステッカーは、メッセージアプリのステッカーパネルに並びます。Punching キーボードをオンにすれば、ほかのアプリでも選んで貼れます。<br>動くステッカーは動いたまま届きます。長押ししてコピーすれば、どこにでも貼り付けられます。</p>
+      </div>
+      <div class="phone"><img src="../img/ja/06-chat.jpg" alt="メッセージとキーボードですぐに" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>形も色合いも、はがしたあとで</h2>
+        <p>切り抜きと切手、動きと静止は、いつでも切り替えられます。元の写真がそのまま残るので、何度変えても最初と同じくっきりした仕上がりです。<br>オリジナル、セピア、モノクロ、色あせ、ビビッド、シアンから色合いを選び、ひとこと、日付、場所も残せます。</p>
+      </div>
+      <div class="phone"><img src="../img/ja/03-detail.jpg" alt="形も色合いも、はがしたあとで" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>ブックに集めて、紙のステッカーに印刷</h2>
+        <p>テーマごとにブックを作れば、メッセージとキーボードでもブックごとに選べます。クラフト、方眼、罫線、羊皮紙などの台紙を選び、並び順も自由にデコれます。<br>ブックを切手の形のカットライン入りの印刷用PDFにして、ステッカー用紙にそのまま印刷できます。</p>
+      </div>
+      <div class="phone"><img src="../img/ja/04-arrange.jpg" alt="ブックに集めて、紙のステッカーに印刷" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>はじめかたは3ステップ</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>パンチに合わせる</h3><p>カメラ中央の窓に、残したいものを入れます。</p></li>
+<li class="card"><span class="n">2</span><h3>長押しして離す</h3><p>指を離した瞬間、ステッカーがはがれます。</p></li>
+<li class="card"><span class="n">3</span><h3>入れて、送る</h3><p>ブックに入れると、メッセージとキーボードにすぐ並びます。</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>使う場所と、変える場所</h2>
+      <div class="card table">
+        <dl><div><dt>メッセージ</dt><dd>入力欄の横の ＋ ▸ ステッカー ▸ Punching ステッカー</dd></div><div><dt>ほかのアプリ</dt><dd>Punching キーボードをオンにし、地球儀ボタンで切り替えて貼る</dd></div><div><dt>どこでも</dt><dd>ステッカーを長押ししてコピーし、貼り付ける</dd></div><div><dt>紙のステッカー</dt><dd>ブックの ⋯ ▸ 使う ▸ 印刷用ステッカーシート（PDF）</dd></div><div><dt>台紙と並び順</dt><dd>ブックの ⋯ ▸ 自由にデコる</dd></div><div><dt>前に撮った写真</dt><dd>ブックの「写真から読み込む」</dd></div><div><dt>最初にはがす形</dt><dd>設定 ▸ はがす ▸ 基本の形</dd></div><div><dt>動きの表示</dt><dd>設定 ▸ 表示 ▸ 動きを自動再生</dd></div><div><dt>すぐに開く</dt><dd>ショートカットやコントロールセンターの「Punching カメラを開く」</dd></div></dl>
+      </div>
+      <p class="muted">設定は、カメラ画面の右上にある歯車ボタンから開けます。</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>よくある質問</h2>
+      <div class="faq"><details><summary>ステッカーが動きません。</summary><p>カメラ右上の設定 ▸ 表示で、動きを自動再生がオンになっているか確認してください。ステッカーをタップして、形の下にある動きがオンかどうかも見てください。動きはいつも一緒に記録されているので、あとからでもオンにできます。写真アプリから読み込んだ写真は1枚だけなので動きません。</p></details>
+<details><summary>切り抜きではなく、切手の形になります。</summary><p>風景のように切り抜く被写体がない場面は、自動で切手の形ではがします。ステッカーをタップすれば形からいつでも変更できます。最初から切手の形ではがしたい場合は、設定 ▸ はがす ▸ 基本の形を変えてください。</p></details>
+<details><summary>メッセージにステッカーが出てきません。</summary><p>メッセージの入力欄の横にある ＋ ボタン ▸ ステッカーから、Punching ステッカーを探してください。Punching でステッカーを1枚以上はがすと表示され、ブックが2つ以上あればブックごとに選べます。詳しい手順は、設定 ▸ 使う ▸ メッセージとキーボードで使うにあります。</p></details>
+<details><summary>キーボードはどうやってオンにしますか？</summary><p>設定 ▸ 使う ▸ メッセージとキーボードで使うの「設定を開く」をタップし、キーボード ▸ Punching ステッカーをオンにします。ステッカーを貼るにはフルアクセスを許可が必要ですが、キーボードが入力した文字を読んだり送ったりすることはなく、インターネットにも接続しません。あとは、どのアプリでもキーボードの地球儀ボタンで Punching ステッカーに切り替えるだけです。</p></details>
+<details><summary>本物のステッカーに印刷したいです。</summary><p>ブック右上の ⋯ ▸ 使う ▸ 印刷用ステッカーシート（PDF）をタップしてください。ブック単位で、切手の形のカットライン入り300dpiの印刷用PDFができ、家庭用プリンタのステッカー用紙や印刷所でそのまま使えます。詳しい手順は同じメニューの印刷ガイドにあります。</p></details>
+<details><summary>前に作ったコレクションはどこへ行きましたか？</summary><p>1.0.1から、ステッカーのまとめ方はブックひとつになりました。コレクションは同じ名前のブックになり、入っていたステッカー、台紙、並び順もそのまま移っています。</p></details>
+<details><summary>ステータスバーに緑のランプが点きます。</summary><p>iOSのカメラ使用中のインジケータです。カメラ画面が表示されている間だけ点き、ブックを開いている間はカメラを止めるので消えます。</p></details>
+<details><summary>ステッカーを削除するとどうなりますか？</summary><p>ステッカー、元の写真、動きのデータがデバイスから完全に削除され、メッセージのステッカーパネルからも消えます。元に戻せないので、よく確かめてから削除してください。</p></details>
+<details><summary>写真とステッカーはどこに保存されますか？</summary><p>すべてデバイスの中にだけ保存されます。アカウントも、独自のサーバーも、広告もありません。外に送られるのは、匿名の利用統計とエラーレポート、そしてご自身で送ったフィードバックだけです。詳しくはプライバシーポリシーをご覧ください。</p></details>
+<details><summary>本当に無料ですか？</summary><p>はい、すべての機能を無料で使えます。気に入ったらアプリ内から開発者にチップを送れますが、チップで使えるようになる機能はありません。</p></details></div>
+      <p class="contact">ご質問やご意見は <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> までお送りください。通常2〜3日以内にお返事します。バグの報告や機能の提案は、GitHub（M1zz/StampCamera）のIssueでも受け付けています。</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>今日見つけたかわいい瞬間、<br>ステッカーにはがしておこう</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">App Storeで無料入手</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="言語"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja" aria-current="page">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">プライバシーポリシー</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

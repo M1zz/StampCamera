@@ -1,0 +1,177 @@
+{
+  "title": "Punching: kamera, joka tekee hetkestä liikkuvan tarran",
+  "description": "Pidä painettuna ja irrota näkemäsi liikkuvaksi tarraksi. Rajaa kohde tai irrota postimerkki ja lähetä Viesteistä tai näppäimistöltä. Ilmainen.",
+  "hero": {
+    "headline": "Pidä painettuna.\nHetkestä tulee tarra.",
+    "lead": "Sovita kuva lävistimen ikkunaan, pidä painettuna ja päästä irti. Koira rajautuu tarkasti omaa muotoaan myöten, ja mukaan tarttuu lyhyt liike juuri ennen painallusta ja sen jälkeen. Lähetä tarra saman tien Viesteistä tai näppäimistöltä.",
+    "cta": "Ilmaiseksi App Storesta",
+    "note": "Kaikki ominaisuudet ovat ilmaisia. Tarrat ja kuvat pysyvät laitteellasi."
+  },
+  "demo": {
+    "title": "Kokeile itse",
+    "lead": "Valitse kuva, pidä lävistinpainiketta painettuna ja päästä irti. Kokeile sitten toista muotoa ja ilmettä.",
+    "scenes": [
+      "Koiranpentu",
+      "Jäätelö",
+      "Ranta"
+    ],
+    "hold": "Irrota pitämällä painettuna",
+    "holding": "Päästä irti, niin tarra irtoaa",
+    "empty": "Tarrasi ilmestyy tähän",
+    "note": "Verkkokokeilussa käytetään valmiiksi valittuja kuvia. Rajaukset ja ilmeet on tehty etukäteen samalla tavalla kuin apissa. Apissa irrotat sen, mitä kamera näkee, ja tarraan tallentuu myös liike painalluksen ympäriltä.",
+    "shape": "Muoto",
+    "cutout": "Rajattu",
+    "stamp": "Postimerkki",
+    "look": "Ilme",
+    "arrived": "Tarrasi on saapunut!",
+    "noSubject": "Rajattavaa ei ollut, joten irrotettiin postimerkin muotoon",
+    "inks": [
+      "Alkuperäinen",
+      "Seepia",
+      "Mustavalkoinen",
+      "Haalistunut",
+      "Eloisa",
+      "Syaani"
+    ]
+  },
+  "problem": {
+    "title": "Parhaat hetket nukahtavat kuvakirjastoon",
+    "text": "Nappaat kuvan juuri, kun koira näyttää kieltään. Jotta siitä tulisi tarra, pitää etsiä kuva, rajata se ja avata vielä erillinen tarra-appi. Sillä välin keskustelu on jo siirtynyt muihin aiheisiin. Punching irrottaa tarran siinä samassa, kun kuvaat, ja heti kun lisäät sen albumiin, se odottaa Viestien tarralaatikossa."
+  },
+  "features": [
+    {
+      "title": "Kohde rajataan, maisemasta tulee postimerkki",
+      "text": "Jos kuvassa on rajattavaa, kuten ihminen, lemmikki tai esine, saat juuri sen. Jos ei ole, kuten maisemassa, kuva irtoaa postimerkkinä, jossa on hammastettu reuna.\nMukaan tallentuu lyhyt liike painalluksen ympäriltä, joten tarra liikkuu.",
+      "shot": "05-camera"
+    },
+    {
+      "title": "Suoraan Viesteihin ja näppäimistölle",
+      "text": "Irrotetut tarrat ilmestyvät Viestien tarralaatikkoon. Kun otat Punching-näppäimistön käyttöön, voit valita ja liittää niitä muissakin apeissa.\nLiikkuva tarra liikkuu myös perillä. Kopioi tarra pitämällä sitä painettuna ja liitä se minne haluat.",
+      "shot": "06-chat"
+    },
+    {
+      "title": "Muoto ja ilme myös jälkikäteen",
+      "text": "Vaihda rajatun ja postimerkin, liikkeen ja pysäytyskuvan välillä milloin haluat. Alkuperäinen kuva säilyy, joten jälki pysyy yhtä terävänä kuin ensimmäisellä kerralla, vaihdoit kuinka usein tahansa.\nValitse ilme vaihtoehdoista Alkuperäinen, Seepia, Mustavalkoinen, Haalistunut, Eloisa ja Syaani, ja lisää muutama sana, päivämäärä ja paikka.",
+      "shot": "03-detail"
+    },
+    {
+      "title": "Kokoa albumeihin, tulosta paperille",
+      "text": "Tee jokaiselle aiheelle oma albumi, niin voit valita tarroja albumi kerrallaan myös Viesteissä ja näppäimistöllä. Valitse sivuiksi esimerkiksi kraft, ruudullinen, viivoitettu tai pergamentti ja järjestä tarrat mieleiseesi järjestykseen.\nMuuta albumi tulostettavaksi PDF:ksi, jossa on postimerkin muotoiset leikkausviivat, ja tulosta se suoraan tarrapaperille.",
+      "shot": "04-arrange"
+    }
+  ],
+  "steps": {
+    "title": "Alkuun kolmessa vaiheessa",
+    "items": [
+      {
+        "title": "Tähtää",
+        "text": "Aseta haluamasi kohde kameran keskellä olevaan ikkunaan."
+      },
+      {
+        "title": "Paina ja päästä irti",
+        "text": "Tarra irtoaa sillä hetkellä, kun päästät irti."
+      },
+      {
+        "title": "Tallenna ja lähetä",
+        "text": "Lisää tarra albumiin, niin se on heti valmiina Viesteissä ja näppäimistöllä."
+      }
+    ]
+  },
+  "reference": {
+    "title": "Missä tarroja käytetään ja mistä asetuksia muutetaan",
+    "rows": [
+      [
+        "Viestit",
+        "＋ kirjoituskentän vieressä ▸ Tarrat ▸ Punching-tarrat"
+      ],
+      [
+        "Muut apit",
+        "Ota Punching-näppäimistö käyttöön, vaihda siihen maapallonäppäimellä, valitse ja liitä"
+      ],
+      [
+        "Missä vain",
+        "Pidä tarraa painettuna, kopioi ja liitä"
+      ],
+      [
+        "Paperitarrat",
+        "Albumin ⋯ ▸ Käyttö ▸ Tulostettava tarra-arkki (PDF)"
+      ],
+      [
+        "Sivut ja järjestys",
+        "Albumin ⋯ ▸ Koristele vapaasti"
+      ],
+      [
+        "Vanhemmat kuvat",
+        "Albumin Tuo Kuvista"
+      ],
+      [
+        "Ensimmäinen muoto",
+        "Asetukset ▸ Irrotus ▸ Oletusmuoto"
+      ],
+      [
+        "Liikkeen toisto",
+        "Asetukset ▸ Näkymä ▸ Toista liike automaattisesti"
+      ],
+      [
+        "Pikakäynnistys",
+        "Avaa Punching-kamera Pikakomennoista tai Ohjauskeskuksesta"
+      ]
+    ],
+    "note": "Asetukset avautuvat kameranäkymän oikean yläkulman rataspainikkeesta."
+  },
+  "faq": {
+    "title": "Usein kysyttyä",
+    "items": [
+      {
+        "q": "Tarra ei liiku.",
+        "a": "Avaa kameran oikeasta yläkulmasta Asetukset ▸ Näkymä ja tarkista, että Toista liike automaattisesti on päällä. Napauta sitten tarraa ja tarkista, että Liike on päällä kohdassa Muoto. Liike tallentuu aina mukaan, joten voit ottaa sen käyttöön milloin vain. Kuvat-apista tuodut kuvat ovat yksittäisiä kuvia, joten ne eivät liiku."
+      },
+      {
+        "q": "Sain postimerkin enkä rajattua tarraa.",
+        "a": "Kuvat, joissa ei ole rajattavaa kohdetta, kuten maisemat, irtoavat automaattisesti postimerkkinä. Voit vaihtaa muodon milloin tahansa napauttamalla tarraa ja valitsemalla Muoto. Jos haluat postimerkkejä alusta asti, vaihda Asetukset ▸ Irrotus ▸ Oletusmuoto."
+      },
+      {
+        "q": "En näe tarroja Viesteissä.",
+        "a": "Napauta Viesteissä kirjoituskentän vieressä olevaa ＋-painiketta ▸ Tarrat ja etsi Punching-tarrat. Ne ilmestyvät, kun olet irrottanut Punchingissa vähintään yhden tarran, ja jos albumeita on useampi, voit selata niitä albumi kerrallaan. Tarkemmat ohjeet löytyvät kohdasta Asetukset ▸ Käyttö ▸ Käyttö Viesteissä ja näppäimistöllä."
+      },
+      {
+        "q": "Miten otan näppäimistön käyttöön?",
+        "a": "Napauta kohdassa Asetukset ▸ Käyttö ▸ Käyttö Viesteissä ja näppäimistöllä painiketta Avaa Asetukset ja ota käyttöön Näppäimistöt ▸ Punching-tarrat. Tarrojen liittäminen vaatii Salli täysi pääsy -asetuksen, mutta näppäimistö ei koskaan lue eikä lähetä kirjoittamaasi eikä muodosta yhteyttä internetiin. Napauta sen jälkeen missä tahansa apissa maapallonäppäintä ja vaihda Punching-tarroihin."
+      },
+      {
+        "q": "Voinko tulostaa oikeita tarroja?",
+        "a": "Napauta albumin oikeasta yläkulmasta ⋯ ▸ Käyttö ▸ Tulostettava tarra-arkki (PDF). Koko albumista syntyy 300 dpi:n tulostettava PDF, jossa on postimerkin muotoiset leikkausviivat, valmiina tarrapaperille kotitulostimessa tai painossa. Saman valikon Tulostusopas neuvoo vaihe vaiheelta."
+      },
+      {
+        "q": "Minne vanhat kokoelmani katosivat?",
+        "a": "Versiosta 1.0.1 lähtien tarrat ryhmitellään vain yhdellä tavalla: albumeihin. Jokaisesta kokoelmasta tuli samanniminen albumi, ja sen tarrat, sivut ja järjestys siirtyivät mukana sellaisinaan."
+      },
+      {
+        "q": "Tilapalkissa palaa vihreä valo.",
+        "a": "Se on iOS:n kameran merkkivalo. Se palaa vain, kun kameranäkymä on auki. Kun avaat albumin, kamera pysähtyy ja valo sammuu."
+      },
+      {
+        "q": "Mitä tapahtuu, kun poistan tarran?",
+        "a": "Tarra, alkuperäinen kuva ja liiketiedot poistetaan laitteeltasi pysyvästi, ja tarra katoaa myös Viestien tarralaatikosta. Poistoa ei voi perua, joten harkitse ennen poistamista."
+      },
+      {
+        "q": "Mihin kuvani ja tarrani tallentuvat?",
+        "a": "Vain laitteellesi. Ei tiliä, ei omaa palvelinta eikä mainoksia. Laitteelta lähtevät vain nimettömät käyttötilastot, virheraportit ja itse lähettämäsi palaute. Lisätietoja on tietosuojaselosteessa."
+      },
+      {
+        "q": "Onko se oikeasti ilmainen?",
+        "a": "Kyllä, kaikki ominaisuudet ovat ilmaisia. Jos pidät apista, voit antaa kehittäjälle tippiä apin sisällä, mutta tippi ei avaa mitään lisäominaisuuksia."
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Näitkö tänään jotain söpöä?\nIrrota se tarraksi.",
+    "cta": "Ilmaiseksi App Storesta"
+  },
+  "ui": {
+    "skip": "Siirry sisältöön",
+    "languages": "Kieli",
+    "privacy": "Tietosuojaseloste",
+    "contact": "Kysyttävää tai palautetta? Kirjoita osoitteeseen {email}. Vastaamme yleensä 2–3 päivässä. Virheistä ja toiveista voi kertoa myös GitHubissa: M1zz/StampCamera."
+  }
+}

@@ -1,92 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Punching — แตะค้างเพื่อเปลี่ยนช่วงเวลาให้เป็นสติกเกอร์ขยับได้</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-                 "Segoe UI", Roboto, sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punching: กล้องที่เปลี่ยนช่วงเวลาให้เป็นสติกเกอร์ขยับได้</title>
+  <meta name="description" content="แตะค้างแล้วฉีกภาพที่กล้องเห็นออกมาเป็นสติกเกอร์ขยับได้ ตัดเฉพาะตัวหลักหรือฉีกเป็นรูปแสตมป์ แล้วส่งต่อในข้อความหรือคีย์บอร์ดได้ทันที ใช้ฟรีทุกฟีเจอร์">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Punching: กล้องที่เปลี่ยนช่วงเวลาให้เป็นสติกเกอร์ขยับได้">
+  <meta property="og:description" content="แตะค้างแล้วฉีกภาพที่กล้องเห็นออกมาเป็นสติกเกอร์ขยับได้ ตัดเฉพาะตัวหลักหรือฉีกเป็นรูปแสตมป์ แล้วส่งต่อในข้อความหรือคีย์บอร์ดได้ทันที ใช้ฟรีทุกฟีเจอร์">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/th/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/th/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="stylesheet" href="../sitegen.css">
+  <link rel="stylesheet" href="../demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>Punching</h1>
-    <p class="tagline">แตะค้างเพื่อเปลี่ยนช่วงเวลาให้เป็นสติกเกอร์ขยับได้</p>
-    <p class="desc">
-      Punching คือแอปกล้องบน iOS ที่ฉีกสิ่งที่คุณเห็นผ่านเครื่องเจาะออกมาเป็นสติกเกอร์ขยับได้ จะตัดเฉพาะตัวแบบหรือฉีกเป็นแสตมป์ฟันปลาก็ได้ สะสมสติกเกอร์ไว้ในอัลบั้ม ส่งจากแอปข้อความหรือคีย์บอร์ด หรือพิมพ์ออกมาเป็นสติกเกอร์จริง
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">ช่วยเหลือและติดต่อ</a> <a class="btn ghost" href="./privacy.html">นโยบายความเป็นส่วนตัว</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span> <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">ข้ามไปที่เนื้อหา</a>
+  <header class="bar">
+    <a class="brand" href="../th/"><img src="../icon.png" alt="" width="32" height="32">Punching</a>
+    <a class="lang-link" href="#languages">ภาษา</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>แตะค้างไว้<br>ช่วงเวลานั้นก็กลายเป็นสติกเกอร์</h1>
+        <p class="lead">เล็งภาพให้อยู่ในช่องเจาะ แตะค้างแล้วปล่อย น้องหมาจะถูกตัดออกมาตามรูปร่างของน้องหมาเอง พร้อมการเคลื่อนไหวสั้น ๆ ก่อนและหลังกด สติกเกอร์ที่ฉีกได้ส่งต่อในข้อความหรือคีย์บอร์ดได้เลย</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">ดาวน์โหลดฟรีใน App Store</a><a class="try" href="#try">ลองฉีกดูเอง ↓</a></div>
+        <p class="muted small">ใช้ฟรีทุกฟีเจอร์ สติกเกอร์และรูปภาพเก็บไว้ในเครื่องของคุณเท่านั้น</p>
+      </div>
+      <div class="phone"><img src="../img/th/01-reveal.jpg" alt="แตะค้างไว้ ช่วงเวลานั้นก็กลายเป็นสติกเกอร์" width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>ลองฉีกดูเอง</h2>
+      <p class="muted">เลือกภาพ แล้วแตะปุ่มเจาะค้างไว้ก่อนปล่อย ฉีกเสร็จแล้วลองเปลี่ยนรูปทรงและโทนสีดูได้</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;ลองฉีกดูเอง&quot;, &quot;lead&quot;: &quot;เลือกภาพ แล้วแตะปุ่มเจาะค้างไว้ก่อนปล่อย ฉีกเสร็จแล้วลองเปลี่ยนรูปทรงและโทนสีดูได้&quot;, &quot;scenes&quot;: [&quot;น้องหมา&quot;, &quot;ไอศกรีม&quot;, &quot;ชายหาด&quot;], &quot;hold&quot;: &quot;แตะค้างเพื่อฉีก&quot;, &quot;holding&quot;: &quot;ปล่อยเพื่อฉีก&quot;, &quot;empty&quot;: &quot;สติกเกอร์ที่ฉีกได้จะมาอยู่ตรงนี้&quot;, &quot;note&quot;: &quot;การทดลองบนเว็บใช้รูปที่เราเลือกไว้ล่วงหน้า การตัดภาพและโทนสีทำเตรียมไว้ด้วยวิธีเดียวกับในแอป ในแอปคุณจะฉีกภาพที่กล้องเห็นจริง และสติกเกอร์จะเก็บการเคลื่อนไหวช่วงก่อนและหลังกดไว้ด้วย&quot;, &quot;shape&quot;: &quot;รูปทรง&quot;, &quot;cutout&quot;: &quot;ตัดขอบ&quot;, &quot;stamp&quot;: &quot;แสตมป์&quot;, &quot;look&quot;: &quot;โทนภาพ&quot;, &quot;arrived&quot;: &quot;สติกเกอร์มาถึงแล้ว!&quot;, &quot;noSubject&quot;: &quot;ไม่มีอะไรให้ตัด จึงฉีกเป็นรูปแสตมป์&quot;, &quot;inks&quot;: [&quot;ต้นฉบับ&quot;, &quot;ซีเปีย&quot;, &quot;ขาวดำ&quot;, &quot;ซีดจาง&quot;, &quot;สดใส&quot;, &quot;ฟ้าอมเขียว&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>ช่วงเวลาน่ารัก ๆ มักหลับใหลอยู่ในคลังรูป</h2>
+      <p>ถ่ายตอนน้องหมาแลบลิ้นได้แล้ว แต่จะส่งเป็นสติกเกอร์ให้เพื่อนก็ต้องหารูป ตัดพื้นหลัง แล้วเปิดแอปทำสติกเกอร์อีกตัว พอเสร็จ บทสนทนาก็ไปเรื่องอื่นแล้ว Punching ฉีกสติกเกอร์ออกมาตรงนั้นเลย และทันทีที่เก็บเข้าอัลบั้ม ก็ไปรออยู่ในลิ้นชักสติกเกอร์ของข้อความแล้ว</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>ตัวหลักถูกตัดออกมา วิวกลายเป็นแสตมป์</h2>
+        <p>ถ้ามีสิ่งที่ตัดออกมาได้ เช่น คน สัตว์เลี้ยง หรือสิ่งของ ก็จะได้แค่ตัวนั้น ถ้าไม่มี อย่างภาพวิว ก็จะฉีกเป็นรูปแสตมป์ขอบหยัก<br>การเคลื่อนไหวสั้น ๆ ก่อนและหลังกดถูกเก็บไว้ด้วย สติกเกอร์จึงขยับได้</p>
+      </div>
+      <div class="phone"><img src="../img/th/05-camera.jpg" alt="ตัวหลักถูกตัดออกมา วิวกลายเป็นแสตมป์" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>ใช้ในข้อความและคีย์บอร์ดได้ทันที</h2>
+        <p>สติกเกอร์ที่ฉีกได้จะไปอยู่ในลิ้นชักสติกเกอร์ของแอปข้อความ เปิดคีย์บอร์ด Punching แล้วก็เลือกแปะในแอปอื่นได้ด้วย<br>สติกเกอร์ขยับได้ส่งไปก็ยังขยับ แตะค้างเพื่อคัดลอก แล้ววางได้ทุกที่</p>
+      </div>
+      <div class="phone"><img src="../img/th/06-chat.jpg" alt="ใช้ในข้อความและคีย์บอร์ดได้ทันที" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>เปลี่ยนรูปทรงและโทนสีได้ทุกเมื่อ</h2>
+        <p>สลับระหว่างตัดภาพกับแสตมป์ ขยับกับนิ่ง ได้ตลอด รูปต้นฉบับยังอยู่ครบ เปลี่ยนกี่ครั้งก็คมชัดเหมือนครั้งแรก<br>เลือกโทนสีจากต้นฉบับ ซีเปีย ขาวดำ ซีดจาง สดใส และฟ้าอมเขียว พร้อมจดข้อความสั้น ๆ วันที่ และสถานที่ได้</p>
+      </div>
+      <div class="phone"><img src="../img/th/03-detail.jpg" alt="เปลี่ยนรูปทรงและโทนสีได้ทุกเมื่อ" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>เก็บเป็นอัลบั้ม แล้วพิมพ์เป็นสติกเกอร์กระดาษ</h2>
+        <p>สร้างอัลบั้มตามธีม แล้วในข้อความและคีย์บอร์ดก็เลือกตามอัลบั้มได้ เลือกพื้นกระดาษแบบคราฟต์ ตาราง เส้นบรรทัด หรือหนังแกะ และจัดลำดับได้ตามใจ<br>เปลี่ยนอัลบั้มเป็น PDF สำหรับพิมพ์ที่มีเส้นตัดรูปแสตมป์ แล้วพิมพ์ลงกระดาษสติกเกอร์ได้เลย</p>
+      </div>
+      <div class="phone"><img src="../img/th/04-arrange.jpg" alt="เก็บเป็นอัลบั้ม แล้วพิมพ์เป็นสติกเกอร์กระดาษ" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>เริ่มได้ในสามขั้นตอน</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>เล็งให้ตรงช่อง</h3><p>ใส่สิ่งที่อยากเก็บไว้ในช่องกลางกล้อง</p></li>
+<li class="card"><span class="n">2</span><h3>แตะค้างแล้วปล่อย</h3><p>สติกเกอร์จะฉีกออกมาตอนที่ปล่อยนิ้ว</p></li>
+<li class="card"><span class="n">3</span><h3>เก็บแล้วส่ง</h3><p>เก็บเข้าอัลบั้ม แล้วใช้ในข้อความและคีย์บอร์ดได้ทันที</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>ใช้ที่ไหน เปลี่ยนที่ไหน</h2>
+      <div class="card table">
+        <dl><div><dt>ข้อความ</dt><dd>＋ ข้างช่องพิมพ์ ▸ สติกเกอร์ ▸ สติกเกอร์ Punching</dd></div><div><dt>แอปอื่น</dt><dd>เปิดคีย์บอร์ด Punching สลับด้วยปุ่มลูกโลก แล้วเลือกแปะ</dd></div><div><dt>ทุกที่</dt><dd>แตะสติกเกอร์ค้างเพื่อคัดลอก แล้ววาง</dd></div><div><dt>สติกเกอร์กระดาษ</dt><dd>⋯ ในอัลบั้ม ▸ ใช้งาน ▸ แผ่นสติกเกอร์สำหรับพิมพ์ (PDF)</dd></div><div><dt>พื้นกระดาษและลำดับ</dt><dd>⋯ ในอัลบั้ม ▸ ตกแต่งอิสระ</dd></div><div><dt>รูปเก่า</dt><dd>นำเข้าจากรูปภาพในอัลบั้ม</dd></div><div><dt>รูปทรงตอนฉีก</dt><dd>การตั้งค่า ▸ ฉีก ▸ รูปทรงเริ่มต้น</dd></div><div><dt>การแสดงการเคลื่อนไหว</dt><dd>การตั้งค่า ▸ มุมมอง ▸ เล่นการเคลื่อนไหวอัตโนมัติ</dd></div><div><dt>เปิดด่วน</dt><dd>เปิดกล้อง Punching ในคำสั่งลัดหรือศูนย์ควบคุม</dd></div></dl>
+      </div>
+      <p class="muted">การตั้งค่าอยู่ที่ปุ่มรูปเฟืองมุมขวาบนของหน้ากล้อง</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>คำถามที่พบบ่อย</h2>
+      <div class="faq"><details><summary>สติกเกอร์ไม่ขยับ</summary><p>ที่มุมขวาบนของกล้อง ไปที่การตั้งค่า ▸ มุมมอง แล้วดูว่าเปิดเล่นการเคลื่อนไหวอัตโนมัติอยู่ จากนั้นแตะสติกเกอร์และดูว่าการเคลื่อนไหวใต้รูปทรงเปิดอยู่ การเคลื่อนไหวถูกบันทึกไว้เสมอ จึงเปิดได้ทุกเมื่อ รูปที่นำเข้าจากแอปรูปภาพมีแค่ภาพเดียว จึงไม่ขยับ</p></details>
+<details><summary>ได้แสตมป์แทนที่จะเป็นภาพตัด</summary><p>ภาพที่ไม่มีอะไรให้ตัด อย่างภาพวิว จะถูกฉีกเป็นรูปแสตมป์โดยอัตโนมัติ แตะสติกเกอร์แล้วเปลี่ยนในรูปทรงได้ทุกเมื่อ ถ้าอยากให้ฉีกเป็นแสตมป์ตั้งแต่แรก ให้เปลี่ยนที่การตั้งค่า ▸ ฉีก ▸ รูปทรงเริ่มต้น</p></details>
+<details><summary>ไม่เห็นสติกเกอร์ในข้อความ</summary><p>ในแอปข้อความ แตะปุ่ม ＋ ข้างช่องพิมพ์ ▸ สติกเกอร์ แล้วหาสติกเกอร์ Punching จะปรากฏเมื่อคุณฉีกสติกเกอร์ใน Punching อย่างน้อยหนึ่งแผ่น และถ้ามีอัลบั้มมากกว่าหนึ่ง ก็เลือกดูทีละอัลบั้มได้ ดูขั้นตอนละเอียดได้ที่การตั้งค่า ▸ ใช้งาน ▸ ใช้ในข้อความและคีย์บอร์ด</p></details>
+<details><summary>เปิดคีย์บอร์ดอย่างไร</summary><p>ที่การตั้งค่า ▸ ใช้งาน ▸ ใช้ในข้อความและคีย์บอร์ด แตะ “เปิดการตั้งค่า” แล้วไปที่คีย์บอร์ด ▸ เปิดสติกเกอร์ Punching การวางสติกเกอร์ต้องเปิดอนุญาตการเข้าถึงเต็มรูปแบบ แต่คีย์บอร์ดไม่อ่านหรือส่งสิ่งที่คุณพิมพ์ และไม่เชื่อมต่ออินเทอร์เน็ต จากนั้นในแอปใดก็ได้ แตะปุ่มลูกโลกบนคีย์บอร์ดเพื่อสลับไปใช้สติกเกอร์ Punching</p></details>
+<details><summary>อยากพิมพ์เป็นสติกเกอร์จริง</summary><p>แตะ ⋯ ที่มุมขวาบนของอัลบั้ม ▸ ใช้งาน ▸ แผ่นสติกเกอร์สำหรับพิมพ์ (PDF) จะได้ PDF ความละเอียด 300dpi ของทั้งอัลบั้ม พร้อมเส้นตัดรูปแสตมป์ พิมพ์ลงกระดาษสติกเกอร์ด้วยเครื่องพิมพ์ที่บ้านหรือส่งร้านพิมพ์ได้เลย ขั้นตอนละเอียดอยู่ในคู่มือการพิมพ์ในเมนูเดียวกัน</p></details>
+<details><summary>คอลเลกชันเดิมของฉันหายไปไหน</summary><p>ตั้งแต่เวอร์ชัน 1.0.1 สติกเกอร์จัดกลุ่มได้แบบเดียวคืออัลบั้ม คอลเลกชันแต่ละชุดกลายเป็นอัลบั้มชื่อเดียวกัน และสติกเกอร์ พื้นกระดาษ กับลำดับในนั้นถูกย้ายมาตามเดิม</p></details>
+<details><summary>มีไฟสีเขียวที่แถบสถานะ</summary><p>นั่นคือไฟแสดงการใช้กล้องของ iOS จะติดเฉพาะตอนที่หน้ากล้องเปิดอยู่ เมื่อเปิดอัลบั้ม กล้องจะหยุดและไฟจะดับ</p></details>
+<details><summary>ลบสติกเกอร์แล้วจะเป็นอย่างไร</summary><p>สติกเกอร์ รูปต้นฉบับ และข้อมูลการเคลื่อนไหวจะถูกลบออกจากเครื่องอย่างถาวร และหายไปจากลิ้นชักสติกเกอร์ของข้อความด้วย กู้คืนไม่ได้ จึงควรลบอย่างระมัดระวัง</p></details>
+<details><summary>รูปและสติกเกอร์เก็บไว้ที่ไหน</summary><p>เก็บไว้ในเครื่องของคุณเท่านั้น ไม่มีบัญชี ไม่มีเซิร์ฟเวอร์ของเราเอง และไม่มีโฆษณา สิ่งที่ออกจากเครื่องมีแค่สถิติการใช้งานแบบไม่ระบุตัวตน รายงานข้อผิดพลาด และความคิดเห็นที่คุณส่งเอง ดูรายละเอียดได้ในนโยบายความเป็นส่วนตัว</p></details>
+<details><summary>ฟรีจริงไหม</summary><p>จริง ใช้ได้ฟรีทุกฟีเจอร์ ถ้าชอบ ก็ให้ทิปนักพัฒนาในแอปได้ แต่ทิปไม่ได้ปลดล็อกอะไรเพิ่ม</p></details></div>
+      <p class="contact">มีคำถามหรือข้อเสนอแนะ ส่งมาที่ <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> ได้เลย ปกติเราตอบภายใน 2–3 วัน แจ้งบั๊กหรือเสนอฟีเจอร์ผ่าน issue บน GitHub ที่ M1zz/StampCamera ก็ได้</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>เจออะไรน่ารักวันนี้<br>ฉีกเก็บไว้เป็นสติกเกอร์สิ</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">ดาวน์โหลดฟรีใน App Store</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="ภาษา"><a href="../" hreflang="ko" lang="ko">한국어</a>
+<a href="../en/" hreflang="en" lang="en">English</a>
+<a href="../ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="../zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="../ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="../es/" hreflang="es" lang="es">Español</a>
+<a href="../de/" hreflang="de" lang="de">Deutsch</a>
+<a href="../fr/" hreflang="fr" lang="fr">Français</a>
+<a href="../it/" hreflang="it" lang="it">Italiano</a>
+<a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="../th/" hreflang="th" lang="th" aria-current="page">ไทย</a>
+<a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="../cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="../da/" hreflang="da" lang="da">Dansk</a>
+<a href="../el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="../fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="../nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="../nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="../pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="../sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">นโยบายความเป็นส่วนตัว</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="../demo.js"></script>
 </body>
 </html>

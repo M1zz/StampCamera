@@ -1,96 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>펀칭 — 꾹 눌러 뜯은 순간을 움직이는 스티커로</title>
-<link rel="canonical" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
-<link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="en-GB" href="https://m1zz.github.io/StampCamera/en/">
-<link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
-<link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
-<link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
-<link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
-<link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
-<link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
-<link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
-<link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
-<link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
-<link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
-<link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
-<link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
-<link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
-<link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
-<link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
-<link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
-<link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
-<link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
-<link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
-<link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
-<link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
-<style>
-  :root {
-    --paper: #FBFAF7; --paper2: #ECE8DF; --ink: #42331E;
-    --sub: #8C7A52; --gold: #F2B23B; --line: #CBB585;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-                 "Noto Sans KR", sans-serif;
-    background: #141210; color: var(--ink);
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 32px 16px;
-  }
-  .stamp {
-    max-width: 560px; width: 100%;
-    background: linear-gradient(var(--paper), var(--paper2));
-    border-radius: 18px; padding: 48px 36px;
-    border: 2px dashed var(--line);
-    outline: 10px solid rgba(251, 250, 247, .06);
-  }
-  .mark {
-    font-size: 13px; font-weight: 800; letter-spacing: .35em;
-    color: var(--sub); text-transform: uppercase;
-  }
-  h1 { font-size: 44px; font-weight: 900; margin: 10px 0 6px; }
-  h1 .emoji { margin-right: 8px; }
-  .tagline { font-size: 17px; color: var(--sub); font-weight: 600; margin-bottom: 28px; }
-  p.desc { font-size: 15px; line-height: 1.75; margin-bottom: 32px; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; }
-  a.btn {
-    display: inline-block; padding: 13px 22px; border-radius: 999px;
-    font-size: 15px; font-weight: 700; text-decoration: none;
-  }
-  a.primary { background: linear-gradient(#FFE08A, var(--gold)); color: #3A2C12; }
-  a.ghost { border: 1.5px solid var(--line); color: var(--sub); }
-  .postmark {
-    margin-top: 40px; font-size: 12px; color: var(--sub);
-    border-top: 1px dashed var(--line); padding-top: 16px;
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-  }
-  .postmark a { color: var(--sub); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>펀칭: 꾹 눌러 뜯는 움직이는 스티커 카메라</title>
+  <meta name="description" content="카메라로 본 장면을 꾹 눌러 움직이는 스티커로 뜯어요. 대상만 오려 내거나 우표 모양으로 뜯고, 메시지와 키보드에서 바로 보내요. 모든 기능이 무료예요.">
+  <meta name="theme-color" content="#94590B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6779659029">
+  <link rel="canonical" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="ko" href="https://m1zz.github.io/StampCamera/">
+  <link rel="alternate" hreflang="en" href="https://m1zz.github.io/StampCamera/en/">
+  <link rel="alternate" hreflang="ja" href="https://m1zz.github.io/StampCamera/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://m1zz.github.io/StampCamera/zh-Hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://m1zz.github.io/StampCamera/zh-Hant/">
+  <link rel="alternate" hreflang="ru" href="https://m1zz.github.io/StampCamera/ru/">
+  <link rel="alternate" hreflang="es" href="https://m1zz.github.io/StampCamera/es/">
+  <link rel="alternate" hreflang="de" href="https://m1zz.github.io/StampCamera/de/">
+  <link rel="alternate" hreflang="fr" href="https://m1zz.github.io/StampCamera/fr/">
+  <link rel="alternate" hreflang="it" href="https://m1zz.github.io/StampCamera/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://m1zz.github.io/StampCamera/pt-BR/">
+  <link rel="alternate" hreflang="th" href="https://m1zz.github.io/StampCamera/th/">
+  <link rel="alternate" hreflang="vi" href="https://m1zz.github.io/StampCamera/vi/">
+  <link rel="alternate" hreflang="cs" href="https://m1zz.github.io/StampCamera/cs/">
+  <link rel="alternate" hreflang="da" href="https://m1zz.github.io/StampCamera/da/">
+  <link rel="alternate" hreflang="el" href="https://m1zz.github.io/StampCamera/el/">
+  <link rel="alternate" hreflang="fi" href="https://m1zz.github.io/StampCamera/fi/">
+  <link rel="alternate" hreflang="id" href="https://m1zz.github.io/StampCamera/id/">
+  <link rel="alternate" hreflang="nb" href="https://m1zz.github.io/StampCamera/nb/">
+  <link rel="alternate" hreflang="nl" href="https://m1zz.github.io/StampCamera/nl/">
+  <link rel="alternate" hreflang="pl" href="https://m1zz.github.io/StampCamera/pl/">
+  <link rel="alternate" hreflang="sv" href="https://m1zz.github.io/StampCamera/sv/">
+  <link rel="alternate" hreflang="tr" href="https://m1zz.github.io/StampCamera/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://m1zz.github.io/StampCamera/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="펀칭: 꾹 눌러 뜯는 움직이는 스티커 카메라">
+  <meta property="og:description" content="카메라로 본 장면을 꾹 눌러 움직이는 스티커로 뜯어요. 대상만 오려 내거나 우표 모양으로 뜯고, 메시지와 키보드에서 바로 보내요. 모든 기능이 무료예요.">
+  <meta property="og:url" content="https://m1zz.github.io/StampCamera/">
+  <meta property="og:image" content="https://m1zz.github.io/StampCamera/img/ko/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="sitegen.css">
+  <link rel="stylesheet" href="demo.css">
+  <style>:root{--accent:#94590B}@media (prefers-color-scheme:dark){:root{--accent:#F2B23B}}</style>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <main class="stamp">
-    <div class="mark">Stamp Camera</div>
-    <h1><span class="emoji">📮</span>펀칭</h1>
-    <p class="tagline">꾹 눌러 뜯은 순간을 움직이는 스티커로.</p>
-    <p class="desc">
-      펀칭기로 꾹 눌러 본 장면을 움직이는 스티커로 뜯어내는 iOS 카메라 앱입니다.
-      대상만 오려 내거나 톱니 우표 모양으로 뜯고, 수집함에 모아
-      메시지·키보드로 보내거나 진짜 스티커로 인쇄할 수 있어요.
-    </p>
-    <div class="links">
-      <a class="btn primary" href="./support.html">지원 · 문의</a>
-      <a class="btn ghost" href="./privacy.html">개인정보 처리방침</a>
-    </div>
-    <div class="postmark">
-      <span>© 2026 penguinlab · leeo@kakao.com</span>
-      <a href="https://github.com/M1zz/StampCamera">GitHub</a>
-    </div>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="bar">
+    <a class="brand" href=""><img src="icon.png" alt="" width="32" height="32">펀칭</a>
+    <a class="lang-link" href="#languages">언어</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="copy">
+        <h1>꾹 누르면,<br>그 순간이 스티커로</h1>
+        <p class="lead">펀칭기 창에 장면을 맞추고 꾹 눌렀다 떼세요. 강아지는 강아지 모양대로 오려지고, 누르기 전후의 짧은 움직임까지 담겨요. 뜯은 스티커는 메시지와 키보드에서 바로 보낼 수 있어요.</p>
+        <div class="actions"><a class="cta" href="https://apps.apple.com/app/id6779659029">App Store에서 무료로 받기</a><a class="try" href="#try">직접 뜯어 보세요 ↓</a></div>
+        <p class="muted small">모든 기능이 무료예요. 스티커와 사진은 기기 안에만 저장돼요.</p>
+      </div>
+      <div class="phone"><img src="img/ko/01-reveal.jpg" alt="꾹 누르면, 그 순간이 스티커로" width="600" height="1303" decoding="async"></div>
+    </section>
+
+
+    <section class="reveal" id="try">
+      <h2>직접 뜯어 보세요</h2>
+      <p class="muted">장면을 고르고 펀칭 버튼을 꾹 눌렀다 떼세요. 뜯은 뒤에 모양과 색감도 바꿔 보세요.</p>
+      <div id="demo" class="card demo-card" data-text="{&quot;title&quot;: &quot;직접 뜯어 보세요&quot;, &quot;lead&quot;: &quot;장면을 고르고 펀칭 버튼을 꾹 눌렀다 떼세요. 뜯은 뒤에 모양과 색감도 바꿔 보세요.&quot;, &quot;scenes&quot;: [&quot;강아지&quot;, &quot;아이스크림&quot;, &quot;바닷가&quot;], &quot;hold&quot;: &quot;꾹 눌러 뜯기&quot;, &quot;holding&quot;: &quot;떼면 뜯어져요&quot;, &quot;empty&quot;: &quot;뜯은 스티커가 여기에 나와요&quot;, &quot;note&quot;: &quot;웹 체험은 미리 고른 사진으로 해요. 오려내기와 색감은 앱과 같은 방법으로 미리 만들어 두었어요. 앱에서는 카메라로 본 장면을 뜯고, 누르기 전후의 움직임까지 스티커에 담겨요.&quot;, &quot;shape&quot;: &quot;모양&quot;, &quot;cutout&quot;: &quot;오려낸&quot;, &quot;stamp&quot;: &quot;우표&quot;, &quot;look&quot;: &quot;색감&quot;, &quot;arrived&quot;: &quot;스티커가 도착했어요!&quot;, &quot;noSubject&quot;: &quot;오려낼 대상이 없어 우표 모양으로 뜯었어요&quot;, &quot;inks&quot;: [&quot;원본&quot;, &quot;세피아&quot;, &quot;흑백&quot;, &quot;빛바램&quot;, &quot;쨍하게&quot;, &quot;푸름&quot;]}"></div>
+    </section>
+
+    <section class="problem reveal">
+      <h2>귀여운 순간은 사진첩에서 잠들어요</h2>
+      <p>강아지가 혀를 내민 순간을 찍어도, 친구에게 스티커로 보내려면 사진을 찾고, 오려 내고, 스티커 앱을 또 열어야 해요. 그사이 대화는 벌써 다른 이야기로 넘어가 있죠. 펀칭은 찍는 그 자리에서 스티커를 뜯고, 담는 순간 메시지 스티커 서랍에 넣어 둬요.</p>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>대상은 오려 내고, 풍경은 우표로</h2>
+        <p>사람, 반려동물, 물건처럼 오려낼 대상이 있으면 그 모습만 오려 내요. 풍경처럼 대상이 없으면 톱니 테두리 우표 모양으로 뜯어요.<br>누르기 전후의 짧은 움직임이 함께 담겨서 스티커가 움직여요.</p>
+      </div>
+      <div class="phone"><img src="img/ko/05-camera.jpg" alt="대상은 오려 내고, 풍경은 우표로" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>메시지와 키보드에서 바로</h2>
+        <p>뜯은 스티커는 메시지 앱의 스티커 서랍에 나타나요. 펀칭 키보드를 켜면 다른 앱에서도 골라 붙일 수 있어요.<br>움직이는 스티커는 움직이는 그대로 보내지고, 꾹 눌러 복사하면 어디에나 붙여 넣을 수 있어요.</p>
+      </div>
+      <div class="phone"><img src="img/ko/06-chat.jpg" alt="메시지와 키보드에서 바로" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>모양과 색감은 뜯은 뒤에도</h2>
+        <p>오려낸 모양과 우표 모양, 움직임과 멈춤을 언제든 바꿔요. 원본 사진이 그대로 남아 있어서 몇 번을 바꿔도 처음처럼 또렷해요.<br>원본, 세피아, 흑백, 빛바램, 쨍하게, 푸름 중에서 색감을 고르고, 한 마디와 날짜, 장소도 남겨요.</p>
+      </div>
+      <div class="phone"><img src="img/ko/03-detail.jpg" alt="모양과 색감은 뜯은 뒤에도" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="feature reveal">
+      <div class="copy">
+        <h2>수집함으로 모으고, 종이 스티커로 인쇄</h2>
+        <p>주제별로 수집함을 만들면 메시지와 키보드에서도 수집함별로 골라 써요. 크라프트, 모눈, 줄노트, 양피지 같은 속지를 고르고 순서도 마음대로 꾸며요.<br>수집함을 우표 모양 칼선이 들어간 인쇄용 PDF로 만들어 스티커 용지에 바로 인쇄할 수 있어요.</p>
+      </div>
+      <div class="phone"><img src="img/ko/04-arrange.jpg" alt="수집함으로 모으고, 종이 스티커로 인쇄" width="600" height="1303" loading="lazy" decoding="async"></div>
+    </section>
+
+    <section class="reveal">
+      <h2>시작은 세 단계면 돼요</h2>
+      <ol class="steps"><li class="card"><span class="n">1</span><h3>펀칭기에 맞춰요</h3><p>카메라 가운데 창에 담고 싶은 것을 넣어요.</p></li>
+<li class="card"><span class="n">2</span><h3>꾹 눌렀다 떼요</h3><p>떼는 순간 스티커가 뜯겨 나와요.</p></li>
+<li class="card"><span class="n">3</span><h3>담고 보내요</h3><p>수집함에 담으면 메시지와 키보드에 바로 나타나요.</p></li></ol>
+    </section>
+
+    <section class="reveal" id="commands">
+      <h2>어디서 쓰고, 어디서 바꾸나요</h2>
+      <div class="card table">
+        <dl><div><dt>메시지 앱</dt><dd>입력창 옆 ＋ ▸ 스티커 ▸ 펀칭 스티커</dd></div><div><dt>다른 앱</dt><dd>펀칭 키보드를 켜고 지구본 단추로 바꿔 골라 붙이기</dd></div><div><dt>어디에나</dt><dd>스티커를 꾹 눌러 복사한 뒤 붙여 넣기</dd></div><div><dt>종이 스티커</dt><dd>수집함 ⋯ ▸ 쓰기 ▸ 인쇄용 스티커 시트 (PDF)</dd></div><div><dt>속지와 순서</dt><dd>수집함 ⋯ ▸ 자유롭게 꾸미기</dd></div><div><dt>예전 사진</dt><dd>수집함의 사진에서 가져오기</dd></div><div><dt>처음 뜯는 모양</dt><dd>설정 ▸ 뜯기 ▸ 기본 모양</dd></div><div><dt>움직임 보기</dt><dd>설정 ▸ 보기 ▸ 움직임 자동 재생</dd></div><div><dt>바로 열기</dt><dd>단축어나 제어 센터의 펀칭 카메라 열기</dd></div></dl>
+      </div>
+      <p class="muted">설정은 카메라 화면 오른쪽 위 톱니 단추에 있어요.</p>
+    </section>
+
+
+
+    <section class="reveal" id="faq">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq"><details><summary>스티커가 움직이지 않아요.</summary><p>카메라 오른쪽 위 설정 ▸ 보기에서 움직임 자동 재생이 켜져 있는지 확인해 주세요. 스티커를 눌러 모양 아래 움직임이 켜져 있는지도 봐 주세요. 움직임은 언제나 함께 담기니 언제든 켤 수 있어요. 사진 앱에서 가져온 사진은 한 장이라 움직이지 않아요.</p></details>
+<details><summary>오려낸 스티커가 아니라 우표 모양으로 나와요.</summary><p>풍경처럼 오려낼 대상이 없는 장면은 자동으로 우표 모양으로 뜯어요. 스티커를 눌러 모양에서 언제든 바꿀 수 있고, 처음부터 우표 모양으로 뜯고 싶다면 설정 ▸ 뜯기 ▸ 기본 모양을 바꿔 주세요.</p></details>
+<details><summary>메시지 앱에서 스티커가 안 보여요.</summary><p>메시지 앱 입력창 옆 ＋ 단추 ▸ 스티커에서 펀칭 스티커를 찾아 주세요. 펀칭에서 스티커를 한 장 이상 뜯은 뒤에 나타나고, 수집함이 둘 이상이면 수집함별로 골라 볼 수 있어요. 설정 ▸ 쓰기 ▸ 메시지·키보드에서 쓰기에 자세한 방법이 있어요.</p></details>
+<details><summary>키보드는 어떻게 켜나요?</summary><p>설정 ▸ 쓰기 ▸ 메시지·키보드에서 쓰기의 설정 열기를 누르고, 키보드 ▸ 펀칭 스티커를 켜요. 스티커를 붙여 넣으려면 전체 접근 허용이 필요하지만, 키보드는 입력한 글자를 읽거나 보내지 않고 인터넷에 연결하지 않아요. 그다음 아무 앱에서나 키보드의 지구본 단추를 눌러 펀칭 스티커로 바꾸면 돼요.</p></details>
+<details><summary>진짜 스티커로 인쇄하고 싶어요.</summary><p>수집함 오른쪽 위 ⋯ ▸ 쓰기 ▸ 인쇄용 스티커 시트 (PDF)를 누르세요. 수집함 단위로 우표 모양 칼선이 들어간 300dpi 인쇄용 PDF가 만들어지고, 집 프린터의 스티커 용지나 인쇄소에 바로 쓸 수 있어요. 자세한 순서는 같은 메뉴의 인쇄 가이드에 있어요.</p></details>
+<details><summary>예전에 만든 컬렉션은 어디 갔나요?</summary><p>1.0.1부터 스티커를 묶는 방법이 수집함 하나로 바뀌었어요. 컬렉션은 같은 이름의 수집함이 되었고, 거기 있던 스티커와 속지, 순서도 그대로 옮겨졌어요. 이름이 겹치면 뒤에 (컬렉션)이 붙어요.</p></details>
+<details><summary>상태바에 초록불이 떠요.</summary><p>iOS의 카메라 사용 표시등이에요. 카메라 화면이 떠 있는 동안만 켜지고, 수집함을 여는 동안에는 카메라를 멈춰서 불이 꺼져요.</p></details>
+<details><summary>스티커를 지우면 어떻게 되나요?</summary><p>스티커와 원본 사진, 움직임 데이터가 기기에서 영구히 지워지고 메시지 스티커 서랍에서도 사라져요. 되살릴 수 없으니 신중하게 지워 주세요.</p></details>
+<details><summary>사진과 스티커는 어디에 저장되나요?</summary><p>모두 기기 안에만 저장돼요. 계정도, 자체 서버도, 광고도 없어요. 밖으로 나가는 것은 익명 사용 통계와 오류 보고, 그리고 직접 보낸 피드백뿐이에요. 자세한 내용은 개인정보처리방침에 있어요.</p></details>
+<details><summary>정말 무료인가요?</summary><p>네, 모든 기능을 무료로 쓸 수 있어요. 마음에 들면 앱 안에서 개발자에게 팁을 보낼 수 있지만, 팁으로 열리는 기능은 없어요.</p></details></div>
+      <p class="contact">궁금한 점이나 의견은 <a href="mailto:leeo@kakao.com">leeo@kakao.com</a>로 보내 주세요. 보통 2~3일 안에 답해 드려요. 버그와 기능 제안은 GitHub(M1zz/StampCamera)의 이슈로도 받아요.</p>
+    </section>
+
+    <section class="closing reveal">
+      <h2>오늘 본 귀여운 순간,<br>스티커로 뜯어 두세요</h2>
+      <a class="cta" href="https://apps.apple.com/app/id6779659029">App Store에서 무료로 받기</a>
+    </section>
   </main>
+
+  <footer>
+    <nav id="languages" class="langs" aria-label="언어"><a href="" hreflang="ko" lang="ko" aria-current="page">한국어</a>
+<a href="en/" hreflang="en" lang="en">English</a>
+<a href="ja/" hreflang="ja" lang="ja">日本語</a>
+<a href="zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+<a href="zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+<a href="ru/" hreflang="ru" lang="ru">Русский</a>
+<a href="es/" hreflang="es" lang="es">Español</a>
+<a href="de/" hreflang="de" lang="de">Deutsch</a>
+<a href="fr/" hreflang="fr" lang="fr">Français</a>
+<a href="it/" hreflang="it" lang="it">Italiano</a>
+<a href="pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+<a href="th/" hreflang="th" lang="th">ไทย</a>
+<a href="vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+<a href="cs/" hreflang="cs" lang="cs">Čeština</a>
+<a href="da/" hreflang="da" lang="da">Dansk</a>
+<a href="el/" hreflang="el" lang="el">Ελληνικά</a>
+<a href="fi/" hreflang="fi" lang="fi">Suomi</a>
+<a href="id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+<a href="nb/" hreflang="nb" lang="nb">Norsk bokmål</a>
+<a href="nl/" hreflang="nl" lang="nl">Nederlands</a>
+<a href="pl/" hreflang="pl" lang="pl">Polski</a>
+<a href="sv/" hreflang="sv" lang="sv">Svenska</a>
+<a href="tr/" hreflang="tr" lang="tr">Türkçe</a></nav>
+    <p><a href="privacy.html">개인정보처리방침</a> · <a href="mailto:leeo@kakao.com">leeo@kakao.com</a> · © 2026 penguinlab</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+    }), { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+  <script src="demo.js"></script>
 </body>
 </html>
