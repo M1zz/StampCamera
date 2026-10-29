@@ -1487,3 +1487,14 @@ Importera från Bilder
 Förvandla foton du tagit tidigare till klistermärken och lägg till dem i ett album.
 
 Alla dina klistermärken och foton sparas bara på din enhet.
+
+## 손쉬운 사용
+
+<!-- DeployBar 가 App Store Connect '앱의 손쉬운 사용' 에 올린다. 실제로 확인한 것만 적는다. -->
+
+### iPhone
+voiceOver
+voiceControl
+largerText
+differentiateWithoutColor
+reducedMotion

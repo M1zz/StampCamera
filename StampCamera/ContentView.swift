@@ -16,6 +16,34 @@ import PhotosUI
 import LeeoKit
 import Vision
 
+// MARK: - 다이내믹 타입
+
+/// 글자 크기 설정을 따르는 고정 크기 글꼴. 디자인 크기(`size`)에서 시작해
+/// 사용자가 키운 만큼 커지되, 카메라 위 칩·카드가 깨지지 않게 두 배에서 멈춘다.
+private struct ScaledFont: ViewModifier {
+    @ScaledMetric private var scaled: CGFloat
+    private let size: CGFloat
+    private let weight: Font.Weight?
+    private let design: Font.Design?
+
+    init(size: CGFloat, weight: Font.Weight?, design: Font.Design?) {
+        self.size = size
+        self.weight = weight
+        self.design = design
+        _scaled = ScaledMetric(wrappedValue: size, relativeTo: .body)
+    }
+
+    func body(content: Content) -> some View {
+        content.font(.system(size: min(scaled, size * 2), weight: weight, design: design))
+    }
+}
+
+extension View {
+    func scaledFont(_ size: CGFloat, weight: Font.Weight? = nil, design: Font.Design? = nil) -> some View {
+        modifier(ScaledFont(size: size, weight: weight, design: design))
+    }
+}
+
 struct ContentView: View {
     @StateObject private var camera = CameraManager()
     @StateObject private var collection = CollectionStore()
@@ -168,7 +196,7 @@ struct ContentView: View {
             if let captureNote {
                 VStack {
                     Text(captureNote)
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .scaledFont(14, weight: .semibold, design: .rounded)
                         .foregroundStyle(.white)
                         .padding(.horizontal, 16).padding(.vertical, 9)
                         .background(Capsule().fill(.black.opacity(0.6)))
@@ -344,6 +372,14 @@ struct ContentView: View {
                                 .onChanged { _ in pressDown() }
                                 .onEnded { _ in releaseShutter() }
                         )
+                        // VoiceOver·음성 명령: 프레임 전체가 셔터 단추
+                        .accessibilityElement()
+                        .accessibilityLabel("촬영")
+                        .accessibilityAddTraits(.isButton)
+                        .accessibilityAction {
+                            pressDown()
+                            releaseShutter()
+                        }
                 }
 
                 // the black punch-hole left behind in the window as the stamp is
@@ -385,7 +421,7 @@ struct ContentView: View {
                 // ×HUD while pinching — fades out with the gesture
                 if pinching {
                     Text(String(format: camera.zoom < 1 ? "%.1f×" : "%.1f×", camera.zoom))
-                        .font(.system(size: 17, weight: .bold, design: .rounded))
+                        .scaledFont(17, weight: .bold, design: .rounded)
                         .foregroundStyle(.white)
                         .padding(.horizontal, 14).padding(.vertical, 7)
                         .background(Capsule().fill(.black.opacity(0.45)))
@@ -467,14 +503,16 @@ struct ContentView: View {
                 Image(systemName: "book.closed.fill")
                 Text(collection.activeAlbum)
                     .lineLimit(1)
-                Image(systemName: "chevron.down").font(.system(size: 10, weight: .bold))
+                Image(systemName: "chevron.down").scaledFont(10, weight: .bold)
             }
-            .font(.system(size: 14, weight: .semibold, design: .rounded))
+            .scaledFont(14, weight: .semibold, design: .rounded)
             .foregroundStyle(.white)
             .padding(.horizontal, 16).padding(.vertical, 9)
             .background(Capsule().fill(.ultraThinMaterial))
             .overlay(Capsule().strokeBorder(.white.opacity(0.25), lineWidth: 1))
         }
+        .accessibilityLabel("수집함")
+        .accessibilityValue(collection.activeAlbum)
     }
 
     /// 설정/지원 화면을 여는 톱니바퀴 버튼.
@@ -484,13 +522,14 @@ struct ContentView: View {
             showSupport = true
         } label: {
             Image(systemName: "gearshape")
-                .font(.system(size: 18, weight: .semibold))
+                .scaledFont(18, weight: .semibold)
                 .foregroundStyle(.white)
                 .frame(width: 44, height: 44)
                 .background(Circle().fill(.ultraThinMaterial))
                 .overlay(Circle().strokeBorder(.white.opacity(0.25), lineWidth: 1))
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("설정")
     }
 
     /// Flips between the back and front (selfie) camera with a little spin.
@@ -501,7 +540,7 @@ struct ContentView: View {
             camera.flipCamera()
         } label: {
             Image(systemName: "arrow.triangle.2.circlepath.camera")
-                .font(.system(size: 19, weight: .semibold))
+                .scaledFont(19, weight: .semibold)
                 .foregroundStyle(.white)
                 .frame(width: 44, height: 44)
                 .background(Circle().fill(.ultraThinMaterial))
@@ -509,6 +548,7 @@ struct ContentView: View {
                 .rotationEffect(.degrees(flipAngle))
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("카메라 전환")
     }
 
     private var bottomBar: some View {
@@ -636,6 +676,8 @@ struct ContentView: View {
                                    y: g.frame(in: .named("cam")).midY))
             })
         }
+        .accessibilityLabel("모아보기")
+        .accessibilityValue(Text("\(collection.stamps.count)장"))
     }
 
     // MARK: - Capture → crop → fly into collection
@@ -958,7 +1000,7 @@ struct ContentView: View {
     private var permissionScreen: some View {
         VStack(spacing: 18) {
             Text("📮 펀칭")
-                .font(.system(size: 28, weight: .heavy, design: .rounded))
+                .scaledFont(28, weight: .heavy, design: .rounded)
                 .foregroundStyle(.white)
             Text("순간을 스티커로 뜯으려면 카메라 권한이 필요해요.\n설정에서 카메라를 켜주세요.")
                 .multilineTextAlignment(.center)
@@ -1022,7 +1064,7 @@ struct CollectionView: View {
                     Button { dismiss() } label: {
                         Label("카메라", systemImage: "chevron.backward")
                     }
-                    .font(.system(size: 15, weight: .semibold))
+                    .scaledFont(15, weight: .semibold)
                 }
                 // 두 동작을 한 항목 안에 나란히 둬서 시스템이 '...'로 접지
                 // 않고 항상 펼쳐 보이게 한다: 새 수집함 · 사진 가져오기
@@ -1316,10 +1358,11 @@ struct AlbumPageView: View {
                 } else {
                     VStack(spacing: 10) {
                         Image(systemName: filter.icon)
-                            .font(.system(size: 38))
+                            .scaledFont(38)
+                            .accessibilityHidden(true)
                             .foregroundStyle(.white.opacity(0.3))
                         Text("\(filter.title)에 해당하는 스티커가 아직 없어요")
-                            .font(.system(size: 14, weight: .medium, design: .rounded))
+                            .scaledFont(14, weight: .medium, design: .rounded)
                             .foregroundStyle(.white.opacity(0.6))
                     }
                     .frame(maxWidth: .infinity)
@@ -1373,7 +1416,7 @@ struct AlbumPageView: View {
                                 selectedIDs.removeAll()
                             }
                         }
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .scaledFont(14, weight: .semibold, design: .rounded)
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) { albumMenu }
@@ -1504,6 +1547,7 @@ struct AlbumPageView: View {
         } label: {
             Image(systemName: "ellipsis.circle")
         }
+        .accessibilityLabel("더 보기")
     }
 
     /// multi-select: a tally + move + delete bar over the bottom edge
@@ -1515,12 +1559,12 @@ struct AlbumPageView: View {
                 Haptics.tick()
                 selectedIDs = allPicked ? [] : allIDs
             }
-            .font(.system(size: 14, weight: .semibold, design: .rounded))
+            .scaledFont(14, weight: .semibold, design: .rounded)
             .tint(.white)
             Spacer()
             Text(selectedIDs.isEmpty ? String(localized: "스티커를 골라주세요")
                                      : String(localized: "\(selectedIDs.count)장 선택됨"))
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .scaledFont(14, weight: .semibold, design: .rounded)
                 .foregroundStyle(.white.opacity(0.75))
             Spacer()
             if !otherAlbums.isEmpty {
@@ -1534,14 +1578,14 @@ struct AlbumPageView: View {
                     }
                 } label: {
                     Label("옮기기", systemImage: "folder")
-                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .scaledFont(15, weight: .bold, design: .rounded)
                 }
                 .tint(.white)
                 .disabled(selectedIDs.isEmpty)
             }
             Button(role: .destructive) { showDeleteSelected = true } label: {
                 Label("삭제", systemImage: "trash")
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .scaledFont(15, weight: .bold, design: .rounded)
             }
             .tint(.red)
             .disabled(selectedIDs.isEmpty)
@@ -1582,7 +1626,7 @@ struct AlbumPageView: View {
             }
             HStack {
                 Text("스티커를 꾹 눌러 원하는 자리로 옮겨요")
-                    .font(.system(size: 12, weight: .medium, design: .rounded))
+                    .scaledFont(12, weight: .medium, design: .rounded)
                     .foregroundStyle(.white.opacity(0.65))
                 Spacer()
                 if collection.isArranged(album) {
@@ -1592,7 +1636,7 @@ struct AlbumPageView: View {
                             collection.resetOrder(album)
                         }
                     }
-                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                    .scaledFont(13, weight: .semibold, design: .rounded)
                     .tint(.white)
                 }
             }
@@ -1764,7 +1808,23 @@ struct AlbumPageView: View {
                 // a system context menu (not a drag gesture) so swiping over the
                 // grid still turns the page
                 .contextMenu { if !selecting { stickerMenu(stamp) } }
+                // VoiceOver: 그림 대신 한 마디·날짜·장소·표식을 읽는다
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(stampAccessibilityLabel(stamp, isNew: isNew && badges, moves: moves,
+                                                            gold: gold.contains(stamp.id)))
+                .accessibilityAddTraits(isTicked ? [.isButton, .isSelected] : .isButton)
         }
+    }
+
+    /// "한 마디, 10월 3일 오후 2:10, 성수동, 새 스티커" 처럼 읽는 이름.
+    private func stampAccessibilityLabel(_ stamp: CollectedStamp, isNew: Bool, moves: Bool, gold: Bool) -> String {
+        var parts = [stamp.caption.isEmpty ? String(localized: "스티커") : stamp.caption,
+                     stamp.createdAt.formatted(date: .abbreviated, time: .shortened)]
+        if !stamp.place.isEmpty { parts.append(stamp.place) }
+        if isNew { parts.append(String(localized: "새 스티커")) }
+        if moves { parts.append(String(localized: "움직이는 스티커")) }
+        if gold { parts.append(String(localized: "골드 에디션")) }
+        return parts.joined(separator: ", ")
     }
 
     @ViewBuilder
@@ -1911,13 +1971,13 @@ struct AlbumPageView: View {
     private var emptyPage: some View {
         VStack(spacing: 12) {
             Image(systemName: "book.closed")
-                .font(.system(size: 44))
+                .scaledFont(44)
                 .foregroundStyle(.white.opacity(0.35))
             Text("아직 비어 있는 수집함이에요")
                 .foregroundStyle(.white.opacity(0.7))
             if collection.activeAlbum == album {
                 Text("여기에 담는 중 — 카메라로 스티커를 뜯어 채워보세요")
-                    .font(.system(size: 13))
+                    .scaledFont(13)
                     .foregroundStyle(.white.opacity(0.45))
             } else {
                 Button { collection.setActive(album) } label: {
@@ -1974,7 +2034,7 @@ struct StampStylePicker: View {
                       onB: Bool, bEnabled: Bool, pick: @escaping (Bool) -> Void) -> some View {
         GridRow {
             Text(title)
-                .font(.system(size: 12, weight: .bold, design: .rounded))
+                .scaledFont(12, weight: .bold, design: .rounded)
                 .foregroundStyle(chipInk(selected: false))
                 .lineLimit(1)
                 .fixedSize()
@@ -1993,8 +2053,8 @@ struct StampStylePicker: View {
                          enabled: Bool, tap: @escaping () -> Void) -> some View {
         Button { if enabled { tap() } } label: {
             HStack(spacing: 5) {
-                Image(systemName: icon).font(.system(size: 13, weight: .semibold))
-                Text(title).font(.system(size: 13, weight: .semibold, design: .rounded))
+                Image(systemName: icon).scaledFont(13, weight: .semibold)
+                Text(title).scaledFont(13, weight: .semibold, design: .rounded)
             }
             .foregroundStyle(chipInk(selected: selected))
             .frame(maxWidth: .infinity)
@@ -2030,12 +2090,14 @@ struct LiveArt: View {
     let stamp: CollectedStamp
     var maxPixel: CGFloat? = 280
     @AppStorage("liveAutoPlay") private var liveAutoPlay = true
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var clip: (frames: [UIImage], delay: Double)?
     @State private var loadedRev = -1
 
     var body: some View {
         Group {
-            if liveAutoPlay, let clip {
+            // 동작 줄이기면 저절로 움직이지 않고 멈춘 그림으로 둔다
+            if liveAutoPlay, !reduceMotion, let clip {
                 LiveStampView(frames: clip.frames, delay: clip.delay)
                     .aspectRatio(stamp.image.size.width / max(stamp.image.size.height, 1),
                                  contentMode: .fit)
@@ -3720,10 +3782,10 @@ struct PrintGuideView: View {
     private var header: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("📮 뜯은 순간, 손에 잡히는 스티커로")
-                .font(.system(size: 20, weight: .heavy, design: .rounded))
+                .scaledFont(20, weight: .heavy, design: .rounded)
                 .foregroundStyle(.white)
             Text("여섯 걸음이면 휴대폰 속 스티커가 책상 위 스티커가 돼요.")
-                .font(.system(size: 13, weight: .medium, design: .rounded))
+                .scaledFont(13, weight: .medium, design: .rounded)
                 .foregroundStyle(.white.opacity(0.6))
         }
         .padding(.bottom, 6)
@@ -3734,17 +3796,17 @@ struct PrintGuideView: View {
             ZStack {
                 Circle().fill(gold.opacity(0.18))
                 Text("\(n)")
-                    .font(.system(size: 15, weight: .heavy, design: .rounded))
+                    .scaledFont(15, weight: .heavy, design: .rounded)
                     .foregroundStyle(gold)
             }
             .frame(width: 34, height: 34)
 
             VStack(alignment: .leading, spacing: 4) {
                 Label(title, systemImage: icon)
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .scaledFont(15, weight: .bold, design: .rounded)
                     .foregroundStyle(.white)
                 Text(body)
-                    .font(.system(size: 13.5, weight: .regular, design: .rounded))
+                    .scaledFont(13.5, weight: .regular, design: .rounded)
                     .foregroundStyle(.white.opacity(0.65))
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -3757,7 +3819,7 @@ struct PrintGuideView: View {
     private var tips: some View {
         VStack(alignment: .leading, spacing: 8) {
             Label("알아두면 좋아요", systemImage: "lightbulb.fill")
-                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .scaledFont(14, weight: .bold, design: .rounded)
                 .foregroundStyle(gold)
             VStack(alignment: .leading, spacing: 6) {
                 Text("• 인쇄용 시트는 모두 우표 모양으로 나와요. 칼선이 톱니 모양 그대로라, 떼어내면 진짜 우표처럼 생긴 스티커가 돼요(약 5cm, 한 페이지 12장).")
@@ -3765,7 +3827,7 @@ struct PrintGuideView: View {
                 Text("• 종이 말고 디지털로도: 모든 스티커는 자동으로 메시지 스티커가 돼요 — 메시지 앱 스티커 서랍에서 바로 붙이고, 움직이는 스티커는 움직이며 붙어요.")
                 Text("• 진짜 우편요금 우표는 아니에요 — 편지 장식은 마음껏, 우표 자리는 진짜 우표에게 양보!")
             }
-            .font(.system(size: 13, weight: .regular, design: .rounded))
+            .scaledFont(13, weight: .regular, design: .rounded)
             .foregroundStyle(.white.opacity(0.65))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -3902,7 +3964,7 @@ enum PunchSound {
 private struct PrimaryButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 15, weight: .semibold, design: .rounded))
+            .scaledFont(15, weight: .semibold, design: .rounded)
             .foregroundStyle(.white)
             .padding(.horizontal, 24).padding(.vertical, 13)
             .background(Color(hex: 0xE8504E), in: Capsule())
@@ -3914,7 +3976,7 @@ private struct PrimaryButton: ButtonStyle {
 private struct RevealActionChip: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 15, weight: .semibold, design: .rounded))
+            .scaledFont(15, weight: .semibold, design: .rounded)
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
@@ -3927,7 +3989,7 @@ private struct RevealActionChip: ButtonStyle {
 private struct StampActionChip: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 14, weight: .semibold, design: .rounded))
+            .scaledFont(14, weight: .semibold, design: .rounded)
             .foregroundStyle(Color(hex: 0xE9D9AE))
             .frame(maxWidth: .infinity)
             .padding(.vertical, 11)
@@ -4025,6 +4087,18 @@ struct ZoomSlider: View {
             .animation(.spring(response: 0.3, dampingFraction: 0.55), value: dragging)
         }
         .frame(height: height)
+        // VoiceOver: 위아래로 쓸어 다음 배율 칸(0.5×·1×·2× …)으로
+        .accessibilityElement()
+        .accessibilityLabel("줌")
+        .accessibilityValue(currentLabel)
+        .accessibilityAdjustableAction { direction in
+            let stops = camera.zoomStops.sorted()
+            let z = camera.zoom
+            let next = direction == .increment
+                ? stops.first { $0 > z + 0.01 } ?? min(camera.maxZoom, z * 1.5)
+                : stops.last { $0 < z - 0.01 } ?? max(camera.minZoom, z / 1.5)
+            camera.setZoom(next)
+        }
     }
 
     private var currentLabel: String {
@@ -4076,6 +4150,7 @@ struct CaptureRevealView: View {
     @State private var flipped = false       // has the back been discovered yet
     @State private var caption = ""
     @FocusState private var focused: Bool
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private var stamp: CollectedStamp? { collection.stamps.first { $0.id == stampID } }
 
@@ -4105,13 +4180,13 @@ struct CaptureRevealView: View {
 
                     VStack(spacing: 8) {
                         Text("NEW")
-                            .font(.system(size: 11, weight: .black, design: .rounded))
+                            .scaledFont(11, weight: .black, design: .rounded)
                             .tracking(3)
                             .foregroundStyle(Color(hex: 0x3A2C12))
                             .padding(.horizontal, 10).padding(.vertical, 4)
                             .background(Capsule().fill(Color(hex: 0xFFD966)))
                         Text("스티커가 도착했어요!")
-                            .font(.system(size: 25, weight: .heavy, design: .rounded))
+                            .scaledFont(25, weight: .heavy, design: .rounded)
                             .foregroundStyle(.white)
                     }
                     .chromeReveal(entered: entered, leaving: leaving || discarding, delay: 0.22)
@@ -4121,7 +4196,7 @@ struct CaptureRevealView: View {
 
                     // a quiet nudge until the back has been found once
                     Text("스티커를 빙글 돌려보세요")
-                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .scaledFont(12, weight: .medium, design: .rounded)
                         .foregroundStyle(.white.opacity(0.45))
                         .opacity(flipped ? 0 : 1)
                         .animation(.easeOut(duration: 0.3), value: flipped)
@@ -4157,10 +4232,12 @@ struct CaptureRevealView: View {
         return TimelineView(.animation(minimumInterval: 1.0 / 50)) { tl in
             let t = tl.date.timeIntervalSinceReferenceDate
             // idle: a slow hover (stills only), and a sheen streak every ~3.4s
-            let hover: CGFloat = entered && !dragging && !leaving && !hasMotion
+            // 동작 줄이기: 둥실 떠 있기·반짝이 줄기를 멈춘다
+            let hover: CGFloat = entered && !dragging && !leaving && !hasMotion && !reduceMotion
                 ? sin(t * 1.7) * 5 : 0
             let phase = t.truncatingRemainder(dividingBy: 3.4) / 3.4
-            let idleBand: CGFloat = phase < 0.4 ? CGFloat(phase / 0.4) * 2.4 - 1.2 : 1.8
+            let idleBand: CGFloat = reduceMotion ? 1.8
+                : (phase < 0.4 ? CGFloat(phase / 0.4) * 2.4 - 1.2 : 1.8)
             let band: CGFloat = dragging ? drag.width / 70 : idleBand
 
             ZStack {
@@ -4179,7 +4256,7 @@ struct CaptureRevealView: View {
                         .shadow(color: Color(hex: 0xFFD966).opacity(0.30), radius: 28)
                 }
 
-                SparkleBurst()
+                if !reduceMotion { SparkleBurst() }   // 동작 줄이기면 불꽃 생략
             }
             .offset(y: hover)
         }
@@ -4192,6 +4269,14 @@ struct CaptureRevealView: View {
         .animation(.easeIn(duration: 0.34), value: leaving)
         .animation(.easeIn(duration: 0.4), value: discarding)
         .gesture(tilt)
+        // VoiceOver: 카드를 돌리는 대신 '뒤집기' 동작
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(stamp?.caption.isEmpty == false ? stamp!.caption : String(localized: "새 스티커"))
+        .accessibilityAddTraits(.isImage)
+        .accessibilityAction(named: "뒤집기") {
+            flipped = true
+            withAnimation(reduceMotion ? nil : .spring(response: 0.55, dampingFraction: 0.72)) { spin += 180 }
+        }
     }
 
     /// The face of the stamp with its holographic film. A live stamp starts
@@ -4320,7 +4405,7 @@ struct CaptureRevealView: View {
                   axis: .vertical)
             .lineLimit(1...3)
             .focused($focused)
-            .font(.system(size: 15, weight: .medium, design: .rounded))
+            .scaledFont(15, weight: .medium, design: .rounded)
             .foregroundStyle(.white)
             .tint(Color(hex: 0xFFD966))
             .multilineTextAlignment(.center)
@@ -4335,7 +4420,7 @@ struct CaptureRevealView: View {
         VStack(spacing: 10) {
             Button(action: tuckAway) {
                 Text("수집함에 담기")
-                    .font(.system(size: 17, weight: .heavy, design: .rounded))
+                    .scaledFont(17, weight: .heavy, design: .rounded)
                     .foregroundStyle(Color(hex: 0x3A2C12))
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 15)
@@ -4347,7 +4432,7 @@ struct CaptureRevealView: View {
             HStack(spacing: 26) {
                 Button(action: discard) {
                     Label("버리기", systemImage: "trash")
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .scaledFont(14, weight: .semibold, design: .rounded)
                         .foregroundStyle(Color(hex: 0xFF9C9C).opacity(0.85))
                 }
                 // 뜯자마자 쓰기 — 움직이면 GIF, 아니면 PNG 로 공유 시트
@@ -4358,7 +4443,7 @@ struct CaptureRevealView: View {
                     }
                 } label: {
                     Label("보내기", systemImage: "paperplane")
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .scaledFont(14, weight: .semibold, design: .rounded)
                         .foregroundStyle(.white.opacity(0.85))
                 }
                 Button {
@@ -4366,7 +4451,7 @@ struct CaptureRevealView: View {
                     onDetail()
                 } label: {
                     Label("자세히", systemImage: "slider.horizontal.3")
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .scaledFont(14, weight: .semibold, design: .rounded)
                         .foregroundStyle(.white.opacity(0.65))
                 }
             }
@@ -4511,7 +4596,7 @@ struct ParchmentCard: View {
                 .frame(height: 110)
                 .shadow(color: .black.opacity(0.28), radius: 4, y: 3)
             Text(stamp.caption.isEmpty ? "—" : stamp.caption)
-                .font(.system(size: 13, weight: .medium, design: .serif))
+                .scaledFont(13, weight: .medium, design: .serif)
                 .foregroundStyle(Color(hex: stamp.caption.isEmpty ? 0xB0A074 : 0x4A3A22))
                 .lineLimit(2)
                 .multilineTextAlignment(.center)
@@ -4595,16 +4680,17 @@ struct StampRevealView: View {
             HStack {
                 Button { dismiss() } label: {
                     Image(systemName: "xmark.circle.fill")
-                        .font(.system(size: 28))
+                        .scaledFont(28)
                         .foregroundStyle(.white.opacity(0.85))
                 }
+                .accessibilityLabel("닫기")
                 Spacer()
                 if hasPhoto {
                     Button {
                         withAnimation(.easeOut(duration: 0.22)) { stampOnly.toggle() }
                     } label: {
                         Label(stampOnly ? String(localized: "전체사진") : String(localized: "우표만"), systemImage: stampOnly ? "photo" : "seal")
-                            .font(.system(size: 15, weight: .semibold))
+                            .scaledFont(15, weight: .semibold)
                             .foregroundStyle(.white)
                             .padding(.horizontal, 14).padding(.vertical, 8)
                             .background(Capsule().fill(Color.white.opacity(0.18)))
@@ -4612,7 +4698,7 @@ struct StampRevealView: View {
                 }
                 Button { editing = true } label: {
                     Label("편집", systemImage: "pencil")
-                        .font(.system(size: 15, weight: .semibold))
+                        .scaledFont(15, weight: .semibold)
                         .foregroundStyle(.white)
                         .padding(.horizontal, 14).padding(.vertical, 8)
                         .background(Capsule().fill(Color.white.opacity(0.18)))
@@ -4773,9 +4859,16 @@ struct StampDetailView: View {
                             Haptics.select()
                             showFullImage = true
                         }
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel(stamp.caption.isEmpty ? String(localized: "스티커") : stamp.caption)
+                        .accessibilityAddTraits(.isImage)
+                        .accessibilityAction(named: "전체사진") {
+                            guard collection.originalImage(for: stampID) != nil else { return }
+                            showFullImage = true
+                        }
                     if collection.originalImage(for: stampID) != nil {
                         Text("꾹 눌러 전체 사진 보기")
-                            .font(.system(size: 11, weight: .medium, design: .rounded))
+                            .scaledFont(11, weight: .medium, design: .rounded)
                             .foregroundStyle(Color(hex: 0x8C7A52))
                     }
                     // 쓰기가 맨 위: copy or share — a GIF if it moves, else a
@@ -4803,7 +4896,7 @@ struct StampDetailView: View {
                             Label(stamp.place, systemImage: "mappin.and.ellipse")
                         }
                     }
-                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                    .scaledFont(13, weight: .medium, design: .rounded)
                     .foregroundStyle(Color(hex: 0x8C7A52))
                 }
                 ZStack(alignment: .top) {
@@ -4820,7 +4913,7 @@ struct StampDetailView: View {
                         .tint(Color(hex: 0x42331E))
                         .focused($focused)
                 }
-                .font(.system(size: 17, weight: .medium, design: .serif))
+                .scaledFont(17, weight: .medium, design: .serif)
                 .multilineTextAlignment(.center)
                 .lineLimit(2...4)
                 .frame(maxWidth: .infinity, minHeight: 70, alignment: .top)
@@ -4839,7 +4932,7 @@ struct StampDetailView: View {
 
                 Button(role: .destructive) { showDelete = true } label: {
                     Label("이 스티커 지우기", systemImage: "trash")
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .scaledFont(14, weight: .semibold, design: .rounded)
                         .foregroundStyle(Color(hex: 0xB0473E))
                 }
                 .padding(.top, 8)
@@ -4888,9 +4981,10 @@ struct StampDetailView: View {
                         HStack {
                             Button { showFullImage = false } label: {
                                 Image(systemName: "xmark.circle.fill")
-                                    .font(.system(size: 28))
+                                    .scaledFont(28)
                                     .foregroundStyle(.white.opacity(0.85))
                             }
+                            .accessibilityLabel("닫기")
                             Spacer()
                         }
                         .padding(.horizontal, 18).padding(.top, 8)
@@ -4942,7 +5036,7 @@ struct StampDetailView: View {
     private var inkSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("색감")
-                .font(.system(size: 12, weight: .bold, design: .rounded))
+                .scaledFont(12, weight: .bold, design: .rounded)
                 .foregroundStyle(Color(hex: 0x8C7A52))
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 11) {
@@ -5025,9 +5119,9 @@ struct StampDetailView: View {
             HStack(spacing: 6) {
                 Image(systemName: "book.closed")
                 Text(albumLabel)
-                Image(systemName: "chevron.down").font(.system(size: 11, weight: .bold))
+                Image(systemName: "chevron.down").scaledFont(11, weight: .bold)
             }
-            .font(.system(size: 15, weight: .semibold, design: .rounded))
+            .scaledFont(15, weight: .semibold, design: .rounded)
             .foregroundStyle(Color(hex: 0x6B5836))
             .padding(.horizontal, 14).padding(.vertical, 9)
             .background(Capsule().fill(Color.white.opacity(0.45)))
@@ -5093,7 +5187,7 @@ struct PageDots: View {
         Group {
             if count > 8 {
                 Text("\(min(current, count - 1) + 1) / \(count)")
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .scaledFont(12, weight: .semibold, design: .rounded)
                     .foregroundStyle(.white)
                     .monospacedDigit()
             } else {
