@@ -3,6 +3,176 @@
 App Store 의 "이 버전의 새로운 기능" 에 그대로 올라가는 글이다.
 평문만 쓴다. 한 줄에 한 문장, 3~5줄, 한 줄 40자 이내.
 
+## 1.0.4
+
+### 앱스토어 (한국어)
+
+고마울 때 개발자에게 작은 팁을 보낼 수 있어요.
+설정에서 친구에게 앱을 소개할 수 있어요.
+화면 읽기와 음성 명령으로도 편하게 쓸 수 있어요.
+큰 글씨와 동작 줄이기 설정을 따라요.
+
+### 앱스토어 (en)
+
+Thank the developer with a small tip.
+Tell a friend about the app in Settings.
+Better with VoiceOver and Voice Control.
+Follows larger text and Reduce Motion.
+
+### 앱스토어 (en-GB)
+
+Thank the developer with a small tip.
+Tell a friend about the app in Settings.
+Better with VoiceOver and Voice Control.
+Follows larger text and Reduce Motion.
+
+### 앱스토어 (ja)
+
+開発者にささやかなチップを送れます。
+設定から友だちにアプリを紹介できます。
+VoiceOverと音声コントロールで使いやすくなりました。
+文字サイズと視差効果を減らす設定に対応しました。
+
+### 앱스토어 (zh-Hans)
+
+可以给开发者送上一点小费表达感谢。
+可在设置中把 App 推荐给朋友。
+更好地支持旁白和语音控制。
+支持大字体和减弱动态效果。
+
+### 앱스토어 (zh-Hant)
+
+可以給開發者一點小費表達謝意。
+可在設定中把 App 推薦給朋友。
+更好地支援旁白和語音控制。
+支援大字體和減少動態效果。
+
+### 앱스토어 (러시아어)
+
+Можно отправить разработчику чаевые.
+Поделитесь приложением из настроек.
+Поддержка VoiceOver и голосовых команд.
+Следует настройкам шрифта и движения.
+
+### 앱스토어 (스페인어)
+
+Deja una propina al desarrollador.
+Recomienda la app desde Ajustes.
+Mejor con VoiceOver y Control por voz.
+Respeta texto grande y menos movimiento.
+
+### 앱스토어 (독일어)
+
+Sag Danke mit einem kleinen Trinkgeld.
+Empfiehl die App in den Einstellungen.
+Besser mit VoiceOver und Sprachbefehlen.
+Beachtet Schriftgröße und Bewegung.
+
+### 앱스토어 (프랑스어)
+
+Offrez un pourboire au développeur.
+Recommandez l'app depuis les Réglages.
+Mieux avec VoiceOver et Commande vocale.
+Suit vos réglages texte et animations.
+
+### 앱스토어 (이탈리아어)
+
+Offri una mancia allo sviluppatore.
+Consiglia l'app dalle Impostazioni.
+Meglio con VoiceOver e Controllo vocale.
+Segue testo grande e Riduci movimento.
+
+### 앱스토어 (pt-BR)
+
+Mande uma gorjeta para o desenvolvedor.
+Indique o app a amigos nos Ajustes.
+Melhor com VoiceOver e Controle por Voz.
+Segue texto grande e Reduzir Movimento.
+
+### 앱스토어 (태국어)
+
+ส่งทิปเล็กๆ ให้นักพัฒนาเพื่อขอบคุณได้
+แนะนำแอปให้เพื่อนได้จากการตั้งค่า
+ใช้ VoiceOver และสั่งด้วยเสียงได้ดีขึ้น
+รองรับตัวอักษรใหญ่และลดการเคลื่อนไหว
+
+### 앱스토어 (베트남어)
+
+Gửi nhà phát triển chút tiền tip cảm ơn.
+Giới thiệu ứng dụng cho bạn từ Cài đặt.
+Dùng tốt hơn với VoiceOver và Khẩu lệnh.
+Hỗ trợ chữ lớn và giảm chuyển động.
+
+### 앱스토어 (체코어)
+
+Pošlete vývojáři malé spropitné.
+Doporučte aplikaci v Nastavení.
+Lepší s VoiceOverem a Ovládáním hlasem.
+Respektuje větší písmo a omezení pohybu.
+
+### 앱스토어 (덴마크어)
+
+Giv udvikleren lidt drikkepenge som tak.
+Anbefal appen fra Indstillinger.
+Bedre med VoiceOver og Stemmestyring.
+Følger stor tekst og Reducer bevægelse.
+
+### 앱스토어 (그리스어)
+
+Στείλτε φιλοδώρημα στον δημιουργό.
+Συστήστε την εφαρμογή από τις Ρυθμίσεις.
+Πιο εύκολο με VoiceOver και φωνή.
+Ακολουθεί μέγεθος κειμένου και κίνηση.
+
+### 앱스토어 (핀란드어)
+
+Lähetä kehittäjälle pieni tippi.
+Suosittele appia asetuksista.
+Tuki VoiceOverille ja puheohjaukselle.
+Tukee isoa tekstiä ja Vähennä liikettä.
+
+### 앱스토어 (인도네시아어)
+
+Kirim tip kecil untuk pengembang.
+Rekomendasikan app dari Pengaturan.
+Mendukung VoiceOver dan Kontrol Suara.
+Ikuti teks besar dan Kurangi Gerakan.
+
+### 앱스토어 (노르웨이어(보크말))
+
+Gi utvikleren litt tips som takk.
+Anbefal appen fra Innstillinger.
+Bedre med VoiceOver og Talestyring.
+Følger stor tekst og Reduser bevegelse.
+
+### 앱스토어 (네덜란드어)
+
+Geef de ontwikkelaar een kleine fooi.
+Raad de app aan via Instellingen.
+Beter met VoiceOver en Stembediening.
+Volgt grote tekst en Verminder beweging.
+
+### 앱스토어 (폴란드어)
+
+Wyślij twórcy mały napiwek.
+Poleć aplikację w Ustawieniach.
+Lepiej z VoiceOver i Sterowaniem głosem.
+Obsługuje duży tekst i mniej ruchu.
+
+### 앱스토어 (스웨덴어)
+
+Ge utvecklaren lite dricks som tack.
+Tipsa om appen från Inställningar.
+Bättre med VoiceOver och Röststyrning.
+Följer stor text och Minska rörelse.
+
+### 앱스토어 (튀르키예어)
+
+Geliştiriciye küçük bir bahşiş gönderin.
+Ayarlar'dan uygulamayı önerin.
+VoiceOver ve Sesle Denetim ile daha iyi.
+Büyük metni ve Hareketi Azalt'ı izler.
+
 ## 1.0.3
 
 ### 앱스토어 (한국어)
