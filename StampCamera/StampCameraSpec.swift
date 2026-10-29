@@ -33,3 +33,28 @@ enum StampCameraSpec: LeeoAppSpec {
     /// 익명 사용 통계 → FeedbackHub. 없으면 bootstrap 이 스냅샷·app_open 을 건너뛴다.
     static let analytics: any LeeoAnalytics = LeeoUsageAnalytics(spec: StampCameraSpec.self)
 }
+
+extension StampCameraSpec {
+    /// 무료 앱이라 LeeoStore 가 없다 — 팁만 혼자 받는다(앱을 열 때 `startStandalone()`, → StampCameraApp).
+    /// 소모성 상품 셋, 작은 것부터. ⚠️ 기능을 여는 상품이 아니다.
+    @MainActor static let tipJar = LeeoTipJar(config: LeeoTipJarConfig(productIDs: [
+        "com.devkoan.StampCamera.tip.small",
+        "com.devkoan.StampCamera.tip.medium",
+        "com.devkoan.StampCamera.tip.large",
+    ]))
+}
+
+/// 팁을 부탁할 만한 순간 — 지금까지 뜯어 모은 스티커 수. 한 번 뜯을 때마다 하나씩 는다.
+enum StampCameraTipMoments {
+    /// 모은 스티커 수. 큰 것부터.
+    static let punched = [100, 30, 10]
+
+    /// 넘어선 순간, 인상적인 것부터.
+    static func reached(punchedCount count: Int) -> [LeeoTipMoment] {
+        punched.filter { count >= $0 }.map { threshold in
+            LeeoTipMoment(id: "stamps.\(threshold)",
+                          message: String(localized: "지금까지 스티커 \(count)장을 뜯어 모았어요",
+                                          comment: "Tip ask card: how many stickers the person has punched and collected"))
+        }
+    }
+}

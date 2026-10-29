@@ -83,6 +83,8 @@ struct StampCameraSupportView: View {
                     LeeoSupportSection<StampCameraSpec>()
                     NavigationLink(LeeoRoadmapText.entry) { RoadmapScreen() }
                     LeeoShareAppLink<StampCameraSpec>()
+                    // 개발자 응원하기 — 판매 중인 팁이 있어야 선다.
+                    LeeoTipJarLink<StampCameraSpec>(tipJar: StampCameraSpec.tipJar)
                 } header: {
                     Text("지원")
                 }

@@ -24,6 +24,8 @@ struct StampCameraApp: App {
                 // Control Center / Lock Screen control & the kkuk://camera deep
                 // link both land here → route straight to the live camera.
                 .onOpenURL { router.handle(url: $0) }
+                // 팁 상품을 불러오고 끝나지 않은 팁을 마저 센다 (무료 앱이라 LeeoStore 대신 혼자)
+                .task { await StampCameraSpec.tipJar.startStandalone() }
         }
     }
 }

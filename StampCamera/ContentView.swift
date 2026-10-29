@@ -13,6 +13,7 @@ import CoreImage
 import CoreLocation
 import ImageIO
 import PhotosUI
+import LeeoKit
 import Vision
 
 struct ContentView: View {
@@ -1003,6 +1004,10 @@ struct CollectionView: View {
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
+                // 모은 스티커를 둘러보는 자리. 숫자가 쌓였을 때만, 드물게 응원을 부탁한다 (모달 아님)
+                LeeoTipAskSlot<StampCameraSpec>(tipJar: StampCameraSpec.tipJar,
+                                                reached: StampCameraTipMoments.reached(punchedCount: collection.stamps.count))
+                    .padding([.horizontal, .top], 20)
                 albumShelf
             }
             .background(Color(hex: 0x141210).ignoresSafeArea())
