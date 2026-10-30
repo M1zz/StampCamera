@@ -1,5 +1,14 @@
 # StampCamera TODO
 
+## 아이폰 듀오 대응 (2026-10-30, 듀오 시뮬레이터 빌드 성공 · 실기기 확인 안 함)
+- [x] 루트에 `.foldAware()` (StampCameraApp) — 시트 · 알림창이 접힌 선을 비킨다
+- [x] 펴면 아래(가로면 왼쪽) 카메라 | 위(오른쪽) 지금 담기는 수집함 (`ContentView.body` 의 `FoldSplitView`, `CollectionView(inPane: true)`). 뜯은 스티커가 옆 수집함에 바로 보인다
+- [x] 옆 판의 수집함은 '카메라' 단추를 빼고, 카메라 칩으로 수집함을 바꾸면 따라 편다. 종이 밝기는 그 판에만 건다(카메라 쪽은 어두운 채)
+- [x] 창 가득 덮던 화면(수집함 · 스티커 크게 보기 · 원본 사진)은 `.foldConfined()`
+- [x] 글자만 있던 툴바 단추(완료 · 선택/취소)에 아이콘
+- [ ] ⚠️ 실기기: 펼친 판 안에서 뜯은 자리와 스티커가 맞는지(캡처 좌표는 판 크기로 재므로 맞아야 하지만 시뮬레이터엔 카메라가 없다)
+- 확인: 듀오 시뮬레이터 `-FoldPretend -ScreenshotScene` 으로 펼친 배치, 인자 없이 접힌 배치
+
 ## 완료
 - [x] 빌드 에러/경고 정리 (CameraManager actor 격리, CGPoint Hashable)
 - [x] 기기 설치용 Info.plist 필수 키(CFBundleIdentifier 등) 추가

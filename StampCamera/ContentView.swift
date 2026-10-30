@@ -157,6 +157,79 @@ struct ContentView: View {
     @State private var focusTapID = 0
 
     var body: some View {
+        // 아이폰 듀오를 펴면 아래(가로면 왼쪽)에 카메라, 위(오른쪽)에 지금 담기는 수집함이 선다.
+        // 뜯은 스티커가 접힌 선 너머 수집함에 바로 꽂힌다. 접혀 있으면 카메라만, 지금 화면 그대로.
+        FoldSplitView {
+            cameraSide
+        } result: {
+            CollectionView(collection: collection, inPane: true)
+                .environment(\.foldLayout, .single)
+        }
+        .task {
+            #if DEBUG
+            // 스크린샷 장면: 시뮬레이터의 빈 캡처 세션은 메인 스레드를 붙잡으므로
+            // 카메라는 아예 켜지 않고 화면만 연다
+            if ScreenshotScene.isActive {
+                camera.isAuthorized = true
+                await openScreenshotScene()
+                return
+            }
+            #endif
+            await camera.requestAccess()
+        }
+        // 움직임이 깨진 스티커는 열 때 조용히 바로잡는다 (예전 '스티커 점검')
+        .task { collection.repairBrokenMotion() }
+        .onAppear { location.start() }
+        .onChange(of: camera.capturedImage) { _, newValue in handleCapture(newValue) }
+        .onChange(of: camera.capturedLiveFrames) { _, frames in handleLiveFrames(frames) }
+        // Control Center / Lock Screen tapped "펀칭 카메라 열기": drop whatever is
+        // open and return to the live camera.
+        .onChange(of: router.cameraRequestID) { _, _ in
+            showCollection = false
+            editTarget = nil
+            showNewAlbum = false
+            withAnimation(.easeOut(duration: 0.15)) { revealID = nil }
+        }
+        .alert("새 수집함", isPresented: $showNewAlbum) {
+            TextField("수집함 이름", text: $newAlbumName)
+            Button("취소", role: .cancel) { }
+            Button("만들기") { collection.createAlbum(newAlbumName) }
+        }
+        // 모음을 구경하는 동안엔 카메라를 쉬게 한다 — 초록불(카메라 사용
+        // 표시등)도 꺼지고 배터리도 아낀다; 닫으면 즉시 재가동
+        .onChange(of: showCollection) { _, open in
+            guard !screenshotMode else { return }
+            if open { camera.stop() } else { camera.start() }
+        }
+        .fullScreenCover(isPresented: $showCollection) {
+            CollectionView(collection: collection)
+                .foldConfined()
+        }
+        .sheet(isPresented: $showSupport) {
+            StampCameraSupportView()
+        }
+        .sheet(item: $editTarget) { target in
+            NavigationStack {
+                StampDetailView(collection: collection, stampID: target.id)
+            }
+        }
+        // result didn't match the request → offer to re-shoot or keep it
+        .alert(captureIssue?.title ?? "", isPresented: Binding(
+            get: { captureIssue != nil },
+            set: { if !$0 { captureIssue = nil } }
+        ), presenting: captureIssue) { issue in
+            Button("다시 찍기", role: .destructive) {
+                collection.delete(issue.id)            // drop the mismatched piece
+                if revealID == issue.id { revealID = nil }
+            }
+            Button("그대로 두기", role: .cancel) { }
+        } message: { issue in
+            Text(issue.message)
+        }
+    }
+
+    /// 카메라와 그 위에 뜨는 것(뜯은 직후 카드 · 한 줄 안내). 펼친 화면에서는 고르는 쪽 판에 선다.
+    private var cameraSide: some View {
         ZStack {
             Color.black.ignoresSafeArea()
 
@@ -209,66 +282,6 @@ struct ContentView: View {
             }
             // while access is still being determined: just the black background,
             // so the guidance never flashes for users who already granted it.
-        }
-        .task {
-            #if DEBUG
-            // 스크린샷 장면: 시뮬레이터의 빈 캡처 세션은 메인 스레드를 붙잡으므로
-            // 카메라는 아예 켜지 않고 화면만 연다
-            if ScreenshotScene.isActive {
-                camera.isAuthorized = true
-                await openScreenshotScene()
-                return
-            }
-            #endif
-            await camera.requestAccess()
-        }
-        // 움직임이 깨진 스티커는 열 때 조용히 바로잡는다 (예전 '스티커 점검')
-        .task { collection.repairBrokenMotion() }
-        .onAppear { location.start() }
-        .onChange(of: camera.capturedImage) { _, newValue in handleCapture(newValue) }
-        .onChange(of: camera.capturedLiveFrames) { _, frames in handleLiveFrames(frames) }
-        // Control Center / Lock Screen tapped "펀칭 카메라 열기": drop whatever is
-        // open and return to the live camera.
-        .onChange(of: router.cameraRequestID) { _, _ in
-            showCollection = false
-            editTarget = nil
-            showNewAlbum = false
-            withAnimation(.easeOut(duration: 0.15)) { revealID = nil }
-        }
-        .alert("새 수집함", isPresented: $showNewAlbum) {
-            TextField("수집함 이름", text: $newAlbumName)
-            Button("취소", role: .cancel) { }
-            Button("만들기") { collection.createAlbum(newAlbumName) }
-        }
-        // 모음을 구경하는 동안엔 카메라를 쉬게 한다 — 초록불(카메라 사용
-        // 표시등)도 꺼지고 배터리도 아낀다; 닫으면 즉시 재가동
-        .onChange(of: showCollection) { _, open in
-            guard !screenshotMode else { return }
-            if open { camera.stop() } else { camera.start() }
-        }
-        .fullScreenCover(isPresented: $showCollection) {
-            CollectionView(collection: collection)
-        }
-        .sheet(isPresented: $showSupport) {
-            StampCameraSupportView()
-        }
-        .sheet(item: $editTarget) { target in
-            NavigationStack {
-                StampDetailView(collection: collection, stampID: target.id)
-            }
-        }
-        // result didn't match the request → offer to re-shoot or keep it
-        .alert(captureIssue?.title ?? "", isPresented: Binding(
-            get: { captureIssue != nil },
-            set: { if !$0 { captureIssue = nil } }
-        ), presenting: captureIssue) { issue in
-            Button("다시 찍기", role: .destructive) {
-                collection.delete(issue.id)            // drop the mismatched piece
-                if revealID == issue.id { revealID = nil }
-            }
-            Button("그대로 두기", role: .cancel) { }
-        } message: { issue in
-            Text(issue.message)
         }
     }
 
@@ -1023,15 +1036,20 @@ struct ContentView: View {
 /// 메시지·키보드의 스티커 묶음이다.
 struct CollectionView: View {
     @ObservedObject var collection: CollectionStore
+    /// 아이폰 듀오를 폈을 때 카메라 옆 판에 서는가. 그때는 닫을 것이 없어 '카메라' 단추를 빼고,
+    /// 뜯은 스티커가 담기는 수집함(지금 고른 것)을 펴 둔다.
+    var inPane = false
     @Environment(\.dismiss) private var dismiss
 
     /// Album names pushed on the stack. Starts deep-linked to the album last
     /// opened, for a quick look; back from there lands on this list.
     @State private var path: [String]
 
-    init(collection: CollectionStore) {
+    init(collection: CollectionStore, inPane: Bool = false) {
         _collection = ObservedObject(wrappedValue: collection)
-        let last = UserDefaults.standard.string(forKey: "lastVisitedAlbum") ?? ""
+        self.inPane = inPane
+        let last = inPane ? collection.activeAlbum
+            : UserDefaults.standard.string(forKey: "lastVisitedAlbum") ?? ""
         _path = State(initialValue: (!last.isEmpty && collection.albums.contains(last)) ? [last] : [])
     }
 
@@ -1060,11 +1078,13 @@ struct CollectionView: View {
             }
             .toolbar {
                 // 사진 앱처럼 — 왼쪽 위 뒤로가기로 카메라로 돌아간다
-                ToolbarItem(placement: .topBarLeading) {
-                    Button { dismiss() } label: {
-                        Label("카메라", systemImage: "chevron.backward")
+                if !inPane {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button { dismiss() } label: {
+                            Label("카메라", systemImage: "chevron.backward")
+                        }
+                        .scaledFont(15, weight: .semibold)
                     }
-                    .scaledFont(15, weight: .semibold)
                 }
                 // 두 동작을 한 항목 안에 나란히 둬서 시스템이 '...'로 접지
                 // 않고 항상 펼쳐 보이게 한다: 새 수집함 · 사진 가져오기
@@ -1087,10 +1107,15 @@ struct CollectionView: View {
                 Button("만들기") { collection.createAlbum(newAlbumName) }
             }
             .onChange(of: photoItem) { _, item in loadImportedPhoto(item) }
+            // 옆 판에서는 카메라 칩으로 수집함을 바꾸면 그 수집함을 따라 편다.
+            .onChange(of: collection.activeAlbum) { _, album in
+                if inPane { path = [album] }
+            }
         }
         // the list is dark; an open album follows its paper (status bar too —
-        // a pushed page's own preference loses to this one, so decide it here)
-        .preferredColorScheme(topIsLightPaper ? .light : .dark)
+        // a pushed page's own preference loses to this one, so decide it here).
+        // 옆 판에서는 창 전체(카메라 쪽)의 어둠을 바꾸지 않도록 이 판에만 건다.
+        .modifier(PaperScheme(light: topIsLightPaper, scopedToPane: inPane))
     }
 
     private var topIsLightPaper: Bool {
@@ -1147,6 +1172,20 @@ struct CollectionView: View {
             }
         }
         .padding(20)
+    }
+}
+
+/// 수집함의 밝기. 창을 혼자 쓰면 창 전체(상태 막대까지)를, 카메라 옆 판이면 그 판만 바꾼다.
+private struct PaperScheme: ViewModifier {
+    let light: Bool
+    let scopedToPane: Bool
+
+    func body(content: Content) -> some View {
+        if scopedToPane {
+            content.environment(\.colorScheme, light ? .light : .dark)
+        } else {
+            content.preferredColorScheme(light ? .light : .dark)
+        }
     }
 }
 
@@ -1404,13 +1443,14 @@ struct AlbumPageView: View {
         .toolbar {
             if arranging {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("완료") { finishArranging() }
+                    Button("완료", systemImage: "checkmark") { finishArranging() }
                 }
             } else {
                 // 선택은 그대로 우측 상단에
                 ToolbarItem(placement: .topBarTrailing) {
                     if !stamps.isEmpty {
-                        Button(selecting ? String(localized: "취소") : String(localized: "선택")) {
+                        Button(selecting ? String(localized: "취소") : String(localized: "선택"),
+                               systemImage: selecting ? "xmark" : "checkmark.circle") {
                             withAnimation(.easeOut(duration: 0.18)) {
                                 selecting.toggle()
                                 selectedIDs.removeAll()
@@ -1488,6 +1528,7 @@ struct AlbumPageView: View {
         }
         .fullScreenCover(item: $selectedStamp, onDismiss: { Haptics.deselect() }) { stamp in
             StampRevealView(collection: collection, stampID: stamp.id)
+                .foldConfined()
         }
         .overlay {
             if exporting {
@@ -3772,7 +3813,7 @@ struct PrintGuideView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("완료") { dismiss() }
+                    Button("완료", systemImage: "checkmark") { dismiss() }
                 }
             }
         }
@@ -4945,7 +4986,7 @@ struct StampDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
-                Button("완료") { save(); dismiss() }
+                Button("완료", systemImage: "checkmark") { save(); dismiss() }
             }
         }
         .alert("새 수집함", isPresented: $showNewAlbum) {
@@ -4993,6 +5034,7 @@ struct StampDetailView: View {
                 }
                 .contentShape(Rectangle())
                 .onTapGesture { showFullImage = false }
+                .foldConfined()
             }
         }
         .sheet(item: $sharePayload) { payload in

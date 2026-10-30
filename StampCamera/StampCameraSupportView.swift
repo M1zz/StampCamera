@@ -95,7 +95,7 @@ struct StampCameraSupportView: View {
             #endif
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("완료") { dismiss() }
+                    Button("완료", systemImage: "checkmark") { dismiss() }
                 }
             }
             .sheet(isPresented: $showPrintGuide) {
