@@ -3018,8 +3018,12 @@ final class CollectionStore: ObservableObject {
     }
 
     private func loadMeta() {
-        guard let data = try? Data(contentsOf: metaURL),
-              let meta = try? JSONDecoder().decode(Meta.self, from: data) else { return }
+        guard let data = try? Data(contentsOf: metaURL) else { return }
+        guard let meta = try? JSONDecoder().decode(Meta.self, from: data) else {
+            // 못 읽은 앨범 정보를 옆에 남긴다 — 다음 저장이 덮어써도 되찾을 수 있게
+            try? FileManager.default.copyItem(at: metaURL, to: metaURL.appendingPathExtension("unreadable"))
+            return
+        }
         albums = meta.albums
         activeAlbum = meta.active
         decor = meta.decor ?? [:]
