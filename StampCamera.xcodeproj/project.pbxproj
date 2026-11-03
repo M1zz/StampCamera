@@ -11,6 +11,8 @@
 		586C02A22FDB11C400D2A003 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C02A12FDB11C300D2A003 /* Messages.framework */; };
 		586C02AE2FDB11C400D2A003 /* sticker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 586C029F2FDB11C300D2A003 /* sticker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		58EB64DA2FDECDA0006D84DF /* keyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 58EB64D32FDECDA0006D84DF /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C5C0A11D3B04E6F9A1B2C01 /* ScreenshotScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */; };
+		7A1C0DE10000000000000002 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7A1C0DE10000000000000001 /* InfoPlist.xcstrings */; };
 		936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */; };
 		9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */; };
 		9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79192FD651EB00B6DA22 /* punching.mp3 */; };
@@ -31,11 +33,10 @@
 		A1000216 /* ColorHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000206 /* ColorHexTests.swift */; };
 		A1000217 /* LiveStampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000207 /* LiveStampTests.swift */; };
 		A1000218 /* StyleCorrectnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000208 /* StyleCorrectnessTests.swift */; };
-		7A1C0DE10000000000000002 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7A1C0DE10000000000000001 /* InfoPlist.xcstrings */; };
 		CD9D810A072EC833DCCDAA1B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */; };
 		E26DD5523414B795831B7FB6 /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF79C59A8F8F63491030AD61 /* LeeoKit */; };
+		F181FA64A6438DC6D641460A /* AppShortcuts.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 62C9E3B6DD32B67EBBA5A56B /* AppShortcuts.xcstrings */; };
 		F73CBCCDCA180CAC44AEE8CC /* StampCameraSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */; };
-		5C5C0A11D3B04E6F9A1B2C01 /* ScreenshotScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,9 @@
 		586C02A12FDB11C300D2A003 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		586C02C22FDB11D600D2A003 /* StampCamera.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StampCamera.entitlements; sourceTree = "<group>"; };
 		58EB64D32FDECDA0006D84DF /* keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScreenshotScene.swift; sourceTree = "<group>"; };
+		62C9E3B6DD32B67EBBA5A56B /* AppShortcuts.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = AppShortcuts.xcstrings; sourceTree = "<group>"; };
+		7A1C0DE10000000000000001 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C8F79192FD651EB00B6DA22 /* punching.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punching.mp3; sourceTree = "<group>"; };
 		A1000000 /* StampCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StampCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,8 +112,6 @@
 		ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSpec.swift; sourceTree = "<group>"; };
 		B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraRoadmap.swift; sourceTree = "<group>"; };
 		E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSupportView.swift; sourceTree = "<group>"; };
-		5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScreenshotScene.swift; sourceTree = "<group>"; };
-		7A1C0DE10000000000000001 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +248,7 @@
 				5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */,
 				FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */,
 				7A1C0DE10000000000000001 /* InfoPlist.xcstrings */,
+				62C9E3B6DD32B67EBBA5A56B /* AppShortcuts.xcstrings */,
 			);
 			path = StampCamera;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */,
 				CD9D810A072EC833DCCDAA1B /* Localizable.xcstrings in Resources */,
 				7A1C0DE10000000000000002 /* InfoPlist.xcstrings in Resources */,
+				F181FA64A6438DC6D641460A /* AppShortcuts.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
