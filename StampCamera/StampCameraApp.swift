@@ -9,6 +9,7 @@ import LeeoKit
 @main
 struct StampCameraApp: App {
     @StateObject private var router = CameraLaunchRouter.shared
+    @Environment(\.scenePhase) private var scenePhase
 
     init() {
         // 실행 기록 + 익명 사용 통계·크래시 진단(FeedbackHub)을 한 번에 켠다.
@@ -28,6 +29,10 @@ struct StampCameraApp: App {
                 .onOpenURL { router.handle(url: $0) }
                 // 팁 상품을 불러오고 끝나지 않은 팁을 마저 센다 (무료 앱이라 LeeoStore 대신 혼자)
                 .task { await StampCameraSpec.tipJar.startStandalone() }
+                // 모은 스티커를 Siri · Spotlight 가 찾게 — 열 때와 뒤로 보낼 때 다시 싣는다
+                .onChange(of: scenePhase) { _, phase in
+                    if phase != .inactive { Task { await StampLibrary.reindex() } }
+                }
         }
     }
 }

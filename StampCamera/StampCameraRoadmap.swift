@@ -69,6 +69,9 @@ extension StampCameraSpec {
         .init(id: "autosave", status: .planned,
               title: NSLocalizedString("하던 일 이어서 하기", comment: "Roadmap item: keep unsaved work"),
               detail: NSLocalizedString("수집함을 꾸미다가 앱이 꺼져도 하던 내용이 남아 있어요.", comment: "Roadmap item detail: keep unsaved work")),
+        .init(id: "siri-ai", status: .planned,
+              title: NSLocalizedString("Siri에게 그냥 말하기", comment: "Roadmap item: ask Siri without naming the app"),
+              detail: NSLocalizedString("앱 이름을 말하지 않아도 Siri가 모은 스티커를 찾아 바로 열어 줘요.", comment: "Roadmap item detail: ask Siri without naming the app")),
     ]}
 }
 

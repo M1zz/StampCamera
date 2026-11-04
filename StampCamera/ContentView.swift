@@ -98,6 +98,7 @@ struct ContentView: View {
 
     // newly-made stamp pending a caption on the parchment editor
     @State private var editTarget: EditTarget?
+    @State private var stampAfterCollection: String?
 
     // context for the live burst that follows a shutter — the frames arrive
     // ~1.2s later and get cropped/encoded into the stamp's APNG sidecar
@@ -190,6 +191,18 @@ struct ContentView: View {
             showNewAlbum = false
             withAnimation(.easeOut(duration: 0.15)) { revealID = nil }
         }
+        // Siri / Spotlight picked a sticker: close what's open and show that one.
+        .onReceive(router.$stampRequest.compactMap { $0 }) { id in
+            router.stampRequest = nil
+            showNewAlbum = false
+            revealID = nil
+            if showCollection {
+                stampAfterCollection = id   // the sheet can only rise once the book has closed
+                showCollection = false
+            } else {
+                editTarget = EditTarget(id: id)
+            }
+        }
         .alert("새 수집함", isPresented: $showNewAlbum) {
             TextField("수집함 이름", text: $newAlbumName)
             Button("취소", role: .cancel) { }
@@ -201,7 +214,12 @@ struct ContentView: View {
             guard !screenshotMode else { return }
             if open { camera.stop() } else { camera.start() }
         }
-        .fullScreenCover(isPresented: $showCollection) {
+        .fullScreenCover(isPresented: $showCollection, onDismiss: {
+            if let id = stampAfterCollection {
+                stampAfterCollection = nil
+                editTarget = EditTarget(id: id)
+            }
+        }) {
             CollectionView(collection: collection)
                 .foldConfined()
         }

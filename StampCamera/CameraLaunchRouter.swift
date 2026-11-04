@@ -19,6 +19,10 @@ final class CameraLaunchRouter: ObservableObject {
     /// second request (already on the camera) still re-fires.
     @Published var cameraRequestID = 0
 
+    /// Siri / Spotlight asked to open this collected sticker (its id). ContentView
+    /// opens it and clears this.
+    @Published var stampRequest: String?
+
     private init() {}
 
     func requestCamera() { cameraRequestID += 1 }
