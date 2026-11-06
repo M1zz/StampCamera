@@ -27,8 +27,23 @@ enum StampCameraSpec: LeeoAppSpec {
         supportURL: URL(string: "https://m1zz.github.io/StampCamera/support.html")!
     )
 
-    /// 결제 없음 — 앱 안에 StoreKit·페이월 코드가 존재하지 않는다.
-    static let monetization = LeeoMonetization.free
+    /// 무료 다운로드 + 무료 · Plus · Pro (칸마다 주 · 월 · 연 구독과 평생). 칸과 상품은 StampCameraPlans.swift.
+    static let monetization = LeeoMonetization.freemiumSubscription(
+        LeeoSubscriptionConfig(
+            productIDs: PlanProducts.all,
+            // 자체 약관이 없으므로 애플 표준 사용권 계약(EULA)을 건다. 구독을 파는 앱의 심사 필수 항목이다.
+            termsURL: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!,
+            entitlementIDs: Set(PlanProducts.tierByProduct.keys),
+            gate: LeeoGatePolicy(
+                freeLimits: [PlanFeature.albums.rawValue: FreePlan.albumLimit,
+                             PlanFeature.papers.rawValue: FreePlan.papers.count,
+                             PlanFeature.inks.rawValue: FreePlan.inks.count],
+                proOnly: [PlanFeature.arrange.rawValue, PlanFeature.printSheet.rawValue,
+                          PlanFeature.albumImage.rawValue]),
+            // 팁은 같은 스토어가 들고 있어야 결제 리스너 하나로 센다. ⚠️ 기능을 여는 상품이 아니다.
+            tipJar: LeeoTipJarConfig(productIDs: PlanProducts.tips)
+        )
+    )
 
     /// 백업 금고가 함께 떠 두는 공유 저장소 (위젯과 나누는 것).
     static let appGroups = ["group.com.devkoan.StampCamera"]
@@ -38,13 +53,11 @@ enum StampCameraSpec: LeeoAppSpec {
 }
 
 extension StampCameraSpec {
-    /// 무료 앱이라 LeeoStore 가 없다 — 팁만 혼자 받는다(앱을 열 때 `startStandalone()`, → StampCameraApp).
-    /// 소모성 상품 셋, 작은 것부터. ⚠️ 기능을 여는 상품이 아니다.
-    @MainActor static let tipJar = LeeoTipJar(config: LeeoTipJarConfig(productIDs: [
-        "com.devkoan.StampCamera.tip.small",
-        "com.devkoan.StampCamera.tip.medium",
-        "com.devkoan.StampCamera.tip.large",
-    ]))
+    /// 개발자 응원 팁 — 페이월과 같은 `LeeoStore` 가 들고 있다(→ StampCameraPlans.swift).
+    @MainActor static var tipJar: LeeoTipJar {
+        guard let jar = PunchingPlans.shared.store.tipJar else { preconditionFailure("계약에 팁이 없다") }
+        return jar
+    }
 }
 
 /// 팁을 부탁할 만한 순간 — 지금까지 뜯어 모은 스티커 수. 한 번 뜯을 때마다 하나씩 는다.

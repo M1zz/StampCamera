@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import StoreKit
 import LeeoKit
 
 struct StampCameraSupportView: View {
@@ -22,6 +23,12 @@ struct StampCameraSupportView: View {
     @AppStorage("pageCurl") private var pageCurl = false
 
     @State private var showPrintGuide = false
+    @ObservedObject private var plans = PunchingPlans.shared
+    @State private var showPaywall = false
+    @State private var showGraduation = false
+    @State private var managingSubscription = false
+    /// 복원했는데 찾은 것이 없을 때 그대로 말한다. 조용히 끝나면 단추가 고장 난 줄 안다.
+    @State private var restoreMessage: String?
 
     /// 모양 축만 고른다 — 움직임 축은 그대로 둔다 (움직임은 언제나 기록되고,
     /// 멈춤/움직임은 뜯은 뒤 스티커마다 바꾼다).
@@ -80,6 +87,51 @@ struct StampCameraSupportView: View {
                 }
 
                 Section {
+                    HStack {
+                        Label("지금 쓰는 칸", systemImage: "seal")
+                        Spacer()
+                        Text(plans.tier.title).foregroundStyle(.secondary)
+                    }
+                    .accessibilityElement(children: .combine)
+                    if plans.tier < .pro {
+                        Button {
+                            showPaywall = true
+                        } label: {
+                            Label("Plus · Pro 보기", systemImage: "sparkles")
+                        }
+                    }
+                    // 구독 중일 때만. 구독을 관리하는 자리 바로 아래에 평생으로 옮겨 가는 길을 늘 둔다.
+                    if plans.subscription != nil {
+                        Button {
+                            managingSubscription = true
+                        } label: {
+                            Label("구독 관리", systemImage: "creditcard")
+                        }
+                        Button {
+                            showGraduation = true
+                        } label: {
+                            Label(LeeoLadderText.switchToLifetimeEntry, systemImage: "infinity")
+                        }
+                    }
+                    Button {
+                        Task {
+                            await plans.restore()
+                            if plans.tier == .free {
+                                restoreMessage = plans.store.lastError
+                                    ?? String(localized: "이 Apple 계정에서 구매한 기록을 찾지 못했어요.")
+                            }
+                        }
+                    } label: {
+                        Label("구매 복원", systemImage: "arrow.clockwise")
+                    }
+                    .disabled(plans.isWorking)
+                } header: {
+                    Text("펀칭 Plus · Pro")
+                } footer: {
+                    Text("뜯기, 담기, 메시지와 키보드로 보내기는 언제나 무료예요. 응원하기는 기능을 열지 않아요.")
+                }
+
+                Section {
                     LeeoSupportSection<StampCameraSpec>()
                     NavigationLink(LeeoRoadmapText.entry) { RoadmapScreen() }
                     LeeoShareAppLink<StampCameraSpec>()
@@ -101,6 +153,23 @@ struct StampCameraSupportView: View {
             .sheet(isPresented: $showPrintGuide) {
                 PrintGuideView()
             }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
+            }
+            .sheet(isPresented: $showGraduation) {
+                LeeoGraduationOfferView(graduate: plans.product(PlanProducts.graduate)) {
+                    await plans.refresh()
+                }
+                .presentationDragIndicator(.visible)
+            }
+            .manageSubscriptionsSheet(isPresented: $managingSubscription)
+            .alert("구매 복원", isPresented: Binding(get: { restoreMessage != nil },
+                                                 set: { if !$0 { restoreMessage = nil } })) {
+                Button("확인", role: .cancel) { }
+            } message: {
+                Text(restoreMessage ?? "")
+            }
+            .task { await plans.refresh() }
         }
     }
 }

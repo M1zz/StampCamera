@@ -14,6 +14,8 @@
 		5C5C0A11D3B04E6F9A1B2C01 /* ScreenshotScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */; };
 		7A1C0DE10000000000000002 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7A1C0DE10000000000000001 /* InfoPlist.xcstrings */; };
 		936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */; };
+		0BF9EE86DD4E4E2CA0D87FB4 /* StampCameraPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */; };
+		6082D95CEEB74C81BC71AB70 /* StampCameraPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C31AE9FC874ACD90E7F695 /* StampCameraPlans.swift */; };
 		9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */; };
 		9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79192FD651EB00B6DA22 /* punching.mp3 */; };
 		A1000011 /* StampCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001 /* StampCameraApp.swift */; };
@@ -27,6 +29,7 @@
 		A1000019 /* OpenKkukCameraIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000A /* OpenKkukCameraIntent.swift */; };
 		A1000211 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000201 /* TestSupport.swift */; };
 		A1000212 /* CollectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000202 /* CollectionStoreTests.swift */; };
+		7D6503E5830F4F97A98687DD /* PlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962416049B644E5D97EC206A /* PlanTests.swift */; };
 		A1000213 /* AlbumDecorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000203 /* AlbumDecorTests.swift */; };
 		A1000214 /* StampShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000204 /* StampShapeTests.swift */; };
 		A1000215 /* StampCompositorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000205 /* StampCompositorTests.swift */; };
@@ -103,6 +106,7 @@
 		A1000200 /* StampCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StampCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000201 /* TestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
 		A1000202 /* CollectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionStoreTests.swift; sourceTree = "<group>"; };
+		962416049B644E5D97EC206A /* PlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTests.swift; sourceTree = "<group>"; };
 		A1000203 /* AlbumDecorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDecorTests.swift; sourceTree = "<group>"; };
 		A1000204 /* StampShapeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShapeTests.swift; sourceTree = "<group>"; };
 		A1000205 /* StampCompositorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositorTests.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		A1000207 /* LiveStampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStampTests.swift; sourceTree = "<group>"; };
 		A1000208 /* StyleCorrectnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCorrectnessTests.swift; sourceTree = "<group>"; };
 		ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSpec.swift; sourceTree = "<group>"; };
+		9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraPaywallView.swift; sourceTree = "<group>"; };
+		C1C31AE9FC874ACD90E7F695 /* StampCameraPlans.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraPlans.swift; sourceTree = "<group>"; };
 		B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraRoadmap.swift; sourceTree = "<group>"; };
 		E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSupportView.swift; sourceTree = "<group>"; };
 		FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -243,6 +249,8 @@
 				A1000008 /* Info.plist */,
 				9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */,
 				ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */,
+				9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */,
+				C1C31AE9FC874ACD90E7F695 /* StampCameraPlans.swift */,
 				B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */,
 				E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */,
 				5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */,
@@ -269,6 +277,7 @@
 			children = (
 				A1000201 /* TestSupport.swift */,
 				A1000202 /* CollectionStoreTests.swift */,
+				962416049B644E5D97EC206A /* PlanTests.swift */,
 				A1000203 /* AlbumDecorTests.swift */,
 				A1000204 /* StampShapeTests.swift */,
 				A1000205 /* StampCompositorTests.swift */,
@@ -498,6 +507,8 @@
 				A1000016 /* StampShape.swift in Sources */,
 				A1000017 /* StampCompositor.swift in Sources */,
 				936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */,
+				0BF9EE86DD4E4E2CA0D87FB4 /* StampCameraPaywallView.swift in Sources */,
+				6082D95CEEB74C81BC71AB70 /* StampCameraPlans.swift in Sources */,
 				40E58A169ED943D1A55796C3 /* StampCameraRoadmap.swift in Sources */,
 				F73CBCCDCA180CAC44AEE8CC /* StampCameraSupportView.swift in Sources */,
 				5C5C0A11D3B04E6F9A1B2C01 /* ScreenshotScene.swift in Sources */,
@@ -512,6 +523,7 @@
 			files = (
 				A1000211 /* TestSupport.swift in Sources */,
 				A1000212 /* CollectionStoreTests.swift in Sources */,
+				7D6503E5830F4F97A98687DD /* PlanTests.swift in Sources */,
 				A1000213 /* AlbumDecorTests.swift in Sources */,
 				A1000214 /* StampShapeTests.swift in Sources */,
 				A1000215 /* StampCompositorTests.swift in Sources */,

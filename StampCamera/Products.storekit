@@ -1,0 +1,342 @@
+{
+  "identifier" : "5BDE458B-35B5-452A-BE73-606F35EAF846",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "17.99",
+      "familyShareable" : true,
+      "internalID" : "A8AEF8D7-2F31-4300-BEDF-88C57A6BB720",
+      "localizations" : [
+        {
+          "description" : "수집함 무제한, 속지 10종, 색감 6종, 스티커 순서 바꾸기를 엽니다.",
+          "displayName" : "펀칭 Plus 평생",
+          "locale" : "ko_KR"
+        },
+        {
+          "description" : "Unlimited books, all 10 papers, all 6 looks, and rearranging stickers.",
+          "displayName" : "Punching Plus Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.devkoan.StampCamera.plus.lifetime",
+      "referenceName" : "Plus 평생",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "26.99",
+      "familyShareable" : true,
+      "internalID" : "C128DBCF-DBEA-403C-804C-D9517E130F0E",
+      "localizations" : [
+        {
+          "description" : "Plus 전부에 인쇄용 스티커 시트(PDF)와 수집함 이미지 공유를 더합니다.",
+          "displayName" : "펀칭 Pro 평생",
+          "locale" : "ko_KR"
+        },
+        {
+          "description" : "Everything in Plus, plus printable sticker sheets (PDF) and sharing a book as an image.",
+          "displayName" : "Punching Pro Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.devkoan.StampCamera.pro.lifetime",
+      "referenceName" : "Pro 평생",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "8.99",
+      "familyShareable" : true,
+      "internalID" : "E7C33FC6-A998-4C37-BCB3-E7DB0CA5027E",
+      "localizations" : [
+        {
+          "description" : "Plus 평생을 산 분이 Pro 평생으로 올립니다.",
+          "displayName" : "Plus 평생에서 Pro 평생으로",
+          "locale" : "ko_KR"
+        },
+        {
+          "description" : "For Plus Lifetime owners: move up to Pro Lifetime.",
+          "displayName" : "Plus to Pro Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.devkoan.StampCamera.pro.upgrade",
+      "referenceName" : "Plus 평생 → Pro 평생",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "17.99",
+      "familyShareable" : true,
+      "internalID" : "4DAD722F-0C5F-4355-8E8C-41F917ACA6D3",
+      "localizations" : [
+        {
+          "description" : "구독하던 분께 드리는 Pro 평생입니다.",
+          "displayName" : "펀칭 Pro 평생 (구독 졸업)",
+          "locale" : "ko_KR"
+        },
+        {
+          "description" : "Pro Lifetime at a lower price for current subscribers.",
+          "displayName" : "Punching Pro Lifetime for Subscribers",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.devkoan.StampCamera.pro.graduate",
+      "referenceName" : "졸업 Pro 평생",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "270082C8-A139-4728-B26A-B67E75BE7E1F",
+      "localizations" : [
+        {
+          "description" : "개발자에게 커피 한 잔을 보냅니다.",
+          "displayName" : "작은 응원",
+          "locale" : "ko_KR"
+        },
+        {
+          "description" : "Send the developer a cup of coffee.",
+          "displayName" : "Small Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.devkoan.StampCamera.tip.small",
+      "referenceName" : "Small Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "CC102F1D-1659-4BF6-BEE2-71CB7D3DECCC",
+      "localizations" : [
+        {
+          "description" : "펀칭을 계속 다듬을 수 있게 힘을 보탭니다.",
+          "displayName" : "든든한 응원",
+          "locale" : "ko_KR"
+        },
+        {
+          "description" : "Help keep Punching getting better.",
+          "displayName" : "Medium Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.devkoan.StampCamera.tip.medium",
+      "referenceName" : "Medium Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "1BDEE14F-C20A-43AE-81EC-F20DB113952F",
+      "localizations" : [
+        {
+          "description" : "펀칭의 다음 기능을 함께 만듭니다.",
+          "displayName" : "큰 응원",
+          "locale" : "ko_KR"
+        },
+        {
+          "description" : "Help build what comes next in Punching.",
+          "displayName" : "Large Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.devkoan.StampCamera.tip.large",
+      "referenceName" : "Large Tip",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "0",
+    "_developerTeamID" : "QGAQ3AY3R3",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "F7BBA194-9364-434E-8F25-9500D89F40E9",
+      "localizations" : [],
+      "name" : "펀칭",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "8.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "51E4D044-4C57-4B8E-8713-52AB543C72BE",
+          "introductoryOffer" : {
+            "internalID" : "3AD5B38B-CA06-4F9B-8919-F2B1F8D26461",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "payUpFront",
+            "subscriptionPeriod" : "P1Y",
+            "displayPrice" : "4.49"
+          },
+          "localizations" : [
+            {
+              "description" : "Plus 전부에 인쇄용 스티커 시트(PDF)와 수집함 이미지 공유를 더합니다.",
+              "displayName" : "펀칭 Pro 연간",
+              "locale" : "ko_KR"
+            },
+            {
+              "description" : "Everything in Plus, plus printable sticker sheets (PDF) and sharing a book as an image.",
+              "displayName" : "Punching Pro Yearly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.devkoan.StampCamera.pro.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pro 연간",
+          "subscriptionGroupID" : "F7BBA194-9364-434E-8F25-9500D89F40E9",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : []
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "2.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "780CDB04-DC8B-4016-85BF-9F2CDFF53D58",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Plus 전부에 인쇄용 스티커 시트(PDF)와 수집함 이미지 공유를 더합니다.",
+              "displayName" : "펀칭 Pro 월간",
+              "locale" : "ko_KR"
+            },
+            {
+              "description" : "Everything in Plus, plus printable sticker sheets (PDF) and sharing a book as an image.",
+              "displayName" : "Punching Pro Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.devkoan.StampCamera.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pro 월간",
+          "subscriptionGroupID" : "F7BBA194-9364-434E-8F25-9500D89F40E9",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : []
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "1.49",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "EB8DD45D-1F5C-4D48-BB6B-F8353D97E8BF",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Plus 전부에 인쇄용 스티커 시트(PDF)와 수집함 이미지 공유를 더합니다.",
+              "displayName" : "펀칭 Pro 주간",
+              "locale" : "ko_KR"
+            },
+            {
+              "description" : "Everything in Plus, plus printable sticker sheets (PDF) and sharing a book as an image.",
+              "displayName" : "Punching Pro Weekly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.devkoan.StampCamera.pro.weekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "Pro 주간",
+          "subscriptionGroupID" : "F7BBA194-9364-434E-8F25-9500D89F40E9",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : []
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "5.99",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "0CE99BBD-8373-4902-BA94-518ED0827DE9",
+          "introductoryOffer" : {
+            "internalID" : "E6199387-BC0B-458F-8E43-B444947E8A94",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "payUpFront",
+            "subscriptionPeriod" : "P1Y",
+            "displayPrice" : "2.99"
+          },
+          "localizations" : [
+            {
+              "description" : "수집함 무제한, 속지 10종, 색감 6종, 스티커 순서 바꾸기를 엽니다.",
+              "displayName" : "펀칭 Plus 연간",
+              "locale" : "ko_KR"
+            },
+            {
+              "description" : "Unlimited books, all 10 papers, all 6 looks, and rearranging stickers.",
+              "displayName" : "Punching Plus Yearly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.devkoan.StampCamera.plus.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Plus 연간",
+          "subscriptionGroupID" : "F7BBA194-9364-434E-8F25-9500D89F40E9",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : []
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "1.99",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "B864D44C-59E6-4C94-8812-B90997BB94CB",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "수집함 무제한, 속지 10종, 색감 6종, 스티커 순서 바꾸기를 엽니다.",
+              "displayName" : "펀칭 Plus 월간",
+              "locale" : "ko_KR"
+            },
+            {
+              "description" : "Unlimited books, all 10 papers, all 6 looks, and rearranging stickers.",
+              "displayName" : "Punching Plus Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.devkoan.StampCamera.plus.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Plus 월간",
+          "subscriptionGroupID" : "F7BBA194-9364-434E-8F25-9500D89F40E9",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : []
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "0.99",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "51B499A4-DD95-4760-87CA-A63E14A79499",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "수집함 무제한, 속지 10종, 색감 6종, 스티커 순서 바꾸기를 엽니다.",
+              "displayName" : "펀칭 Plus 주간",
+              "locale" : "ko_KR"
+            },
+            {
+              "description" : "Unlimited books, all 10 papers, all 6 looks, and rearranging stickers.",
+              "displayName" : "Punching Plus Weekly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.devkoan.StampCamera.plus.weekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "Plus 주간",
+          "subscriptionGroupID" : "F7BBA194-9364-434E-8F25-9500D89F40E9",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : []
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

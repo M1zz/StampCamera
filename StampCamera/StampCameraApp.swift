@@ -27,11 +27,12 @@ struct StampCameraApp: App {
                 // Control Center / Lock Screen control & the kkuk://camera deep
                 // link both land here → route straight to the live camera.
                 .onOpenURL { router.handle(url: $0) }
-                // 팁 상품을 불러오고 끝나지 않은 팁을 마저 센다 (무료 앱이라 LeeoStore 대신 혼자)
-                .task { await StampCameraSpec.tipJar.startStandalone() }
+                // 영수증을 읽고 요금제를 불러온다 (팁 상품도 같은 스토어가 불러온다)
+                .task { await PunchingPlans.shared.refresh() }
                 // 모은 스티커를 Siri · Spotlight 가 찾게 — 열 때와 뒤로 보낼 때 다시 싣는다
                 .onChange(of: scenePhase) { _, phase in
                     if phase != .inactive { Task { await StampLibrary.reindex() } }
+                    if phase == .active { Task { await PunchingPlans.shared.refresh() } }
                 }
         }
     }

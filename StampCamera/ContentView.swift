@@ -49,6 +49,11 @@ struct ContentView: View {
     @StateObject private var collection = CollectionStore()
     @StateObject private var location = LocationManager()
     @EnvironmentObject private var router: CameraLaunchRouter
+    @ObservedObject private var plans = PunchingPlans.shared
+    /// 잠긴 것을 누른 자리 — 그 기능의 페이월이 뜬다.
+    @State private var paywallFeature: PlanFeature?
+    /// 구독 중인 사람에게 6개월째 · 갱신 7일 전에 한 번 (→ LeeoGraduation).
+    @State private var showGraduation = false
 
     @State private var previewSize: CGSize = .zero
     @State private var showCollection = false
@@ -225,6 +230,21 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showSupport) {
             StampCameraSupportView()
+        }
+        .paywall($paywallFeature)
+        .sheet(isPresented: $showGraduation) {
+            LeeoGraduationOfferView(graduate: plans.product(PlanProducts.graduate)) {
+                await plans.refresh()
+            }
+            // 실제로 보인 때를 적는다. 다른 화면에 밀려 못 뜬 판은 세지 않는다.
+            .onAppear { plans.markGraduationOffered() }
+            .presentationDragIndicator(.visible)
+        }
+        // 카메라만 떠 있을 때만 띄운다. 뜯는 중이거나 다른 화면이 열려 있으면 다음에 연 때로 미룬다.
+        .onChange(of: plans.graduationIsDue) { _, due in
+            guard due, !showCollection, !showSupport, editTarget == nil, revealID == nil,
+                  paywallFeature == nil else { return }
+            showGraduation = true
         }
         .sheet(item: $editTarget) { target in
             NavigationStack {
@@ -526,7 +546,13 @@ struct ContentView: View {
                 }
             }
             Divider()
-            Button { newAlbumName = ""; showNewAlbum = true } label: {
+            Button {
+                if plans.canCreateAlbum(having: collection.albums.count) {
+                    newAlbumName = ""; showNewAlbum = true
+                } else {
+                    paywallFeature = .albums
+                }
+            } label: {
                 Label("새 수집함…", systemImage: "plus")
             }
         } label: {
@@ -1073,6 +1099,8 @@ struct CollectionView: View {
 
     @State private var showNewAlbum = false
     @State private var newAlbumName = ""
+    @ObservedObject private var plans = PunchingPlans.shared
+    @State private var paywallFeature: PlanFeature?
     // 사진 앱에서 가져오기 — 활성 수집함에 기본 모양의 멈춘 스티커로 담는다
     @State private var photoItem: PhotosPickerItem?
     @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveSticker.rawValue
@@ -1108,7 +1136,13 @@ struct CollectionView: View {
                 // 않고 항상 펼쳐 보이게 한다: 새 수집함 · 사진 가져오기
                 ToolbarItem(placement: .topBarTrailing) {
                     HStack(spacing: 18) {
-                        Button { newAlbumName = ""; showNewAlbum = true } label: {
+                        Button {
+                            if plans.canCreateAlbum(having: collection.albums.count) {
+                                newAlbumName = ""; showNewAlbum = true
+                            } else {
+                                paywallFeature = .albums
+                            }
+                        } label: {
                             Image(systemName: "plus")
                         }
                         .accessibilityLabel("새 수집함")
@@ -1125,6 +1159,7 @@ struct CollectionView: View {
                 Button("만들기") { collection.createAlbum(newAlbumName) }
             }
             .onChange(of: photoItem) { _, item in loadImportedPhoto(item) }
+            .paywall($paywallFeature)
             // 옆 판에서는 카메라 칩으로 수집함을 바꾸면 그 수집함을 따라 편다.
             .onChange(of: collection.activeAlbum) { _, album in
                 if inPane { path = [album] }
@@ -1292,6 +1327,9 @@ struct AlbumPageView: View {
     @State private var sharePayload: SharePayload?
     @State private var showPrintGuide = false
     @State private var exporting = false
+    @ObservedObject private var plans = PunchingPlans.shared
+    @State private var paywallFeature: PlanFeature?
+    @State private var makeSheetAfterGuide = false
 
     // 움직임 자동 재생이 꺼져 있으면 라이브 심볼도 숨긴다 (안 움직이는
     // 이미지에 라이브 표식이 붙는 거짓말 방지)
@@ -1541,9 +1579,13 @@ struct AlbumPageView: View {
         .sheet(item: $sharePayload) { payload in
             ShareSheet(items: payload.items)
         }
-        .sheet(isPresented: $showPrintGuide) {
-            PrintGuideView()
+        // 가이드 끝에서 '스티커 시트 만들기'를 눌렀으면 가이드가 다 닫힌 뒤에 만든다 (공유 시트가 설 자리)
+        .sheet(isPresented: $showPrintGuide, onDismiss: {
+            if makeSheetAfterGuide { makeSheetAfterGuide = false; exportStickers() }
+        }) {
+            PrintGuideView(makeSheet: collection.count(in: album) > 0 ? { makeSheetAfterGuide = true } : nil)
         }
+        .paywall($paywallFeature)
         .fullScreenCover(item: $selectedStamp, onDismiss: { Haptics.deselect() }) { stamp in
             StampRevealView(collection: collection, stampID: stamp.id)
                 .foldConfined()
@@ -1586,11 +1628,11 @@ struct AlbumPageView: View {
             Divider()
             Section("쓰기") {
                 Button { exportCard() } label: {
-                    Label("이미지로 공유", systemImage: "square.and.arrow.up")
+                    Label("이미지로 공유", systemImage: plans.allows(.albumImage) ? "square.and.arrow.up" : "lock")
                 }
                 .disabled(collection.count(in: album) == 0)
                 Button { exportStickers() } label: {
-                    Label("인쇄용 스티커 시트 (PDF)", systemImage: "printer")
+                    Label("인쇄용 스티커 시트 (PDF)", systemImage: plans.allows(.printSheet) ? "printer" : "lock")
                 }
                 .disabled(collection.count(in: album) == 0)
                 Button { showPrintGuide = true } label: {
@@ -1661,9 +1703,11 @@ struct AlbumPageView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(BackgroundStyle.allCases) { style in
+                        let open = plans.allows(style)
                         Button {
                             Haptics.tick()
-                            collection.setBackground(style, for: album)
+                            // 잠긴 속지도 미리보기로 보인다. 누르면 고르는 대신 Plus 를 보여 준다.
+                            if open { collection.setBackground(style, for: album) } else { paywallFeature = .papers }
                         } label: {
                             VStack(spacing: 4) {
                                 DiaryBackground(style: style)
@@ -1672,6 +1716,9 @@ struct AlbumPageView: View {
                                     .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous)
                                         .strokeBorder(style == background ? Color(hex: 0xF2B23B) : .white.opacity(0.25),
                                                       lineWidth: style == background ? 2.5 : 1))
+                                    .overlay(alignment: .topTrailing) {
+                                        if !open { PlanLockBadge(feature: .papers).padding(2) }
+                                    }
                                 Text(style.title)
                                     .font(.system(size: 10, weight: .semibold, design: .rounded))
                                     .foregroundStyle(.white.opacity(style == background ? 1 : 0.6))
@@ -1679,14 +1726,23 @@ struct AlbumPageView: View {
                         }
                         .buttonStyle(.plain)
                         .accessibilityLabel("\(style.title) 배경")
+                        .accessibilityValue(open ? "" : String(localized: "잠김, \(PlanFeature.papers.tier.title)에서 열려요"))
                     }
                 }
                 .padding(.horizontal, 16)
             }
             HStack {
-                Text("스티커를 꾹 눌러 원하는 자리로 옮겨요")
-                    .scaledFont(12, weight: .medium, design: .rounded)
-                    .foregroundStyle(.white.opacity(0.65))
+                if plans.allows(.arrange) {
+                    Text("스티커를 꾹 눌러 원하는 자리로 옮겨요")
+                        .scaledFont(12, weight: .medium, design: .rounded)
+                        .foregroundStyle(.white.opacity(0.65))
+                } else {
+                    Button { paywallFeature = .arrange } label: {
+                        Label("스티커 순서 바꾸기는 Plus에서 열려요", systemImage: "lock.fill")
+                            .scaledFont(12, weight: .semibold, design: .rounded)
+                    }
+                    .tint(.white)
+                }
                 Spacer()
                 if collection.isArranged(album) {
                     Button("찍은 순서로") {
@@ -1928,6 +1984,7 @@ struct AlbumPageView: View {
             }
             .contentShape(Rectangle())
             .onLongPressGesture(minimumDuration: 0.3, maximumDistance: 12) {
+                guard plans.allows(.arrange) else { paywallFeature = .arrange; return }
                 liftPos = home
                 lifted = id
                 Haptics.select()
@@ -2001,6 +2058,7 @@ struct AlbumPageView: View {
     /// Build a print-ready sticker-sheet PDF of this album (300-DPI
     /// re-composite, white base, bleed, kiss-cut guides) and offer to share/save.
     private func exportStickers() {
+        guard plans.allows(.printSheet) else { paywallFeature = .printSheet; return }
         let ids = collection.stamps(in: album).map(\.id)
         guard !ids.isEmpty else { return }
         exporting = true
@@ -2014,6 +2072,7 @@ struct AlbumPageView: View {
     /// Render a square SNS card of this album (paper, title, a grid of
     /// stickers, brand) and offer to share it as an image.
     private func exportCard() {
+        guard plans.allows(.albumImage) else { paywallFeature = .albumImage; return }
         let imgs = collection.stamps(in: album).map(\.image)
         guard !imgs.isEmpty else { return }
         let card = CollectionCardView(title: album,
@@ -3802,7 +3861,12 @@ struct ShareSheet: UIViewControllerRepresentable {
 /// cut-out sticker sheet, told as numbered steps. Reachable from the
 /// settings (쓰기) and each album's ⋯ menu.
 struct PrintGuideView: View {
+    /// 수집함에서 열었으면 그 수집함의 시트를 만드는 길. 설정에서 열었으면 nil.
+    var makeSheet: (() -> Void)? = nil
+
     @Environment(\.dismiss) private var dismiss
+    @ObservedObject private var plans = PunchingPlans.shared
+    @State private var paywallFeature: PlanFeature?
 
     private let gold = Color(hex: 0xF2B23B)
     private let paper = Color.white.opacity(0.07)
@@ -3827,10 +3891,12 @@ struct PrintGuideView: View {
                          "점선을 따라 가위나 커팅기로 오리면 완성! 봉투, 다이어리, 노트북… 어디든 붙여보세요.")
 
                     tips
+                    makeButton
                 }
                 .padding(20)
             }
             .background(Color(hex: 0x141210).ignoresSafeArea())
+            .paywall($paywallFeature)
             .navigationTitle("종이 스티커로 인쇄하기")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -3840,6 +3906,30 @@ struct PrintGuideView: View {
             }
         }
         .preferredColorScheme(.dark)
+    }
+
+    /// 가이드 끝의 '스티커 시트 만들기'. Pro 가 아니면 Pro 를 보여 주고, 수집함에서 열었으면 바로 만든다.
+    @ViewBuilder
+    private var makeButton: some View {
+        let open = plans.allows(.printSheet)
+        if !open || makeSheet != nil {
+            Button {
+                if !open {
+                    paywallFeature = .printSheet
+                } else if let makeSheet {
+                    makeSheet()
+                    dismiss()
+                }
+            } label: {
+                Label("스티커 시트 만들기", systemImage: open ? "printer.fill" : "lock.fill")
+                    .font(.body.weight(.semibold))
+                    .frame(maxWidth: .infinity, minHeight: 32)
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(Color(hex: 0xE8504E))
+            .controlSize(.large)
+            .padding(.top, 6)
+        }
     }
 
     private var header: some View {
@@ -4899,6 +4989,8 @@ struct StampDetailView: View {
     @State private var sharePayload: SharePayload?
     @State private var justCopied = false
     @FocusState private var focused: Bool
+    @ObservedObject private var plans = PunchingPlans.shared
+    @State private var paywallFeature: PlanFeature?
 
     private var stamp: CollectedStamp? { collection.stamps.first { $0.id == stampID } }
     private var albumLabel: String { stamp?.album ?? CollectionStore.defaultAlbum }
@@ -5062,6 +5154,7 @@ struct StampDetailView: View {
         .sheet(item: $sharePayload) { payload in
             ShareSheet(items: payload.items)
         }
+        .paywall($paywallFeature)
     }
 
     /// Offers the sticker to share/save — a GIF if it moves, else a
@@ -5115,7 +5208,9 @@ struct StampDetailView: View {
 
     private func inkChip(_ ink: StampInk) -> some View {
         let selected = finish == ink
-        return Button { applyFinish(ink) } label: {
+        let open = plans.allows(ink)
+        // 잠긴 색감도 이 스티커에 입힌 미리보기로 보인다. 누르면 입히는 대신 Plus 를 보여 준다.
+        return Button { if open { applyFinish(ink) } else { paywallFeature = .inks } } label: {
             VStack(spacing: 5) {
                 Group {
                     if let img = inkPreviews[ink.rawValue] {
@@ -5126,6 +5221,9 @@ struct StampDetailView: View {
                     }
                 }
                 .frame(width: 52, height: 62)
+                .overlay(alignment: .topTrailing) {
+                    if !open { PlanLockBadge(feature: .inks) }
+                }
                 Text(LocalizedStringKey(ink.rawValue))
                     .font(.system(size: 11, weight: .semibold, design: .rounded))
                     .foregroundStyle(Color(hex: selected ? 0x42331E : 0x9A875E))
@@ -5178,7 +5276,13 @@ struct StampDetailView: View {
                 Button(a) { collection.move(stampID, to: a) }
             }
             Divider()
-            Button("새 수집함…") { newAlbumName = ""; showNewAlbum = true }
+            Button("새 수집함…") {
+                if plans.canCreateAlbum(having: collection.albums.count) {
+                    newAlbumName = ""; showNewAlbum = true
+                } else {
+                    paywallFeature = .albums
+                }
+            }
         } label: {
             HStack(spacing: 6) {
                 Image(systemName: "book.closed")
