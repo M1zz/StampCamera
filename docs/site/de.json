@@ -1,11 +1,11 @@
 {
   "title": "Punching: Die Kamera, die Momente zu bewegten Stickern macht",
-  "description": "Halte gedrückt und trenne ab, was du siehst: als bewegten Sticker. Motiv ausschneiden oder als Briefmarke, direkt aus Nachrichten senden. Gratis.",
+  "description": "Halte gedrückt und trenne ab, was du siehst: als bewegten Sticker. Motiv ausschneiden oder als Briefmarke, direkt aus Nachrichten senden. Abtrennen und Senden ist kostenlos.",
   "hero": {
     "headline": "Gedrückt halten.\nDer Moment wird zum Sticker.",
     "lead": "Richte die Szene im Locherfenster aus, halte gedrückt und lass los. Dein Hund wird genau entlang seiner Umrisse ausgeschnitten, samt der kurzen Bewegung vor und nach dem Drücken. Senden kannst du ihn sofort aus Nachrichten oder über die Tastatur.",
     "cta": "Gratis im App Store laden",
-    "note": "Alle Funktionen sind kostenlos. Sticker und Fotos bleiben auf deinem Gerät."
+    "note": "Sticker abtrennen und senden ist kostenlos. Sticker und Fotos bleiben auf deinem Gerät."
   },
   "demo": {
     "title": "Probier es selbst aus",
@@ -159,8 +159,8 @@
         "a": "Nur auf deinem Gerät. Es gibt kein Konto, keinen eigenen Server und keine Werbung. Dein Gerät verlassen nur anonyme Nutzungsstatistiken, Fehlerberichte und Feedback, das du selbst schickst. Details stehen in der Datenschutzerklärung."
       },
       {
-        "q": "Ist das wirklich kostenlos?",
-        "a": "Ja, alle Funktionen sind kostenlos. Wenn dir die App gefällt, kannst du dem Entwickler in der App ein Trinkgeld geben, freigeschaltet wird dadurch aber nichts."
+        "q": "Ist das kostenlos?",
+        "a": "Sticker abtrennen, sammeln und über Nachrichten und die Tastatur senden ist kostenlos und unbegrenzt. Dazu bekommst du gratis 5 Sammlungen sowie je 3 Seiten und Looks. Punching Plus bietet unbegrenzt viele Sammlungen, alle 10 Seiten und 6 Looks und freies Anordnen der Sticker. Punching Pro enthält alles aus Plus und dazu Sticker-Bögen zum Drucken (PDF) sowie das Teilen einer ganzen Sammlung als ein Bild. Du wählst ein Wochen-, Monats- oder Jahresabo oder zahlst einmal und hast es für immer. Trinkgeld in der App ist davon getrennt und schaltet nichts frei."
       }
     ]
   },

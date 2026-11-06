@@ -1,11 +1,11 @@
 {
   "title": "Punching: kamera yang mengubah momen jadi stiker bergerak",
-  "description": "Tekan lama untuk menyobek apa yang dilihat kamera jadi stiker bergerak. Potong subjeknya saja atau sobek seperti perangko, lalu kirim langsung dari Pesan atau keyboard. Semua fitur gratis.",
+  "description": "Tekan lama untuk menyobek apa yang dilihat kamera jadi stiker bergerak. Potong subjeknya saja atau sobek seperti perangko, lalu kirim langsung dari Pesan atau keyboard. Menyobek dan mengirim stiker gratis.",
   "hero": {
     "headline": "Tekan lama,\nmomen itu jadi stiker",
     "lead": "Bidik adegan di jendela pelubang, tekan lama lalu lepaskan. Anjingmu terpotong persis mengikuti bentuk tubuhnya, lengkap dengan gerakan singkat sebelum dan sesudah ditekan. Stikernya bisa langsung dikirim dari Pesan atau keyboard.",
     "cta": "Unduh gratis di App Store",
-    "note": "Semua fitur gratis. Stiker dan foto hanya disimpan di perangkatmu."
+    "note": "Menyobek dan mengirim stiker gratis. Stiker dan foto hanya disimpan di perangkatmu."
   },
   "demo": {
     "title": "Coba sobek sendiri",
@@ -159,8 +159,8 @@
         "a": "Hanya di perangkatmu. Tidak ada akun, tidak ada server milik kami, dan tidak ada iklan. Yang keluar dari perangkat hanya statistik penggunaan anonim, laporan error, dan masukan yang kamu kirim sendiri. Detailnya ada di Kebijakan Privasi."
       },
       {
-        "q": "Benar-benar gratis?",
-        "a": "Ya, semua fitur gratis. Kalau suka, kamu bisa memberi tip untuk pengembang di dalam aplikasi, tetapi tip tidak membuka fitur apa pun."
+        "q": "Apakah gratis?",
+        "a": "Menyobek stiker, menyimpannya, dan mengirimnya dari Pesan atau keyboard gratis tanpa batas. Kamu juga dapat 5 album, 3 latar, dan 3 gaya secara gratis. Punching Plus membuka album tanpa batas, semua 10 latar dan 6 gaya, serta bebas mengatur urutan stiker. Punching Pro berisi semua yang ada di Plus, ditambah lembar stiker siap cetak (PDF) dan berbagi satu album utuh sebagai satu gambar. Kamu bisa pilih langganan mingguan, bulanan, atau tahunan, atau bayar sekali untuk selamanya. Tip di dalam aplikasi terpisah dan tidak membuka fitur apa pun."
       }
     ]
   },

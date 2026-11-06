@@ -1,11 +1,11 @@
 {
   "title": "Punching: aparat, który zamienia chwilę w ruchomą naklejkę",
-  "description": "Przytrzymaj i oderwij to, co widzisz, jako ruchomą naklejkę. Wytnij obiekt albo oderwij znaczek i wyślij z Wiadomości lub klawiatury. Za darmo.",
+  "description": "Przytrzymaj i oderwij to, co widzisz, jako ruchomą naklejkę. Wytnij obiekt albo oderwij znaczek i wyślij z Wiadomości lub klawiatury. Odrywanie i wysyłanie jest bezpłatne.",
   "hero": {
     "headline": "Przytrzymaj.\nTa chwila to już naklejka.",
     "lead": "Ustaw kadr w okienku dziurkacza, przytrzymaj i puść. Pies zostaje wycięty dokładnie po swoim konturze, razem z krótkim ruchem sprzed naciśnięcia i po nim. Gotową naklejkę od razu wyślesz w Wiadomościach albo z klawiatury.",
     "cta": "Za darmo w App Store",
-    "note": "Wszystkie funkcje są bezpłatne. Naklejki i zdjęcia zostają na Twoim urządzeniu."
+    "note": "Odrywanie i wysyłanie naklejek jest bezpłatne. Naklejki i zdjęcia zostają na Twoim urządzeniu."
   },
   "demo": {
     "title": "Oderwij naklejkę na próbę",
@@ -159,8 +159,8 @@
         "a": "Wyłącznie na Twoim urządzeniu. Nie ma konta, własnego serwera ani reklam. Na zewnątrz trafiają tylko anonimowe statystyki użycia, raporty błędów i opinie, które wyślesz samodzielnie. Szczegóły znajdziesz w polityce prywatności."
       },
       {
-        "q": "Czy to naprawdę za darmo?",
-        "a": "Tak, wszystkie funkcje są bezpłatne. Jeśli aplikacja Ci się podoba, możesz zostawić w niej twórcy napiwek, ale napiwek niczego nie odblokowuje."
+        "q": "Czy to jest za darmo?",
+        "a": "Odrywanie naklejek, zapisywanie ich i wysyłanie z Wiadomości oraz klawiatury jest bezpłatne i bez limitu. Za darmo dostajesz też 5 albumów, 3 strony i 3 style. Punching Plus daje nieograniczoną liczbę albumów, wszystkie 10 stron i 6 stylów oraz dowolną kolejność naklejek. Punching Pro zawiera wszystko z Plus, a do tego arkusze naklejek do druku (PDF) i udostępnianie całego albumu jako jednego obrazu. Możesz wybrać subskrypcję tygodniową, miesięczną lub roczną albo zapłacić raz na zawsze. Napiwki w aplikacji to osobna sprawa i niczego nie odblokowują."
       }
     ]
   },

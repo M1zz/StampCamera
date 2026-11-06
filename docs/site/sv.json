@@ -1,11 +1,11 @@
 {
   "title": "Punching: kameran som gör stunden till ett rörligt klistermärke",
-  "description": "Håll nere och riv loss det du ser som ett rörligt klistermärke. Klipp ut motivet eller gör ett frimärke och skicka från Meddelanden. Helt gratis.",
+  "description": "Håll nere och riv loss det du ser som ett rörligt klistermärke. Klipp ut motivet eller gör ett frimärke och skicka från Meddelanden. Det är gratis att riva loss och skicka.",
   "hero": {
     "headline": "Håll nere.\nStunden blir ett klistermärke.",
     "lead": "Ställ in scenen i hålslagets fönster, håll nere och släpp. Hunden klipps ut efter sin egen form, med en kort stunds rörelse från strax före och efter trycket. Skicka den direkt från Meddelanden eller tangentbordet.",
     "cta": "Hämta gratis i App Store",
-    "note": "Alla funktioner är gratis. Klistermärken och foton stannar på din enhet."
+    "note": "Det är gratis att riva loss och skicka klistermärken. Klistermärken och foton stannar på din enhet."
   },
   "demo": {
     "title": "Testa själv",
@@ -159,8 +159,8 @@
         "a": "Bara på din enhet. Det finns inget konto, ingen egen server och inga annonser. Det enda som lämnar enheten är anonym användningsstatistik, felrapporter och feedback som du själv skickar. Mer finns i integritetspolicyn."
       },
       {
-        "q": "Är det verkligen gratis?",
-        "a": "Ja, alla funktioner är gratis. Gillar du appen kan du ge utvecklaren dricks i appen, men dricks låser inte upp något."
+        "q": "Är det gratis?",
+        "a": "Det är gratis och obegränsat att riva loss klistermärken, spara dem och skicka dem från Meddelanden och tangentbordet. Du får också 5 album, 3 sidor och 3 looks gratis. Punching Plus ger obegränsat med album, alla 10 sidor och 6 looks och fri ordning på klistermärkena. Punching Pro har allt i Plus och dessutom klistermärkesark för utskrift (PDF) och delning av ett helt album som en enda bild. Välj prenumeration per vecka, månad eller år, eller betala en gång för alltid. Dricks i appen är fristående och låser inte upp något."
       }
     ]
   },

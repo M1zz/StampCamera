@@ -1,11 +1,11 @@
 {
   "title": "Punching: de camera die een moment afscheurt als bewegende sticker",
-  "description": "Houd ingedrukt en scheur af wat je ziet als bewegende sticker. Knip het onderwerp uit of scheur een postzegel af en stuur hem via Berichten. Gratis.",
+  "description": "Houd ingedrukt en scheur af wat je ziet als bewegende sticker. Knip het onderwerp uit of scheur een postzegel af en stuur hem via Berichten. Afscheuren en versturen is gratis.",
   "hero": {
     "headline": "Houd ingedrukt\nen het moment is een sticker",
     "lead": "Richt de scène in het perforatorvenster, houd ingedrukt en laat los. Je hond wordt precies langs zijn silhouet uitgeknipt, met de korte beweging van vlak voor en na het drukken. Verstuur hem meteen via Berichten of het toetsenbord.",
     "cta": "Gratis in de App Store",
-    "note": "Alle functies zijn gratis. Je stickers en foto’s blijven op je apparaat."
+    "note": "Stickers afscheuren en versturen is gratis. Je stickers en foto’s blijven op je apparaat."
   },
   "demo": {
     "title": "Scheur er zelf een af",
@@ -159,8 +159,8 @@
         "a": "Alleen op je apparaat. Er is geen account, geen eigen server en geen reclame. Het enige wat je apparaat verlaat, zijn anonieme gebruiksstatistieken, foutrapporten en feedback die je zelf stuurt. Meer daarover lees je in het privacybeleid."
       },
       {
-        "q": "Is het echt gratis?",
-        "a": "Ja, alle functies zijn gratis. Vind je de app leuk, dan kun je de ontwikkelaar in de app een fooi geven, maar een fooi ontgrendelt niets."
+        "q": "Is het gratis?",
+        "a": "Stickers afscheuren, bewaren en versturen via Berichten en het toetsenbord is gratis en onbeperkt. Je krijgt ook gratis 5 verzamelingen, 3 pagina’s en 3 looks. Punching Plus geeft onbeperkt verzamelingen, alle 10 pagina’s en 6 looks, en je zet stickers in elke volgorde die je wilt. Punching Pro bevat alles van Plus, plus stickervellen om te printen (pdf) en een hele verzameling delen als één afbeelding. Kies een abonnement per week, maand of jaar, of betaal één keer voor altijd. Een fooi in de app staat daar los van en ontgrendelt niets."
       }
     ]
   },

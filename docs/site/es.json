@@ -1,11 +1,11 @@
 {
   "title": "Punching: la cámara que convierte el momento en un sticker con movimiento",
-  "description": "Mantén pulsado y arranca lo que ves como sticker con movimiento. Recorta lo importante o sácalo como sello y envíalo desde Mensajes. Todo gratis.",
+  "description": "Mantén pulsado y arranca lo que ves como sticker con movimiento. Recorta lo importante o sácalo como sello y envíalo desde Mensajes. Arrancar y enviar es gratis.",
   "hero": {
     "headline": "Mantén pulsado\ny el momento es un sticker",
     "lead": "Encuadra la escena en la ventana de la perforadora, mantén pulsado y suelta. Tu perro sale recortado con su propia silueta, con el breve movimiento de antes y después de pulsar. Envíalo al momento desde Mensajes o el teclado.",
     "cta": "Gratis en la App Store",
-    "note": "Todas las funciones son gratis. Tus stickers y fotos se quedan en tu dispositivo."
+    "note": "Arrancar y enviar stickers es gratis. Tus stickers y fotos se quedan en tu dispositivo."
   },
   "demo": {
     "title": "Arranca uno tú mismo",
@@ -159,8 +159,8 @@
         "a": "Solo en tu dispositivo. No hay cuenta, ni servidor propio, ni anuncios. Lo único que sale del dispositivo son estadísticas de uso anónimas, informes de errores y los comentarios que decidas enviar. Tienes todos los detalles en la política de privacidad."
       },
       {
-        "q": "¿De verdad es gratis?",
-        "a": "Sí, todas las funciones son gratis. Si te gusta, puedes dejarle una propina al desarrollador desde la app, pero las propinas no desbloquean nada."
+        "q": "¿Es gratis?",
+        "a": "Arrancar stickers, guardarlos y enviarlos desde Mensajes y el teclado es gratis y sin límites. También tienes gratis 5 álbumes, 3 páginas y 3 tonos. Punching Plus añade álbumes ilimitados, las 10 páginas y los 6 tonos, y la opción de ordenar los stickers a tu gusto. Punching Pro incluye todo lo de Plus, más hojas de stickers para imprimir (PDF) y la opción de compartir un álbum entero como una sola imagen. Puedes elegir una suscripción semanal, mensual o anual, o pagar una sola vez para siempre. Las propinas de la app son aparte y no desbloquean nada."
       }
     ]
   },

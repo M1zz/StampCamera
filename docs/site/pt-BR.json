@@ -1,11 +1,11 @@
 {
   "title": "Punching: a câmera que transforma o momento em adesivo animado",
-  "description": "Segure e destaque o que você vê como um adesivo animado. Recorte o que importa ou destaque como selo e envie pelo Mensagens. Tudo de graça.",
+  "description": "Segure e destaque o que você vê como um adesivo animado. Recorte o que importa ou destaque como selo e envie pelo Mensagens. Destacar e enviar é de graça.",
   "hero": {
     "headline": "Segure,\ne o momento vira adesivo",
     "lead": "Enquadre a cena na janela do furador, segure e solte. Seu cachorro sai recortado no formato dele, com o breve movimento de antes e depois do toque. Dá para enviar na hora pelo Mensagens ou pelo teclado.",
     "cta": "Baixe grátis na App Store",
-    "note": "Todos os recursos são gratuitos. Seus adesivos e fotos ficam só no seu aparelho."
+    "note": "Destacar e enviar adesivos é de graça. Seus adesivos e fotos ficam só no seu aparelho."
   },
   "demo": {
     "title": "Destaque um você mesmo",
@@ -159,8 +159,8 @@
         "a": "Só no seu aparelho. Não tem conta, nem servidor próprio, nem anúncios. O que sai do aparelho são apenas estatísticas de uso anônimas, relatórios de erro e o feedback que você decidir enviar. Os detalhes estão na política de privacidade."
       },
       {
-        "q": "É grátis mesmo?",
-        "a": "Sim, todos os recursos são gratuitos. Se gostar, você pode deixar uma gorjeta para o desenvolvedor dentro do app, mas a gorjeta não libera nada."
+        "q": "É grátis?",
+        "a": "Destacar adesivos, guardar e enviar pelo Mensagens e pelo teclado é grátis e sem limite. Você também tem de graça 5 álbuns, 3 páginas e 3 estilos. O Punching Plus libera álbuns ilimitados, as 10 páginas e os 6 estilos, e organizar os adesivos na ordem que quiser. O Punching Pro inclui tudo do Plus, além de folhas de adesivos para imprimir (PDF) e compartilhar um álbum inteiro como uma única imagem. Dá para escolher assinatura semanal, mensal ou anual, ou pagar uma vez só e usar para sempre. As gorjetas no app são à parte e não liberam nada."
       }
     ]
   },

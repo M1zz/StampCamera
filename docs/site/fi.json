@@ -1,11 +1,11 @@
 {
   "title": "Punching: kamera, joka tekee hetkestä liikkuvan tarran",
-  "description": "Pidä painettuna ja irrota näkemäsi liikkuvaksi tarraksi. Rajaa kohde tai irrota postimerkki ja lähetä Viesteistä tai näppäimistöltä. Ilmainen.",
+  "description": "Pidä painettuna ja irrota näkemäsi liikkuvaksi tarraksi. Rajaa kohde tai irrota postimerkki ja lähetä Viesteistä tai näppäimistöltä. Irrottaminen ja lähettäminen on ilmaista.",
   "hero": {
     "headline": "Pidä painettuna.\nHetkestä tulee tarra.",
     "lead": "Sovita kuva lävistimen ikkunaan, pidä painettuna ja päästä irti. Koira rajautuu tarkasti omaa muotoaan myöten, ja mukaan tarttuu lyhyt liike juuri ennen painallusta ja sen jälkeen. Lähetä tarra saman tien Viesteistä tai näppäimistöltä.",
     "cta": "Ilmaiseksi App Storesta",
-    "note": "Kaikki ominaisuudet ovat ilmaisia. Tarrat ja kuvat pysyvät laitteellasi."
+    "note": "Tarrojen irrottaminen ja lähettäminen on ilmaista. Tarrat ja kuvat pysyvät laitteellasi."
   },
   "demo": {
     "title": "Kokeile itse",
@@ -159,8 +159,8 @@
         "a": "Vain laitteellesi. Ei tiliä, ei omaa palvelinta eikä mainoksia. Laitteelta lähtevät vain nimettömät käyttötilastot, virheraportit ja itse lähettämäsi palaute. Lisätietoja on tietosuojaselosteessa."
       },
       {
-        "q": "Onko se oikeasti ilmainen?",
-        "a": "Kyllä, kaikki ominaisuudet ovat ilmaisia. Jos pidät apista, voit antaa kehittäjälle tippiä apin sisällä, mutta tippi ei avaa mitään lisäominaisuuksia."
+        "q": "Onko se ilmainen?",
+        "a": "Tarrojen irrottaminen, tallentaminen ja lähettäminen Viesteistä ja näppäimistöltä on ilmaista ja rajatonta. Ilmaiseksi saat myös 5 albumia, 3 sivua ja 3 ilmettä. Punching Plus tuo rajattomasti albumeja, kaikki 10 sivua ja 6 ilmettä sekä tarrojen vapaan järjestelyn. Punching Pro sisältää kaiken Plussasta ja lisäksi tulostettavat tarra-arkit (PDF) sekä koko albumin jakamisen yhtenä kuvana. Voit valita viikko-, kuukausi- tai vuositilauksen tai maksaa kerran ja käyttää pysyvästi. Sovelluksen tipit ovat erikseen eivätkä avaa mitään."
       }
     ]
   },

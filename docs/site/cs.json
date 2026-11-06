@@ -1,11 +1,11 @@
 {
   "title": "Punching: fotoaparát, který z okamžiku udělá pohyblivou nálepku",
-  "description": "Podrž a odtrhni, co vidíš, jako pohyblivou nálepku. Vystřihni objekt nebo ho odtrhni jako známku a pošli ze Zpráv či z klávesnice. Zdarma.",
+  "description": "Podrž a odtrhni, co vidíš, jako pohyblivou nálepku. Vystřihni objekt nebo ho odtrhni jako známku a pošli ze Zpráv či z klávesnice. Odtrhávání a posílání je zdarma.",
   "hero": {
     "headline": "Podrž prst.\nA okamžik je nálepka.",
     "lead": "Zaměř scénu do okénka dírkovače, podrž a pusť. Pejsek se vystřihne přesně podle svého obrysu a s ním i krátký pohyb těsně před stisknutím a po něm. Hotovou nálepku pošleš hned ze Zpráv nebo z klávesnice.",
     "cta": "Zdarma v App Storu",
-    "note": "Všechny funkce jsou zdarma. Nálepky i fotky zůstávají jen ve tvém zařízení."
+    "note": "Odtrhávání a posílání nálepek je zdarma. Nálepky i fotky zůstávají jen ve tvém zařízení."
   },
   "demo": {
     "title": "Vyzkoušej si to",
@@ -159,8 +159,8 @@
         "a": "Jen ve tvém zařízení. Žádný účet, žádný vlastní server, žádné reklamy. Ven odcházejí jen anonymní statistiky používání, hlášení chyb a zpětná vazba, kterou pošleš ty. Podrobnosti najdeš v Zásadách ochrany soukromí."
       },
       {
-        "q": "Je to opravdu zdarma?",
-        "a": "Ano, všechny funkce jsou zdarma. Pokud se ti aplikace líbí, můžeš vývojáři v aplikaci poslat spropitné, žádné funkce se tím ale neodemykají."
+        "q": "Je to zdarma?",
+        "a": "Odtrhávat nálepky, ukládat je a posílat ze Zpráv i z klávesnice můžeš zdarma a bez omezení. Zdarma máš také 5 alb, 3 stránky a 3 styly. Punching Plus přidá neomezená alba, všech 10 stránek a 6 stylů a volné řazení nálepek. Punching Pro obsahuje vše z Plus a navíc archy nálepek k tisku (PDF) a sdílení celého alba jako jednoho obrázku. Vybrat si můžeš týdenní, měsíční nebo roční předplatné, nebo jednorázovou platbu navždy. Spropitné v aplikaci je zvlášť a nic neodemyká."
       }
     ]
   },

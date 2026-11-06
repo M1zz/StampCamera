@@ -1,11 +1,11 @@
 {
   "title": "Punching: kameraet, der gør øjeblikket til et bevægeligt klistermærke",
-  "description": "Hold nede, og riv det, du ser, af som et bevægeligt klistermærke. Skær motivet ud eller lav et frimærke, og send fra Beskeder. Helt gratis.",
+  "description": "Hold nede, og riv det, du ser, af som et bevægeligt klistermærke. Skær motivet ud eller lav et frimærke, og send fra Beskeder. Det er gratis at rive af og sende.",
   "hero": {
     "headline": "Hold nede.\nØjeblikket er et klistermærke.",
     "lead": "Sæt scenen ind i hullerens vindue, hold nede, og slip. Din hund bliver skåret ud efter sin egen form, med et kort glimt af bevægelse fra lige før og efter trykket. Send den med det samme fra Beskeder eller tastaturet.",
     "cta": "Hent gratis i App Store",
-    "note": "Alle funktioner er gratis. Klistermærker og fotos bliver på din enhed."
+    "note": "Det er gratis at rive klistermærker af og sende dem. Klistermærker og fotos bliver på din enhed."
   },
   "demo": {
     "title": "Prøv selv",
@@ -159,8 +159,8 @@
         "a": "Kun på din enhed. Der er ingen konto, ingen egen server og ingen reklamer. Det eneste, der forlader din enhed, er anonym brugsstatistik, fejlrapporter og feedback, du selv sender. Du kan læse mere i privatlivspolitikken."
       },
       {
-        "q": "Er det virkelig gratis?",
-        "a": "Ja, alle funktioner er gratis. Kan du lide appen, kan du give udvikleren drikkepenge i appen, men drikkepenge låser ikke op for noget."
+        "q": "Er det gratis?",
+        "a": "Det er gratis og uden grænser at rive klistermærker af, gemme dem og sende dem fra Beskeder og tastaturet. Du får også 5 album, 3 sider og 3 looks gratis. Punching Plus giver ubegrænset med album, alle 10 sider og 6 looks og fri rækkefølge for klistermærkerne. Punching Pro har alt fra Plus og derudover klistermærkeark til print (PDF) og deling af et helt album som ét billede. Vælg et ugentligt, månedligt eller årligt abonnement, eller betal én gang for altid. Drikkepenge i appen er noget for sig og låser ikke op for noget."
       }
     ]
   },

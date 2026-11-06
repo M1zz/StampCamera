@@ -1,11 +1,11 @@
 {
   "title": "Punching : l’appareil photo qui détache l’instant en autocollant animé",
-  "description": "Maintenez appuyé pour détacher ce que vous voyez en autocollant animé. Sujet détouré ou timbre dentelé, à envoyer depuis Messages. Tout est gratuit.",
+  "description": "Maintenez appuyé pour détacher ce que vous voyez en autocollant animé. Sujet détouré ou timbre dentelé, à envoyer depuis Messages. Détacher et envoyer, c’est gratuit.",
   "hero": {
     "headline": "Maintenez appuyé,\nl’instant devient autocollant",
     "lead": "Cadrez la scène dans la fenêtre de la perforatrice, appuyez longuement puis relâchez. Votre chien est détouré selon sa silhouette, avec le petit mouvement d’avant et d’après l’appui. Envoyez-le aussitôt depuis Messages ou le clavier.",
     "cta": "Gratuit sur l’App Store",
-    "note": "Toutes les fonctionnalités sont gratuites. Vos autocollants et photos restent sur votre appareil."
+    "note": "Détacher et envoyer des autocollants, c’est gratuit. Vos autocollants et photos restent sur votre appareil."
   },
   "demo": {
     "title": "Essayez par vous-même",
@@ -159,8 +159,8 @@
         "a": "Uniquement sur votre appareil. Pas de compte, pas de serveur maison, pas de publicité. Seuls quittent l’appareil des statistiques d’utilisation anonymes, des rapports d’erreur et les retours que vous choisissez d’envoyer. Tous les détails figurent dans la politique de confidentialité."
       },
       {
-        "q": "C’est vraiment gratuit ?",
-        "a": "Oui, toutes les fonctionnalités sont gratuites. Si l’app vous plaît, vous pouvez laisser un pourboire au développeur depuis l’app, mais un pourboire ne débloque rien."
+        "q": "C’est gratuit ?",
+        "a": "Détacher des autocollants, les ranger et les envoyer depuis Messages et le clavier est gratuit et illimité. Vous disposez aussi gratuitement de 5 classeurs, de 3 pages et de 3 rendus. Punching Plus offre des classeurs illimités, les 10 pages et les 6 rendus, et la liberté d’ordonner vos autocollants. Punching Pro comprend tout Plus, avec en plus des planches d’autocollants à imprimer (PDF) et le partage d’un classeur entier en une seule image. Choisissez un abonnement à la semaine, au mois ou à l’année, ou un achat unique à vie. Les pourboires dans l’app sont à part et ne débloquent rien."
       }
     ]
   },

@@ -1,11 +1,11 @@
 {
   "title": "Punching: camera biến khoảnh khắc thành nhãn dán chuyển động",
-  "description": "Chạm và giữ để bấm cảnh trước camera thành nhãn dán chuyển động. Tách riêng chủ thể hoặc bấm thành hình con tem, rồi gửi ngay trong Tin nhắn hay bàn phím. Mọi tính năng đều miễn phí.",
+  "description": "Chạm và giữ để bấm cảnh trước camera thành nhãn dán chuyển động. Tách riêng chủ thể hoặc bấm thành hình con tem, rồi gửi ngay trong Tin nhắn hay bàn phím. Bấm và gửi nhãn dán đều miễn phí.",
   "hero": {
     "headline": "Chạm và giữ,\nkhoảnh khắc thành nhãn dán",
     "lead": "Đặt cảnh vào ô bấm, chạm giữ rồi thả tay. Chú chó được cắt đúng theo dáng của chú, kèm cả chút chuyển động ngắn trước và sau khi bấm. Nhãn dán vừa bấm xong có thể gửi ngay trong Tin nhắn hoặc bàn phím.",
     "cta": "Tải miễn phí trên App Store",
-    "note": "Mọi tính năng đều miễn phí. Nhãn dán và ảnh chỉ lưu trên thiết bị của bạn."
+    "note": "Bấm và gửi nhãn dán đều miễn phí. Nhãn dán và ảnh chỉ lưu trên thiết bị của bạn."
   },
   "demo": {
     "title": "Tự tay bấm thử",
@@ -159,8 +159,8 @@
         "a": "Chỉ trên thiết bị của bạn. Không có tài khoản, không có máy chủ riêng và không có quảng cáo. Thứ duy nhất rời khỏi thiết bị là thống kê sử dụng ẩn danh, báo cáo lỗi và góp ý do chính bạn gửi. Xem chi tiết trong Chính sách quyền riêng tư."
       },
       {
-        "q": "Có thật sự miễn phí không?",
-        "a": "Có, mọi tính năng đều miễn phí. Nếu thích, bạn có thể gửi tiền tip cho nhà phát triển ngay trong ứng dụng, nhưng tip không mở khóa thêm gì cả."
+        "q": "Có miễn phí không?",
+        "a": "Bấm nhãn dán, cất vào bộ sưu tập và gửi trong Tin nhắn hay bàn phím đều miễn phí, không giới hạn. Bạn còn được dùng miễn phí 5 bộ sưu tập, 3 nền giấy và 3 màu ảnh. Punching Plus mở bộ sưu tập không giới hạn, đủ 10 nền giấy và 6 màu ảnh, cùng việc tự do sắp xếp thứ tự nhãn dán. Punching Pro có mọi thứ của Plus, thêm tờ nhãn dán để in (PDF) và chia sẻ cả bộ sưu tập thành một ảnh duy nhất. Bạn có thể chọn gói theo tuần, tháng, năm hoặc trả một lần để dùng mãi mãi. Tiền tip trong ứng dụng là riêng và không mở khóa gì cả."
       }
     ]
   },
