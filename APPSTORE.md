@@ -62,6 +62,11 @@ https://m1zz.github.io/StampCamera/
 
 모든 스티커와 사진은 기기 안에만 저장돼요.
 
+구독 안내
+펀칭 Plus와 Pro 구독은 자동 갱신 구독입니다. 갱신일 24시간 전까지 해지하지 않으면 Apple 계정으로 자동 결제되며, 설정의 구독 관리에서 언제든 해지할 수 있습니다.
+이용약관(EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+개인정보처리방침: https://m1zz.github.io/StampCamera/privacy.html
+
 ## ja
 
 ### 지원 URL
@@ -123,6 +128,11 @@ Punching は、カメラに映った場面をステッカーにはがすカメ�
 前に撮った写真もステッカーにして、ブックに入れられます。
 
 すべてのステッカーと写真は、デバイスの中にだけ保存されます。
+
+サブスクリプションについて
+Punching の Plus と Pro は自動更新のサブスクリプションです。 期間終了の24時間前までに解約しない限り、Apple Account に自動で請求され更新されます。設定のサブスクリプション管理からいつでも解約できます。
+利用規約（EULA）: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+プライバシーポリシー: https://m1zz.github.io/StampCamera/ja/privacy.html
 
 ## en
 
@@ -186,6 +196,11 @@ Turn photos you took earlier into stickers and add them to a book.
 
 All your stickers and photos are stored only on your device.
 
+Subscriptions
+Punching Plus and Pro are auto-renewing subscriptions. Payment is charged to your Apple Account, and the subscription renews unless canceled at least 24 hours before the current period ends. Manage or cancel anytime in Settings.
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privacy Policy: https://m1zz.github.io/StampCamera/en/privacy.html
+
 ## en-GB
 
 ### 지원 URL
@@ -247,6 +262,11 @@ Import from Photos
 Turn photos you took earlier into stickers and add them to a book.
 
 All your stickers and photos are stored only on your device.
+
+Subscriptions
+Punching Plus and Pro are auto-renewing subscriptions. Payment is charged to your Apple Account, and the subscription renews unless cancelled at least 24 hours before the current period ends. Manage or cancel any time in Settings.
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privacy Policy: https://m1zz.github.io/StampCamera/en/privacy.html
 
 ## zh-Hans
 
@@ -310,6 +330,11 @@ Punching 是一款把镜头里的画面撕成贴纸的相机 App。
 
 所有贴纸和照片都只保存在你的设备中。
 
+订阅说明
+Punching Plus 和 Pro 均为自动续期订阅。 费用从你的 Apple 账户扣除，除非在当期结束前至少 24 小时取消，否则将自动续期。可随时在“设置”中管理或取消。
+使用条款（EULA）: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+隐私政策: https://m1zz.github.io/StampCamera/zh-Hans/privacy.html
+
 ## zh-Hant
 
 ### 지원 URL
@@ -371,6 +396,11 @@ Punching 是一款把鏡頭裡的畫面撕成貼圖的相機 App。
 以前拍的照片也能做成貼圖，收進收藏冊。
 
 所有貼圖和照片都只儲存在你的裝置中。
+
+訂閱說明
+Punching Plus 與 Pro 皆為自動續訂訂閱。 費用會從你的 Apple 帳號扣款，除非在當期結束前至少 24 小時取消，否則將自動續訂。可隨時在「設定」中管理或取消。
+使用條款（EULA）: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+隱私權政策: https://m1zz.github.io/StampCamera/zh-Hant/privacy.html
 
 ## ru
 
@@ -434,6 +464,11 @@ Punching — камера, которая отрывает всё, что вы �
 
 Все стикеры и фото хранятся только на вашем устройстве.
 
+Подписки
+Punching Plus и Pro — подписки с автопродлением. Оплата списывается с вашего Аккаунта Apple, и подписка продлевается, если не отменить её минимум за 24 часа до конца периода. Управлять подпиской и отменить её можно в Настройках.
+Условия использования (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Политика конфиденциальности: https://m1zz.github.io/StampCamera/ru/privacy.html
+
 ## es
 
 ### 지원 URL
@@ -495,6 +530,11 @@ Importa desde Fotos
 Convierte en stickers las fotos que hiciste antes y añádelas a un álbum.
 
 Todos tus stickers y fotos se guardan solo en tu dispositivo.
+
+Suscripciones
+Las suscripciones a Punching Plus y Pro son de renovación automática. El cargo se realiza en tu cuenta de Apple y la suscripción se renueva salvo que la canceles al menos 24 horas antes de que termine el periodo. Puedes gestionarla o cancelarla cuando quieras en Ajustes.
+Términos de uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Política de privacidad: https://m1zz.github.io/StampCamera/es/privacy.html
 
 ## de
 
@@ -558,6 +598,11 @@ Verwandle früher aufgenommene Fotos in Sticker und füge sie einer Sammlung hin
 
 Alle Sticker und Fotos werden nur auf deinem Gerät gespeichert.
 
+Abonnements
+Punching Plus und Pro sind sich automatisch verlängernde Abos. Die Zahlung erfolgt über deinen Apple Account. Das Abo verlängert sich, sofern du nicht mindestens 24 Stunden vor Ablauf des Zeitraums kündigst. Verwalten oder kündigen kannst du jederzeit in den Einstellungen.
+Nutzungsbedingungen (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Datenschutzerklärung: https://m1zz.github.io/StampCamera/de/privacy.html
+
 ## fr
 
 ### 지원 URL
@@ -619,6 +664,11 @@ Importer depuis Photos
 Transformez en autocollants des photos prises plus tôt et ajoutez-les à un classeur.
 
 Tous vos autocollants et photos restent uniquement sur votre appareil.
+
+Abonnements
+Les abonnements Punching Plus et Pro sont à renouvellement automatique. Le paiement est débité sur votre compte Apple, et l’abonnement est reconduit sauf résiliation au moins 24 heures avant la fin de la période en cours. Gérez-le ou résiliez-le à tout moment dans Réglages.
+Conditions d’utilisation (EULA) : https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Politique de confidentialité : https://m1zz.github.io/StampCamera/fr/privacy.html
 
 ## it
 
@@ -682,6 +732,11 @@ Trasforma in adesivi le foto scattate in precedenza e aggiungile a un album.
 
 Tutti i tuoi adesivi e le tue foto restano solo sul tuo dispositivo.
 
+Abbonamenti
+Gli abbonamenti Punching Plus e Pro si rinnovano automaticamente. Il pagamento viene addebitato sul tuo Account Apple e l’abbonamento si rinnova se non lo disdici almeno 24 ore prima della fine del periodo. Puoi gestirlo o disdirlo in qualsiasi momento in Impostazioni.
+Condizioni d’uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Informativa sulla privacy: https://m1zz.github.io/StampCamera/it/privacy.html
+
 ## pt-BR
 
 ### 지원 URL
@@ -743,6 +798,11 @@ Importe das Fotos
 Transforme em adesivos as fotos que você tirou antes e adicione-as a um álbum.
 
 Todos os seus adesivos e fotos ficam guardados somente no seu aparelho.
+
+Assinaturas
+As assinaturas Punching Plus e Pro são renovadas automaticamente. A cobrança é feita na sua Conta Apple, e a assinatura é renovada a menos que você cancele pelo menos 24 horas antes do fim do período. Gerencie ou cancele quando quiser em Ajustes.
+Termos de Uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Política de Privacidade: https://m1zz.github.io/StampCamera/pt-BR/privacy.html
 
 ## nl
 
@@ -806,6 +866,11 @@ Verander eerder gemaakte foto’s in stickers en voeg ze toe aan een verzameling
 
 Al je stickers en foto’s worden alleen op je apparaat bewaard.
 
+Abonnementen
+Punching Plus en Pro zijn automatisch verlengende abonnementen. De betaling loopt via je Apple Account en het abonnement wordt verlengd, tenzij je minstens 24 uur voor het einde van de periode opzegt. Beheer of zeg op wanneer je wilt in Instellingen.
+Gebruiksvoorwaarden (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privacybeleid: https://m1zz.github.io/StampCamera/nl/privacy.html
+
 ## pl
 
 ### 지원 URL
@@ -867,6 +932,11 @@ Importuj ze Zdjęć
 Zamień wcześniej zrobione zdjęcia w naklejki i dodaj je do albumu.
 
 Wszystkie naklejki i zdjęcia są przechowywane wyłącznie na Twoim urządzeniu.
+
+Subskrypcje
+Punching Plus i Pro to subskrypcje odnawiane automatycznie. Opłata jest pobierana z Twojego konta Apple, a subskrypcja odnawia się, jeśli nie anulujesz jej co najmniej 24 godziny przed końcem okresu. Zarządzaj subskrypcją lub anuluj ją w dowolnej chwili w Ustawieniach.
+Warunki korzystania (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Polityka prywatności: https://m1zz.github.io/StampCamera/pl/privacy.html
 
 ## tr
 
@@ -930,6 +1000,11 @@ Daha önce çektiğin fotoğrafları çıkartmaya dönüştürüp bir koleksiyon
 
 Tüm çıkartmaların ve fotoğrafların yalnızca cihazında saklanır.
 
+Abonelikler
+Punching Plus ve Pro otomatik yenilenen aboneliklerdir. Ödeme Apple Hesabınızdan alınır ve dönem bitmeden en az 24 saat önce iptal edilmezse abonelik yenilenir. Ayarlar'dan istediğiniz zaman yönetebilir veya iptal edebilirsiniz.
+Kullanım Koşulları (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Gizlilik Politikası: https://m1zz.github.io/StampCamera/tr/privacy.html
+
 ## vi
 
 ### 지원 URL
@@ -991,6 +1066,11 @@ Nhập từ Ảnh
 Biến những bức ảnh đã chụp trước đó thành nhãn dán và thêm vào bộ sưu tập.
 
 Mọi nhãn dán và ảnh chỉ được lưu trong thiết bị của bạn.
+
+Gói đăng ký
+Punching Plus và Pro là các gói đăng ký tự động gia hạn. Phí được tính vào Tài khoản Apple của bạn và gói sẽ tự gia hạn trừ khi bạn hủy ít nhất 24 giờ trước khi kỳ hạn kết thúc. Bạn có thể quản lý hoặc hủy bất cứ lúc nào trong Cài đặt.
+Điều khoản sử dụng (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Chính sách quyền riêng tư: https://m1zz.github.io/StampCamera/vi/privacy.html
 
 ## el
 
@@ -1054,6 +1134,11 @@ Punching: Ζωντανά αυτοκόλλητα
 
 Όλα τα αυτοκόλλητα και οι φωτογραφίες αποθηκεύονται μόνο στη συσκευή σου.
 
+Συνδρομές
+Τα Punching Plus και Pro είναι συνδρομές με αυτόματη ανανέωση. Η χρέωση γίνεται στον λογαριασμό Apple σου και η συνδρομή ανανεώνεται, εκτός αν την ακυρώσεις τουλάχιστον 24 ώρες πριν λήξει η περίοδος. Διαχειρίσου ή ακύρωσε τη συνδρομή οποτεδήποτε από τις Ρυθμίσεις.
+Όροι χρήσης (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Πολιτική απορρήτου: https://m1zz.github.io/StampCamera/el/privacy.html
+
 ## fi
 
 ### 지원 URL
@@ -1115,6 +1200,11 @@ Tuo Kuvista
 Muuta aiemmin ottamasi kuvat tarroiksi ja lisää ne albumiin.
 
 Kaikki tarrasi ja kuvasi tallennetaan vain laitteellesi.
+
+Tilaukset
+Punching Plus ja Pro ovat automaattisesti uusiutuvia tilauksia. Maksu veloitetaan Apple-tililtäsi, ja tilaus uusiutuu, ellei sitä peruta vähintään 24 tuntia ennen jakson päättymistä. Hallitse tai peru tilaus milloin tahansa Asetuksissa.
+Käyttöehdot (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Tietosuojakäytäntö: https://m1zz.github.io/StampCamera/fi/privacy.html
 
 ## th
 
@@ -1178,6 +1268,11 @@ Punching คือแอปกล้องที่ฉีกสิ่งที�
 
 สติกเกอร์และรูปภาพทั้งหมดถูกเก็บไว้ในอุปกรณ์ของคุณเท่านั้น
 
+การสมัครสมาชิก
+Punching Plus และ Pro เป็นการสมัครสมาชิกที่ต่ออายุอัตโนมัติ ระบบจะเรียกเก็บเงินจากบัญชี Apple ของคุณและต่ออายุให้ เว้นแต่จะยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบ จัดการหรือยกเลิกได้ทุกเมื่อในการตั้งค่า
+ข้อกำหนดการใช้งาน (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+นโยบายความเป็นส่วนตัว: https://m1zz.github.io/StampCamera/th/privacy.html
+
 ## cs
 
 ### 지원 URL
@@ -1239,6 +1334,11 @@ Import z Fotek
 Změň dřív pořízené fotky v nálepky a přidej je do alba.
 
 Všechny nálepky a fotky se ukládají jen do tvého zařízení.
+
+Předplatné
+Punching Plus a Pro jsou automaticky obnovovaná předplatná. Platba se strhává z tvého Apple účtu a předplatné se obnoví, pokud ho nezrušíš alespoň 24 hodin před koncem období. Spravovat nebo zrušit ho můžeš kdykoli v Nastavení.
+Podmínky použití (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Zásady ochrany osobních údajů: https://m1zz.github.io/StampCamera/cs/privacy.html
 
 ## da
 
@@ -1302,6 +1402,11 @@ Gør tidligere tagne fotos til klistermærker, og føj dem til et album.
 
 Alle dine klistermærker og fotos gemmes kun på din enhed.
 
+Abonnementer
+Punching Plus og Pro er abonnementer, der fornyes automatisk. Betalingen trækkes på din Apple-konto, og abonnementet fornyes, medmindre du opsiger det mindst 24 timer før perioden slutter. Administrer eller opsig når som helst i Indstillinger.
+Brugsvilkår (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privatlivspolitik: https://m1zz.github.io/StampCamera/da/privacy.html
+
 ## id
 
 ### 지원 URL
@@ -1363,6 +1468,11 @@ Impor dari Foto
 Ubah foto yang kamu ambil sebelumnya menjadi stiker dan tambahkan ke album.
 
 Semua stiker dan fotomu hanya disimpan di perangkatmu.
+
+Langganan
+Punching Plus dan Pro adalah langganan yang diperpanjang otomatis. Pembayaran ditagihkan ke Akun Apple Anda dan langganan diperpanjang kecuali dibatalkan paling lambat 24 jam sebelum periode berakhir. Kelola atau batalkan kapan saja di Pengaturan.
+Ketentuan Penggunaan (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Kebijakan Privasi: https://m1zz.github.io/StampCamera/id/privacy.html
 
 ## nb
 
@@ -1426,6 +1536,11 @@ Gjør bilder du har tatt tidligere, om til klistremerker, og legg dem til i et a
 
 Alle klistremerkene og bildene dine lagres bare på enheten din.
 
+Abonnementer
+Punching Plus og Pro er abonnementer som fornyes automatisk. Betalingen belastes Apple-kontoen din, og abonnementet fornyes med mindre du sier det opp minst 24 timer før perioden er over. Administrer eller si opp når som helst i Innstillinger.
+Bruksvilkår (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Personvernerklæring: https://m1zz.github.io/StampCamera/nb/privacy.html
+
 ## sv
 
 ### 지원 URL
@@ -1487,6 +1602,11 @@ Importera från Bilder
 Förvandla foton du tagit tidigare till klistermärken och lägg till dem i ett album.
 
 Alla dina klistermärken och foton sparas bara på din enhet.
+
+Prenumerationer
+Punching Plus och Pro är prenumerationer som förnyas automatiskt. Betalningen dras från ditt Apple-konto och prenumerationen förnyas om du inte avslutar den minst 24 timmar innan perioden slutar. Hantera eller avsluta när som helst i Inställningar.
+Användarvillkor (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Integritetspolicy: https://m1zz.github.io/StampCamera/sv/privacy.html
 
 ## 손쉬운 사용
 
