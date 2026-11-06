@@ -3,6 +3,200 @@
 App Store 의 "이 버전의 새로운 기능" 에 그대로 올라가는 글이다.
 평문만 쓴다. 한 줄에 한 문장, 3~5줄, 한 줄 40자 이내.
 
+## 1.0.5
+
+### 앱스토어 (한국어)
+
+모은 스티커가 매일, 업데이트 직전에도 자동으로 백업돼요.
+백업은 iCloud나 파일에서 언제든 되살릴 수 있어요.
+iPhone 검색에서 모은 스티커를 찾아 바로 열 수 있어요.
+Siri에게 열기와 사진 찍기를 모든 언어로 부탁할 수 있어요.
+드물게 모은 기록이 사라질 수 있던 문제를 고쳤어요.
+
+### 앱스토어 (en)
+
+Your stickers back up daily and right before updates.
+Restore a backup from iCloud or a file anytime.
+Find your stickers in iPhone search and open them.
+Ask Siri to open the app or take a photo in your language.
+Fixed a rare issue that could erase your collection.
+
+### 앱스토어 (en-GB)
+
+Your stickers back up daily and right before updates.
+Restore a backup from iCloud or a file at any time.
+Find your stickers in iPhone search and open them.
+Ask Siri to open the app or take a photo in your language.
+Fixed a rare issue that could erase your collection.
+
+### 앱스토어 (ja)
+
+ステッカーが毎日とアップデート直前に自動でバックアップされます。
+バックアップはiCloudやファイルからいつでも復元できます。
+iPhoneの検索でステッカーを見つけてすぐ開けます。
+アプリを開く、写真を撮るをSiriにどの言語でも頼めます。
+まれに集めた記録が消えることがある問題を修正しました。
+
+### 앱스토어 (zh-Hans)
+
+贴纸每天以及更新前都会自动备份。
+可随时从 iCloud 或文件恢复备份。
+在 iPhone 搜索中找到贴纸并直接打开。
+可用你的语言让 Siri 打开 App 或拍照。
+修复了收藏偶尔可能丢失的问题。
+
+### 앱스토어 (zh-Hant)
+
+貼圖每天以及更新前都會自動備份。
+可隨時從 iCloud 或檔案還原備份。
+在 iPhone 搜尋中找到貼圖並直接打開。
+可用你的語言請 Siri 打開 App 或拍照。
+修正了收藏偶爾可能遺失的問題。
+
+### 앱스토어 (러시아어)
+
+Стикеры сохраняются каждый день и перед обновлением.
+Копию можно восстановить из iCloud или из файла.
+Ищите стикеры в поиске iPhone и сразу открывайте.
+Просите Siri открыть приложение или снять фото на своём языке.
+Исправлена редкая ошибка, из-за которой пропадала коллекция.
+
+### 앱스토어 (스페인어)
+
+Tus stickers se respaldan cada día y antes de actualizar.
+Restaura un respaldo desde iCloud o un archivo.
+Busca tus stickers en el iPhone y ábrelos al instante.
+Pide a Siri abrir la app o tomar una foto en tu idioma.
+Corregimos un error poco común que podía borrar tu colección.
+
+### 앱스토어 (독일어)
+
+Deine Sticker werden täglich und vor Updates gesichert.
+Stelle Sicherungen aus iCloud oder einer Datei wieder her.
+Finde deine Sticker in der iPhone-Suche und öffne sie.
+Siri öffnet die App oder macht Fotos, auch auf Deutsch.
+Seltener Fehler behoben, der deine Sammlung löschen konnte.
+
+### 앱스토어 (프랑스어)
+
+Vos autocollants sont sauvegardés chaque jour et avant mise à jour.
+Restaurez une sauvegarde depuis iCloud ou un fichier.
+Trouvez vos autocollants dans la recherche de l’iPhone.
+Siri ouvre l’app ou prend une photo, aussi en français.
+Correction d’un bug rare qui pouvait effacer votre collection.
+
+### 앱스토어 (이탈리아어)
+
+Gli adesivi vengono salvati ogni giorno e prima degli aggiornamenti.
+Ripristina un backup da iCloud o da un file.
+Trova i tuoi adesivi nella ricerca di iPhone e aprili.
+Chiedi a Siri di aprire l’app o scattare una foto nella tua lingua.
+Risolto un raro problema che poteva cancellare la raccolta.
+
+### 앱스토어 (pt-BR)
+
+Seus adesivos ganham backup todo dia e antes de atualizar.
+Restaure um backup do iCloud ou de um arquivo.
+Ache seus adesivos na busca do iPhone e abra na hora.
+Peça à Siri para abrir o app ou tirar foto no seu idioma.
+Corrigimos um erro raro que podia apagar sua coleção.
+
+### 앱스토어 (태국어)
+
+สติกเกอร์สำรองอัตโนมัติทุกวันและก่อนอัปเดต
+กู้คืนข้อมูลสำรองจาก iCloud หรือไฟล์ได้ทุกเมื่อ
+ค้นหาสติกเกอร์ในการค้นหาของ iPhone แล้วเปิดได้ทันที
+สั่ง Siri ให้เปิดแอปหรือถ่ายรูปเป็นภาษาของคุณได้
+แก้ปัญหาที่พบไม่บ่อยซึ่งอาจทำให้คอลเลกชันหาย
+
+### 앱스토어 (베트남어)
+
+Nhãn dán được sao lưu mỗi ngày và trước khi cập nhật.
+Khôi phục bản sao lưu từ iCloud hoặc tệp bất cứ lúc nào.
+Tìm nhãn dán trong tìm kiếm của iPhone và mở ngay.
+Nhờ Siri mở ứng dụng hoặc chụp ảnh bằng ngôn ngữ của bạn.
+Đã sửa lỗi hiếm gặp có thể làm mất bộ sưu tập.
+
+### 앱스토어 (체코어)
+
+Nálepky se zálohují každý den a před aktualizací.
+Zálohu obnovíte z iCloudu nebo ze souboru.
+Najděte nálepky ve vyhledávání na iPhonu a otevřete je.
+Požádejte Siri česky, ať otevře aplikaci nebo vyfotí snímek.
+Opravena vzácná chyba, která mohla smazat sbírku.
+
+### 앱스토어 (덴마크어)
+
+Dine klistermærker sikkerhedskopieres dagligt og før opdateringer.
+Gendan en sikkerhedskopi fra iCloud eller en fil.
+Find dine klistermærker i iPhone-søgning og åbn dem.
+Bed Siri på dansk om at åbne appen eller tage et foto.
+Rettet en sjælden fejl, der kunne slette din samling.
+
+### 앱스토어 (그리스어)
+
+Τα αυτοκόλλητα αποθηκεύονται κάθε μέρα και πριν από ενημερώσεις.
+Επαναφέρετε αντίγραφο από το iCloud ή από αρχείο.
+Βρείτε τα αυτοκόλλητα στην αναζήτηση του iPhone.
+Η Siri ανοίγει την εφαρμογή και βγάζει φωτογραφίες στα ελληνικά.
+Διορθώθηκε σπάνιο σφάλμα που μπορούσε να σβήσει τη συλλογή.
+
+### 앱스토어 (핀란드어)
+
+Tarrasi varmuuskopioidaan päivittäin ja ennen päivitystä.
+Palauta varmuuskopio iCloudista tai tiedostosta.
+Löydä tarrasi iPhonen haulla ja avaa ne heti.
+Pyydä Siriä suomeksi avaamaan apin tai ottamaan kuvan.
+Korjattu harvinainen virhe, joka saattoi poistaa kokoelman.
+
+### 앱스토어 (인도네시아어)
+
+Stiker dicadangkan otomatis setiap hari dan sebelum pembaruan.
+Pulihkan cadangan dari iCloud atau file kapan saja.
+Temukan stiker di pencarian iPhone dan langsung buka.
+Minta Siri membuka app atau memotret dalam bahasa Anda.
+Memperbaiki masalah langka yang bisa menghapus koleksi.
+
+### 앱스토어 (노르웨이어(보크말))
+
+Klistremerkene sikkerhetskopieres daglig og før oppdateringer.
+Gjenopprett en sikkerhetskopi fra iCloud eller en fil.
+Finn klistremerkene i iPhone-søk og åpne dem.
+Be Siri på norsk om å åpne appen eller ta et bilde.
+Rettet en sjelden feil som kunne slette samlingen.
+
+### 앱스토어 (네덜란드어)
+
+Je stickers krijgen elke dag en vóór een update een back-up.
+Zet een back-up terug vanuit iCloud of een bestand.
+Vind je stickers via zoeken op iPhone en open ze.
+Vraag Siri in het Nederlands de app te openen of een foto te maken.
+Zeldzame fout opgelost die je verzameling kon wissen.
+
+### 앱스토어 (폴란드어)
+
+Naklejki są kopiowane codziennie i przed aktualizacją.
+Przywróć kopię z iCloud lub z pliku.
+Znajdź naklejki w wyszukiwaniu iPhone’a i otwórz je.
+Poproś Siri po polsku o otwarcie aplikacji lub zdjęcie.
+Naprawiono rzadki błąd, który mógł usunąć kolekcję.
+
+### 앱스토어 (스웨덴어)
+
+Dina klistermärken säkerhetskopieras dagligen och före uppdateringar.
+Återställ en säkerhetskopia från iCloud eller en fil.
+Hitta dina klistermärken i iPhone-sökningen och öppna dem.
+Be Siri på svenska att öppna appen eller ta en bild.
+Åtgärdat ett sällsynt fel som kunde radera samlingen.
+
+### 앱스토어 (튀르키예어)
+
+Çıkartmalarınız her gün ve güncellemeden önce yedeklenir.
+Yedeği iCloud'dan veya bir dosyadan geri yükleyin.
+Çıkartmalarınızı iPhone aramasında bulup hemen açın.
+Siri artık Türkçe açma ve fotoğraf komutlarını anlar.
+Koleksiyonu silebilen nadir bir hata düzeltildi.
+
 ## 1.0.4
 
 ### 앱스토어 (한국어)
