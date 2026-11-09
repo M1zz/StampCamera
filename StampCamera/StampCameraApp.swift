@@ -23,6 +23,8 @@ struct StampCameraApp: App {
                 .foldAware()
                 .preferredColorScheme(.dark)
                 .leeoSatisfactionCheck(StampCameraSpec.self)
+                // 개발자가 보낸 의견에 답장하면, 앱이 앞으로 올 때 답장을 시트로 보여 준다 (LeeoKit).
+                .leeoFeedbackReplyNotice(StampCameraSpec.self)
                 .environmentObject(router)
                 // Control Center / Lock Screen control & the kkuk://camera deep
                 // link both land here → route straight to the live camera.
