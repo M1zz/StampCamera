@@ -9,6 +9,33 @@
 - [ ] ⚠️ 실기기: 펼친 판 안에서 뜯은 자리와 스티커가 맞는지(캡처 좌표는 판 크기로 재므로 맞아야 하지만 시뮬레이터엔 카메라가 없다)
 - 확인: 듀오 시뮬레이터 `-FoldPretend -ScreenshotScene` 으로 펼친 배치, 인자 없이 접힌 배치
 
+## 포지셔닝: 애플 스티커의 빈틈을 메우는 스티커 앱 (2026-11-15 시작)
+배경: 사진 앱 스티커의 불만 1위 = 저장 후 사라짐 · 백업 복원 후 깨짐 · iCloud 동기화 실패 (Apple Community / MacRumors 다수).
+정리 · 모양 · 쓸 곳은 이미 앞서 있으므로 '신뢰성(내 스티커는 내 파일)'을 앞세운다.
+
+### 이번에 한 것 (빌드 성공 · 테스트 88개 통과, 실기기 확인 안 함)
+- [x] `.kkuk` 묶음 형식 — `StickerArchive.swift` (Apple Archive · lzfse). 받은 파일은 항목을 하나씩 읽어 정해진 이름 꼴의 일반 파일만 받음(경로 탈출 · 링크 · 과대 파일 차단)
+- [x] 전체 백업 · 되살리기 — 설정 ▸ 보관: 백업 파일 만들기(공유 시트) / 백업에서 되살리기(fileImporter). 되살리기는 더하기만, 같은 id 는 건너뜀 (`CollectionStore.makeArchive` · `importArchive` · `mergeImported`)
+- [x] 자동 백업 폴더 — `StickerBackup`: 파일 앱에서 고른 폴더(iCloud Drive 등) 북마크, 앱이 백그라운드로 갈 때 바뀐 게 있거나 하루 지났으면 `Punching Stickers Backup.kkuk` 덮어쓰기. iCloud 권한 추가 없이 동작
+- [x] 수집함 통째로 보내기 — 수집함 ⋯ ▸ 쓰기. 받은 사람이 .kkuk 을 열면(Info.plist UTExportedType + CFBundleDocumentTypes, `CameraLaunchRouter.pendingImport`) 같은 이름 수집함으로 들어오고 결과 알림
+- [x] 찾기 — 수집함 목록 `.searchable`: 한 마디 · 장소 · 수집함 · 스티커 글자 · 날짜, 띄어 쓰면 모두 맞는 것만 (`CollectionStore.search`)
+- [x] 테두리 · 글자 — `StickerDecor.swift`: 테두리 없음/얇게/보통/두껍게 × 색 6, 아래쪽 둥근 글자(최대 24자). 메타(outline/outlineColor/label)에 저장, `finishLook`(색감 → 테두리 · 글자)이 정지 · 움직임 프레임 · 내보내기 · 메시지 스티커 모두에 적용
+- [x] 색감도 원본에서 다시 만들기로 통일 (`applyFinish` → `applyStyle`) — 오려낸 스티커에 색감 주면 우표 모양으로 바뀌던 문제 해소, 모양을 바꿔도 색감 유지
+- [x] `applyStyle` 세대 번호 — 빠르게 여러 번 바꿔도 늦게 끝난 옛 작업이 덮지 않음, 다시 만드는 동안 상세 그림 위에 진행 표시
+- [x] 테스트 `StickerArchiveTests` 10개 (파일 검사, 전체 백업 왕복, 중복 건너뛰기, 수집함 보내기, 테두리, 저장, 찾기)
+
+### 이어서 할 것
+- [ ] ⚠️ 백업 둘 정리 — dev 에 먼저 들어온 LeeoKit '백업 금고'(f08e932, 매일 · 업데이트 직전 앱 데이터 자동 백업 + iCloud/파일 되살리기)와 이번 '자동 백업 폴더'(`StickerBackup`)가 겹친다. 금고가 Documents/Collection 까지 덮는지 확인하고, 덮으면 자동 백업 폴더는 빼고 .kkuk 은 '파일로 꺼내기 · 수집함 보내기' 용도로만 남긴다. 설정 화면에 두 갈래가 함께 보이지 않게
+- [ ] ⚠️ 새 문구 다국어 — 이번에 더한 한국어 문자열(보관 섹션 · 테두리 · 글자 · 찾기 · 알림 · 오류)을 Localizable.xcstrings 에 23개 언어로 추가 (지금은 다른 언어에서 한국어로 보임)
+- [ ] ⚠️ 실기기: 자동 백업 폴더(iCloud Drive) 쓰기 · 앱 백그라운드 시 백업 완료, AirDrop/메시지로 받은 .kkuk 열기, 큰 수집함(수백 장) 백업 시간
+- [ ] 지우개/되살리기(오려낸 가장자리 손보기) — 마스크를 메타로 저장해 정지 · 움직임에 같이 적용
+- [ ] 진짜 iCloud 동기화 (로드맵 `sync.icloud`) — Xcode 에서 iCloud Documents/CloudKit 컨테이너를 켜야 함(개발자 포털). 지금은 자동 백업 폴더로 대신
+- [ ] 메시지 · 키보드 확장에서도 찾기 (collections.json 에 한 마디 · 글자 넣기)
+- [ ] 찾기 성능: 스티커마다 메타 JSON 을 매번 읽음 — 수백 장 넘으면 라벨 캐시
+- [ ] 로드맵(`StampCameraRoadmap.swift`) `backup` 상태 갱신, 새 항목(찾기 · 테두리 · 수집함 보내기)
+- [ ] 스토어 문구 · 스크린샷 · 릴리즈 노트 — "사라지지 않는다 · 팩으로 정리 · 어디서나 쓴다" 세 축, Apple 이름 직접 비교는 피함 ("사진 앱 스티커" 정도로)
+- [ ] SPEC.md · IDENTITY.md 에 보관 · 찾기 · 테두리/글자 반영
+
 ## 완료
 - [x] 빌드 에러/경고 정리 (CameraManager actor 격리, CGPoint Hashable)
 - [x] 기기 설치용 Info.plist 필수 키(CFBundleIdentifier 등) 추가

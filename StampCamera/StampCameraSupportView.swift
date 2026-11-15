@@ -8,9 +8,20 @@
 
 import SwiftUI
 import LeeoKit
+import UniformTypeIdentifiers
 
 struct StampCameraSupportView: View {
+    @ObservedObject var collection: CollectionStore
+    @ObservedObject private var backup = StickerBackup.shared
     @Environment(\.dismiss) private var dismiss
+
+    // 보관: 백업 파일 · 자동 백업 폴더 · 되살리기
+    @State private var sharePayload: SharePayload?
+    @State private var makingBackup = false
+    @State private var pickFolder = false
+    @State private var pickBackup = false
+    @State private var importResult: StickerImportResult?
+    @State private var importError: String?
 
     /// 새로 뜯는 스티커의 기본 모양. 카메라와 같은 키를 쓴다.
     @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveSticker.rawValue
@@ -79,6 +90,8 @@ struct StampCameraSupportView: View {
                     Text("쓰기")
                 }
 
+                keepSection
+
                 Section {
                     LeeoSupportSection<StampCameraSpec>()
                     NavigationLink(LeeoRoadmapText.entry) { RoadmapScreen() }
@@ -101,7 +114,114 @@ struct StampCameraSupportView: View {
             .sheet(isPresented: $showPrintGuide) {
                 PrintGuideView()
             }
+            .sheet(item: $sharePayload) { payload in
+                ShareSheet(items: payload.items)
+            }
+            .fileImporter(isPresented: $pickFolder, allowedContentTypes: [.folder]) { result in
+                if case let .success(url) = result {
+                    backup.choose(folder: url)
+                    backup.backupNow(collection)
+                }
+            }
+            .fileImporter(isPresented: $pickBackup, allowedContentTypes: [.punchingStickers]) { result in
+                switch result {
+                case .success(let url):
+                    collection.importArchive(at: url) { outcome in
+                        switch outcome {
+                        case .success(let r): importResult = r
+                        case .failure(let e): importError = e.localizedDescription
+                        }
+                    }
+                case .failure(let e):
+                    importError = e.localizedDescription
+                }
+            }
+            .alert(item: $importResult) { r in
+                Alert(title: Text(StickerImportResult.title(r)),
+                      message: Text(StickerImportResult.message(r)))
+            }
+            .alert("가져오지 못했어요", isPresented: Binding(
+                get: { importError != nil }, set: { if !$0 { importError = nil } })) {
+                Button("확인", role: .cancel) { }
+            } message: {
+                Text(importError ?? "")
+            }
         }
+    }
+
+    /// 보관 — 스티커는 이 기기 안에 원본 그대로 있고, 언제든 파일로 꺼내 둘 수 있다.
+    private var keepSection: some View {
+        Section {
+            Button {
+                makingBackup = true
+                collection.makeArchive(album: nil) { url in
+                    makingBackup = false
+                    if let url { sharePayload = SharePayload(items: [url]) }
+                }
+            } label: {
+                HStack {
+                    Label("백업 파일 만들기", systemImage: "archivebox")
+                    Spacer()
+                    if makingBackup { ProgressView() }
+                }
+            }
+            .disabled(makingBackup || collection.stamps.isEmpty)
+
+            Button { pickFolder = true } label: {
+                LabeledContent {
+                    Text(backup.folderName ?? String(localized: "꺼짐"))
+                } label: {
+                    Label("자동 백업 폴더", systemImage: "folder.badge.gearshape")
+                }
+            }
+            if backup.isOn {
+                Button {
+                    backup.backupNow(collection)
+                } label: {
+                    LabeledContent {
+                        if backup.running {
+                            ProgressView()
+                        } else if let last = backup.lastBackup {
+                            Text(last, format: .relative(presentation: .named))
+                        }
+                    } label: {
+                        Label("지금 백업", systemImage: "arrow.clockwise.icloud")
+                    }
+                }
+                .disabled(backup.running)
+                Button(role: .destructive) { backup.turnOff() } label: {
+                    Label("자동 백업 끄기", systemImage: "xmark.circle")
+                }
+            }
+            if let err = backup.lastError {
+                Text(err).foregroundStyle(.red)
+            }
+
+            Button { pickBackup = true } label: {
+                Label("백업에서 되살리기", systemImage: "square.and.arrow.down")
+            }
+        } header: {
+            Text("보관")
+        } footer: {
+            Text("스티커는 이 기기 안에 원본 사진과 함께 보관돼요. 자동 백업 폴더로 iCloud Drive 의 폴더를 고르면 앱을 닫을 때마다 그곳에 백업이 저장돼, 새 아이폰에서도 그대로 되살릴 수 있어요. 되살리기는 더하기만 하고 지금 있는 스티커는 지우지 않아요.")
+        }
+    }
+}
+
+extension StickerImportResult {
+    static func title(_ r: StickerImportResult) -> String {
+        r.added > 0 ? String(localized: "스티커 \(r.added)장을 받았어요")
+                    : String(localized: "새로 받은 스티커가 없어요")
+    }
+    static func message(_ r: StickerImportResult) -> String {
+        var parts: [String] = []
+        if !r.albums.isEmpty {
+            parts.append(String(localized: "수집함: \(r.albums.joined(separator: ", "))"))
+        }
+        if r.skipped > 0 {
+            parts.append(String(localized: "이미 있는 \(r.skipped)장은 건너뛰었어요."))
+        }
+        return parts.joined(separator: "\n")
     }
 }
 

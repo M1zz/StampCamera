@@ -99,6 +99,9 @@ struct ContentView: View {
     // newly-made stamp pending a caption on the parchment editor
     @State private var editTarget: EditTarget?
     @State private var stampAfterCollection: String?
+    @State private var receivedPack: StickerImportResult?
+    @State private var receiveError: String?
+    @Environment(\.scenePhase) private var scenePhase
 
     // context for the live burst that follows a shutter — the frames arrive
     // ~1.2s later and get cropped/encoded into the stamp's APNG sidecar
@@ -185,6 +188,37 @@ struct ContentView: View {
         .onChange(of: camera.capturedLiveFrames) { _, frames in handleLiveFrames(frames) }
         // Control Center / Lock Screen tapped "펀칭 카메라 열기": drop whatever is
         // open and return to the live camera.
+        // 받은 스티커 묶음(.kkuk) — 더하기만 하므로 묻지 않고 받고, 결과를 알린다
+        .onChange(of: router.pendingImport) { _, url in
+            guard let url else { return }
+            router.pendingImport = nil
+            // 알림이 가려지지 않게 위에 떠 있는 화면을 닫는다
+            showCollection = false
+            showSupport = false
+            editTarget = nil
+            collection.importArchive(at: url) { outcome in
+                // 메시지 · AirDrop 으로 받은 사본(Documents/Inbox)은 다 읽었으면 치운다
+                if url.path.contains("/Documents/Inbox/") { try? FileManager.default.removeItem(at: url) }
+                switch outcome {
+                case .success(let r): receivedPack = r
+                case .failure(let e): receiveError = e.localizedDescription
+                }
+            }
+        }
+        .alert(item: $receivedPack) { r in
+            Alert(title: Text(StickerImportResult.title(r)),
+                  message: Text(StickerImportResult.message(r)))
+        }
+        .alert("가져오지 못했어요", isPresented: Binding(
+            get: { receiveError != nil }, set: { if !$0 { receiveError = nil } })) {
+            Button("확인", role: .cancel) { }
+        } message: {
+            Text(receiveError ?? "")
+        }
+        // 앱을 닫을 때 자동 백업 폴더에 (바뀐 게 있으면) 백업
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .background { StickerBackup.shared.backupIfNeeded(collection) }
+        }
         .onChange(of: router.cameraRequestID) { _, _ in
             showCollection = false
             editTarget = nil
@@ -224,7 +258,7 @@ struct ContentView: View {
                 .foldConfined()
         }
         .sheet(isPresented: $showSupport) {
-            StampCameraSupportView()
+            StampCameraSupportView(collection: collection)
         }
         .sheet(item: $editTarget) { target in
             NavigationStack {
@@ -1073,6 +1107,8 @@ struct CollectionView: View {
 
     @State private var showNewAlbum = false
     @State private var newAlbumName = ""
+    @State private var searchQuery = ""
+    @State private var searchTarget: EditTarget?
     // 사진 앱에서 가져오기 — 활성 수집함에 기본 모양의 멈춘 스티커로 담는다
     @State private var photoItem: PhotosPickerItem?
     @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveSticker.rawValue
@@ -1083,12 +1119,22 @@ struct CollectionView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 // 모은 스티커를 둘러보는 자리. 숫자가 쌓였을 때만, 드물게 응원을 부탁한다 (모달 아님)
-                LeeoTipAskSlot<StampCameraSpec>(tipJar: StampCameraSpec.tipJar,
-                                                reached: StampCameraTipMoments.reached(punchedCount: collection.stamps.count))
-                    .padding([.horizontal, .top], 20)
-                albumShelf
+                if searchQuery.isEmpty {
+                    LeeoTipAskSlot<StampCameraSpec>(tipJar: StampCameraSpec.tipJar,
+                                                    reached: StampCameraTipMoments.reached(punchedCount: collection.stamps.count))
+                        .padding([.horizontal, .top], 20)
+                    albumShelf
+                } else {
+                    searchResults
+                }
             }
             .background(Color(hex: 0x141210).ignoresSafeArea())
+            // 한 마디 · 장소 · 수집함 · 날짜 · 스티커 글자로 찾기 — 사진 앱 스티커엔 없는 검색
+            .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .automatic),
+                        prompt: Text("한 마디, 장소, 날짜로 찾기"))
+            .sheet(item: $searchTarget) { target in
+                NavigationStack { StampDetailView(collection: collection, stampID: target.id) }
+            }
             .navigationTitle("수집함")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: String.self) { name in
@@ -1173,6 +1219,48 @@ struct CollectionView: View {
                 collection.recordStyle(style, for: newID)
                 Haptics.bounce()
                 path = [collection.activeAlbum]
+            }
+        }
+    }
+
+    /// 검색 결과 — 모든 수집함을 가로질러 찾는다.
+    private var searchResults: some View {
+        let hits = collection.search(searchQuery)
+        return Group {
+            if hits.isEmpty {
+                VStack(spacing: 10) {
+                    Image(systemName: "magnifyingglass")
+                        .font(.largeTitle)
+                        .foregroundStyle(.white.opacity(0.35))
+                    Text("찾는 스티커가 없어요")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(.white.opacity(0.75))
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.top, 80)
+            } else {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("\(hits.count)장")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(.white.opacity(0.7))
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 96), spacing: 14)], spacing: 16) {
+                        ForEach(hits) { stamp in
+                            Button { searchTarget = EditTarget(id: stamp.id) } label: {
+                                VStack(spacing: 6) {
+                                    LiveArt(collection: collection, stamp: stamp)
+                                        .frame(height: 96)
+                                    Text(stamp.caption.isEmpty ? stamp.album : stamp.caption)
+                                        .font(.body)
+                                        .lineLimit(1)
+                                        .foregroundStyle(.white.opacity(0.8))
+                                }
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityElement(children: .combine)
+                        }
+                    }
+                }
+                .padding(20)
             }
         }
     }
@@ -1585,6 +1673,11 @@ struct AlbumPageView: View {
             }
             Divider()
             Section("쓰기") {
+                // 수집함을 통째로 — 받은 사람이 펀칭에서 열면 같은 수집함으로 들어온다
+                Button { sendPack() } label: {
+                    Label("수집함 통째로 보내기", systemImage: "shippingbox")
+                }
+                .disabled(collection.count(in: album) == 0)
                 Button { exportCard() } label: {
                     Label("이미지로 공유", systemImage: "square.and.arrow.up")
                 }
@@ -2011,6 +2104,16 @@ struct AlbumPageView: View {
         }
     }
 
+    /// 이 수집함을 `.kkuk` 하나로 묶어 보낸다 (메시지 · AirDrop · 파일 앱).
+    private func sendPack() {
+        guard collection.count(in: album) > 0 else { return }
+        exporting = true
+        collection.makeArchive(album: album) { url in
+            exporting = false
+            if let url { sharePayload = SharePayload(items: [url]) }
+        }
+    }
+
     /// Render a square SNS card of this album (paper, title, a grid of
     /// stickers, brand) and offer to share it as an image.
     private func exportCard() {
@@ -2391,6 +2494,9 @@ final class CollectionStore: ObservableObject {
         var filter: String? = nil   // applied finish (StampInk raw value)
         var clipDelay: Double? = nil   // per-frame delay of the motion master
         var style: String? = nil       // chosen look (StampStyle raw value)
+        var outline: String? = nil     // StickerDecor.Outline raw value
+        var outlineColor: UInt32? = nil
+        var label: String? = nil       // 스티커에 얹은 글자
     }
     private func stampMetaURL(for id: String) -> URL {
         dir.appendingPathComponent(id).appendingPathExtension("json")
@@ -2458,7 +2564,14 @@ final class CollectionStore: ObservableObject {
         var meta = existingMeta(for: id)
         meta.style = style.rawValue
         writeStampMeta(meta, for: id)
+        // 빠르게 여러 번 바꾸면 늦게 끝난 옛 작업이 새 선택을 덮지 않도록 세대 번호로 막는다
+        styleGeneration[id, default: 0] += 1
+        let generation = styleGeneration[id] ?? 0
+        restyling.insert(id)
         objectWillChange.send()   // pickers highlight the choice right away
+        // 색감 · 테두리 · 글자 — 모양을 바꿔도 따라온다
+        let ink = meta.filter.flatMap(StampInk.init(rawValue:))
+        let decor = stickerDecor(for: id)
 
         Task.detached(priority: .userInitiated) { [weak self] in
             guard let self else { return }
@@ -2468,13 +2581,14 @@ final class CollectionStore: ObservableObject {
             let material = self.motionMaterial(for: id)
             // --- the still --- (one canonical path: shape axis can't flip)
             let still: UIImage? = self.printStamp(for: id, longSidePx: 900, clipToShape: false)
-                .map { Self.stillLook($0, style: style) }
+                .map { Self.finishLook(Self.stillLook($0, style: style), ink: ink, decor: decor) }
             // --- the clip --- (only moving looks; never frozen, never wrong shape)
             var apng: Data?
             var lean: Data?
             var hot: (frames: [UIImage], delay: Double)?
             if style.moving, let master = material {
                 let styled = Self.clipLook(master.frames, style: style)
+                    .map { Self.finishLook($0, ink: ink, decor: decor) }
                 if styled.count > 1 {
                     hot = (styled, master.delay)
                     apng = APNG.encode(styled, delay: master.delay)
@@ -2484,6 +2598,8 @@ final class CollectionStore: ObservableObject {
             let newStill = still
             let newAPNG = apng, newLean = lean, newHot = hot
             await MainActor.run {
+                guard self.styleGeneration[id] == generation else { return }   // 더 새 선택이 진행 중
+                self.restyling.remove(id)
                 if let newStill { self.updateImage(newStill, for: id) }
                 if let newAPNG {
                     self.setLive(newAPNG, sticker: newLean, for: id)
@@ -2495,6 +2611,43 @@ final class CollectionStore: ObservableObject {
                 self.objectWillChange.send()
             }
         }
+    }
+
+    /// 모양을 다시 만드는 중인 스티커 — 상세 화면이 '만드는 중'을 보여 준다.
+    @Published private(set) var restyling: Set<String> = []
+    private var styleGeneration: [String: Int] = [:]
+
+    // MARK: - 테두리 · 글자 (StickerDecor)
+
+    func stickerDecor(for id: String) -> StickerDecor {
+        let meta = existingMeta(for: id)
+        return StickerDecor(outline: meta.outline.flatMap(StickerDecor.Outline.init(rawValue:)) ?? .none,
+                            color: meta.outlineColor ?? 0xFFFFFF,
+                            label: meta.label ?? "")
+    }
+
+    /// 테두리 · 글자를 바꾸고 원본에서 다시 만든다 (움직임 프레임까지).
+    func setStickerDecor(_ decor: StickerDecor, for id: String) {
+        guard decor != stickerDecor(for: id) else { return }
+        var meta = existingMeta(for: id)
+        meta.outline = decor.outline == .none ? nil : decor.outline.rawValue
+        meta.outlineColor = decor.color == 0xFFFFFF ? nil : decor.color
+        meta.label = decor.trimmedLabel.isEmpty ? nil : decor.trimmedLabel
+        writeStampMeta(meta, for: id)
+        applyStyle(style(for: id), for: id)
+    }
+
+    /// 색감을 바꾸고 원본에서 다시 만든다 — 모양 · 테두리 · 움직임이 함께 따라온다.
+    func applyFinish(_ ink: StampInk, for id: String) {
+        setFinish(ink == .original ? nil : ink.rawValue, for: id)
+        applyStyle(style(for: id), for: id)
+    }
+
+    /// 모양을 만든 뒤 마지막 손질: 색감 → 테두리 · 글자. 그림이 만들어지는 모든 길이 여기를 지난다.
+    static func finishLook(_ image: UIImage, ink: StampInk?, decor: StickerDecor) -> UIImage {
+        var out = image
+        if let ink, ink != .original { out = ink.apply(to: out) }
+        return decor.apply(to: out)
     }
 
     private func existingMeta(for id: String) -> StampMeta {
@@ -2778,7 +2931,10 @@ final class CollectionStore: ObservableObject {
            let cut = SubjectLift.cutout(from: base) {
             image = cut
         }
-        return image ?? stamps.first { $0.id == id }?.image
+        guard let image else { return stamps.first { $0.id == id }?.image }
+        let meta = existingMeta(for: id)
+        return Self.finishLook(image, ink: meta.filter.flatMap(StampInk.init(rawValue:)),
+                               decor: stickerDecor(for: id))
     }
 
     /// What leaves the app on copy / share: a moving sticker goes out as an
@@ -3282,6 +3438,155 @@ final class CollectionStore: ObservableObject {
         decor.removeValue(forKey: name)
         if activeAlbum == name { activeAlbum = albums[0] }
         saveMeta()
+    }
+
+    // MARK: - 찾기
+
+    /// 한 마디 · 장소 · 수집함 · 스티커 글자 · 날짜에서 찾는다. 낱말을 띄어 쓰면 모두 맞는 것만.
+    func search(_ query: String) -> [CollectedStamp] {
+        let words = query.lowercased().split(whereSeparator: \.isWhitespace).map(String.init)
+        guard !words.isEmpty else { return [] }
+        let labels = Dictionary(uniqueKeysWithValues: stamps.map { ($0.id, existingMeta(for: $0.id).label ?? "") })
+        return stamps.reversed().filter { s in
+            let hay = [s.caption, s.place, s.album, labels[s.id] ?? "",
+                       s.createdAt.formatted(date: .long, time: .omitted),
+                       s.createdAt.formatted(.dateTime.year().month(.wide)),
+                       s.createdAt.formatted(.dateTime.month(.defaultDigits).day())]
+                .joined(separator: " ").lowercased()
+            return words.allSatisfy { hay.contains($0) }
+        }
+    }
+
+    // MARK: - 백업 · 수집함 보내기 (StickerArchive)
+
+    /// 스티커 하나를 이루는 파일들(묶음 안 경로, 실제 위치).
+    private func stickerFiles(_ id: String) -> [(path: String, source: URL)] {
+        let fm = FileManager.default
+        var out: [(String, URL)] = []
+        for name in [id, "\(id).txt", "\(id).grp", "\(id).json", "\(id).orig.jpg", "\(id).live.png"] {
+            let url = dir.appendingPathComponent(name)
+            if fm.fileExists(atPath: url.path) { out.append((name, url)) }
+        }
+        let frames = framesDir(for: id)
+        for f in ((try? fm.contentsOfDirectory(atPath: frames.path)) ?? []).sorted() {
+            out.append(("\(id).frames/\(f)", frames.appendingPathComponent(f)))
+        }
+        return out
+    }
+
+    /// 묶음에 넣을 파일 — `album` 이 nil 이면 전체 백업(수집함 정보 포함), 아니면 그 수집함만.
+    func archiveFiles(album: String?) -> [(path: String, source: URL)] {
+        let ids = (album.map { stamps(in: $0) } ?? stamps).map(\.id)
+        var files = ids.flatMap(stickerFiles)
+        if album == nil { files.append(("albums.json", metaURL)) }
+        return files
+    }
+
+    /// 마지막 백업 뒤로 바뀐 게 있는지 가늠하는 지문 (스티커 · 수집함 · 손질 상태).
+    var contentSignature: String {
+        var h = Hasher()
+        for s in stamps { h.combine(s.id); h.combine(s.album); h.combine(s.caption) }
+        h.combine(albums)
+        h.combine(liveRev.values.reduce(0, +))
+        return String(h.finalize())
+    }
+
+    /// `.kkuk` 파일을 만들어 임시 폴더에 둔다. 다 되면 메인에서 `done(url or nil)`.
+    func makeArchive(album: String?, done: @escaping (URL?) -> Void) {
+        var files = archiveFiles(album: album)
+        let count = album.map { count(in: $0) } ?? stamps.count
+        // 수집함 하나를 보낼 때도 속지 · 순서가 함께 가도록 그 수집함만 적은 albums.json 을 넣는다
+        if let album,
+           let data = try? JSONEncoder().encode(Meta(albums: [album], active: album,
+                                                     decor: decor[album].map { [album: $0] })) {
+            let tmp = FileManager.default.temporaryDirectory
+                .appendingPathComponent("pack-albums-\(UUID().uuidString).json")
+            if (try? data.write(to: tmp)) != nil { files.append(("albums.json", tmp)) }
+        }
+        let manifest = StickerArchive.Manifest(kind: album == nil ? .backup : .pack,
+                                               album: album, count: count)
+        let base: String
+        if let album {
+            base = StickerArchive.safeName(album)
+        } else {
+            let day = Date().formatted(.iso8601.year().month().day())
+            base = StickerArchive.safeName(String(localized: "펀칭 백업 \(day)"))
+        }
+        let folder = FileManager.default.temporaryDirectory
+            .appendingPathComponent("Outgoing-\(UUID().uuidString)", isDirectory: true)
+        let url = folder.appendingPathComponent(base).appendingPathExtension(StickerArchive.fileExtension)
+        Task.detached(priority: .userInitiated) {
+            var result: URL?
+            do {
+                try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+                try StickerArchive.write(files: files, manifest: manifest, to: url)
+                result = url
+            } catch {
+                result = nil
+            }
+            let made = result
+            await MainActor.run { done(made) }
+        }
+    }
+
+    /// 받은 `.kkuk` 을 더한다. 이미 있는 스티커는 건너뛰고, 아무것도 지우지 않는다.
+    func importArchive(at url: URL, done: @escaping (Result<StickerImportResult, Error>) -> Void) {
+        let staging = FileManager.default.temporaryDirectory
+            .appendingPathComponent("Incoming-\(UUID().uuidString)", isDirectory: true)
+        Task.detached(priority: .userInitiated) {
+            let scoped = url.startAccessingSecurityScopedResource()
+            defer { if scoped { url.stopAccessingSecurityScopedResource() } }
+            let outcome: Result<StickerArchive.Manifest, Error>
+            do { outcome = .success(try StickerArchive.read(url, into: staging)) }
+            catch { outcome = .failure(error) }
+            await MainActor.run {
+                defer { try? FileManager.default.removeItem(at: staging) }
+                switch outcome {
+                case .failure(let e): done(.failure(e))
+                case .success(let manifest): done(.success(self.mergeImported(from: staging, manifest: manifest)))
+                }
+            }
+        }
+    }
+
+    private func mergeImported(from staging: URL, manifest: StickerArchive.Manifest) -> StickerImportResult {
+        let fm = FileManager.default
+        let names = (try? fm.contentsOfDirectory(atPath: staging.path)) ?? []
+        let ids = names.filter { $0.range(of: #"^\d{1,16}\.png$"#, options: .regularExpression) != nil }.sorted()
+        let have = Set(stamps.map(\.id))
+        let theirMeta = (try? Data(contentsOf: staging.appendingPathComponent("albums.json")))
+            .flatMap { try? JSONDecoder().decode(Meta.self, from: $0) }
+        let packAlbum = manifest.kind == .pack
+            ? manifest.album?.trimmingCharacters(in: .whitespacesAndNewlines) : nil
+
+        var added = 0, skipped = 0
+        var touched: [String] = []
+        for id in ids {
+            guard !have.contains(id), UIImage(contentsOfFile: staging.appendingPathComponent(id).path) != nil
+            else { skipped += 1; continue }
+            let theirAlbum = ((try? String(contentsOf: staging.appendingPathComponent("\(id).grp"),
+                                           encoding: .utf8)) ?? "")
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+            let home = [packAlbum ?? "", theirAlbum, activeAlbum].first { !$0.isEmpty } ?? Self.defaultAlbum
+            for name in names where name == id || name.hasPrefix("\(id).") {
+                try? fm.copyItem(at: staging.appendingPathComponent(name), to: dir.appendingPathComponent(name))
+            }
+            try? home.write(to: albumURL(for: id), atomically: true, encoding: .utf8)
+            if !touched.contains(home) { touched.append(home) }
+            added += 1
+        }
+
+        // 새 수집함: 백업에 적힌 순서대로 덧붙이고, 꾸미기(속지 · 순서)도 새 수집함에만 가져온다
+        let order = (theirMeta?.albums ?? []) + touched
+        for album in order where touched.contains(album) && !albums.contains(album) {
+            albums.append(album)
+            if let theirDecor = theirMeta?.decor?[album] {
+                decor[album] = theirDecor
+            }
+        }
+        loadStamps()
+        reconcile()   // 저장 + 메시지 · 키보드 스티커 팩 동기화
+        return StickerImportResult(added: added, skipped: skipped, albums: touched)
     }
 
     // MARK: - Album decor (자유롭게 꾸미기)
@@ -4899,6 +5204,10 @@ struct StampDetailView: View {
     @State private var sharePayload: SharePayload?
     @State private var justCopied = false
     @FocusState private var focused: Bool
+    // 테두리 · 글자
+    @State private var decor = StickerDecor()
+    @State private var labelText = ""
+    @FocusState private var labelFocused: Bool
 
     private var stamp: CollectedStamp? { collection.stamps.first { $0.id == stampID } }
     private var albumLabel: String { stamp?.album ?? CollectionStore.defaultAlbum }
@@ -4916,6 +5225,17 @@ struct StampDetailView: View {
                     LiveArt(collection: collection, stamp: stamp, maxPixel: nil)
                         .frame(maxHeight: 190)
                         .shadow(color: .black.opacity(0.35), radius: 12, y: 8)
+                        // 원본에서 다시 만드는 동안
+                        .overlay {
+                            if collection.restyling.contains(stampID) {
+                                ProgressView()
+                                    .controlSize(.large)
+                                    .tint(Color(hex: 0x6B5836))
+                                    .padding(14)
+                                    .background(Circle().fill(.ultraThinMaterial))
+                                    .accessibilityLabel("스티커를 다시 만드는 중")
+                            }
+                        }
                         // press & hold to see the whole photo this stamp was cut from
                         .onLongPressGesture(minimumDuration: 0.3) {
                             guard collection.originalImage(for: stampID) != nil else { return }
@@ -4951,6 +5271,7 @@ struct StampDetailView: View {
                 }
                 styleSection
                 inkSection
+                decorSection
                 if let stamp {
                     // when & where this stamp was made
                     VStack(spacing: 3) {
@@ -5028,6 +5349,8 @@ struct StampDetailView: View {
         .onAppear {
             caption = stamp?.caption ?? ""
             finish = StampInk(rawValue: collection.finish(for: stampID) ?? "") ?? .original
+            decor = collection.stickerDecor(for: stampID)
+            labelText = decor.label
         }
         .onDisappear(perform: save)
         // the sheet is now a light cream sheet → light nav bar (dark, readable
@@ -5113,6 +5436,107 @@ struct StampDetailView: View {
         .onAppear(perform: buildInkPreviews)
     }
 
+    /// 테두리(굵기 · 색)와 스티커에 얹는 글자 — 사진 앱 스티커에는 없는 손질.
+    private var decorSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("테두리 · 글자")
+                .font(.body.weight(.bold))
+                .fontDesign(.rounded)
+                .foregroundStyle(Color(hex: 0x8C7A52))
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(StickerDecor.Outline.allCases) { o in
+                        let on = decor.outline == o
+                        Button {
+                            var d = decor; d.outline = o; commitDecor(d)
+                        } label: {
+                            Text(o.title)
+                                .font(.body.weight(.semibold))
+                                .fontDesign(.rounded)
+                                .foregroundStyle(Color(hex: on ? 0x42331E : 0x9A875E))
+                                .padding(.horizontal, 14).padding(.vertical, 8)
+                                .background(Capsule().fill(Color.white.opacity(on ? 0.6 : 0.25)))
+                                .overlay(Capsule().strokeBorder(on ? Color(hex: 0xB0863E)
+                                                                   : Color(hex: 0xCBB585).opacity(0.6),
+                                                                lineWidth: on ? 2 : 1))
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityAddTraits(on ? .isSelected : [])
+                    }
+                }
+                .padding(.vertical, 2)
+            }
+            if decor.outline != .none || !decor.trimmedLabel.isEmpty {
+                HStack(spacing: 12) {
+                    ForEach(StickerDecor.palette, id: \.self) { hex in
+                        let on = decor.color == hex
+                        Button {
+                            var d = decor; d.color = hex; commitDecor(d)
+                        } label: {
+                            Circle()
+                                .fill(Color(hex: hex))
+                                .frame(width: 32, height: 32)
+                                .overlay(Circle().strokeBorder(Color.black.opacity(0.15), lineWidth: 1))
+                                .padding(3)
+                                .overlay(Circle().strokeBorder(on ? Color(hex: 0xB0863E) : .clear, lineWidth: 2.5))
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(Self.colorName(hex))
+                        .accessibilityAddTraits(on ? .isSelected : [])
+                    }
+                }
+            }
+            HStack(spacing: 10) {
+                TextField("", text: $labelText,
+                          prompt: Text("스티커에 넣을 글자").foregroundStyle(Color(hex: 0x9A875E)))
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(Color(hex: 0x42331E))
+                    .tint(Color(hex: 0x42331E))
+                    .focused($labelFocused)
+                    .submitLabel(.done)
+                    .onSubmit(commitLabel)
+                    .padding(.horizontal, 12).padding(.vertical, 10)
+                    .background(RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(Color.white.opacity(0.4)))
+                    .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .strokeBorder(Color(hex: 0xCBB585), lineWidth: 1))
+                if labelText.trimmingCharacters(in: .whitespacesAndNewlines) != decor.label {
+                    Button("넣기", action: commitLabel)
+                        .font(.body.weight(.bold))
+                        .tint(Color(hex: 0x6B5836))
+                }
+            }
+            .environment(\.colorScheme, .light)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func commitLabel() {
+        labelFocused = false
+        var d = decor
+        d.label = String(labelText.trimmingCharacters(in: .whitespacesAndNewlines).prefix(24))
+        labelText = d.label
+        commitDecor(d)
+    }
+
+    private func commitDecor(_ d: StickerDecor) {
+        guard d != decor else { return }
+        Haptics.tick()
+        decor = d
+        collection.setStickerDecor(d, for: stampID)
+    }
+
+    private static func colorName(_ hex: UInt32) -> String {
+        switch hex {
+        case 0xFFFFFF: return String(localized: "흰색")
+        case 0x1C1C1E: return String(localized: "검은색")
+        case 0xFFD60A: return String(localized: "노란색")
+        case 0xFF6FAE: return String(localized: "분홍색")
+        case 0x5AC8FA: return String(localized: "하늘색")
+        default: return String(localized: "초록색")
+        }
+    }
+
     private func inkChip(_ ink: StampInk) -> some View {
         let selected = finish == ink
         return Button { applyFinish(ink) } label: {
@@ -5159,16 +5583,8 @@ struct StampDetailView: View {
         guard let stamp, finish != ink else { return }
         finish = ink
         Haptics.tick()
-        let id = stampID
-        let fallback = stamp.image
-        let base = collection.printStamp(for: id, longSidePx: 900) ?? fallback
-        Task.detached(priority: .userInitiated) {
-            let out = ink.apply(to: base)
-            await MainActor.run {
-                collection.updateImage(out, for: id)
-                collection.setFinish(ink == .original ? nil : ink.rawValue, for: id)
-            }
-        }
+        // 원본에서 모양 · 테두리 · 움직임까지 함께 다시 만든다 (오려낸 스티커가 우표 모양으로 바뀌지 않게)
+        collection.applyFinish(ink, for: stampID)
     }
 
     /// Which collecting book this stamp sits in — switch it or start a new one.
