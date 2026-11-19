@@ -13,13 +13,11 @@ import UniformTypeIdentifiers
 
 struct StampCameraSupportView: View {
     @ObservedObject var collection: CollectionStore
-    @ObservedObject private var backup = StickerBackup.shared
     @Environment(\.dismiss) private var dismiss
 
-    // 보관: 백업 파일 · 자동 백업 폴더 · 되살리기
+    // 보관: 스티커를 파일로 꺼내기 · 파일에서 가져오기
     @State private var sharePayload: SharePayload?
     @State private var makingBackup = false
-    @State private var pickFolder = false
     @State private var pickBackup = false
     @State private var importResult: StickerImportResult?
     @State private var importError: String?
@@ -186,12 +184,6 @@ struct StampCameraSupportView: View {
             .sheet(item: $sharePayload) { payload in
                 ShareSheet(items: payload.items)
             }
-            .fileImporter(isPresented: $pickFolder, allowedContentTypes: [.folder]) { result in
-                if case let .success(url) = result {
-                    backup.choose(folder: url)
-                    backup.backupNow(collection)
-                }
-            }
             .fileImporter(isPresented: $pickBackup, allowedContentTypes: [.punchingStickers]) { result in
                 switch result {
                 case .success(let url):
@@ -229,50 +221,20 @@ struct StampCameraSupportView: View {
                 }
             } label: {
                 HStack {
-                    Label("백업 파일 만들기", systemImage: "archivebox")
+                    Label("스티커를 파일로 꺼내기", systemImage: "archivebox")
                     Spacer()
                     if makingBackup { ProgressView() }
                 }
             }
             .disabled(makingBackup || collection.stamps.isEmpty)
 
-            Button { pickFolder = true } label: {
-                LabeledContent {
-                    Text(backup.folderName ?? String(localized: "꺼짐"))
-                } label: {
-                    Label("자동 백업 폴더", systemImage: "folder.badge.gearshape")
-                }
-            }
-            if backup.isOn {
-                Button {
-                    backup.backupNow(collection)
-                } label: {
-                    LabeledContent {
-                        if backup.running {
-                            ProgressView()
-                        } else if let last = backup.lastBackup {
-                            Text(last, format: .relative(presentation: .named))
-                        }
-                    } label: {
-                        Label("지금 백업", systemImage: "arrow.clockwise.icloud")
-                    }
-                }
-                .disabled(backup.running)
-                Button(role: .destructive) { backup.turnOff() } label: {
-                    Label("자동 백업 끄기", systemImage: "xmark.circle")
-                }
-            }
-            if let err = backup.lastError {
-                Text(err).foregroundStyle(.red)
-            }
-
             Button { pickBackup = true } label: {
-                Label("백업에서 되살리기", systemImage: "square.and.arrow.down")
+                Label("파일에서 가져오기", systemImage: "square.and.arrow.down")
             }
         } header: {
             Text("보관")
         } footer: {
-            Text("스티커는 이 기기 안에 원본 사진과 함께 보관돼요. 자동 백업 폴더로 iCloud Drive 의 폴더를 고르면 앱을 닫을 때마다 그곳에 백업이 저장돼, 새 아이폰에서도 그대로 되살릴 수 있어요. 되살리기는 더하기만 하고 지금 있는 스티커는 지우지 않아요.")
+            Text("모은 스티커를 원본 사진과 함께 파일 하나로 꺼내 둘 수 있어요. 가져오기는 더하기만 하고 지금 있는 스티커는 지우지 않아요.")
         }
     }
 }

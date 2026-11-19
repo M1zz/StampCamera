@@ -106,7 +106,6 @@ struct ContentView: View {
     @State private var stampAfterCollection: String?
     @State private var receivedPack: StickerImportResult?
     @State private var receiveError: String?
-    @Environment(\.scenePhase) private var scenePhase
 
     // context for the live burst that follows a shutter — the frames arrive
     // ~1.2s later and get cropped/encoded into the stamp's APNG sidecar
@@ -219,10 +218,6 @@ struct ContentView: View {
             Button("확인", role: .cancel) { }
         } message: {
             Text(receiveError ?? "")
-        }
-        // 앱을 닫을 때 자동 백업 폴더에 (바뀐 게 있으면) 백업
-        .onChange(of: scenePhase) { _, phase in
-            if phase == .background { StickerBackup.shared.backupIfNeeded(collection) }
         }
         .onChange(of: router.cameraRequestID) { _, _ in
             showCollection = false
@@ -3539,15 +3534,6 @@ final class CollectionStore: ObservableObject {
         var files = ids.flatMap(stickerFiles)
         if album == nil { files.append(("albums.json", metaURL)) }
         return files
-    }
-
-    /// 마지막 백업 뒤로 바뀐 게 있는지 가늠하는 지문 (스티커 · 수집함 · 손질 상태).
-    var contentSignature: String {
-        var h = Hasher()
-        for s in stamps { h.combine(s.id); h.combine(s.album); h.combine(s.caption) }
-        h.combine(albums)
-        h.combine(liveRev.values.reduce(0, +))
-        return String(h.finalize())
     }
 
     /// `.kkuk` 파일을 만들어 임시 폴더에 둔다. 다 되면 메인에서 `done(url or nil)`.

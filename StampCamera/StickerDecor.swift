@@ -26,7 +26,7 @@ struct StickerDecor: Equatable {
         }
         var title: String {
             switch self {
-            case .none: return String(localized: "없음")
+            case .none: return String(localized: "outline.none", defaultValue: "없음", comment: "Sticker outline thickness: no outline")
             case .thin: return String(localized: "얇게")
             case .medium: return String(localized: "보통")
             case .thick: return String(localized: "두껍게")
