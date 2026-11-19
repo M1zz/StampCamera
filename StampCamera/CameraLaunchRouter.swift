@@ -27,8 +27,16 @@ final class CameraLaunchRouter: ObservableObject {
 
     func requestCamera() { cameraRequestID += 1 }
 
+    /// 메시지 · AirDrop · 파일 앱에서 연 스티커 묶음(.kkuk). ContentView 가 받아 더한다.
+    @Published var pendingImport: URL?
+
     /// Handles the app's custom URL scheme, e.g. `kkuk://camera`.
     func handle(url: URL) {
+        // "kkuk" = StickerArchive.fileExtension (이 파일은 위젯 타깃과 함께 써서 직접 적는다)
+        if url.isFileURL, url.pathExtension.lowercased() == "kkuk" {
+            pendingImport = url
+            return
+        }
         if url.scheme == "kkuk" && (url.host == "camera" || url.path == "/camera") {
             requestCamera()
         }
