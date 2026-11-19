@@ -60,7 +60,23 @@
 - `stamps(in:)`: 직접 정한 순서가 있으면 그 순서가 먼저, 나머지는 오래된 순(새로 뜯은 것은 끝에).
 - **자유롭게 꾸미기**: `reorder(in:moving:to:)`, `isArranged`, `resetOrder`(찍은 순서로), `setBackground(_:for:)` / `backgroundStyle(of:)`.
   속지는 `BackgroundStyle` 10종(크림/모눈/줄/도트/크라프트/양피지/코넬/그래프/민트/다크그리드), `DiaryBackground`가 Canvas로 절차 렌더.
-- 스티커 팩: `saveMeta()`마다 `syncStickers()` → `Stickers/collections.json`에 수집함별 `{name, files}`(수집함 순서).
+- 스티커 팩: `saveMeta()`마다 `syncStickers()` → `Stickers/collections.json`에 수집함별 `{name, files}`(수집함 순서)와
+  `words`(파일 이름 → 찾을 말). 한 마디 · 장소를 바꿔도 다시 내보낸다.
+
+### 찾기
+- `searchWords`: 스티커마다 찾을 말(소문자) — 한 마디 · 장소 · 수집함 · 스티커 글자 · 날짜. 앱과 확장이 같은 말을 쓴다.
+- `search(_:)`: 띄어 쓴 낱말이 모두 들어 있는 스티커를 새것부터. 빈 말이면 빈 결과.
+- 앱: 수집함 목록의 찾기 칸. 메시지 확장: 서랍 위 찾기 칸(치기 시작하면 서랍이 펴진다).
+  키보드: 입력창에 방금 친 낱말(조사가 붙으면 뒤에서 줄여 두 글자까지)에 맞는 스티커를 그 낱말 칩으로 먼저 보여 준다.
+
+### 테두리 · 글자 — `StickerDecor` (StickerDecor.swift)
+- 테두리 없음/얇게/보통/두껍게 × 색 6, 스티커 아래 글자(최대 24자). 메타 `outline` · `outlineColor` · `label`.
+- 원본에서 다시 만들 때 마지막에 입힌다(`finishLook`: 색감 → 테두리 · 글자). 정지 · 움직임 프레임 · 내보내기 · 메시지 스티커에 모두 같다.
+
+### 파일로 꺼내기 · 수집함 보내기 — `StickerArchive` (StickerArchive.swift)
+- `.kkuk` 묶음(Apple Archive). `makeArchive(album:)`: nil 이면 전부(수집함 정보 포함), 아니면 그 수집함만.
+- `importArchive(at:)`: 더하기만 한다. 같은 id 는 건너뛴다. 정해진 이름 꼴의 일반 파일만 받는다(경로 탈출 · 링크 · 과대 파일 차단).
+- 자동 백업은 LeeoKit 백업 금고가 맡는다(설정 ▸ 지원 ▸ 백업 및 복원). 앱이 따로 하지 않는다.
 
 ### 컬렉션 → 수집함 이전 (한 번)
 - `exhibitions.json`이 있으면 컬렉션마다 같은 이름의 수집함을 만들고 스티커를 **옮긴다**(이름이 겹치면 `이름 (컬렉션)`).

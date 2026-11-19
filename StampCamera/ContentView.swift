@@ -3109,11 +3109,14 @@ final class CollectionStore: ObservableObject {
             let files = stamps(in: album).compactMap { nameByID[$0.id] }
             return files.isEmpty ? nil : ["name": album, "files": files]
         }
+        // 찾을 말: 파일 이름 → 한 마디 · 장소 · 수집함 · 글자 · 날짜 (메시지 · 키보드의 찾기)
+        let words = Dictionary(uniqueKeysWithValues:
+            searchWords.compactMap { id, text in nameByID[id].map { ($0, text) } })
         Self.stickerSyncQueue.async { [weak self] in
             guard let self else { return }
             let dir = base.appendingPathComponent("Stickers", isDirectory: true)
             try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
-            if let data = try? JSONSerialization.data(withJSONObject: ["collections": packs]) {
+            if let data = try? JSONSerialization.data(withJSONObject: ["collections": packs, "words": words]) {
                 try? data.write(to: dir.appendingPathComponent("collections.json"))
             }
 
@@ -3384,12 +3387,14 @@ final class CollectionStore: ObservableObject {
             meta.place = place
         }
         writeStampMeta(meta, for: id)
+        syncStickers()   // 메시지 · 키보드에서 장소로 찾을 수 있게
     }
 
     func setCaption(_ text: String, for id: String) {
-        guard let idx = stamps.firstIndex(where: { $0.id == id }) else { return }
+        guard let idx = stamps.firstIndex(where: { $0.id == id }), stamps[idx].caption != text else { return }
         stamps[idx].caption = text
         try? text.write(to: captionURL(for: id), atomically: true, encoding: .utf8)
+        syncStickers()   // 메시지 · 키보드에서 한 마디로 찾을 수 있게
     }
 
     /// Swap the rendered stamp PNG (after applying a finish), keeping the
@@ -3500,15 +3505,23 @@ final class CollectionStore: ObservableObject {
     func search(_ query: String) -> [CollectedStamp] {
         let words = query.lowercased().split(whereSeparator: \.isWhitespace).map(String.init)
         guard !words.isEmpty else { return [] }
-        let labels = Dictionary(uniqueKeysWithValues: stamps.map { ($0.id, existingMeta(for: $0.id).label ?? "") })
+        let hay = searchWords
         return stamps.reversed().filter { s in
-            let hay = [s.caption, s.place, s.album, labels[s.id] ?? "",
-                       s.createdAt.formatted(date: .long, time: .omitted),
-                       s.createdAt.formatted(.dateTime.year().month(.wide)),
-                       s.createdAt.formatted(.dateTime.month(.defaultDigits).day())]
-                .joined(separator: " ").lowercased()
-            return words.allSatisfy { hay.contains($0) }
+            guard let text = hay[s.id] else { return false }
+            return words.allSatisfy { text.contains($0) }
         }
+    }
+
+    /// 스티커마다 찾을 말(소문자) — 한 마디 · 장소 · 수집함 · 스티커 글자 · 날짜.
+    /// 앱의 찾기와, 메시지 · 키보드로 내보내는 목록(`collections.json` 의 `words`)이 같은 말을 쓴다.
+    var searchWords: [String: String] {
+        Dictionary(uniqueKeysWithValues: stamps.map { s in
+            (s.id, [s.caption, s.place, s.album, existingMeta(for: s.id).label ?? "",
+                    s.createdAt.formatted(date: .long, time: .omitted),
+                    s.createdAt.formatted(.dateTime.year().month(.wide)),
+                    s.createdAt.formatted(.dateTime.month(.defaultDigits).day())]
+                .joined(separator: " ").lowercased())
+        })
     }
 
     // MARK: - 백업 · 수집함 보내기 (StickerArchive)

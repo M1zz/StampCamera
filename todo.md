@@ -26,14 +26,16 @@
 
 - [x] (2026-11-20) dev → main 병합, LeeoKit 3.46.2, 새 문구 39개를 23개 언어로, 로드맵에 backup · search · decor · album.send(만드는 중) / edit.eraser · ext.search(예정)
 
+- [x] (2026-11-20) 메시지 · 키보드에서 찾기 — `collections.json` 에 `words`(파일 → 찾을 말). 메시지 확장은 찾기 칸, 키보드는 방금 친 낱말에 맞는 스티커 칩. SPEC · IDENTITY 반영. 테스트 94개
+- [x] (2026-11-20) 아이콘을 덜어 낸 그림으로 — `tools/MakeAppIcon.swift` 하나가 라이트 · 다크 · 틴트 · 메시지 확장 · 소개 페이지를 모두 그린다
+
 ### 이어서 할 것
+- [ ] ⚠️ 실기기: 메시지 서랍 찾기 칸(치면 서랍이 펴지는지), 키보드의 방금 친 말 칩(카카오톡 등에서 입력창 글자를 읽어 오는지)
 - [ ] ⚠️ 실기기: AirDrop/메시지로 받은 .kkuk 열기, 큰 수집함(수백 장) 백업 시간
 - [ ] 지우개/되살리기(오려낸 가장자리 손보기) — 마스크를 메타로 저장해 정지 · 움직임에 같이 적용
 - [ ] 진짜 iCloud 동기화 (로드맵 `sync.icloud`) — Xcode 에서 iCloud Documents/CloudKit 컨테이너를 켜야 함(개발자 포털). 지금은 LeeoKit 백업 금고의 iCloud 백업이 대신
-- [ ] 메시지 · 키보드 확장에서도 찾기 (collections.json 에 한 마디 · 글자 넣기)
 - [ ] 찾기 성능: 스티커마다 메타 JSON 을 매번 읽음 — 수백 장 넘으면 라벨 캐시
 - [ ] 스토어 문구 · 스크린샷 · 릴리즈 노트 — "사라지지 않는다 · 팩으로 정리 · 어디서나 쓴다" 세 축, Apple 이름 직접 비교는 피함 ("사진 앱 스티커" 정도로)
-- [ ] SPEC.md · IDENTITY.md 에 보관 · 찾기 · 테두리/글자 반영
 
 ## 완료
 - [x] 빌드 에러/경고 정리 (CameraManager actor 격리, CGPoint Hashable)

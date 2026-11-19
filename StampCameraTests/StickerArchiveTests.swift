@@ -141,4 +141,21 @@ struct StickerArchiveTests {
         #expect(h.store.search("제주 고양이").isEmpty)
         #expect(h.store.search("   ").isEmpty)
     }
+
+    /// 메시지 · 키보드로 내보내는 찾을 말은 앱의 찾기와 같은 말이다.
+    @Test func searchWordsCarryCaptionPlaceAlbumAndLabel() {
+        let h = Harness(); defer { h.cleanup() }
+        h.store.createAlbum("고양이")
+        let cat = h.add(.orange)
+        h.store.setCaption("Nap Time", for: cat)
+        h.store.setPlace("제주", for: cat)
+        h.store.setStickerDecor(StickerDecor(label: "냥"), for: cat)
+
+        let text = h.store.searchWords[cat] ?? ""
+        #expect(text.contains("nap time"))      // 소문자로
+        #expect(text.contains("제주"))
+        #expect(text.contains("고양이"))
+        #expect(text.contains("냥"))
+        #expect(h.store.searchWords.count == h.store.stamps.count)
+    }
 }

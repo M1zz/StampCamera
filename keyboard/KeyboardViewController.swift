@@ -8,6 +8,11 @@
 //  field, so tapping a sticker COPIES it to the pasteboard and the user pastes
 //  it — exactly how Bitmoji and other sticker keyboards work.
 //
+//  A keyboard can't type into its own search field, so search works the other
+//  way round: the word the user just typed in the host app (e.g. "고양이") is
+//  matched against the words the app exports with each sticker, and the
+//  matches are offered first under a chip named after that word.
+//
 //  Requires "전체 접근 허용 (Allow Full Access)": without it iOS blocks both the
 //  App Group container (so there are no stickers to show) and the system
 //  pasteboard (so copying can't work). We detect that and tell the user.
@@ -25,6 +30,8 @@ private struct StickerPack: Decodable {
 }
 private struct PackManifest: Decodable {
     let collections: [StickerPack]
+    /// 파일 이름 → 찾을 말(소문자). 옛 앱이 쓴 목록에는 없다.
+    let words: [String: String]?
 }
 
 class KeyboardViewController: UIInputViewController {
@@ -40,7 +47,11 @@ class KeyboardViewController: UIInputViewController {
     /// All sticker file URLs (newest first) and the per-album packs.
     private var allURLs: [URL] = []
     private var packs: [StickerPack] = []
-    private var selectedPack = -1          // -1 = 전체
+    private var selectedPack = -1          // -1 = 전체, -2 = 방금 친 말에 맞는 것
+    private var words: [String: String] = [:]
+    /// 방금 친 말과 거기에 맞는 스티커. 맞는 게 없으면 nil.
+    private var typed: (word: String, urls: [URL])?
+    private static let typedTag = -2
     /// The URLs currently shown, after the collection filter is applied.
     private var shown: [URL] = []
     /// Decoded animated images, cached by file URL so scrolling doesn't re-decode.
@@ -178,7 +189,7 @@ class KeyboardViewController: UIInputViewController {
         // Full Access gates BOTH the App Group container and the pasteboard, so
         // without it the keyboard can do nothing useful — say so plainly.
         guard hasFullAccess else {
-            allURLs = []; packs = []; shown = []
+            allURLs = []; packs = []; shown = []; words = [:]; typed = nil
             chipBar.isHidden = true
             collectionView.reloadData()
             emptyLabel.text = String(localized: "스티커를 쓰려면 ‘전체 접근 허용’을 켜주세요.\n설정 ▸ 일반 ▸ 키보드 ▸ 펀칭 스티커 ▸ 전체 접근 허용")
@@ -186,8 +197,45 @@ class KeyboardViewController: UIInputViewController {
             return
         }
         allURLs = Self.loadStickerURLs()
-        packs = Self.loadPacks()
+        let manifest = Self.loadManifest()
+        packs = manifest?.collections ?? []
+        words = manifest?.words ?? [:]
         if selectedPack >= packs.count { selectedPack = -1 }
+        typed = nil
+        refreshTyped(force: true)
+    }
+
+    // MARK: - 방금 친 말로 찾기
+
+    override func textDidChange(_ textInput: UITextInput?) {
+        super.textDidChange(textInput)
+        if hasFullAccess { refreshTyped(force: false) }
+    }
+
+    /// 입력창의 마지막 낱말에 맞는 스티커를 찾는다. "고양이가" 처럼 조사가 붙어도 찾도록
+    /// 낱말을 뒤에서부터 줄여 가며(두 글자까지) 처음 맞는 것을 쓴다.
+    private func typedMatch() -> (word: String, urls: [URL])? {
+        guard !words.isEmpty,
+              let last = textDocumentProxy.documentContextBeforeInput?
+                .split(whereSeparator: \.isWhitespace).last else { return nil }
+        let token = last.lowercased().trimmingCharacters(in: .punctuationCharacters.union(.symbols))
+        guard token.count >= 2 else { return nil }
+        for length in stride(from: token.count, through: 2, by: -1) {
+            let word = String(token.prefix(length))
+            let urls = allURLs.filter { words[$0.lastPathComponent]?.contains(word) == true }
+            if !urls.isEmpty { return (word, urls) }
+        }
+        return nil
+    }
+
+    /// 친 말이 바뀌었으면 칩과 목록을 다시 그린다. 맞는 스티커가 생기면 그 칩을 먼저 보여 주되,
+    /// 사용자가 수집함 칩을 골라 둔 동안에는 건드리지 않는다.
+    private func refreshTyped(force: Bool) {
+        let match = typedMatch()
+        guard force || match?.word != typed?.word else { return }
+        typed = match
+        if match != nil, selectedPack == -1 { selectedPack = Self.typedTag }
+        if match == nil, selectedPack == Self.typedTag { selectedPack = -1 }
         rebuildChips()
         applySelection()
     }
@@ -204,17 +252,18 @@ class KeyboardViewController: UIInputViewController {
             .sorted { ms($0) > ms($1) }
     }
 
-    private static func loadPacks() -> [StickerPack] {
+    private static func loadManifest() -> PackManifest? {
         guard let base = FileManager.default
-                .containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else { return [] }
+                .containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else { return nil }
         let url = base.appendingPathComponent("Stickers/collections.json")
-        guard let data = try? Data(contentsOf: url),
-              let manifest = try? JSONDecoder().decode(PackManifest.self, from: data) else { return [] }
-        return manifest.collections
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        return try? JSONDecoder().decode(PackManifest.self, from: data)
     }
 
     private func applySelection() {
-        if selectedPack >= 0 {
+        if selectedPack == Self.typedTag, let typed {
+            shown = typed.urls
+        } else if selectedPack >= 0 {
             let names = Set(packs[selectedPack].files)
             shown = allURLs.filter { names.contains($0.lastPathComponent) }
         } else {
@@ -231,11 +280,15 @@ class KeyboardViewController: UIInputViewController {
 
     private func rebuildChips() {
         chipStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        // one album = the same stickers as 전체, so chips only from two up
-        chipBar.isHidden = packs.count < 2
-        guard packs.count >= 2 else { selectedPack = -1; return }
+        // one album = the same stickers as 전체, so album chips only from two up;
+        // the typed-word chip always needs 전체 beside it to get back
+        chipBar.isHidden = packs.count < 2 && typed == nil
+        guard !chipBar.isHidden else { selectedPack = -1; return }
+        if let typed { addChip(title: "‘\(typed.word)’", tag: Self.typedTag) }
         addChip(title: String(localized: "전체"), tag: -1)
-        for (i, pack) in packs.enumerated() { addChip(title: pack.name, tag: i) }
+        if packs.count >= 2 {
+            for (i, pack) in packs.enumerated() { addChip(title: pack.name, tag: i) }
+        }
         styleChips()
     }
 

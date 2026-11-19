@@ -5,7 +5,8 @@
 //  Shows the stamps collected in the main app (written into the shared App
 //  Group container) as real iMessage stickers you can peel onto messages.
 //  A chip bar up top filters by the user's albums, so each 수집함
-//  doubles as a sticker pack.
+//  doubles as a sticker pack. A search field above it finds stickers by the
+//  words the app exports with them (한 마디 · 장소 · 수집함 · 글자 · 날짜).
 //
 
 import UIKit
@@ -20,19 +21,37 @@ private struct StickerPack: Decodable {
 }
 private struct PackManifest: Decodable {
     let collections: [StickerPack]
+    /// 파일 이름 → 찾을 말(소문자). 옛 앱이 쓴 목록에는 없다.
+    let words: [String: String]?
 }
 
 class MessagesViewController: MSMessagesAppViewController {
 
     private let browser = StampStickerBrowserViewController(stickerSize: .small)
+    private let searchField = UISearchTextField()
     private let chipBar = UIScrollView()
     private let chipStack = UIStackView()
     private let emptyLabel = UILabel()
     private var packs: [StickerPack] = []
+    private var words: [String: String] = [:]
+    /// 찾을 말이 없으면(옛 목록 · 빈 서랍) 찾기 칸을 접는다.
+    private var searchHeight: NSLayoutConstraint!
+    private var searchTop: NSLayoutConstraint!
     private var selectedPack: Int = -1   // -1 = 전체
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        searchField.placeholder = String(localized: "스티커 찾기")
+        searchField.font = .systemFont(ofSize: 15)
+        searchField.returnKeyType = .done
+        searchField.autocorrectionType = .no
+        searchField.delegate = self
+        searchField.addTarget(self, action: #selector(searchChanged), for: .editingChanged)
+        searchField.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(searchField)
+        searchTop = searchField.topAnchor.constraint(equalTo: view.topAnchor, constant: 6)
+        searchHeight = searchField.heightAnchor.constraint(equalToConstant: 36)
 
         chipBar.showsHorizontalScrollIndicator = false
         chipBar.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +82,11 @@ class MessagesViewController: MSMessagesAppViewController {
         ])
 
         NSLayoutConstraint.activate([
-            chipBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 6),
+            searchTop, searchHeight,
+            searchField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            searchField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+
+            chipBar.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 6),
             chipBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             chipBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             chipBar.heightAnchor.constraint(equalToConstant: 36),
@@ -87,12 +110,18 @@ class MessagesViewController: MSMessagesAppViewController {
     }
 
     private func reloadEverything() {
-        packs = Self.loadPacks()
+        let manifest = Self.loadManifest()
+        packs = manifest?.collections ?? []
+        words = manifest?.words ?? [:]
         if selectedPack >= packs.count { selectedPack = -1 }
         rebuildChips()
         browser.reload()
+        let searchable = !words.isEmpty
+        searchField.isHidden = !searchable
+        searchHeight.constant = searchable ? 36 : 0
+        searchTop.constant = searchable ? 6 : 0
+        if !searchable { searchField.text = nil }
         applySelection()
-        updateEmptyState()
     }
 
     /// Tells the user WHY the tray is empty: a missing App Group (the shared
@@ -105,21 +134,31 @@ class MessagesViewController: MSMessagesAppViewController {
             emptyLabel.text = String(localized: "스티커를 공유하려면 ‘App Group’ 설정이 필요해요.\n(앱·확장 프로그램 서명 설정 확인)")
             emptyLabel.isHidden = false
         } else if browser.stickerCount == 0 {
-            emptyLabel.text = String(localized: "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요.")
+            emptyLabel.text = query.isEmpty
+                ? String(localized: "펀칭 앱에서 스티커를 뜯으면\n여기에 나타나요.")
+                : String(localized: "찾는 스티커가 없어요")
             emptyLabel.isHidden = false
         } else {
             emptyLabel.isHidden = true
         }
     }
 
-    private static func loadPacks() -> [StickerPack] {
+    private static func loadManifest() -> PackManifest? {
         guard let base = FileManager.default
-                .containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else { return [] }
+                .containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else { return nil }
         let url = base.appendingPathComponent("Stickers/collections.json")
-        guard let data = try? Data(contentsOf: url),
-              let manifest = try? JSONDecoder().decode(PackManifest.self, from: data) else { return [] }
-        return manifest.collections
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        return try? JSONDecoder().decode(PackManifest.self, from: data)
     }
+
+    // MARK: - 찾기
+
+    /// 찾기 칸에 친 낱말들(소문자). 띄어 쓰면 모두 맞는 스티커만 남는다.
+    private var query: [String] {
+        (searchField.text ?? "").lowercased().split(whereSeparator: \.isWhitespace).map(String.init)
+    }
+
+    @objc private func searchChanged() { applySelection() }
 
     // MARK: - Chips
 
@@ -162,7 +201,27 @@ class MessagesViewController: MSMessagesAppViewController {
     }
 
     private func applySelection() {
-        browser.filterFiles = selectedPack >= 0 ? packs[selectedPack].files : nil
+        var files = selectedPack >= 0 ? packs[selectedPack].files : nil
+        let q = query
+        if !q.isEmpty {
+            files = (files ?? browser.allFiles).filter { file in
+                guard let text = words[file] else { return false }
+                return q.allSatisfy { text.contains($0) }
+            }
+        }
+        browser.filterFiles = files
+        updateEmptyState()
+    }
+}
+
+extension MessagesViewController: UITextFieldDelegate {
+    /// 접힌 서랍에서는 키보드가 찾기 칸을 가리므로, 치기 시작하면 서랍을 편다.
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if presentationStyle == .compact { requestPresentationStyle(.expanded) }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
@@ -174,6 +233,8 @@ final class StampStickerBrowserViewController: MSStickerBrowserViewController {
 
     /// How many stickers are currently shown (for the host's empty-state hint).
     var stickerCount: Int { stickers.count }
+    /// 서랍에 있는 모든 스티커의 파일 이름 (새것부터).
+    var allFiles: [String] { all.map { $0.imageFileURL.lastPathComponent } }
 
     var filterFiles: [String]? {
         didSet { applyFilter() }
