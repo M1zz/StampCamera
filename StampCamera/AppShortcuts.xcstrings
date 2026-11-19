@@ -150,6 +150,7 @@
       }
     },
     "${applicationName}으로 사진 찍기" : {
+      "extractionState" : "stale",
       "localizations" : {
         "cs" : {
           "stringUnit" : {

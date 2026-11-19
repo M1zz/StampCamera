@@ -5,10 +5,28 @@
       "comment" : "",
       "extractionState" : "manual",
       "localizations" : {
-        "ko" : {
+        "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "펀칭"
+            "value" : "Punching"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
           }
         },
         "en" : {
@@ -23,37 +41,13 @@
             "value" : "Punching"
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
-          }
-        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching"
           }
         },
-        "de" : {
+        "fi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching"
@@ -65,13 +59,31 @@
             "value" : "Punching"
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching"
           }
         },
-        "pt-BR" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭"
+          }
+        },
+        "nb" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching"
@@ -89,6 +101,30 @@
             "value" : "Punching"
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching"
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -101,52 +137,28 @@
             "value" : "Punching"
           }
         },
-        "el" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching"
           }
         },
-        "fi" : {
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching"
           }
-        },
-        "th" : {
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ko" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching"
+            "state" : "new",
+            "value" : "StampCamera"
           }
         }
       }
@@ -155,10 +167,28 @@
       "comment" : "",
       "extractionState" : "manual",
       "localizations" : {
-        "ko" : {
+        "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "펀칭기로 순간을 스티커로 뜯어내기 위해 카메라를 사용해요."
+            "value" : "Punching používá fotoaparát, aby měnil okamžiky v nálepky."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching bruger kameraet til at gøre øjeblikke til klistermærker."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching nutzt die Kamera, um Momente in Sticker zu verwandeln."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το Punching χρησιμοποιεί την κάμερα για να μετατρέπει στιγμές σε αυτοκόλλητα."
           }
         },
         "en" : {
@@ -173,40 +203,16 @@
             "value" : "Punching uses the camera to turn moments into stickers with the puncher."
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching は、ひとときをステッカーにはがすためにカメラを使用します。"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching 使用相机，把瞬间撕成贴纸。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching 使用相機，把瞬間撕成貼圖。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching использует камеру, чтобы превращать мгновения в стикеры."
-          }
-        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching usa la cámara para convertir momentos en stickers."
           }
         },
-        "de" : {
+        "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Punching nutzt die Kamera, um Momente in Sticker zu verwandeln."
+            "value" : "Punching käyttää kameraa muuttaakseen hetket tarroiksi."
           }
         },
         "fr" : {
@@ -215,16 +221,34 @@
             "value" : "Punching utilise l’appareil photo pour transformer vos instants en autocollants."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching memakai kamera untuk mengubah momen menjadi stiker."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punching usa la fotocamera per trasformare i momenti in adesivi."
           }
         },
-        "pt-BR" : {
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "O Punching usa a câmera para transformar momentos em adesivos."
+            "value" : "Punching は、ひとときをステッカーにはがすためにカメラを使用します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "펀칭기로 순간을 스티커로 뜯어내기 위해 카메라를 사용해요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching bruker kameraet til å gjøre øyeblikk om til klistremerker."
           }
         },
         "nl" : {
@@ -239,6 +263,30 @@
             "value" : "Punching używa aparatu, aby zamieniać chwile w naklejki."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Punching usa a câmera para transformar momentos em adesivos."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching использует камеру, чтобы превращать мгновения в стикеры."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching använder kameran för att förvandla ögonblick till klistermärken."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Punching ใช้กล้องเพื่อเปลี่ยนช่วงเวลาให้เป็นสติกเกอร์"
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -251,202 +299,16 @@
             "value" : "Punching dùng camera để biến khoảnh khắc thành nhãn dán."
           }
         },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Το Punching χρησιμοποιεί την κάμερα για να μετατρέπει στιγμές σε αυτοκόλλητα."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching käyttää kameraa muuttaakseen hetket tarroiksi."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching ใช้กล้องเพื่อเปลี่ยนช่วงเวลาให้เป็นสติกเกอร์"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching používá fotoaparát, aby měnil okamžiky v nálepky."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching bruger kameraet til at gøre øjeblikke til klistermærker."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching memakai kamera untuk mengubah momen menjadi stiker."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching bruker kameraet til å gjøre øyeblikk om til klistremerker."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punching använder kameran för att förvandla ögonblick till klistermärken."
-          }
-        }
-      }
-    },
-    "NSPhotoLibraryAddUsageDescription" : {
-      "comment" : "",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "완성된 스티커를 사진 앱에 저장하기 위해 사용해요."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Used to save finished stickers to your Photos."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Used to save finished stickers to your Photos."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "完成したステッカーを「写真」に保存するために使用します。"
-          }
-        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "用于把完成的贴纸存储到“照片”。"
+            "value" : "Punching 使用相机，把瞬间撕成贴纸。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "用於將完成的貼圖儲存到「照片」。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Нужно, чтобы сохранять готовые стикеры в «Фото»."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se usa para guardar los stickers terminados en Fotos."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wird verwendet, um fertige Sticker in Fotos zu sichern."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sert à enregistrer les autocollants terminés dans Photos."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serve per salvare gli adesivi finiti in Foto."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Usado para salvar os adesivos prontos nas Fotos."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wordt gebruikt om voltooide stickers in Foto’s te bewaren."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Służy do zapisywania gotowych naklejek w Zdjęciach."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tamamlanan çıkartmaları Fotoğraflar’a kaydetmek için kullanılır."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dùng để lưu nhãn dán đã hoàn thành vào Ảnh."
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Χρησιμοποιείται για την αποθήκευση έτοιμων αυτοκόλλητων στις Φωτογραφίες."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Käytetään valmiiden tarrojen tallentamiseen Kuviin."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ใช้เพื่อบันทึกสติกเกอร์ที่เสร็จแล้วลงในรูปภาพ"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Slouží k uložení hotových nálepek do Fotek."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bruges til at gemme færdige klistermærker i Fotos."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dipakai untuk menyimpan stiker yang sudah jadi ke Foto."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brukes til å lagre ferdige klistremerker i Bilder."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Används för att spara färdiga klistermärken i Bilder."
+            "value" : "Punching 使用相機，把瞬間撕成貼圖。"
           }
         }
       }
@@ -455,10 +317,28 @@
       "comment" : "",
       "extractionState" : "manual",
       "localizations" : {
-        "ko" : {
+        "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "스티커에 뜯은 장소를 기록하기 위해 위치를 사용해요."
+            "value" : "Slouží k zaznamenání místa, kde byla nálepka odtržena."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruges til at registrere, hvor et klistermærke blev revet af."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird verwendet, um zu notieren, wo ein Sticker abgetrennt wurde."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποιείται για την καταγραφή του σημείου όπου αποσπάστηκε ένα αυτοκόλλητο."
           }
         },
         "en" : {
@@ -473,40 +353,16 @@
             "value" : "Used to record where a sticker was punched out."
           }
         },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ステッカーにはがした場所を記録するために位置情報を使用します。"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "用于记录贴纸是在哪里撕下的。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "用於記錄貼圖是在哪裡撕下的。"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Нужно, чтобы записывать место, где оторван стикер."
-          }
-        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se usa para registrar dónde se arrancó un sticker."
           }
         },
-        "de" : {
+        "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wird verwendet, um zu notieren, wo ein Sticker abgetrennt wurde."
+            "value" : "Käytetään tallentamaan paikka, jossa tarra irrotettiin."
           }
         },
         "fr" : {
@@ -515,16 +371,34 @@
             "value" : "Sert à noter l’endroit où un autocollant a été détaché."
           }
         },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dipakai untuk mencatat tempat stiker disobek."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Serve per registrare dove è stato staccato un adesivo."
           }
         },
-        "pt-BR" : {
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usado para registrar onde um adesivo foi destacado."
+            "value" : "ステッカーにはがした場所を記録するために位置情報を使用します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "스티커에 뜯은 장소를 기록하기 위해 위치를 사용해요."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brukes til å registrere hvor et klistremerke ble revet av."
           }
         },
         "nl" : {
@@ -539,6 +413,30 @@
             "value" : "Służy do zapisywania miejsca, w którym oderwano naklejkę."
           }
         },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usado para registrar onde um adesivo foi destacado."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нужно, чтобы записывать место, где оторван стикер."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Används för att registrera var ett klistermärke revs loss."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้เพื่อบันทึกสถานที่ที่ฉีกสติกเกอร์"
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -551,55 +449,172 @@
             "value" : "Dùng để ghi lại nơi nhãn dán được bấm ra."
           }
         },
-        "el" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Χρησιμοποιείται για την καταγραφή του σημείου όπου αποσπάστηκε ένα αυτοκόλλητο."
+            "value" : "用于记录贴纸是在哪里撕下的。"
           }
         },
-        "fi" : {
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Käytetään tallentamaan paikka, jossa tarra irrotettiin."
+            "value" : "用於記錄貼圖是在哪裡撕下的。"
           }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ใช้เพื่อบันทึกสถานที่ที่ฉีกสติกเกอร์"
-          }
-        },
+        }
+      }
+    },
+    "NSPhotoLibraryAddUsageDescription" : {
+      "comment" : "",
+      "extractionState" : "manual",
+      "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Slouží k zaznamenání místa, kde byla nálepka odtržena."
+            "value" : "Slouží k uložení hotových nálepek do Fotek."
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bruges til at registrere, hvor et klistermærke blev revet af."
+            "value" : "Bruges til at gemme færdige klistermærker i Fotos."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wird verwendet, um fertige Sticker in Fotos zu sichern."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποιείται για την αποθήκευση έτοιμων αυτοκόλλητων στις Φωτογραφίες."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Used to save finished stickers to your Photos."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Used to save finished stickers to your Photos."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se usa para guardar los stickers terminados en Fotos."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytetään valmiiden tarrojen tallentamiseen Kuviin."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sert à enregistrer les autocollants terminés dans Photos."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dipakai untuk mencatat tempat stiker disobek."
+            "value" : "Dipakai untuk menyimpan stiker yang sudah jadi ke Foto."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serve per salvare gli adesivi finiti in Foto."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完成したステッカーを「写真」に保存するために使用します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완성된 스티커를 사진 앱에 저장하기 위해 사용해요."
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Brukes til å registrere hvor et klistremerke ble revet av."
+            "value" : "Brukes til å lagre ferdige klistremerker i Bilder."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wordt gebruikt om voltooide stickers in Foto’s te bewaren."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Służy do zapisywania gotowych naklejek w Zdjęciach."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usado para salvar os adesivos prontos nas Fotos."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нужно, чтобы сохранять готовые стикеры в «Фото»."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Används för att registrera var ett klistermärke revs loss."
+            "value" : "Används för att spara färdiga klistermärken i Bilder."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้เพื่อบันทึกสติกเกอร์ที่เสร็จแล้วลงในรูปภาพ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamamlanan çıkartmaları Fotoğraflar’a kaydetmek için kullanılır."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dùng để lưu nhãn dán đã hoàn thành vào Ảnh."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用于把完成的贴纸存储到“照片”。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用於將完成的貼圖儲存到「照片」。"
           }
         }
       }
+    },
+    "Punching Stickers" : {
+
     }
   },
   "version" : "1.0"
