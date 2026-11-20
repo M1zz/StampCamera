@@ -107,29 +107,58 @@ enum StickerProposals {
     }
 
     /// 후보와 그 미리보기. Vision 결과에서 그림을 만드니 뒤에서 부른다.
-    static func candidates(for shot: PhotoShot) -> [StickerCandidate] {
+    static func candidates(for shot: PhotoShot, cutout: Bool = true) -> [StickerCandidate] {
         plan(subjects: shot.map?.boxes ?? [:], faces: shot.faces, size: shot.size,
              photoAspect: StampFrameLoader.windowAspect)
             .enumerated().map { i, p in
                 var c = StickerCandidate(id: i, kind: p.kind, window: p.window, label: p.label)
-                c.thumb = thumb(for: c, in: shot)
+                c.thumb = thumb(for: c, in: shot, cutout: cutout)
                 return c
             }
     }
 
-    /// 후보가 스티커가 되면 어떤 모습일지 — 실제로 만들 때와 같은 규칙으로 작게 그린다.
-    static func thumb(for c: StickerCandidate, in shot: PhotoShot) -> UIImage? {
-        guard let crop = shot.shown.cropped(unit: c.window, maxSide: 240) else { return nil }
+    /// 후보가 스티커가 되면 어떤 모습일지 — 실제로 만들 때와 같은 규칙으로 그린다.
+    /// `cutout` 이 아니면(기본 모양이 우표) 우표 모양으로. 크게 그릴 때는 실제와 똑같이 다시 오려낸다.
+    static func thumb(for c: StickerCandidate, in shot: PhotoShot,
+                      cutout: Bool = true, maxSide: CGFloat = 240) -> UIImage? {
+        guard let crop = shot.shown.cropped(unit: c.window, maxSide: maxSide) else { return nil }
         switch c.kind {
-        case .photo:
-            return crop
         case .drawn:
             return StickerMask.outline(c.outlineInWindow, size: crop.size)
                 .flatMap { SubjectLift.cut(crop, mask: $0, trim: true) } ?? crop
         case .subject, .everything, .face:
+            guard cutout else { return CollectionStore.stampShaped(crop) }
+            if maxSide > 400, let cut = SubjectLift.cutout(from: crop) { return cut }
             guard let part = shot.map?.cropped(to: c.window),
-                  let mask = part.mask(of: Set(part.kept)) else { return crop }
-            return SubjectLift.cut(crop, mask: mask, trim: true) ?? crop
+                  let mask = part.mask(of: Set(part.kept)),
+                  let cut = SubjectLift.cut(crop, mask: mask, trim: true) else {
+                return CollectionStore.stampShaped(crop)       // 오려낼 대상이 없으면 우표 모양
+            }
+            return cut
+        case .photo:
+            return CollectionStore.stampShaped(crop)
+        }
+    }
+
+    /// 후보가 움직이는 스티커가 되면 어떤 모습일지 — 고르는 화면에서 바로 움직여 보인다.
+    static func clip(for c: StickerCandidate, in shot: PhotoShot, frames: [UIImage], cutout: Bool) -> [UIImage] {
+        let win = CGRect(x: c.window.minX * shot.size.width, y: c.window.minY * shot.size.height,
+                         width: c.window.width * shot.size.width, height: c.window.height * shot.size.height)
+        let side = max(win.width, win.height)
+        guard side > 1 else { return [] }
+        let master = frames.compactMap {
+            StampCompositor.makeStamp(from: $0, previewSize: shot.size, windowRect: win, mirrored: shot.mirrored,
+                                      clipToShape: false, scale: min(1.2, 420 / side))?.image
+        }
+        guard master.count > 1 else { return [] }
+        switch c.kind {
+        case .photo:
+            return CollectionStore.clipLook(master, style: .liveStamp)
+        case .drawn:
+            return CollectionStore.clipLook(master, style: .liveSticker,
+                                            mask: StickerMask.outline(c.outlineInWindow, size: master[0].size))
+        case .subject, .everything, .face:
+            return CollectionStore.clipLook(master, style: cutout ? .liveSticker : .liveStamp)
         }
     }
 }
@@ -276,11 +305,17 @@ private func fitted(_ size: CGSize, in box: CGSize) -> CGRect {
 // MARK: - 고르는 화면
 
 /// 사진 한 장에서 스티커로 만들 것을 고른다. 아래 줄에 후보가 놓이고, 여러 개를 골라 한 번에 담는다.
+/// 고른 것은 가운데에 스티커 모습 그대로 크게 뜬다(움직임을 켜면 움직인다).
 /// 사진 속 대상을 눌러도 골라지고, 후보에 없는 것은 손가락으로 둘러 그려 더한다.
 struct SubjectPickView: View {
     let shot: PhotoShot
     var cancelTitle: LocalizedStringKey = "다시 찍기"
-    var onCollect: ([StickerCandidate]) -> Void
+    /// 기본 모양이 오려낸 스티커인지 — 아니면 우표 모양으로 보이고 그렇게 담긴다
+    var cutout = true
+    /// 함께 찍힌 움직임을 가져오는 길. 없으면(가져온 사진) 움직임 단추가 없다
+    var motion: (() -> (frames: [UIImage], seconds: Double)?)? = nil
+    var startMoving = false
+    var onCollect: (_ picks: [StickerCandidate], _ moving: Bool) -> Void
     var onCancel: () -> Void
 
     @State private var candidates: [StickerCandidate] = []
@@ -288,6 +323,13 @@ struct SubjectPickView: View {
     @State private var mask: UIImage?
     @State private var drawing = false
     @State private var stroke: [CGPoint] = []      // 지금 그리는 선 (0...1)
+    // 가운데에 크게 보이는 후보와 그 그림들
+    @State private var focus: Int?
+    @State private var previews: [Int: UIImage] = [:]
+    @State private var clips: [Int: [UIImage]] = [:]
+    @State private var clipDelay = 0.08
+    @State private var moving = false
+    @State private var waits = 0
 
     var body: some View {
         GeometryReader { geo in
@@ -297,6 +339,10 @@ struct SubjectPickView: View {
                 photo(frame.size)
                     .frame(width: frame.width, height: frame.height)
                     .offset(x: frame.minX, y: frame.minY)
+                if !drawing, let c = candidates.first(where: { $0.id == focus }) {
+                    Color.black.opacity(0.5).allowsHitTesting(false)
+                    spotlight(c, in: geo.size)
+                }
             }
         }
         .ignoresSafeArea()
@@ -312,17 +358,76 @@ struct SubjectPickView: View {
         }
         .overlay(alignment: .bottom) { tray }
         .task {
-            let built = await Task.detached { StickerProposals.candidates(for: shot) }.value
-            let made = await Task.detached { shot.map?.mask() }.value
+            moving = startMoving && motion != nil
+            let built = await Task.detached { StickerProposals.candidates(for: shot, cutout: cutout) }.value
             withAnimation(.easeOut(duration: 0.2)) {
                 candidates = built + candidates          // 그새 그린 것이 있으면 뒤에 둔다
-                mask = made
-                if chosen.isEmpty, let first = built.first { chosen = [first.id] }
+                if chosen.isEmpty, let first = built.first { chosen = [first.id]; focus = first.id }
+            }
+        }
+        .onChange(of: chosen) { _, _ in refreshMask() }
+        .onChange(of: focus) { _, _ in waits = 0; prepare() }
+        .onChange(of: moving) { _, _ in waits = 0; prepare() }
+    }
+
+    /// 가운데에 크게: 고른 후보가 스티커가 된 모습. 움직임을 켰으면 움직인다.
+    private func spotlight(_ c: StickerCandidate, in size: CGSize) -> some View {
+        Group {
+            if moving, let frames = clips[c.id], frames.count > 1 {
+                LiveStampView(frames: frames, delay: clipDelay)
+            } else if let still = previews[c.id] ?? c.thumb {
+                Image(uiImage: still).resizable().scaledToFit()
+            }
+        }
+        .frame(maxWidth: size.width * 0.74, maxHeight: size.height * 0.46)
+        .shadow(color: .black.opacity(0.5), radius: 18, y: 10)
+        .position(x: size.width / 2, y: size.height * 0.42)
+        .allowsHitTesting(false)
+        .id(c.id)
+        .transition(.scale(scale: 0.85).combined(with: .opacity))
+    }
+
+    /// 가운데 그림을 준비한다: 크게 그린 멈춘 모습, 움직임을 켰으면 움직이는 모습도.
+    private func prepare() {
+        guard let id = focus, let c = candidates.first(where: { $0.id == id }) else { return }
+        let wantStill = previews[id] == nil
+        let wantClip = moving && clips[id] == nil
+        guard wantStill || wantClip else { return }
+        let material = wantClip ? motion?() : nil
+        if wantClip, material == nil, waits < 3 {
+            // 움직임 프레임은 셔터 뒤 1초 남짓 지나 도착한다
+            waits += 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { prepare() }
+        }
+        let shot = shot, cutout = cutout
+        DispatchQueue.global(qos: .userInitiated).async {
+            if wantStill, let still = StickerProposals.thumb(for: c, in: shot, cutout: cutout, maxSide: 720) {
+                DispatchQueue.main.async { previews[id] = still }
+            }
+            guard let material, material.frames.count > 1 else { return }
+            let frames = StickerProposals.clip(for: c, in: shot, frames: material.frames, cutout: cutout)
+            guard frames.count > 1 else { return }
+            DispatchQueue.main.async {
+                clipDelay = max(0.06, material.seconds / Double(material.frames.count - 1))
+                clips[id] = frames
             }
         }
     }
 
-    /// 사진: 대상만 밝고 나머지는 어둡다. 고른 것은 흰 테두리로 표시한다.
+    /// 사진에서는 고른 대상만 밝다. 고른 대상이 없으면 모든 대상이 밝다(누를 수 있다는 뜻).
+    private func refreshMask() {
+        guard let map = shot.map else { return }
+        let picked = candidates.filter { chosen.contains($0.id) }
+        var only: Set<UInt8>? = Set(picked.filter { $0.kind == .subject }.map(\.label))
+        if picked.contains(where: { $0.kind == .everything }) || only?.isEmpty == true { only = nil }
+        let keep = only
+        DispatchQueue.global(qos: .userInitiated).async {
+            let made = map.mask(of: keep)
+            DispatchQueue.main.async { withAnimation(.easeOut(duration: 0.15)) { mask = made } }
+        }
+    }
+
+    /// 사진: 고른 대상은 밝고 나머지는 어둡다.
     private func photo(_ size: CGSize) -> some View {
         ZStack {
             Image(uiImage: shot.shown).resizable()
@@ -336,10 +441,6 @@ struct SubjectPickView: View {
             if !plain.isEmpty {
                 Image(uiImage: shot.shown).resizable()
                     .mask { ZStack { ForEach(plain) { marker($0, size).fill(.white) } } }
-            }
-            ForEach(candidates.filter { chosen.contains($0.id) }) { c in
-                marker(c, size).stroke(.white, style: StrokeStyle(lineWidth: 2.5, lineJoin: .round))
-                    .shadow(color: .black.opacity(0.5), radius: 2)
             }
             if stroke.count > 1 {
                 path(stroke, size, closed: false)
@@ -378,16 +479,29 @@ struct SubjectPickView: View {
         return p
     }
 
-    /// 사진 속 대상을 누르면 그 대상의 후보가 골라지거나 빠진다.
+    /// 가운데 그림이 떠 있으면 사진을 눌러 걷어 낸다. 사진이 보일 때 대상을 누르면 그 후보가 골라지거나 빠진다.
     private func tap(_ point: CGPoint) {
+        if focus != nil {
+            withAnimation(.easeOut(duration: 0.18)) { focus = nil }
+            return
+        }
         guard let label = shot.map?.label(near: point), label != 0,
               let c = candidates.first(where: { $0.kind == .subject && $0.label == label }) else { return }
         toggle(c.id)
     }
 
+    /// 고르면 가운데에 크게 뜨고, 빼면 남은 것 가운데 하나로 옮겨 간다.
     private func toggle(_ id: Int) {
         Haptics.tick()
-        if chosen.contains(id) { chosen.remove(id) } else { chosen.insert(id) }
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+            if chosen.contains(id) {
+                chosen.remove(id)
+                if focus == id { focus = candidates.last { chosen.contains($0.id) }?.id }
+            } else {
+                chosen.insert(id)
+                focus = id
+            }
+        }
     }
 
     /// 둘러 그린 선을 닫아 후보 하나로 더한다. 너무 작거나 짧으면 버린다.
@@ -405,10 +519,11 @@ struct SubjectPickView: View {
             candidates.append(c)
             chosen.insert(c.id)
             drawing = false
+            focus = c.id
         }
     }
 
-    /// 아래 줄: 후보들, 그 아래 다시 찍기 · 직접 그리기 · 담기.
+    /// 아래 줄: 후보들, 그 아래 다시 찍기 · 직접 그리기 · 움직임 · 담기.
     private var tray: some View {
         VStack(spacing: 14) {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -422,21 +537,36 @@ struct SubjectPickView: View {
                 }
                 .padding(.horizontal, 20)
             }
-            HStack {
+            HStack(spacing: 10) {
                 Button(action: onCancel) { Text(cancelTitle) }
-                Spacer()
+                Spacer(minLength: 4)
                 Button {
                     Haptics.tick()
                     withAnimation(.easeOut(duration: 0.15)) { drawing.toggle(); stroke = [] }
                 } label: {
                     Label("직접 그리기", systemImage: "lasso")
-                        .padding(.horizontal, 14).padding(.vertical, 9)
+                        .padding(.horizontal, 12).padding(.vertical, 9)
                         .background(Capsule().fill(drawing ? Color.white : Color.white.opacity(0.18)))
                         .foregroundStyle(drawing ? .black : .white)
                 }
-                Spacer()
+                if motion != nil {
+                    // 움직이는 스티커로 담을지 — 켜면 가운데 그림도 움직인다
+                    Button {
+                        Haptics.tick()
+                        moving.toggle()
+                    } label: {
+                        Image(systemName: moving ? "livephoto" : "livephoto.slash")
+                            .font(.system(size: 18, weight: .semibold))
+                            .frame(width: 40, height: 38)
+                            .background(Capsule().fill(Color.white.opacity(0.18)))
+                            .foregroundStyle(moving ? .yellow : .white)
+                    }
+                    .accessibilityLabel("움직임")
+                    .accessibilityAddTraits(moving ? .isSelected : [])
+                }
+                Spacer(minLength: 4)
                 Button {
-                    onCollect(candidates.filter { chosen.contains($0.id) })
+                    onCollect(candidates.filter { chosen.contains($0.id) }, moving)
                 } label: {
                     Text("\(chosen.count)개 담기")
                         .padding(.horizontal, 16).padding(.vertical, 9)
@@ -448,6 +578,7 @@ struct SubjectPickView: View {
             }
             .scaledFont(15, weight: .semibold, design: .rounded)
             .foregroundStyle(.white)
+            .lineLimit(1)
             .buttonStyle(.plain)
             .padding(.horizontal, 20)
         }

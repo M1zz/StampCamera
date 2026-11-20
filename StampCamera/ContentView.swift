@@ -298,10 +298,12 @@ struct ContentView: View {
                 .transition(.opacity)
             }
             if let shot {
-                SubjectPickView(shot: shot,
-                                onCollect: { picks in
+                SubjectPickView(shot: shot, cutout: liveCaptureStyle.cutout,
+                                motion: { camera.capturedLiveFrames.map { ($0, camera.capturedLiveSeconds) } },
+                                startMoving: liveCaptureStyle.moving,
+                                onCollect: { picks, moving in
                                     withAnimation(.easeOut(duration: 0.15)) { self.shot = nil }
-                                    collect(picks, from: shot)
+                                    collect(picks, from: shot, moving: moving)
                                 },
                                 onCancel: { withAnimation(.easeOut(duration: 0.15)) { self.shot = nil } })
                 .zIndex(15)
@@ -695,9 +697,10 @@ struct ContentView: View {
     }
 
     /// 고른 후보들을 스티커로 담는다. 첫 스티커는 카드로 뜨고, 여럿이면 몇 개 담았는지 알린다.
-    private func collect(_ picks: [StickerCandidate], from shot: PhotoShot) {
+    private func collect(_ picks: [StickerCandidate], from shot: PhotoShot, moving: Bool) {
         guard !picks.isEmpty else { return }
-        let style = liveCaptureStyle
+        // 모양은 설정의 기본 모양, 움직임은 고르는 화면에서 정한 대로
+        let style = StampStyle.make(moving: moving, cutout: liveCaptureStyle.cutout)
         let here = location.current
         // 움직임 프레임은 셔터 뒤 1초 남짓 지나 도착한다 — 아직이면 잠깐 기다린다
         let wait: Double = camera.capturedLiveFrames == nil ? 1.3 : 0
@@ -865,7 +868,8 @@ struct CollectionView: View {
                                                   set: { if !$0 { importShot = nil } })) {
                 if let shot = importShot {
                     SubjectPickView(shot: shot, cancelTitle: "취소",
-                                    onCollect: { picks in
+                                    cutout: (StampStyle(rawValue: captureStyleRaw) ?? .liveSticker).cutout,
+                                    onCollect: { picks, _ in
                                         importShot = nil
                                         collectImported(picks, from: shot)
                                     },
