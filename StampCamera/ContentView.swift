@@ -84,6 +84,8 @@ struct ContentView: View {
 
     // 방금 찍은 사진 — 여기서 스티커로 만들 것을 고른다
     @State private var shot: PhotoShot?
+    // 함께 찍힌 움직임, 손떨림을 잡은 것
+    @State private var steadyMotion: [UIImage]?
     // freshly-cut stamp celebrated in the full-screen holo reveal
     @State private var revealID: String?
 
@@ -155,6 +157,15 @@ struct ContentView: View {
         .task { collection.repairBrokenMotion() }
         .onAppear { location.start() }
         .onChange(of: camera.capturedImage) { _, newValue in handleCapture(newValue) }
+        // 움직임이 도착하면 바로 손떨림을 잡아 둔다 (고르는 화면 · 담기가 같은 것을 쓴다)
+        .onChange(of: camera.capturedLiveFrames) { _, frames in
+            guard let frames else { return }
+            let token = captureToken
+            DispatchQueue.global(qos: .userInitiated).async {
+                let steady = Stabilizer.steady(frames)
+                DispatchQueue.main.async { if captureToken == token { steadyMotion = steady } }
+            }
+        }
         // Control Center / Lock Screen tapped "펀칭 카메라 열기": drop whatever is
         // open and return to the live camera.
         // 받은 스티커 묶음(.kkuk) — 더하기만 하므로 묻지 않고 받고, 결과를 알린다
@@ -299,8 +310,7 @@ struct ContentView: View {
             }
             if let shot {
                 SubjectPickView(shot: shot, cutout: liveCaptureStyle.cutout,
-                                motion: { camera.capturedLiveFrames.map { ($0, camera.capturedLiveSeconds) } },
-                                startMoving: liveCaptureStyle.moving,
+                                motion: { steadyMotion.map { ($0, camera.capturedLiveSeconds) } },
                                 onCollect: { picks, moving in
                                     withAnimation(.easeOut(duration: 0.15)) { self.shot = nil }
                                     collect(picks, from: shot, moving: moving)
@@ -631,6 +641,7 @@ struct ContentView: View {
         PunchSound.play()                     // 펀칭! — ~1s punch sound
         Haptics.ratchet()                     // 드르륵 — the punch biting through
         camera.capturedLiveFrames = nil       // 지난 사진의 움직임이 섞이지 않게
+        steadyMotion = nil
         liveCaptureStyle = captureStyle
         // 항상 라이브로 찍어 "마스터"(움직임 + 원본)를 무조건 보관한다.
         // 보이는 모습(정지/우표/스티커/라이브)은 전부 이 마스터에서 후가공으로
@@ -703,9 +714,10 @@ struct ContentView: View {
         let style = StampStyle.make(moving: moving, cutout: liveCaptureStyle.cutout)
         let here = location.current
         // 움직임 프레임은 셔터 뒤 1초 남짓 지나 도착한다 — 아직이면 잠깐 기다린다
-        let wait: Double = camera.capturedLiveFrames == nil ? 1.3 : 0
+        let wait: Double = steadyMotion == nil ? 1.6 : 0
         DispatchQueue.main.asyncAfter(deadline: .now() + wait) {
-            let motion = camera.capturedLiveFrames.map { (frames: $0, seconds: camera.capturedLiveSeconds) }
+            // 멈춘 스티커로 담아도 움직임 원본은 함께 남긴다 — 나중에 상세에서 움직이게 바꿀 수 있게
+            let motion = steadyMotion.map { (frames: $0, seconds: camera.capturedLiveSeconds) }
             collection.addStickers(from: shot, picks: picks, style: style,
                                    motion: motion, location: here) { ids, fellBack in
                 guard let first = ids.first else { return }
@@ -2307,7 +2319,7 @@ final class CollectionStore: ObservableObject {
             // before anything below could delete it, so motion is never lost
             let material = self.motionMaterial(for: id)
             // --- the still --- (one canonical path: shape axis can't flip)
-            let still: UIImage? = self.printStamp(for: id, longSidePx: 900, clipToShape: false)
+            let still: UIImage? = self.printStamp(for: id, longSidePx: PhotoShot.stickerSide, clipToShape: false)
                 .map { Self.finishLook(Self.stillLook($0, style: style, mask: mask), ink: ink, decor: decor) }
             // --- the clip --- (only moving looks; never frozen, never wrong shape)
             var apng: Data?
@@ -2705,9 +2717,10 @@ final class CollectionStore: ObservableObject {
             return stamps.first { $0.id == id }?.image
         }
         let aspect = src.width / src.height
+        let long = min(longSidePx, max(src.width, src.height))    // 원본보다 크게 늘리지 않는다
         let outSize = aspect >= 1
-            ? CGSize(width: longSidePx, height: (longSidePx / aspect).rounded())
-            : CGSize(width: (longSidePx * aspect).rounded(), height: longSidePx)
+            ? CGSize(width: long, height: (long / aspect).rounded())
+            : CGSize(width: (long * aspect).rounded(), height: long)
         let fmt = UIGraphicsImageRendererFormat()
         fmt.scale = 1
         fmt.opaque = false
@@ -3212,7 +3225,7 @@ final class CollectionStore: ObservableObject {
 
     /// 손보기 화면의 재료: 오려내기 전 네모 조각과 지금 모양. Vision 을 쓰니 뒤에서 부른다.
     func edgeMaterial(for id: String) -> EdgeMaterial? {
-        guard let photo = printStamp(for: id, longSidePx: 900, clipToShape: false) else { return nil }
+        guard let photo = printStamp(for: id, longSidePx: PhotoShot.stickerSide, clipToShape: false) else { return nil }
         return EdgeMaterial(photo: photo, mask: customMask(for: id) ?? SubjectLift.autoMask(of: photo))
     }
 
@@ -3231,19 +3244,19 @@ final class CollectionStore: ObservableObject {
                 let win = CGRect(x: pick.window.minX * shot.size.width, y: pick.window.minY * shot.size.height,
                                  width: pick.window.width * shot.size.width,
                                  height: pick.window.height * shot.size.height)
-                let side = max(win.width, win.height)
-                guard side > 1,
-                      let base = StampCompositor.makeStamp(from: shot.raw, previewSize: shot.size, windowRect: win,
-                                                           mirrored: shot.mirrored, clipToShape: false,
-                                                           scale: min(3, 1400 / side)) else { continue }
+                // 원본 해상도로 자른다 (화면 크기로 자르면 작은 대상이 흐려진다)
+                guard let base = shot.crop(pick.window) else { continue }
                 var look = style
                 if pick.kind == .photo { look = .make(moving: style.moving, cutout: false) }
                 if pick.kind == .drawn { look = .make(moving: style.moving, cutout: true) }
-                let mask = pick.kind == .drawn
-                    ? StickerMask.outline(pick.outlineInWindow, size: base.image.size) : nil
+                // 직접 그린 것: 그 안의 대상을 또렷한 원본에서 다시 찾아 딴다
+                let mask = pick.kind == .drawn ? StickerMask.refine(pick.outlineInWindow, in: base.image) : nil
+                let cut: UIImage? = look.cutout
+                    ? (mask.flatMap { SubjectLift.cut(base.image, mask: $0, trim: true) }
+                       ?? SubjectLift.cutout(from: base.image))
+                    : nil
                 let still: UIImage
-                if look.cutout, let cut = mask.map({ SubjectLift.cut(base.image, mask: $0, trim: true) })
-                                            ?? SubjectLift.cutout(from: base.image) {
+                if let cut {
                     still = cut
                 } else {
                     // 오려낼 대상이 없다 → 우표 모양으로
@@ -3809,18 +3822,7 @@ struct SubjectMap {
     /// 대상 자리만 불투명한 그림. `only` 를 주면 그 대상들만 남긴다.
     func mask(of only: Set<UInt8>? = nil) -> UIImage? {
         let keep = only ?? Set(boxes.keys)
-        var px = [UInt8](repeating: 0, count: width * height * 4)
-        for i in 0..<(width * height) where keep.contains(labels[i]) {
-            px[i * 4] = 255; px[i * 4 + 1] = 255; px[i * 4 + 2] = 255; px[i * 4 + 3] = 255
-        }
-        return px.withUnsafeMutableBytes { raw -> UIImage? in
-            guard let ctx = CGContext(data: raw.baseAddress, width: width, height: height,
-                                      bitsPerComponent: 8, bytesPerRow: width * 4,
-                                      space: CGColorSpaceCreateDeviceRGB(),
-                                      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue),
-                  let cg = ctx.makeImage() else { return nil }
-            return UIImage(cgImage: cg)
-        }
+        return StickerMask.image(width: width, height: height) { keep.contains(labels[$0]) }
     }
 }
 

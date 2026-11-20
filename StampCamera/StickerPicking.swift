@@ -18,7 +18,7 @@ import CoreImage
 // MARK: - 찍은 사진 한 장
 
 struct PhotoShot {
-    let raw: UIImage          // 원본 사진
+    let raw: UIImage          // 원본 사진 (방향을 바로 세운 것)
     let shown: UIImage        // 고르는 화면에 보이는 그대로 (셀카는 좌우가 뒤집힌 모습)
     let size: CGSize          // `shown` 이 놓이는 자리의 크기(pt) — 카메라는 화면, 가져온 사진은 사진 비율
     let mirrored: Bool
@@ -26,7 +26,9 @@ struct PhotoShot {
     let faces: [CGRect]       // 얼굴 자리 (0...1, 왼쪽 위 원점)
 
     /// 카메라로 찍은 사진: 화면(`size`)을 가득 채워 보이던 부분이 `shown` 이 된다. Vision 을 쓰니 뒤에서 부른다.
-    static func make(raw: UIImage, size: CGSize, mirrored: Bool) -> PhotoShot? {
+    static func make(raw original: UIImage, size: CGSize, mirrored: Bool) -> PhotoShot? {
+        // 방향은 여기서 한 번만 바로 세운다 — 자를 때마다 12MP 를 다시 그리지 않게
+        let raw = original.normalizedUp()
         let side = max(size.width, size.height)
         guard min(size.width, size.height) > 1,
               let shown = StampCompositor.makeStamp(from: raw, previewSize: size,
@@ -43,6 +45,23 @@ struct PhotoShot {
         guard s.width > 1, s.height > 1 else { return nil }
         let k = 800 / max(s.width, s.height)
         return make(raw: photo, size: CGSize(width: s.width * k, height: s.height * k), mirrored: false)
+    }
+
+    /// 스티커 한 장의 긴 변(픽셀). 원본이 이보다 작으면 원본 그대로 — 늘리지 않는다.
+    static let stickerSide: CGFloat = 1200
+
+    /// 원본 사진에서 `window`(`shown` 기준 0...1) 자리를 원본 해상도로 자른다. 긴 변은 `longSide` 까지.
+    /// 화면 크기가 아니라 원본 픽셀을 기준으로 하므로, 작은 대상도 원본에 담긴 만큼 또렷하다.
+    func crop(_ window: CGRect, longSide: CGFloat = PhotoShot.stickerSide) -> (image: UIImage, cropNorm: CGRect)? {
+        let win = CGRect(x: window.minX * size.width, y: window.minY * size.height,
+                         width: window.width * size.width, height: window.height * size.height)
+        let side = max(win.width, win.height)
+        let px = CGSize(width: raw.size.width * raw.scale, height: raw.size.height * raw.scale)
+        guard side > 1, px.width > 0, px.height > 0 else { return nil }
+        // 화면 1pt 에 원본 몇 px 이 들어가는지 (makeStamp 와 같은 aspect-fill 셈)
+        let pxPerPoint = 1 / max(size.width / px.width, size.height / px.height)
+        return StampCompositor.makeStamp(from: raw, previewSize: size, windowRect: win, mirrored: mirrored,
+                                         clipToShape: false, scale: min(pxPerPoint, longSide / side))
     }
 }
 
@@ -121,10 +140,13 @@ enum StickerProposals {
     /// `cutout` 이 아니면(기본 모양이 우표) 우표 모양으로. 크게 그릴 때는 실제와 똑같이 다시 오려낸다.
     static func thumb(for c: StickerCandidate, in shot: PhotoShot,
                       cutout: Bool = true, maxSide: CGFloat = 240) -> UIImage? {
-        guard let crop = shot.shown.cropped(unit: c.window, maxSide: maxSide) else { return nil }
+        // 아래 줄의 작은 그림은 화면용 사진에서, 가운데 큰 그림은 원본에서 자른다
+        let source = maxSide > 400 ? shot.crop(c.window, longSide: maxSide)?.image
+                                   : shot.shown.cropped(unit: c.window, maxSide: maxSide)
+        guard let crop = source else { return nil }
         switch c.kind {
         case .drawn:
-            return StickerMask.outline(c.outlineInWindow, size: crop.size)
+            return StickerMask.refine(c.outlineInWindow, in: crop)
                 .flatMap { SubjectLift.cut(crop, mask: $0, trim: true) } ?? crop
         case .subject, .everything, .face:
             guard cutout else { return CollectionStore.stampShaped(crop) }
@@ -155,11 +177,61 @@ enum StickerProposals {
         case .photo:
             return CollectionStore.clipLook(master, style: .liveStamp)
         case .drawn:
+            // 모양은 첫 장에서 한 번 정하고 모든 장에 같게 — 테두리는 그대로, 안의 장면만 움직인다
             return CollectionStore.clipLook(master, style: .liveSticker,
-                                            mask: StickerMask.outline(c.outlineInWindow, size: master[0].size))
+                                            mask: StickerMask.refine(c.outlineInWindow, in: master[0]))
         case .subject, .everything, .face:
             return CollectionStore.clipLook(master, style: cutout ? .liveSticker : .liveStamp)
         }
+    }
+}
+
+// MARK: - 손떨림 보정
+
+/// 움직이는 스티커의 손떨림을 잡는다. 모든 장을 가운데 장에 맞춰 옮겨, 스티커는 제자리에 있고
+/// 안의 대상만 움직이게 한다. 장면이 통째로 밀린 만큼만 되돌리므로 대상의 움직임은 그대로 남는다.
+enum Stabilizer {
+    /// 이보다 크게 밀린 장은 흔들림이 아니라 카메라를 옮긴 것으로 보고 손대지 않는다 (긴 변에 대한 비율)
+    static let maxShift: CGFloat = 0.08
+
+    static func steady(_ frames: [UIImage]) -> [UIImage] {
+        guard frames.count > 2 else { return frames }
+        let reference = frames[frames.count / 2]
+        guard let ref = small(reference) else { return frames }
+        return frames.map { frame in
+            guard frame !== reference, let cg = frame.normalizedUp().cgImage, let target = small(frame),
+                  let shift = offset(of: target, to: ref) else { return frame }
+            let k = CGFloat(cg.width) / CGFloat(target.width)
+            return shifted(cg, dx: shift.x * k, dy: shift.y * k) ?? frame
+        }
+    }
+
+    /// `image` 를 `reference` 에 겹치려면 옮길 거리 (CoreGraphics 좌표 — 왼쪽 아래 원점, 위가 +y).
+    /// Vision 의 정렬 값이 이 좌표계라 그대로 쓴다. 너무 크면(카메라를 옮겼다) nil.
+    static func offset(of image: CGImage, to reference: CGImage) -> CGPoint? {
+        let request = VNTranslationalImageRegistrationRequest(targetedCGImage: image)
+        guard (try? VNImageRequestHandler(cgImage: reference).perform([request])) != nil,
+              let t = (request.results?.first as? VNImageTranslationAlignmentObservation)?.alignmentTransform
+        else { return nil }
+        let limit = CGFloat(max(reference.width, reference.height)) * maxShift
+        guard abs(t.tx) <= limit, abs(t.ty) <= limit else { return nil }
+        return CGPoint(x: t.tx, y: t.ty)
+    }
+
+    /// 정렬은 작게 줄인 그림으로 한다 — 빠르고, 잔떨림보다 장면 전체의 밀림을 본다.
+    private static func small(_ image: UIImage) -> CGImage? {
+        image.cropped(unit: StickerProposals.unit, maxSide: 320)?.cgImage
+    }
+
+    /// 옮겨 그린다. 옮기며 드러난 가장자리는 원래 장으로 메워 빈 띠가 생기지 않게 한다.
+    static func shifted(_ cg: CGImage, dx: CGFloat, dy: CGFloat) -> UIImage? {
+        guard let ctx = CGContext(data: nil, width: cg.width, height: cg.height, bitsPerComponent: 8, bytesPerRow: 0,
+                                  space: CGColorSpaceCreateDeviceRGB(),
+                                  bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
+        let full = CGRect(x: 0, y: 0, width: cg.width, height: cg.height)
+        ctx.draw(cg, in: full)
+        ctx.draw(cg, in: full.offsetBy(dx: dx.rounded(), dy: dy.rounded()))
+        return ctx.makeImage().map { UIImage(cgImage: $0) }
     }
 }
 
@@ -210,6 +282,80 @@ enum StickerMask {
         guard maxX >= minX, maxY >= minY else { return nil }
         return CGRect(x: CGFloat(minX) / CGFloat(w), y: CGFloat(minY) / CGFloat(h),
                       width: CGFloat(maxX - minX + 1) / CGFloat(w), height: CGFloat(maxY - minY + 1) / CGFloat(h))
+    }
+}
+
+extension StickerMask {
+    /// 둘러 그린 테두리 둘레에 남겨 두는 여유 — 대상이 테두리 밖으로 조금 삐져나가도 통째로 담기게.
+    static func room(around box: CGRect) -> CGRect {
+        box.insetBy(dx: -box.width * 0.15, dy: -box.height * 0.15).intersection(StickerProposals.unit)
+    }
+
+    /// 둘러 그린 테두리 안에서 대상을 찾아 그 대상만 남기는 모양. 대상이 없으면 그린 모양 그대로.
+    /// `points` 는 `image` 기준 0...1. Vision 을 쓰니 뒤에서 부른다.
+    static func refine(_ points: [CGPoint], in image: UIImage) -> UIImage? {
+        if let map = SubjectLift.subjects(in: image), let mask = refine(points, map: map) { return mask }
+        return outline(points, size: image.size)
+    }
+
+    /// 대상 지도 위에서 고른다:
+    ///  · 대상이 거의(60% 넘게) 테두리 안이면 그 대상을 통째로 — 테두리를 대충 그려도 잘리지 않는다
+    ///  · 대상의 일부만 둘렀으면 그 부분만 — 대상의 가장자리를 따라 오리고, 테두리 쪽은 그린 대로 자른다
+    ///  · 테두리 안에 대상이 거의 없으면 nil (그린 모양 그대로 쓴다)
+    static func refine(_ points: [CGPoint], map: SubjectMap) -> UIImage? {
+        guard let inside = coverage(points, width: map.width, height: map.height) else { return nil }
+        let lasso = inside.reduce(0) { $0 + ($1 ? 1 : 0) }
+        guard lasso > 0 else { return nil }
+        var total = [Int](repeating: 0, count: 256), within = total
+        for (i, l) in map.labels.enumerated() where l != 0 {
+            total[Int(l)] += 1
+            if inside[i] { within[Int(l)] += 1 }
+        }
+        var whole = Set<UInt8>(), part = Set<UInt8>()
+        for l in map.boxes.keys where within[Int(l)] * 30 >= lasso {          // 테두리 안의 3% 넘게 차지한 대상만
+            if within[Int(l)] * 10 >= total[Int(l)] * 6 { whole.insert(l) } else { part.insert(l) }
+        }
+        guard !whole.isEmpty || !part.isEmpty else { return nil }
+        return image(width: map.width, height: map.height) { i in
+            let l = map.labels[i]
+            return whole.contains(l) || (part.contains(l) && inside[i])
+        }
+    }
+
+    /// 테두리 안쪽인 점들 (왼쪽 위부터 한 줄씩).
+    static func coverage(_ points: [CGPoint], width: Int, height: Int) -> [Bool]? {
+        guard points.count > 2, width > 0, height > 0 else { return nil }
+        var px = [UInt8](repeating: 0, count: width * height)
+        let drawn: Bool = px.withUnsafeMutableBytes { raw in
+            guard let ctx = CGContext(data: raw.baseAddress, width: width, height: height, bitsPerComponent: 8,
+                                      bytesPerRow: width, space: CGColorSpaceCreateDeviceGray(),
+                                      bitmapInfo: CGImageAlphaInfo.none.rawValue) else { return false }
+            // 메모리의 첫 줄이 그림의 맨 위다 — y 를 뒤집어 그린다
+            let w = CGFloat(width), h = CGFloat(height)
+            ctx.move(to: CGPoint(x: points[0].x * w, y: (1 - points[0].y) * h))
+            for p in points.dropFirst() { ctx.addLine(to: CGPoint(x: p.x * w, y: (1 - p.y) * h)) }
+            ctx.closePath()
+            ctx.setFillColor(gray: 1, alpha: 1)
+            ctx.fillPath()
+            return true
+        }
+        return drawn ? px.map { $0 > 127 } : nil
+    }
+
+    /// 남길 점만 불투명한 그림.
+    static func image(width: Int, height: Int, keep: (Int) -> Bool) -> UIImage? {
+        var px = [UInt8](repeating: 0, count: width * height * 4)
+        for i in 0..<(width * height) where keep(i) {
+            px[i * 4] = 255; px[i * 4 + 1] = 255; px[i * 4 + 2] = 255; px[i * 4 + 3] = 255
+        }
+        return px.withUnsafeMutableBytes { raw -> UIImage? in
+            guard let ctx = CGContext(data: raw.baseAddress, width: width, height: height,
+                                      bitsPerComponent: 8, bytesPerRow: width * 4,
+                                      space: CGColorSpaceCreateDeviceRGB(),
+                                      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue),
+                  let cg = ctx.makeImage() else { return nil }
+            return UIImage(cgImage: cg)
+        }
     }
 }
 
@@ -312,9 +458,9 @@ struct SubjectPickView: View {
     var cancelTitle: LocalizedStringKey = "다시 찍기"
     /// 기본 모양이 오려낸 스티커인지 — 아니면 우표 모양으로 보이고 그렇게 담긴다
     var cutout = true
-    /// 함께 찍힌 움직임을 가져오는 길. 없으면(가져온 사진) 움직임 단추가 없다
+    /// 함께 찍힌 움직임을 가져오는 길. 없으면(가져온 사진) 움직임 단추가 없다.
+    /// 처음에는 언제나 멈춘 스티커다 — 움직임 단추를 켰을 때만 움직이는 스티커가 된다
     var motion: (() -> (frames: [UIImage], seconds: Double)?)? = nil
-    var startMoving = false
     var onCollect: (_ picks: [StickerCandidate], _ moving: Bool) -> Void
     var onCancel: () -> Void
 
@@ -358,7 +504,6 @@ struct SubjectPickView: View {
         }
         .overlay(alignment: .bottom) { tray }
         .task {
-            moving = startMoving && motion != nil
             let built = await Task.detached { StickerProposals.candidates(for: shot, cutout: cutout) }.value
             withAnimation(.easeOut(duration: 0.2)) {
                 candidates = built + candidates          // 그새 그린 것이 있으면 뒤에 둔다
@@ -394,8 +539,8 @@ struct SubjectPickView: View {
         let wantClip = moving && clips[id] == nil
         guard wantStill || wantClip else { return }
         let material = wantClip ? motion?() : nil
-        if wantClip, material == nil, waits < 3 {
-            // 움직임 프레임은 셔터 뒤 1초 남짓 지나 도착한다
+        if wantClip, material == nil, waits < 6 {
+            // 움직임 프레임은 셔터 뒤 1초 남짓 지나 도착하고, 손떨림을 잡는 데 조금 더 걸린다
             waits += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { prepare() }
         }
@@ -512,7 +657,8 @@ struct SubjectPickView: View {
         guard points.count >= 8, let x0 = xs.min(), let x1 = xs.max(), let y0 = ys.min(), let y1 = ys.max(),
               x1 - x0 > 0.06, y1 - y0 > 0.04 else { return }
         var c = StickerCandidate(id: (candidates.map(\.id).max() ?? 0) + 1000, kind: .drawn,
-                                 window: CGRect(x: x0, y: y0, width: x1 - x0, height: y1 - y0), outline: points)
+                                 window: StickerMask.room(around: CGRect(x: x0, y: y0, width: x1 - x0, height: y1 - y0)),
+                                 outline: points)
         c.thumb = StickerProposals.thumb(for: c, in: shot)
         Haptics.bounce()
         withAnimation(.easeOut(duration: 0.2)) {

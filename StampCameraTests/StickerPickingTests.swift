@@ -213,3 +213,171 @@ struct CustomMaskStoreTests {
         #expect(!h.fileExists("\(id).cut"))
     }
 }
+
+// MARK: - 직접 그린 영역 안의 대상 따기 · 원본 해상도
+
+struct DrawnRefineTests {
+    /// 20×20 지도: 1번은 가운데 네모(6...13), 2번은 오른쪽 아래 큰 덩어리(14...19 × 10...19).
+    private func map() throws -> SubjectMap {
+        var px = [UInt8](repeating: 0, count: 400)
+        for y in 6...13 { for x in 6...13 { px[y * 20 + x] = 1 } }
+        for y in 10...19 { for x in 14...19 { px[y * 20 + x] = 2 } }
+        return try #require(SubjectMap(width: 20, height: 20, labels: px))
+    }
+
+    private func square(_ x0: CGFloat, _ y0: CGFloat, _ x1: CGFloat, _ y1: CGFloat) -> [CGPoint] {
+        [CGPoint(x: x0, y: y0), CGPoint(x: x1, y: y0), CGPoint(x: x1, y: y1), CGPoint(x: x0, y: y1)]
+    }
+
+    @Test func 테두리_안쪽_칸을_위아래_그대로_칠한다() throws {
+        let inside = try #require(StickerMask.coverage(square(0, 0, 1, 0.5), width: 10, height: 10))
+        #expect(inside[1 * 10 + 5])          // 위쪽
+        #expect(!inside[8 * 10 + 5])         // 아래쪽
+    }
+
+    @Test func 대충_둘러도_안의_대상을_통째로_딴다() throws {
+        // 1번(6~13)의 한쪽 가장자리를 빼먹고(6~12, 77%) 둘러도 — 대부분이 안에 있으니 — 1번 전체가 남는다
+        let mask = try #require(StickerMask.refine(square(0.31, 0.31, 0.66, 0.66), map: try map()))
+        let b = try #require(StickerMask.bounds(of: mask))
+        #expect(abs(b.minX - 0.30) < 0.001 && abs(b.maxX - 0.70) < 0.001)
+        #expect(abs(b.minY - 0.30) < 0.001 && abs(b.maxY - 0.70) < 0.001)
+    }
+
+    @Test func 넓게_둘러도_바탕은_버리고_대상만_남긴다() throws {
+        let mask = try #require(StickerMask.refine(square(0.1, 0.1, 0.72, 0.72), map: try map()))
+        let b = try #require(StickerMask.bounds(of: mask))
+        #expect(abs(b.minX - 0.30) < 0.001 && abs(b.maxX - 0.70) < 0.001)
+    }
+
+    @Test func 대상의_일부만_두르면_그_부분만_남긴다() throws {
+        // 2번(세로 10~19)의 윗부분(10~12)만 두른다 → 2번 가운데 테두리 안쪽만
+        let mask = try #require(StickerMask.refine(square(0.68, 0.48, 1.0, 0.65), map: try map()))
+        let b = try #require(StickerMask.bounds(of: mask))
+        #expect(b.minX >= 0.69)                               // 1번은 들어오지 않는다
+        #expect(b.maxY <= 0.66)                               // 테두리 아래로 내려가지 않는다
+        #expect(abs(b.minY - 0.5) < 0.06)                     // 2번의 윗가장자리에서 시작
+    }
+
+    @Test func 안에_대상이_없으면_그린_모양_그대로() throws {
+        #expect(StickerMask.refine(square(0, 0, 0.25, 0.25), map: try map()) == nil)
+    }
+
+    @Test func 둘러_그린_자리는_여유를_둔다() {
+        let room = StickerMask.room(around: CGRect(x: 0.4, y: 0.4, width: 0.2, height: 0.2))
+        #expect(room.contains(CGRect(x: 0.37, y: 0.37, width: 0.26, height: 0.26)))
+        #expect(StickerMask.room(around: CGRect(x: 0, y: 0, width: 0.5, height: 0.5)).minX == 0)
+    }
+}
+
+struct SourceResolutionTests {
+    private func photo(_ w: CGFloat, _ h: CGFloat) -> UIImage {
+        let fmt = UIGraphicsImageRendererFormat()
+        fmt.scale = 1
+        return UIGraphicsImageRenderer(size: CGSize(width: w, height: h), format: fmt).image { ctx in
+            UIColor.orange.setFill()
+            ctx.fill(CGRect(x: 0, y: 0, width: w, height: h))
+        }
+    }
+
+    private func shot(_ raw: UIImage, size: CGSize) -> PhotoShot {
+        PhotoShot(raw: raw, shown: raw, size: size, mirrored: false, map: nil, faces: [])
+    }
+
+    @Test func 작은_대상도_원본에_담긴_만큼_또렷하게_자른다() throws {
+        // 3000×4000 원본을 300×400 화면에 비춘다 → 화면 1pt 에 원본 10px
+        let s = shot(photo(3000, 4000), size: CGSize(width: 300, height: 400))
+        let out = try #require(s.crop(CGRect(x: 0.4, y: 0.4, width: 0.1, height: 0.1)))   // 화면 30×40pt
+        #expect(abs(out.image.size.width * out.image.scale - 300) < 2)                    // 원본 300px 그대로
+        #expect(abs(out.cropNorm.minX - 0.4) < 0.001)
+    }
+
+    @Test func 큰_대상은_긴_변을_스티커_크기로_맞춘다() throws {
+        let s = shot(photo(3000, 4000), size: CGSize(width: 300, height: 400))
+        let out = try #require(s.crop(CGRect(x: 0, y: 0, width: 1, height: 1)))
+        let long = max(out.image.size.width, out.image.size.height) * out.image.scale
+        #expect(abs(long - PhotoShot.stickerSide) < 2)
+    }
+
+    @Test func 원본보다_크게_늘리지_않는다() throws {
+        let s = shot(photo(300, 400), size: CGSize(width: 300, height: 400))
+        let out = try #require(s.crop(CGRect(x: 0, y: 0, width: 1, height: 1)))
+        #expect(abs(max(out.image.size.width, out.image.size.height) * out.image.scale - 400) < 2)
+    }
+}
+
+// MARK: - 손떨림 보정
+
+struct StabilizerTests {
+    /// 손떨림처럼 장면이 통째로 밀린 장: 큰 무늬 그림에서 (ox, oy)(왼쪽 위 원점)부터 200×160 을 잘라 낸다.
+    private static let scene: [UInt8] = {
+        let W = 400, H = 360
+        var px = [UInt8](repeating: 0, count: W * H)
+        var seed: UInt64 = 7
+        func rnd() -> Double {
+            seed = seed &* 6364136223846793005 &+ 1442695040888963407
+            return Double(seed >> 33) / Double(1 << 31)
+        }
+        for _ in 0..<160 {
+            let cx = rnd() * Double(W), cy = rnd() * Double(H), r = 8 + rnd() * 30, v = rnd() * 255
+            for y in 0..<H { for x in 0..<W {
+                let dx = Double(x) - cx, dy = Double(y) - cy
+                if dx * dx + dy * dy < r * r { px[y * W + x] = UInt8((Double(px[y * W + x]) + v) / 2) }
+            } }
+        }
+        return px
+    }()
+
+    private func frame(_ ox: Int, _ oy: Int) -> UIImage {
+        let w = 200, h = 160
+        var rgba = [UInt8](repeating: 255, count: w * h * 4)
+        for y in 0..<h { for x in 0..<w {
+            let v = Self.scene[(y + oy) * 400 + x + ox]
+            rgba[(y * w + x) * 4] = v; rgba[(y * w + x) * 4 + 1] = v; rgba[(y * w + x) * 4 + 2] = v
+        } }
+        let ctx = CGContext(data: &rgba, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+                            space: CGColorSpaceCreateDeviceRGB(),
+                            bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+        return UIImage(cgImage: ctx.makeImage()!)
+    }
+
+    /// 두 장의 가운데 부분이 얼마나 다른지 (0 = 같다).
+    private func difference(_ a: UIImage, _ b: UIImage) -> Double {
+        func gray(_ img: UIImage) -> [UInt8] {
+            let cg = img.cgImage!
+            var px = [UInt8](repeating: 0, count: cg.width * cg.height)
+            let ctx = CGContext(data: &px, width: cg.width, height: cg.height, bitsPerComponent: 8,
+                                bytesPerRow: cg.width, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: 0)!
+            ctx.draw(cg, in: CGRect(x: 0, y: 0, width: cg.width, height: cg.height))
+            return px
+        }
+        let x = gray(a), y = gray(b)
+        var sum = 0.0, n = 0.0
+        for row in 40..<120 { for col in 50..<150 {
+            sum += abs(Double(x[row * 200 + col]) - Double(y[row * 200 + col])); n += 1
+        } }
+        return sum / n
+    }
+
+    @Test func 밀린_장을_가운데_장에_맞춰_되돌린다() {
+        let reference = frame(100, 100)
+        let shaken = [frame(90, 94), reference, frame(106, 103)]     // 장면이 이리저리 밀렸다
+        let steady = Stabilizer.steady(shaken)
+        #expect(steady.count == 3)
+        #expect(steady[1] === reference)                             // 가운데 장은 그대로
+        #expect(difference(shaken[0], reference) > 10)               // 보정 전에는 어긋나 있고
+        #expect(difference(steady[0], reference) < 3)                // 보정하면 겹친다
+        #expect(difference(steady[2], reference) < 3)
+    }
+
+    @Test func 크게_옮긴_장은_흔들림으로_보지_않는다() {
+        let reference = frame(100, 100)
+        let moved = frame(10, 100)                                   // 긴 변의 45% 를 옮겼다
+        #expect(Stabilizer.steady([moved, reference, reference])[0] === moved)
+    }
+
+    @Test func 두_장_이하는_손대지_않는다() {
+        let one = [frame(100, 100), frame(90, 90)]
+        let out = Stabilizer.steady(one)
+        #expect(out[0] === one[0] && out[1] === one[1])
+    }
+}
