@@ -1,10 +1,10 @@
 // MakeAppIcon.swift
-// 펀칭 앱 아이콘 — "꾹 눌러 뜯은, 움직이는 스티커".
+// 펀칭 앱 아이콘 — "꾹 눌러 뜯어낸 스티커".
 //
-//   따뜻한 노랑→코랄 바탕 위에, 갓 뜯어 모서리가 벗겨지는 흰 스티커 한 장.
-//   스티커 가운데엔 펀칭기의 둥근 창(렌즈)이 있고, 왼쪽 위 짧은 선 셋이 움직임을 말한다.
-//   그림은 이 다섯 가지뿐이다: 바탕 · 스티커 · 렌즈 · 벗겨진 모서리 · 움직임 선.
-//   (반짝이 · 렌즈 테 · 종이 그라데이션은 2026-11 에 덜어 냈다)
+//   따뜻한 노랑→코랄 바탕 위에, 갓 뜯어 모서리가 벗겨지는 흰 스티커 한 장이 웃고 있다.
+//   스티커 뒤 짙은 자국은 방금 뜯겨 나간 자리다.
+//   그림은 이 다섯 가지뿐이다: 바탕 · 뜯긴 자리 · 스티커 · 웃는 얼굴 · 벗겨진 모서리.
+//   (카메라 렌즈와 움직임 선은 2026-11 에 뗐다 — 카메라 앱이 아니라 스티커 앱이다)
 //
 //   아이콘의 원본은 이 파일 하나다. 한 번 돌리면 아래를 모두 다시 그린다.
 //     · 앱 아이콘 라이트 · 다크 · 틴트   StampCamera/Assets.xcassets/AppIcon.appiconset/
@@ -27,21 +27,20 @@ func rad(_ d: CGFloat) -> CGFloat { d * .pi / 180 }
 /// 한 장의 색. 모양은 모두 같다.
 struct Look {
     var background: [UInt32]
+    var hole: CGColor
     var sticker: UInt32
-    var lens: UInt32
-    var glint: UInt32
+    var face: UInt32
     var flap: UInt32
-    var marks: UInt32
     var shadow: UInt32
 
-    static let light = Look(background: [0xFFCF5C, 0xFF7A52], sticker: 0xFFFFFF, lens: 0x2B2140,
-                            glint: 0xFFFFFF, flap: 0xEDE6DA, marks: 0xFFFFFF, shadow: 0x8A3210)
+    static let light = Look(background: [0xFFCF5C, 0xFF7A52], hole: rgb(0xC9461F, 0.42), sticker: 0xFFFFFF,
+                            face: 0x2B2140, flap: 0xEDE6DA, shadow: 0x8A3210)
     /// 다크: 어두운 바탕에 주황 스티커
-    static let dark = Look(background: [0x2B2B30, 0x0E0E10], sticker: 0xFFAD66, lens: 0x2E1F14,
-                           glint: 0xFFD2A8, flap: 0xE08F52, marks: 0xFFAD66, shadow: 0x000000)
+    static let dark = Look(background: [0x2B2B30, 0x0E0E10], hole: rgb(0x000000, 0.55), sticker: 0xFFAD66,
+                           face: 0x2E1F14, flap: 0xE08F52, shadow: 0x000000)
     /// 틴트: 검은 바탕에 회색 — 색은 시스템이 입힌다
-    static let tinted = Look(background: [0x000000, 0x000000], sticker: 0xDCDCDC, lens: 0x5A5A5A,
-                             glint: 0xF2F2F2, flap: 0xA8A8A8, marks: 0xDCDCDC, shadow: 0x000000)
+    static let tinted = Look(background: [0x000000, 0x000000], hole: rgb(0x3C3C3C), sticker: 0xDCDCDC,
+                             face: 0x4A4A4A, flap: 0xA8A8A8, shadow: 0x000000)
 }
 
 let space = CGColorSpaceCreateDeviceRGB()
@@ -80,18 +79,14 @@ func render(_ look: Look, width: Int, height: Int) -> CGImage {
     let lifted = body.intersection(halfPlane(fold, keep: false))        // 들린 모서리
     let flap = lifted.copy(using: [CGAffineTransform(a: 0, b: -1, c: -1, d: 0, tx: fold, ty: fold)])!
 
-    ctx.translateBy(x: 28, y: 28)
+    ctx.translateBy(x: 44, y: 44)
     ctx.rotate(by: rad(-9))
 
-    // 움직임 선 셋 — 방금 뜯겼고, 움직인다
-    ctx.setLineCap(.round); ctx.setStrokeColor(rgb(look.marks)); ctx.setLineWidth(28)
-    let from = CGPoint(x: -half + corner * 0.29, y: -half + corner * 0.29)
-    for (deg, len) in [(CGFloat(198), CGFloat(64)), (225, 88), (252, 64)] {
-        let a = rad(deg), r0: CGFloat = 72
-        ctx.move(to: CGPoint(x: from.x + cos(a) * r0, y: from.y + sin(a) * r0))
-        ctx.addLine(to: CGPoint(x: from.x + cos(a) * (r0 + len), y: from.y + sin(a) * (r0 + len)))
-    }
-    ctx.strokePath()
+    // 뜯겨 나간 자리 — 스티커와 같은 모양이 왼쪽 위에 남는다
+    ctx.saveGState()
+    ctx.translateBy(x: -84, y: -84)
+    ctx.addPath(body); ctx.setFillColor(look.hole); ctx.fillPath()
+    ctx.restoreGState()
 
     // 스티커 종이 한 장과 그림자 하나
     ctx.saveGState()
@@ -99,14 +94,16 @@ func render(_ look: Look, width: Int, height: Int) -> CGImage {
     ctx.addPath(stuck); ctx.setFillColor(rgb(look.sticker)); ctx.fillPath()
     ctx.restoreGState()
 
-    // 렌즈: 한 색 원과 반짝임 하나
+    // 웃는 얼굴: 눈 둘과 입 하나
     ctx.saveGState()
     ctx.addPath(stuck); ctx.clip()
-    let c = CGPoint(x: -30, y: -30), r: CGFloat = 160
-    ctx.setFillColor(rgb(look.lens))
-    ctx.fillEllipse(in: CGRect(x: c.x - r, y: c.y - r, width: r * 2, height: r * 2))
-    ctx.setFillColor(rgb(look.glint, 0.92))
-    ctx.fillEllipse(in: CGRect(x: c.x - r * 0.52, y: c.y - r * 0.56, width: r * 0.34, height: r * 0.34))
+    ctx.setFillColor(rgb(look.face))
+    for x in [CGFloat(-118), 62] {
+        ctx.fillEllipse(in: CGRect(x: x - 36, y: -126, width: 72, height: 72))
+    }
+    ctx.setStrokeColor(rgb(look.face)); ctx.setLineWidth(40); ctx.setLineCap(.round)
+    ctx.addArc(center: CGPoint(x: -28, y: -20), radius: 118, startAngle: rad(28), endAngle: rad(152), clockwise: false)
+    ctx.strokePath()
     ctx.restoreGState()
 
     // 벗겨진 모서리: 접는 선에 비춰 뒤집은 종이 뒷면
