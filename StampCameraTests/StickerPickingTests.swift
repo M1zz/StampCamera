@@ -381,3 +381,32 @@ struct StabilizerTests {
         #expect(out[0] === one[0] && out[1] === one[1])
     }
 }
+
+// MARK: - 단추 없이 둘러 그리기
+
+struct ClosesLoopTests {
+    /// 가운데 (cx, cy), 반지름 r 인 원을 `sweep` 도만큼 그린 손가락 길.
+    private func arc(_ cx: CGFloat, _ cy: CGFloat, _ r: CGFloat, sweep: CGFloat) -> [CGPoint] {
+        stride(from: 0, through: sweep, by: 10).map {
+            CGPoint(x: cx + r * cos($0 * .pi / 180), y: cy + r * sin($0 * .pi / 180))
+        }
+    }
+
+    @Test func 끝이_처음_자리로_돌아오면_도형이다() {
+        #expect(StickerMask.closesLoop(arc(200, 300, 80, sweep: 360)))
+        #expect(StickerMask.closesLoop(arc(200, 300, 80, sweep: 330)))     // 조금 덜 닫혀도 된다
+    }
+
+    @Test func 반쯤_그리다_만_것은_도형이_아니다() {
+        #expect(!StickerMask.closesLoop(arc(200, 300, 80, sweep: 200)))
+    }
+
+    @Test func 그냥_그은_선은_도형이_아니다() {
+        let line = (0...20).map { CGPoint(x: 100 + CGFloat($0) * 10, y: 300) }
+        #expect(!StickerMask.closesLoop(line))
+    }
+
+    @Test func 너무_작은_동그라미는_누른_것으로_본다() {
+        #expect(!StickerMask.closesLoop(arc(200, 300, 12, sweep: 360)))
+    }
+}
