@@ -4303,28 +4303,36 @@ private struct CollectFX: View {
 /// Plays the "punching.mp3" punch sound when the shutter is pressed. The clip
 /// is a few seconds long, so we only play the first ~1s and fade it out.
 enum PunchSound {
-    private static let player: AVAudioPlayer? = {
-        guard let url = Bundle.main.url(forResource: "punching", withExtension: "mp3"),
-              let p = try? AVAudioPlayer(contentsOf: url) else { return nil }
-        p.prepareToPlay()
-        return p
-    }()
+    /// 소리 일은 전용 줄에서 한다 — 오디오 세션을 켜고 플레이어를 만드는 일은 메인 스레드를 붙잡을 수 있다.
+    private static let queue = DispatchQueue(label: "com.devkoan.StampCamera.punchSound", qos: .userInteractive)
+    // 아래 둘은 queue 에서만 만진다
+    nonisolated(unsafe) private static var player: AVAudioPlayer?
+    nonisolated(unsafe) private static var playing = 0      // 몇 번째 소리인지 — 늦게 온 페이드가 새 소리를 끊지 않게
 
     static func play() {
-        // audible even alongside other audio
-        try? AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
-        try? AVAudioSession.sharedInstance().setActive(true)
-        guard let p = player else { return }
-        p.stop()
-        p.currentTime = 0
-        p.volume = 1
-        p.play()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
-            player?.setVolume(0, fadeDuration: 0.15)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            player?.stop()
-            player?.volume = 1
+        queue.async {
+            // audible even alongside other audio
+            try? AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
+            try? AVAudioSession.sharedInstance().setActive(true)
+            if player == nil, let url = Bundle.main.url(forResource: "punching", withExtension: "mp3") {
+                player = try? AVAudioPlayer(contentsOf: url)
+                player?.prepareToPlay()
+            }
+            guard let p = player else { return }
+            playing += 1
+            let mine = playing
+            p.stop()
+            p.currentTime = 0
+            p.volume = 1
+            p.play()
+            queue.asyncAfter(deadline: .now() + 0.85) {
+                if playing == mine { p.setVolume(0, fadeDuration: 0.15) }
+            }
+            queue.asyncAfter(deadline: .now() + 1.0) {
+                guard playing == mine else { return }
+                p.stop()
+                p.volume = 1
+            }
         }
     }
 }

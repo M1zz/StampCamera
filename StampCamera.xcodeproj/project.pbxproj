@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BF9EE86DD4E4E2CA0D87FB4 /* StampCameraPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */; };
 		40E58A169ED943D1A55796C3 /* StampCameraRoadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */; };
 		586C02A22FDB11C400D2A003 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C02A12FDB11C300D2A003 /* Messages.framework */; };
 		586C02AE2FDB11C400D2A003 /* sticker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 586C029F2FDB11C300D2A003 /* sticker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		58EB64DA2FDECDA0006D84DF /* keyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 58EB64D32FDECDA0006D84DF /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5C5C0A11D3B04E6F9A1B2C01 /* ScreenshotScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */; };
-		7A1C0DE10000000000000002 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7A1C0DE10000000000000001 /* InfoPlist.xcstrings */; };
-		936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */; };
-		0BF9EE86DD4E4E2CA0D87FB4 /* StampCameraPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */; };
 		6082D95CEEB74C81BC71AB70 /* StampCameraPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C31AE9FC874ACD90E7F695 /* StampCameraPlans.swift */; };
+		7A1C0DE10000000000000002 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7A1C0DE10000000000000001 /* InfoPlist.xcstrings */; };
+		7D6503E5830F4F97A98687DD /* PlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962416049B644E5D97EC206A /* PlanTests.swift */; };
+		936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */; };
 		9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */; };
 		9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79192FD651EB00B6DA22 /* punching.mp3 */; };
 		A1000011 /* StampCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001 /* StampCameraApp.swift */; };
@@ -25,23 +26,22 @@
 		A1000015 /* PuncherFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000005 /* PuncherFrameView.swift */; };
 		A1000016 /* StampShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006 /* StampShape.swift */; };
 		A1000017 /* StampCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000007 /* StampCompositor.swift */; };
-		B7C0FFEE00000012 /* StickerDecor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000002 /* StickerDecor.swift */; };
-		B7C0FFEE000001A2 /* ZoomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A2 /* ZoomControl.swift */; };
-		B7C0FFEE000001A1 /* StickerPicking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A1 /* StickerPicking.swift */; };
-		B7C0FFEE00000011 /* StickerArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000001 /* StickerArchive.swift */; };
 		A1000018 /* CameraLaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000009 /* CameraLaunchRouter.swift */; };
 		A1000019 /* OpenKkukCameraIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000A /* OpenKkukCameraIntent.swift */; };
 		A1000211 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000201 /* TestSupport.swift */; };
 		A1000212 /* CollectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000202 /* CollectionStoreTests.swift */; };
-		7D6503E5830F4F97A98687DD /* PlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962416049B644E5D97EC206A /* PlanTests.swift */; };
 		A1000213 /* AlbumDecorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000203 /* AlbumDecorTests.swift */; };
-		B7C0FFEE00000013 /* StickerArchiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000003 /* StickerArchiveTests.swift */; };
-		B7C0FFEE000001A3 /* StickerPickingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A3 /* StickerPickingTests.swift */; };
 		A1000214 /* StampShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000204 /* StampShapeTests.swift */; };
 		A1000215 /* StampCompositorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000205 /* StampCompositorTests.swift */; };
 		A1000216 /* ColorHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000206 /* ColorHexTests.swift */; };
 		A1000217 /* LiveStampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000207 /* LiveStampTests.swift */; };
 		A1000218 /* StyleCorrectnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000208 /* StyleCorrectnessTests.swift */; };
+		B7C0FFEE00000011 /* StickerArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000001 /* StickerArchive.swift */; };
+		B7C0FFEE00000012 /* StickerDecor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000002 /* StickerDecor.swift */; };
+		B7C0FFEE00000013 /* StickerArchiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000003 /* StickerArchiveTests.swift */; };
+		B7C0FFEE000001A1 /* StickerPicking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A1 /* StickerPicking.swift */; };
+		B7C0FFEE000001A2 /* ZoomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A2 /* ZoomControl.swift */; };
+		B7C0FFEE000001A3 /* StickerPickingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A3 /* StickerPickingTests.swift */; };
 		CD9D810A072EC833DCCDAA1B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */; };
 		E26DD5523414B795831B7FB6 /* LeeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF79C59A8F8F63491030AD61 /* LeeoKit */; };
 		F181FA64A6438DC6D641460A /* AppShortcuts.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 62C9E3B6DD32B67EBBA5A56B /* AppShortcuts.xcstrings */; };
@@ -95,9 +95,11 @@
 		58EB64D32FDECDA0006D84DF /* keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5C0A12D3B04E6F9A1B2C02 /* ScreenshotScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScreenshotScene.swift; sourceTree = "<group>"; };
 		62C9E3B6DD32B67EBBA5A56B /* AppShortcuts.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = AppShortcuts.xcstrings; sourceTree = "<group>"; };
-		7A1C0DE10000000000000001 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		7A1C0DE10000000000000001 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		962416049B644E5D97EC206A /* PlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTests.swift; sourceTree = "<group>"; };
 		9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C8F79192FD651EB00B6DA22 /* punching.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punching.mp3; sourceTree = "<group>"; };
+		9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraPaywallView.swift; sourceTree = "<group>"; };
 		A1000000 /* StampCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StampCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000001 /* StampCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCameraApp.swift; sourceTree = "<group>"; };
 		A1000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,42 +108,40 @@
 		A1000005 /* PuncherFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuncherFrameView.swift; sourceTree = "<group>"; };
 		A1000006 /* StampShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShape.swift; sourceTree = "<group>"; };
 		A1000007 /* StampCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositor.swift; sourceTree = "<group>"; };
-		B7C0FFEE00000002 /* StickerDecor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerDecor.swift; sourceTree = "<group>"; };
-		B7C0FFEE000000A2 /* ZoomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControl.swift; sourceTree = "<group>"; };
-		B7C0FFEE000000A1 /* StickerPicking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPicking.swift; sourceTree = "<group>"; };
-		B7C0FFEE00000001 /* StickerArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerArchive.swift; sourceTree = "<group>"; };
 		A1000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1000009 /* CameraLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLaunchRouter.swift; sourceTree = "<group>"; };
 		A100000A /* OpenKkukCameraIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenKkukCameraIntent.swift; sourceTree = "<group>"; };
 		A1000200 /* StampCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StampCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000201 /* TestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
 		A1000202 /* CollectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionStoreTests.swift; sourceTree = "<group>"; };
-		962416049B644E5D97EC206A /* PlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTests.swift; sourceTree = "<group>"; };
 		A1000203 /* AlbumDecorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDecorTests.swift; sourceTree = "<group>"; };
-		B7C0FFEE00000003 /* StickerArchiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerArchiveTests.swift; sourceTree = "<group>"; };
-		B7C0FFEE000000A3 /* StickerPickingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPickingTests.swift; sourceTree = "<group>"; };
 		A1000204 /* StampShapeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShapeTests.swift; sourceTree = "<group>"; };
 		A1000205 /* StampCompositorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositorTests.swift; sourceTree = "<group>"; };
 		A1000206 /* ColorHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexTests.swift; sourceTree = "<group>"; };
 		A1000207 /* LiveStampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStampTests.swift; sourceTree = "<group>"; };
 		A1000208 /* StyleCorrectnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCorrectnessTests.swift; sourceTree = "<group>"; };
 		ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSpec.swift; sourceTree = "<group>"; };
-		9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraPaywallView.swift; sourceTree = "<group>"; };
-		C1C31AE9FC874ACD90E7F695 /* StampCameraPlans.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraPlans.swift; sourceTree = "<group>"; };
 		B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraRoadmap.swift; sourceTree = "<group>"; };
+		B7C0FFEE00000001 /* StickerArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerArchive.swift; sourceTree = "<group>"; };
+		B7C0FFEE00000002 /* StickerDecor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerDecor.swift; sourceTree = "<group>"; };
+		B7C0FFEE00000003 /* StickerArchiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerArchiveTests.swift; sourceTree = "<group>"; };
+		B7C0FFEE000000A1 /* StickerPicking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPicking.swift; sourceTree = "<group>"; };
+		B7C0FFEE000000A2 /* ZoomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControl.swift; sourceTree = "<group>"; };
+		B7C0FFEE000000A3 /* StickerPickingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPickingTests.swift; sourceTree = "<group>"; };
+		C1C31AE9FC874ACD90E7F695 /* StampCameraPlans.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraPlans.swift; sourceTree = "<group>"; };
 		E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraSupportView.swift; sourceTree = "<group>"; };
-		FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		586C02AF2FDB11C400D2A003 /* Exceptions for "sticker" folder in "sticker" target */ = {
+		586C02AF2FDB11C400D2A003 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = 586C029E2FDB11C300D2A003 /* sticker */;
 		};
-		58EB64DD2FDECDA0006D84DF /* Exceptions for "keyboard" folder in "keyboard" target */ = {
+		58EB64DD2FDECDA0006D84DF /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -151,41 +151,9 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		586C027C2FDB116900D2A003 /* sticker */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = sticker;
-			sourceTree = "<group>";
-		};
-		586C02A32FDB11C400D2A003 /* sticker */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				586C02AF2FDB11C400D2A003 /* Exceptions for "sticker" folder in "sticker" target */,
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = sticker;
-			sourceTree = "<group>";
-		};
-		58EB64D42FDECDA0006D84DF /* keyboard */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				58EB64DD2FDECDA0006D84DF /* Exceptions for "keyboard" folder in "keyboard" target */,
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = keyboard;
-			sourceTree = "<group>";
-		};
+		586C027C2FDB116900D2A003 /* sticker */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = sticker; sourceTree = "<group>"; };
+		586C02A32FDB11C400D2A003 /* sticker */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (586C02AF2FDB11C400D2A003 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = sticker; sourceTree = "<group>"; };
+		58EB64D42FDECDA0006D84DF /* keyboard */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (58EB64DD2FDECDA0006D84DF /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = keyboard; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,7 +366,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2630;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2720;
 				TargetAttributes = {
 					586C029E2FDB11C300D2A003 = {
 						CreatedOnToolsVersion = 26.3;
@@ -612,7 +580,6 @@
 				CODE_SIGN_ENTITLEMENTS = sticker/sticker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -692,7 +659,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -764,7 +730,6 @@
 				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -841,7 +806,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -882,15 +846,44 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -900,12 +893,41 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -920,7 +942,6 @@
 				CODE_SIGN_ENTITLEMENTS = StampCamera/StampCamera.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = StampCamera/Info.plist;
@@ -949,7 +970,6 @@
 				CODE_SIGN_ENTITLEMENTS = StampCamera/StampCamera.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = StampCamera/Info.plist;
@@ -976,7 +996,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0.5;
@@ -995,7 +1014,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0.5;
