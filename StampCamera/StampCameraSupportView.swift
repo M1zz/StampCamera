@@ -25,7 +25,6 @@ struct StampCameraSupportView: View {
     /// 새로 뜯는 스티커의 기본 모양. 카메라와 같은 키를 쓴다.
     @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveSticker.rawValue
     /// 펀칭 프레임 — 카메라와 같은 키라 여기서 바꾸면 바로 반영된다.
-    @AppStorage(StampFrameLoader.selectionKey) private var stampFrameName = "StampFrame"
     /// 모아둔 움직이는 스티커를 화면 곳곳에서 재생할지 (LiveArt 가 읽는 값)
     @AppStorage("liveAutoPlay") private var liveAutoPlay = true
     /// 꺼짐 = 점 인디케이터, 켜짐 = 책처럼 종이 넘기기
@@ -57,13 +56,6 @@ struct StampCameraSupportView: View {
                     Picker("기본 모양", selection: cutoutDefault) {
                         Label("오려낸 스티커", systemImage: "scissors").tag(true)
                         Label("우표 모양", systemImage: "square.dashed").tag(false)
-                    }
-                    if StampFrameLoader.names.count > 1 {
-                        Picker("펀칭 프레임", selection: $stampFrameName) {
-                            ForEach(Array(StampFrameLoader.names.enumerated()), id: \.element) { idx, name in
-                                Text("프레임 \(idx + 1)").tag(name)
-                            }
-                        }
                     }
                 } header: {
                     Text("뜯기")

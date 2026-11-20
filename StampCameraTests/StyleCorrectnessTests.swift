@@ -272,3 +272,52 @@ struct StyleCorrectnessTests {
         #expect(out.pasteboardType == "public.png")
     }
 }
+
+// MARK: - 대상 지도: 찍은 뒤 무엇을 뜯을지 고른다
+
+struct SubjectMapTests {
+    /// 10×10 지도. 1번은 가운데 큰 덩어리, 2번은 오른쪽 가장자리에 걸친 조각, 3번은 안쪽 작은 덩어리.
+    private func sample() throws -> SubjectMap {
+        var px = [UInt8](repeating: 0, count: 100)
+        for y in 2...7 { for x in 2...5 { px[y * 10 + x] = 1 } }
+        for y in 4...6 { px[y * 10 + 9] = 2 }
+        px[1 * 10 + 7] = 3
+        return try #require(SubjectMap(width: 10, height: 10, labels: px))
+    }
+
+    @Test func 대상마다_자리를_안다() throws {
+        let map = try sample()
+        #expect(map.count == 3)
+        let box = try #require(map.boxes[1])
+        #expect(abs(box.minX - 0.2) < 0.001 && abs(box.minY - 0.2) < 0.001)
+        #expect(abs(box.width - 0.4) < 0.001 && abs(box.height - 0.6) < 0.001)
+    }
+
+    @Test func 가장자리에_걸친_조각은_버린다() throws {
+        #expect(try sample().kept == [1, 3])
+    }
+
+    @Test func 가장_큰_대상은_가장자리에_걸려도_남긴다() throws {
+        var px = [UInt8](repeating: 0, count: 100)
+        for y in 0...9 { for x in 0...4 { px[y * 10 + x] = 1 } }
+        let map = try #require(SubjectMap(width: 10, height: 10, labels: px))
+        #expect(map.kept == [1])
+    }
+
+    @Test func 누른_자리의_대상을_찾는다() throws {
+        let map = try sample()
+        #expect(map.label(near: CGPoint(x: 0.35, y: 0.5)) == 1)
+        #expect(map.label(near: CGPoint(x: 0.95, y: 0.55)) == 2)
+        #expect(map.label(near: CGPoint(x: 0.05, y: 0.95)) == 0)      // 바탕
+    }
+
+    @Test func 모두_담는_자리는_전부를_감싼다() throws {
+        let all = try #require(try sample().everything)
+        #expect(abs(all.minX - 0.2) < 0.001 && abs(all.maxX - 1.0) < 0.001)
+        #expect(abs(all.minY - 0.1) < 0.001 && abs(all.maxY - 0.8) < 0.001)
+    }
+
+    @Test func 크기가_맞지_않으면_만들지_않는다() {
+        #expect(SubjectMap(width: 10, height: 10, labels: [1, 2, 3]) == nil)
+    }
+}
