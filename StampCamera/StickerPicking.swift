@@ -469,7 +469,7 @@ private func fitted(_ size: CGSize, in box: CGSize) -> CGRect {
 struct SubjectPickView: View {
     let shot: PhotoShot
     var cancelTitle: LocalizedStringKey = "다시 찍기"
-    /// 기본 모양이 오려낸 스티커인지 — 아니면 우표 모양으로 보이고 그렇게 담긴다
+    /// 오려낸 스티커로 보이고 담긴다 (시험에서만 끈다)
     var cutout = true
     /// 함께 찍힌 움직임을 가져오는 길. 없으면(가져온 사진) 움직임 단추가 없다.
     /// 처음에는 언제나 멈춘 스티커다 — 움직임 단추를 켰을 때만 움직이는 스티커가 된다
@@ -479,7 +479,8 @@ struct SubjectPickView: View {
 
     @State private var candidates: [StickerCandidate] = []
     @State private var chosen: Set<Int> = []
-    @State private var mask: UIImage?
+    @State private var mask: UIImage?               // 고른 대상 (빛나는 테두리)
+    @State private var everyone: UIImage?           // 알아본 대상 모두 (밝게)
     @State private var stroke: [CGPoint] = []      // 지금 그리는 선 (0...1)
     @State private var glow = false                 // 밝은 대상의 테두리가 숨 쉬듯 빛난다
     // 가운데에 크게 보이는 후보와 그 그림들
@@ -520,13 +521,18 @@ struct SubjectPickView: View {
             let built = await Task.detached { StickerProposals.candidates(for: shot, cutout: cutout) }.value
             withAnimation(.easeOut(duration: 0.2)) {
                 candidates = built + candidates          // 그새 그린 것이 있으면 뒤에 둔다
-                if chosen.isEmpty, let first = built.first { chosen = [first.id]; focus = first.id }
+                if chosen.isEmpty, let first = built.first { chosen = [first.id] }
             }
         }
         .onAppear {
             withAnimation(.easeInOut(duration: 1.4).repeatForever(autoreverses: true)) { glow = true }
         }
         .onChange(of: chosen) { _, _ in refreshMask() }
+        .task {
+            guard let map = shot.map else { return }
+            let all = await Task.detached { map.mask(of: nil) }.value
+            withAnimation(.easeOut(duration: 0.2)) { everyone = all }
+        }
         .onChange(of: focus) { _, _ in waits = 0; prepare() }
         .onChange(of: moving) { _, _ in waits = 0; prepare() }
     }
@@ -575,15 +581,14 @@ struct SubjectPickView: View {
         }
     }
 
-    /// 사진에서는 고른 대상만 밝다. 고른 대상이 없으면 모든 대상이 밝다(누를 수 있다는 뜻).
+    /// 알아본 대상은 모두 밝고, 고른 대상은 테두리가 빛난다.
     private func refreshMask() {
         guard let map = shot.map else { return }
         let picked = candidates.filter { chosen.contains($0.id) }
-        var only: Set<UInt8>? = Set(picked.filter { $0.kind == .subject }.map(\.label))
-        if picked.contains(where: { $0.kind == .everything }) || only?.isEmpty == true { only = nil }
-        let keep = only
+        let keep: Set<UInt8>? = picked.contains(where: { $0.kind == .everything })
+            ? nil : Set(picked.filter { $0.kind == .subject }.map(\.label))
         DispatchQueue.global(qos: .userInitiated).async {
-            let made = map.mask(of: keep)
+            let made = keep?.isEmpty == true ? nil : map.mask(of: keep)
             DispatchQueue.main.async { withAnimation(.easeOut(duration: 0.15)) { mask = made } }
         }
     }
@@ -595,6 +600,11 @@ struct SubjectPickView: View {
         return ZStack {
             Image(uiImage: shot.shown).resizable()
             Color.black.opacity(0.6)
+            if let everyone {
+                Image(uiImage: shot.shown).resizable()
+                    .mask { Image(uiImage: everyone).resizable() }
+                    .allowsHitTesting(false)
+            }
             bright(size)
                 .compositingGroup()
                 .shadow(color: .white.opacity(glow ? 0.95 : 0.55), radius: glow ? 5 : 3)

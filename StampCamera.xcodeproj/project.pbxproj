@@ -18,7 +18,6 @@
 		7D6503E5830F4F97A98687DD /* PlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962416049B644E5D97EC206A /* PlanTests.swift */; };
 		936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */; };
 		9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */; };
-		9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F79192FD651EB00B6DA22 /* punching.mp3 */; };
 		A1000011 /* StampCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001 /* StampCameraApp.swift */; };
 		A1000012 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002 /* ContentView.swift */; };
 		A1000013 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000003 /* CameraManager.swift */; };
@@ -98,7 +97,6 @@
 		7A1C0DE10000000000000001 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		962416049B644E5D97EC206A /* PlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTests.swift; sourceTree = "<group>"; };
 		9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9C8F79192FD651EB00B6DA22 /* punching.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punching.mp3; sourceTree = "<group>"; };
 		9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraPaywallView.swift; sourceTree = "<group>"; };
 		A1000000 /* StampCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StampCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000001 /* StampCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCameraApp.swift; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 				B7C0FFEE00000001 /* StickerArchive.swift */,
 				A1000009 /* CameraLaunchRouter.swift */,
 				A100000A /* OpenKkukCameraIntent.swift */,
-				9C8F79192FD651EB00B6DA22 /* punching.mp3 */,
 				A1000008 /* Info.plist */,
 				9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */,
 				ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */,
@@ -449,7 +446,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C8F791A2FD651EB00B6DA22 /* punching.mp3 in Resources */,
 				9C8F79182FD4FEA000B6DA22 /* Assets.xcassets in Resources */,
 				CD9D810A072EC833DCCDAA1B /* Localizable.xcstrings in Resources */,
 				7A1C0DE10000000000000002 /* InfoPlist.xcstrings in Resources */,

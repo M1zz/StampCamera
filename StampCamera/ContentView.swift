@@ -70,9 +70,6 @@ struct ContentView: View {
     @State private var flipAngle: Double = 0    // selfie/back flip spin
     // 새로 뜯는 스티커의 모양 (설정 ▸ 뜯기) — 뜯은 뒤에도 상세에서 변경 가능.
     // 기본은 오려낸 + 움직임; 한 번도 바꾸지 않은 사람은 저장값이 없어 이 기본을 따른다
-    @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveSticker.rawValue
-    private var captureStyle: StampStyle { StampStyle(rawValue: captureStyleRaw) ?? .liveSticker }
-    @State private var liveCaptureStyle: StampStyle = .liveSticker   // snapshot at shutter
     // 모아둔 라이브 우표를 화면 곳곳에서 움직이게 재생할지 (LiveArt가 읽는 값)
     @AppStorage("liveAutoPlay") private var liveAutoPlay = true
 
@@ -309,7 +306,7 @@ struct ContentView: View {
                 .transition(.opacity)
             }
             if let shot {
-                SubjectPickView(shot: shot, cutout: liveCaptureStyle.cutout,
+                SubjectPickView(shot: shot,
                                 motion: { steadyMotion.map { ($0, camera.capturedLiveSeconds) } },
                                 onCollect: { picks, moving in
                                     withAnimation(.easeOut(duration: 0.15)) { self.shot = nil }
@@ -638,11 +635,9 @@ struct ContentView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             if captureToken == token { captureInFlight = false; awaitingImage = false }
         }
-        PunchSound.play()                     // 펀칭! — ~1s punch sound
-        Haptics.ratchet()                     // 드르륵 — the punch biting through
+        Haptics.tick()
         camera.capturedLiveFrames = nil       // 지난 사진의 움직임이 섞이지 않게
         steadyMotion = nil
-        liveCaptureStyle = captureStyle
         // 항상 라이브로 찍어 "마스터"(움직임 + 원본)를 무조건 보관한다.
         // 보이는 모습(정지/우표/스티커/라이브)은 전부 이 마스터에서 후가공으로
         // 파생되므로, 찍은 뒤 어느 모습으로도 무손실 전환할 수 있다.
@@ -710,8 +705,8 @@ struct ContentView: View {
     /// 고른 후보들을 스티커로 담는다. 첫 스티커는 카드로 뜨고, 여럿이면 몇 개 담았는지 알린다.
     private func collect(_ picks: [StickerCandidate], from shot: PhotoShot, moving: Bool) {
         guard !picks.isEmpty else { return }
-        // 모양은 설정의 기본 모양, 움직임은 고르는 화면에서 정한 대로
-        let style = StampStyle.make(moving: moving, cutout: liveCaptureStyle.cutout)
+        // 언제나 오려낸 스티커로. 움직임은 고르는 화면에서 정한 대로
+        let style = StampStyle.make(moving: moving, cutout: true)
         let here = location.current
         // 움직임 프레임은 셔터 뒤 1초 남짓 지나 도착한다 — 아직이면 잠깐 기다린다
         let wait: Double = steadyMotion == nil ? 1.6 : 0
@@ -810,7 +805,6 @@ struct CollectionView: View {
     // 사진 앱에서 가져오기 — 활성 수집함에 기본 모양의 멈춘 스티커로 담는다
     @State private var importShot: PhotoShot?
     @State private var photoItem: PhotosPickerItem?
-    @AppStorage("captureStyle") private var captureStyleRaw = StampStyle.liveSticker.rawValue
 
     private let columns = [GridItem(.adaptive(minimum: 150), spacing: 18)]
 
@@ -880,7 +874,6 @@ struct CollectionView: View {
                                                   set: { if !$0 { importShot = nil } })) {
                 if let shot = importShot {
                     SubjectPickView(shot: shot, cancelTitle: "취소",
-                                    cutout: (StampStyle(rawValue: captureStyleRaw) ?? .liveSticker).cutout,
                                     onCollect: { picks, _ in
                                         importShot = nil
                                         collectImported(picks, from: shot)
@@ -926,10 +919,9 @@ struct CollectionView: View {
         }
     }
 
-    /// 고른 것을 기본 모양(설정 ▸ 기본 모양)의 멈춘 스티커로 담고, 담긴 수집함을 편다.
+    /// 고른 것을 멈춘 오려낸 스티커로 담고, 담긴 수집함을 편다.
     private func collectImported(_ picks: [StickerCandidate], from shot: PhotoShot) {
-        let cutout = (StampStyle(rawValue: captureStyleRaw) ?? .liveSticker).cutout
-        collection.addStickers(from: shot, picks: picks, style: .make(moving: false, cutout: cutout),
+        collection.addStickers(from: shot, picks: picks, style: .sticker,
                                motion: nil) { ids, _ in
             guard !ids.isEmpty else { return }
             Haptics.bounce()
@@ -4302,43 +4294,6 @@ private struct CollectFX: View {
     }
 }
 
-/// Plays the "punching.mp3" punch sound when the shutter is pressed. The clip
-/// is a few seconds long, so we only play the first ~1s and fade it out.
-enum PunchSound {
-    /// 소리 일은 전용 줄에서 한다 — 오디오 세션을 켜고 플레이어를 만드는 일은 메인 스레드를 붙잡을 수 있다.
-    private static let queue = DispatchQueue(label: "com.devkoan.StampCamera.punchSound", qos: .userInteractive)
-    // 아래 둘은 queue 에서만 만진다
-    nonisolated(unsafe) private static var player: AVAudioPlayer?
-    nonisolated(unsafe) private static var playing = 0      // 몇 번째 소리인지 — 늦게 온 페이드가 새 소리를 끊지 않게
-
-    static func play() {
-        queue.async {
-            // audible even alongside other audio
-            try? AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
-            try? AVAudioSession.sharedInstance().setActive(true)
-            if player == nil, let url = Bundle.main.url(forResource: "punching", withExtension: "mp3") {
-                player = try? AVAudioPlayer(contentsOf: url)
-                player?.prepareToPlay()
-            }
-            guard let p = player else { return }
-            playing += 1
-            let mine = playing
-            p.stop()
-            p.currentTime = 0
-            p.volume = 1
-            p.play()
-            queue.asyncAfter(deadline: .now() + 0.85) {
-                if playing == mine { p.setVolume(0, fadeDuration: 0.15) }
-            }
-            queue.asyncAfter(deadline: .now() + 1.0) {
-                guard playing == mine else { return }
-                p.stop()
-                p.volume = 1
-            }
-        }
-    }
-}
-
 // MARK: - Button styles
 
 private struct PrimaryButton: ButtonStyle {
@@ -5566,17 +5521,6 @@ enum Haptics {
     /// A crisp little tick as the zoom slider passes a stop.
     static func tick() {
         UISelectionFeedbackGenerator().selectionChanged()
-    }
-    /// A "드르륵" ratchet — a quick burst of rigid taps, for the punch press.
-    static func ratchet() {
-        let gen = UIImpactFeedbackGenerator(style: .rigid)
-        gen.prepare()
-        let steps = 10
-        for i in 0..<steps {
-            DispatchQueue.main.asyncAfter(deadline: .now() + Double(i) * 0.026) {
-                gen.impactOccurred(intensity: 0.55 + 0.05 * Double(i % 3))
-            }
-        }
     }
 }
 
