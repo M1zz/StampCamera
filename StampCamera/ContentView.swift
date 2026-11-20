@@ -5496,7 +5496,7 @@ struct StampDetailView: View {
     /// Re-render the stamp from its original with the chosen finish — never
     /// stacking filters on filters — and save it everywhere.
     private func applyFinish(_ ink: StampInk) {
-        guard let stamp, finish != ink else { return }
+        guard stamp != nil, finish != ink else { return }
         finish = ink
         Haptics.tick()
         // 원본에서 모양 · 테두리 · 움직임까지 함께 다시 만든다 (오려낸 스티커가 우표 모양으로 바뀌지 않게)
