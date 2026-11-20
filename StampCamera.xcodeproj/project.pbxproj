@@ -26,6 +26,8 @@
 		A1000016 /* StampShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006 /* StampShape.swift */; };
 		A1000017 /* StampCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000007 /* StampCompositor.swift */; };
 		B7C0FFEE00000012 /* StickerDecor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000002 /* StickerDecor.swift */; };
+		B7C0FFEE000001A2 /* ZoomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A2 /* ZoomControl.swift */; };
+		B7C0FFEE000001A1 /* StickerPicking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A1 /* StickerPicking.swift */; };
 		B7C0FFEE00000011 /* StickerArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000001 /* StickerArchive.swift */; };
 		A1000018 /* CameraLaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000009 /* CameraLaunchRouter.swift */; };
 		A1000019 /* OpenKkukCameraIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000A /* OpenKkukCameraIntent.swift */; };
@@ -34,6 +36,7 @@
 		7D6503E5830F4F97A98687DD /* PlanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962416049B644E5D97EC206A /* PlanTests.swift */; };
 		A1000213 /* AlbumDecorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000203 /* AlbumDecorTests.swift */; };
 		B7C0FFEE00000013 /* StickerArchiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000003 /* StickerArchiveTests.swift */; };
+		B7C0FFEE000001A3 /* StickerPickingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A3 /* StickerPickingTests.swift */; };
 		A1000214 /* StampShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000204 /* StampShapeTests.swift */; };
 		A1000215 /* StampCompositorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000205 /* StampCompositorTests.swift */; };
 		A1000216 /* ColorHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000206 /* ColorHexTests.swift */; };
@@ -104,6 +107,8 @@
 		A1000006 /* StampShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShape.swift; sourceTree = "<group>"; };
 		A1000007 /* StampCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositor.swift; sourceTree = "<group>"; };
 		B7C0FFEE00000002 /* StickerDecor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerDecor.swift; sourceTree = "<group>"; };
+		B7C0FFEE000000A2 /* ZoomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControl.swift; sourceTree = "<group>"; };
+		B7C0FFEE000000A1 /* StickerPicking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPicking.swift; sourceTree = "<group>"; };
 		B7C0FFEE00000001 /* StickerArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerArchive.swift; sourceTree = "<group>"; };
 		A1000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1000009 /* CameraLaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLaunchRouter.swift; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 		962416049B644E5D97EC206A /* PlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTests.swift; sourceTree = "<group>"; };
 		A1000203 /* AlbumDecorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDecorTests.swift; sourceTree = "<group>"; };
 		B7C0FFEE00000003 /* StickerArchiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerArchiveTests.swift; sourceTree = "<group>"; };
+		B7C0FFEE000000A3 /* StickerPickingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPickingTests.swift; sourceTree = "<group>"; };
 		A1000204 /* StampShapeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampShapeTests.swift; sourceTree = "<group>"; };
 		A1000205 /* StampCompositorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCompositorTests.swift; sourceTree = "<group>"; };
 		A1000206 /* ColorHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexTests.swift; sourceTree = "<group>"; };
@@ -250,6 +256,8 @@
 				A1000006 /* StampShape.swift */,
 				A1000007 /* StampCompositor.swift */,
 				B7C0FFEE00000002 /* StickerDecor.swift */,
+				B7C0FFEE000000A2 /* ZoomControl.swift */,
+				B7C0FFEE000000A1 /* StickerPicking.swift */,
 				B7C0FFEE00000001 /* StickerArchive.swift */,
 				A1000009 /* CameraLaunchRouter.swift */,
 				A100000A /* OpenKkukCameraIntent.swift */,
@@ -288,6 +296,7 @@
 				962416049B644E5D97EC206A /* PlanTests.swift */,
 				A1000203 /* AlbumDecorTests.swift */,
 				B7C0FFEE00000003 /* StickerArchiveTests.swift */,
+				B7C0FFEE000000A3 /* StickerPickingTests.swift */,
 				A1000204 /* StampShapeTests.swift */,
 				A1000205 /* StampCompositorTests.swift */,
 				A1000206 /* ColorHexTests.swift */,
@@ -516,6 +525,8 @@
 				A1000016 /* StampShape.swift in Sources */,
 				A1000017 /* StampCompositor.swift in Sources */,
 				B7C0FFEE00000012 /* StickerDecor.swift in Sources */,
+				B7C0FFEE000001A2 /* ZoomControl.swift in Sources */,
+				B7C0FFEE000001A1 /* StickerPicking.swift in Sources */,
 				B7C0FFEE00000011 /* StickerArchive.swift in Sources */,
 				936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */,
 				0BF9EE86DD4E4E2CA0D87FB4 /* StampCameraPaywallView.swift in Sources */,
@@ -537,6 +548,7 @@
 				7D6503E5830F4F97A98687DD /* PlanTests.swift in Sources */,
 				A1000213 /* AlbumDecorTests.swift in Sources */,
 				B7C0FFEE00000013 /* StickerArchiveTests.swift in Sources */,
+				B7C0FFEE000001A3 /* StickerPickingTests.swift in Sources */,
 				A1000214 /* StampShapeTests.swift in Sources */,
 				A1000215 /* StampCompositorTests.swift in Sources */,
 				A1000216 /* ColorHexTests.swift in Sources */,

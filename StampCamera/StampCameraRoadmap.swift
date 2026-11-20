@@ -60,7 +60,7 @@ extension StampCameraSpec {
         .init(id: "capture.pick", status: .building,
               title: NSLocalizedString("넓게 찍고 골라 담기", comment: "Roadmap item: shoot wide, then pick the subject"),
               detail: NSLocalizedString("화면 가득 찍은 뒤 원하는 것만 골라 스티커로 만들어요.", comment: "Roadmap item detail: shoot wide, then pick the subject")),
-        .init(id: "edit.eraser", status: .planned,
+        .init(id: "edit.eraser", status: .building,
               title: NSLocalizedString("오려낸 가장자리 손보기", comment: "Roadmap item: touch up cut-out edges"),
               detail: NSLocalizedString("잘못 오려진 곳을 지우거나 되살려 스티커를 다듬어요.", comment: "Roadmap item detail: touch up cut-out edges")),
         .init(id: "ext.search", status: .building,
