@@ -524,6 +524,9 @@ struct SubjectPickView: View {
     // 둘러 그리기 알려 주기: 한 번이라도 그려 보기 전까지, 빈 자리에서 손가락이 동그라미를 그려 보인다
     @AppStorage("pickDrawLearned") private var drawLearned = false
     @State private var nudgeSpot: CGPoint?
+    // 필요 없는 것 지우기: 동그라미를 끌어 휴지통에 놓는다
+    @State private var dragging: Int?
+    @State private var dragPoint: CGPoint = .zero
 
     private static let clipQueue = DispatchQueue(label: "com.devkoan.StampCamera.pickClips", qos: .userInitiated)
 
@@ -540,15 +543,20 @@ struct SubjectPickView: View {
                 if saving {
                     flying(frame, in: geo.size)
                 } else {
-                    badges(frame)
-                    if stroke.isEmpty, let c = candidates.first(where: { $0.id == focus }) {
+                    badges(frame, trash: trashSpot(geo.size))
+                    if stroke.isEmpty, dragging == nil, let c = candidates.first(where: { $0.id == focus }) {
                         Color.black.opacity(0.5)
                             .contentShape(Rectangle())
                             .onTapGesture { withAnimation(.easeOut(duration: 0.18)) { focus = nil } }
                         spotlight(c, in: geo.size)
                     }
+                    if let id = dragging, let c = candidates.first(where: { $0.id == id }) {
+                        trashCan(at: trashSpot(geo.size))
+                        carried(c)
+                    }
                 }
             }
+            .coordinateSpace(name: "pick")
         }
         .ignoresSafeArea()
         .overlay(alignment: .top) {
@@ -562,7 +570,9 @@ struct SubjectPickView: View {
                 .allowsHitTesting(false)
                 .opacity(saving ? 0 : 1)
         }
-        .overlay(alignment: .bottom) { tray.opacity(saving ? 0 : 1).allowsHitTesting(!saving) }
+        .overlay(alignment: .bottom) {
+            tray.opacity(saving || dragging != nil ? 0 : 1).allowsHitTesting(!saving && dragging == nil)
+        }
         .task {
             let built = await Task.detached { StickerProposals.candidates(for: shot, cutout: cutout) }.value
             withAnimation(.easeOut(duration: 0.2)) {
@@ -591,23 +601,95 @@ struct SubjectPickView: View {
     }
 
     /// 알아본 것마다 붙는 동그라미. 누르면 초록 V 로 골라지고, 다시 누르면 빠진다.
-    private func badges(_ frame: CGRect) -> some View {
+    /// 끌어서 휴지통에 놓으면 그 후보가 사라진다 (테두리도 함께).
+    private func badges(_ frame: CGRect, trash: CGPoint) -> some View {
         ForEach(candidates) { c in
             let on = chosen.contains(c.id)
-            Button { toggle(c.id) } label: {
-                Image(systemName: on ? "checkmark.circle.fill" : "circle")
-                    .symbolRenderingMode(.palette)
-                    .foregroundStyle(.white, on ? Color.green : Color.clear)
-                    .font(.system(size: 26, weight: .semibold))
-                    .shadow(color: .black.opacity(0.55), radius: 3)
-                    .frame(width: 44, height: 44)
-                    .contentShape(Rectangle())
+            Image(systemName: on ? "checkmark.circle.fill" : "circle")
+                .symbolRenderingMode(.palette)
+                .foregroundStyle(.white, on ? Color.green : Color.clear)
+                .font(.system(size: 26, weight: .semibold))
+                .shadow(color: .black.opacity(0.55), radius: 3)
+                .frame(width: 44, height: 44)
+                .contentShape(Rectangle())
+                .opacity(dragging == c.id ? 0 : 1)
+                .onTapGesture { toggle(c.id) }
+                .gesture(
+                    DragGesture(minimumDistance: 8, coordinateSpace: .named("pick"))
+                        .onChanged { v in
+                            if dragging == nil {
+                                Haptics.tick()
+                                withAnimation(.easeOut(duration: 0.15)) { dragging = c.id; focus = nil; nudgeSpot = nil }
+                            }
+                            let was = overTrash(dragPoint, trash)
+                            dragPoint = v.location
+                            if overTrash(v.location, trash) != was { Haptics.tick() }
+                        }
+                        .onEnded { v in
+                            if overTrash(v.location, trash) { discard(c.id) }
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) { dragging = nil }
+                        }
+                )
+                .position(x: min(max(frame.minX + c.window.maxX * frame.width - 16, frame.minX + 22), frame.maxX - 22),
+                          y: min(max(frame.minY + c.window.minY * frame.height + 16, frame.minY + 22), frame.maxY - 22))
+                .accessibilityElement()
+                .accessibilityLabel(Text("스티커 후보 \((candidates.firstIndex { $0.id == c.id } ?? 0) + 1)"))
+                .accessibilityAddTraits(on ? [.isButton, .isSelected] : .isButton)
+                .accessibilityAction { toggle(c.id) }
+                .accessibilityAction(named: Text("지우기")) { discard(c.id) }
+        }
+    }
+
+    private func trashSpot(_ size: CGSize) -> CGPoint { CGPoint(x: size.width / 2, y: size.height - 120) }
+
+    private func overTrash(_ p: CGPoint, _ trash: CGPoint) -> Bool { hypot(p.x - trash.x, p.y - trash.y) < 60 }
+
+    /// 끄는 동안 아래 가운데에 뜨는 휴지통. 위에 오면 커지고 빨개진다.
+    private func trashCan(at spot: CGPoint) -> some View {
+        let hot = overTrash(dragPoint, spot)
+        return Image(systemName: hot ? "trash.fill" : "trash")
+            .font(.system(size: 26, weight: .semibold))
+            .foregroundStyle(.white)
+            .frame(width: 68, height: 68)
+            .background(Circle().fill(hot ? Color.red : Color.black.opacity(0.6)))
+            .overlay(Circle().strokeBorder(.white.opacity(0.35), lineWidth: 1))
+            .scaleEffect(hot ? 1.18 : 1)
+            .animation(.spring(response: 0.25, dampingFraction: 0.7), value: hot)
+            .position(spot)
+            .allowsHitTesting(false)
+            .transition(.scale(scale: 0.5).combined(with: .opacity))
+    }
+
+    /// 손가락에 붙어 다니는 그 후보의 그림.
+    private func carried(_ c: StickerCandidate) -> some View {
+        Group {
+            if let image = c.thumb {
+                Image(uiImage: image).resizable().scaledToFit()
+            } else {
+                Image(systemName: "circle.dashed").font(.system(size: 30)).foregroundStyle(.white)
             }
-            .buttonStyle(.plain)
-            .position(x: min(max(frame.minX + c.window.maxX * frame.width - 16, frame.minX + 22), frame.maxX - 22),
-                      y: min(max(frame.minY + c.window.minY * frame.height + 16, frame.minY + 22), frame.maxY - 22))
-            .accessibilityLabel(Text("스티커 후보 \((candidates.firstIndex { $0.id == c.id } ?? 0) + 1)"))
-            .accessibilityAddTraits(on ? .isSelected : [])
+        }
+        .frame(width: 84, height: 84)
+        .shadow(color: .black.opacity(0.5), radius: 8, y: 4)
+        .position(dragPoint)
+        .allowsHitTesting(false)
+    }
+
+    /// 후보를 지운다: 동그라미 · 테두리 · 밝은 자리 · 아래 줄에서 모두 빠진다.
+    private func discard(_ id: Int) {
+        Haptics.bounce()
+        withAnimation(.easeOut(duration: 0.2)) {
+            candidates.removeAll { $0.id == id }
+            chosen.remove(id)
+            if focus == id { focus = nil }
+        }
+        previews[id] = nil
+        clips[id] = nil
+        guard let map = shot.map else { return }
+        let keep = Set(candidates.filter { $0.kind == .subject }.map(\.label))
+        DispatchQueue.global(qos: .userInitiated).async {
+            let all = keep.isEmpty ? nil : map.mask(of: keep)
+            DispatchQueue.main.async { withAnimation(.easeOut(duration: 0.2)) { everyone = all } }
         }
     }
 
