@@ -307,6 +307,7 @@ struct ContentView: View {
             }
             if let shot {
                 SubjectPickView(shot: shot,
+                                destination: AnyView(albumChip),
                                 motion: { steadyMotion.map { ($0, camera.capturedLiveSeconds) } },
                                 onCollect: { picks, moving in
                                     withAnimation(.easeOut(duration: 0.15)) { self.shot = nil }
@@ -433,14 +434,10 @@ struct ContentView: View {
                       height: geo.size.height + i.top + i.bottom)
     }
 
-    /// Top bar: the album chip (where punches get filed) on the left, with the
-    /// settings and selfie-flip buttons on the right.
+    /// Top bar: settings and selfie-flip on the right. 담을 수집함은 찍은 뒤 고르는 화면에서 정한다.
     private var albumBar: some View {
         VStack {
             HStack(spacing: 10) {
-                albumChip                    // top-left: 담길 수집함
-                // the gap never closes past this, so a long book name truncates
-                // instead of sliding under the buttons on the right
                 Spacer(minLength: 12)
                 supportButton                // top-right: 설정/지원
                 flipButton                   // top-right (selfie toggle)
@@ -451,8 +448,7 @@ struct ContentView: View {
         }
     }
 
-    /// The book-picker chip: shows which book new stamps go into, with a menu
-    /// to switch books or start a new one.
+    /// 담을 수집함: 고르는 화면의 담기 단추 옆. 누르면 수집함을 바꾸거나 새로 만든다.
     private var albumChip: some View {
         Menu {
             ForEach(collection.albums, id: \.self) { a in
@@ -483,9 +479,9 @@ struct ContentView: View {
             }
             .scaledFont(14, weight: .semibold, design: .rounded)
             .foregroundStyle(.white)
-            .padding(.horizontal, 16).padding(.vertical, 9)
-            .background(Capsule().fill(.ultraThinMaterial))
-            .overlay(Capsule().strokeBorder(.white.opacity(0.25), lineWidth: 1))
+            .frame(maxWidth: 140)
+            .padding(.horizontal, 12).padding(.vertical, 9)
+            .background(Capsule().fill(Color.white.opacity(0.18)))
         }
         .accessibilityLabel("수집함")
         .accessibilityValue(collection.activeAlbum)
@@ -724,9 +720,9 @@ struct ContentView: View {
                         }
                     }
                 }
-                if ids.count > 1 {
-                    showCaptureNote(String(localized: "스티커 \(ids.count)개를 담았어요"))
-                } else if fellBack {
+                if !fellBack {
+                    showCaptureNote(String(localized: "‘\(collection.activeAlbum)’에 \(ids.count)개 담았어요"))
+                } else {
                     showCaptureNote(String(localized: "오려낼 대상이 없어 우표 모양으로 뜯었어요"))
                 }
                 verifyMotion(first)

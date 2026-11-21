@@ -496,6 +496,8 @@ struct SubjectPickView: View {
     var cancelTitle: LocalizedStringKey = "다시 찍기"
     /// 오려낸 스티커로 보이고 담긴다 (시험에서만 끈다)
     var cutout = true
+    /// 담을 곳(수집함 고르기). 담기 단추 바로 옆에 둔다
+    var destination: AnyView? = nil
     /// 함께 찍힌 움직임을 가져오는 길. 없으면(가져온 사진) 움직임 단추가 없다.
     /// 처음에는 언제나 멈춘 스티커다 — 움직임 단추를 켰을 때만 움직이는 스티커가 된다
     var motion: (() -> (frames: [UIImage], seconds: Double)?)? = nil
@@ -1061,6 +1063,7 @@ struct SubjectPickView: View {
                     .accessibilityAddTraits(moving ? .isSelected : [])
                 }
                 Spacer(minLength: 4)
+                if let destination { destination }
                 Button(action: save) {
                     Text("\(chosen.count)개 담기")
                         .padding(.horizontal, 16).padding(.vertical, 9)
