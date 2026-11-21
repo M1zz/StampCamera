@@ -527,6 +527,8 @@ struct SubjectPickView: View {
     // 필요 없는 것 지우기: 동그라미를 끌어 휴지통에 놓는다
     @State private var dragging: Int?
     @State private var dragPoint: CGPoint = .zero
+    @State private var sinking = false              // 휴지통으로 스르르 빨려 드는 중
+    @State private var born: Int?                   // 막 둘러 그려 생긴 후보 — 반짝 하고 나타난다
 
     private static let clipQueue = DispatchQueue(label: "com.devkoan.StampCamera.pickClips", qos: .userInitiated)
 
@@ -617,6 +619,7 @@ struct SubjectPickView: View {
                 .gesture(
                     DragGesture(minimumDistance: 8, coordinateSpace: .named("pick"))
                         .onChanged { v in
+                            guard !sinking else { return }
                             if dragging == nil {
                                 Haptics.tick()
                                 withAnimation(.easeOut(duration: 0.15)) { dragging = c.id; focus = nil; nudgeSpot = nil }
@@ -626,8 +629,12 @@ struct SubjectPickView: View {
                             if overTrash(v.location, trash) != was { Haptics.tick() }
                         }
                         .onEnded { v in
-                            if overTrash(v.location, trash) { discard(c.id) }
-                            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) { dragging = nil }
+                            guard !sinking else { return }
+                            if overTrash(v.location, trash) {
+                                sink(c.id, into: trash)
+                            } else {
+                                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) { dragging = nil }
+                            }
                         }
                 )
                 .position(x: min(max(frame.minX + c.window.maxX * frame.width - 16, frame.minX + 22), frame.maxX - 22),
@@ -671,14 +678,29 @@ struct SubjectPickView: View {
         }
         .frame(width: 84, height: 84)
         .shadow(color: .black.opacity(0.5), radius: 8, y: 4)
+        .modifier(Melt(on: sinking))
+        .rotationEffect(.degrees(sinking ? 20 : 0))
         .position(dragPoint)
         .allowsHitTesting(false)
     }
 
+    /// 휴지통에 놓으면: 그림이 작아지고 흐려지며 휴지통 속으로 스르르 들어간 뒤, 사진 위 자리도 천천히 걷힌다.
+    private func sink(_ id: Int, into trash: CGPoint) {
+        Haptics.bounce()
+        withAnimation(.easeIn(duration: 0.55)) {
+            sinking = true
+            dragPoint = CGPoint(x: trash.x, y: trash.y + 6)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+            discard(id)
+            withAnimation(.easeOut(duration: 0.25)) { dragging = nil }
+            sinking = false
+        }
+    }
+
     /// 후보를 지운다: 동그라미 · 테두리 · 밝은 자리 · 아래 줄에서 모두 빠진다.
     private func discard(_ id: Int) {
-        Haptics.bounce()
-        withAnimation(.easeOut(duration: 0.2)) {
+        withAnimation(.easeOut(duration: 0.6)) {
             candidates.removeAll { $0.id == id }
             chosen.remove(id)
             if focus == id { focus = nil }
@@ -689,7 +711,7 @@ struct SubjectPickView: View {
         let keep = Set(candidates.filter { $0.kind == .subject }.map(\.label))
         DispatchQueue.global(qos: .userInitiated).async {
             let all = keep.isEmpty ? nil : map.mask(of: keep)
-            DispatchQueue.main.async { withAnimation(.easeOut(duration: 0.2)) { everyone = all } }
+            DispatchQueue.main.async { withAnimation(.easeOut(duration: 0.7)) { everyone = all } }
         }
     }
 
@@ -740,12 +762,37 @@ struct SubjectPickView: View {
                 Image(uiImage: still).resizable().scaledToFit()
             }
         }
+        .allowsHitTesting(false)                          // 그림을 눌러도 뒤가 받아 가운데 그림을 걷는다
         .frame(maxWidth: size.width * 0.74, maxHeight: size.height * 0.46)
         .shadow(color: .black.opacity(0.5), radius: 18, y: 10)
+        .overlay(alignment: .topTrailing) {
+            // 여기서 V 를 빼면 고른 것에서 빠지고 가운데 그림도 스르르 사라진다
+            Button { uncheck(c.id) } label: {
+                Image(systemName: "checkmark.circle.fill")
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.white, .green)
+                    .font(.system(size: 32, weight: .semibold))
+                    .shadow(color: .black.opacity(0.5), radius: 4)
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .offset(x: 14, y: -14)
+            .accessibilityLabel(Text("스티커 후보 \((candidates.firstIndex { $0.id == c.id } ?? 0) + 1)"))
+            .accessibilityAddTraits(.isSelected)
+        }
         .position(x: size.width / 2, y: size.height * 0.42)
-        .allowsHitTesting(false)
         .id(c.id)
-        .transition(.scale(scale: 0.85).combined(with: .opacity))
+        .transition(.asymmetric(insertion: .scale(scale: 0.85).combined(with: .opacity), removal: .melt))
+    }
+
+    /// 고른 것에서 뺀다 — 아래 줄과 가운데 그림에서 스르르 사라지고, 사진 위 그 대상은 어두워진다.
+    private func uncheck(_ id: Int) {
+        Haptics.tick()
+        withAnimation(.easeOut(duration: 0.5)) {
+            chosen.remove(id)
+            if focus == id { focus = nil }
+        }
     }
 
     /// 미리보기를 준비한다: 가운데에 크게 띄울 그림, 움직임을 켰으면 고른 스티커마다 움직이는 모습.
@@ -824,6 +871,10 @@ struct SubjectPickView: View {
                             style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round,
                                                dash: closing ? [] : [8, 7]))
                     .shadow(color: .black.opacity(0.4), radius: 2)
+            }
+            if let id = born, let c = candidates.first(where: { $0.id == id }) {
+                BirthBurst(shape: path(c.outline, size, closed: true), size: size)
+                    .allowsHitTesting(false)
             }
             if let spot = nudgeSpot, stroke.isEmpty, !saving {
                 DrawNudge()
@@ -948,12 +999,14 @@ struct SubjectPickView: View {
         let c = StickerCandidate(id: (candidates.map(\.id).max() ?? 0) + 1000, kind: .drawn,
                                  window: StickerMask.room(around: CGRect(x: x0, y: y0, width: x1 - x0, height: y1 - y0)),
                                  outline: points)
-        Haptics.bounce()
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
         drawLearned = true
-        withAnimation(.easeOut(duration: 0.2)) {
+        born = c.id
+        withAnimation(.spring(response: 0.42, dampingFraction: 0.55)) {
             candidates.append(c)
             chosen.insert(c.id)
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { if born == c.id { born = nil } }
         // 영역 안의 대상 찾기는 느리다(Vision) → 뒤에서. 찾으면 사진 위 밝은 곳 · 미리보기가 그 모양으로 바뀐다
         let shot = shot
         DispatchQueue.global(qos: .userInitiated).async {
@@ -982,7 +1035,8 @@ struct SubjectPickView: View {
                             } label: { cell(c) }
                             .buttonStyle(.plain)
                             .accessibilityLabel(Text("스티커 후보 \((candidates.firstIndex { $0.id == c.id } ?? 0) + 1)"))
-                            .transition(.scale(scale: 0.6).combined(with: .opacity))
+                            .transition(.asymmetric(insertion: .scale(scale: 0.3).combined(with: .opacity),
+                                                    removal: .melt))
                         }
                     }
                     .padding(.horizontal, 20)
@@ -1050,6 +1104,56 @@ struct SubjectPickView: View {
                     .font(.system(size: 18))
                     .padding(4)
             }
+        }
+    }
+}
+
+/// 스르르: 흐려지고 작아지며 사라진다.
+private struct Melt: ViewModifier {
+    let on: Bool
+    func body(content: Content) -> some View {
+        content.blur(radius: on ? 10 : 0).scaleEffect(on ? 0.35 : 1).opacity(on ? 0 : 1)
+    }
+}
+
+extension AnyTransition {
+    static var melt: AnyTransition { .modifier(active: Melt(on: true), identity: Melt(on: false)) }
+}
+
+/// 둘러 그린 자리가 스티커로 태어날 때: 그 모양이 하얗게 번쩍이고, 테두리가 빛나며 퍼지고, 별이 흩어진다.
+private struct BirthBurst: View {
+    let shape: Path
+    let size: CGSize
+    @State private var go = false
+    @State private var fade = false
+
+    var body: some View {
+        let box = shape.boundingRect
+        let center = CGPoint(x: box.midX, y: box.midY)
+        let anchor = UnitPoint(x: center.x / max(size.width, 1), y: center.y / max(size.height, 1))
+        let reach = max(box.width, box.height) / 2 + 34
+        ZStack {
+            shape.fill(.white).opacity(go ? 0 : 0.8)
+            shape.stroke(.white, style: StrokeStyle(lineWidth: go ? 1.5 : 7, lineJoin: .round))
+                .shadow(color: Color(red: 1, green: 0.85, blue: 0.45), radius: 14)
+                .scaleEffect(go ? 1.18 : 1, anchor: anchor)
+                .opacity(fade ? 0 : 1)
+            ForEach(0..<10, id: \.self) { i in
+                let a = Double(i) / 10 * 2 * .pi + 0.3
+                Image(systemName: "sparkle")
+                    .font(.system(size: i.isMultiple(of: 2) ? 18 : 11, weight: .bold))
+                    .foregroundStyle(i.isMultiple(of: 3) ? Color(red: 1, green: 0.9, blue: 0.5) : .white)
+                    .shadow(color: .white, radius: 4)
+                    .scaleEffect(go ? 0.5 : 1.1)
+                    .position(x: center.x + (go ? cos(a) * reach : cos(a) * 12),
+                              y: center.y + (go ? sin(a) * reach : sin(a) * 12))
+                    .opacity(fade ? 0 : 1)
+            }
+        }
+        .frame(width: size.width, height: size.height)
+        .onAppear {
+            withAnimation(.easeOut(duration: 0.65)) { go = true }
+            withAnimation(.easeIn(duration: 0.35).delay(0.45)) { fade = true }
         }
     }
 }
