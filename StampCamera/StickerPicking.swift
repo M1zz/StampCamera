@@ -36,7 +36,7 @@ struct PhotoShot {
                                                     mirrored: mirrored, clipToShape: false,
                                                     scale: min(2, 1600 / side))?.image else { return nil }
         return PhotoShot(raw: raw, shown: shown, size: size, mirrored: mirrored,
-                         map: SubjectLift.subjects(in: shown), faces: SubjectLift.faces(in: shown))
+                         map: SubjectLift.subjects(in: shown)?.atomic, faces: SubjectLift.faces(in: shown))
     }
 
     /// 사진 앱에서 가져온 사진: 사진 전체가 곧 화면이다.
@@ -62,6 +62,33 @@ struct PhotoShot {
         let pxPerPoint = 1 / max(size.width / px.width, size.height / px.height)
         return StampCompositor.makeStamp(from: raw, previewSize: size, windowRect: win, mirrored: mirrored,
                                          clipToShape: false, scale: min(pxPerPoint, longSide / side))
+    }
+}
+
+// MARK: - 자동 태그
+
+/// 스티커에 무엇이 담겼는지 알아보고 태그를 단다. 태그는 그냥 글자라, 사용자가 떼거나 더 달 수 있다.
+enum StickerTagger {
+    static var person: String { String(localized: "사람") }
+
+    static func tags(for image: UIImage) -> [String] {
+        guard let cg = image.normalizedUp().cgImage else { return [] }
+        let request = VNClassifyImageRequest()
+        guard (try? VNImageRequestHandler(cgImage: cg).perform([request])) != nil else { return [] }
+        return tags(from: Set((request.results ?? []).filter { $0.confidence >= 0.3 }.map(\.identifier)))
+    }
+
+    /// Vision 이 알아본 이름들 → 태그 (많아야 둘). 가장 뚜렷이 가르는 것부터.
+    static func tags(from seen: Set<String>) -> [String] {
+        var out: [String] = []
+        if !seen.isDisjoint(with: ["people", "adult", "child", "baby"]) { out.append(person) }
+        if seen.contains("dog") { out.append(String(localized: "강아지")) }
+        else if seen.contains("cat") { out.append(String(localized: "고양이")) }
+        else if !seen.isDisjoint(with: ["animal", "bird"]) { out.append(String(localized: "동물")) }
+        if !seen.isDisjoint(with: ["food", "fruit", "dessert", "drink"]) { out.append(String(localized: "음식")) }
+        if !seen.isDisjoint(with: ["flower", "plant", "tree"]) { out.append(String(localized: "식물")) }
+        if !seen.isDisjoint(with: ["vehicle", "car"]) { out.append(String(localized: "탈것")) }
+        return Array(out.prefix(2))
     }
 }
 
@@ -98,8 +125,8 @@ enum StickerProposals {
         return box.insetBy(dx: -pad / size.width, dy: -pad / size.height).intersection(unit)
     }
 
-    /// 사진 한 장으로 만들 수 있는 스티커 자리들. 순서가 곧 보여 주는 순서다:
-    /// 큰 대상부터 하나씩 → 모두 함께(둘 이상일 때) → 얼굴만 크게 → 사진 그대로.
+    /// 사진 한 장으로 만들 수 있는 스티커 자리들 — 알아본 것을 하나씩 따로:
+    /// 큰 대상부터 하나씩 → 얼굴만 크게. 아무것도 못 알아봤을 때만 사진 그대로.
     static func plan(subjects: [UInt8: CGRect], faces: [CGRect], size: CGSize,
                      photoAspect: CGFloat) -> [(kind: StickerCandidate.Kind, window: CGRect, label: UInt8)] {
         var out: [(StickerCandidate.Kind, CGRect, UInt8)] = []
@@ -108,11 +135,8 @@ enum StickerProposals {
             return x != y ? x > y : a.key < b.key
         }
         for (label, box) in ordered { out.append((.subject, padded(box, in: size), label)) }
-        if ordered.count > 1, let all = ordered.map(\.value).reduce(nil as CGRect?, { $0?.union($1) ?? $1 }) {
-            out.append((.everything, padded(all, in: size), 0))
-        }
         // 얼굴: 머리카락과 턱까지 담기게 넓힌다. 대상을 거의 다 차지하는 얼굴은 대상 후보와 겹치니 뺀다
-        for face in faces.prefix(3) {
+        for face in faces.prefix(6) {
             let wide = CGRect(x: face.midX - face.width * 0.85, y: face.midY - face.height * 1.1,
                               width: face.width * 1.7, height: face.height * 2.0).intersection(unit)
             let center = CGPoint(x: face.midX, y: face.midY)
@@ -120,6 +144,7 @@ enum StickerProposals {
                   wide.width * wide.height < owner.width * owner.height * 0.5 else { continue }
             out.append((.face, wide, 0))
         }
+        guard out.isEmpty else { return out }
         // 사진 그대로: 가운데를 우표 비율로
         let w = min(size.width * 0.72, size.height * 0.72 * photoAspect), h = w / max(photoAspect, 0.1)
         out.append((.photo, CGRect(x: (size.width - w) / 2 / size.width, y: (size.height - h) / 2 / size.height,
@@ -483,13 +508,23 @@ struct SubjectPickView: View {
     @State private var everyone: UIImage?           // 알아본 대상 모두 (밝게)
     @State private var stroke: [CGPoint] = []      // 지금 그리는 선 (0...1)
     @State private var glow = false                 // 밝은 대상의 테두리가 숨 쉬듯 빛난다
-    // 가운데에 크게 보이는 후보와 그 그림들
+    // 아래 줄에서 누른 스티커는 가운데에 크게 보인다
     @State private var focus: Int?
     @State private var previews: [Int: UIImage] = [:]
+    // 움직임을 켜면 고른 스티커마다 움직이는 모습을 만든다
     @State private var clips: [Int: [UIImage]] = [:]
+    @State private var making: Set<Int> = []
     @State private var clipDelay = 0.08
     @State private var moving = false
     @State private var waits = 0
+    // 담기: 고른 스티커가 하나씩 뿅 튀어 올라 수집함으로 날아간다
+    @State private var saving = false
+    @State private var popped: Set<Int> = []
+    @State private var flown: Set<Int> = []
+
+    private static let clipQueue = DispatchQueue(label: "com.devkoan.StampCamera.pickClips", qos: .userInitiated)
+
+    private var picks: [StickerCandidate] { candidates.filter { chosen.contains($0.id) } }
 
     var body: some View {
         GeometryReader { geo in
@@ -499,9 +534,16 @@ struct SubjectPickView: View {
                 photo(frame.size)
                     .frame(width: frame.width, height: frame.height)
                     .offset(x: frame.minX, y: frame.minY)
-                if stroke.isEmpty, let c = candidates.first(where: { $0.id == focus }) {
-                    Color.black.opacity(0.5).allowsHitTesting(false)
-                    spotlight(c, in: geo.size)
+                if saving {
+                    flying(frame, in: geo.size)
+                } else {
+                    badges(frame)
+                    if stroke.isEmpty, let c = candidates.first(where: { $0.id == focus }) {
+                        Color.black.opacity(0.5)
+                            .contentShape(Rectangle())
+                            .onTapGesture { withAnimation(.easeOut(duration: 0.18)) { focus = nil } }
+                        spotlight(c, in: geo.size)
+                    }
                 }
             }
         }
@@ -515,26 +557,86 @@ struct SubjectPickView: View {
                 .background(Capsule().fill(.black.opacity(0.55)))
                 .padding(.top, 16).padding(.horizontal, 20)
                 .allowsHitTesting(false)
+                .opacity(saving ? 0 : 1)
         }
-        .overlay(alignment: .bottom) { tray }
+        .overlay(alignment: .bottom) { tray.opacity(saving ? 0 : 1).allowsHitTesting(!saving) }
         .task {
             let built = await Task.detached { StickerProposals.candidates(for: shot, cutout: cutout) }.value
             withAnimation(.easeOut(duration: 0.2)) {
                 candidates = built + candidates          // 그새 그린 것이 있으면 뒤에 둔다
-                if chosen.isEmpty, let first = built.first { chosen = [first.id] }
+                if chosen.isEmpty, built.count == 1 { chosen = [built[0].id] }   // 하나뿐이면 고를 것도 없다
             }
         }
-        .onAppear {
-            withAnimation(.easeInOut(duration: 1.4).repeatForever(autoreverses: true)) { glow = true }
-        }
-        .onChange(of: chosen) { _, _ in refreshMask() }
         .task {
             guard let map = shot.map else { return }
             let all = await Task.detached { map.mask(of: nil) }.value
             withAnimation(.easeOut(duration: 0.2)) { everyone = all }
         }
-        .onChange(of: focus) { _, _ in waits = 0; prepare() }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1.4).repeatForever(autoreverses: true)) { glow = true }
+        }
+        .onChange(of: chosen) { _, _ in refreshMask(); prepare() }
+        .onChange(of: focus) { _, _ in prepare() }
         .onChange(of: moving) { _, _ in waits = 0; prepare() }
+    }
+
+    /// 알아본 것마다 붙는 동그라미. 누르면 초록 V 로 골라지고, 다시 누르면 빠진다.
+    private func badges(_ frame: CGRect) -> some View {
+        ForEach(candidates) { c in
+            let on = chosen.contains(c.id)
+            Button { toggle(c.id) } label: {
+                Image(systemName: on ? "checkmark.circle.fill" : "circle")
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.white, on ? Color.green : Color.clear)
+                    .font(.system(size: 26, weight: .semibold))
+                    .shadow(color: .black.opacity(0.55), radius: 3)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .position(x: min(max(frame.minX + c.window.maxX * frame.width - 16, frame.minX + 22), frame.maxX - 22),
+                      y: min(max(frame.minY + c.window.minY * frame.height + 16, frame.minY + 22), frame.maxY - 22))
+            .accessibilityLabel(Text("스티커 후보 \((candidates.firstIndex { $0.id == c.id } ?? 0) + 1)"))
+            .accessibilityAddTraits(on ? .isSelected : [])
+        }
+    }
+
+    /// 담는 동안: 고른 스티커가 제자리에서 뿅 튀어 오른 뒤 왼쪽 아래 수집함으로 날아간다.
+    private func flying(_ frame: CGRect, in size: CGSize) -> some View {
+        ForEach(picks) { c in
+            if let image = previews[c.id] ?? c.thumb {
+                let r = CGRect(x: frame.minX + c.window.minX * frame.width, y: frame.minY + c.window.minY * frame.height,
+                               width: c.window.width * frame.width, height: c.window.height * frame.height)
+                let gone = flown.contains(c.id)
+                Image(uiImage: image).resizable().scaledToFit()
+                    .frame(width: r.width, height: r.height)
+                    .scaleEffect(gone ? 0.12 : popped.contains(c.id) ? 1.2 : 1)
+                    .opacity(gone ? 0 : 1)
+                    .shadow(color: .black.opacity(0.45), radius: 10, y: 6)
+                    .position(gone ? CGPoint(x: 48, y: size.height - 80) : CGPoint(x: r.midX, y: r.midY))
+                    .allowsHitTesting(false)
+            }
+        }
+    }
+
+    /// 고른 것을 하나씩 뿅 · 뿅 · 뿅 담는다.
+    private func save() {
+        let all = picks
+        guard !all.isEmpty, !saving else { return }
+        let step = 0.17
+        withAnimation(.easeOut(duration: 0.15)) { saving = true; focus = nil }
+        for (i, c) in all.enumerated() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 + Double(i) * step) {
+                Haptics.bounce()
+                withAnimation(.spring(response: 0.24, dampingFraction: 0.5)) { _ = popped.insert(c.id) }
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 + Double(i) * step + 0.24) {
+                withAnimation(.easeIn(duration: 0.3)) { _ = flown.insert(c.id) }
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 + Double(all.count - 1) * step + 0.6) {
+            onCollect(all, moving)
+        }
     }
 
     /// 가운데에 크게: 고른 후보가 스티커가 된 모습. 움직임을 켰으면 움직인다.
@@ -554,29 +656,35 @@ struct SubjectPickView: View {
         .transition(.scale(scale: 0.85).combined(with: .opacity))
     }
 
-    /// 가운데 그림을 준비한다: 크게 그린 멈춘 모습, 움직임을 켰으면 움직이는 모습도.
+    /// 미리보기를 준비한다: 가운데에 크게 띄울 그림, 움직임을 켰으면 고른 스티커마다 움직이는 모습.
     private func prepare() {
-        guard let id = focus, let c = candidates.first(where: { $0.id == id }) else { return }
-        let wantStill = previews[id] == nil
-        let wantClip = moving && clips[id] == nil
-        guard wantStill || wantClip else { return }
-        let material = wantClip ? motion?() : nil
-        if wantClip, material == nil, waits < 6 {
-            // 움직임 프레임은 셔터 뒤 1초 남짓 지나 도착하고, 손떨림을 잡는 데 조금 더 걸린다
-            waits += 1
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { prepare() }
-        }
         let shot = shot, cutout = cutout
-        DispatchQueue.global(qos: .userInitiated).async {
-            if wantStill, let still = StickerProposals.thumb(for: c, in: shot, cutout: cutout, maxSide: 720) {
+        if let id = focus, previews[id] == nil, let c = candidates.first(where: { $0.id == id }) {
+            DispatchQueue.global(qos: .userInitiated).async {
+                guard let still = StickerProposals.thumb(for: c, in: shot, cutout: cutout, maxSide: 720) else { return }
                 DispatchQueue.main.async { previews[id] = still }
             }
-            guard let material, material.frames.count > 1 else { return }
-            let frames = StickerProposals.clip(for: c, in: shot, frames: material.frames, cutout: cutout)
-            guard frames.count > 1 else { return }
-            DispatchQueue.main.async {
-                clipDelay = max(0.06, material.seconds / Double(material.frames.count - 1))
-                clips[id] = frames
+        }
+        guard moving else { return }
+        let need = picks.filter { clips[$0.id] == nil && !making.contains($0.id) }
+        guard !need.isEmpty else { return }
+        guard let material = motion?(), material.frames.count > 1 else {
+            // 움직임 프레임은 셔터 뒤 1초 남짓 지나 도착하고, 손떨림을 잡는 데 조금 더 걸린다
+            if waits < 6 {
+                waits += 1
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { prepare() }
+            }
+            return
+        }
+        making.formUnion(need.map(\.id))
+        clipDelay = max(0.06, material.seconds / Double(material.frames.count - 1))
+        Self.clipQueue.async {
+            for c in need {
+                let frames = StickerProposals.clip(for: c, in: shot, frames: material.frames, cutout: cutout)
+                DispatchQueue.main.async {
+                    making.remove(c.id)
+                    if frames.count > 1 { clips[c.id] = frames }
+                }
             }
         }
     }
@@ -584,11 +692,9 @@ struct SubjectPickView: View {
     /// 알아본 대상은 모두 밝고, 고른 대상은 테두리가 빛난다.
     private func refreshMask() {
         guard let map = shot.map else { return }
-        let picked = candidates.filter { chosen.contains($0.id) }
-        let keep: Set<UInt8>? = picked.contains(where: { $0.kind == .everything })
-            ? nil : Set(picked.filter { $0.kind == .subject }.map(\.label))
+        let keep = Set(picks.filter { $0.kind == .subject }.map(\.label))
         DispatchQueue.global(qos: .userInitiated).async {
-            let made = keep?.isEmpty == true ? nil : map.mask(of: keep)
+            let made = keep.isEmpty ? nil : map.mask(of: keep)
             DispatchQueue.main.async { withAnimation(.easeOut(duration: 0.15)) { mask = made } }
         }
     }
@@ -687,28 +793,20 @@ struct SubjectPickView: View {
         return p
     }
 
-    /// 가운데 그림이 떠 있으면 사진을 눌러 걷어 낸다. 사진이 보일 때 대상을 누르면 그 후보가 골라지거나 빠진다.
+    /// 사진에서 대상을 누르면 골라지거나 빠진다. 둘러 그린 자리도 같다.
     private func tap(_ point: CGPoint) {
-        if focus != nil {
-            withAnimation(.easeOut(duration: 0.18)) { focus = nil }
-            return
+        if let label = shot.map?.label(near: point), label != 0,
+           let c = candidates.first(where: { $0.kind == .subject && $0.label == label }) {
+            toggle(c.id)
+        } else if let c = candidates.last(where: { $0.kind != .subject && $0.kind != .face && $0.window.contains(point) }) {
+            toggle(c.id)
         }
-        guard let label = shot.map?.label(near: point), label != 0,
-              let c = candidates.first(where: { $0.kind == .subject && $0.label == label }) else { return }
-        toggle(c.id)
     }
 
-    /// 고르면 가운데에 크게 뜨고, 빼면 남은 것 가운데 하나로 옮겨 간다.
     private func toggle(_ id: Int) {
         Haptics.tick()
         withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-            if chosen.contains(id) {
-                chosen.remove(id)
-                if focus == id { focus = candidates.last { chosen.contains($0.id) }?.id }
-            } else {
-                chosen.insert(id)
-                focus = id
-            }
+            if chosen.contains(id) { chosen.remove(id) } else { chosen.insert(id) }
         }
     }
 
@@ -726,7 +824,6 @@ struct SubjectPickView: View {
         withAnimation(.easeOut(duration: 0.2)) {
             candidates.append(c)
             chosen.insert(c.id)
-            focus = c.id
         }
         // 영역 안의 대상 찾기는 느리다(Vision) → 뒤에서. 찾으면 사진 위 밝은 곳 · 미리보기가 그 모양으로 바뀐다
         let shot = shot
@@ -744,25 +841,29 @@ struct SubjectPickView: View {
         }
     }
 
-    /// 아래 줄: 후보들, 그 아래 다시 찍기 · 움직임 · 담기.
+    /// 아래 줄: 고른 스티커들(움직임을 켜면 움직인다), 그 아래 다시 찍기 · 움직임 · 담기.
     private var tray: some View {
         VStack(spacing: 14) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    ForEach(candidates) { c in
-                        Button { toggle(c.id) } label: { cell(c) }
+            if !chosen.isEmpty {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(picks) { c in
+                            Button {
+                                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) { focus = c.id }
+                            } label: { cell(c) }
                             .buttonStyle(.plain)
                             .accessibilityLabel(Text("스티커 후보 \((candidates.firstIndex { $0.id == c.id } ?? 0) + 1)"))
-                            .accessibilityAddTraits(chosen.contains(c.id) ? .isSelected : [])
+                            .transition(.scale(scale: 0.6).combined(with: .opacity))
+                        }
                     }
+                    .padding(.horizontal, 20)
                 }
-                .padding(.horizontal, 20)
             }
             HStack(spacing: 10) {
                 Button(action: onCancel) { Text(cancelTitle) }
                 Spacer(minLength: 4)
                 if motion != nil {
-                    // 움직이는 스티커로 담을지 — 켜면 가운데 그림도 움직인다
+                    // 움직이는 스티커로 담을지 — 켜면 고른 스티커들이 움직여 보인다
                     Button {
                         Haptics.tick()
                         moving.toggle()
@@ -777,9 +878,7 @@ struct SubjectPickView: View {
                     .accessibilityAddTraits(moving ? .isSelected : [])
                 }
                 Spacer(minLength: 4)
-                Button {
-                    onCollect(candidates.filter { chosen.contains($0.id) }, moving)
-                } label: {
+                Button(action: save) {
                     Text("\(chosen.count)개 담기")
                         .padding(.horizontal, 16).padding(.vertical, 9)
                         .background(Capsule().fill(Color.white))
@@ -799,27 +898,29 @@ struct SubjectPickView: View {
                                    startPoint: .top, endPoint: .center))
     }
 
+    /// 고른 스티커 하나. 움직임을 켰으면 움직인다.
     private func cell(_ c: StickerCandidate) -> some View {
-        let on = chosen.contains(c.id)
-        return ZStack(alignment: .topTrailing) {
+        ZStack(alignment: .topTrailing) {
             Group {
-                if let thumb = c.thumb {
+                if moving, let frames = clips[c.id], frames.count > 1 {
+                    LiveStampView(frames: frames, delay: clipDelay).padding(6)
+                } else if let thumb = c.thumb {
                     Image(uiImage: thumb).resizable().scaledToFit().padding(6)
-                } else if c.kind == .drawn {
-                    ProgressView().tint(.white)
                 } else {
-                    Image(systemName: "photo").foregroundStyle(.white.opacity(0.6))
+                    ProgressView().tint(.white)
                 }
             }
             .frame(width: 72, height: 72)
             .background(RoundedRectangle(cornerRadius: 14, style: .continuous).fill(.ultraThinMaterial))
-            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .strokeBorder(.white.opacity(on ? 1 : 0.2), lineWidth: on ? 2.5 : 1))
-            Image(systemName: on ? "checkmark.circle.fill" : "circle")
-                .symbolRenderingMode(.palette)
-                .foregroundStyle(on ? Color.black : Color.white.opacity(0.7), on ? Color.white : Color.clear)
-                .font(.system(size: 20))
-                .padding(4)
+            if moving, clips[c.id] == nil {
+                ProgressView().controlSize(.mini).tint(.white).padding(6)
+            } else {
+                Image(systemName: "checkmark.circle.fill")
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.white, .green)
+                    .font(.system(size: 18))
+                    .padding(4)
+            }
         }
     }
 }

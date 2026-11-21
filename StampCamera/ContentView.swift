@@ -702,7 +702,7 @@ struct ContentView: View {
         }
     }
 
-    /// 고른 후보들을 스티커로 담는다. 첫 스티커는 카드로 뜨고, 여럿이면 몇 개 담았는지 알린다.
+    /// 고른 후보들을 스티커로 담는다. 고르는 화면에서 이미 날아갔으니 카드로 덮지 않고, 여럿이면 몇 개인지만 알린다.
     private func collect(_ picks: [StickerCandidate], from shot: PhotoShot, moving: Bool) {
         guard !picks.isEmpty else { return }
         // 언제나 오려낸 스티커로. 움직임은 고르는 화면에서 정한 대로
@@ -724,7 +724,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                withAnimation(.spring(response: 0.4, dampingFraction: 0.85)) { revealID = first }
                 if ids.count > 1 {
                     showCaptureNote(String(localized: "스티커 \(ids.count)개를 담았어요"))
                 } else if fellBack {
@@ -816,6 +815,7 @@ struct CollectionView: View {
                     LeeoTipAskSlot<StampCameraSpec>(tipJar: StampCameraSpec.tipJar,
                                                     reached: StampCameraTipMoments.reached(punchedCount: collection.stamps.count))
                         .padding([.horizontal, .top], 20)
+                    tagShelf
                     albumShelf
                 } else {
                     searchResults
@@ -830,6 +830,7 @@ struct CollectionView: View {
             }
             .navigationTitle("수집함")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear { collection.tagUntagged() }
             .navigationDestination(for: String.self) { name in
                 AlbumPageView(collection: collection, album: name)
             }
@@ -968,6 +969,33 @@ struct CollectionView: View {
                 }
                 .padding(20)
             }
+        }
+    }
+
+    /// 태그로 모아 보기 — 누르면 그 태그가 달린 스티커만 보인다.
+    @ViewBuilder
+    private var tagShelf: some View {
+        let tags = collection.allTags
+        if !tags.isEmpty {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(tags.prefix(24), id: \.self) { tag in
+                        Button {
+                            Haptics.tick()
+                            searchQuery = tag
+                        } label: {
+                            Text(verbatim: "#" + tag)
+                                .scaledFont(14, weight: .semibold, design: .rounded)
+                                .foregroundStyle(.white)
+                                .padding(.horizontal, 12).padding(.vertical, 7)
+                                .background(Capsule().fill(Color.white.opacity(0.14)))
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(.horizontal, 20)
+            }
+            .padding(.top, 16)
         }
     }
 
@@ -2168,6 +2196,7 @@ struct CollectedStamp: Identifiable {
     var album: String          // which collecting book this stamp lives in
     let createdAt: Date        // when this stamp was made
     var place: String          // where it was made (human-readable; may be empty)
+    var tags: [String] = []    // 모아 보려고 단 태그 (자동으로 붙은 것 + 직접 단 것)
 }
 
 /// How an album is dressed up (자유롭게 꾸미기): its diary paper and, once the
@@ -2227,6 +2256,7 @@ final class CollectionStore: ObservableObject {
         var outline: String? = nil     // StickerDecor.Outline raw value
         var outlineColor: UInt32? = nil
         var label: String? = nil       // 스티커에 얹은 글자
+        var tags: [String]? = nil      // nil = 아직 자동 태그를 달아 보지 않았다
     }
     private func stampMetaURL(for id: String) -> URL {
         dir.appendingPathComponent(id).appendingPathExtension("json")
@@ -2919,10 +2949,12 @@ final class CollectionStore: ObservableObject {
                 // timestamp for stamps made before this was tracked.
                 let createdAt: Date
                 let place: String
+                var tags: [String] = []
                 if let data = try? Data(contentsOf: url.appendingPathExtension("json")),
                    let meta = try? JSONDecoder().decode(StampMeta.self, from: data) {
                     createdAt = meta.createdAt
                     place = meta.place ?? ""
+                    tags = meta.tags ?? []
                 } else {
                     let ms = Double(url.deletingPathExtension().lastPathComponent) ?? 0
                     createdAt = ms > 0 ? Date(timeIntervalSince1970: ms / 1000) : Date()
@@ -2930,7 +2962,7 @@ final class CollectionStore: ObservableObject {
                 }
                 return CollectedStamp(id: url.lastPathComponent, image: image,
                                       caption: caption, album: album,
-                                      createdAt: createdAt, place: place)
+                                      createdAt: createdAt, place: place, tags: tags)
             }
     }
 
@@ -3258,12 +3290,15 @@ final class CollectionStore: ObservableObject {
                 }
                 let sibling = made.first?.id
                 let kept = look.cutout ? mask : nil
+                // 무엇인지 알아보고 태그를 단다 (사람 · 강아지 · 음식 …) — 나중에 태그로 모아 본다
+                let tags = pick.kind == .face ? [StickerTagger.person] : StickerTagger.tags(for: base.image)
                 let id: String = DispatchQueue.main.sync {
                     let id = self.add(still, location: location,
                                       original: sibling == nil ? shot.raw : nil, sharingOriginalOf: sibling,
                                       cropNorm: base.cropNorm, mirrored: shot.mirrored)
                     self.recordStyle(look, for: id)
                     if let data = kept?.pngData() { try? data.write(to: self.cutURL(for: id), options: .atomic) }
+                    self.setTags(tags, for: id, sync: false)
                     return id
                 }
                 made.append((id, win, kept, look))
@@ -3293,9 +3328,54 @@ final class CollectionStore: ObservableObject {
         }
     }
 
+    // MARK: - 태그
+
+    /// 태그를 다듬는다: 앞뒤 빈칸과 # 을 떼고, 빈 것 · 겹치는 것(대소문자 무시)을 빼고, 길이를 자른다.
+    static func cleanTags(_ tags: [String]) -> [String] {
+        var seen = Set<String>(), out: [String] = []
+        for raw in tags {
+            let tag = String(raw.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines.union(CharacterSet(charactersIn: "#")))
+                .prefix(20))
+            guard !tag.isEmpty, seen.insert(tag.lowercased()).inserted else { continue }
+            out.append(tag)
+        }
+        return out
+    }
+
+    func setTags(_ tags: [String], for id: String, sync: Bool = true) {
+        guard let idx = stamps.firstIndex(where: { $0.id == id }) else { return }
+        let clean = Self.cleanTags(tags)
+        var meta = existingMeta(for: id)
+        guard meta.tags != clean else { return }
+        stamps[idx].tags = clean
+        meta.tags = clean                 // 빈 배열도 적는다 — 자동 태그를 다시 달지 않게
+        writeStampMeta(meta, for: id)
+        if sync { syncStickers() }       // 메시지 · 키보드에서 태그로 찾을 수 있게
+    }
+
+    /// 지금 쓰이는 태그들. 많이 달린 것부터.
+    var allTags: [String] {
+        var count: [String: Int] = [:]
+        for s in stamps { for t in s.tags { count[t, default: 0] += 1 } }
+        return count.sorted { $0.value != $1.value ? $0.value > $1.value : $0.key < $1.key }.map(\.key)
+    }
+
+    /// 태그를 달아 본 적 없는 스티커(이 기능 전에 담은 것)에 자동 태그를 단다. 뒤에서 하나씩.
+    func tagUntagged() {
+        let jobs = stamps.filter { existingMeta(for: $0.id).tags == nil }.map { ($0.id, $0.image) }
+        guard !jobs.isEmpty else { return }
+        DispatchQueue.global(qos: .utility).async {
+            for (id, image) in jobs {
+                let tags = StickerTagger.tags(for: image)
+                DispatchQueue.main.async { self.setTags(tags, for: id, sync: false) }
+            }
+            DispatchQueue.main.async { self.syncStickers() }
+        }
+    }
+
     // MARK: - 찾기
 
-    /// 한 마디 · 장소 · 수집함 · 스티커 글자 · 날짜에서 찾는다. 낱말을 띄어 쓰면 모두 맞는 것만.
+    /// 한 마디 · 장소 · 수집함 · 태그 · 스티커 글자 · 날짜에서 찾는다. 낱말을 띄어 쓰면 모두 맞는 것만.
     func search(_ query: String) -> [CollectedStamp] {
         let words = query.lowercased().split(whereSeparator: \.isWhitespace).map(String.init)
         guard !words.isEmpty else { return [] }
@@ -3310,7 +3390,7 @@ final class CollectionStore: ObservableObject {
     /// 앱의 찾기와, 메시지 · 키보드로 내보내는 목록(`collections.json` 의 `words`)이 같은 말을 쓴다.
     var searchWords: [String: String] {
         Dictionary(uniqueKeysWithValues: stamps.map { s in
-            (s.id, [s.caption, s.place, s.album, existingMeta(for: s.id).label ?? "",
+            (s.id, [s.caption, s.place, s.album, s.tags.joined(separator: " "), existingMeta(for: s.id).label ?? "",
                     s.createdAt.formatted(date: .long, time: .omitted),
                     s.createdAt.formatted(.dateTime.year().month(.wide)),
                     s.createdAt.formatted(.dateTime.month(.defaultDigits).day())]
@@ -3783,6 +3863,46 @@ struct SubjectMap {
     }
 
     var count: Int { boxes.count }
+
+    /// 더 잘게 나눈 지도. 한 대상으로 묶여 온 것도 서로 닿지 않는 덩어리면 따로따로 센다.
+    /// 티끌만 한 덩어리는 같은 대상의 가장 큰 덩어리에 붙인다.
+    var atomic: SubjectMap {
+        var seen = [Bool](repeating: false, count: labels.count)
+        var parts: [(label: UInt8, pixels: [Int])] = []
+        var stack: [Int] = []
+        for start in labels.indices where labels[start] != 0 && !seen[start] {
+            let l = labels[start]
+            var pixels: [Int] = []
+            stack.append(start); seen[start] = true
+            while let i = stack.popLast() {
+                pixels.append(i)
+                let x = i % width
+                if x > 0, !seen[i - 1], labels[i - 1] == l { seen[i - 1] = true; stack.append(i - 1) }
+                if x < width - 1, !seen[i + 1], labels[i + 1] == l { seen[i + 1] = true; stack.append(i + 1) }
+                if i >= width, !seen[i - width], labels[i - width] == l { seen[i - width] = true; stack.append(i - width) }
+                if i + width < labels.count, !seen[i + width], labels[i + width] == l {
+                    seen[i + width] = true; stack.append(i + width)
+                }
+            }
+            parts.append((l, pixels))
+        }
+        let speck = width * height / 250
+        let big = parts.indices.filter { parts[$0].pixels.count > speck }
+            .sorted { parts[$0].pixels.count > parts[$1].pixels.count }.prefix(255)
+        guard big.count > boxes.count else { return self }
+        var renamed: [Int: UInt8] = [:]          // 덩어리 → 새 번호
+        var home: [UInt8: UInt8] = [:]           // 원래 번호 → 그 대상의 가장 큰 덩어리
+        for (n, part) in big.enumerated() {
+            renamed[part] = UInt8(n + 1)
+            if home[parts[part].label] == nil { home[parts[part].label] = UInt8(n + 1) }
+        }
+        var out = [UInt8](repeating: 0, count: labels.count)
+        for part in parts.indices {
+            guard let l = renamed[part] ?? home[parts[part].label] else { continue }
+            for p in parts[part].pixels { out[p] = l }
+        }
+        return SubjectMap(width: width, height: height, labels: out) ?? self
+    }
 
     /// 조각에 남길 대상: 가장 큰 것, 그리고 가장자리에 걸리지 않고 온전히 담긴 것.
     /// 고른 대상에 맞춰 자른 조각에서는 옆에서 끼어든 것이 늘 가장자리에 걸린다.
@@ -5038,6 +5158,8 @@ struct StampDetailView: View {
     let stampID: String
     @Environment(\.dismiss) private var dismiss
     @State private var caption = ""
+    @State private var newTag = ""
+    @State private var showNewTag = false
     @State private var newAlbumName = ""
     @State private var showNewAlbum = false
     @State private var showDelete = false
@@ -5129,6 +5251,7 @@ struct StampDetailView: View {
                     }
                     .scaledFont(13, weight: .medium, design: .rounded)
                     .foregroundStyle(Color(hex: 0x8C7A52))
+                    tagRow(stamp)
                 }
                 ZStack(alignment: .top) {
                     // custom placeholder so it stays a readable warm brown
@@ -5286,6 +5409,48 @@ struct StampDetailView: View {
 
     /// 색감: a row of finishes, each chip a live mini preview of this stamp
     /// wearing that ink. Tapping re-renders losslessly from the original photo.
+    /// 태그: 누르면 떼고, 끝의 단추로 있던 태그를 고르거나 새로 적어 단다.
+    private func tagRow(_ stamp: CollectedStamp) -> some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(stamp.tags, id: \.self) { tag in
+                    Button {
+                        Haptics.tick()
+                        collection.setTags(stamp.tags.filter { $0 != tag }, for: stampID)
+                    } label: {
+                        HStack(spacing: 4) {
+                            Text(verbatim: "#" + tag)
+                            Image(systemName: "xmark").font(.caption2.weight(.bold)).opacity(0.6)
+                        }
+                        .padding(.horizontal, 11).padding(.vertical, 6)
+                        .background(Capsule().fill(Color(hex: 0x42331E).opacity(0.1)))
+                    }
+                    .buttonStyle(.plain)
+                }
+                Menu {
+                    ForEach(collection.allTags.filter { !stamp.tags.contains($0) }.prefix(12), id: \.self) { tag in
+                        Button {
+                            collection.setTags(stamp.tags + [tag], for: stampID)
+                        } label: { Text(verbatim: tag) }
+                    }
+                    Button { newTag = ""; showNewTag = true } label: { Label("새 태그", systemImage: "plus") }
+                } label: {
+                    Label("태그", systemImage: "tag")
+                        .padding(.horizontal, 11).padding(.vertical, 6)
+                        .background(Capsule().strokeBorder(Color(hex: 0xCBB585), lineWidth: 1))
+                }
+            }
+            .scaledFont(13, weight: .semibold, design: .rounded)
+            .foregroundStyle(Color(hex: 0x5A4828))
+            .padding(.horizontal, 2)
+        }
+        .alert("새 태그", isPresented: $showNewTag) {
+            TextField("태그", text: $newTag)
+            Button("취소", role: .cancel) { }
+            Button("추가") { collection.setTags(stamp.tags + [newTag], for: stampID) }
+        }
+    }
+
     private var inkSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("색감")

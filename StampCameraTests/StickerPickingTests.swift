@@ -12,23 +12,22 @@ import UIKit
 struct StickerProposalTests {
     private let size = CGSize(width: 400, height: 800)
 
-    @Test func 큰_대상부터_하나씩_그리고_모두_그리고_사진_그대로() {
+    @Test func 알아본_것을_큰_것부터_하나씩_따로() {
         let plan = StickerProposals.plan(
             subjects: [1: CGRect(x: 0.1, y: 0.1, width: 0.2, height: 0.2),
                        2: CGRect(x: 0.5, y: 0.3, width: 0.4, height: 0.5)],
             faces: [], size: size, photoAspect: 0.75)
-        #expect(plan.map(\.kind) == [.subject, .subject, .everything, .photo])
+        #expect(plan.map(\.kind) == [.subject, .subject])   // 묶음도, 사진 그대로도 없다
         #expect(plan[0].label == 2)                      // 큰 것이 먼저
-        #expect(plan[2].window.contains(CGRect(x: 0.1, y: 0.1, width: 0.8, height: 0.7)))
     }
 
-    @Test func 대상이_하나면_모두는_없다() {
+    @Test func 대상이_하나면_그것_하나만() {
         let plan = StickerProposals.plan(subjects: [1: CGRect(x: 0.2, y: 0.2, width: 0.5, height: 0.5)],
                                          faces: [], size: size, photoAspect: 0.75)
-        #expect(plan.map(\.kind) == [.subject, .photo])
+        #expect(plan.map(\.kind) == [.subject])
     }
 
-    @Test func 대상이_없어도_사진_그대로는_있다() {
+    @Test func 아무것도_못_알아봤을_때만_사진_그대로() {
         let plan = StickerProposals.plan(subjects: [:], faces: [], size: size, photoAspect: 0.75)
         #expect(plan.map(\.kind) == [.photo])
         let w = plan[0].window
@@ -48,15 +47,15 @@ struct StickerProposalTests {
         let person = CGRect(x: 0.2, y: 0.1, width: 0.6, height: 0.8)
         let small = CGRect(x: 0.42, y: 0.15, width: 0.12, height: 0.08)
         let plan = StickerProposals.plan(subjects: [1: person], faces: [small], size: size, photoAspect: 0.75)
-        #expect(plan.map(\.kind) == [.subject, .face, .photo])
+        #expect(plan.map(\.kind) == [.subject, .face])
         // 얼굴이 대상의 거의 전부면 겹치니 뺀다
         let big = CGRect(x: 0.3, y: 0.25, width: 0.4, height: 0.4)
         let none = StickerProposals.plan(subjects: [1: person], faces: [big], size: size, photoAspect: 0.75)
-        #expect(none.map(\.kind) == [.subject, .photo])
+        #expect(none.map(\.kind) == [.subject])
         // 대상 밖의 얼굴(포스터 속 얼굴 등)도 뺀다
         let outside = CGRect(x: 0.02, y: 0.02, width: 0.05, height: 0.04)
         let out = StickerProposals.plan(subjects: [1: person], faces: [outside], size: size, photoAspect: 0.75)
-        #expect(out.map(\.kind) == [.subject, .photo])
+        #expect(out.map(\.kind) == [.subject])
     }
 
     @Test func 그린_테두리는_뜯을_자리_기준으로_옮겨진다() {
@@ -408,5 +407,70 @@ struct ClosesLoopTests {
 
     @Test func 너무_작은_동그라미는_누른_것으로_본다() {
         #expect(!StickerMask.closesLoop(arc(200, 300, 12, sweep: 360)))
+    }
+}
+
+// MARK: - 더 잘게 나누기 · 태그
+
+struct AtomicMapTests {
+    /// 20×20 지도에 `label` 로 네모를 칠한다.
+    private func paint(_ labels: inout [UInt8], _ label: UInt8, x: Range<Int>, y: Range<Int>) {
+        for yy in y { for xx in x { labels[yy * 20 + xx] = label } }
+    }
+
+    @Test func 한_대상이라도_떨어져_있으면_따로_센다() throws {
+        var labels = [UInt8](repeating: 0, count: 400)
+        paint(&labels, 1, x: 1..<7, y: 1..<7)          // 같은 번호의 두 덩어리
+        paint(&labels, 1, x: 12..<16, y: 10..<14)
+        let map = try #require(SubjectMap(width: 20, height: 20, labels: labels))
+        #expect(map.count == 1)
+        let atomic = map.atomic
+        #expect(atomic.count == 2)
+        #expect(atomic.label(near: CGPoint(x: 0.2, y: 0.2)) != atomic.label(near: CGPoint(x: 0.7, y: 0.6)))
+        #expect(atomic.label(near: CGPoint(x: 0.2, y: 0.2)) == 1)       // 큰 것이 1번
+    }
+
+    @Test func 티끌은_같은_대상의_큰_덩어리에_붙는다() throws {
+        var labels = [UInt8](repeating: 0, count: 400)
+        paint(&labels, 1, x: 1..<7, y: 1..<7)
+        paint(&labels, 1, x: 12..<16, y: 10..<14)
+        labels[19 * 20 + 19] = 1                         // 점 하나
+        let atomic = try #require(SubjectMap(width: 20, height: 20, labels: labels)).atomic
+        #expect(atomic.count == 2)
+        #expect(atomic.labels[19 * 20 + 19] == 1)
+    }
+
+    @Test func 이미_하나씩이면_그대로다() throws {
+        var labels = [UInt8](repeating: 0, count: 400)
+        paint(&labels, 3, x: 2..<9, y: 2..<9)
+        let map = try #require(SubjectMap(width: 20, height: 20, labels: labels))
+        #expect(map.atomic.labels == map.labels)
+    }
+}
+
+struct TagTests {
+    @Test func 태그는_다듬어서_담긴다() {
+        #expect(CollectionStore.cleanTags([" #여행 ", "여행", "", "Cafe", "cafe"]) == ["여행", "Cafe"])
+        #expect(CollectionStore.cleanTags([String(repeating: "가", count: 40)])[0].count == 20)
+    }
+
+    @Test func 태그는_다시_열어도_남고_찾을_수_있다() {
+        let h = Harness()
+        defer { h.cleanup() }
+        let a = h.add(), b = h.add(.blue)
+        h.store.setTags(["여행", "바다"], for: a)
+        h.store.setTags(["여행"], for: b)
+        #expect(h.store.allTags == ["여행", "바다"])              // 많이 달린 것부터
+        #expect(h.store.search("바다").map(\.id) == [a])
+        let again = h.reopen()
+        #expect(again.stamps.first { $0.id == a }?.tags == ["여행", "바다"])
+        h.store.setTags([], for: a)
+        #expect(h.reopen().stamps.first { $0.id == a }?.tags == [])
+    }
+
+    @Test func 알아본_이름에서_태그를_많아야_둘_고른다() {
+        #expect(StickerTagger.tags(from: []).isEmpty)
+        #expect(StickerTagger.tags(from: ["dog", "animal"]).count == 1)     // 강아지면 동물은 겹친다
+        #expect(StickerTagger.tags(from: ["people", "dog", "food", "plant"]).count == 2)
     }
 }
