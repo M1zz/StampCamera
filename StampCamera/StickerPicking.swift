@@ -781,7 +781,7 @@ struct SubjectPickView: View {
         }
     }
 
-    /// 알아본 대상은 모두 밝고, 고른 대상은 테두리가 빛난다.
+    /// 알아본 대상은 테두리만, 고른 대상은 밝고 테두리가 빛난다.
     private func refreshMask() {
         guard let map = shot.map else { return }
         let keep = Set(picks.filter { $0.kind == .subject }.map(\.label))
@@ -799,13 +799,18 @@ struct SubjectPickView: View {
             Image(uiImage: shot.shown).resizable()
             Color.black.opacity(0.6)
             if let everyone {
-                // 알아본 것마다 흰 테두리 — 누를 수 있는 것이 어디까지인지 보인다
-                Image(uiImage: shot.shown).resizable()
-                    .mask { Image(uiImage: everyone).resizable() }
-                    .compositingGroup()
-                    .shadow(color: .white, radius: 0.8)
-                    .shadow(color: .white.opacity(0.9), radius: 1.2)
-                    .allowsHitTesting(false)
+                // 알아본 것마다 흰 테두리만 — 안은 어두운 채로 둔다. 고르면(아래 `bright`) 밝아진다
+                ZStack {
+                    Color.white
+                        .mask { Image(uiImage: everyone).resizable() }
+                        .compositingGroup()
+                        .shadow(color: .white, radius: 0.8)
+                        .shadow(color: .white.opacity(0.9), radius: 1.2)
+                    Image(uiImage: shot.shown).resizable()
+                        .overlay(Color.black.opacity(0.6))
+                        .mask { Image(uiImage: everyone).resizable() }
+                }
+                .allowsHitTesting(false)
             }
             bright(size)
                 .compositingGroup()
