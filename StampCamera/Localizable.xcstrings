@@ -41902,155 +41902,6 @@
         }
       }
     },
-    "스티커로 만들 것을 누르거나 둘러 그려 주세요" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klepněte na to, z čeho chcete nálepku, nebo to obtáhněte"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tryk på det, du vil have som klistermærke, eller tegn rundt om det"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tippe an, was ein Sticker werden soll, oder umkreise es"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Αγγίξτε αυτό που θέλετε ή κυκλώστε το"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap what you want, or draw around it"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap what you want, or draw around it"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toca lo que quieras convertir en sticker o rodéalo"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Napauta haluamaasi tai piirrä sen ympäri"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Touchez ce que vous voulez en sticker, ou entourez-le"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ketuk yang ingin dijadikan stiker, atau lingkari"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tocca ciò che vuoi come sticker o cerchialo"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ステッカーにしたいものをタップするか、指で囲んでください"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "스티커로 만들 것을 누르거나 둘러 그려 주세요"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trykk på det du vil ha som klistremerke, eller tegn rundt det"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tik op wat je als sticker wilt of teken eromheen"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stuknij to, co ma być naklejką, albo obrysuj"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toque no que você quer como figurinha ou contorne"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Коснитесь нужного или обведите его пальцем"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tryck på det du vill ha som klistermärke eller rita runt det"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "แตะสิ่งที่อยากทำเป็นสติกเกอร์ หรือวาดล้อมไว้"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Çıkartma olmasını istediğine dokun ya da çevresini çiz"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chạm vào thứ bạn muốn hoặc khoanh quanh nó"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "轻点想做成贴纸的对象，或用手指圈出来"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "點一下想做成貼圖的對象，或用手指圈起來"
-          }
-        }
-      }
-    },
     "추가" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -43537,6 +43388,155 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "交通工具"
+          }
+        }
+      }
+    },
+    "밝은 것을 누르거나, 원하는 곳을 손가락으로 둘러 그려 보세요" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klepněte na zvýrazněný objekt, nebo prstem obkreslete, co chcete"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryk på et oplyst objekt, eller tegn en ring om det, du vil have"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf ein helles Objekt oder umkreise mit dem Finger, was du willst"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αγγίξτε ένα φωτισμένο αντικείμενο ή κυκλώστε με το δάχτυλο ό,τι θέλετε"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap a highlighted object, or circle anything with your finger"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap a highlighted object, or circle anything with your finger"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca un objeto resaltado o rodea con el dedo lo que quieras"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napauta korostettua kohdetta tai ympyröi haluamasi sormella"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touchez un objet en surbrillance ou entourez ce que vous voulez avec le doigt"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketuk objek yang menyala, atau lingkari yang kamu mau dengan jari"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca un oggetto evidenziato o cerchia col dito ciò che vuoi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "光っているものをタップするか、欲しい部分を指で囲んでください"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "밝은 것을 누르거나, 원하는 곳을 손가락으로 둘러 그려 보세요"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trykk på et opplyst objekt, eller tegn en ring rundt det du vil ha"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tik op een oplichtend object of omcirkel met je vinger wat je wilt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stuknij podświetlony obiekt albo obrysuj palcem to, co chcesz"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque em um objeto destacado ou contorne o que quiser com o dedo"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Коснитесь подсвеченного объекта или обведите пальцем то, что нужно"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryck på ett upplyst objekt eller ringa in det du vill ha med fingret"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แตะสิ่งที่สว่างอยู่ หรือใช้นิ้ววาดล้อมส่วนที่ต้องการ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parlayan bir nesneye dokun ya da istediğin yeri parmağınla çevrele"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chạm vào vật thể được làm sáng, hoặc dùng ngón tay khoanh phần bạn muốn"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轻点亮起的对象，或用手指圈出想要的部分"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "點一下亮起的對象，或用手指圈出想要的部分"
           }
         }
       }

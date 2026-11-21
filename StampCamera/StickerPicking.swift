@@ -521,6 +521,9 @@ struct SubjectPickView: View {
     @State private var saving = false
     @State private var popped: Set<Int> = []
     @State private var flown: Set<Int> = []
+    // 둘러 그리기 알려 주기: 한 번이라도 그려 보기 전까지, 빈 자리에서 손가락이 동그라미를 그려 보인다
+    @AppStorage("pickDrawLearned") private var drawLearned = false
+    @State private var nudgeSpot: CGPoint?
 
     private static let clipQueue = DispatchQueue(label: "com.devkoan.StampCamera.pickClips", qos: .userInitiated)
 
@@ -549,7 +552,7 @@ struct SubjectPickView: View {
         }
         .ignoresSafeArea()
         .overlay(alignment: .top) {
-            Text("스티커로 만들 것을 누르거나 둘러 그려 주세요")
+            Label("밝은 것을 누르거나, 원하는 곳을 손가락으로 둘러 그려 보세요", systemImage: "hand.draw")
                 .scaledFont(15, weight: .semibold, design: .rounded)
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
@@ -566,6 +569,13 @@ struct SubjectPickView: View {
                 candidates = built + candidates          // 그새 그린 것이 있으면 뒤에 둔다
                 if chosen.isEmpty, built.count == 1 { chosen = [built[0].id] }   // 하나뿐이면 고를 것도 없다
             }
+            guard !drawLearned else { return }
+            let spot = emptySpot()
+            try? await Task.sleep(nanoseconds: 700_000_000)
+            guard stroke.isEmpty, !saving else { return }
+            withAnimation(.easeOut(duration: 0.3)) { nudgeSpot = spot }
+            try? await Task.sleep(nanoseconds: 6_000_000_000)
+            withAnimation(.easeOut(duration: 0.4)) { nudgeSpot = nil }
         }
         .task {
             guard let map = shot.map else { return }
@@ -707,8 +717,12 @@ struct SubjectPickView: View {
             Image(uiImage: shot.shown).resizable()
             Color.black.opacity(0.6)
             if let everyone {
+                // 알아본 것마다 흰 테두리 — 누를 수 있는 것이 어디까지인지 보인다
                 Image(uiImage: shot.shown).resizable()
                     .mask { Image(uiImage: everyone).resizable() }
+                    .compositingGroup()
+                    .shadow(color: .white, radius: 0.8)
+                    .shadow(color: .white.opacity(0.9), radius: 1.2)
                     .allowsHitTesting(false)
             }
             bright(size)
@@ -724,6 +738,13 @@ struct SubjectPickView: View {
                                                dash: closing ? [] : [8, 7]))
                     .shadow(color: .black.opacity(0.4), radius: 2)
             }
+            if let spot = nudgeSpot, stroke.isEmpty, !saving {
+                DrawNudge()
+                    .frame(width: 108, height: 108)
+                    .position(x: spot.x * size.width, y: spot.y * size.height)
+                    .allowsHitTesting(false)
+                    .transition(.opacity)
+            }
         }
         .contentShape(Rectangle())
         .gesture(
@@ -732,6 +753,7 @@ struct SubjectPickView: View {
                     let moved = hypot(v.translation.width, v.translation.height)
                     guard moved > 10 || !stroke.isEmpty else { return }       // 누르기와 긋기를 가른다
                     if stroke.isEmpty {
+                        nudgeSpot = nil
                         if focus != nil { withAnimation(.easeOut(duration: 0.15)) { focus = nil } }
                         stroke.append(unit(v.startLocation, size))
                     }
@@ -793,6 +815,25 @@ struct SubjectPickView: View {
         return p
     }
 
+    /// 손가락 시범을 보일 자리: 알아본 것이 가장 적게 걸리는 빈 곳.
+    private func emptySpot() -> CGPoint {
+        let spots: [CGPoint] = [(0.5, 0.3), (0.27, 0.3), (0.73, 0.3), (0.5, 0.5), (0.27, 0.5), (0.73, 0.5),
+                                (0.27, 0.68), (0.73, 0.68)].map { CGPoint(x: $0.0, y: $0.1) }
+        guard let map = shot.map else { return spots[0] }
+        func crowd(_ c: CGPoint) -> Int {
+            var n = 0
+            let x0 = Int((c.x - 0.15) * CGFloat(map.width)), x1 = Int((c.x + 0.15) * CGFloat(map.width))
+            let y0 = Int((c.y - 0.1) * CGFloat(map.height)), y1 = Int((c.y + 0.1) * CGFloat(map.height))
+            for y in stride(from: max(y0, 0), to: min(y1, map.height), by: 3) {
+                for x in stride(from: max(x0, 0), to: min(x1, map.width), by: 3) where map.labels[y * map.width + x] != 0 {
+                    n += 1
+                }
+            }
+            return n
+        }
+        return spots.min { crowd($0) < crowd($1) } ?? spots[0]
+    }
+
     /// 사진에서 대상을 누르면 골라지거나 빠진다. 둘러 그린 자리도 같다.
     private func tap(_ point: CGPoint) {
         if let label = shot.map?.label(near: point), label != 0,
@@ -821,6 +862,7 @@ struct SubjectPickView: View {
                                  window: StickerMask.room(around: CGRect(x: x0, y: y0, width: x1 - x0, height: y1 - y0)),
                                  outline: points)
         Haptics.bounce()
+        drawLearned = true
         withAnimation(.easeOut(duration: 0.2)) {
             candidates.append(c)
             chosen.insert(c.id)
@@ -921,6 +963,36 @@ struct SubjectPickView: View {
                     .font(.system(size: 18))
                     .padding(4)
             }
+        }
+    }
+}
+
+/// 둘러 그리기 시범: 점선 동그라미가 그려지고 손가락이 그 끝을 따라 돈다.
+private struct DrawNudge: View {
+    @State private var turn = false
+
+    var body: some View {
+        GeometryReader { geo in
+            let r = min(geo.size.width, geo.size.height) / 2 - 8
+            ZStack {
+                Circle()
+                    .trim(from: 0, to: turn ? 1 : 0.02)
+                    .stroke(.white, style: StrokeStyle(lineWidth: 3, lineCap: .round, dash: [8, 7]))
+                    .rotationEffect(.degrees(-90))
+                    .padding(8)
+                Image(systemName: "hand.point.up.left.fill")
+                    .font(.system(size: 28))
+                    .foregroundStyle(.white)
+                    .shadow(color: .black.opacity(0.5), radius: 3)
+                    .offset(x: 9, y: 13)                       // 손가락 끝이 선 위에 오게
+                    .rotationEffect(.degrees(turn ? -360 : 0))  // 손은 돌지 않고 바로 서 있게
+                    .offset(y: -r)
+                    .rotationEffect(.degrees(turn ? 360 : 0))
+            }
+            .frame(width: geo.size.width, height: geo.size.height)
+        }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1.7).repeatForever(autoreverses: false)) { turn = true }
         }
     }
 }
