@@ -1913,8 +1913,8 @@ struct AlbumPageView: View {
     }
 }
 
-/// "모습" — how this capture presents itself: 우표/라이브 우표/스티커/라이브
-/// 스티커. One tap re-dresses the stamp from its kept materials, anytime.
+/// 움직임 토글 — 만든 뒤에도 언제든 멈춘 스티커 ↔ 움직이는 스티커로 바꾼다.
+/// (모양은 언제나 오려낸 스티커. 예전에 우표 모양으로 담긴 것은 그 모양 그대로 움직임만 바꾼다)
 struct StampStylePicker: View {
     @ObservedObject var collection: CollectionStore
     let stampID: String
@@ -1924,81 +1924,28 @@ struct StampStylePicker: View {
     var body: some View {
         let current = collection.style(for: stampID)
         let canMove = collection.canMove(stampID)
-        // 이름 칸은 두 줄 중 긴 이름에 맞춘다 — 고정 폭이면 "Motio/n", "Bewegu/ng" 처럼 끊긴다.
-        Grid(alignment: .leading, horizontalSpacing: 10, verticalSpacing: 9) {
-            // 모양 축: 오려낸(배경 제거) ↔ 우표(톱니) — 스티커가 먼저
-            axis(title: "모양",
-                 a: ("오려낸", "scissors"), b: ("우표", "square.dashed"),
-                 onB: !current.cutout, bEnabled: true) { wantStamp in
-                set(moving: current.moving, cutout: !wantStamp)
+        VStack(alignment: .leading, spacing: 4) {
+            Toggle(isOn: Binding(get: { current.moving }, set: { set(moving: $0) })) {
+                Label("움직이는 스티커", systemImage: "livephoto")
+                    .scaledFont(15, weight: .semibold, design: .rounded)
+                    .foregroundStyle(dark ? Color.white : Color(hex: 0x42331E))
             }
-            // 움직임 축: 멈춤 ↔ 움직임
-            axis(title: "움직임",
-                 a: ("멈춤", "stop.circle"), b: ("움직임", "livephoto"),
-                 onB: current.moving, bEnabled: canMove) { wantMoving in
-                set(moving: wantMoving, cutout: current.cutout)
+            .tint(.green)
+            .disabled(!canMove)
+            if !canMove {
+                Text("움직임을 담지 못했어요")
+                    .scaledFont(12, weight: .medium, design: .rounded)
+                    .foregroundStyle(dark ? Color.white.opacity(0.6) : Color(hex: 0x9A875E))
             }
         }
     }
 
-    private func set(moving: Bool, cutout: Bool) {
-        let s = StampStyle.make(moving: moving, cutout: cutout)
-        guard s != collection.style(for: stampID) else { return }
+    private func set(moving: Bool) {
+        let current = collection.style(for: stampID)
+        let s = StampStyle.make(moving: moving, cutout: current.cutout)
+        guard s != current else { return }
         Haptics.tick()
         collection.applyStyle(s, for: stampID)
-    }
-
-    /// One axis as a two-segment pill: tapping the off side flips just that axis.
-    @ViewBuilder
-    private func axis(title: LocalizedStringKey, a: (LocalizedStringKey, String), b: (LocalizedStringKey, String),
-                      onB: Bool, bEnabled: Bool, pick: @escaping (Bool) -> Void) -> some View {
-        GridRow {
-            Text(title)
-                .scaledFont(12, weight: .bold, design: .rounded)
-                .foregroundStyle(chipInk(selected: false))
-                .lineLimit(1)
-                .fixedSize()
-                .frame(minWidth: 38, alignment: .leading)
-            HStack(spacing: 4) {
-                segment(a.0, a.1, selected: !onB, enabled: true) { pick(false) }
-                segment(b.0, b.1, selected: onB, enabled: bEnabled) { pick(true) }
-            }
-            .padding(3)
-            .background(Capsule().fill(dark ? Color.white.opacity(0.08) : Color.white.opacity(0.20)))
-        }
-    }
-
-    @ViewBuilder
-    private func segment(_ title: LocalizedStringKey, _ icon: String, selected: Bool,
-                         enabled: Bool, tap: @escaping () -> Void) -> some View {
-        Button { if enabled { tap() } } label: {
-            HStack(spacing: 5) {
-                Image(systemName: icon).scaledFont(13, weight: .semibold)
-                Text(title).scaledFont(13, weight: .semibold, design: .rounded)
-            }
-            .foregroundStyle(chipInk(selected: selected))
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 7)
-            .background {
-                if selected { Capsule().fill(chipFill(selected: true)) }
-            }
-        }
-        .buttonStyle(.plain)
-        .disabled(!enabled)
-        .opacity(enabled ? 1 : 0.3)
-    }
-
-    private func chipInk(selected: Bool) -> Color {
-        if dark { return selected ? Color(hex: 0x3A2C12) : .white.opacity(0.75) }
-        return Color(hex: selected ? 0x42331E : 0x9A875E)
-    }
-    private func chipFill(selected: Bool) -> Color {
-        if dark { return selected ? Color(hex: 0xFFD966) : .white.opacity(0.10) }
-        return Color.white.opacity(selected ? 0.55 : 0.25)
-    }
-    private func chipStroke(selected: Bool) -> Color {
-        if dark { return selected ? Color(hex: 0xFFD966) : .white.opacity(0.22) }
-        return selected ? Color(hex: 0xB0863E) : Color(hex: 0xCBB585).opacity(0.6)
     }
 }
 
@@ -5380,9 +5327,8 @@ struct StampDetailView: View {
         }
     }
 
-    /// 모양(오려낸/우표) × 움직임(멈춤/움직임) — 언제든 갈아입기.
+    /// 움직임 토글 — 언제든 멈춘 ↔ 움직이는 스티커로.
     private var styleSection: some View {
-        // the picker labels its own two rows (모양 · 움직임)
         VStack(alignment: .leading, spacing: 8) {
             StampStylePicker(collection: collection, stampID: stampID, dark: false)
             // 오려낸 스티커만: 잘못 오려진 곳을 지우거나 되살린다
