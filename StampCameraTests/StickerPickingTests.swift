@@ -7,6 +7,7 @@
 
 import Testing
 import UIKit
+import CoreLocation
 @testable import StampCamera
 
 struct StickerProposalTests {
@@ -472,5 +473,21 @@ struct TagTests {
         #expect(StickerTagger.tags(from: []).isEmpty)
         #expect(StickerTagger.tags(from: ["dog", "animal"]).count == 1)     // 강아지면 동물은 겹친다
         #expect(StickerTagger.tags(from: ["people", "dog", "food", "plant"]).count == 2)
+    }
+}
+
+// MARK: - 지도
+
+struct StickerMapTests {
+    private func stamp(_ id: String, _ lat: Double?, _ lon: Double?) -> CollectedStamp {
+        CollectedStamp(id: id, image: UIImage(), caption: "", album: "", createdAt: Date(), place: "",
+                       coordinate: lat.flatMap { la in lon.map { CLLocationCoordinate2D(latitude: la, longitude: $0) } })
+    }
+
+    @Test func 같은_자리는_한_무더기로_새것부터() {
+        let spots = StickerSpot.group([stamp("a", 37.56651, 126.97801), stamp("b", 37.56652, 126.97802),
+                                       stamp("c", 35.1796, 129.0756), stamp("d", nil, nil)])
+        #expect(spots.count == 2)                                   // 위치 없는 것은 빠진다
+        #expect(spots.first { $0.stamps.count == 2 }?.stamps.map(\.id) == ["b", "a"])
     }
 }

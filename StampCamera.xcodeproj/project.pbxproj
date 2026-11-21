@@ -39,6 +39,7 @@
 		B7C0FFEE00000012 /* StickerDecor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000002 /* StickerDecor.swift */; };
 		B7C0FFEE00000013 /* StickerArchiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE00000003 /* StickerArchiveTests.swift */; };
 		B7C0FFEE000001A1 /* StickerPicking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A1 /* StickerPicking.swift */; };
+		B7C0FFEE000001A4 /* StickerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A4 /* StickerMap.swift */; };
 		B7C0FFEE000001A2 /* ZoomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A2 /* ZoomControl.swift */; };
 		B7C0FFEE000001A3 /* StickerPickingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0FFEE000000A3 /* StickerPickingTests.swift */; };
 		CD9D810A072EC833DCCDAA1B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FD0EC3BD71B8807C81EF74EE /* Localizable.xcstrings */; };
@@ -124,6 +125,7 @@
 		B7C0FFEE00000002 /* StickerDecor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerDecor.swift; sourceTree = "<group>"; };
 		B7C0FFEE00000003 /* StickerArchiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerArchiveTests.swift; sourceTree = "<group>"; };
 		B7C0FFEE000000A1 /* StickerPicking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPicking.swift; sourceTree = "<group>"; };
+		B7C0FFEE000000A4 /* StickerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerMap.swift; sourceTree = "<group>"; };
 		B7C0FFEE000000A2 /* ZoomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControl.swift; sourceTree = "<group>"; };
 		B7C0FFEE000000A3 /* StickerPickingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPickingTests.swift; sourceTree = "<group>"; };
 		C1C31AE9FC874ACD90E7F695 /* StampCameraPlans.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraPlans.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				B7C0FFEE00000002 /* StickerDecor.swift */,
 				B7C0FFEE000000A2 /* ZoomControl.swift */,
 				B7C0FFEE000000A1 /* StickerPicking.swift */,
+				B7C0FFEE000000A4 /* StickerMap.swift */,
 				B7C0FFEE00000001 /* StickerArchive.swift */,
 				A1000009 /* CameraLaunchRouter.swift */,
 				A100000A /* OpenKkukCameraIntent.swift */,
@@ -491,6 +494,7 @@
 				B7C0FFEE00000012 /* StickerDecor.swift in Sources */,
 				B7C0FFEE000001A2 /* ZoomControl.swift in Sources */,
 				B7C0FFEE000001A1 /* StickerPicking.swift in Sources */,
+				B7C0FFEE000001A4 /* StickerMap.swift in Sources */,
 				B7C0FFEE00000011 /* StickerArchive.swift in Sources */,
 				936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */,
 				0BF9EE86DD4E4E2CA0D87FB4 /* StampCameraPaywallView.swift in Sources */,

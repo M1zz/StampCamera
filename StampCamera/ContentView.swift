@@ -844,6 +844,12 @@ struct CollectionView: View {
                 // 않고 항상 펼쳐 보이게 한다: 새 수집함 · 사진 가져오기
                 ToolbarItem(placement: .topBarTrailing) {
                     HStack(spacing: 18) {
+                        NavigationLink {
+                            StickerMapView(collection: collection)
+                        } label: {
+                            Image(systemName: "map")
+                        }
+                        .accessibilityLabel("지도")
                         Button {
                             if plans.canCreateAlbum(having: collection.albums.count) {
                                 newAlbumName = ""; showNewAlbum = true
@@ -2140,6 +2146,7 @@ struct CollectedStamp: Identifiable {
     let createdAt: Date        // when this stamp was made
     var place: String          // where it was made (human-readable; may be empty)
     var tags: [String] = []    // 모아 보려고 단 태그 (자동으로 붙은 것 + 직접 단 것)
+    var coordinate: CLLocationCoordinate2D? = nil   // 찍은 자리 (지도에 놓는다)
 }
 
 /// How an album is dressed up (자유롭게 꾸미기): its diary paper and, once the
@@ -2893,11 +2900,15 @@ final class CollectionStore: ObservableObject {
                 let createdAt: Date
                 let place: String
                 var tags: [String] = []
+                var coordinate: CLLocationCoordinate2D?
                 if let data = try? Data(contentsOf: url.appendingPathExtension("json")),
                    let meta = try? JSONDecoder().decode(StampMeta.self, from: data) {
                     createdAt = meta.createdAt
                     place = meta.place ?? ""
                     tags = meta.tags ?? []
+                    if let lat = meta.latitude, let lon = meta.longitude {
+                        coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                    }
                 } else {
                     let ms = Double(url.deletingPathExtension().lastPathComponent) ?? 0
                     createdAt = ms > 0 ? Date(timeIntervalSince1970: ms / 1000) : Date()
@@ -2905,7 +2916,7 @@ final class CollectionStore: ObservableObject {
                 }
                 return CollectedStamp(id: url.lastPathComponent, image: image,
                                       caption: caption, album: album,
-                                      createdAt: createdAt, place: place, tags: tags)
+                                      createdAt: createdAt, place: place, tags: tags, coordinate: coordinate)
             }
     }
 
@@ -3037,7 +3048,7 @@ final class CollectionStore: ObservableObject {
                                  cropH: cropNorm.map { Double($0.height) },
                                  mirrored: (original != nil || sibling != nil) ? mirrored : nil), for: name)
         stamps.append(CollectedStamp(id: name, image: image, caption: "", album: album,
-                                     createdAt: now, place: ""))
+                                     createdAt: now, place: "", coordinate: location?.coordinate))
         syncStickers()
         return name
     }
