@@ -583,6 +583,13 @@ struct SubjectPickView: View {
                 candidates = built + candidates          // 그새 그린 것이 있으면 뒤에 둔다
                 if chosen.isEmpty, built.count == 1 { chosen = [built[0].id] }   // 하나뿐이면 고를 것도 없다
             }
+            #if DEBUG
+            if let loop = ScreenshotScene.drawnLoop {          // 스크린샷: 둘러 그린 스티커 하나
+                try? await Task.sleep(nanoseconds: 400_000_000)
+                stroke = loop
+                finishStroke(UIScreen.main.bounds.size)
+            }
+            #endif
             guard !drawLearned else { return }
             let spot = emptySpot()
             try? await Task.sleep(nanoseconds: 700_000_000)
@@ -1013,7 +1020,12 @@ struct SubjectPickView: View {
         let shot = shot
         DispatchQueue.global(qos: .userInitiated).async {
             guard let crop = shot.shown.cropped(unit: c.window, maxSide: 600) else { return }
-            let mask = StickerMask.refine(c.outlineInWindow, in: crop)
+            var mask = StickerMask.refine(c.outlineInWindow, in: crop)
+            #if DEBUG
+            // 스크린샷: 시뮬레이터는 조각에서 대상을 못 찾으니 사진 전체의 대상 지도로 다듬는다
+            if ScreenshotScene.isActive, let part = shot.map?.cropped(to: c.window),
+               let m = StickerMask.refine(c.outlineInWindow, map: part) { mask = m }
+            #endif
             let thumb = mask.flatMap { SubjectLift.cut(crop, mask: $0, trim: true) }
             DispatchQueue.main.async {
                 guard let i = candidates.firstIndex(where: { $0.id == c.id }) else { return }

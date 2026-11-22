@@ -6,7 +6,8 @@
 #   (SHOT_LANG 이 없으면 ko. 앱을 그 언어 · 그 지역 형식(날짜 등)으로 띄운다)
 #
 # 앱의 DEBUG 전용 실행 인자(StampCamera/ScreenshotScene.swift)를 쓴다:
-#   -ScreenshotSeed docs/screenshots/seed   사진을 기본 모양 스티커로 담는다
+#   -ScreenshotSeed docs/screenshots/seed   사진을 스티커로 담는다 (고르기 장면의 대상 지도는 seed/cut/backdrop-labels.png,
+#                                           없으면 seed/crop/backdrop.png 를 내보낸다 → swift tools/subject_labels.swift 로 만든다)
 #   -ScreenshotScene <장면>                 그 화면을 바로 연다
 # 장면마다 새로 설치해 빈 상태에서 시작하므로 결과가 매번 같다.
 set -e
@@ -33,7 +34,7 @@ shoot() {   # <파일 이름> <장면> <기다릴 초>
   xcrun simctl terminate "$UDID" "$BUNDLE" 2>/dev/null || true
   xcrun simctl uninstall "$UDID" "$BUNDLE" 2>/dev/null || true
   xcrun simctl install "$UDID" "$APP"
-  for s in camera location photos; do xcrun simctl privacy "$UDID" grant "$s" "$BUNDLE" 2>/dev/null || true; done
+  for s in camera photos; do xcrun simctl privacy "$UDID" grant "$s" "$BUNDLE" 2>/dev/null || true; done
   xcrun simctl launch "$UDID" "$BUNDLE" -ScreenshotSeed "$SEED" -ScreenshotScene "$2" \
     -AppleLanguages "($SHOT_LANG)" -AppleLocale "$REGION" >/dev/null
   i=0; while [ $i -lt "$3" ]; do sleep 1; i=$((i+1)); done
@@ -41,11 +42,11 @@ shoot() {   # <파일 이름> <장면> <기다릴 초>
   echo "✓ $1 ($2)"
 }
 
-shoot 01-reveal.png   reveal   ${WAIT:-45}
-shoot 02-album.png    album    ${WAIT:-45}
-shoot 03-detail.png   detail   ${WAIT:-45}
-shoot 04-arrange.png  arrange  ${WAIT:-45}
-shoot 05-camera.png   camera   ${WAIT:-45}
-[ "${SETTINGS:-1}" = 1 ] && shoot 06-settings.png settings ${WAIT:-45}
+shoot 01-pick.png    pick     ${WAIT:-25}
+shoot 02-album.png   album    ${WAIT:-25}
+# 상세는 시드에 움직임이 없어 "움직임을 담지 못했어요" 가 보여 뺐다
+shoot 07-tags.png    tags     ${WAIT:-25}
+shoot 08-map.png     map      ${WAIT:-30}
+[ "${SETTINGS:-0}" = 1 ] && shoot 06-settings.png settings ${WAIT:-25}
 
 xcrun simctl status_bar "$UDID" clear

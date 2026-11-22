@@ -26,7 +26,7 @@ struct StampCameraApp: App {
                 // 개발자가 보낸 의견에 답장하면, 앱이 앞으로 올 때 답장을 시트로 보여 준다 (LeeoKit).
                 .leeoFeedbackReplyNotice(StampCameraSpec.self)
                 // 유료가 되면 콘페티, 모든 사용자가 한 번은 감사 인사를 받는다 (LeeoKit).
-                .leeoCelebrations(appName: StampCameraSpec.displayName)
+                .celebrationsUnlessScreenshot()
                 .environmentObject(router)
                 // Control Center / Lock Screen control & the kkuk://camera deep
                 // link both land here → route straight to the live camera.
@@ -39,5 +39,16 @@ struct StampCameraApp: App {
                     if phase == .active { Task { await PunchingPlans.shared.refresh() } }
                 }
         }
+    }
+}
+
+private extension View {
+    /// 축하 · 감사 (LeeoKit). 스토어 스크린샷을 찍을 때는 띄우지 않는다.
+    @ViewBuilder func celebrationsUnlessScreenshot() -> some View {
+        #if DEBUG
+        if ScreenshotScene.isActive { self } else { leeoCelebrations(appName: StampCameraSpec.displayName) }
+        #else
+        leeoCelebrations(appName: StampCameraSpec.displayName)
+        #endif
     }
 }

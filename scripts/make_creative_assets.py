@@ -36,60 +36,60 @@ SPEC = {
 # (검색에서 본 말이 페이지에서도 이어져야 한다, docs/marketing/ASO_2026-10.md).
 # 눈썹글은 그 나라 검색어다.
 SEARCH = {
-    "ko": ("스티커 만들기", "꾹 누르면<br>움직이는 스티커", "찍는 순간 대상만 쏙 오려 내요"),
-    "en": ("Sticker Maker", "Hold for a<br>moving sticker", "Cuts out just your subject as you shoot"),
-    "en-GB": ("Sticker Maker", "Press and hold for<br>a moving sticker", "Cuts out just your subject as you shoot"),
-    "zh-Hans": ("贴纸制作", "长按一下<br>变成会动的贴纸", "拍下的瞬间，主体一键抠出"),
-    "zh-Hant": ("貼圖製作", "長按一下<br>變成會動的貼圖", "拍下的瞬間，主體一鍵去背"),
-    "ja": ("ステッカー作成", "長押しで<br>動くステッカーに", "撮った瞬間、被写体だけを切り抜き"),
-    "ru": ("Создать стикер", "Удерживайте —<br>и стикер оживёт", "Камера сама вырежет главное в кадре"),
-    "es": ("Crear stickers", "Mantén pulsado:<br>sticker animado", "Recorta solo lo importante al instante"),
-    "de": ("Sticker erstellen", "Gedrückt halten:<br>bewegter Sticker", "Dein Motiv wird sofort freigestellt"),
-    "fr": ("Créer autocollants", "Appui long :<br>autocollant animé", "Votre sujet est détouré dès la prise"),
-    "it": ("Crea adesivi", "Tieni premuto:<br>adesivo animato", "Ritaglia solo il soggetto mentre scatti"),
-    "pt-BR": ("Criar adesivos", "Segure e pronto:<br>adesivo animado", "Recorta só o que importa na hora"),
-    "th": ("ทำสติกเกอร์", "กดค้างไว้<br>ได้สติกเกอร์ขยับได้", "ตัดเฉพาะตัวแบบออกมาทันทีที่ถ่าย"),
-    "vi": ("Tạo nhãn dán", "Nhấn giữ là có<br>nhãn dán động", "Tự tách chủ thể ngay khi chụp"),
-    "cs": ("Tvorba nálepek", "Podrž a máš<br>pohyblivou nálepku", "Vystřihne jen to hlavní hned při focení"),
-    "da": ("Lav klistermærker", "Hold nede for et<br>bevægeligt mærke", "Klipper motivet fri, mens du fotograferer"),
-    "el": ("Αυτοκόλλητα", "Κράτησέ το<br>και ζωντανεύει", "Κόβει το θέμα με τη λήψη"),
-    "fi": ("Tarrojen teko", "Pidä painettuna:<br>liikkuva tarra", "Rajaa kohteen irti heti kuvatessa"),
-    "id": ("Pembuat Stiker", "Tahan untuk bikin<br>stiker bergerak", "Langsung memotong objek saat memotret"),
-    "nb": ("Lag klistremerker", "Hold inne for<br>levende merker", "Klipper ut motivet idet du tar bildet"),
-    "nl": ("Stickers maken", "Houd vast:<br>bewegende sticker", "Knipt je onderwerp meteen uit"),
-    "pl": ("Kreator naklejek", "Przytrzymaj,<br>a naklejka ożyje", "Wycina sam obiekt już przy zdjęciu"),
-    "sv": ("Skapa klistermärken", "Håll inne för<br>rörliga märken", "Klipper ut motivet direkt när du fotar"),
-    "tr": ("Çıkartma yap", "Basılı tut,<br>hareketli çıkartma", "Çektiğin an konuyu kesip çıkarır"),
+    "ko": ("스티커 만들기", "찍으면<br>스티커가 쏙", "알아서 찾고, 원하는 곳은 둘러 그려요"),
+    "en": ("Sticker Maker", "Snap it,<br>sticker it", "It finds the subject. Circle the rest."),
+    "en-GB": ("Sticker Maker", "Snap it,<br>sticker it", "It finds the subject. Circle the rest."),
+    "zh-Hans": ("贴纸制作", "一拍<br>就成贴纸", "自动找出主体，想要的再圈一圈"),
+    "zh-Hant": ("貼圖製作", "一拍<br>就成貼圖", "自動找出主體，想要的再圈一圈"),
+    "ja": ("ステッカー作成", "撮れば<br>ステッカーに", "被写体を自動で検出、指で囲んでもOK"),
+    "ru": ("Создать стикер", "Снял —<br>и стикер готов", "Сам находит объект, остальное обведите"),
+    "es": ("Crear stickers", "Haz la foto,<br>ten el sticker", "Encuentra el sujeto; rodea lo demás"),
+    "de": ("Sticker erstellen", "Knipsen,<br>Sticker fertig", "Findet das Motiv. Den Rest umkreist du."),
+    "fr": ("Créer autocollants", "Une photo,<br>un sticker", "Il trouve le sujet, entourez le reste"),
+    "it": ("Crea adesivi", "Scatta,<br>ed è uno sticker", "Trova il soggetto, il resto lo cerchi tu"),
+    "pt-BR": ("Criar adesivos", "Tirou a foto,<br>virou figurinha", "Acha o objeto; o resto você contorna"),
+    "th": ("ทำสติกเกอร์", "ถ่ายปุ๊บ<br>ได้สติกเกอร์", "หาวัตถุให้เอง ที่เหลือวาดล้อมได้"),
+    "vi": ("Tạo nhãn dán", "Chụp là có<br>nhãn dán", "Tự tìm chủ thể, phần còn lại thì khoanh"),
+    "cs": ("Tvorba nálepek", "Vyfoť<br>a máš nálepku", "Najde hlavní motiv, zbytek obkresli"),
+    "da": ("Lav klistermærker", "Tag et billede,<br>få et mærke", "Finder motivet – resten tegner du om"),
+    "el": ("Αυτοκόλλητα", "Τράβα φωτό,<br>πάρε αυτοκόλλητο", "Βρίσκει το θέμα, τα άλλα τα κυκλώνεις"),
+    "fi": ("Tarrojen teko", "Kuvaa,<br>ja tarra on valmis", "Löytää kohteen, muun voit ympyröidä"),
+    "id": ("Pembuat Stiker", "Foto langsung<br>jadi stiker", "Objek ditemukan otomatis, sisanya lingkari"),
+    "nb": ("Lag klistremerker", "Ta bilde,<br>få et merke", "Finner motivet – resten tegner du rundt"),
+    "nl": ("Stickers maken", "Klik, en je<br>hebt een sticker", "Vindt het onderwerp, de rest omcirkel je"),
+    "pl": ("Kreator naklejek", "Zrób zdjęcie,<br>masz naklejkę", "Sam znajduje obiekt, resztę obrysuj"),
+    "sv": ("Skapa klistermärken", "Ta en bild,<br>få ett märke", "Hittar motivet – resten ringar du in"),
+    "tr": ("Çıkartma yap", "Çek,<br>çıkartma olsun", "Konuyu kendi bulur, gerisini çevrele"),
 }
 
 # 헤더는 처음 온 사람에게 **한 가지 약속**만 한다(Apple: 단일한 생각, 빽빽하지 않게).
-# 앱이 무엇을 해 주는지를 한 문장으로: 한 번 써 두면 그다음은 누르기만 한다.
+# 앱이 무엇을 해 주는지를 한 문장으로: 찍으면 스티커가 되고, 그대로 대화에 붙인다.
 # ⚠️ 기계번역하지 않는다. 각 언어에서 짧게 읽히는 말로 따로 쓴다. 높임은 그 언어 스크린샷과 맞춘다.
 HEADER = {
-    "ko": ("스티커 카메라", "꾹 눌러 뜯은 순간을<br>대화에 붙여요"),
-    "en": ("Sticker Camera", "Punch out a moment,<br>stick it in your chats"),
-    "en-GB": ("Sticker Camera", "Punch out a moment,<br>pop it in your chats"),
-    "zh-Hans": ("贴纸相机", "长按撕下的瞬间<br>直接贴进聊天"),
-    "zh-Hant": ("貼圖相機", "長按撕下的瞬間<br>直接貼進聊天"),
-    "ja": ("ステッカーカメラ", "長押しではがした瞬間を<br>トークに貼ろう"),
-    "ru": ("Камера-стикер", "Оторвите кадр<br>и вставьте в чат"),
-    "es": ("Cámara de stickers", "Arranca el momento<br>y pégalo en el chat"),
-    "de": ("Sticker-Kamera", "Moment abtrennen,<br>in den Chat kleben"),
-    "fr": ("Appareil autocollants", "Détachez l'instant,<br>collez-le dans vos chats"),
-    "it": ("Fotocamera adesivi", "Stacca l'attimo<br>e incollalo in chat"),
-    "pt-BR": ("Câmera de adesivos", "Destaque o momento<br>e cole na conversa"),
-    "th": ("กล้องสติกเกอร์", "กดค้างฉีกช่วงเวลา<br>แปะลงแชตได้เลย"),
-    "vi": ("Camera nhãn dán", "Bấm giữ khoảnh khắc<br>dán ngay vào trò chuyện"),
-    "cs": ("Fotoaparát na nálepky", "Odtrhni okamžik<br>a vlep ho do chatu"),
-    "da": ("Klistermærke-kamera", "Riv øjeblikket af<br>og sæt det i chatten"),
-    "el": ("Κάμερα αυτοκόλλητων", "Απόσπασε τη στιγμή<br>και στείλ' τη αμέσως"),
-    "fi": ("Tarrakamera", "Irrota hetki<br>ja liimaa se chattiin"),
-    "id": ("Kamera Stiker", "Sobek momennya,<br>tempel di obrolan"),
-    "nb": ("Klistremerkekamera", "Riv av øyeblikket<br>og lim det i chatten"),
-    "nl": ("Stickercamera", "Scheur het moment af<br>en plak het in je chat"),
-    "pl": ("Aparat do naklejek", "Oderwij chwilę<br>i wklej ją do czatu"),
-    "sv": ("Klistermärkeskamera", "Riv loss stunden<br>och klistra in i chatten"),
-    "tr": ("Çıkartma Kamerası", "Anı kopar,<br>sohbete yapıştır"),
+    "ko": ("스티커 카메라", "찍으면 스티커,<br>바로 대화에 붙여요"),
+    "en": ("Sticker Camera", "Snap a photo,<br>stick it in your chats"),
+    "en-GB": ("Sticker Camera", "Snap a photo,<br>pop it in your chats"),
+    "zh-Hans": ("贴纸相机", "拍下就是贴纸<br>直接贴进聊天"),
+    "zh-Hant": ("貼圖相機", "拍下就是貼圖<br>直接貼進聊天"),
+    "ja": ("ステッカーカメラ", "撮ればステッカー<br>そのままトークに"),
+    "ru": ("Камера-стикер", "Снимите фото —<br>и стикер уже в чате"),
+    "es": ("Cámara de stickers", "Haz una foto<br>y pégala en el chat"),
+    "de": ("Sticker-Kamera", "Foto machen,<br>in den Chat kleben"),
+    "fr": ("Appareil autocollants", "Une photo,<br>un sticker dans vos chats"),
+    "it": ("Fotocamera adesivi", "Scatta una foto,<br>incollala in chat"),
+    "pt-BR": ("Câmera de adesivos", "Tire uma foto<br>e cole na conversa"),
+    "th": ("กล้องสติกเกอร์", "ถ่ายปุ๊บ<br>แปะลงแชตได้เลย"),
+    "vi": ("Camera nhãn dán", "Chụp một tấm,<br>dán ngay vào trò chuyện"),
+    "cs": ("Fotoaparát na nálepky", "Vyfoť to<br>a vlep do chatu"),
+    "da": ("Klistermærke-kamera", "Tag et billede<br>og sæt det i chatten"),
+    "el": ("Κάμερα αυτοκόλλητων", "Τράβα μια φωτό<br>και κόλλησέ τη στη συζήτηση"),
+    "fi": ("Tarrakamera", "Ota kuva<br>ja liimaa se chattiin"),
+    "id": ("Kamera Stiker", "Foto sekali,<br>tempel di obrolan"),
+    "nb": ("Klistremerkekamera", "Ta et bilde<br>og lim det i chatten"),
+    "nl": ("Stickercamera", "Maak een foto<br>en plak hem in je chat"),
+    "pl": ("Aparat do naklejek", "Zrób zdjęcie<br>i wklej je do czatu"),
+    "sv": ("Klistermärkeskamera", "Ta en bild<br>och klistra in i chatten"),
+    "tr": ("Çıkartma Kamerası", "Fotoğrafını çek,<br>sohbete yapıştır"),
 }
 
 # ⚠️ 바탕 · 글자색은 기존 스크린샷(make_marketing_screenshots.py)과 같다. 다르면 페이지에서
@@ -163,7 +163,7 @@ def search_html(lang):
     # 기기는 안전 영역 오른쪽 몫에 서서, 위아래로 넘쳐 화면 밖까지 이어진다(기기 그림은 잘려도 된다).
     ph_w = 1040
     ph_left = l + col + int(sw * 0.04)
-    img = (RAW / lang / "01-reveal.png").as_uri()
+    img = (RAW / lang / "01-pick.png").as_uri()
     return f"""
 <div class="glow" style="left:{ph_left - 300}px;top:500px;width:1700px;height:1700px;background:rgba(255,160,90,.20)"></div>
 <div class="glow" style="left:{l - 700}px;top:{t - 500}px;width:1400px;height:1000px;background:rgba(255,160,90,.07)"></div>

@@ -582,7 +582,7 @@ struct ContentView: View {
         switch scene {
         case "reveal": revealID = first
         case "detail": editTarget = EditTarget(id: first)
-        case "album", "arrange": showCollection = true
+        case "album", "arrange", "tags", "map": showCollection = true
         case "settings": showSupport = true
         case "pick":
             // 고르는 화면 (시뮬레이터는 대상을 찾지 못하므로 "사진 그대로"와 직접 그리기만 보인다)
@@ -789,8 +789,13 @@ struct CollectionView: View {
         let last = inPane ? collection.activeAlbum
             : UserDefaults.standard.string(forKey: "lastVisitedAlbum") ?? ""
         _path = State(initialValue: (!last.isEmpty && collection.albums.contains(last)) ? [last] : [])
+        #if DEBUG
+        if ["tags", "map"].contains(ScreenshotScene.scene ?? "") { _path = State(initialValue: []) }
+        _showMap = State(initialValue: ScreenshotScene.scene == "map")
+        #endif
     }
 
+    @State private var showMap = false
     @State private var showNewAlbum = false
     @State private var newAlbumName = ""
     @ObservedObject private var plans = PunchingPlans.shared
@@ -830,6 +835,7 @@ struct CollectionView: View {
             .navigationDestination(for: String.self) { name in
                 AlbumPageView(collection: collection, album: name)
             }
+            .navigationDestination(isPresented: $showMap) { StickerMapView(collection: collection) }
             .toolbar {
                 // 사진 앱처럼 — 왼쪽 위 뒤로가기로 카메라로 돌아간다
                 if !inPane {
@@ -844,9 +850,7 @@ struct CollectionView: View {
                 // 않고 항상 펼쳐 보이게 한다: 새 수집함 · 사진 가져오기
                 ToolbarItem(placement: .topBarTrailing) {
                     HStack(spacing: 18) {
-                        NavigationLink {
-                            StickerMapView(collection: collection)
-                        } label: {
+                        Button { showMap = true } label: {
                             Image(systemName: "map")
                         }
                         .accessibilityLabel("지도")
@@ -3706,7 +3710,13 @@ enum SubjectLift {
         guard #available(iOS 17.0, *), let cg = image.normalizedUp().cgImage else { return nil }
         let request = VNGenerateForegroundInstanceMaskRequest()
         guard (try? VNImageRequestHandler(cgImage: cg).perform([request])) != nil,
-              let result = request.results?.first else { return nil }
+              let result = request.results?.first else {
+            #if DEBUG
+            return ScreenshotScene.hostSubjects(for: image)
+            #else
+            return nil
+            #endif
+        }
         return SubjectMap(result.instanceMask)
     }
 
@@ -4296,6 +4306,9 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
 
     /// Ask for permission; updates begin once access is granted.
     func start() {
+        #if DEBUG
+        if ScreenshotScene.isActive { return }     // 스토어 스크린샷에 권한 창이 끼지 않게
+        #endif
         manager.requestWhenInUseAuthorization()
     }
 

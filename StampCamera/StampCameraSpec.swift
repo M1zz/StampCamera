@@ -67,7 +67,10 @@ enum StampCameraTipMoments {
 
     /// 넘어선 순간, 인상적인 것부터.
     static func reached(punchedCount count: Int) -> [LeeoTipMoment] {
-        punched.filter { count >= $0 }.map { threshold in
+        #if DEBUG
+        if ScreenshotScene.isActive { return [] }       // 스토어 스크린샷에는 부탁 카드를 두지 않는다
+        #endif
+        return punched.filter { count >= $0 }.map { threshold in
             LeeoTipMoment(id: "stamps.\(threshold)",
                           message: String(localized: "지금까지 스티커 \(count)장을 뜯어 모았어요",
                                           comment: "Tip ask card: how many stickers the person has punched and collected"))

@@ -8,7 +8,7 @@
 //
 //    -ScreenshotSeed <폴더>    폴더의 사진(이름순)을 기본 모양 스티커로 담는다.
 //                             파일 이름 앞 "a-" / "b-" … 는 담을 수집함을 고른다(아래 albums).
-//    -ScreenshotScene <장면>  camera · reveal · album · detail · arrange · settings
+//    -ScreenshotScene <장면>  camera · pick · album · tags · map · detail · arrange · settings
 //
 //  scripts/capture_screenshots.sh 가 이 둘로 docs/screenshots/raw/<언어>/ 를 다시 찍는다.
 //  수집함 이름 · 한 줄 기록 · 장소는 앱 언어를 따른다(SeedText).
@@ -16,6 +16,7 @@
 
 #if DEBUG
 import SwiftUI
+import CoreLocation
 
 enum ScreenshotScene {
     static var seedDir: String? { UserDefaults.standard.string(forKey: "ScreenshotSeed") }
@@ -168,6 +169,67 @@ enum ScreenshotScene {
         return nil
     }
 
+    /// 고르기 장면: 시뮬레이터는 대상 나누기를 못 하므로 맥에서 만든 번호 그림(`cut/backdrop-labels.png`,
+    /// tools/subject_labels.swift)을 읽는다. 없으면 그 입력이 될 사진을 `crop/backdrop.png` 로 내보낸다.
+    static func hostSubjects(for image: UIImage) -> SubjectMap? {
+        // 화면 가득한 사진만 (둘러 그린 곳을 다듬을 때 들어오는 작은 조각은 아니다)
+        guard scene == "pick", let dir = seedDir, image.size.height > image.size.width * 1.8 else { return nil }
+        let labels = ((dir as NSString).appendingPathComponent("cut") as NSString).appendingPathComponent("backdrop-labels.png")
+        guard let cg = UIImage(contentsOfFile: labels)?.cgImage else {
+            let cropDir = (dir as NSString).appendingPathComponent("crop")
+            try? FileManager.default.createDirectory(atPath: cropDir, withIntermediateDirectories: true)
+            try? image.pngData()?.write(to: URL(fileURLWithPath: (cropDir as NSString).appendingPathComponent("backdrop.png")))
+            return nil
+        }
+        let w = cg.width, h = cg.height
+        guard abs(Double(w) / Double(h) - image.size.width / image.size.height) < 0.03 else { return nil }
+        var px = [UInt8](repeating: 0, count: w * h)
+        px.withUnsafeMutableBytes { buf in
+            let ctx = CGContext(data: buf.baseAddress, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w,
+                                space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGImageAlphaInfo.none.rawValue)
+            ctx?.interpolationQuality = .none
+            ctx?.draw(cg, in: CGRect(x: 0, y: 0, width: w, height: h))
+        }
+        return SubjectMap(width: w, height: h, labels: px)
+    }
+
+    /// 고르기 장면에서 손가락으로 둘러 그린 것처럼 남길 선 (`shown` 기준 0...1): 코기 얼굴을 한 바퀴.
+    static var drawnLoop: [CGPoint]? {
+        guard scene == "pick" else { return nil }
+        return (0...40).map { i in
+            let a = Double(i) / 40 * 2 * .pi - .pi / 2
+            return CGPoint(x: 0.405 + 0.165 * cos(a), y: 0.335 + 0.095 * sin(a))
+        }
+    }
+
+    /// 지도 장면: 그 언어의 도시 한가운데 + 몇 군데. 사진 한 장씩 차례로 자리를 돈다.
+    private static var places: [CLLocation] {
+        let lang = Locale.preferredLanguages.first ?? "ko"
+        let centers: [String: (Double, Double)] = [
+            "ko": (37.5446, 127.0374), "en-GB": (51.5390, -0.1426), "en": (40.6782, -73.9442),
+            "ja": (35.6717, 139.6949), "zh-Hans": (31.2104, 121.4446), "zh-Hant": (25.0330, 121.5360),
+            "ru": (55.7298, 37.6010), "es": (40.4153, -3.6845), "de": (52.5380, 13.4240),
+            "fr": (48.8600, 2.3600), "it": (45.4720, 9.1800), "pt-BR": (-23.5874, -46.6576),
+            "th": (13.7314, 100.5414), "vi": (21.0285, 105.8542), "cs": (50.0800, 14.4400),
+            "da": (55.6900, 12.5600), "el": (37.9700, 23.7300), "fi": (60.1650, 24.9400),
+            "id": (-6.2250, 106.8100), "nb": (59.9200, 10.7400), "nl": (52.3600, 4.8800),
+            "pl": (50.0500, 19.9450), "sv": (59.3200, 18.0700), "tr": (41.0400, 29.0000),
+        ]
+        let c = centers.first { lang.hasPrefix($0.key) && $0.key.count > 2 }?.value
+            ?? centers[String(lang.prefix(2))] ?? centers["ko"]!
+        let spots = [(0.0, 0.0), (0.011, 0.017), (-0.009, 0.021), (0.016, -0.014), (-0.013, -0.011)]
+        return spots.map { CLLocation(latitude: c.0 + $0.0, longitude: c.1 + $0.1) }
+    }
+
+    /// 수집함 태그 줄이 비지 않게, 시드 사진마다 붙을 분류 (자동 분류는 시뮬레이터에서 돌지 않는다).
+    private static func seedTags(_ file: String) -> [String] {
+        let dog = String(localized: "강아지"), cat = String(localized: "고양이"), food = String(localized: "음식")
+        if ["corgi", "cavapoo", "puppy"].contains(where: file.contains) { return [dog] }
+        if ["kitten", "ginger", "cat"].contains(where: file.contains) { return [cat] }
+        if file.contains("duck") { return [] }
+        return [food]
+    }
+
     /// Files the seed photos, one by one, the same way 사진 가져오기 does.
     /// Returns the ids in filing order.
     @MainActor
@@ -193,8 +255,10 @@ enum ScreenshotScene {
                     ?? hostCutout(for: file, crop: base.image, in: dir)
                 let style: StampStyle = cut != nil ? .sticker : .stamp
                 let still = cut ?? CollectionStore.stillLook(base.image, style: .stamp)
-                let id = store.add(still, original: photo, cropNorm: base.cropNorm)
+                let id = store.add(still, location: places[ids.count % places.count],
+                                   original: photo, cropNorm: base.cropNorm)
                 store.recordStyle(style, for: id)
+                store.setTags(seedTags(file), for: id, sync: false)
                 let key = String(file.prefix(4))
                 if let note = notes[key] {
                     store.setCaption(note.caption, for: id)
