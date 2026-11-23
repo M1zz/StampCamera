@@ -41,6 +41,10 @@ if [ -z "$DEST_ID" ]; then
 fi
 DEST="platform=iOS Simulator,id=$DEST_ID"
 
+# 구독 약관(EULA) · 개인정보 링크 — 심사 3.1.2(c). 빠르니 테스트보다 먼저 본다.
+sh scripts/check_subscription_legal.sh
+echo ""
+
 echo "🧪 전체 테스트 실행 ($SCHEME)"
 xcodebuild test \
   "$PROJECT_FLAG" "$PROJECT" \

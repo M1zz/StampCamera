@@ -32,7 +32,7 @@ enum StampCameraSpec: LeeoAppSpec {
         LeeoSubscriptionConfig(
             productIDs: PlanProducts.all,
             // 자체 약관이 없으므로 애플 표준 사용권 계약(EULA)을 건다. 구독을 파는 앱의 심사 필수 항목이다.
-            termsURL: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!,
+            termsURL: SubscriptionLegal.standardEULA,
             entitlementIDs: Set(PlanProducts.tierByProduct.keys),
             gate: LeeoGatePolicy(
                 freeLimits: [PlanFeature.albums.rawValue: FreePlan.albumLimit,

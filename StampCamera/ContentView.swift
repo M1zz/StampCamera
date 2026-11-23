@@ -238,6 +238,7 @@ struct ContentView: View {
             LeeoGraduationOfferView(graduate: plans.product(PlanProducts.graduate)) {
                 await plans.refresh()
             }
+            .subscriptionLegalBar()
             // 실제로 보인 때를 적는다. 다른 화면에 밀려 못 뜬 판은 세지 않는다.
             .onAppear { plans.markGraduationOffered() }
             .presentationDragIndicator(.visible)
@@ -583,7 +584,7 @@ struct ContentView: View {
         case "reveal": revealID = first
         case "detail": editTarget = EditTarget(id: first)
         case "album", "arrange", "tags", "map": showCollection = true
-        case "settings": showSupport = true
+        case "settings", "paywall": showSupport = true   // paywall: 설정이 열리며 요금제를 잇달아 연다
         case "pick":
             // 고르는 화면 (시뮬레이터는 대상을 찾지 못하므로 "사진 그대로"와 직접 그리기만 보인다)
             if let photo = ScreenshotScene.cameraBackdrop {

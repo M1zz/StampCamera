@@ -10,6 +10,17 @@ import Testing
 
 struct PlanTests {
 
+    /// 심사 지침 3.1.2(c) — 구독을 파는 한 이용약관(EULA) · 개인정보 처리방침 주소가 눌리는 꼴로 있어야 한다.
+    /// 화면에 붙었는지는 `scripts/check_subscription_legal.sh` 가 배포 전에 본다.
+    @Test func 구독을_팔면_약관과_개인정보_주소가_있다() {
+        #expect(StampCameraSpec.monetization.sellsSubscription)
+        #expect(StampCameraSpec.monetization.subscriptionTermsURL == SubscriptionLegal.termsURL)
+        for url in [SubscriptionLegal.termsURL, SubscriptionLegal.privacyURL] {
+            #expect(url.scheme == "https")
+            #expect(url.host()?.isEmpty == false)
+        }
+    }
+
     @Test func 상품마다_여는_칸() {
         #expect(PlanProducts.tier(owning: []) == .free)
         for term in PlanTerm.allCases {

@@ -103,6 +103,8 @@ struct StampCameraSupportView: View {
                         Label("구매 복원", systemImage: "arrow.clockwise")
                     }
                     .disabled(plans.isWorking)
+                    // 구독을 파는 자리에는 약관 · 개인정보 링크가 함께 있어야 한다 (심사 3.1.2(c)).
+                    SubscriptionLegalLinks(style: .rows)
                 } header: {
                     Text("펀칭 Plus · Pro")
                 } footer: {
@@ -138,6 +140,7 @@ struct StampCameraSupportView: View {
                 LeeoGraduationOfferView(graduate: plans.product(PlanProducts.graduate)) {
                     await plans.refresh()
                 }
+                .subscriptionLegalBar()
                 .presentationDragIndicator(.visible)
             }
             .manageSubscriptionsSheet(isPresented: $managingSubscription)
@@ -148,6 +151,14 @@ struct StampCameraSupportView: View {
                 Text(restoreMessage ?? "")
             }
             .task { await plans.refresh() }
+            #if DEBUG
+            // -ScreenshotScene paywall: 설정을 잠깐 보인 뒤 요금제를 연다 (심사용 화면 녹화)
+            .task {
+                guard ScreenshotScene.scene == "paywall" else { return }
+                try? await Task.sleep(for: .seconds(2))
+                showPaywall = true
+            }
+            #endif
             .sheet(item: $sharePayload) { payload in
                 ShareSheet(items: payload.items)
             }
