@@ -9,11 +9,12 @@
 - [x] "이용약관(EULA)" 24개 언어
 - [x] 배포 전 게이트 `scripts/check_subscription_legal.sh` (predeploy.sh 가 부름) — 살 수 있는 화면마다 링크, 설정, APPSTORE.md 언어별 EULA · 개인정보 주소, 주소가 실제로 열리는지
 - [x] 테스트 `PlanTests.구독을_팔면_약관과_개인정보_주소가_있다`
-- [ ] ⚠️ 실기기/시뮬레이터에서 페이월 화면 녹화 → 심사 답장에 첨부 (iPhone · iPad)
-- [ ] ⚠️ App Store Connect: 24개 언어 설명에 EULA 줄이 실제로 올라가 있는지 확인(APPSTORE.md 에는 있음), 심사 메모(Notes)에 링크 위치 적기
+- [x] 시뮬레이터 화면 녹화를 심사 답장 · 심사 정보 첨부 파일에 올림 (링크를 누르는 장면과 iPad 는 없음)
+- [x] App Store Connect: 24개 언어 설명에 EULA · 개인정보 주소 확인, 심사 메모(Notes)에 링크 위치 적음
 - [x] 빌드 14 로 올림 (1.0.5 는 아직 출시 전이라 버전은 그대로)
 - [x] 화면 녹화: `-ScreenshotScene paywall` (DEBUG) 로 설정 → 요금제를 연다. ~/Desktop/punching-eula-review.mov
-- [ ] 1.0.5 (14) 올려 다시 제출
+- [x] 1.0.5 (14) 올려 다시 제출, 반려 메시지에 답장 (2026-11-23, 심사 대기 중)
+- [ ] 심사 결과 확인
 - [ ] LeeoKit: `LeeoSupportSection` 이 `monetization.subscriptionTermsURL` 도 보이게, `LeeoGraduationOfferView` 에 약관 줄 내장 — 다른 구독 앱도 같은 사유로 반려될 수 있다
 
 ## 아이폰 듀오 대응 (2026-10-30, 듀오 시뮬레이터 빌드 성공 · 실기기 확인 안 함)
