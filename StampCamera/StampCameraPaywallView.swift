@@ -20,7 +20,6 @@ struct PaywallView: View {
 
     @ObservedObject private var plans = PunchingPlans.shared
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.openURL) private var openURL
     @Environment(\.purchase) private var purchaseAction
     @Environment(\.dynamicTypeSize) private var typeSize
 
@@ -56,6 +55,8 @@ struct PaywallView: View {
                 }
                 .padding(20)
             }
+            // 이용약관(EULA) · 개인정보 처리방침은 스크롤과 상관없이 늘 바닥에 보인다 (심사 3.1.2(c)).
+            .subscriptionLegalBar(tint: gold)
             .background(Color(hex: 0x141210).ignoresSafeArea())
             .navigationTitle("요금제")
             .navigationBarTitleDisplayMode(.inline)
@@ -441,7 +442,7 @@ struct PaywallView: View {
         loading = false
     }
 
-    // MARK: 약관 (구독을 파는 앱의 심사 필수 항목)
+    // MARK: 갱신 고지 · 코드 (약관 · 개인정보 링크는 바닥에 붙어 있다 → SubscriptionLegalLinks)
 
     private var legal: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -451,14 +452,6 @@ struct PaywallView: View {
                     .foregroundStyle(.white.opacity(0.5))
                     .fixedSize(horizontal: false, vertical: true)
             }
-            HStack(spacing: 16) {
-                if let terms = StampCameraSpec.monetization.subscriptionTermsURL {
-                    Button("이용약관") { openURL(terms) }
-                }
-                Button("개인정보 처리방침") { openURL(StampCameraSpec.legal.privacyURL) }
-            }
-            .font(.body)
-            .tint(gold)
             Button {
                 redeemingCode = true
             } label: {

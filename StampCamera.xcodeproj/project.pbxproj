@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0BF9EE86DD4E4E2CA0D87FB4 /* StampCameraPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */; };
+		7C3A1E5D9B2F4A6088D1E0C1 /* SubscriptionLegalLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A1E5D9B2F4A6088D1E0C2 /* SubscriptionLegalLinks.swift */; };
 		40E58A169ED943D1A55796C3 /* StampCameraRoadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */; };
 		586C02A22FDB11C400D2A003 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C02A12FDB11C300D2A003 /* Messages.framework */; };
 		586C02AE2FDB11C400D2A003 /* sticker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 586C029F2FDB11C300D2A003 /* sticker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -99,6 +100,7 @@
 		962416049B644E5D97EC206A /* PlanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTests.swift; sourceTree = "<group>"; };
 		9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StampCameraPaywallView.swift; sourceTree = "<group>"; };
+		7C3A1E5D9B2F4A6088D1E0C2 /* SubscriptionLegalLinks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubscriptionLegalLinks.swift; sourceTree = "<group>"; };
 		A1000000 /* StampCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StampCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000001 /* StampCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampCameraApp.swift; sourceTree = "<group>"; };
 		A1000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				9C8F79172FD4FEA000B6DA22 /* Assets.xcassets */,
 				ABBD8E26D269648DB883B473 /* StampCameraSpec.swift */,
 				9E45EA9F51C24349B3B8AB2B /* StampCameraPaywallView.swift */,
+				7C3A1E5D9B2F4A6088D1E0C2 /* SubscriptionLegalLinks.swift */,
 				C1C31AE9FC874ACD90E7F695 /* StampCameraPlans.swift */,
 				B735CDBCCAAB48BFB0A4DE64 /* StampCameraRoadmap.swift */,
 				E6120DBF3C192E243A33504F /* StampCameraSupportView.swift */,
@@ -498,6 +501,7 @@
 				B7C0FFEE00000011 /* StickerArchive.swift in Sources */,
 				936CDD09A98E432076DB7860 /* StampCameraSpec.swift in Sources */,
 				0BF9EE86DD4E4E2CA0D87FB4 /* StampCameraPaywallView.swift in Sources */,
+				7C3A1E5D9B2F4A6088D1E0C1 /* SubscriptionLegalLinks.swift in Sources */,
 				6082D95CEEB74C81BC71AB70 /* StampCameraPlans.swift in Sources */,
 				40E58A169ED943D1A55796C3 /* StampCameraRoadmap.swift in Sources */,
 				F73CBCCDCA180CAC44AEE8CC /* StampCameraSupportView.swift in Sources */,
