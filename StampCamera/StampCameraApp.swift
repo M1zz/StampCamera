@@ -10,6 +10,8 @@ import LeeoKit
 struct StampCameraApp: App {
     @StateObject private var router = CameraLaunchRouter.shared
     @Environment(\.scenePhase) private var scenePhase
+    /// 할인 배너에서 연 페이월
+    @State private var showsSalePaywall = false
 
     init() {
         // 실행 기록 + 익명 사용 통계·크래시 진단(FeedbackHub)을 한 번에 켠다.
@@ -31,6 +33,9 @@ struct StampCameraApp: App {
                 // Control Center / Lock Screen control & the kkuk://camera deep
                 // link both land here → route straight to the live camera.
                 .onOpenURL { router.handle(url: $0) }
+                // 할인 기간이면 앱을 연 뒤 한 번 할인 배너를 띄운다. 단추는 요금제를 연다 (LeeoKit).
+                .leeoSaleBanner { showsSalePaywall = true }
+                .sheet(isPresented: $showsSalePaywall) { PaywallView() }
                 // 영수증을 읽고 요금제를 불러온다 (팁 상품도 같은 스토어가 불러온다)
                 .task { await PunchingPlans.shared.refresh() }
                 // 모은 스티커를 Siri · Spotlight 가 찾게 — 열 때와 뒤로 보낼 때 다시 싣는다
