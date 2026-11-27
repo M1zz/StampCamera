@@ -713,6 +713,7 @@ struct ContentView: View {
             collection.addStickers(from: shot, picks: picks, style: style,
                                    motion: motion, location: here) { ids, fellBack in
                 guard let first = ids.first else { return }
+                LeeoAnalyticsCenter.track(.custom(name: "sticker_punched", parameters: [:]))
                 Haptics.bounce()   // the soft "착" of paper settling
                 if let here {
                     Task {

@@ -1,0 +1,21 @@
+{
+  "$comment": [
+    "FeedbackHubViewer 가 이 앱의 통계를 읽는 스펙. 원본은 이 파일이고, 허브는 scripts/sync-stats-specs.sh 로 복사해 간다.",
+    "release.coreAction 은 품질 탭의 '핵심 기능' 칸과 릴리즈 건강 카드가 읽는다. 이벤트 이름을 바꾸면 여기도 같이 바꿀 것."
+  ],
+  "specVersion": 1,
+  "appId": "com.devkoan.StampCamera",
+  "appName": "펀칭",
+  "eventLabels": {
+    "sticker_punched": "카메라로 스티커를 뜯음"
+  },
+  "release": {
+    "coreAction": {
+      "label": "카메라로 스티커를 뜯어 담은 사람",
+      "events": [
+        "sticker_punched"
+      ],
+      "note": "꾹 눌러 찍은 순간이 스티커로 수집함에 담길 때가 이 앱의 가치 순간이다."
+    }
+  }
+}
